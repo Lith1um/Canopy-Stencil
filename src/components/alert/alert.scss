@@ -1,0 +1,289 @@
+:host {
+  display: block;
+}
+
+.alert {
+
+  position: relative;
+  display: flex;
+  padding: 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+
+  &--no-container {
+    @apply bg-opacity-0 p-0 mb-2 #{'!important'};
+
+    &.alert-level-primary {  
+      .alert-icon {
+        @apply text-violet-700 #{'!important'};
+      }
+    }
+
+    &.alert-level-basic {  
+      .alert-icon {
+        @apply text-gray-700 #{'!important'};
+      }
+    }
+
+    &.alert-level-info {  
+      .alert-icon {
+        @apply text-blue-700 #{'!important'};
+      }
+    }
+
+    &.alert-level-success {  
+      .alert-icon {
+        @apply text-green-700 #{'!important'};
+      }
+    }
+
+    &.alert-level-warning {  
+      .alert-icon {
+        @apply text-yellow-700 #{'!important'};
+      }
+    }
+
+    &.alert-level-error {  
+      .alert-icon {
+        @apply text-red-700 #{'!important'};
+      }
+    }
+  }
+
+  /* All icons */
+  cpy-icon i {
+    color: currentColor !important;
+  }
+
+  /* Icon */
+  .alert-icon {
+    display: none;
+    align-items: flex-start;
+
+    &:not(:empty) {
+      display: flex;
+      margin-right: 12px;
+    }
+     
+    cpy-icon i {
+      font-size: 1.2rem;
+    }
+  }
+
+  /* Content */
+  .alert-content {
+    @apply flex flex-col justify-center;
+
+    /* Title */
+    .alert-title {
+      font-weight: 600;
+    }
+
+    /* Alert */
+    .alert-message {
+      p {
+        word-break: break-word;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &.alert-appearance-border {
+
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    @apply shadow-md bg-white #{'!important'};
+
+    .alert-border {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+    }
+
+    .alert-message {
+      @apply text-gray-500 #{'!important'};
+    }
+
+  }
+
+  /* Primary */
+  &.alert-level-primary {
+    @apply bg-violet-50;
+
+    &.alert-appearance-border {
+
+      .alert-border {
+        @apply bg-violet-600;
+      }
+
+      .alert-icon,
+      .alert-title {
+        @apply text-violet-600;
+      }
+    }
+
+    .alert-icon {
+      @apply text-violet-600;
+    }
+
+    .alert-title {
+      @apply text-violet-900;
+    }
+
+    .alert-message {
+      @apply text-violet-700;
+    }
+  }
+
+  /* Basic */
+  &.alert-level-basic {
+    @apply bg-gray-50;
+
+    &.alert-appearance-border {
+
+      .alert-border {
+        @apply bg-gray-600;
+      }
+
+      .alert-icon,
+      .alert-title {
+        @apply text-gray-600;
+      }
+    }
+
+    .alert-icon {
+        @apply text-gray-600;
+    }
+
+    .alert-title {
+        @apply text-gray-900;
+    }
+
+    .alert-message {
+        @apply text-gray-700;
+    }
+  }
+
+  /* Info */
+  &.alert-level-info {
+    @apply bg-blue-50;
+
+    &.alert-appearance-border {
+
+      .alert-border {
+        @apply bg-blue-600;
+      }
+
+      .alert-icon,
+      .alert-title {
+        @apply text-blue-600;
+      }
+    }
+
+    .alert-icon {
+      @apply text-blue-600;
+    }
+
+    .alert-title {
+      @apply text-blue-900;
+    }
+
+    .alert-message {
+      @apply text-blue-700;
+    }
+  }
+
+  /* Success */
+  &.alert-level-success {
+    @apply bg-green-50;
+
+    &.alert-appearance-border {
+
+      .alert-border {
+        @apply bg-green-600;
+      }
+
+      .alert-icon,
+      .alert-title {
+        @apply text-green-600;
+      }
+    }
+
+    .alert-icon {
+      @apply text-green-600;
+    }
+
+    .alert-title {
+      @apply text-green-900;
+    }
+
+    .alert-message {
+      @apply text-green-700;
+    }
+  }
+
+  /* Warning */
+  &.alert-level-warning {
+    @apply bg-yellow-50;
+
+    &.alert-appearance-border {
+
+      .alert-border {
+        @apply bg-yellow-600;
+      }
+
+      .alert-icon,
+      .alert-title {
+        @apply text-yellow-600;
+      }
+    }
+
+    .alert-icon {
+      @apply text-yellow-600;
+    }
+
+    .alert-title {
+      @apply text-yellow-900;
+    }
+
+    .alert-message {
+      @apply text-yellow-700;
+    }
+  }
+
+  /* Error */
+  &.alert-level-error {
+    @apply bg-red-50;
+
+    &.alert-appearance-border {
+
+      .alert-border {
+        @apply bg-red-600;
+      }
+
+      .alert-icon,
+      .alert-title {
+        @apply text-red-600;
+      }
+    }
+
+    .alert-icon {
+      @apply text-red-600;
+    }
+
+    .alert-title {
+      @apply text-red-900;
+    }
+
+    .alert-message {
+      @apply text-red-700;
+    }
+  }
+}

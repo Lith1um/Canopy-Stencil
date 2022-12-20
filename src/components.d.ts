@@ -5,57 +5,55 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AlertAppearance, AlertType } from "./components/alert/alert.type";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface CpyAlert {
+        "alertTitle": string;
+        "appearance": AlertAppearance;
+        "container": boolean;
+        "type": AlertType;
+    }
+    interface CpyIcon {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLCpyAlertElement extends Components.CpyAlert, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLCpyAlertElement: {
+        prototype: HTMLCpyAlertElement;
+        new (): HTMLCpyAlertElement;
+    };
+    interface HTMLCpyIconElement extends Components.CpyIcon, HTMLStencilElement {
+    }
+    var HTMLCpyIconElement: {
+        prototype: HTMLCpyIconElement;
+        new (): HTMLCpyIconElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "cpy-alert": HTMLCpyAlertElement;
+        "cpy-icon": HTMLCpyIconElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface CpyAlert {
+        "alertTitle"?: string;
+        "appearance"?: AlertAppearance;
+        "container"?: boolean;
+        "type"?: AlertType;
+    }
+    interface CpyIcon {
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "cpy-alert": CpyAlert;
+        "cpy-icon": CpyIcon;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "cpy-alert": LocalJSX.CpyAlert & JSXBase.HTMLAttributes<HTMLCpyAlertElement>;
+            "cpy-icon": LocalJSX.CpyIcon & JSXBase.HTMLAttributes<HTMLCpyIconElement>;
         }
     }
 }

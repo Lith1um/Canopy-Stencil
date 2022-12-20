@@ -8,7 +8,12 @@
     <script type="module" src="/build/canopy-stencil.esm.js"></script>
     <script nomodule src="/build/canopy-stencil.js"></script>
   </head>
-  <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+  <body style="padding: 40px;">
+    <cpy-alert alert-title="This is an error" type="error">
+      Some additional text about the error
+    </cpy-alert>
+    <cpy-alert alert-title="This is an error" type="error" appearance="border"></cpy-alert>
+    <cpy-alert alert-title="This is an error" type="error" container="false"></cpy-alert>
+    <cpy-icon>home</cpy-icon>
   </body>
 </html>
