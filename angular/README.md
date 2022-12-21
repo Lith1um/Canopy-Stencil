@@ -1,27 +1,63 @@
-# Angular
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/lith1um/Canopy-Stencil">
+    <img src="../logo.png" alt="Logo" width="140">
+  </a>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
+  <h3 align="center">Canopy - Angular</h3>
 
-## Development server
+  <p align="center">
+    An angular implementation of <a href="https://github.com/lith1um/Canopy-Stencil">Canopy</a> - a set of UI Web Components built with stencil.
+    <br />
+    <br />
+    <!-- <a href="https://github.com/lith1um/Canopy-Stencil">View Demo</a> -->
+    <a href="https://github.com/lith1um/Canopy-Stencil/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/lith1um/Canopy-Stencil/issues">Request Feature</a>
+  </p>
+</div>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Installation
 
-## Code scaffolding
+To get Canopy up and running in Angular, you'll need to install the relevant packages and configure your app to use web components.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Install NPM packages
+   ```sh
+   npm install canopy-stencil-web canopy-stencil-angular
+   ```
+2. Configure your app module to import the angular module and custom elements loader for canopy, calling the loader 
+    ```ts
+    import { CanopyStencilModule } from 'canopy-stencil-angular';
+    import { defineCustomElements } from 'canopy-stencil-web/loader';
 
-## Build
+    defineCustomElements();
+    ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    Follow up by adding the Canopy module to your imports
+    ```ts
+    @NgModule({
+    imports: [
+      CanopyStencilModule,
+      ...
+    ],
+    ...
+    ```
+3. Modify you angular json to load assets and css from Canopy, adding the following into the build options for your project
+   ```json
+   "assets": [
+      {
+        "glob": "**/*",
+        "input": "node_modules/canopy-stencil-web/dist/canopy-stencil-web/webfonts",
+        "output": "/webfonts/"
+      },
+      ...
+    ],
+    "styles": [
+      "node_modules/canopy-stencil-web/dist/canopy-stencil-web/styles/material-icons.css",
+      ...
+    ],
+    ...
+   ```
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+And that's it! You should now be able to use Canopy within your angular application.
