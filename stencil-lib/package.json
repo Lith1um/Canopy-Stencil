@@ -1,6 +1,6 @@
 {
-  "name": "canopy-stencil",
-  "version": "0.0.1",
+  "name": "canopy-stencil-web",
+  "version": "0.0.4",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -9,7 +9,7 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/canopy-stencil/canopy-stencil.esm.js",
+  "unpkg": "dist/canopy-stencil-web/canopy-stencil-web.esm.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ionic-team/stencil-component-starter.git"

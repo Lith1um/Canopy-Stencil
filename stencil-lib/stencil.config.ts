@@ -12,7 +12,7 @@ const twConfigurationFn = (filename: string, config: TailwindConfig): TailwindCo
 };
 
 export const config: Config = {
-  namespace: 'canopy-stencil',
+  namespace: 'canopy-stencil-web',
   plugins: [
     sass(),
     tailwind({
@@ -24,13 +24,17 @@ export const config: Config = {
   ],
   outputTargets: [
     angularOutputTarget({
-      componentCorePackage: 'canopy-stencil',
+      componentCorePackage: 'canopy-stencil-web',
       directivesProxyFile: '../angular/projects/canopy-stencil-angular/src/lib/stencil-generated/components.ts',
       directivesArrayFile: '../angular/projects/canopy-stencil-angular/src/lib/stencil-generated/index.ts',
     }),
     {
       type: 'dist',
       esmLoaderPath: '../loader',
+      copy: [
+        { src: 'assets/material/*', dest: 'styles' },
+        { src: 'assets/material/fonts/*', dest: 'webfonts' }
+      ]
     },
     {
       type: 'dist-custom-elements',
