@@ -10,11 +10,13 @@
 ### Used by
 
  - [cpy-alert](../alert)
+ - [cpy-toolbar](../toolbar)
 
 ### Graph
 ```mermaid
 graph TD;
   cpy-alert --> cpy-icon
+  cpy-toolbar --> cpy-icon
   style cpy-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

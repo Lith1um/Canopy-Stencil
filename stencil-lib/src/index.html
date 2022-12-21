@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="en" style="height: 100%; width: 100%;">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
@@ -17,12 +17,34 @@
       }
     </style>
   </head>
-  <body style="padding: 40px;">
-    <cpy-alert alert-title="This is an error" type="error">
-      Some additional text about the error
-    </cpy-alert>
-    <cpy-alert alert-title="This is an error" type="error" appearance="border"></cpy-alert>
-    <cpy-alert alert-title="This is an error" type="error" container="false"></cpy-alert>
-    <cpy-icon>home</cpy-icon>Some text
+  <body style="height: 100%; width: 100%;">
+    <cpy-drawer-container>
+      <div slot="menu" style="width: 160px; padding: 10px; text-align: center;">Canopy menu</div>
+      <cpy-toolbar show-menu="true">
+        <h3>Canopy Stencil running locally for development</h3>
+      </cpy-toolbar>
+      <div style="padding: 40px;">
+        <cpy-alert type="error">
+          This is an error
+          <div slot="content">Some additional text about the error</div>
+        </cpy-alert>
+        <cpy-alert type="error" appearance="border">
+          This is an error
+        </cpy-alert>
+        <cpy-alert type="error" container="false">
+          This is an error
+        </cpy-alert>
+        <cpy-icon>home</cpy-icon>
+        <cpy-icon>settings</cpy-icon>
+        Some text
+      </div>
+    </cpy-drawer-container>
+    <script>
+      const toolbarElement = document.querySelector('cpy-toolbar');
+      const drawerElement = document.querySelector('cpy-drawer-container');
+      toolbarElement.addEventListener('toggleMenu', event => {
+        drawerElement.opened = !drawerElement.opened;
+      });
+    </script>
   </body>
 </html>

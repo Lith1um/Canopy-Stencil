@@ -1,0 +1,7 @@
+.drawer-container {
+  @apply relative z-10 box-border block overflow-hidden inset-0 h-full;
+
+  &__content {
+    @apply relative z-10 block h-full overflow-auto transition-all duration-300;
+  }
+}

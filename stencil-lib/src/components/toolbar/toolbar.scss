@@ -1,0 +1,7 @@
+.toolbar {
+  @apply flex px-4 w-full h-12 items-center gap-4 shadow-md relative z-50;
+
+  &__menu-button {
+    @apply cursor-pointer;
+  }
+}

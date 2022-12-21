@@ -17,9 +17,6 @@ export class Alert {
   @Prop()
   container = true;
 
-  @Prop()
-  alertTitle: string;
-
   icons: {[level: string]: string} = {
     'primary': 'check_circle',
     'basic': 'check_circle',
@@ -49,11 +46,11 @@ export class Alert {
         <div class="alert-content">
 
           <div class="alert-title">
-            {this.alertTitle}
+            <slot></slot>
           </div>
 
           <div class="alert-message">
-            <slot></slot>
+            <slot name="content"></slot>
           </div>
 
         </div>

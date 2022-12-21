@@ -7,12 +7,11 @@
 
 ## Properties
 
-| Property     | Attribute     | Description | Type                                                                  | Default     |
-| ------------ | ------------- | ----------- | --------------------------------------------------------------------- | ----------- |
-| `alertTitle` | `alert-title` |             | `string`                                                              | `undefined` |
-| `appearance` | `appearance`  |             | `"border" \| "soft"`                                                  | `'soft'`    |
-| `container`  | `container`   |             | `boolean`                                                             | `true`      |
-| `type`       | `type`        |             | `"basic" \| "error" \| "info" \| "primary" \| "success" \| "warning"` | `'error'`   |
+| Property     | Attribute    | Description | Type                                                                  | Default   |
+| ------------ | ------------ | ----------- | --------------------------------------------------------------------- | --------- |
+| `appearance` | `appearance` |             | `"border" \| "soft"`                                                  | `'soft'`  |
+| `container`  | `container`  |             | `boolean`                                                             | `true`    |
+| `type`       | `type`       |             | `"basic" \| "error" \| "info" \| "primary" \| "success" \| "warning"` | `'error'` |
 
 
 ## Dependencies

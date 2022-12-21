@@ -8,13 +8,26 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AlertAppearance, AlertType } from "./components/alert/alert.type";
 export namespace Components {
     interface CpyAlert {
-        "alertTitle": string;
         "appearance": AlertAppearance;
         "container": boolean;
         "type": AlertType;
     }
+    interface CpyDrawer {
+        "opened": boolean;
+    }
+    interface CpyDrawerContainer {
+        "mode": string;
+        "opened": boolean;
+    }
     interface CpyIcon {
     }
+    interface CpyToolbar {
+        "showMenu": boolean;
+    }
+}
+export interface CpyToolbarCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyToolbarElement;
 }
 declare global {
     interface HTMLCpyAlertElement extends Components.CpyAlert, HTMLStencilElement {
@@ -23,29 +36,63 @@ declare global {
         prototype: HTMLCpyAlertElement;
         new (): HTMLCpyAlertElement;
     };
+    interface HTMLCpyDrawerElement extends Components.CpyDrawer, HTMLStencilElement {
+    }
+    var HTMLCpyDrawerElement: {
+        prototype: HTMLCpyDrawerElement;
+        new (): HTMLCpyDrawerElement;
+    };
+    interface HTMLCpyDrawerContainerElement extends Components.CpyDrawerContainer, HTMLStencilElement {
+    }
+    var HTMLCpyDrawerContainerElement: {
+        prototype: HTMLCpyDrawerContainerElement;
+        new (): HTMLCpyDrawerContainerElement;
+    };
     interface HTMLCpyIconElement extends Components.CpyIcon, HTMLStencilElement {
     }
     var HTMLCpyIconElement: {
         prototype: HTMLCpyIconElement;
         new (): HTMLCpyIconElement;
     };
+    interface HTMLCpyToolbarElement extends Components.CpyToolbar, HTMLStencilElement {
+    }
+    var HTMLCpyToolbarElement: {
+        prototype: HTMLCpyToolbarElement;
+        new (): HTMLCpyToolbarElement;
+    };
     interface HTMLElementTagNameMap {
         "cpy-alert": HTMLCpyAlertElement;
+        "cpy-drawer": HTMLCpyDrawerElement;
+        "cpy-drawer-container": HTMLCpyDrawerContainerElement;
         "cpy-icon": HTMLCpyIconElement;
+        "cpy-toolbar": HTMLCpyToolbarElement;
     }
 }
 declare namespace LocalJSX {
     interface CpyAlert {
-        "alertTitle"?: string;
         "appearance"?: AlertAppearance;
         "container"?: boolean;
         "type"?: AlertType;
     }
+    interface CpyDrawer {
+        "opened"?: boolean;
+    }
+    interface CpyDrawerContainer {
+        "mode"?: string;
+        "opened"?: boolean;
+    }
     interface CpyIcon {
+    }
+    interface CpyToolbar {
+        "onToggleMenu"?: (event: CpyToolbarCustomEvent<void>) => void;
+        "showMenu"?: boolean;
     }
     interface IntrinsicElements {
         "cpy-alert": CpyAlert;
+        "cpy-drawer": CpyDrawer;
+        "cpy-drawer-container": CpyDrawerContainer;
         "cpy-icon": CpyIcon;
+        "cpy-toolbar": CpyToolbar;
     }
 }
 export { LocalJSX as JSX };
@@ -53,7 +100,10 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "cpy-alert": LocalJSX.CpyAlert & JSXBase.HTMLAttributes<HTMLCpyAlertElement>;
+            "cpy-drawer": LocalJSX.CpyDrawer & JSXBase.HTMLAttributes<HTMLCpyDrawerElement>;
+            "cpy-drawer-container": LocalJSX.CpyDrawerContainer & JSXBase.HTMLAttributes<HTMLCpyDrawerContainerElement>;
             "cpy-icon": LocalJSX.CpyIcon & JSXBase.HTMLAttributes<HTMLCpyIconElement>;
+            "cpy-toolbar": LocalJSX.CpyToolbar & JSXBase.HTMLAttributes<HTMLCpyToolbarElement>;
         }
     }
 }
