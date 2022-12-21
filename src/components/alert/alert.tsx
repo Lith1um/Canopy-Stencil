@@ -29,18 +29,16 @@ export class Alert {
     'error': 'cancel'
   };
 
-  get classList(): any {
-    return {
+  render() {
+    const classes = {
       'alert': true,
       'alert--no-container': !this.container,
-      [`alert-level-${this.type}`]: this.type,
-      [`alert-appearance-${this.appearance}`]: this.container && this.appearance,
+      [`alert-level-${this.type}`]: !!this.type,
+      [`alert-appearance-${this.appearance}`]: !!(this.container && this.appearance),
     };
-  }
 
-  render() {
     return (
-      <div class={this.classList}>
+      <div class={classes}>
 
         {this.appearance === 'border' && <div class="alert-border"></div>}
 

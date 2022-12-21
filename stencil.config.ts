@@ -1,13 +1,25 @@
 import { Config } from '@stencil/core';
-import tailwind, { tailwindHMR } from 'stencil-tailwind-plugin';
+import tailwind, { TailwindConfig, tailwindHMR } from 'stencil-tailwind-plugin';
 import { sass } from '@stencil/sass';
+import tailwindConf from './tailwind.config';
+
+const twConfigurationFn = (filename: string, config: TailwindConfig): TailwindConfig => {
+  return {
+    ...config,
+    ...tailwindConf
+  };
+};
 
 export const config: Config = {
   namespace: 'canopy-stencil',
   plugins: [
     sass(),
-    tailwind(),
-    tailwindHMR(),
+    tailwind({
+      tailwindConf: twConfigurationFn
+    }),
+    tailwindHMR({
+      tailwindConf: twConfigurationFn
+    }),
   ],
   outputTargets: [
     {
