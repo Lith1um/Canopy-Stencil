@@ -32,7 +32,6 @@ To get Canopy up and running in your application, you have 2 options:
         <link rel="stylesheet" href="node_modules/canopy-stencil-web/dist/canopy-stencil-web/styles/material-icons.css">
       ```
     - You can now use the components anywhere in your template, JSX, html etc
-<br/>
   2. Use via CDN with unpkg
       - Add a script tag in the head of your index.html to load the package
         ```html
