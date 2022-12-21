@@ -1,4 +1,5 @@
 import { Config } from '@stencil/core';
+import { angularOutputTarget } from '@stencil/angular-output-target';
 import tailwind, { TailwindConfig, tailwindHMR } from 'stencil-tailwind-plugin';
 import { sass } from '@stencil/sass';
 import tailwindConf from './tailwind.config';
@@ -22,6 +23,11 @@ export const config: Config = {
     }),
   ],
   outputTargets: [
+    angularOutputTarget({
+      componentCorePackage: 'canopy-stencil',
+      directivesProxyFile: '../angular/projects/canopy-stencil-angular/src/lib/stencil-generated/components.ts',
+      directivesArrayFile: '../angular/projects/canopy-stencil-angular/src/lib/stencil-generated/index.ts',
+    }),
     {
       type: 'dist',
       esmLoaderPath: '../loader',

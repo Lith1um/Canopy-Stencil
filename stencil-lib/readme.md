@@ -40,9 +40,6 @@
 
 This is a starter project for building a standalone Web Component using Stencil.
 
-Stencil is also great for building entire apps. For that, use the [stencil-app-starter](https://github.com/ionic-team/stencil-app-starter) instead.
-
-
 ## Getting Started
 
 To start building a new web component using Stencil, clone this repo to a new directory:
