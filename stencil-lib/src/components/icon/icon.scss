@@ -1,15 +1,16 @@
-:host {
-  display: block;
+cpy-icon {
+  font-size: 1.2rem; /* Preferred icon size */
+  line-height: 1.2rem;
 }
 
 .material-icons {
   font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
-  font-size: 1.2rem; /* Preferred icon size */
+  font-size: inherit;
   display: inline-block;
-  vertical-align: text-bottom;
-  line-height: 1;
+  vertical-align: middle;
+  line-height: inherit;
   text-transform: none;
   letter-spacing: normal;
   word-wrap: normal;

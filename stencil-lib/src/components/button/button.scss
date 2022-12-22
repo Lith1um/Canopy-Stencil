@@ -1,0 +1,82 @@
+:host {
+  display: inline-block;
+}
+
+.button {
+  @apply leading-8 font-medium relative rounded px-4 inline-flex items-center justify-center min-w-[64px] border-0 outline-0 select-none appearance-none overflow-visible align-middle bg-transparent;
+
+  &:disabled {
+    @apply cursor-default bg-gray-200 text-gray-400;
+  }
+
+  &-appearance--basic {
+    @apply bg-gray-600 bg-opacity-0 text-inherit;
+
+    &:hover:not(:disabled) {
+      @apply bg-opacity-5;
+    }
+    
+    &:disabled {
+      @apply bg-transparent;
+    }
+  }
+
+  &-appearance--primary {
+    @apply bg-blue-600 text-white;
+
+    &:hover:not(:disabled) {
+      @apply bg-blue-500;
+    }
+  }
+
+  &-appearance--secondary {
+    @apply bg-pink-600 text-white;
+
+    &:hover:not(:disabled) {
+      @apply bg-pink-500;
+    }
+  }
+
+  &-appearance--tertiary {
+    @apply bg-blue-600 bg-opacity-0 text-blue-700;
+
+    &:hover:not(:disabled) {
+      @apply bg-opacity-5;
+    }
+
+    &:disabled {
+      @apply bg-transparent;
+    }
+  }
+
+  &-type--icon {
+    @apply rounded-full bg-gray-600 bg-opacity-0 p-3 min-w-0 w-12 h-12;
+
+    ::slotted(cpy-icon) {
+      @apply m-0 -mt-2 icon-size-6 #{!important};
+    }
+
+    &.button-appearance--primary {
+      @apply text-blue-600;
+    }
+    &.button-appearance--secondary {
+      @apply text-pink-600;
+    }
+
+    &:hover:not(:disabled) {
+      @apply bg-opacity-5;
+    }
+
+    &:disabled {
+      @apply bg-transparent text-gray-400;
+    }
+  }
+}
+
+::slotted(cpy-icon) {
+  @apply -mt-0.5;
+}
+
+::slotted(cpy-icon:first-child) {
+  @apply mr-1.5;
+}

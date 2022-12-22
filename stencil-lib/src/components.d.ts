@@ -6,11 +6,17 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AlertAppearance, AlertType } from "./components/alert/alert.type";
+import { ButtonAppearance, ButtonType } from "./components/button/button.type";
 export namespace Components {
     interface CpyAlert {
         "appearance": AlertAppearance;
         "container": boolean;
         "type": AlertType;
+    }
+    interface CpyButton {
+        "appearance": ButtonAppearance;
+        "disabled": boolean;
+        "type": ButtonType;
     }
     interface CpyDrawer {
         "opened": boolean;
@@ -21,13 +27,10 @@ export namespace Components {
     }
     interface CpyIcon {
     }
-    interface CpyToolbar {
-        "showMenu": boolean;
+    interface CpyPageContent {
     }
-}
-export interface CpyToolbarCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLCpyToolbarElement;
+    interface CpyToolbar {
+    }
 }
 declare global {
     interface HTMLCpyAlertElement extends Components.CpyAlert, HTMLStencilElement {
@@ -35,6 +38,12 @@ declare global {
     var HTMLCpyAlertElement: {
         prototype: HTMLCpyAlertElement;
         new (): HTMLCpyAlertElement;
+    };
+    interface HTMLCpyButtonElement extends Components.CpyButton, HTMLStencilElement {
+    }
+    var HTMLCpyButtonElement: {
+        prototype: HTMLCpyButtonElement;
+        new (): HTMLCpyButtonElement;
     };
     interface HTMLCpyDrawerElement extends Components.CpyDrawer, HTMLStencilElement {
     }
@@ -54,6 +63,12 @@ declare global {
         prototype: HTMLCpyIconElement;
         new (): HTMLCpyIconElement;
     };
+    interface HTMLCpyPageContentElement extends Components.CpyPageContent, HTMLStencilElement {
+    }
+    var HTMLCpyPageContentElement: {
+        prototype: HTMLCpyPageContentElement;
+        new (): HTMLCpyPageContentElement;
+    };
     interface HTMLCpyToolbarElement extends Components.CpyToolbar, HTMLStencilElement {
     }
     var HTMLCpyToolbarElement: {
@@ -62,9 +77,11 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "cpy-alert": HTMLCpyAlertElement;
+        "cpy-button": HTMLCpyButtonElement;
         "cpy-drawer": HTMLCpyDrawerElement;
         "cpy-drawer-container": HTMLCpyDrawerContainerElement;
         "cpy-icon": HTMLCpyIconElement;
+        "cpy-page-content": HTMLCpyPageContentElement;
         "cpy-toolbar": HTMLCpyToolbarElement;
     }
 }
@@ -73,6 +90,11 @@ declare namespace LocalJSX {
         "appearance"?: AlertAppearance;
         "container"?: boolean;
         "type"?: AlertType;
+    }
+    interface CpyButton {
+        "appearance"?: ButtonAppearance;
+        "disabled"?: boolean;
+        "type"?: ButtonType;
     }
     interface CpyDrawer {
         "opened"?: boolean;
@@ -83,15 +105,17 @@ declare namespace LocalJSX {
     }
     interface CpyIcon {
     }
+    interface CpyPageContent {
+    }
     interface CpyToolbar {
-        "onToggleMenu"?: (event: CpyToolbarCustomEvent<void>) => void;
-        "showMenu"?: boolean;
     }
     interface IntrinsicElements {
         "cpy-alert": CpyAlert;
+        "cpy-button": CpyButton;
         "cpy-drawer": CpyDrawer;
         "cpy-drawer-container": CpyDrawerContainer;
         "cpy-icon": CpyIcon;
+        "cpy-page-content": CpyPageContent;
         "cpy-toolbar": CpyToolbar;
     }
 }
@@ -100,9 +124,11 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "cpy-alert": LocalJSX.CpyAlert & JSXBase.HTMLAttributes<HTMLCpyAlertElement>;
+            "cpy-button": LocalJSX.CpyButton & JSXBase.HTMLAttributes<HTMLCpyButtonElement>;
             "cpy-drawer": LocalJSX.CpyDrawer & JSXBase.HTMLAttributes<HTMLCpyDrawerElement>;
             "cpy-drawer-container": LocalJSX.CpyDrawerContainer & JSXBase.HTMLAttributes<HTMLCpyDrawerContainerElement>;
             "cpy-icon": LocalJSX.CpyIcon & JSXBase.HTMLAttributes<HTMLCpyIconElement>;
+            "cpy-page-content": LocalJSX.CpyPageContent & JSXBase.HTMLAttributes<HTMLCpyPageContentElement>;
             "cpy-toolbar": LocalJSX.CpyToolbar & JSXBase.HTMLAttributes<HTMLCpyToolbarElement>;
         }
     }

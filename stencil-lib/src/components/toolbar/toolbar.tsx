@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'cpy-toolbar',
@@ -7,19 +7,9 @@ import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 })
 export class Toolbar {
 
-  @Prop()
-  showMenu: boolean = false;
-
-  @Event()
-  toggleMenu: EventEmitter<void>;
-
   render() {
     return (
       <div class="toolbar">
-        {this.showMenu &&
-          <div class="toolbar__menu-button" onClick={() => this.toggleMenu.emit()}>
-            <cpy-icon>menu</cpy-icon>
-          </div>}
         <slot></slot>
       </div>
     );

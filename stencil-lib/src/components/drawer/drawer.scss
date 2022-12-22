@@ -1,5 +1,5 @@
 .drawer {
-  @apply bg-white absolute block top-0 bottom-0 z-20 outline-0 box-border overflow-y-auto invisible border-r border-gray-200 transition-all duration-300;
+  @apply bg-white absolute block top-0 bottom-0 z-20 outline-0 overflow-y-auto invisible border-r border-gray-200 transition-all duration-300;
   transform: translate3d(-100%, 0, 0);
 
   &--open {

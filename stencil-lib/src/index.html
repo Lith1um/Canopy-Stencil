@@ -19,32 +19,88 @@
   </head>
   <body style="height: 100%; width: 100%;">
     <cpy-drawer-container>
-      <div slot="menu" style="width: 160px; padding: 10px; text-align: center;">Canopy menu</div>
-      <cpy-toolbar show-menu="true">
-        <h3>Canopy Stencil running locally for development</h3>
-      </cpy-toolbar>
-      <div style="padding: 40px;">
-        <cpy-alert type="error">
-          This is an error
-          <div slot="content">Some additional text about the error</div>
-        </cpy-alert>
-        <cpy-alert type="error" appearance="border">
-          This is an error
-        </cpy-alert>
-        <cpy-alert type="error" container="false">
-          This is an error
-        </cpy-alert>
-        <cpy-icon>home</cpy-icon>
-        <cpy-icon>settings</cpy-icon>
-        Some text
+      <div slot="menu" style="width: 220px; padding: 10px; text-align: center;">Canopy menu</div>
+      <div style="display: flex; flex-direction: column; height: 100%; width: 100%;">
+        <cpy-toolbar>
+          <cpy-button type="icon" appearance="basic" onclick="onMenuClick()">
+            <cpy-icon>menu</cpy-icon>
+          </cpy-button>
+          <h3>Canopy Stencil running locally for dev</h3>
+        </cpy-toolbar>
+        <cpy-page-content style="flex: 1; min-height: 0;">
+          <div style="margin-bottom: 12px;">
+            <h3>Basic Button</h3>
+            <cpy-button appearance="basic">
+              <cpy-icon>login</cpy-icon>Login
+            </cpy-button><!--
+            --><cpy-button appearance="basic" disabled="true">
+              <cpy-icon>login</cpy-icon>Login
+            </cpy-button>
+          </div>
+          <div style="margin-bottom: 12px;">
+            <h3>Primary Button</h3>
+            <cpy-button>
+              <cpy-icon>check_circle</cpy-icon>Complete
+            </cpy-button><!--
+            --><cpy-button disabled="true">
+              <cpy-icon>check_circle</cpy-icon>Complete
+            </cpy-button>
+          </div>
+          <div style="margin-bottom: 12px;">
+            <h3>Secondary Button</h3>
+            <cpy-button appearance="secondary">
+              <cpy-icon>favorite</cpy-icon>Like
+            </cpy-button><!--
+            --><cpy-button appearance="secondary" disabled="true">
+              <cpy-icon>favorite</cpy-icon>Like
+            </cpy-button>
+          </div>
+          <div style="margin-bottom: 12px;">
+            <h3>Tertiary Button</h3>
+            <cpy-button appearance="tertiary">
+              <cpy-icon>star</cpy-icon>Star
+            </cpy-button><!--
+            --><cpy-button appearance="tertiary" disabled="true">
+              <cpy-icon>star</cpy-icon>Star
+            </cpy-button>
+          </div>
+          <div style="margin-bottom: 12px;">
+            <h3>Icon Button</h3>
+            <cpy-button type="icon" appearance="basic">
+              <cpy-icon>bookmark</cpy-icon>
+            </cpy-button><!--
+            --><cpy-button type="icon">
+              <cpy-icon>contactless</cpy-icon>
+            </cpy-button><!--
+            --><cpy-button type="icon" appearance="secondary">
+              <cpy-icon>shopping_bag</cpy-icon>
+            </cpy-button><!--
+            --><cpy-button type="icon" appearance="tertiary">
+              <cpy-icon>delete_outline</cpy-icon>
+            </cpy-button><!--
+            --><cpy-button type="icon" disabled="true">
+              <cpy-icon>offline_bolt</cpy-icon>
+            </cpy-button>
+          </div>
+          <cpy-alert type="error">
+            This is an error
+            <div slot="content">Some additional text about the error</div>
+          </cpy-alert>
+          <cpy-alert type="error" appearance="border">
+            This is an error
+          </cpy-alert>
+          <cpy-alert type="error" container="false">
+            This is an error
+          </cpy-alert>
+          <cpy-icon style="font-size: 32px;">home</cpy-icon><!--
+          --><cpy-icon>settings</cpy-icon>
+          Some text
+        </cpy-page-content>
       </div>
     </cpy-drawer-container>
     <script>
-      const toolbarElement = document.querySelector('cpy-toolbar');
       const drawerElement = document.querySelector('cpy-drawer-container');
-      toolbarElement.addEventListener('toggleMenu', event => {
-        drawerElement.opened = !drawerElement.opened;
-      });
+      const onMenuClick = () => drawerElement.opened = !drawerElement.opened;
     </script>
   </body>
 </html>

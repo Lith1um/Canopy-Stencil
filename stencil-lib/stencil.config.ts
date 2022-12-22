@@ -16,10 +16,12 @@ export const config: Config = {
   plugins: [
     sass(),
     tailwind({
-      tailwindConf: twConfigurationFn
+      tailwindConf: twConfigurationFn,
+      tailwindCssPath: 'src/styles/tailwind.css'
     }),
     tailwindHMR({
-      tailwindConf: twConfigurationFn
+      tailwindConf: twConfigurationFn,
+      tailwindCssPath: 'src/styles/tailwind.css'
     }),
   ],
   outputTargets: [
