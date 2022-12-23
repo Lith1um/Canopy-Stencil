@@ -1,12 +1,16 @@
 .nav-menu-item {
+  --item-opacity: 0;
   @apply flex gap-3 mx-1 mb-1 py-1 px-2 rounded-md text-sm font-medium cursor-pointer;
+  background-color: rgba(var(--cpy-bg-basic-rgb), var(--item-opacity));
 
   &:hover {
-    @apply bg-gray-600 bg-opacity-5;
+    --item-opacity: 0.1;
   }
 
   &--active {
-    @apply bg-blue-600 bg-opacity-5 text-blue-600;
+    --item-opacity: 0.1;
+    background-color: rgba(var(--cpy-bg-primary-rgb), var(--item-opacity));
+    color: var(--cpy-text-primary);
   }
 
   > cpy-icon {
@@ -22,6 +26,7 @@
   }
 
   &__separator {
-    @apply border-b border-gray-200 w-full my-2;
+    @apply border-b w-full my-2;
+    border-color: var(--cpy-bg-basic-border);
   }
 }

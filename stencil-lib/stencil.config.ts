@@ -13,6 +13,7 @@ const twConfigurationFn = (filename: string, config: TailwindConfig): TailwindCo
 
 export const config: Config = {
   namespace: 'canopy-stencil-web',
+  globalStyle: 'src/styles/global.css',
   plugins: [
     sass(),
     tailwind({

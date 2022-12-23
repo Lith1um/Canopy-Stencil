@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Material Icons"), local("MaterialIcons-Regular"), local("MaterialIconsRound-Regular"),
+    url(/webfonts/MaterialIconsRound-Regular.otf) format("opentype");
+}
+
+:root {
+
+  --cpy-bg-basic-rgb: 75, 85, 99;
+  --cpy-bg-basic: rgb(var(--cpy-bg-basic-rgb));
+
+  --cpy-bg-basic-light-rgb: 249, 250, 251;
+  --cpy-bg-basic-light: rgb(var(--cpy-bg-basic-light-rgb));
+
+  --cpy-bg-basic-border-rgb: 229, 231, 235;
+  --cpy-bg-basic-border: rgb(var(--cpy-bg-basic-border-rgb));
+
+  --cpy-bg-primary-rgb: 2, 132, 199;
+  --cpy-bg-primary: rgb(var(--cpy-bg-primary-rgb));
+
+  --cpy-bg-primary-light-rgb: 240, 249, 255;
+  --cpy-bg-primary-light: rgb(var(--cpy-bg-primary-light-rgb));
+  
+  --cpy-bg-primary-hover-rgb: 14, 165, 233;
+  --cpy-bg-primary-hover: rgb(var(--cpy-bg-primary-hover-rgb));
+
+  --cpy-bg-secondary-rgb: 13, 148, 136;
+  --cpy-bg-secondary: rgb(var(--cpy-bg-secondary-rgb));
+
+  --cpy-bg-secondary-light-rgb: 240, 253, 250;
+  --cpy-bg-secondary-light: rgb(var(--cpy-bg-secondary-light-rgb));
+
+  --cpy-bg-secondary-hover-rgb: 20, 184, 166;
+  --cpy-bg-secondary-hover: rgb(var(--cpy-bg-secondary-hover-rgb));
+
+  --cpy-bg-success-rgb: 22, 163, 74;
+  --cpy-bg-success: rgb(var(--cpy-bg-success-rgb));
+
+  --cpy-bg-success-light-rgb: 240, 253, 244;
+  --cpy-bg-success-light: rgb(var(--cpy-bg-success-light-rgb));
+
+  --cpy-bg-error-rgb: 220, 38, 38;
+  --cpy-bg-error: rgb(var(--cpy-bg-error-rgb));
+
+  --cpy-bg-error-light-rgb: 254, 242, 242;
+  --cpy-bg-error-light: rgb(var(--cpy-bg-error-light-rgb));
+
+  --cpy-bg-warn-rgb: 217, 119, 6;
+  --cpy-bg-warn: rgb(var(--cpy-bg-warn-rgb));
+
+  --cpy-bg-warn-light-rgb: 255, 251, 235;
+  --cpy-bg-warn-light: rgb(var(--cpy-bg-warn-light-rgb));
+
+  --cpy-bg-disabled: rgb(229, 231, 235);
+  --cpy-text-disabled: rgb(156, 163, 175);
+
+  --cpy-text-base: rgb(31, 41, 55);
+  --cpy-text-primary: rgb(7, 89, 133);
+  --cpy-text-secondary: rgb(17, 94, 89);
+  --cpy-text-success: rgb(21, 128, 61);
+  --cpy-text-warn: rgb(180, 83, 9);
+  --cpy-text-error: rgb(185, 28, 28);
+
+}
+
+html {
+  color: var(--cpy-text-base);
+}

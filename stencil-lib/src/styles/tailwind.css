@@ -14,6 +14,7 @@
 
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
     box-sizing: border-box;
   }
 
@@ -22,7 +23,7 @@
   }
   
   html {
-    @apply scroll-smooth text-gray-800;
+    @apply scroll-smooth;
     -webkit-font-smoothing: auto;
     font-feature-settings: 'salt';
   }

@@ -17,10 +17,13 @@ export class Alert {
   @Prop()
   container = true;
 
+  @Prop()
+  icon: string;
+
   icons: {[level: string]: string} = {
     'primary': 'check_circle',
-    'basic': 'check_circle',
-    'info': 'info',
+    'secondary': 'check_circle',
+    'basic': 'info',
     'success': 'check_circle',
     'warning': 'warning',
     'error': 'cancel'
@@ -40,7 +43,7 @@ export class Alert {
         {this.appearance === 'border' && <div class="alert-border"></div>}
 
         <div class="alert-icon">
-          <cpy-icon>{this.icons[this.type]}</cpy-icon>
+          <cpy-icon>{this.icon || this.icons[this.type]}</cpy-icon>
         </div>
 
         <div class="alert-content">

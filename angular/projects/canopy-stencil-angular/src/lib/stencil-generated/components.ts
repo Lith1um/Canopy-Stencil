@@ -12,13 +12,13 @@ export declare interface CpyAlert extends Components.CpyAlert {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['appearance', 'container', 'type']
+  inputs: ['appearance', 'container', 'icon', 'type']
 })
 @Component({
   selector: 'cpy-alert',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['appearance', 'container', 'type']
+  inputs: ['appearance', 'container', 'icon', 'type']
 })
 export class CpyAlert {
   protected el: HTMLElement;

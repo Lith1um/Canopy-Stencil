@@ -5,21 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
 
+    <link rel="stylesheet" href="/build/canopy-stencil-web.css"/>
     <script type="module" src="/build/canopy-stencil-web.esm.js"></script>
     <script nomodule src="/build/canopy-stencil-web.js"></script>
-    <style type="text/css">
-      @font-face {
-        font-family: "Material Icons";
-        font-style: normal;
-        font-weight: 400;
-        src: local("Material Icons"), local("MaterialIcons-Regular"), local("MaterialIconsRound-Regular"),
-          url(/webfonts/MaterialIconsRound-Regular.otf) format("opentype");
-      }
-    </style>
   </head>
   <body style="height: 100%; width: 100%;">
     <cpy-drawer-container>
-      <div slot="menu" style="position: relative; width: 220px; padding: 10px;">
+      <div slot="menu" style="position: relative; width: 250px; padding: 10px;">
         <div style="text-align: center; margin-bottom: 16px; font-weight: 600; font-size: 1.5rem;">Canopy.</div>
         <cpy-button style="position: absolute; top: 0; right: 0;" type="icon" appearance="basic" onclick="onCloseMenuClick()">
           <cpy-icon>close</cpy-icon>
@@ -88,6 +80,57 @@
               <cpy-icon>offline_bolt</cpy-icon>
             </cpy-button>
           </div>
+          <cpy-alert type="primary" icon="home">
+            This is a primary
+            <div slot="content">Some additional text about the primary</div>
+          </cpy-alert>
+          <cpy-alert type="primary" icon="home" appearance="border">
+            This is a primary
+          </cpy-alert>
+          <cpy-alert type="primary" icon="home" container="false">
+            This is a primary
+          </cpy-alert>
+          <cpy-alert type="secondary">
+            This is a secondary
+            <div slot="content">Some additional text about the secondary</div>
+          </cpy-alert>
+          <cpy-alert type="secondary" appearance="border">
+            This is a secondary
+            <div slot="content">Some additional text about the secondary</div>
+          </cpy-alert>
+          <cpy-alert type="secondary" container="false">
+            This is a secondary
+          </cpy-alert>
+          <cpy-alert type="basic" icon="settings">
+            This is a basic
+            <div slot="content">Some additional text about the basic</div>
+          </cpy-alert>
+          <cpy-alert type="basic" icon="settings" appearance="border">
+            This is a basic
+          </cpy-alert>
+          <cpy-alert type="basic" icon="settings" container="false">
+            This is a basic
+          </cpy-alert>
+          <cpy-alert type="success">
+            This is a success
+            <div slot="content">Some additional text about the success</div>
+          </cpy-alert>
+          <cpy-alert type="success" appearance="border">
+            This is a success
+          </cpy-alert>
+          <cpy-alert type="success" container="false">
+            This is a success
+          </cpy-alert>
+          <cpy-alert type="warning">
+            This is a warning
+            <div slot="content">Some additional text about the warning</div>
+          </cpy-alert>
+          <cpy-alert type="warning" appearance="border">
+            This is a warning
+          </cpy-alert>
+          <cpy-alert type="warning" container="false">
+            This is a warning
+          </cpy-alert>
           <cpy-alert type="error">
             This is an error
             <div slot="content">Some additional text about the error</div>
@@ -98,9 +141,6 @@
           <cpy-alert type="error" container="false">
             This is an error
           </cpy-alert>
-          <cpy-icon style="font-size: 32px;">home</cpy-icon><!--
-          --><cpy-icon>settings</cpy-icon>
-          Some text
         </cpy-page-content>
       </div>
     </cpy-drawer-container>
@@ -109,11 +149,11 @@
       const navMenuElement = document.querySelector('cpy-nav-menu');
       navMenuElement.items = [
         { title: 'Home', type: 'basic', url: '/', icon: 'home' },
-        { title: 'Settings', type: 'group', url: '', openInNewTab: true, separator: true },
+        { title: 'Settings', icon: 'settings', type: 'group', url: '', openInNewTab: true, separator: true },
         { title: 'Login', type: 'basic', icon: 'login', function: () => console.log('clicked menu item!') },
-        { title: 'Test', type: 'group', url: '', icon: 'check', children: [
-            { title: 'Login', type: 'basic', url: '', icon: 'account_circle' }, 
-            { title: 'Login', type: 'basic', url: '', icon: 'login' }
+        { title: 'Test Group', type: 'group', url: '', icon: 'check', children: [
+            { title: 'Item 1', type: 'basic', url: '', icon: 'account_circle' }, 
+            { title: 'Item 2', type: 'basic', url: '', icon: 'login' }
           ]
         },
       ]

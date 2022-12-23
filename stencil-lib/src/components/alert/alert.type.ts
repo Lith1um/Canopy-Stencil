@@ -1,7 +1,7 @@
 export type AlertType =
   | 'primary'
+  | 'secondary'
   | 'basic'
-  | 'info'
   | 'success'
   | 'warning'
   | 'error';

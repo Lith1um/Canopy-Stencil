@@ -3,17 +3,21 @@
 }
 
 .button {
-  @apply leading-8 font-medium relative rounded px-4 inline-flex items-center justify-center min-w-[64px] border-0 outline-0 select-none appearance-none overflow-visible align-middle bg-transparent;
+  --button-opacity: 0;
+  @apply leading-8 h-8 font-medium relative rounded px-4 inline-flex items-center justify-center min-w-[64px] border-0 outline-0 select-none appearance-none overflow-visible align-middle bg-transparent;
 
   &:disabled {
-    @apply cursor-default bg-gray-200 text-gray-400;
+    @apply cursor-default;
+    color: var(--cpy-text-disabled);
+    background-color: var(--cpy-bg-disabled);
   }
 
   &-appearance--basic {
-    @apply bg-gray-600 bg-opacity-0 text-inherit;
+    @apply text-inherit;
+    background-color: rgba(var(--cpy-bg-basic-rgb), var(--button-opacity));
 
     &:hover:not(:disabled) {
-      @apply bg-opacity-5;
+      --button-opacity: 0.1;
     }
     
     &:disabled {
@@ -22,53 +26,63 @@
   }
 
   &-appearance--primary {
-    @apply bg-blue-600 text-white;
+    --button-opacity: 1;
+    @apply text-white;
+    background-color: rgba(var(--cpy-bg-primary-rgb), var(--button-opacity));
 
     &:hover:not(:disabled) {
-      @apply bg-blue-500;
+      background-color: rgba(var(--cpy-bg-primary-hover-rgb), var(--button-opacity));
     }
   }
 
   &-appearance--secondary {
-    @apply bg-pink-600 text-white;
+    --button-opacity: 1;
+    @apply text-white;
+    background-color: rgba(var(--cpy-bg-secondary-rgb), var(--button-opacity));
 
     &:hover:not(:disabled) {
-      @apply bg-pink-500;
+      background-color: rgba(var(--cpy-bg-secondary-hover-rgb), var(--button-opacity));
     }
   }
 
   &-appearance--tertiary {
-    @apply bg-blue-600 bg-opacity-0 text-blue-700;
+    @apply border-2 px-3;
+    border-color: var(--cpy-text-primary);
+    background-color: rgba(var(--cpy-bg-basic-rgb), var(--button-opacity));
+    color: var(--cpy-text-primary);
 
     &:hover:not(:disabled) {
-      @apply bg-opacity-5;
+      --button-opacity: 0.1;
     }
 
     &:disabled {
-      @apply bg-transparent;
+      @apply bg-transparent border-transparent;
     }
   }
 
   &-type--icon {
-    @apply rounded-full bg-gray-600 bg-opacity-0 p-3 min-w-0 w-12 h-12;
+    --button-opacity: 0;
+    @apply rounded-full p-3 min-w-0 w-12 h-12;
+    background-color: rgba(var(--cpy-bg-basic-rgb), var(--button-opacity));
 
     ::slotted(cpy-icon) {
       @apply m-0 -mt-2 icon-size-6 #{!important};
     }
 
     &.button-appearance--primary {
-      @apply text-blue-600;
+      color: var(--cpy-text-primary);
     }
     &.button-appearance--secondary {
-      @apply text-pink-600;
+      color: var(--cpy-text-secondary);
     }
 
     &:hover:not(:disabled) {
-      @apply bg-opacity-5;
+      --button-opacity: 0.1;
     }
 
     &:disabled {
-      @apply bg-transparent text-gray-400;
+      @apply bg-transparent;
+      color: var(--cpy-text-disabled);
     }
   }
 }

@@ -12,6 +12,7 @@ export namespace Components {
     interface CpyAlert {
         "appearance": AlertAppearance;
         "container": boolean;
+        "icon": string;
         "type": AlertType;
     }
     interface CpyButton {
@@ -110,6 +111,7 @@ declare namespace LocalJSX {
     interface CpyAlert {
         "appearance"?: AlertAppearance;
         "container"?: boolean;
+        "icon"?: string;
         "type"?: AlertType;
     }
     interface CpyButton {
