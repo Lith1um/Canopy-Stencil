@@ -21,9 +21,6 @@ export class Alert {
   icon: string;
 
   icons: {[level: string]: string} = {
-    'primary': 'check_circle',
-    'secondary': 'check_circle',
-    'basic': 'info',
     'success': 'check_circle',
     'warning': 'warning',
     'error': 'cancel'
@@ -37,13 +34,15 @@ export class Alert {
       [`alert-appearance-${this.appearance}`]: !!(this.container && this.appearance),
     };
 
+    const alertIcon = this.icon || this.icons[this.type];
+
     return (
       <div class={classes}>
 
         {this.appearance === 'border' && <div class="alert-border"></div>}
 
         <div class="alert-icon">
-          <cpy-icon>{this.icon || this.icons[this.type]}</cpy-icon>
+          {alertIcon && <cpy-icon>{alertIcon}</cpy-icon>}
         </div>
 
         <div class="alert-content">
