@@ -17,22 +17,22 @@
   --cpy-bg-basic-border-rgb: 229, 231, 235;
   --cpy-bg-basic-border: rgb(var(--cpy-bg-basic-border-rgb));
 
-  --cpy-bg-primary-rgb: 2, 132, 199;
+  --cpy-bg-primary-rgb: 234, 88, 12;
   --cpy-bg-primary: rgb(var(--cpy-bg-primary-rgb));
 
-  --cpy-bg-primary-light-rgb: 240, 249, 255;
+  --cpy-bg-primary-light-rgb: 255, 247, 237;
   --cpy-bg-primary-light: rgb(var(--cpy-bg-primary-light-rgb));
   
-  --cpy-bg-primary-hover-rgb: 14, 165, 233;
+  --cpy-bg-primary-hover-rgb: 249, 115, 22;
   --cpy-bg-primary-hover: rgb(var(--cpy-bg-primary-hover-rgb));
 
-  --cpy-bg-secondary-rgb: 13, 148, 136;
+  --cpy-bg-secondary-rgb: 79, 70, 229;
   --cpy-bg-secondary: rgb(var(--cpy-bg-secondary-rgb));
 
-  --cpy-bg-secondary-light-rgb: 240, 253, 250;
+  --cpy-bg-secondary-light-rgb: 238, 242, 255;
   --cpy-bg-secondary-light: rgb(var(--cpy-bg-secondary-light-rgb));
 
-  --cpy-bg-secondary-hover-rgb: 20, 184, 166;
+  --cpy-bg-secondary-hover-rgb: 99, 102, 241;
   --cpy-bg-secondary-hover: rgb(var(--cpy-bg-secondary-hover-rgb));
 
   --cpy-bg-success-rgb: 22, 163, 74;
@@ -57,8 +57,8 @@
   --cpy-text-disabled: rgb(156, 163, 175);
 
   --cpy-text-base: rgb(31, 41, 55);
-  --cpy-text-primary: rgb(7, 89, 133);
-  --cpy-text-secondary: rgb(17, 94, 89);
+  --cpy-text-primary: rgb(194, 65, 12);
+  --cpy-text-secondary: rgb(67, 56, 202);
   --cpy-text-success: rgb(21, 128, 61);
   --cpy-text-warn: rgb(180, 83, 9);
   --cpy-text-error: rgb(185, 28, 28);
