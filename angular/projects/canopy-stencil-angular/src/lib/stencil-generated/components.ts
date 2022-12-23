@@ -111,6 +111,48 @@ export class CpyIcon {
 }
 
 
+export declare interface CpyNavMenu extends Components.CpyNavMenu {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['items']
+})
+@Component({
+  selector: 'cpy-nav-menu',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['items']
+})
+export class CpyNavMenu {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface CpyNavMenuItem extends Components.CpyNavMenuItem {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['item']
+})
+@Component({
+  selector: 'cpy-nav-menu-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['item']
+})
+export class CpyNavMenuItem {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface CpyPageContent extends Components.CpyPageContent {}
 
 @ProxyCmp({

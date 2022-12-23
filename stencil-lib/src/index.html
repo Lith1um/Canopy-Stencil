@@ -19,7 +19,13 @@
   </head>
   <body style="height: 100%; width: 100%;">
     <cpy-drawer-container>
-      <div slot="menu" style="width: 220px; padding: 10px; text-align: center;">Canopy menu</div>
+      <div slot="menu" style="position: relative; width: 220px; padding: 10px;">
+        <div style="text-align: center; margin-bottom: 16px; font-weight: 600; font-size: 1.5rem;">Canopy.</div>
+        <cpy-button style="position: absolute; top: 0; right: 0;" type="icon" appearance="basic" onclick="onCloseMenuClick()">
+          <cpy-icon>close</cpy-icon>
+        </cpy-button>
+        <cpy-nav-menu></cpy-nav-menu>
+      </div>
       <div style="display: flex; flex-direction: column; height: 100%; width: 100%;">
         <cpy-toolbar>
           <cpy-button type="icon" appearance="basic" onclick="onMenuClick()">
@@ -76,7 +82,7 @@
               <cpy-icon>shopping_bag</cpy-icon>
             </cpy-button><!--
             --><cpy-button type="icon" appearance="tertiary">
-              <cpy-icon>delete_outline</cpy-icon>
+              <cpy-icon>delete</cpy-icon>
             </cpy-button><!--
             --><cpy-button type="icon" disabled="true">
               <cpy-icon>offline_bolt</cpy-icon>
@@ -100,7 +106,19 @@
     </cpy-drawer-container>
     <script>
       const drawerElement = document.querySelector('cpy-drawer-container');
+      const navMenuElement = document.querySelector('cpy-nav-menu');
+      navMenuElement.items = [
+        { title: 'Home', type: 'basic', url: '/', icon: 'home' },
+        { title: 'Settings', type: 'group', url: '', openInNewTab: true, separator: true },
+        { title: 'Login', type: 'basic', icon: 'login', function: () => console.log('clicked menu item!') },
+        { title: 'Test', type: 'group', url: '', icon: 'check', children: [
+            { title: 'Login', type: 'basic', url: '', icon: 'account_circle' }, 
+            { title: 'Login', type: 'basic', url: '', icon: 'login' }
+          ]
+        },
+      ]
       const onMenuClick = () => drawerElement.opened = !drawerElement.opened;
+      const onCloseMenuClick = () => drawerElement.opened = false;
     </script>
   </body>
 </html>

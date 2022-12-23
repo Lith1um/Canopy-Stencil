@@ -7,6 +7,8 @@ export const DIRECTIVES = [
   d.CpyDrawer,
   d.CpyDrawerContainer,
   d.CpyIcon,
+  d.CpyNavMenu,
+  d.CpyNavMenuItem,
   d.CpyPageContent,
   d.CpyToolbar
 ];

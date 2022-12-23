@@ -1,0 +1,27 @@
+.nav-menu-item {
+  @apply flex gap-3 mx-1 mb-1 py-1 px-2 rounded-md text-sm font-medium cursor-pointer;
+
+  &:hover {
+    @apply bg-gray-600 bg-opacity-5;
+  }
+
+  &--active {
+    @apply bg-blue-600 bg-opacity-5 text-blue-600;
+  }
+
+  > cpy-icon {
+    @apply icon-size-6;
+  }
+
+  &__title {
+    @apply truncate leading-8;
+  }
+
+  &__group {
+    @apply ml-4;
+  }
+
+  &__separator {
+    @apply border-b border-gray-200 w-full my-2;
+  }
+}

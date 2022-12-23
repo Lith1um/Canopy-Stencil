@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AlertAppearance, AlertType } from "./components/alert/alert.type";
 import { ButtonAppearance, ButtonType } from "./components/button/button.type";
+import { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
 export namespace Components {
     interface CpyAlert {
         "appearance": AlertAppearance;
@@ -26,6 +27,12 @@ export namespace Components {
         "opened": boolean;
     }
     interface CpyIcon {
+    }
+    interface CpyNavMenu {
+        "items": NavMenuItem[];
+    }
+    interface CpyNavMenuItem {
+        "item": NavMenuItem;
     }
     interface CpyPageContent {
     }
@@ -63,6 +70,18 @@ declare global {
         prototype: HTMLCpyIconElement;
         new (): HTMLCpyIconElement;
     };
+    interface HTMLCpyNavMenuElement extends Components.CpyNavMenu, HTMLStencilElement {
+    }
+    var HTMLCpyNavMenuElement: {
+        prototype: HTMLCpyNavMenuElement;
+        new (): HTMLCpyNavMenuElement;
+    };
+    interface HTMLCpyNavMenuItemElement extends Components.CpyNavMenuItem, HTMLStencilElement {
+    }
+    var HTMLCpyNavMenuItemElement: {
+        prototype: HTMLCpyNavMenuItemElement;
+        new (): HTMLCpyNavMenuItemElement;
+    };
     interface HTMLCpyPageContentElement extends Components.CpyPageContent, HTMLStencilElement {
     }
     var HTMLCpyPageContentElement: {
@@ -81,6 +100,8 @@ declare global {
         "cpy-drawer": HTMLCpyDrawerElement;
         "cpy-drawer-container": HTMLCpyDrawerContainerElement;
         "cpy-icon": HTMLCpyIconElement;
+        "cpy-nav-menu": HTMLCpyNavMenuElement;
+        "cpy-nav-menu-item": HTMLCpyNavMenuItemElement;
         "cpy-page-content": HTMLCpyPageContentElement;
         "cpy-toolbar": HTMLCpyToolbarElement;
     }
@@ -105,6 +126,12 @@ declare namespace LocalJSX {
     }
     interface CpyIcon {
     }
+    interface CpyNavMenu {
+        "items"?: NavMenuItem[];
+    }
+    interface CpyNavMenuItem {
+        "item"?: NavMenuItem;
+    }
     interface CpyPageContent {
     }
     interface CpyToolbar {
@@ -115,6 +142,8 @@ declare namespace LocalJSX {
         "cpy-drawer": CpyDrawer;
         "cpy-drawer-container": CpyDrawerContainer;
         "cpy-icon": CpyIcon;
+        "cpy-nav-menu": CpyNavMenu;
+        "cpy-nav-menu-item": CpyNavMenuItem;
         "cpy-page-content": CpyPageContent;
         "cpy-toolbar": CpyToolbar;
     }
@@ -128,6 +157,8 @@ declare module "@stencil/core" {
             "cpy-drawer": LocalJSX.CpyDrawer & JSXBase.HTMLAttributes<HTMLCpyDrawerElement>;
             "cpy-drawer-container": LocalJSX.CpyDrawerContainer & JSXBase.HTMLAttributes<HTMLCpyDrawerContainerElement>;
             "cpy-icon": LocalJSX.CpyIcon & JSXBase.HTMLAttributes<HTMLCpyIconElement>;
+            "cpy-nav-menu": LocalJSX.CpyNavMenu & JSXBase.HTMLAttributes<HTMLCpyNavMenuElement>;
+            "cpy-nav-menu-item": LocalJSX.CpyNavMenuItem & JSXBase.HTMLAttributes<HTMLCpyNavMenuItemElement>;
             "cpy-page-content": LocalJSX.CpyPageContent & JSXBase.HTMLAttributes<HTMLCpyPageContentElement>;
             "cpy-toolbar": LocalJSX.CpyToolbar & JSXBase.HTMLAttributes<HTMLCpyToolbarElement>;
         }
