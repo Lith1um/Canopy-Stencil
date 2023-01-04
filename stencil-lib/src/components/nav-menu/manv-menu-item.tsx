@@ -16,7 +16,8 @@ export class NavMenuItemComp {
 
     const classes = {
       'nav-menu-item': true,
-      'nav-menu-item--active': this.item.looseMatch ? currentPath.includes(this.item.url) : currentPath === this.item.url
+      'nav-menu-item--active': this.item.looseMatch ? currentPath.includes(this.item.url) : currentPath === this.item.url,
+      'nav-menu-item--group': this.item.type === 'group',
     }
 
     const itemAttrs: any = {};
@@ -36,7 +37,10 @@ export class NavMenuItemComp {
         <a class={classes} {...itemAttrs}>
           {this.item.icon && <cpy-icon>{this.item.icon}</cpy-icon>}
 
-          <div class="nav-menu-item__title">{this.item.title}</div>
+          <div>
+            <div class="nav-menu-item__title">{this.item.title}</div>
+            {this.item.description && <div class="nav-menu-item__description">{this.item.description}</div>}
+          </div>
         </a>
         {this.item.type === 'group' && this.item.children &&
           <div class="nav-menu-item__group">

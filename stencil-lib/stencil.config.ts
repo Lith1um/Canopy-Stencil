@@ -35,8 +35,8 @@ export const config: Config = {
       type: 'dist',
       esmLoaderPath: '../loader',
       copy: [
-        { src: 'assets/material/*', dest: 'styles' },
-        { src: 'assets/material/fonts/*', dest: 'webfonts' }
+        { src: 'assets/material/fonts/*', dest: 'webfonts' },
+        { src: 'assets/inter/fonts/*', dest: 'webfonts' }
       ]
     },
     {
@@ -49,7 +49,8 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null, // disable service workers
       copy: [
-        { src: 'assets/material/fonts/*', dest: 'build/webfonts' }
+        { src: 'assets/material/fonts/*', dest: 'build/webfonts' },
+        { src: 'assets/inter/fonts/*', dest: 'build/webfonts' }
       ]
     },
   ],

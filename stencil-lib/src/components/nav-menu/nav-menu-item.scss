@@ -1,24 +1,39 @@
 .nav-menu-item {
   --item-opacity: 0;
-  @apply flex gap-3 mx-1 mb-1 py-1 px-2 rounded-md text-sm font-medium cursor-pointer;
+  @apply flex gap-4 mb-1 py-2 px-4 rounded-md cursor-pointer text-sm items-center;
   background-color: rgba(var(--cpy-bg-basic-rgb), var(--item-opacity));
 
-  &:hover {
+  &:hover, &--active {
     --item-opacity: 0.1;
   }
 
-  &--active {
-    --item-opacity: 0.1;
-    background-color: rgba(var(--cpy-bg-primary-rgb), var(--item-opacity));
-    color: var(--cpy-text-primary);
+  &--group {
+    @apply cursor-default;
+
+    &:hover {
+      --item-opacity: 0;
+    }
+
+    .nav-menu-item__title {
+      @apply uppercase;
+    }
   }
 
   > cpy-icon {
     @apply icon-size-6;
+    
+    i {
+      @apply align-baseline;
+    }
   }
 
   &__title {
-    @apply truncate leading-8;
+    @apply truncate font-medium;
+  }
+
+  &__description {
+    @apply text-xs;
+    color: var(--cpy-text-light);
   }
 
   &__group {

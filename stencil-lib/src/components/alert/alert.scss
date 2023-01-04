@@ -31,7 +31,7 @@
 
     /* Alert */
     .alert-message {
-      @apply text-gray-500;
+      color: var(--cpy-text-base);
       word-break: break-word;
 
       &:last-child {
@@ -40,10 +40,17 @@
     }
   }
 
+  &.alert-appearance-soft {
+    .alert-icon,
+    .alert-title {
+      color: var(--cpy-dm-text-override) !important;
+    }
+  }
+
   &.alert-appearance-border {
 
     @apply relative overflow-hidden rounded-md shadow-md;
-    background-color: white !important;
+    background-color: var(--cpy-bg-white) !important;
 
     .alert-border {
       @apply absolute left-0 top-0 bottom-0 w-1;
@@ -83,7 +90,7 @@
     }
   }
 
-  /* Info */
+  /* Secondary */
   &.alert-level-secondary {
     background-color: var(--cpy-bg-secondary-light);
 

@@ -1,7 +1,8 @@
 .drawer {
-  @apply bg-white absolute block top-0 bottom-0 z-20 outline-0 overflow-y-auto invisible border-r transition-all duration-300;
+  @apply absolute block top-0 bottom-0 z-20 outline-0 overflow-y-auto invisible border-r transition-all duration-300;
   border-color: var(--cpy-bg-basic-border);
   transform: translate3d(-100%, 0, 0);
+  background-color: var(--cpy-bg-white);
 
   &--open {
     @apply transform-none visible;

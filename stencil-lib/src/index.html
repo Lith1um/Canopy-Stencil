@@ -13,14 +13,15 @@
 
 <body style="height: 100%; width: 100%;">
   <cpy-drawer-container>
-    <div slot="menu" style="position: relative; width: 250px; padding: 10px;">
-      <div style="text-align: center; margin-bottom: 16px; font-weight: 600; font-size: 1.5rem;">Canopy.</div>
-      <cpy-button style="position: absolute; top: 0; right: 0;" type="icon" appearance="basic"
-        onclick="onCloseMenuClick()">
-        <cpy-icon>close</cpy-icon>
-      </cpy-button>
+    <div slot="menu" style="position: relative; width: 310px; padding: 20px;">
+      <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="100" style="margin: 20px auto">
+      <div style="text-align: center; margin-bottom: 16px; font-weight: 600; font-size: 1.2rem;">Canopy</div>
       <cpy-nav-menu></cpy-nav-menu>
     </div>
+    <label slot="menu" style="position: absolute; bottom: 0; width: 100%; text-align: center; margin-bottom: 16px;">
+      <input id="darkmode" type="checkbox"/>
+      Dark Mode
+    </label>
     <div style="display: flex; flex-direction: column; height: 100%; width: 100%;">
       <cpy-toolbar>
         <cpy-button type="icon" appearance="basic" onclick="onMenuClick()">
@@ -77,11 +78,14 @@
             <cpy-icon>shopping_bag</cpy-icon>
           </cpy-button><!--
             --><cpy-button type="icon" appearance="tertiary">
-            <cpy-icon>delete</cpy-icon>
+            <cpy-icon>account_circle</cpy-icon>
           </cpy-button><!--
             --><cpy-button type="icon" disabled="true">
             <cpy-icon>offline_bolt</cpy-icon>
-          </cpy-button>
+          </cpy-button><!--
+          --><cpy-button type="icon" appearance="tertiary" disabled="true">
+          <cpy-icon>delete</cpy-icon>
+        </cpy-button>
         </div>
 
         <h3>Alerts</h3>
@@ -165,12 +169,14 @@
   <script>
     const drawerElement = document.querySelector('cpy-drawer-container');
     const navMenuElement = document.querySelector('cpy-nav-menu');
+    const darkModeElement = document.getElementById('darkmode');
+    darkModeElement.addEventListener('change', () => document.querySelector("html").classList.toggle("dark"));
     navMenuElement.items = [
       { title: 'Home', type: 'basic', url: '/', icon: 'home' },
-      { title: 'Settings', icon: 'settings', type: 'group', url: '', openInNewTab: true, separator: true },
+      { title: 'Settings', icon: 'settings', type: 'basic', url: '', openInNewTab: true, separator: true, description: 'Check out your settings!' },
       { title: 'Login', type: 'basic', icon: 'login', function: () => console.log('clicked menu item!') },
       {
-        title: 'Test Group', type: 'group', url: '', icon: 'check', children: [
+        title: 'Test Group', type: 'group', url: '', description: 'Some description about the group', children: [
           { title: 'Item 1', type: 'basic', url: '', icon: 'account_circle' },
           { title: 'Item 2', type: 'basic', url: '', icon: 'login' }
         ]
@@ -178,6 +184,7 @@
     ]
     const onMenuClick = () => drawerElement.opened = !drawerElement.opened;
     const onCloseMenuClick = () => drawerElement.opened = false;
+    
   </script>
 </body>
 

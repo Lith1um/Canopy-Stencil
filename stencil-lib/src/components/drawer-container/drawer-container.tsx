@@ -16,6 +16,7 @@ export class DrawerContainer {
   @Prop()
   opened: boolean = false;
 
+  // TODO: there's a bug here that prevents menu being open on load
   @Watch('opened')
   recalculateWidth(newVal: boolean, _oldVal: boolean) {
     this.drawerWidth = newVal

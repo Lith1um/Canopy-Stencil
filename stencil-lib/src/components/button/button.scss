@@ -4,7 +4,7 @@
 
 .button {
   --button-opacity: 0;
-  @apply leading-8 h-8 font-medium relative rounded px-4 inline-flex items-center justify-center min-w-[64px] border-0 outline-0 select-none appearance-none overflow-visible align-middle bg-transparent;
+  @apply leading-9 h-9 font-medium relative rounded px-4 inline-flex items-center justify-center min-w-[64px] border-0 outline-0 select-none appearance-none overflow-visible align-middle bg-transparent;
 
   &:disabled {
     @apply cursor-default;
@@ -56,7 +56,8 @@
     }
 
     &:disabled {
-      @apply bg-transparent border-transparent;
+      @apply bg-transparent;
+      border-color: var(--cpy-text-disabled);
     }
   }
 
@@ -66,7 +67,7 @@
     background-color: rgba(var(--cpy-bg-basic-rgb), var(--button-opacity));
 
     ::slotted(cpy-icon) {
-      @apply m-0 -mt-2 icon-size-6 #{!important};
+      @apply m-0 -mt-1 icon-size-6 #{!important};
     }
 
     &.button-appearance--primary {
