@@ -40,13 +40,6 @@
     }
   }
 
-  &.alert-appearance-soft {
-    .alert-icon,
-    .alert-title {
-      color: var(--cpy-dm-text-override) !important;
-    }
-  }
-
   &.alert-appearance-border {
 
     @apply relative overflow-hidden rounded-md shadow-md;
@@ -58,99 +51,82 @@
 
   }
 
+  &.alert-appearance-soft {
+    .alert-icon,
+    .alert-title {
+      color: var(--cpy-dm-text-override);
+    }
+  }
+
   /* Primary */
   &.alert-level-primary {
     background-color: var(--cpy-bg-primary-light);
+    color: var(--cpy-text-primary);
 
     &.alert-appearance-border {
       .alert-border {
         background-color: var(--cpy-bg-primary);
       }
     }
-
-    .alert-icon,
-    .alert-title {
-      color: var(--cpy-text-primary);
-    }
   }
 
   /* Basic */
   &.alert-level-basic {
     background-color: var(--cpy-bg-basic-light);
+    color: var(--cpy-text-base);
 
     &.alert-appearance-border {
       .alert-border {
         background-color: var(--cpy-bg-basic);
       }
     }
-
-    .alert-icon,
-    .alert-title {
-      color: var(--cpy-text-base);
-    }
   }
 
   /* Secondary */
   &.alert-level-secondary {
     background-color: var(--cpy-bg-secondary-light);
+    color: var(--cpy-text-secondary);
 
     &.alert-appearance-border {
       .alert-border {
         background-color: var(--cpy-bg-secondary);
       }
     }
-
-    .alert-icon,
-    .alert-title {
-      color: var(--cpy-text-secondary);
-    }
   }
 
   /* Success */
   &.alert-level-success {
     background-color: var(--cpy-bg-success-light);
+    color: var(--cpy-text-success);
 
     &.alert-appearance-border {
       .alert-border {
         background-color: var(--cpy-bg-success);
       }
     }
-
-    .alert-icon,
-    .alert-title {
-      color: var(--cpy-text-success);
-    }
   }
 
   /* Warning */
   &.alert-level-warning {
     background-color: var(--cpy-bg-warn-light);
+    color: var(--cpy-text-warn);
 
     &.alert-appearance-border {
       .alert-border {
         background-color: var(--cpy-bg-warn);
       }
     }
-
-    .alert-icon,
-    .alert-title {
-      color: var(--cpy-text-warn);
-    }
   }
 
   /* Error */
   &.alert-level-error {
     background-color: var(--cpy-bg-error-light);
+    color: var(--cpy-text-error);
 
     &.alert-appearance-border {
       .alert-border {
         background-color: var(--cpy-bg-error);
       }
-    }
-
-    .alert-icon,
-    .alert-title {
-      color: var(--cpy-text-error);
     }
   }
 }
