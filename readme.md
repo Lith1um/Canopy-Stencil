@@ -40,6 +40,9 @@
 
 This is a starter project for building a standalone Web Component using Stencil.
 
+// TODO: add docs explaining the colour palette configuration
+// TODO: update docs on use
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/lith1um/Canopy-Stencil.svg?style=for-the-badge
