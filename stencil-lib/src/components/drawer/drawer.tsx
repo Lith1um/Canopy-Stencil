@@ -20,7 +20,7 @@ export class Drawer {
 
     return (
       <div class={classes}>
-        <cpy-button class="drawer__close" type="icon" appearance="basic" onClick={() => this.toggleOpened.emit()}>
+        <cpy-button class="drawer__close" icon type="basic" onClick={() => this.toggleOpened.emit()}>
           <cpy-icon>close</cpy-icon>
         </cpy-button>
         <slot></slot>

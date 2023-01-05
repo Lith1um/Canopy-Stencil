@@ -1,3 +1,17 @@
-export type ButtonAppearance = 'basic' | 'primary' | 'secondary' | 'tertiary';
+export type ButtonAppearance =
+  | 'primary'
+  | 'secondary'
+  | 'basic'
+  | 'success'
+  | 'warn'
+  | 'error';
 
-export type ButtonType = 'default' | 'icon';
+export type ButtonStyle =
+  | 'borderless'
+  | 'fill'
+  | 'outline'
+
+export type ButtonSize =
+  | 'default'
+  | 'small'
+  | 'large';

@@ -103,7 +103,26 @@ This covers the basic install, but extended configuration can be setup to overri
 
 ### Colours
 
-I think canopy is already using the best colour palette you could ever want ;) but I understand it may not fit your needs. Through the use of the `:root` selector in css, you can override the following colours in the application (current colours are based on [tailwind](https://tailwindcss.com/docs/customizing-colors)):
+I think canopy is already using the best colour palette you could ever want ;) but I understand it may not fit your needs. Through the use of the `:root` selector in css, you can override almost every colour in the library (current colours are based on [tailwind](https://tailwindcss.com/docs/customizing-colors)). Below is the simplest example of overriding colours (replacing primary colour on light and dark mode):
+
+```css
+  html {
+    --cpy-bg-primary-rgb: 8, 145, 178; /* cyan-600 */
+    --cpy-bg-primary-light-rgb: 236, 254, 255;  /* cyan-50 */
+    --cpy-bg-primary-hover-rgb: 6, 182, 212; /* cyan-500 */
+    
+    --cpy-text-primary: rgb(14, 116, 144); /* cyan-700 */
+  }
+  html.dark {
+    --cpy-bg-primary-light-rgb: 8, 145, 178;  /* cyan-600 */
+        
+    --cpy-text-primary: rgb(6, 182, 212); /* cyan-500 */
+  }
+```
+
+Some colours (mainly background colours) are set as rgb values without the `rgb()` container, since they are often manipulated within components to modify their opacity.
+
+A full list of the configurable colours is below:
 
 ```css
 :root {
@@ -116,6 +135,7 @@ I think canopy is already using the best colour palette you could ever want ;) b
   --cpy-bg-white-rgb: 255, 255, 255;
   --cpy-bg-basic-rgb: 75, 85, 99; /* gray-600 */
   --cpy-bg-basic-light-rgb: 249, 250, 251; /* grey-50 */
+  --cpy-bg-basic-hover-rgb: 107, 114, 128; /* grey-500 */
   --cpy-bg-basic-border-rgb: 229, 231, 235; /* grey-200 */
   --cpy-bg-primary-rgb: 124, 58, 237; /* violet-600 */
   --cpy-bg-primary-light-rgb: 238, 242, 255;  /* violet-50 */
@@ -125,23 +145,26 @@ I think canopy is already using the best colour palette you could ever want ;) b
   --cpy-bg-secondary-hover-rgb: 249, 115, 22; /* orange-500 */
   --cpy-bg-success-rgb: 22, 163, 74; /* green-600 */
   --cpy-bg-success-light-rgb: 240, 253, 244; /* green-50 */
+  --cpy-bg-success-hover-rgb: 34, 197, 94; /* green-500 */
   --cpy-bg-error-rgb: 220, 38, 38; /* red-600 */
   --cpy-bg-error-light-rgb: 254, 242, 242; /* red-50 */
+  --cpy-bg-error-hover-rgb: 239, 68, 68; /* red-500 */
   --cpy-bg-warn-rgb: 217, 119, 6; /* amber-600 */
   --cpy-bg-warn-light-rgb: 255, 251, 235; /* amber-50 */
-  --cpy-bg-disabled: rgb(229, 231, 235); /* gray-200 */
+  --cpy-bg-warn-hover-rgb: 245, 158, 11; /* amber-500 */
+  --cpy-bg-disabled-rgb: 229, 231, 235; /* gray-200 */
+
   --cpy-text-disabled: rgb(156, 163, 175); /* gray-400 */
   --cpy-text-base: rgb(31, 41, 55); /* gray-800 */
   --cpy-text-light: rgb(107, 114, 128); /* gray-500 */
   --cpy-text-primary: rgb(109, 40, 217); /* violet-700 */
   --cpy-text-secondary: rgb(194, 65, 12); /* orange-700 */
+  --cpy-text-basic: rgb(55, 65, 81); /* gray-700 */
   --cpy-text-success: rgb(21, 128, 61); /* green-700 */
   --cpy-text-warn: rgb(180, 83, 9); /* amber-700 */
   --cpy-text-error: rgb(185, 28, 28); /* red-700 */
 }
 ```
-
-Some colours are set as rgb values without the `rgb()` container, since they are often manipulated within components to modify their opacity.
 
 ### Dark Mode
 
@@ -156,8 +179,9 @@ html.dark {
   /* based on tailwind colours */
   --cpy-bg-light-rgb: 15, 23, 42; /* slate-900 */
   --cpy-bg-white-rgb: 30, 41, 59; /* slate-800 */
-  --cpy-bg-basic-rgb: 148, 163, 184; /* slate-400 */
+  --cpy-bg-basic-rgb: 71, 85, 105; /* slate-600 */
   --cpy-bg-basic-light-rgb: 71, 85, 105; /* slate-600 */
+  --cpy-bg-basic-hover-rgb: 100, 116, 139; /* slate-500 */
   --cpy-bg-basic-border-rgb: 71, 85, 105; /* slate-600 */
   --cpy-bg-primary-rgb: 124, 58, 237; /* violet-600 */
   --cpy-bg-primary-light-rgb: 124, 58, 237;  /* violet-600 */
@@ -167,16 +191,21 @@ html.dark {
   --cpy-bg-secondary-hover-rgb: 249, 115, 22; /* orange-500 */
   --cpy-bg-success-rgb: 22, 163, 74; /* green-600 */
   --cpy-bg-success-light-rgb: 22, 163, 74; /* green-600 */
+  --cpy-bg-success-hover-rgb: 34, 197, 94; /* green-500 */
   --cpy-bg-error-rgb: 220, 38, 38; /* red-600 */
   --cpy-bg-error-light-rgb: 220, 38, 38; /* red-600 */
+  --cpy-bg-error-hover-rgb: 239, 68, 68; /* red-500 */
   --cpy-bg-warn-rgb: 217, 119, 6; /* amber-600 */
   --cpy-bg-warn-light-rgb: 217, 119, 6; /* amber-600 */
-  --cpy-bg-disabled: rgb(226, 232, 240); /* slate-200 */
+  --cpy-bg-warn-hover-rgb: 245, 158, 11; /* amber-500 */
+  --cpy-bg-disabled-rgb: 226, 232, 240; /* slate-200 */
+
   --cpy-text-disabled: rgb(148, 163, 184); /* slate-400 */
   --cpy-text-base: rgb(241, 245, 249); /* slate-100 */
   --cpy-text-light: rgb(107, 114, 128); /* gray-500 */
   --cpy-text-primary: rgb(139, 92, 246); /* violet-500 */
   --cpy-text-secondary: rgb(249, 115, 22); /* orange-500 */
+  --cpy-text-basic: rgb(100, 116, 139); /* slate-500 */
   --cpy-text-success: rgb(34, 197, 94); /* green-500 */
   --cpy-text-warn: rgb(245, 158, 11); /* amber-500 */
   --cpy-text-error: rgb(239, 68, 68); /* red-500 */

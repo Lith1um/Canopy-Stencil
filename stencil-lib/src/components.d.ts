@@ -6,8 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AlertAppearance, AlertType } from "./components/alert/alert.type";
-import { ButtonAppearance, ButtonType } from "./components/button/button.type";
+import { ButtonAppearance, ButtonSize, ButtonStyle } from "./components/button/button.type";
 import { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
+import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
 export namespace Components {
     interface CpyAlert {
         "appearance": AlertAppearance;
@@ -16,9 +17,11 @@ export namespace Components {
         "type": AlertType;
     }
     interface CpyButton {
-        "appearance": ButtonAppearance;
+        "appearance": ButtonStyle;
         "disabled": boolean;
-        "type": ButtonType;
+        "icon": boolean;
+        "size": ButtonSize;
+        "type": ButtonAppearance;
     }
     interface CpyDrawer {
         "opened": boolean;
@@ -36,6 +39,10 @@ export namespace Components {
         "item": NavMenuItem;
     }
     interface CpyPageContent {
+    }
+    interface CpySpinner {
+        "size": SpinnerSize;
+        "type": SpinnerAppearance;
     }
     interface CpyToolbar {
     }
@@ -97,6 +104,12 @@ declare global {
         prototype: HTMLCpyPageContentElement;
         new (): HTMLCpyPageContentElement;
     };
+    interface HTMLCpySpinnerElement extends Components.CpySpinner, HTMLStencilElement {
+    }
+    var HTMLCpySpinnerElement: {
+        prototype: HTMLCpySpinnerElement;
+        new (): HTMLCpySpinnerElement;
+    };
     interface HTMLCpyToolbarElement extends Components.CpyToolbar, HTMLStencilElement {
     }
     var HTMLCpyToolbarElement: {
@@ -112,6 +125,7 @@ declare global {
         "cpy-nav-menu": HTMLCpyNavMenuElement;
         "cpy-nav-menu-item": HTMLCpyNavMenuItemElement;
         "cpy-page-content": HTMLCpyPageContentElement;
+        "cpy-spinner": HTMLCpySpinnerElement;
         "cpy-toolbar": HTMLCpyToolbarElement;
     }
 }
@@ -123,9 +137,11 @@ declare namespace LocalJSX {
         "type"?: AlertType;
     }
     interface CpyButton {
-        "appearance"?: ButtonAppearance;
+        "appearance"?: ButtonStyle;
         "disabled"?: boolean;
-        "type"?: ButtonType;
+        "icon"?: boolean;
+        "size"?: ButtonSize;
+        "type"?: ButtonAppearance;
     }
     interface CpyDrawer {
         "onToggleOpened"?: (event: CpyDrawerCustomEvent<void>) => void;
@@ -146,6 +162,10 @@ declare namespace LocalJSX {
     }
     interface CpyPageContent {
     }
+    interface CpySpinner {
+        "size"?: SpinnerSize;
+        "type"?: SpinnerAppearance;
+    }
     interface CpyToolbar {
     }
     interface IntrinsicElements {
@@ -157,6 +177,7 @@ declare namespace LocalJSX {
         "cpy-nav-menu": CpyNavMenu;
         "cpy-nav-menu-item": CpyNavMenuItem;
         "cpy-page-content": CpyPageContent;
+        "cpy-spinner": CpySpinner;
         "cpy-toolbar": CpyToolbar;
     }
 }
@@ -172,6 +193,7 @@ declare module "@stencil/core" {
             "cpy-nav-menu": LocalJSX.CpyNavMenu & JSXBase.HTMLAttributes<HTMLCpyNavMenuElement>;
             "cpy-nav-menu-item": LocalJSX.CpyNavMenuItem & JSXBase.HTMLAttributes<HTMLCpyNavMenuItemElement>;
             "cpy-page-content": LocalJSX.CpyPageContent & JSXBase.HTMLAttributes<HTMLCpyPageContentElement>;
+            "cpy-spinner": LocalJSX.CpySpinner & JSXBase.HTMLAttributes<HTMLCpySpinnerElement>;
             "cpy-toolbar": LocalJSX.CpyToolbar & JSXBase.HTMLAttributes<HTMLCpyToolbarElement>;
         }
     }

@@ -1,6 +1,6 @@
 .nav-menu-item {
   --item-opacity: 0;
-  @apply flex gap-4 mb-1 py-2.5 px-4 rounded-md cursor-pointer items-center;
+  @apply flex gap-4 mb-1 py-2.5 px-4 rounded-md cursor-pointer items-center select-none;
   background-color: rgba(var(--cpy-bg-basic-rgb), var(--item-opacity));
 
   &:hover, &--active {

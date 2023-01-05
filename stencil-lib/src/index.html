@@ -9,6 +9,49 @@
   <link rel="stylesheet" href="/build/canopy-stencil-web.css" />
   <script type="module" src="/build/canopy-stencil-web.esm.js"></script>
   <script nomodule src="/build/canopy-stencil-web.js"></script>
+  <style>
+    html.blue {
+      --cpy-bg-primary-rgb: 8, 145, 178; /* cyan-600 */
+      --cpy-bg-primary-light-rgb: 236, 254, 255;  /* cyan-50 */
+      --cpy-bg-primary-hover-rgb: 6, 182, 212; /* cyan-500 */
+
+      --cpy-bg-secondary-rgb: 219, 39, 119; /* pink-600 */
+      --cpy-bg-secondary-light-rgb: 253, 242, 248; /* pink-50 */
+      --cpy-bg-secondary-hover-rgb: 236, 72, 153; /* pink-500 */
+      
+      --cpy-text-primary: rgb(14, 116, 144); /* cyan-700 */
+      --cpy-text-secondary: rgb(190, 24, 93); /* pink-700 */
+    }
+    html.blue.dark {
+      --cpy-bg-primary-light-rgb: 8, 145, 178;  /* cyan-600 */
+
+      --cpy-bg-secondary-light-rgb: 219, 39, 119; /* pink-600 */
+          
+      --cpy-text-primary: rgb(6, 182, 212); /* cyan-500 */
+      --cpy-text-secondary: rgb(236, 72, 153); /* pink-500 */
+    }
+
+    html.lime {
+      --cpy-bg-primary-rgb: 101, 163, 13; /* lime-600 */
+      --cpy-bg-primary-light-rgb: 247, 254, 231;  /* lime-50 */
+      --cpy-bg-primary-hover-rgb: 132, 204, 22; /* lime-500 */
+
+      --cpy-bg-secondary-rgb: 79, 70, 229; /* indigo-600 */
+      --cpy-bg-secondary-light-rgb: 238, 242, 255; /* indigo-50 */
+      --cpy-bg-secondary-hover-rgb: 99, 102, 241; /* indigo-500 */
+      
+      --cpy-text-primary: rgb(77, 124, 15); /* lime-700 */
+      --cpy-text-secondary: rgb(67, 56, 202); /* indigo-700 */
+    }
+    html.lime.dark {
+      --cpy-bg-primary-light-rgb: 101, 163, 13;  /* lime-600 */
+
+      --cpy-bg-secondary-light-rgb: 79, 70, 229; /* indigo-600 */
+          
+      --cpy-text-primary: rgb(132, 204, 22); /* lime-500 */
+      --cpy-text-secondary: rgb(99, 102, 241); /* indigo-500 */
+    }
+  </style>
 </head>
 
 <body style="height: 100%; width: 100%;">
@@ -18,6 +61,12 @@
       <div style="text-align: center; margin-bottom: 24px;">
         <div style="font-size: 1.2rem;">Canopy</div>
         <div style="font-size: 0.875rem; color: var(--cpy-text-light);">Lets you focus on the next big thing.</div>
+        <br/>
+        <span style="color: var(--cpy-text-primary)">Colour Palette:</span> <select id="palette-picker" style="color: black;">
+          <option value="purple">Purple</option>
+          <option value="blue">Blue</option>
+          <option value="lime">Lime</option>
+        </select>
       </div>
       <cpy-nav-menu></cpy-nav-menu>
       <div style="margin-top: 32px; text-align: center; font-size: 0.875rem; color: var(--cpy-text-light);">
@@ -27,76 +76,243 @@
     </div>
     <div style="display: flex; flex-direction: column; height: 100%; width: 100%;">
       <cpy-toolbar>
-        <cpy-button type="icon" appearance="basic" onclick="onMenuClick()">
-          <cpy-icon>menu</cpy-icon>
+        <cpy-button icon type="basic" onclick="onMenuClick()">
+          <cpy-icon style="color: white">menu</cpy-icon>
         </cpy-button>
         <div style="flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.2rem; font-weight: 500; text-align: center;">
           Canopy Stencil running locally for dev
         </div>
-        <cpy-button id="darkModeButton" type="icon" appearance="basic" onclick="onDarkModeClick()">
+        <cpy-button id="darkModeButton" icon type="basic" onclick="onDarkModeClick()">
         </cpy-button>
       </cpy-toolbar>
       <cpy-page-content style="flex: 1; min-height: 0;">
+
         <div style="margin-bottom: 12px;">
-          <h3>Basic Button</h3>
-          <cpy-button appearance="basic">
-            <cpy-icon>login</cpy-icon>Login
-          </cpy-button><!--
-            --><cpy-button appearance="basic" disabled="true">
-            <cpy-icon>login</cpy-icon>Login
-          </cpy-button>
+          <h3>Spinner</h3>
+          <cpy-spinner></cpy-spinner>
+          <cpy-spinner type="secondary"></cpy-spinner>
+          <cpy-spinner type="basic"></cpy-spinner>
+          <cpy-spinner type="success"></cpy-spinner>
+          <cpy-spinner type="warn"></cpy-spinner>
+          <cpy-spinner type="error"></cpy-spinner>
         </div>
+
         <div style="margin-bottom: 12px;">
-          <h3>Primary Button</h3>
+          <h3>Small Spinner</h3>
+          <cpy-spinner size="small"></cpy-spinner>
+          <cpy-spinner size="small" type="secondary"></cpy-spinner>
+          <cpy-spinner size="small" type="basic"></cpy-spinner>
+          <cpy-spinner size="small" type="success"></cpy-spinner>
+          <cpy-spinner size="small" type="warn"></cpy-spinner>
+          <cpy-spinner size="small" type="error"></cpy-spinner>
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <h3>Large Spinner</h3>
+          <cpy-spinner size="large"></cpy-spinner>
+          <cpy-spinner size="large" type="secondary"></cpy-spinner>
+          <cpy-spinner size="large" type="basic"></cpy-spinner>
+          <cpy-spinner size="large" type="success"></cpy-spinner>
+          <cpy-spinner size="large" type="warn"></cpy-spinner>
+          <cpy-spinner size="large" type="error"></cpy-spinner>
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <h3>Fill</h3>
+          <cpy-button icon>
+            <cpy-icon>check_circle</cpy-icon>
+          </cpy-button>
           <cpy-button>
             <cpy-icon>check_circle</cpy-icon>Complete
-          </cpy-button><!--
-            --><cpy-button disabled="true">
+          </cpy-button>
+          <cpy-button type="secondary">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button type="basic">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button type="success">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button type="warn">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button type="error">
             <cpy-icon>check_circle</cpy-icon>Complete
           </cpy-button>
         </div>
+
         <div style="margin-bottom: 12px;">
-          <h3>Secondary Button</h3>
-          <cpy-button appearance="secondary">
-            <cpy-icon>favorite</cpy-icon>Like
-          </cpy-button><!--
-            --><cpy-button appearance="secondary" disabled="true">
-            <cpy-icon>favorite</cpy-icon>Like
+          <h3>Outline</h3>
+          <cpy-button appearance="outline" icon>
+            <cpy-icon>check_circle</cpy-icon>
+          </cpy-button>
+          <cpy-button appearance="outline">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button appearance="outline" type="secondary">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button appearance="outline" type="basic">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button appearance="outline" type="success">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button appearance="outline" type="warn">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button appearance="outline" type="error">
+            <cpy-icon>check_circle</cpy-icon>Complete
           </cpy-button>
         </div>
+
         <div style="margin-bottom: 12px;">
-          <h3>Tertiary Button</h3>
-          <cpy-button appearance="tertiary">
-            <cpy-icon>star</cpy-icon>Star
-          </cpy-button><!--
-            --><cpy-button appearance="tertiary" disabled="true">
-            <cpy-icon>star</cpy-icon>Star
+          <h3>Borderless</h3>
+          <cpy-button appearance="borderless" icon>
+            <cpy-icon>check_circle</cpy-icon>
+          </cpy-button>
+          <cpy-button appearance="borderless">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button appearance="borderless" type="secondary">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button appearance="borderless" type="basic">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button appearance="borderless" type="success">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button appearance="borderless" type="warn">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button appearance="borderless" type="error">
+            <cpy-icon>check_circle</cpy-icon>Complete
           </cpy-button>
         </div>
+
         <div style="margin-bottom: 12px;">
-          <h3>Icon Button</h3>
-          <cpy-button type="icon" appearance="basic">
-            <cpy-icon>bookmark</cpy-icon>
-          </cpy-button><!--
-            --><cpy-button type="icon">
-            <cpy-icon>contactless</cpy-icon>
-          </cpy-button><!--
-            --><cpy-button type="icon" appearance="secondary">
-            <cpy-icon>shopping_bag</cpy-icon>
-          </cpy-button><!--
-            --><cpy-button type="icon" appearance="tertiary">
-            <cpy-icon>account_circle</cpy-icon>
-          </cpy-button><!--
-            --><cpy-button type="icon" disabled="true">
-            <cpy-icon>offline_bolt</cpy-icon>
-          </cpy-button><!--
-          --><cpy-button type="icon" appearance="tertiary" disabled="true">
-          <cpy-icon>delete</cpy-icon>
-        </cpy-button>
+          <h3>Small</h3>
+          <cpy-button size="small" icon>
+            <cpy-icon>check_circle</cpy-icon>
+          </cpy-button>
+          <cpy-button size="small">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button size="small" type="secondary">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button size="small" type="basic">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button size="small" type="success">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button size="small" type="warn">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button size="small" type="error">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <h3>Large</h3>
+          <cpy-button size="large" icon>
+            <cpy-icon>check_circle</cpy-icon>
+          </cpy-button>
+          <cpy-button size="large">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button size="large" type="secondary">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button size="large" type="basic">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button size="large" type="success">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button size="large" type="warn">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button size="large" type="error">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <h3>Disabled</h3>
+          <cpy-button disabled="true" icon>
+            <cpy-icon>check_circle</cpy-icon>
+          </cpy-button>
+          <cpy-button disabled="true">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button disabled="true" type="secondary">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button disabled="true" type="basic">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button disabled="true" type="success">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button disabled="true" type="warn">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+          <cpy-button disabled="true" type="error">
+            <cpy-icon>check_circle</cpy-icon>Complete
+          </cpy-button>
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <h3>Icon</h3>
+          <cpy-button icon>
+            <cpy-icon>check_circle</cpy-icon>
+          </cpy-button>
+          <cpy-button icon type="secondary">
+            <cpy-icon>check_circle</cpy-icon>
+          </cpy-button>
+          <cpy-button icon type="basic">
+            <cpy-icon>check_circle</cpy-icon>
+          </cpy-button>
+          <cpy-button icon type="success">
+            <cpy-icon>check_circle</cpy-icon>
+          </cpy-button>
+          <cpy-button icon type="warn">
+            <cpy-icon>check_circle</cpy-icon>
+          </cpy-button>
+          <cpy-button icon type="error">
+            <cpy-icon>check_circle</cpy-icon>
+          </cpy-button>
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <h3>Icon Outline</h3>
+          <cpy-button icon appearance="outline">
+            <cpy-icon>check_circle</cpy-icon>
+          </cpy-button>
+          <cpy-button icon appearance="outline" type="secondary">
+            <cpy-icon>check_circle</cpy-icon>
+          </cpy-button>
+          <cpy-button icon appearance="outline" type="basic">
+            <cpy-icon>check_circle</cpy-icon>
+          </cpy-button>
+          <cpy-button icon appearance="outline" type="success">
+            <cpy-icon>check_circle</cpy-icon>
+          </cpy-button>
+          <cpy-button icon appearance="outline" type="warn">
+            <cpy-icon>check_circle</cpy-icon>
+          </cpy-button>
+          <cpy-button icon appearance="outline" type="error">
+            <cpy-icon>check_circle</cpy-icon>
+          </cpy-button>
         </div>
 
         <h3>Alerts</h3>
-        <div style="display: grid; grid-template-columns: auto auto; width:100%; gap: 32px;">
+        <div style="display: grid; grid-template-columns: auto; width:100%; gap: 32px;">
           <div>
             <cpy-alert type="primary" icon="home">
               This is a primary alert
@@ -175,14 +391,22 @@
   </cpy-drawer-container>
   <script defer>
     let darkMode = false;
+    let currentPalette = 'purple';
+    document.querySelector("html").classList.toggle(currentPalette);
     const drawerElement = document.querySelector('cpy-drawer-container');
     const navMenuElement = document.querySelector('cpy-nav-menu');
     const darkModeButton = document.getElementById('darkModeButton');
-    darkModeButton.innerHTML = '<cpy-icon>light_mode</cpy-icon>';
+    const paletteElement = document.getElementById('palette-picker');
+    paletteElement.addEventListener('change', () => {
+      document.querySelector("html").classList.toggle(currentPalette);
+      document.querySelector("html").classList.add(paletteElement.value);
+      currentPalette = paletteElement.value;
+    });
+    darkModeButton.innerHTML = '<cpy-icon style="color: white">light_mode</cpy-icon>';
     navMenuElement.items = [
       { title: 'Home', type: 'basic', url: '/', icon: 'home' },
-      { title: 'Settings', icon: 'settings', type: 'basic', url: '', openInNewTab: true, separator: true, description: 'Check out your settings!' },
-      { title: 'Login', type: 'basic', icon: 'login', function: () => console.log('clicked menu item!') },
+      { title: 'Settings', icon: 'settings', type: 'basic', url: '', openInNewTab: true, description: 'Check out your settings!' },
+      { title: 'Login', type: 'basic', icon: 'login', separator: true, function: () => console.log('clicked menu item!') },
       {
         title: 'Test Group', type: 'group', description: 'Some description about the group', children: [
           { title: 'Item 1', type: 'basic', url: '', icon: 'account_circle' },
@@ -195,10 +419,12 @@
       darkMode = !darkMode;
       document.querySelector("html").classList.toggle("dark");
       darkModeButton.innerHTML = darkMode
-        ? '<cpy-icon>dark_mode</cpy-icon>'
-        : '<cpy-icon>light_mode</cpy-icon>';
+        ? '<cpy-icon style="color: white">dark_mode</cpy-icon>'
+        : '<cpy-icon style="color: white">light_mode</cpy-icon>';
     };
-    
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.querySelector("html").classList.add("dark");
+    }
   </script>
 </body>
 

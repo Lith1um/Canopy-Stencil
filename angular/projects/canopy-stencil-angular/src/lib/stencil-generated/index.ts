@@ -10,5 +10,6 @@ export const DIRECTIVES = [
   d.CpyNavMenu,
   d.CpyNavMenuItem,
   d.CpyPageContent,
+  d.CpySpinner,
   d.CpyToolbar
 ];

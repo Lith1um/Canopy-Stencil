@@ -7,11 +7,13 @@
 
 ## Properties
 
-| Property     | Attribute    | Description | Type                                                | Default     |
-| ------------ | ------------ | ----------- | --------------------------------------------------- | ----------- |
-| `appearance` | `appearance` |             | `"basic" \| "primary" \| "secondary" \| "tertiary"` | `'primary'` |
-| `disabled`   | `disabled`   |             | `boolean`                                           | `false`     |
-| `type`       | `type`       |             | `"default" \| "icon"`                               | `'default'` |
+| Property     | Attribute    | Description | Type                                                                    | Default     |
+| ------------ | ------------ | ----------- | ----------------------------------------------------------------------- | ----------- |
+| `appearance` | `appearance` |             | `"borderless" \| "fill" \| "outline"`                                   | `'fill'`    |
+| `disabled`   | `disabled`   |             | `boolean`                                                               | `false`     |
+| `icon`       | `icon`       |             | `boolean`                                                               | `false`     |
+| `size`       | `size`       |             | `"default" \| "large" \| "small"`                                       | `'default'` |
+| `type`       | `type`       |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"` | `'primary'` |
 
 
 ## Dependencies

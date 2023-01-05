@@ -33,13 +33,13 @@ export declare interface CpyButton extends Components.CpyButton {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['appearance', 'disabled', 'type']
+  inputs: ['appearance', 'disabled', 'icon', 'size', 'type']
 })
 @Component({
   selector: 'cpy-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['appearance', 'disabled', 'type']
+  inputs: ['appearance', 'disabled', 'icon', 'size', 'type']
 })
 export class CpyButton {
   protected el: HTMLElement;
@@ -178,6 +178,27 @@ export declare interface CpyPageContent extends Components.CpyPageContent {}
   template: '<ng-content></ng-content>'
 })
 export class CpyPageContent {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface CpySpinner extends Components.CpySpinner {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['size', 'type']
+})
+@Component({
+  selector: 'cpy-spinner',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['size', 'type']
+})
+export class CpySpinner {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

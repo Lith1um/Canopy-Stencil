@@ -1,0 +1,52 @@
+:host {
+  display: inline-block;
+}
+
+.spinner {
+  @apply rounded-full border-4 h-8 w-8 border-r-transparent;
+  --border-colour: var(--cpy-text-primary);
+  border-color: var(--border-colour);
+  animation: spin 1s linear infinite;
+
+  &-size--small {
+    @apply h-4 w-4;
+  }
+
+  &-size--large {
+    @apply h-16 w-16;
+  }
+  
+  &-type--primary {
+    --border-colour: var(--cpy-text-primary);
+  }
+  
+  &-type--secondary {
+    --border-colour: var(--cpy-text-secondary);
+  }
+
+  &-type--basic {
+    --border-colour: var(--cpy-text-basic);
+  }
+
+  &-type--success {
+    --border-colour: var(--cpy-text-success);
+  }
+
+  &-type--warn {
+    --border-colour: var(--cpy-text-warn);
+  }
+
+  &-type--error {
+    --border-colour: var(--cpy-text-error);
+  }
+
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}

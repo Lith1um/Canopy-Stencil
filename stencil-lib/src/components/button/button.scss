@@ -3,93 +3,202 @@
 }
 
 .button {
-  --button-opacity: 0;
-  @apply leading-9 h-9 font-medium relative rounded px-4 inline-flex items-center justify-center min-w-[64px] border-0 outline-0 select-none appearance-none overflow-visible align-middle bg-transparent;
+  @apply border-2 leading-9 h-9 relative rounded px-3.5 inline-flex items-center justify-center min-w-[64px] outline-0 select-none appearance-none overflow-visible align-middle bg-transparent;
+  --button-opacity: 1;
+  --text-colour: var(--cpy-text-primary);
+  --bg-colour-rgb: var(--cpy-bg-primary-rgb);
+  --border-colour: transparent;
+  color: var(--text-colour);
+  border-color: var(--border-colour);
+  background-color: rgba(var(--bg-colour-rgb), var(--button-opacity));
+  transition: background-color 300ms;
 
   &:disabled {
     @apply cursor-default;
-    color: var(--cpy-text-disabled);
-    background-color: var(--cpy-bg-disabled);
+    --text-colour: var(--cpy-text-disabled) !important;
+    --bg-colour-rgb: var(--cpy-bg-disabled-rgb) !important;
   }
 
-  &-appearance--basic {
-    @apply text-inherit;
-    background-color: rgba(var(--cpy-bg-basic-rgb), var(--button-opacity));
-
-    &:hover:not(:disabled) {
-      --button-opacity: 0.1;
-    }
-    
-    &:disabled {
-      @apply bg-transparent;
-    }
+  &-size--small {
+    @apply leading-7 h-7 text-sm px-2 font-light;
   }
 
-  &-appearance--primary {
-    --button-opacity: 1;
-    @apply text-white;
-    background-color: rgba(var(--cpy-bg-primary-rgb), var(--button-opacity));
-
-    &:hover:not(:disabled) {
-      background-color: rgba(var(--cpy-bg-primary-hover-rgb), var(--button-opacity));
-    }
+  &-size--large {
+    @apply leading-[3rem] h-12 font-medium;
   }
 
-  &-appearance--secondary {
-    --button-opacity: 1;
-    @apply text-white;
-    background-color: rgba(var(--cpy-bg-secondary-rgb), var(--button-opacity));
-
-    &:hover:not(:disabled) {
-      background-color: rgba(var(--cpy-bg-secondary-hover-rgb), var(--button-opacity));
-    }
-  }
-
-  &-appearance--tertiary {
-    @apply border-2 px-3;
-    border-color: var(--cpy-text-primary);
-    background-color: rgba(var(--cpy-bg-basic-rgb), var(--button-opacity));
-    color: var(--cpy-text-primary);
-
-    &:hover:not(:disabled) {
-      --button-opacity: 0.1;
-    }
-
-    &:disabled {
-      @apply bg-transparent;
-      border-color: var(--cpy-text-disabled);
-    }
-  }
-
-  &-type--icon {
-    --button-opacity: 0;
+  &--icon {
     @apply rounded-full p-3 min-w-0 w-12 h-12;
-    background-color: rgba(var(--cpy-bg-basic-rgb), var(--button-opacity));
 
     ::slotted(cpy-icon) {
       @apply m-0 -mt-1 icon-size-6 #{!important};
     }
 
-    &.button-appearance--primary {
-      color: var(--cpy-text-primary);
+    &.button-size--small {
+      @apply p-2 w-10 h-10;
     }
-    &.button-appearance--secondary {
-      color: var(--cpy-text-secondary);
-    }
+  
+    &.button-size--large {
+      @apply p-4 w-14 h-14 text-lg;
 
+      ::slotted(cpy-icon) {
+        @apply icon-size-7 #{!important};
+      }
+    }
+  }
+
+  &-appearance--outline {
+    --border-colour: var(--text-colour);
+    @apply border-2;
+  }
+
+  &-type--primary {
+    --text-colour: white;
+    --bg-colour-rgb: var(--cpy-bg-primary-rgb);
+    
     &:hover:not(:disabled) {
-      --button-opacity: 0.1;
+      --bg-colour-rgb: var(--cpy-bg-primary-hover-rgb);
     }
 
-    &:disabled {
-      @apply bg-transparent;
-      color: var(--cpy-text-disabled);
+    &.button--icon,
+    &.button-appearance--borderless,
+    &.button-appearance--outline {
+      --text-colour: var(--cpy-text-primary);
+      --button-opacity: 0;
+  
+      &:hover:not(:disabled) {
+        --button-opacity: 0.1;
+      }
+      
+      &:disabled {
+        @apply bg-transparent;
+      }
+    }
+  }
+
+  &-type--secondary {
+    --text-colour: white;
+    --bg-colour-rgb: var(--cpy-bg-secondary-rgb);
+    
+    &:hover:not(:disabled) {
+      --bg-colour-rgb: var(--cpy-bg-secondary-hover-rgb);
+    }
+
+    &.button--icon,
+    &.button-appearance--borderless,
+    &.button-appearance--outline {
+      --text-colour: var(--cpy-text-secondary);
+      --button-opacity: 0;
+  
+      &:hover:not(:disabled) {
+        --button-opacity: 0.1;
+      }
+      
+      &:disabled {
+        @apply bg-transparent;
+      }
+    }
+  }
+
+  &-type--basic {
+    --text-colour: white;
+    --bg-colour-rgb: var(--cpy-bg-basic-rgb);
+    
+    &:hover:not(:disabled) {
+      --bg-colour-rgb: var(--cpy-bg-basic-hover-rgb);
+    }
+
+    &.button--icon,
+    &.button-appearance--borderless,
+    &.button-appearance--outline {
+      --text-colour: var(--cpy-text-basic);
+      --button-opacity: 0;
+  
+      &:hover:not(:disabled) {
+        --button-opacity: 0.1;
+      }
+      
+      &:disabled {
+        @apply bg-transparent;
+      }
+    }
+  }
+
+  &-type--success {
+    --text-colour: white;
+    --bg-colour-rgb: var(--cpy-bg-success-rgb);
+    
+    &:hover:not(:disabled) {
+      --bg-colour-rgb: var(--cpy-bg-success-hover-rgb);
+    }
+
+    &.button--icon,
+    &.button-appearance--borderless,
+    &.button-appearance--outline {
+      --text-colour: var(--cpy-text-success);
+      --button-opacity: 0;
+  
+      &:hover:not(:disabled) {
+        --button-opacity: 0.1;
+      }
+      
+      &:disabled {
+        @apply bg-transparent;
+      }
+    }
+  }
+
+  &-type--warn {
+    --text-colour: white;
+    --bg-colour-rgb: var(--cpy-bg-warn-rgb);
+    
+    &:hover:not(:disabled) {
+      --bg-colour-rgb: var(--cpy-bg-warn-hover-rgb);
+    }
+
+    &.button--icon,
+    &.button-appearance--borderless,
+    &.button-appearance--outline {
+      --text-colour: var(--cpy-text-warn);
+      --button-opacity: 0;
+  
+      &:hover:not(:disabled) {
+        --button-opacity: 0.1;
+      }
+      
+      &:disabled {
+        @apply bg-transparent;
+      }
+    }
+  }
+
+  &-type--error {
+    --text-colour: white;
+    --bg-colour-rgb: var(--cpy-bg-error-rgb);
+    
+    &:hover:not(:disabled) {
+      --bg-colour-rgb: var(--cpy-bg-error-hover-rgb);
+    }
+
+    &.button--icon,
+    &.button-appearance--borderless,
+    &.button-appearance--outline {
+      --text-colour: var(--cpy-text-error);
+      --button-opacity: 0;
+  
+      &:hover:not(:disabled) {
+        --button-opacity: 0.1;
+      }
+      
+      &:disabled {
+        @apply bg-transparent;
+      }
     }
   }
 }
 
 ::slotted(cpy-icon) {
-  @apply -mt-0.5;
+  // @apply -mt-0.5;
 }
 
 ::slotted(cpy-icon:first-child) {

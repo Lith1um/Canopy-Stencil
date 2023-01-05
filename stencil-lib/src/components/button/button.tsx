@@ -1,5 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
-import { ButtonAppearance, ButtonType } from './button.type';
+import { ButtonAppearance, ButtonSize, ButtonStyle } from './button.type';
 
 @Component({
   tag: 'cpy-button',
@@ -9,10 +9,16 @@ import { ButtonAppearance, ButtonType } from './button.type';
 export class Button {
 
   @Prop()
-  appearance: ButtonAppearance = 'primary';
+  icon: boolean = false;
 
   @Prop()
-  type: ButtonType = 'default';
+  type: ButtonAppearance = 'primary';
+
+  @Prop()
+  appearance: ButtonStyle = 'fill';
+
+  @Prop()
+  size: ButtonSize = 'default';
 
   @Prop()
   disabled: boolean = false;
@@ -20,8 +26,10 @@ export class Button {
   render() {
     const classes = {
       'button': true,
-      [`button-appearance--${this.appearance}`]: !!this.appearance,
+      'button--icon': this.icon,
       [`button-type--${this.type}`]: !!this.type,
+      [`button-appearance--${this.appearance}`]: !!this.appearance,
+      [`button-size--${this.size}`]: !!this.size,
     };
 
     return (
