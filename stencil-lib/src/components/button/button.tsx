@@ -25,7 +25,7 @@ export class Button {
     };
 
     return (
-      <button class={classes} disabled={this.disabled} >
+      <button class={classes} disabled={this.disabled}>
         <slot></slot>
       </button>
     );

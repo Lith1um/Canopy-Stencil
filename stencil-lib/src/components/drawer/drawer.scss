@@ -1,10 +1,24 @@
 .drawer {
-  @apply absolute block top-0 bottom-0 z-20 outline-0 overflow-y-auto invisible border-r transition-all duration-300;
+  @apply absolute block w-full top-0 bottom-0 z-20 outline-0 overflow-y-auto invisible transition-all duration-300;
   border-color: var(--cpy-bg-basic-border);
   transform: translate3d(-100%, 0, 0);
   background-color: var(--cpy-bg-white);
 
   &--open {
     @apply transform-none visible;
+  }
+
+  &__close {
+    @apply absolute top-0 right-0 z-10;
+  }
+}
+
+@media(min-width: 768px) {
+  .drawer {
+    @apply w-auto min-w-[300px] border-r;
+
+    &__close {
+      @apply hidden;
+    }
   }
 }

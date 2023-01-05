@@ -42,11 +42,10 @@ export class NavMenuItemComp {
             {this.item.description && <div class="nav-menu-item__description">{this.item.description}</div>}
           </div>
         </a>
-        {this.item.type === 'group' && this.item.children &&
-          <div class="nav-menu-item__group">
-            {this.item.children.map(item => 
-              <cpy-nav-menu-item item={item}></cpy-nav-menu-item>)}
-          </div>}
+
+        {this.item.type === 'group' && this.item.children?.map(item => 
+          <cpy-nav-menu-item item={item}></cpy-nav-menu-item>)}
+          
         {this.item.separator && <div class="nav-menu-item__separator"></div>}
       </div>
     );

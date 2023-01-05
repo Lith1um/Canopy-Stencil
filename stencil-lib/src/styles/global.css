@@ -25,7 +25,8 @@
 }
 
 :root {
-  /* overrides the text colour in dark mode for edge cases like white text on coloured background for alerts */
+  /* overrides the text colour in dark mode for edge cases
+     like white text on coloured background for alerts */
   --cpy-dm-text-override: currentColor;
 
   /* based on tailwind colours */
@@ -94,6 +95,8 @@
 }
 
 html.dark {
+  /* overrides the text colour in dark mode for edge cases
+     like white text on coloured background for alerts */
   --cpy-dm-text-override: rgb(255, 255, 255);
 
   --cpy-bg-light-rgb: 15, 23, 42; /* slate-900 */
@@ -126,7 +129,7 @@ html.dark {
 
   --cpy-text-base: rgb(241, 245, 249); /* slate-100 */
   --cpy-text-light: rgb(107, 114, 128); /* gray-500 */
-  --cpy-text-primary: rgb(139, 92, 246); /* voilet-500 */
+  --cpy-text-primary: rgb(139, 92, 246); /* violet-500 */
   --cpy-text-secondary: rgb(249, 115, 22); /* orange-500 */
   --cpy-text-success: rgb(34, 197, 94); /* green-500 */
   --cpy-text-warn: rgb(245, 158, 11); /* amber-500 */
@@ -136,9 +139,6 @@ html.dark {
 html {
   font-family: 'Inter var', sans-serif;
   font-size: 14px;
-  font-feature-settings: "salt";
   color: var(--cpy-text-base);
   background-color: var(--cpy-bg-light);
 }
-
-/* TODO: add breakpoints */

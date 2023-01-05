@@ -50,7 +50,13 @@ export class CpyButton {
 }
 
 
-export declare interface CpyDrawer extends Components.CpyDrawer {}
+export declare interface CpyDrawer extends Components.CpyDrawer {
+  /**
+   *  
+   */
+  toggleOpened: EventEmitter<CustomEvent<void>>;
+
+}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
@@ -67,11 +73,18 @@ export class CpyDrawer {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['toggleOpened']);
   }
 }
 
 
-export declare interface CpyDrawerContainer extends Components.CpyDrawerContainer {}
+export declare interface CpyDrawerContainer extends Components.CpyDrawerContainer {
+  /**
+   *  
+   */
+  toggleDrawer: EventEmitter<CustomEvent<void>>;
+
+}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
@@ -88,6 +101,7 @@ export class CpyDrawerContainer {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['toggleDrawer']);
   }
 }
 

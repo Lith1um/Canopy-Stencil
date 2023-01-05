@@ -1,4 +1,4 @@
-import { Component, Element, h, Prop, Watch } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, h, Listen, Prop, Watch } from '@stencil/core';
 
 @Component({
   tag: 'cpy-drawer-container',
@@ -13,7 +13,7 @@ export class DrawerContainer {
   @Prop()
   mode: string = 'side';
 
-  @Prop()
+  @Prop({ mutable: true })
   opened: boolean = false;
 
   // TODO: there's a bug here that prevents menu being open on load
@@ -22,6 +22,14 @@ export class DrawerContainer {
     this.drawerWidth = newVal
       ? this.element.shadowRoot.querySelector('cpy-drawer').shadowRoot.querySelector('.drawer').clientWidth
       : 0;
+  }
+
+  @Event() toggleDrawer: EventEmitter<void>;
+
+  @Listen('toggleOpened')
+  toggleOpenedHandler(): void {
+    this.opened = !this.opened;
+    this.toggleDrawer.emit();
   }
 
   drawerWidth: number = 0;

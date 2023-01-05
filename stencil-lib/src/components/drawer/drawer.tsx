@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'cpy-drawer',
@@ -10,6 +10,8 @@ export class Drawer {
   @Prop()
   opened: boolean = false;
 
+  @Event() toggleOpened: EventEmitter<void>;
+
   render() {
     const classes = {
       'drawer': true,
@@ -18,6 +20,9 @@ export class Drawer {
 
     return (
       <div class={classes}>
+        <cpy-button class="drawer__close" type="icon" appearance="basic" onClick={() => this.toggleOpened.emit()}>
+          <cpy-icon>close</cpy-icon>
+        </cpy-button>
         <slot></slot>
       </div>
     );

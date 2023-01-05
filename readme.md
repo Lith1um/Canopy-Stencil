@@ -25,8 +25,9 @@
 
   <p align="center">
     A UI library built on <a href="https://stenciljs.com/">Stencil</a>.
-    <br />
-    This is a starter project for building a standalone Web Component using Stencil.
+  </p>
+  <p align="center">
+    Originally built to facilitate building UIs with as minimal effort as possible across multiple frontend technologies.
     <br />
     <br />
     <!-- <a href="https://github.com/lith1um/Canopy-Stencil">View Demo</a> -->
@@ -36,12 +37,208 @@
   </p>
 </div>
 
-# Stencil Component Starter
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#support">Support</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#colours">Colours</a></li>
+        <li><a href="#dark-mode">Dark Mode</a></li>
+      </ul>
+    </li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-This is a starter project for building a standalone Web Component using Stencil.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-// TODO: add docs explaining the colour palette configuration
-// TODO: update docs on use
+![Canopy Stencil Screen Shot](./stencil-homepage.png)
+
+There are many component libraries that exist in the world, but the general opinion I have is that they are too bloated with external dependencies or do not work across multiple frontend frameworks. I've been really interested by web components and the ability they have to work anywhere. Using StencilJS is great as the package size is minimal and it supports building for multiple frameworks, which allows for example Angular developers to use the components in the same way they would use components built natively in Angular.
+
+Here's why I think you should consider using this package:
+* Your time should be focused on creating something amazing. A project that solves a problem and helps others
+* You shouldn't be doing the same tasks over and over like designing new components from scratch
+* Learn one library, then use it again and again no matter the technology you build your app with!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+### Support
+
+Canopy can be used with any frontend technology, however it is built specifically to support the following implementations:
+
+* [![Html][Html]][Html-url]
+* [![Angular][Angular.io]][Angular-url]
+
+There is future work planned to build Canopy for the following technologies:
+
+* [![React][React.js]][React-url]
+* [![Vue][Vue.js]][Vue-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## Getting started
+
+Depending on your apps implementation, you can use the links below to get started with Canopy:
+
+* [Native web components](./stencil-lib/README.md)
+* [Angular components](./angular/README.md)
+
+This covers the basic install, but extended configuration can be setup to override Canopy to your liking.
+
+### Colours
+
+I think canopy is already using the best colour palette you could ever want ;) but I understand it may not fit your needs. Through the use of the `:root` selector in css, you can override the following colours in the application (current colours are based on [tailwind](https://tailwindcss.com/docs/customizing-colors)):
+
+```css
+:root {
+  /* overrides the text colour in dark mode for edge cases
+     like white text on coloured background for alerts */
+  --cpy-dm-text-override: currentColor;
+
+  /* based on tailwind colours */
+  --cpy-bg-light-rgb: 250, 250, 250; /* zinc-50 */
+  --cpy-bg-white-rgb: 255, 255, 255;
+  --cpy-bg-basic-rgb: 75, 85, 99; /* gray-600 */
+  --cpy-bg-basic-light-rgb: 249, 250, 251; /* grey-50 */
+  --cpy-bg-basic-border-rgb: 229, 231, 235; /* grey-200 */
+  --cpy-bg-primary-rgb: 124, 58, 237; /* violet-600 */
+  --cpy-bg-primary-light-rgb: 238, 242, 255;  /* violet-50 */
+  --cpy-bg-primary-hover-rgb: 139, 92, 246; /* violet-500 */
+  --cpy-bg-secondary-rgb: 234, 88, 12; /* orange-600 */
+  --cpy-bg-secondary-light-rgb: 255, 247, 237; /* orange-50 */
+  --cpy-bg-secondary-hover-rgb: 249, 115, 22; /* orange-500 */
+  --cpy-bg-success-rgb: 22, 163, 74; /* green-600 */
+  --cpy-bg-success-light-rgb: 240, 253, 244; /* green-50 */
+  --cpy-bg-error-rgb: 220, 38, 38; /* red-600 */
+  --cpy-bg-error-light-rgb: 254, 242, 242; /* red-50 */
+  --cpy-bg-warn-rgb: 217, 119, 6; /* amber-600 */
+  --cpy-bg-warn-light-rgb: 255, 251, 235; /* amber-50 */
+  --cpy-bg-disabled: rgb(229, 231, 235); /* gray-200 */
+  --cpy-text-disabled: rgb(156, 163, 175); /* gray-400 */
+  --cpy-text-base: rgb(31, 41, 55); /* gray-800 */
+  --cpy-text-light: rgb(107, 114, 128); /* gray-500 */
+  --cpy-text-primary: rgb(109, 40, 217); /* violet-700 */
+  --cpy-text-secondary: rgb(194, 65, 12); /* orange-700 */
+  --cpy-text-success: rgb(21, 128, 61); /* green-700 */
+  --cpy-text-warn: rgb(180, 83, 9); /* amber-700 */
+  --cpy-text-error: rgb(185, 28, 28); /* red-700 */
+}
+```
+
+Some colours are set as rgb values without the `rgb()` container, since they are often manipulated within components to modify their opacity.
+
+### Dark Mode
+
+By default, Canopy looks for a `dark` class on the HTML tag to determine if the colour palette should switch to dark mode, however this is easily configurable for your needs. Similarly to the main colour palette, you can override any dark mode colours:
+
+```css
+html.dark {
+  /* overrides the text colour in dark mode for edge cases
+     like white text on coloured background for alerts */
+  --cpy-dm-text-override: rgb(255, 255, 255);
+
+  /* based on tailwind colours */
+  --cpy-bg-light-rgb: 15, 23, 42; /* slate-900 */
+  --cpy-bg-white-rgb: 30, 41, 59; /* slate-800 */
+  --cpy-bg-basic-rgb: 148, 163, 184; /* slate-400 */
+  --cpy-bg-basic-light-rgb: 71, 85, 105; /* slate-600 */
+  --cpy-bg-basic-border-rgb: 71, 85, 105; /* slate-600 */
+  --cpy-bg-primary-rgb: 124, 58, 237; /* violet-600 */
+  --cpy-bg-primary-light-rgb: 124, 58, 237;  /* violet-600 */
+  --cpy-bg-primary-hover-rgb: 139, 92, 246; /* violet-500 */
+  --cpy-bg-secondary-rgb: 234, 88, 12; /* orange-600 */
+  --cpy-bg-secondary-light-rgb: 234, 88, 12; /* orange-600 */
+  --cpy-bg-secondary-hover-rgb: 249, 115, 22; /* orange-500 */
+  --cpy-bg-success-rgb: 22, 163, 74; /* green-600 */
+  --cpy-bg-success-light-rgb: 22, 163, 74; /* green-600 */
+  --cpy-bg-error-rgb: 220, 38, 38; /* red-600 */
+  --cpy-bg-error-light-rgb: 220, 38, 38; /* red-600 */
+  --cpy-bg-warn-rgb: 217, 119, 6; /* amber-600 */
+  --cpy-bg-warn-light-rgb: 217, 119, 6; /* amber-600 */
+  --cpy-bg-disabled: rgb(226, 232, 240); /* slate-200 */
+  --cpy-text-disabled: rgb(148, 163, 184); /* slate-400 */
+  --cpy-text-base: rgb(241, 245, 249); /* slate-100 */
+  --cpy-text-light: rgb(107, 114, 128); /* gray-500 */
+  --cpy-text-primary: rgb(139, 92, 246); /* violet-500 */
+  --cpy-text-secondary: rgb(249, 115, 22); /* orange-500 */
+  --cpy-text-success: rgb(34, 197, 94); /* green-500 */
+  --cpy-text-warn: rgb(245, 158, 11); /* amber-500 */
+  --cpy-text-error: rgb(239, 68, 68); /* red-500 */
+}
+```
+
+If you want to use a different method to checking for a dark class on the HTML tag, you can include your own css to set the colour variables. For example, if you want to use dark mode when the user has requested it in their browser settings, replace:
+
+```css
+html.dark {
+  ...
+}
+```
+
+with: 
+
+```css
+@media (prefers-color-scheme: dark) {
+  ...
+}
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ROADMAP -->
+## Roadmap
+
+- [ ] Components
+  - [ ] Modal/Dialog
+  - [ ] Tooltip
+  - [ ] Form inputs
+  - [ ] Code block
+  - [ ] Links
+- [ ] Better mobile support
+
+See the [open issues](https://github.com/lith1um/Canopy-Stencil/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -57,3 +254,11 @@ This is a starter project for building a standalone Web Component using Stencil.
 [license-url]: https://github.com/lith1um/Canopy-Stencil/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/alex-rayner
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+[Vue-url]: https://vuejs.org/
+[Html]: https://img.shields.io/badge/HTML5-DD4A25?style=for-the-badge&logo=html5&logoColor=white
+[Html-url]: https://developer.mozilla.org/en-US/docs/Web/HTML
+[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
+[Angular-url]: https://angular.io/

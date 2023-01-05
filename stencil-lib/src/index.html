@@ -13,21 +13,28 @@
 
 <body style="height: 100%; width: 100%;">
   <cpy-drawer-container>
-    <div slot="menu" style="position: relative; width: 310px; padding: 20px;">
-      <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="100" style="margin: 20px auto">
-      <div style="text-align: center; margin-bottom: 16px; font-weight: 600; font-size: 1.2rem;">Canopy</div>
+    <div slot="menu" style="position: relative; padding: 20px;">
+      <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="90" style="margin: 40px auto 20px auto;">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <div style="font-size: 1.2rem;">Canopy</div>
+        <div style="font-size: 0.875rem; color: var(--cpy-text-light);">Lets you focus on the next big thing.</div>
+      </div>
       <cpy-nav-menu></cpy-nav-menu>
+      <div style="margin-top: 32px; text-align: center; font-size: 0.875rem; color: var(--cpy-text-light);">
+        <p>Alex Rayner ©2022</p>
+        <a style="text-decoration: underline; color: var(--cpy-text-primary);" target="_blank" href="https://github.com/Lith1um/Canopy-Stencil">Github</a>
+      </div>
     </div>
-    <label slot="menu" style="position: absolute; bottom: 0; width: 100%; text-align: center; margin-bottom: 16px;">
-      <input id="darkmode" type="checkbox"/>
-      Dark Mode
-    </label>
     <div style="display: flex; flex-direction: column; height: 100%; width: 100%;">
       <cpy-toolbar>
         <cpy-button type="icon" appearance="basic" onclick="onMenuClick()">
           <cpy-icon>menu</cpy-icon>
         </cpy-button>
-        <h3>Canopy Stencil running locally for dev</h3>
+        <div style="flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.2rem; font-weight: 500; text-align: center;">
+          Canopy Stencil running locally for dev
+        </div>
+        <cpy-button id="darkModeButton" type="icon" appearance="basic" onclick="onDarkModeClick()">
+        </cpy-button>
       </cpy-toolbar>
       <cpy-page-content style="flex: 1; min-height: 0;">
         <div style="margin-bottom: 12px;">
@@ -166,24 +173,31 @@
       </cpy-page-content>
     </div>
   </cpy-drawer-container>
-  <script>
+  <script defer>
+    let darkMode = false;
     const drawerElement = document.querySelector('cpy-drawer-container');
     const navMenuElement = document.querySelector('cpy-nav-menu');
-    const darkModeElement = document.getElementById('darkmode');
-    darkModeElement.addEventListener('change', () => document.querySelector("html").classList.toggle("dark"));
+    const darkModeButton = document.getElementById('darkModeButton');
+    darkModeButton.innerHTML = '<cpy-icon>light_mode</cpy-icon>';
     navMenuElement.items = [
       { title: 'Home', type: 'basic', url: '/', icon: 'home' },
       { title: 'Settings', icon: 'settings', type: 'basic', url: '', openInNewTab: true, separator: true, description: 'Check out your settings!' },
       { title: 'Login', type: 'basic', icon: 'login', function: () => console.log('clicked menu item!') },
       {
-        title: 'Test Group', type: 'group', url: '', description: 'Some description about the group', children: [
+        title: 'Test Group', type: 'group', description: 'Some description about the group', children: [
           { title: 'Item 1', type: 'basic', url: '', icon: 'account_circle' },
           { title: 'Item 2', type: 'basic', url: '', icon: 'login' }
         ]
       },
-    ]
+    ];
     const onMenuClick = () => drawerElement.opened = !drawerElement.opened;
-    const onCloseMenuClick = () => drawerElement.opened = false;
+    const onDarkModeClick = () => {
+      darkMode = !darkMode;
+      document.querySelector("html").classList.toggle("dark");
+      darkModeButton.innerHTML = darkMode
+        ? '<cpy-icon>dark_mode</cpy-icon>'
+        : '<cpy-icon>light_mode</cpy-icon>';
+    };
     
   </script>
 </body>

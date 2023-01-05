@@ -8,6 +8,9 @@
   <h3 align="center">Canopy - Angular</h3>
 
   <p align="center">
+    A UI library built on <a href="https://stenciljs.com/">Stencil</a>.
+  </p>
+  <p align="center">
     An angular implementation of <a href="https://github.com/lith1um/Canopy-Stencil">Canopy</a> - a set of UI Web Components built with stencil.
     <br />
     <br />
@@ -54,7 +57,7 @@ To get Canopy up and running in Angular, you'll need to install the relevant pac
       ...
     ],
     "styles": [
-      "node_modules/canopy-stencil-web/dist/canopy-stencil-web/styles/material-icons.css",
+      "node_modules/canopy-stencil-web/dist/canopy-stencil-web/canopy-stencil-web.css",
       ...
     ],
     ...

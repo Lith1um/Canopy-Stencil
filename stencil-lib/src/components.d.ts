@@ -40,6 +40,14 @@ export namespace Components {
     interface CpyToolbar {
     }
 }
+export interface CpyDrawerCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyDrawerElement;
+}
+export interface CpyDrawerContainerCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyDrawerContainerElement;
+}
 declare global {
     interface HTMLCpyAlertElement extends Components.CpyAlert, HTMLStencilElement {
     }
@@ -120,10 +128,12 @@ declare namespace LocalJSX {
         "type"?: ButtonType;
     }
     interface CpyDrawer {
+        "onToggleOpened"?: (event: CpyDrawerCustomEvent<void>) => void;
         "opened"?: boolean;
     }
     interface CpyDrawerContainer {
         "mode"?: string;
+        "onToggleDrawer"?: (event: CpyDrawerContainerCustomEvent<void>) => void;
         "opened"?: boolean;
     }
     interface CpyIcon {

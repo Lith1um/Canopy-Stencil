@@ -9,6 +9,9 @@
 
   <p align="center">
     A UI library built on <a href="https://stenciljs.com/">Stencil</a>.
+  </p>
+  <p align="center">
+    Originally built to facilitate building UIs with as minimal effort as possible across multiple frontend technologies.
     <br />
     <br />
     <!-- <a href="https://github.com/lith1um/Canopy-Stencil">View Demo</a> -->
@@ -29,18 +32,13 @@ To get Canopy up and running in your application, you have 2 options:
     - Add a script tag in the head of your index.html to load the package
       ```html
         <script type="module" src="node_modules/canopy-stencil-web/dist/canopy-stencil-web/canopy-stencil-web.esm.js"></script>
-        <link rel="stylesheet" href="node_modules/canopy-stencil-web/dist/canopy-stencil-web/styles/material-icons.css">
+        <link rel="stylesheet" href="node_modules/canopy-stencil-web/dist/canopy-stencil-web/canopy-stencil-web.css"/>
       ```
     - You can now use the components anywhere in your template, JSX, html etc
   2. Use via CDN with unpkg
       - Add a script tag in the head of your index.html to load the package
         ```html
           <script type="module" src="https://unpkg.com/canopy-stencil-web@latest/dist/canopy-stencil-web/canopy-stencil-web.esm.js"></script>
-          <style type="text/css">
-            @font-face {
-              font-family: "Material Icons";
-              src: url(https://unpkg.com/canopy-stencil-web@latest/dist/canopy-stencil-web/webfonts/MaterialIconsRound-Regular.otf) format("opentype");
-            }
-          </style>
+          <link rel="stylesheet" href="https://unpkg.com/canopy-stencil-web@latest/dist/canopy-stencil-web/canopy-stencil-web.css"/>
         ```
       - You can now use the components anywhere in your template, JSX, html etc
