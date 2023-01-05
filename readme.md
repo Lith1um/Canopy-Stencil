@@ -96,8 +96,8 @@ There is future work planned to build Canopy for the following technologies:
 
 Depending on your apps implementation, you can use the links below to get started with Canopy:
 
-* [Native web components](./stencil-lib/README.md)
-* [Angular components](./angular/README.md)
+* [Native web components](https://github.com/Lith1um/Canopy-Stencil/tree/main/stencil-lib)
+* [Angular components](https://github.com/Lith1um/Canopy-Stencil/tree/main/angular)
 
 This covers the basic install, but extended configuration can be setup to override Canopy to your liking.
 
