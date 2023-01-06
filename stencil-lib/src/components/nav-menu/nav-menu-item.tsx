@@ -16,7 +16,7 @@ export class NavMenuItemComp {
 
     const classes = {
       'nav-menu-item': true,
-      'nav-menu-item--active': this.item.looseMatch ? currentPath.includes(this.item.url) : currentPath === this.item.url,
+      'nav-menu-item--active': this.item.active || this.item.looseMatch ? currentPath.includes(this.item.url) : currentPath === this.item.url,
       'nav-menu-item--group': this.item.type === 'group',
     }
 

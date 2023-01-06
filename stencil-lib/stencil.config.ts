@@ -49,6 +49,7 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null, // disable service workers
       copy: [
+        { src: 'docs/*', dest: 'docs' },
         { src: 'assets/material/fonts/*', dest: 'build/webfonts' },
         { src: 'assets/inter/fonts/*', dest: 'build/webfonts' }
       ]

@@ -8,6 +8,7 @@ export interface NavMenuItem {
   description?: string;
   type: NavMenuItemType;
   url: string;
+  active?: boolean;
   looseMatch?: boolean;
   openInNewTab?: boolean;
   function?: any;
