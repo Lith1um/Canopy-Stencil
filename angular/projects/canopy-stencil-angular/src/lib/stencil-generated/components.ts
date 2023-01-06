@@ -224,3 +224,24 @@ export class CpyToolbar {
     this.el = r.nativeElement;
   }
 }
+
+
+export declare interface CpyTooltip extends Components.CpyTooltip {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['position', 'text']
+})
+@Component({
+  selector: 'cpy-tooltip',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['position', 'text']
+})
+export class CpyTooltip {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}

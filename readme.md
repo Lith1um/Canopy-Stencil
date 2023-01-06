@@ -122,7 +122,7 @@ I think canopy is already using the best colour palette you could ever want ;) b
 
 Some colours (mainly background colours) are set as rgb values without the `rgb()` container, since they are often manipulated within components to modify their opacity.
 
-A full list of the configurable colours is below:
+A full list of the configurable colours is below (along with their defaulted values):
 
 ```css
 :root {
@@ -163,6 +163,9 @@ A full list of the configurable colours is below:
   --cpy-text-success: rgb(21, 128, 61); /* green-700 */
   --cpy-text-warn: rgb(180, 83, 9); /* amber-700 */
   --cpy-text-error: rgb(185, 28, 28); /* red-700 */
+  
+  --cpy-tooltip-bg: var(--cpy-bg-dark);
+  --cpy-tooltip-text: var(--cpy-bg-white);
 }
 ```
 
@@ -209,6 +212,7 @@ html.dark {
   --cpy-text-success: rgb(34, 197, 94); /* green-500 */
   --cpy-text-warn: rgb(245, 158, 11); /* amber-500 */
   --cpy-text-error: rgb(239, 68, 68); /* red-500 */
+  ...
 }
 ```
 

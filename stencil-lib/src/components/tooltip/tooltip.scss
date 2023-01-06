@@ -1,0 +1,30 @@
+.tooltip {
+  --tooltip-bg: var(--cpy-tooltip-bg, var(--cpy-bg-dark));
+  --tooltip-text: var(--cpy-tooltip-text, var(--cpy-bg-white));
+
+  @apply inline-flex items-center justify-center relative;
+
+  .text {
+    @apply rounded-[4px] opacity-0 absolute text-center text-sm invisible w-max max-w-xs z-10;
+    background-color: var(--tooltip-bg);
+    color: var(--tooltip-text);
+    transition: opacity 0.3s ease-in-out 0.15s;
+
+    &--only {
+      @apply py-1 px-2;
+    }
+  }
+
+  &--arrow {
+    @apply absolute w-2 h-2 rotate-45;
+    background-color: var(--tooltip-bg);
+    width: 0.5rem;
+  }
+
+  &:hover {
+    .text {
+      opacity: 1;
+      visibility: visible;
+    }
+  } 
+}

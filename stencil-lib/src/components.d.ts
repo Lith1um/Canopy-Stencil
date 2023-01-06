@@ -46,6 +46,10 @@ export namespace Components {
     }
     interface CpyToolbar {
     }
+    interface CpyTooltip {
+        "position": 'bottom' | 'left' | 'right' | 'top';
+        "text": string;
+    }
 }
 export interface CpyDrawerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -116,6 +120,12 @@ declare global {
         prototype: HTMLCpyToolbarElement;
         new (): HTMLCpyToolbarElement;
     };
+    interface HTMLCpyTooltipElement extends Components.CpyTooltip, HTMLStencilElement {
+    }
+    var HTMLCpyTooltipElement: {
+        prototype: HTMLCpyTooltipElement;
+        new (): HTMLCpyTooltipElement;
+    };
     interface HTMLElementTagNameMap {
         "cpy-alert": HTMLCpyAlertElement;
         "cpy-button": HTMLCpyButtonElement;
@@ -127,6 +137,7 @@ declare global {
         "cpy-page-content": HTMLCpyPageContentElement;
         "cpy-spinner": HTMLCpySpinnerElement;
         "cpy-toolbar": HTMLCpyToolbarElement;
+        "cpy-tooltip": HTMLCpyTooltipElement;
     }
 }
 declare namespace LocalJSX {
@@ -168,6 +179,10 @@ declare namespace LocalJSX {
     }
     interface CpyToolbar {
     }
+    interface CpyTooltip {
+        "position"?: 'bottom' | 'left' | 'right' | 'top';
+        "text"?: string;
+    }
     interface IntrinsicElements {
         "cpy-alert": CpyAlert;
         "cpy-button": CpyButton;
@@ -179,6 +194,7 @@ declare namespace LocalJSX {
         "cpy-page-content": CpyPageContent;
         "cpy-spinner": CpySpinner;
         "cpy-toolbar": CpyToolbar;
+        "cpy-tooltip": CpyTooltip;
     }
 }
 export { LocalJSX as JSX };
@@ -195,6 +211,7 @@ declare module "@stencil/core" {
             "cpy-page-content": LocalJSX.CpyPageContent & JSXBase.HTMLAttributes<HTMLCpyPageContentElement>;
             "cpy-spinner": LocalJSX.CpySpinner & JSXBase.HTMLAttributes<HTMLCpySpinnerElement>;
             "cpy-toolbar": LocalJSX.CpyToolbar & JSXBase.HTMLAttributes<HTMLCpyToolbarElement>;
+            "cpy-tooltip": LocalJSX.CpyTooltip & JSXBase.HTMLAttributes<HTMLCpyTooltipElement>;
         }
     }
 }

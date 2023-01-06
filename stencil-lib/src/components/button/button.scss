@@ -197,10 +197,6 @@
   }
 }
 
-::slotted(cpy-icon) {
-  // @apply -mt-0.5;
-}
-
 ::slotted(cpy-icon:first-child) {
   @apply mr-1.5;
 }
