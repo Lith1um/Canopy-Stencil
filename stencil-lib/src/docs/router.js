@@ -1,16 +1,23 @@
 const drawer = document.querySelector('cpy-drawer-container');
 const navMenuElement = document.querySelector('cpy-nav-menu');
+
+const closeMenuOnMobileNav = () => {
+  if (!window.matchMedia('(min-width: 640px)').matches) {
+    drawer.opened = false;
+  }
+}
+
 const menuItems = navMenuElement.items = [
   { title: 'Home', type: 'basic', url: '/', icon: 'home' },
   {
     title: 'UI Components', type: 'group', description: 'Building blocks of websites', children: [
-      { title: 'Tooltip', type: 'basic', url: '/tooltip', icon: 'chat_bubble', function: () => drawer.opened = false },
-      { title: 'Popup', type: 'basic', url: '/popup', icon: 'menu', function: () => drawer.opened = false },
-      { title: 'Spinner', type: 'basic', url: '/spinner', icon: 'refresh', function: () => drawer.opened = false },
-      { title: 'Button', type: 'basic', url: '/button', icon: 'smart_button', function: () => drawer.opened = false },
-      { title: 'Alert', type: 'basic', url: '/alert', icon: 'warning', function: () => drawer.opened = false },
-      { title: 'Avatar', type: 'basic', url: '/avatar', icon: 'account_circle', function: () => drawer.opened = false },
-      { title: 'Table', type: 'basic', url: '/table', icon: 'table', function: () => drawer.opened = false },
+      { title: 'Tooltip', type: 'basic', url: '/tooltip', icon: 'chat_bubble', function: closeMenuOnMobileNav },
+      { title: 'Popup', type: 'basic', url: '/popup', icon: 'menu', function: closeMenuOnMobileNav },
+      { title: 'Spinner', type: 'basic', url: '/spinner', icon: 'refresh', function: closeMenuOnMobileNav },
+      { title: 'Button', type: 'basic', url: '/button', icon: 'smart_button', function: closeMenuOnMobileNav },
+      { title: 'Alert', type: 'basic', url: '/alert', icon: 'warning', function: closeMenuOnMobileNav },
+      { title: 'Avatar', type: 'basic', url: '/avatar', icon: 'account_circle', function: closeMenuOnMobileNav },
+      { title: 'Table', type: 'basic', url: '/table', icon: 'table', function: closeMenuOnMobileNav },
     ]
   },
 ];

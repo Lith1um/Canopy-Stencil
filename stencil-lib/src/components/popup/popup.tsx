@@ -1,6 +1,6 @@
 import { Component, h, Prop } from '@stencil/core';
 
-import { computePosition, flip } from '@floating-ui/dom';
+import { computePosition, flip, shift } from '@floating-ui/dom';
 
 @Component({
   tag: 'cpy-popup',
@@ -19,7 +19,7 @@ export class Popup {
   recalculatePosition(): void {
     computePosition(this.wrapperElem, this.popupElem, {
       placement: this.position,
-      middleware: [flip()],
+      middleware: [flip(), shift({ crossAxis: true })],
     }).then(({x, y}) => {
       Object.assign(this.popupElem.style, {
         left: `${x}px`,
