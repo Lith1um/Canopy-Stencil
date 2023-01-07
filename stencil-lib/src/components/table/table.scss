@@ -1,0 +1,22 @@
+:host {
+  @apply relative block rounded-xl overflow-auto border;
+  background-color: var(--cpy-bg-white);
+  border-color: var(--cpy-bg-basic-border);
+}
+
+.table-container {
+  @apply shadow-sm pb-8 pt-6;
+}
+
+.table {
+  @apply table-auto border-collapse w-full;
+
+  th, td {
+    @apply border-b px-8 py-3 text-left;
+    border-color: var(--cpy-bg-basic-border);
+  }
+
+  th {
+    @apply capitalize font-medium pt-0;
+  }
+}

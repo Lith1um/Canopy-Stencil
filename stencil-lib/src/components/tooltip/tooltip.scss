@@ -2,7 +2,7 @@
   --tooltip-bg: var(--cpy-tooltip-bg, var(--cpy-bg-dark));
   --tooltip-text: var(--cpy-tooltip-text, var(--cpy-bg-white));
 
-  @apply inline-flex items-center justify-center relative;
+  @apply select-none inline-flex items-center justify-center relative;
 
   .text {
     @apply rounded-[4px] opacity-0 absolute text-center text-sm invisible w-max max-w-xs z-50;

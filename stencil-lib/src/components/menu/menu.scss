@@ -3,14 +3,14 @@
 }
 
 .menu {
-  @apply inline-flex items-center justify-center relative;
+  @apply inline-flex items-center justify-center relative shadow-md;
 
   &--click-container {
     @apply cursor-pointer;
   }
 
   &--dropdown {
-    @apply rounded-[4px] opacity-0 absolute invisible w-max z-50;
+    @apply rounded-[0.25rem] opacity-0 absolute invisible w-max z-50;
     background-color: var(--cpy-bg-white);
     color: var(--cpy-text-base);
     transition: opacity 0.3s ease-in-out;

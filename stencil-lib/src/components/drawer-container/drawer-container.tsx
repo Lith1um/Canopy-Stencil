@@ -9,19 +9,19 @@ export class DrawerContainer {
 
   @Element() element: HTMLElement;
 
-  // TODO: add support for different modes
-  @Prop()
-  mode: string = 'side';
-
   @Prop({ mutable: true })
   opened: boolean = false;
 
-  // TODO: there's a bug here that prevents menu being open on load
   @Watch('opened')
-  recalculateWidth(newVal: boolean, _oldVal: boolean) {
-    this.drawerWidth = newVal
+  recalculateContentOffset(newVal: boolean) {
+    if (this.isMobile || !this.contentElem) {
+      return;
+    }
+
+    const drawerWidth = newVal
       ? this.element.shadowRoot.querySelector('cpy-drawer').shadowRoot.querySelector('.drawer').clientWidth
       : 0;
+    this.contentElem.style.marginLeft = `${drawerWidth}px`;
   }
 
   @Event() toggleDrawer: EventEmitter<void>;
@@ -32,12 +32,35 @@ export class DrawerContainer {
     this.toggleDrawer.emit();
   }
 
-  drawerWidth: number = 0;
+  contentElem: HTMLElement;
+  isMobile: boolean;
+  firstRender: boolean = true;
+
+  mediaChange = (e: MediaQueryListEvent | MediaQueryList) => {
+    // desktop mode
+    this.isMobile = !e.matches;
+    if (this.isMobile) {
+      this.contentElem.style.marginLeft = '0px';
+    } else {
+      this.recalculateContentOffset(this.opened);
+    }
+  };
+
+  componentWillLoad(): void {
+    window.matchMedia('(min-width: 640px)').onchange = this.mediaChange;
+  }
+
+  componentDidRender(): void {
+    // handle initial render case
+    if (this.firstRender) {
+      this.mediaChange(window.matchMedia('(min-width: 640px)'));
+      this.firstRender = false;
+    }
+  }
 
   render() {
     const classes = {
-      'drawer-container': true,
-      [`drawer-container--${this.mode}`]: !!this.mode,
+      'drawer-container': true
     };
 
     return (
@@ -45,7 +68,9 @@ export class DrawerContainer {
         <cpy-drawer opened={this.opened}>
           <slot name="menu"></slot>
         </cpy-drawer>
-        <div class="drawer-container__content" style={{'margin-left': `${this.drawerWidth}px`}}>
+        <div
+          class="drawer-container__content"
+          ref={(el) => this.contentElem = el as HTMLElement}>
           <slot></slot>
         </div>
       </div>

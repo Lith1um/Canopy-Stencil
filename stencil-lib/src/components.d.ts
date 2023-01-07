@@ -34,7 +34,6 @@ export namespace Components {
         "opened": boolean;
     }
     interface CpyDrawerContainer {
-        "mode": string;
         "opened": boolean;
     }
     interface CpyIcon {
@@ -60,6 +59,9 @@ export namespace Components {
     interface CpySpinner {
         "size": SpinnerSize;
         "type": SpinnerAppearance;
+    }
+    interface CpyTable {
+        "data": { [key: string]: string | number | boolean | null | undefined }[];
     }
     interface CpyToolbar {
     }
@@ -155,6 +157,12 @@ declare global {
         prototype: HTMLCpySpinnerElement;
         new (): HTMLCpySpinnerElement;
     };
+    interface HTMLCpyTableElement extends Components.CpyTable, HTMLStencilElement {
+    }
+    var HTMLCpyTableElement: {
+        prototype: HTMLCpyTableElement;
+        new (): HTMLCpyTableElement;
+    };
     interface HTMLCpyToolbarElement extends Components.CpyToolbar, HTMLStencilElement {
     }
     var HTMLCpyToolbarElement: {
@@ -181,6 +189,7 @@ declare global {
         "cpy-recursive-menu": HTMLCpyRecursiveMenuElement;
         "cpy-recursive-menu-item": HTMLCpyRecursiveMenuItemElement;
         "cpy-spinner": HTMLCpySpinnerElement;
+        "cpy-table": HTMLCpyTableElement;
         "cpy-toolbar": HTMLCpyToolbarElement;
         "cpy-tooltip": HTMLCpyTooltipElement;
     }
@@ -210,7 +219,6 @@ declare namespace LocalJSX {
         "opened"?: boolean;
     }
     interface CpyDrawerContainer {
-        "mode"?: string;
         "onToggleDrawer"?: (event: CpyDrawerContainerCustomEvent<void>) => void;
         "opened"?: boolean;
     }
@@ -238,6 +246,9 @@ declare namespace LocalJSX {
         "size"?: SpinnerSize;
         "type"?: SpinnerAppearance;
     }
+    interface CpyTable {
+        "data"?: { [key: string]: string | number | boolean | null | undefined }[];
+    }
     interface CpyToolbar {
     }
     interface CpyTooltip {
@@ -258,6 +269,7 @@ declare namespace LocalJSX {
         "cpy-recursive-menu": CpyRecursiveMenu;
         "cpy-recursive-menu-item": CpyRecursiveMenuItem;
         "cpy-spinner": CpySpinner;
+        "cpy-table": CpyTable;
         "cpy-toolbar": CpyToolbar;
         "cpy-tooltip": CpyTooltip;
     }
@@ -279,6 +291,7 @@ declare module "@stencil/core" {
             "cpy-recursive-menu": LocalJSX.CpyRecursiveMenu & JSXBase.HTMLAttributes<HTMLCpyRecursiveMenuElement>;
             "cpy-recursive-menu-item": LocalJSX.CpyRecursiveMenuItem & JSXBase.HTMLAttributes<HTMLCpyRecursiveMenuItemElement>;
             "cpy-spinner": LocalJSX.CpySpinner & JSXBase.HTMLAttributes<HTMLCpySpinnerElement>;
+            "cpy-table": LocalJSX.CpyTable & JSXBase.HTMLAttributes<HTMLCpyTableElement>;
             "cpy-toolbar": LocalJSX.CpyToolbar & JSXBase.HTMLAttributes<HTMLCpyToolbarElement>;
             "cpy-tooltip": LocalJSX.CpyTooltip & JSXBase.HTMLAttributes<HTMLCpyTooltipElement>;
         }

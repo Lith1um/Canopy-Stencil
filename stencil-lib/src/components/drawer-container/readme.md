@@ -7,10 +7,9 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type      | Default  |
-| -------- | --------- | ----------- | --------- | -------- |
-| `mode`   | `mode`    |             | `string`  | `'side'` |
-| `opened` | `opened`  |             | `boolean` | `false`  |
+| Property | Attribute | Description | Type      | Default |
+| -------- | --------- | ----------- | --------- | ------- |
+| `opened` | `opened`  |             | `boolean` | `false` |
 
 
 ## Events
@@ -30,6 +29,8 @@
 ```mermaid
 graph TD;
   cpy-drawer-container --> cpy-drawer
+  cpy-drawer --> cpy-button
+  cpy-drawer --> cpy-icon
   style cpy-drawer-container fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -1,6 +1,6 @@
 {
   "name": "canopy-stencil-web",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -29,7 +29,6 @@
     "@stencil/angular-output-target": "^0.4.0",
     "@stencil/core": "^2.13.0",
     "@stencil/sass": "^2.0.1",
-    "@tailwindcss/typography": "^0.5.8",
     "@types/jest": "^27.0.3",
     "jest": "^27.4.5",
     "jest-cli": "^27.4.5",

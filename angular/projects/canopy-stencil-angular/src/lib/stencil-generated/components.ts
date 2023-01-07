@@ -109,13 +109,13 @@ export declare interface CpyDrawerContainer extends Components.CpyDrawerContaine
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['mode', 'opened']
+  inputs: ['opened']
 })
 @Component({
   selector: 'cpy-drawer-container',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['mode', 'opened']
+  inputs: ['opened']
 })
 export class CpyDrawerContainer {
   protected el: HTMLElement;
@@ -283,6 +283,27 @@ export declare interface CpySpinner extends Components.CpySpinner {}
   inputs: ['size', 'type']
 })
 export class CpySpinner {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface CpyTable extends Components.CpyTable {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['data']
+})
+@Component({
+  selector: 'cpy-table',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['data']
+})
+export class CpyTable {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

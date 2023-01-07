@@ -25,7 +25,7 @@ export class Avatar {
 
     return (
       <div class={classes}>
-        <img src={this.src}/>
+        <img src={this.src} alt="avatar"/>
       </div>
     );
   }

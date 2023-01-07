@@ -16,6 +16,19 @@
 | `type`       | `type`       |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"` | `'primary'` |
 
 
+## Dependencies
+
+### Used by
+
+ - [cpy-drawer](../drawer)
+
+### Graph
+```mermaid
+graph TD;
+  cpy-drawer --> cpy-button
+  style cpy-button fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

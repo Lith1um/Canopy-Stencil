@@ -9,6 +9,7 @@ const menuItems = navMenuElement.items = [
       { title: 'Button', type: 'basic', url: '/button', icon: 'smart_button' },
       { title: 'Alert', type: 'basic', url: '/alert', icon: 'warning' },
       { title: 'Avatar', type: 'basic', url: '/avatar', icon: 'account_circle' },
+      { title: 'Table', type: 'basic', url: '/table', icon: 'table' },
     ]
   },
 ];
