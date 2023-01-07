@@ -84,6 +84,21 @@
         </div>
         <cpy-button id="darkModeButton" icon type="basic" onclick="onDarkModeClick()">
         </cpy-button>
+        <cpy-menu>
+          <cpy-avatar src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
+
+          <div slot="content" style="width: 250px; padding: 12px; text-align: left;">
+            <div style="display: flex; gap: 4px; align-items: center;">
+              <div style="flex: 1;">
+                <p style="font-weight: 500">Alex Rayner</p>
+                <p>Developer</p>
+              </div>
+              <div>
+                <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="40">
+              </div>
+            </div>
+          </div>
+        </cpy-menu>
       </cpy-toolbar>
 
       <cpy-page-content style="flex: 1; min-height: 0;">
@@ -115,6 +130,22 @@
     };
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       document.querySelector("html").classList.add("dark");
+    }
+
+    // Methods to handle when a page loads
+    function menuPageInit() {
+      document.getElementById('menu-test').items = [
+        { title: 'Home', url: '/', icon: 'home', separator: true },
+        {
+          title: 'UI Components', description: 'Building blocks of websites', children: [
+            { title: 'Tooltip', url: '/tooltip', icon: 'chat_bubble' },
+            { title: 'Menu', url: '/menu', icon: 'menu' },
+            { title: 'Spinner', url: '/spinner', icon: 'refresh' },
+            { title: 'Button', url: '/button', icon: 'smart_button' },
+            { title: 'Alert', url: '/alert', icon: 'warning' },
+          ]
+        }
+      ];
     }
   </script>
 </body>

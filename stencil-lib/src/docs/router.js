@@ -4,9 +4,11 @@ const menuItems = navMenuElement.items = [
   {
     title: 'UI Components', type: 'group', description: 'Building blocks of websites', children: [
       { title: 'Tooltip', type: 'basic', url: '/tooltip', icon: 'chat_bubble' },
+      { title: 'Menu', type: 'basic', url: '/menu', icon: 'menu' },
       { title: 'Spinner', type: 'basic', url: '/spinner', icon: 'refresh' },
       { title: 'Button', type: 'basic', url: '/button', icon: 'smart_button' },
       { title: 'Alert', type: 'basic', url: '/alert', icon: 'warning' },
+      { title: 'Avatar', type: 'basic', url: '/avatar', icon: 'account_circle' },
     ]
   },
 ];
@@ -23,6 +25,10 @@ function loadPage(page) {
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
       document.getElementById("router-outlet").innerHTML = xhr.responseText;
+      // run any related methods
+      if (window[`${page}PageInit`]) {
+        window[`${page}PageInit`]();
+      }
     }
   }
 

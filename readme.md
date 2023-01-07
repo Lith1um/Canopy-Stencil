@@ -237,9 +237,11 @@ with:
 <!-- ROADMAP -->
 ## Roadmap
 
+- [ ] Better documentation of existing components
 - [ ] Components
   - [ ] Modal/Dialog
   - [ ] Tooltip
+  - [ ] Menu
   - [ ] Form inputs
   - [ ] Code block
   - [ ] Links

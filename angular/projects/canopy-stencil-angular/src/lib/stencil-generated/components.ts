@@ -29,6 +29,27 @@ export class CpyAlert {
 }
 
 
+export declare interface CpyAvatar extends Components.CpyAvatar {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['border', 'size', 'src', 'type']
+})
+@Component({
+  selector: 'cpy-avatar',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['border', 'size', 'src', 'type']
+})
+export class CpyAvatar {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface CpyButton extends Components.CpyButton {}
 
 @ProxyCmp({
@@ -125,6 +146,27 @@ export class CpyIcon {
 }
 
 
+export declare interface CpyMenu extends Components.CpyMenu {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['activeOn', 'position']
+})
+@Component({
+  selector: 'cpy-menu',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['activeOn', 'position']
+})
+export class CpyMenu {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface CpyNavMenu extends Components.CpyNavMenu {}
 
 @ProxyCmp({
@@ -178,6 +220,48 @@ export declare interface CpyPageContent extends Components.CpyPageContent {}
   template: '<ng-content></ng-content>'
 })
 export class CpyPageContent {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface CpyRecursiveMenu extends Components.CpyRecursiveMenu {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['items']
+})
+@Component({
+  selector: 'cpy-recursive-menu',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['items']
+})
+export class CpyRecursiveMenu {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface CpyRecursiveMenuItem extends Components.CpyRecursiveMenuItem {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['item']
+})
+@Component({
+  selector: 'cpy-recursive-menu-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['item']
+})
+export class CpyRecursiveMenuItem {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

@@ -1,0 +1,34 @@
+:host {
+  @apply inline-flex;
+}
+
+.menu {
+  @apply inline-flex items-center justify-center relative;
+
+  &--click-container {
+    @apply cursor-pointer;
+  }
+
+  &--dropdown {
+    @apply rounded-[4px] opacity-0 absolute invisible w-max z-10;
+    background-color: var(--cpy-bg-white);
+    color: var(--cpy-text-base);
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &--allow-hover {
+    &:hover {
+      .menu--dropdown {
+        opacity: 1;
+        visibility: visible;
+      }
+    } 
+  }
+
+  &--show {
+    .menu--dropdown {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

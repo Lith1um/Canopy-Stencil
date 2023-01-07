@@ -200,3 +200,7 @@
 ::slotted(cpy-icon:first-child) {
   @apply mr-1.5;
 }
+
+::slotted(cpy-icon:last-child) {
+  @apply ml-1.5;
+}

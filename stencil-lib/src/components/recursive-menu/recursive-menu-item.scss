@@ -1,0 +1,31 @@
+.recursive-menu-item {
+  --item-opacity: 0;
+  @apply flex gap-4 py-2.5 px-4 cursor-pointer items-center select-none min-h-[3rem];
+  background-color: rgba(var(--cpy-bg-basic-rgb), var(--item-opacity));
+
+  &:hover, &--active {
+    --item-opacity: 0.1;
+  }
+
+  > cpy-icon {
+    @apply icon-size-6;
+    
+    i {
+      @apply align-baseline;
+    }
+  }
+
+  &__title {
+    @apply text-sm truncate font-medium;
+  }
+
+  &__description {
+    @apply text-xs;
+    color: var(--cpy-text-light);
+  }
+
+  &__separator {
+    @apply border-b w-full my-1;
+    border-color: var(--cpy-bg-basic-border);
+  }
+}

@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AlertAppearance, AlertType } from "./components/alert/alert.type";
 import { ButtonAppearance, ButtonSize, ButtonStyle } from "./components/button/button.type";
 import { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
+import { RecursiveMenuItem } from "./components/recursive-menu/recursive-menu.interface";
 import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
 export namespace Components {
     interface CpyAlert {
@@ -15,6 +16,12 @@ export namespace Components {
         "container": boolean;
         "icon": string;
         "type": AlertType;
+    }
+    interface CpyAvatar {
+        "border": boolean;
+        "size": 'small' | 'default' | 'large';
+        "src": string;
+        "type": 'rounded' | 'square';
     }
     interface CpyButton {
         "appearance": ButtonStyle;
@@ -32,6 +39,10 @@ export namespace Components {
     }
     interface CpyIcon {
     }
+    interface CpyMenu {
+        "activeOn": 'hover' | 'click';
+        "position": 'bottom-start' | 'top-start' | 'left-start' | 'right-start';
+    }
     interface CpyNavMenu {
         "items": NavMenuItem[];
     }
@@ -39,6 +50,12 @@ export namespace Components {
         "item": NavMenuItem;
     }
     interface CpyPageContent {
+    }
+    interface CpyRecursiveMenu {
+        "items": RecursiveMenuItem[];
+    }
+    interface CpyRecursiveMenuItem {
+        "item": RecursiveMenuItem;
     }
     interface CpySpinner {
         "size": SpinnerSize;
@@ -66,6 +83,12 @@ declare global {
         prototype: HTMLCpyAlertElement;
         new (): HTMLCpyAlertElement;
     };
+    interface HTMLCpyAvatarElement extends Components.CpyAvatar, HTMLStencilElement {
+    }
+    var HTMLCpyAvatarElement: {
+        prototype: HTMLCpyAvatarElement;
+        new (): HTMLCpyAvatarElement;
+    };
     interface HTMLCpyButtonElement extends Components.CpyButton, HTMLStencilElement {
     }
     var HTMLCpyButtonElement: {
@@ -90,6 +113,12 @@ declare global {
         prototype: HTMLCpyIconElement;
         new (): HTMLCpyIconElement;
     };
+    interface HTMLCpyMenuElement extends Components.CpyMenu, HTMLStencilElement {
+    }
+    var HTMLCpyMenuElement: {
+        prototype: HTMLCpyMenuElement;
+        new (): HTMLCpyMenuElement;
+    };
     interface HTMLCpyNavMenuElement extends Components.CpyNavMenu, HTMLStencilElement {
     }
     var HTMLCpyNavMenuElement: {
@@ -107,6 +136,18 @@ declare global {
     var HTMLCpyPageContentElement: {
         prototype: HTMLCpyPageContentElement;
         new (): HTMLCpyPageContentElement;
+    };
+    interface HTMLCpyRecursiveMenuElement extends Components.CpyRecursiveMenu, HTMLStencilElement {
+    }
+    var HTMLCpyRecursiveMenuElement: {
+        prototype: HTMLCpyRecursiveMenuElement;
+        new (): HTMLCpyRecursiveMenuElement;
+    };
+    interface HTMLCpyRecursiveMenuItemElement extends Components.CpyRecursiveMenuItem, HTMLStencilElement {
+    }
+    var HTMLCpyRecursiveMenuItemElement: {
+        prototype: HTMLCpyRecursiveMenuItemElement;
+        new (): HTMLCpyRecursiveMenuItemElement;
     };
     interface HTMLCpySpinnerElement extends Components.CpySpinner, HTMLStencilElement {
     }
@@ -128,13 +169,17 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "cpy-alert": HTMLCpyAlertElement;
+        "cpy-avatar": HTMLCpyAvatarElement;
         "cpy-button": HTMLCpyButtonElement;
         "cpy-drawer": HTMLCpyDrawerElement;
         "cpy-drawer-container": HTMLCpyDrawerContainerElement;
         "cpy-icon": HTMLCpyIconElement;
+        "cpy-menu": HTMLCpyMenuElement;
         "cpy-nav-menu": HTMLCpyNavMenuElement;
         "cpy-nav-menu-item": HTMLCpyNavMenuItemElement;
         "cpy-page-content": HTMLCpyPageContentElement;
+        "cpy-recursive-menu": HTMLCpyRecursiveMenuElement;
+        "cpy-recursive-menu-item": HTMLCpyRecursiveMenuItemElement;
         "cpy-spinner": HTMLCpySpinnerElement;
         "cpy-toolbar": HTMLCpyToolbarElement;
         "cpy-tooltip": HTMLCpyTooltipElement;
@@ -146,6 +191,12 @@ declare namespace LocalJSX {
         "container"?: boolean;
         "icon"?: string;
         "type"?: AlertType;
+    }
+    interface CpyAvatar {
+        "border"?: boolean;
+        "size"?: 'small' | 'default' | 'large';
+        "src"?: string;
+        "type"?: 'rounded' | 'square';
     }
     interface CpyButton {
         "appearance"?: ButtonStyle;
@@ -165,6 +216,10 @@ declare namespace LocalJSX {
     }
     interface CpyIcon {
     }
+    interface CpyMenu {
+        "activeOn"?: 'hover' | 'click';
+        "position"?: 'bottom-start' | 'top-start' | 'left-start' | 'right-start';
+    }
     interface CpyNavMenu {
         "items"?: NavMenuItem[];
     }
@@ -172,6 +227,12 @@ declare namespace LocalJSX {
         "item"?: NavMenuItem;
     }
     interface CpyPageContent {
+    }
+    interface CpyRecursiveMenu {
+        "items"?: RecursiveMenuItem[];
+    }
+    interface CpyRecursiveMenuItem {
+        "item"?: RecursiveMenuItem;
     }
     interface CpySpinner {
         "size"?: SpinnerSize;
@@ -185,13 +246,17 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "cpy-alert": CpyAlert;
+        "cpy-avatar": CpyAvatar;
         "cpy-button": CpyButton;
         "cpy-drawer": CpyDrawer;
         "cpy-drawer-container": CpyDrawerContainer;
         "cpy-icon": CpyIcon;
+        "cpy-menu": CpyMenu;
         "cpy-nav-menu": CpyNavMenu;
         "cpy-nav-menu-item": CpyNavMenuItem;
         "cpy-page-content": CpyPageContent;
+        "cpy-recursive-menu": CpyRecursiveMenu;
+        "cpy-recursive-menu-item": CpyRecursiveMenuItem;
         "cpy-spinner": CpySpinner;
         "cpy-toolbar": CpyToolbar;
         "cpy-tooltip": CpyTooltip;
@@ -202,13 +267,17 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "cpy-alert": LocalJSX.CpyAlert & JSXBase.HTMLAttributes<HTMLCpyAlertElement>;
+            "cpy-avatar": LocalJSX.CpyAvatar & JSXBase.HTMLAttributes<HTMLCpyAvatarElement>;
             "cpy-button": LocalJSX.CpyButton & JSXBase.HTMLAttributes<HTMLCpyButtonElement>;
             "cpy-drawer": LocalJSX.CpyDrawer & JSXBase.HTMLAttributes<HTMLCpyDrawerElement>;
             "cpy-drawer-container": LocalJSX.CpyDrawerContainer & JSXBase.HTMLAttributes<HTMLCpyDrawerContainerElement>;
             "cpy-icon": LocalJSX.CpyIcon & JSXBase.HTMLAttributes<HTMLCpyIconElement>;
+            "cpy-menu": LocalJSX.CpyMenu & JSXBase.HTMLAttributes<HTMLCpyMenuElement>;
             "cpy-nav-menu": LocalJSX.CpyNavMenu & JSXBase.HTMLAttributes<HTMLCpyNavMenuElement>;
             "cpy-nav-menu-item": LocalJSX.CpyNavMenuItem & JSXBase.HTMLAttributes<HTMLCpyNavMenuItemElement>;
             "cpy-page-content": LocalJSX.CpyPageContent & JSXBase.HTMLAttributes<HTMLCpyPageContentElement>;
+            "cpy-recursive-menu": LocalJSX.CpyRecursiveMenu & JSXBase.HTMLAttributes<HTMLCpyRecursiveMenuElement>;
+            "cpy-recursive-menu-item": LocalJSX.CpyRecursiveMenuItem & JSXBase.HTMLAttributes<HTMLCpyRecursiveMenuItemElement>;
             "cpy-spinner": LocalJSX.CpySpinner & JSXBase.HTMLAttributes<HTMLCpySpinnerElement>;
             "cpy-toolbar": LocalJSX.CpyToolbar & JSXBase.HTMLAttributes<HTMLCpyToolbarElement>;
             "cpy-tooltip": LocalJSX.CpyTooltip & JSXBase.HTMLAttributes<HTMLCpyTooltipElement>;
