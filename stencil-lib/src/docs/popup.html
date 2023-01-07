@@ -1,29 +1,44 @@
-<div style="margin-bottom: 12px;">
-  <h3>Popups</h3>
-  <div style="display: flex; align-items: center; width: 100%; padding: 12px;">
-    <div style="flex: 1;">
-      <cpy-popup active-on="hover">
-        <cpy-button>
-          <cpy-icon>menu</cpy-icon>Popup<cpy-icon>expand_more</cpy-icon>
-        </cpy-button>
+<h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
+  Popups
+</h3>
 
-        <div slot="content">
-          <cpy-recursive-menu id="menu-test"></cpy-recursive-menu>
+<p style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+  ...some description
+</p>
+
+<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
+<div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1.5rem; margin-bottom: 1.5rem; gap: 0.5rem;">
+  <div style="flex: 1;">
+    <cpy-popup active-on="hover">
+      <cpy-button>
+        <cpy-icon>menu</cpy-icon>Popup<cpy-icon>expand_more</cpy-icon>
+      </cpy-button>
+
+      <div slot="content">
+        <cpy-recursive-menu id="menu-test"></cpy-recursive-menu>
+      </div>
+    </cpy-popup>
+  </div>
+  <div style="flex: 1;">
+    <cpy-popup>
+      <cpy-button icon>
+        <cpy-icon>info</cpy-icon>
+      </cpy-button>
+      <div slot="content">
+        <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="60" style="margin: 0 auto; padding: 8px 0;">
+        <div style="padding: 8px; background-color: var(--cpy-bg-primary); color: white; border-radius: 0 0 4px 4px;">
+          This is a customised popup
         </div>
-      </cpy-popup>
-    </div>
-    <div style="flex: 1;">
-      <cpy-popup>
-        <cpy-button icon>
-          <cpy-icon>info</cpy-icon>
-        </cpy-button>
-        <div slot="content">
-          <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="60" style="margin: 0 auto; padding: 8px 0;">
-          <div style="padding: 8px; background-color: var(--cpy-bg-primary); color: white; border-radius: 0 0 4px 4px;">
-            This is a customised popup
-          </div>
-        </div>
-      </cpy-popup>
-    </div>
+      </div>
+    </cpy-popup>
   </div>
 </div>
+
+<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Code Examples</h3>
+
+<div style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+  ...add code here
+</div>
+
+<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
+<cpy-table id="popup-props" style="margin-top: 1.5rem; margin-bottom: 1.5rem;"></cpy-table>

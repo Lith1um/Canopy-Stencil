@@ -295,13 +295,13 @@ export declare interface CpyTable extends Components.CpyTable {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['data']
+  inputs: ['tableData']
 })
 @Component({
   selector: 'cpy-table',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['data']
+  inputs: ['tableData']
 })
 export class CpyTable {
   protected el: HTMLElement;

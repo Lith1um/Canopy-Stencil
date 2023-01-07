@@ -201,6 +201,6 @@
   @apply mr-1.5;
 }
 
-::slotted(cpy-icon:last-child) {
+::slotted(cpy-icon:last-child:not(:first-child)) {
   @apply ml-1.5;
 }

@@ -7,15 +7,15 @@ import { Component, h, Prop } from '@stencil/core';
 })
 export class Table {
 
-  @Prop() data: { [key: string]: string | number | boolean | null | undefined }[];
+  @Prop() tableData: { [key: string]: string | number | boolean | null | undefined }[];
 
   render() {
-    if (!this.data?.length) {
+    if (!this.tableData?.length) {
       return;
     }
 
-    // get the data column names
-    const columnHeaders = Object.keys(this.data[0])
+    // get the tableData column names
+    const columnHeaders = Object.keys(this.tableData[0])
       .map(columnHeader => columnHeader.replace(/([A-Z])/g, " $1"));
 
     return (
@@ -27,9 +27,9 @@ export class Table {
             </tr>
           </thead>
           <tbody>
-            {this.data.map(row => 
+            {this.tableData.map(row => 
               <tr>
-                {Object.values(row).map(cell => <td>{cell.toString()}</td>)}
+                {Object.values(row).map(cell => <td>{cell.toString() || '-'}</td>)}
               </tr>)}
           </tbody>
         </table>

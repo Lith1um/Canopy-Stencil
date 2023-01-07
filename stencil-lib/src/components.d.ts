@@ -61,7 +61,7 @@ export namespace Components {
         "type": SpinnerAppearance;
     }
     interface CpyTable {
-        "data": { [key: string]: string | number | boolean | null | undefined }[];
+        "tableData": { [key: string]: string | number | boolean | null | undefined }[];
     }
     interface CpyToolbar {
     }
@@ -247,7 +247,7 @@ declare namespace LocalJSX {
         "type"?: SpinnerAppearance;
     }
     interface CpyTable {
-        "data"?: { [key: string]: string | number | boolean | null | undefined }[];
+        "tableData"?: { [key: string]: string | number | boolean | null | undefined }[];
     }
     interface CpyToolbar {
     }

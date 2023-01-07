@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                                                | Default     |
-| -------- | --------- | ----------- | --------------------------------------------------- | ----------- |
-| `data`   | --        |             | `{ [key: string]: string \| number \| boolean; }[]` | `undefined` |
+| Property    | Attribute | Description | Type                                                | Default     |
+| ----------- | --------- | ----------- | --------------------------------------------------- | ----------- |
+| `tableData` | --        |             | `{ [key: string]: string \| number \| boolean; }[]` | `undefined` |
 
 
 ----------------------------------------------

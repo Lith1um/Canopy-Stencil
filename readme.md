@@ -238,6 +238,7 @@ with:
 ## Roadmap
 
 - [ ] Better documentation of existing components
+  - [ ] Add slot and event related docs
 - [ ] Components
   - [ ] Modal/Dialog
   - [ ] Tooltip
