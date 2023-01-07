@@ -21,7 +21,7 @@
 
 ### Depends on
 
-- [cpy-menu](../menu)
+- [cpy-popup](../popup)
 - [cpy-icon](../icon)
 - [cpy-recursive-menu](.)
 - [cpy-recursive-menu-item](.)

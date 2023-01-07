@@ -1,29 +1,29 @@
 <div style="margin-bottom: 12px;">
-  <h3>Menus</h3>
+  <h3>Popups</h3>
   <div style="display: flex; align-items: center; width: 100%; padding: 12px;">
     <div style="flex: 1;">
-      <cpy-menu active-on="hover">
+      <cpy-popup active-on="hover">
         <cpy-button>
-          <cpy-icon>menu</cpy-icon>Menu<cpy-icon>expand_more</cpy-icon>
+          <cpy-icon>menu</cpy-icon>Popup<cpy-icon>expand_more</cpy-icon>
         </cpy-button>
 
         <div slot="content">
           <cpy-recursive-menu id="menu-test"></cpy-recursive-menu>
         </div>
-      </cpy-menu>
+      </cpy-popup>
     </div>
     <div style="flex: 1;">
-      <cpy-menu>
+      <cpy-popup>
         <cpy-button icon>
           <cpy-icon>info</cpy-icon>
         </cpy-button>
         <div slot="content">
           <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="60" style="margin: 0 auto; padding: 8px 0;">
           <div style="padding: 8px; background-color: var(--cpy-bg-primary); color: white; border-radius: 0 0 4px 4px;">
-            This is a customised menu
+            This is a customised popup
           </div>
         </div>
-      </cpy-menu>
+      </cpy-popup>
     </div>
   </div>
 </div>

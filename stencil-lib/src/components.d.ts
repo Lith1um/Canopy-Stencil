@@ -38,10 +38,6 @@ export namespace Components {
     }
     interface CpyIcon {
     }
-    interface CpyMenu {
-        "activeOn": 'hover' | 'click';
-        "position": 'bottom-start' | 'top-start' | 'left-start' | 'right-start';
-    }
     interface CpyNavMenu {
         "items": NavMenuItem[];
     }
@@ -49,6 +45,10 @@ export namespace Components {
         "item": NavMenuItem;
     }
     interface CpyPageContent {
+    }
+    interface CpyPopup {
+        "activeOn": 'hover' | 'click';
+        "position": 'bottom-start' | 'top-start' | 'left-start' | 'right-start';
     }
     interface CpyRecursiveMenu {
         "items": RecursiveMenuItem[];
@@ -115,12 +115,6 @@ declare global {
         prototype: HTMLCpyIconElement;
         new (): HTMLCpyIconElement;
     };
-    interface HTMLCpyMenuElement extends Components.CpyMenu, HTMLStencilElement {
-    }
-    var HTMLCpyMenuElement: {
-        prototype: HTMLCpyMenuElement;
-        new (): HTMLCpyMenuElement;
-    };
     interface HTMLCpyNavMenuElement extends Components.CpyNavMenu, HTMLStencilElement {
     }
     var HTMLCpyNavMenuElement: {
@@ -138,6 +132,12 @@ declare global {
     var HTMLCpyPageContentElement: {
         prototype: HTMLCpyPageContentElement;
         new (): HTMLCpyPageContentElement;
+    };
+    interface HTMLCpyPopupElement extends Components.CpyPopup, HTMLStencilElement {
+    }
+    var HTMLCpyPopupElement: {
+        prototype: HTMLCpyPopupElement;
+        new (): HTMLCpyPopupElement;
     };
     interface HTMLCpyRecursiveMenuElement extends Components.CpyRecursiveMenu, HTMLStencilElement {
     }
@@ -182,10 +182,10 @@ declare global {
         "cpy-drawer": HTMLCpyDrawerElement;
         "cpy-drawer-container": HTMLCpyDrawerContainerElement;
         "cpy-icon": HTMLCpyIconElement;
-        "cpy-menu": HTMLCpyMenuElement;
         "cpy-nav-menu": HTMLCpyNavMenuElement;
         "cpy-nav-menu-item": HTMLCpyNavMenuItemElement;
         "cpy-page-content": HTMLCpyPageContentElement;
+        "cpy-popup": HTMLCpyPopupElement;
         "cpy-recursive-menu": HTMLCpyRecursiveMenuElement;
         "cpy-recursive-menu-item": HTMLCpyRecursiveMenuItemElement;
         "cpy-spinner": HTMLCpySpinnerElement;
@@ -224,10 +224,6 @@ declare namespace LocalJSX {
     }
     interface CpyIcon {
     }
-    interface CpyMenu {
-        "activeOn"?: 'hover' | 'click';
-        "position"?: 'bottom-start' | 'top-start' | 'left-start' | 'right-start';
-    }
     interface CpyNavMenu {
         "items"?: NavMenuItem[];
     }
@@ -235,6 +231,10 @@ declare namespace LocalJSX {
         "item"?: NavMenuItem;
     }
     interface CpyPageContent {
+    }
+    interface CpyPopup {
+        "activeOn"?: 'hover' | 'click';
+        "position"?: 'bottom-start' | 'top-start' | 'left-start' | 'right-start';
     }
     interface CpyRecursiveMenu {
         "items"?: RecursiveMenuItem[];
@@ -262,10 +262,10 @@ declare namespace LocalJSX {
         "cpy-drawer": CpyDrawer;
         "cpy-drawer-container": CpyDrawerContainer;
         "cpy-icon": CpyIcon;
-        "cpy-menu": CpyMenu;
         "cpy-nav-menu": CpyNavMenu;
         "cpy-nav-menu-item": CpyNavMenuItem;
         "cpy-page-content": CpyPageContent;
+        "cpy-popup": CpyPopup;
         "cpy-recursive-menu": CpyRecursiveMenu;
         "cpy-recursive-menu-item": CpyRecursiveMenuItem;
         "cpy-spinner": CpySpinner;
@@ -284,10 +284,10 @@ declare module "@stencil/core" {
             "cpy-drawer": LocalJSX.CpyDrawer & JSXBase.HTMLAttributes<HTMLCpyDrawerElement>;
             "cpy-drawer-container": LocalJSX.CpyDrawerContainer & JSXBase.HTMLAttributes<HTMLCpyDrawerContainerElement>;
             "cpy-icon": LocalJSX.CpyIcon & JSXBase.HTMLAttributes<HTMLCpyIconElement>;
-            "cpy-menu": LocalJSX.CpyMenu & JSXBase.HTMLAttributes<HTMLCpyMenuElement>;
             "cpy-nav-menu": LocalJSX.CpyNavMenu & JSXBase.HTMLAttributes<HTMLCpyNavMenuElement>;
             "cpy-nav-menu-item": LocalJSX.CpyNavMenuItem & JSXBase.HTMLAttributes<HTMLCpyNavMenuItemElement>;
             "cpy-page-content": LocalJSX.CpyPageContent & JSXBase.HTMLAttributes<HTMLCpyPageContentElement>;
+            "cpy-popup": LocalJSX.CpyPopup & JSXBase.HTMLAttributes<HTMLCpyPopupElement>;
             "cpy-recursive-menu": LocalJSX.CpyRecursiveMenu & JSXBase.HTMLAttributes<HTMLCpyRecursiveMenuElement>;
             "cpy-recursive-menu-item": LocalJSX.CpyRecursiveMenuItem & JSXBase.HTMLAttributes<HTMLCpyRecursiveMenuItemElement>;
             "cpy-spinner": LocalJSX.CpySpinner & JSXBase.HTMLAttributes<HTMLCpySpinnerElement>;

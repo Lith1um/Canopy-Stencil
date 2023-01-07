@@ -1,4 +1,4 @@
-# cpy-menu
+# cpy-popup
 
 
 
@@ -22,8 +22,8 @@
 ### Graph
 ```mermaid
 graph TD;
-  cpy-recursive-menu-item --> cpy-menu
-  style cpy-menu fill:#f9f,stroke:#333,stroke-width:4px
+  cpy-recursive-menu-item --> cpy-popup
+  style cpy-popup fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

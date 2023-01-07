@@ -146,27 +146,6 @@ export class CpyIcon {
 }
 
 
-export declare interface CpyMenu extends Components.CpyMenu {}
-
-@ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['activeOn', 'position']
-})
-@Component({
-  selector: 'cpy-menu',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['activeOn', 'position']
-})
-export class CpyMenu {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
-}
-
-
 export declare interface CpyNavMenu extends Components.CpyNavMenu {}
 
 @ProxyCmp({
@@ -220,6 +199,27 @@ export declare interface CpyPageContent extends Components.CpyPageContent {}
   template: '<ng-content></ng-content>'
 })
 export class CpyPageContent {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface CpyPopup extends Components.CpyPopup {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['activeOn', 'position']
+})
+@Component({
+  selector: 'cpy-popup',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['activeOn', 'position']
+})
+export class CpyPopup {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

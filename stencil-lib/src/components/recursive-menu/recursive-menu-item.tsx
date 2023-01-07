@@ -30,7 +30,7 @@ export class RecursiveMenuItemComp {
 
     return this.item.children
       ? (
-          <cpy-menu activeOn='hover' position='right-start'>
+          <cpy-popup activeOn='hover' position='right-start'>
             <div>
               <a class={classes} {...itemAttrs}>
                 {this.item.icon && <cpy-icon>{this.item.icon}</cpy-icon>}
@@ -49,7 +49,7 @@ export class RecursiveMenuItemComp {
             <div slot="content">
               <cpy-recursive-menu items={this.item.children}></cpy-recursive-menu>
             </div>
-          </cpy-menu>
+          </cpy-popup>
         )
       : (
         <div>
