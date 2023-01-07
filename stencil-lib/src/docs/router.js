@@ -23,8 +23,15 @@ const menuItems = navMenuElement.items = [
 ];
 
 // Methods to handle when a page loads
+window.tooltipPageInit = function() {
+  document.getElementById('tooltip-props').tableData = [
+    { name: 'position', description: 'The tooltips position relative to the item it\'s wrapping', type: 'string', options: "'bottom' | 'left' | 'right' | 'top'", default: "'bottom'", required: false },
+    { name: 'text', description: 'The text to display within the tooltip', type: 'string', options: "", default: "", required: false },
+  ];
+}
+
 window.popupPageInit = function() {
-  document.getElementById('menu-test').items = [
+  document.getElementById('popup-test').items = [
     { title: 'Option 1', icon: 'home', separator: true },
     {
       title: 'Group of options', description: 'hover this to show more options', children: [
@@ -36,16 +43,7 @@ window.popupPageInit = function() {
       ]
     }
   ];
-}
 
-window.tooltipPageInit = function() {
-  document.getElementById('tooltip-props').tableData = [
-    { name: 'position', description: 'The tooltips position relative to the item it\'s wrapping', type: 'string', options: "'bottom' | 'left' | 'right' | 'top'", default: "'bottom'", required: false },
-    { name: 'text', description: 'The text to display within the tooltip', type: 'string', options: "", default: "", required: false },
-  ];
-}
-
-window.popupPageInit = function() {
   document.getElementById('popup-props').tableData = [
     { name: 'activeOn', description: 'What triggers the popup to show', type: 'string', options: "'click' | 'hover'", default: "'click'", required: false },
     { name: 'position', description: 'The position of the popup relative to the element it is linked with', type: 'string', options: "'bottom-start' | 'left-start' | 'right-start' | 'top-start'", default: "'bottom-start'", required: false },
