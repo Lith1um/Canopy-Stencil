@@ -10,7 +10,7 @@
   }
 
   &--dropdown {
-    @apply rounded-[4px] opacity-0 absolute invisible w-max z-10;
+    @apply rounded-[4px] opacity-0 absolute invisible w-max z-50;
     background-color: var(--cpy-bg-white);
     color: var(--cpy-text-base);
     transition: opacity 0.3s ease-in-out;

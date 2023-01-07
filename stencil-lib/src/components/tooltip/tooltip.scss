@@ -5,7 +5,7 @@
   @apply inline-flex items-center justify-center relative;
 
   .text {
-    @apply rounded-[4px] opacity-0 absolute text-center text-sm invisible w-max max-w-xs z-10;
+    @apply rounded-[4px] opacity-0 absolute text-center text-sm invisible w-max max-w-xs z-50;
     background-color: var(--tooltip-bg);
     color: var(--tooltip-text);
     transition: opacity 0.3s ease-in-out 0.15s;
