@@ -42,7 +42,7 @@ export class Tooltip {
         top: arrowY != null ? `${arrowY}px` : '',
         right: '',
         bottom: '',
-        [staticSide]: '-4px',
+        [staticSide]: '-0.2rem',
       });
     });
   }

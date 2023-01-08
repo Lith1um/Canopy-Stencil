@@ -18,7 +18,6 @@
   &--arrow {
     @apply absolute w-2 h-2 rotate-45;
     background-color: var(--tooltip-bg);
-    width: 0.5rem;
   }
 
   &:hover {
