@@ -17,23 +17,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/lith1um/Canopy-Stencil">
+  <a href="https://github.com/lith1um/Canopy-Stencil" target="_blank">
     <img src="https://github.com/Lith1um/Canopy-Stencil/raw/main/logo.png" alt="Logo" width="140">
   </a>
 
   <h3 align="center">Canopy</h3>
 
   <p align="center">
-    A UI library built on <a href="https://stenciljs.com/">Stencil</a>.
+    A UI library built on <a href="https://stenciljs.com/" target="_blank">Stencil</a>.
   </p>
   <p align="center">
     Originally built to facilitate building UIs with as minimal effort as possible across multiple frontend technologies.
     <br />
     <br />
-    <!-- <a href="https://github.com/lith1um/Canopy-Stencil">View Demo</a> -->
-    <a href="https://github.com/lith1um/Canopy-Stencil/issues">Report Bug</a>
+    <!-- <a href="https://github.com/lith1um/Canopy-Stencil" target="_blank">View Demo</a> -->
+    <a href="https://github.com/lith1um/Canopy-Stencil/issues" target="_blank">Report Bug</a>
     ·
-    <a href="https://github.com/lith1um/Canopy-Stencil/issues">Request Feature</a>
+    <a href="https://github.com/lith1um/Canopy-Stencil/issues" target="_blank">Request Feature</a>
   </p>
 </div>
 
