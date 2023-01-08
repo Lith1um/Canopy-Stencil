@@ -59,7 +59,7 @@ export class CodeBlock {
   render() {
     return (
       <pre>
-        <code ref={(el) => this.codeElem = el as HTMLElement} class={\`language-${this.language}\`}>
+        <code ref={(el) => this.codeElem = el as HTMLElement} class={\`language-\${this.language}\`}>
           {this.code}
         </code>
       </pre>
