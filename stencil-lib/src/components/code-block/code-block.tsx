@@ -10,7 +10,7 @@ export class CodeBlock {
 
   @Prop() code: string;
 
-  @Prop() language: 'typescript' | 'javascript' | 'css' | 'html' = 'typescript';
+  @Prop() language: 'typescript' | 'javascript' | 'scss' | 'css' | 'html' = 'typescript';
 
   codeElem: HTMLElement;
 

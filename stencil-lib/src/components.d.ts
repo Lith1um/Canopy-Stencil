@@ -32,7 +32,7 @@ export namespace Components {
     }
     interface CpyCodeBlock {
         "code": string;
-        "language": 'typescript' | 'javascript' | 'css' | 'html';
+        "language": 'typescript' | 'javascript' | 'scss' | 'css' | 'html';
     }
     interface CpyDrawer {
         "opened": boolean;
@@ -227,7 +227,7 @@ declare namespace LocalJSX {
     }
     interface CpyCodeBlock {
         "code"?: string;
-        "language"?: 'typescript' | 'javascript' | 'css' | 'html';
+        "language"?: 'typescript' | 'javascript' | 'scss' | 'css' | 'html';
     }
     interface CpyDrawer {
         "onToggleOpened"?: (event: CpyDrawerCustomEvent<void>) => void;

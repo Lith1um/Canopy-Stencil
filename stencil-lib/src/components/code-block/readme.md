@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type                                              | Default        |
-| ---------- | ---------- | ----------- | ------------------------------------------------- | -------------- |
-| `code`     | `code`     |             | `string`                                          | `undefined`    |
-| `language` | `language` |             | `"css" \| "html" \| "javascript" \| "typescript"` | `'typescript'` |
+| Property   | Attribute  | Description | Type                                                        | Default        |
+| ---------- | ---------- | ----------- | ----------------------------------------------------------- | -------------- |
+| `code`     | `code`     |             | `string`                                                    | `undefined`    |
+| `language` | `language` |             | `"css" \| "html" \| "javascript" \| "scss" \| "typescript"` | `'typescript'` |
 
 
 ----------------------------------------------

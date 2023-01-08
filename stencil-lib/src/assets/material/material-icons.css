@@ -2,8 +2,7 @@
   font-family: "Material Icons";
   font-style: normal;
   font-weight: 400;
-  src: local("Material Icons"), local("MaterialIcons-Regular"), local("MaterialIconsRound-Regular"),
-    url(/webfonts/MaterialIconsRound-Regular.woff) format("woff");
+  src: url(./webfonts/MaterialIconsRound-Regular.woff) format("woff");
 }
 
 .material-icons {

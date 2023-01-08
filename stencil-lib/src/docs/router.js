@@ -27,7 +27,7 @@ const menuItems = navMenuElement.items = [
 
 // Methods to handle when a page loads
 window.codeBlockPageInit = function() {
-  document.getElementById('code-block-css-example').code = `.nav-menu-item {
+  document.getElementById('code-block-scss-example').code = `.nav-menu-item {
   --item-opacity: 0;
   background-color: rgba(var(--cpy-bg-basic-rgb), var(--item-opacity));
 
@@ -61,7 +61,7 @@ export class CodeBlock {
 
   document.getElementById('code-block-props').tableData = [
     { name: 'code', description: 'The code snippet to show', type: "string", default: "", required: true },
-    { name: 'language', description: 'The code snippet language', type: "'typescript' | 'javascript' | 'css' | 'html'", default: "'typescript'", required: false },
+    { name: 'language', description: 'The code snippet language', type: "'typescript' | 'javascript' | 'scss' | 'css' | 'html'", default: "'typescript'", required: false },
   ];
 }
 
