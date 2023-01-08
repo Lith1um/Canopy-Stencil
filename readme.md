@@ -1,4 +1,4 @@
-<a name="readme-top"></a>
+<a id="readme-top"></a>
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -18,7 +18,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/lith1um/Canopy-Stencil">
-    <img src="logo.png" alt="Logo" width="140">
+    <img src="https://github.com/Lith1um/Canopy-Stencil/raw/main/logo.png" alt="Logo" width="140">
   </a>
 
   <h3 align="center">Canopy</h3>
