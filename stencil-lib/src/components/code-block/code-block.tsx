@@ -1,6 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
-import * as Prism from 'prismjs';
-import 'prismjs/components/prism-typescript';
+import '../../utils/prism';
 
 @Component({
   tag: 'cpy-code-block',
@@ -11,13 +10,20 @@ export class CodeBlock {
 
   @Prop() code: string;
 
-  @Prop() language: 'ts' | 'js' | 'css' | 'html' = 'ts';
+  @Prop() language: 'typescript' | 'javascript' | 'css' | 'html' = 'typescript';
+
+  codeElem: HTMLElement;
+
+  componentDidRender(): void {
+    // @ts-ignore
+    Prism.highlightElement(this.codeElem);
+  }
 
   render() {
     return (
       <pre>
-        <code class={`language-${this.language}`}>
-          {Prism.tokenize(this.code, '')}
+        <code ref={(el) => this.codeElem = el as HTMLElement} class={`language-${this.language}`}>
+          {this.code}
         </code>
       </pre>
     );

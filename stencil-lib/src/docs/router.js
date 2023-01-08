@@ -61,7 +61,7 @@ export class CodeBlock {
 
   document.getElementById('code-block-props').tableData = [
     { name: 'code', description: 'The code snippet to show', type: "string", default: "", required: true },
-    { name: 'language', description: 'The code snippet language', type: "'ts' | 'js' | 'css' | 'html'", default: "'ts'", required: false },
+    { name: 'language', description: 'The code snippet language', type: "'typescript' | 'javascript' | 'css' | 'html'", default: "'typescript'", required: false },
   ];
 }
 
