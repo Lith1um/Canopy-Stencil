@@ -1,5 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
-import { RecursiveMenuItem } from './recursive-menu.interface';
+import { RecursiveMenuItem } from '../recursive-menu.interface';
 
 @Component({
   tag: 'cpy-recursive-menu-item',

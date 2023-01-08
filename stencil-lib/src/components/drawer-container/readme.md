@@ -23,7 +23,7 @@
 
 ### Depends on
 
-- [cpy-drawer](../drawer)
+- [cpy-drawer](drawer)
 
 ### Graph
 ```mermaid

@@ -17,7 +17,7 @@
 
 ### Used by
 
- - [cpy-recursive-menu-item](../recursive-menu)
+ - [cpy-recursive-menu-item](../recursive-menu/recursive-menu-item)
 
 ### Graph
 ```mermaid

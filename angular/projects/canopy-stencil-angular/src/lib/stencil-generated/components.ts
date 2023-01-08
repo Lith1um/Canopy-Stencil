@@ -71,6 +71,27 @@ export class CpyButton {
 }
 
 
+export declare interface CpyCodeBlock extends Components.CpyCodeBlock {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['code', 'language']
+})
+@Component({
+  selector: 'cpy-code-block',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['code', 'language']
+})
+export class CpyCodeBlock {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface CpyDrawer extends Components.CpyDrawer {
   /**
    *  

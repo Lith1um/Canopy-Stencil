@@ -30,6 +30,10 @@ export namespace Components {
         "size": ButtonSize;
         "type": ButtonAppearance;
     }
+    interface CpyCodeBlock {
+        "code": string;
+        "language": 'ts' | 'js' | 'css' | 'html';
+    }
     interface CpyDrawer {
         "opened": boolean;
     }
@@ -96,6 +100,12 @@ declare global {
     var HTMLCpyButtonElement: {
         prototype: HTMLCpyButtonElement;
         new (): HTMLCpyButtonElement;
+    };
+    interface HTMLCpyCodeBlockElement extends Components.CpyCodeBlock, HTMLStencilElement {
+    }
+    var HTMLCpyCodeBlockElement: {
+        prototype: HTMLCpyCodeBlockElement;
+        new (): HTMLCpyCodeBlockElement;
     };
     interface HTMLCpyDrawerElement extends Components.CpyDrawer, HTMLStencilElement {
     }
@@ -179,6 +189,7 @@ declare global {
         "cpy-alert": HTMLCpyAlertElement;
         "cpy-avatar": HTMLCpyAvatarElement;
         "cpy-button": HTMLCpyButtonElement;
+        "cpy-code-block": HTMLCpyCodeBlockElement;
         "cpy-drawer": HTMLCpyDrawerElement;
         "cpy-drawer-container": HTMLCpyDrawerContainerElement;
         "cpy-icon": HTMLCpyIconElement;
@@ -213,6 +224,10 @@ declare namespace LocalJSX {
         "icon"?: boolean;
         "size"?: ButtonSize;
         "type"?: ButtonAppearance;
+    }
+    interface CpyCodeBlock {
+        "code"?: string;
+        "language"?: 'ts' | 'js' | 'css' | 'html';
     }
     interface CpyDrawer {
         "onToggleOpened"?: (event: CpyDrawerCustomEvent<void>) => void;
@@ -259,6 +274,7 @@ declare namespace LocalJSX {
         "cpy-alert": CpyAlert;
         "cpy-avatar": CpyAvatar;
         "cpy-button": CpyButton;
+        "cpy-code-block": CpyCodeBlock;
         "cpy-drawer": CpyDrawer;
         "cpy-drawer-container": CpyDrawerContainer;
         "cpy-icon": CpyIcon;
@@ -281,6 +297,7 @@ declare module "@stencil/core" {
             "cpy-alert": LocalJSX.CpyAlert & JSXBase.HTMLAttributes<HTMLCpyAlertElement>;
             "cpy-avatar": LocalJSX.CpyAvatar & JSXBase.HTMLAttributes<HTMLCpyAvatarElement>;
             "cpy-button": LocalJSX.CpyButton & JSXBase.HTMLAttributes<HTMLCpyButtonElement>;
+            "cpy-code-block": LocalJSX.CpyCodeBlock & JSXBase.HTMLAttributes<HTMLCpyCodeBlockElement>;
             "cpy-drawer": LocalJSX.CpyDrawer & JSXBase.HTMLAttributes<HTMLCpyDrawerElement>;
             "cpy-drawer-container": LocalJSX.CpyDrawerContainer & JSXBase.HTMLAttributes<HTMLCpyDrawerContainerElement>;
             "cpy-icon": LocalJSX.CpyIcon & JSXBase.HTMLAttributes<HTMLCpyIconElement>;

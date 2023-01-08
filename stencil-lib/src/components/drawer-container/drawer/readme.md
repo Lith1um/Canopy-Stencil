@@ -23,12 +23,12 @@
 
 ### Used by
 
- - [cpy-drawer-container](../drawer-container)
+ - [cpy-drawer-container](..)
 
 ### Depends on
 
-- [cpy-button](../button)
-- [cpy-icon](../icon)
+- [cpy-button](../../button)
+- [cpy-icon](../../icon)
 
 ### Graph
 ```mermaid

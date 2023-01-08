@@ -10,9 +10,9 @@
 ### Used by
 
  - [cpy-alert](../alert)
- - [cpy-drawer](../drawer)
- - [cpy-nav-menu-item](../nav-menu)
- - [cpy-recursive-menu-item](../recursive-menu)
+ - [cpy-drawer](../drawer-container/drawer)
+ - [cpy-nav-menu-item](../nav-menu/nav-menu-item)
+ - [cpy-recursive-menu-item](../recursive-menu/recursive-menu-item)
 
 ### Graph
 ```mermaid

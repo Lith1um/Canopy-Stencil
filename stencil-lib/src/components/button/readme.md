@@ -20,7 +20,7 @@
 
 ### Used by
 
- - [cpy-drawer](../drawer)
+ - [cpy-drawer](../drawer-container/drawer)
 
 ### Graph
 ```mermaid

@@ -1,5 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
-import { NavMenuItem } from './nav-menu.interface';
+import { NavMenuItem } from '../nav-menu.interface';
 
 @Component({
   tag: 'cpy-nav-menu-item',

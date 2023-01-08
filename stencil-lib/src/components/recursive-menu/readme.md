@@ -7,31 +7,27 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                | Default     |
-| -------- | --------- | ----------- | ------------------- | ----------- |
-| `item`   | --        |             | `RecursiveMenuItem` | `undefined` |
+| Property | Attribute | Description | Type                  | Default     |
+| -------- | --------- | ----------- | --------------------- | ----------- |
+| `items`  | --        |             | `RecursiveMenuItem[]` | `undefined` |
 
 
 ## Dependencies
 
 ### Used by
 
- - [cpy-recursive-menu](.)
- - [cpy-recursive-menu-item](.)
+ - [cpy-recursive-menu-item](recursive-menu-item)
 
 ### Depends on
 
-- [cpy-popup](../popup)
-- [cpy-icon](../icon)
-- [cpy-recursive-menu](.)
-- [cpy-recursive-menu-item](.)
+- [cpy-recursive-menu-item](recursive-menu-item)
 
 ### Graph
 ```mermaid
 graph TD;
-  cpy-recursive-menu-item --> cpy-recursive-menu-item
   cpy-recursive-menu --> cpy-recursive-menu-item
-  style cpy-recursive-menu-item fill:#f9f,stroke:#333,stroke-width:4px
+  cpy-recursive-menu-item --> cpy-recursive-menu
+  style cpy-recursive-menu fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

@@ -13,7 +13,9 @@ const menuItems = navMenuElement.items = [
     title: 'UI Components', type: 'group', description: 'Building blocks of websites', children: [
       { title: 'Tooltip', type: 'basic', url: '/tooltip', icon: 'chat_bubble', function: closeMenuOnMobileNav },
       { title: 'Popup', type: 'basic', url: '/popup', icon: 'menu', function: closeMenuOnMobileNav },
+      { title: 'Code Block', type: 'basic', url: '/codeBlock', icon: 'code', function: closeMenuOnMobileNav },
       { title: 'Recursive Menu', type: 'basic', url: '/recursiveMenu', icon: 'list_alt', function: closeMenuOnMobileNav },
+      { title: 'Navigation Menu', type: 'basic', url: '/navMenu', icon: 'menu_open', function: closeMenuOnMobileNav },
       { title: 'Spinner', type: 'basic', url: '/spinner', icon: 'refresh', function: closeMenuOnMobileNav },
       { title: 'Button', type: 'basic', url: '/button', icon: 'smart_button', function: closeMenuOnMobileNav },
       { title: 'Alert', type: 'basic', url: '/alert', icon: 'warning', function: closeMenuOnMobileNav },
@@ -24,6 +26,45 @@ const menuItems = navMenuElement.items = [
 ];
 
 // Methods to handle when a page loads
+window.codeBlockPageInit = function() {
+  document.getElementById('code-block-css-example').code = `.nav-menu-item {
+  --item-opacity: 0;
+  background-color: rgba(var(--cpy-bg-basic-rgb), var(--item-opacity));
+
+  &:hover, &--active {
+    --item-opacity: 0.1;
+  }
+}`;
+
+  document.getElementById('code-block-ts-example').code = `import { Component, h, Prop } from '@stencil/core';
+import * as Prism from 'prismjs';
+
+@Component({
+  tag: 'cpy-code-block',
+  styleUrl: 'code-block.scss',
+  shadow: false,
+})
+export class CodeBlock {
+
+  @Prop() code: string;
+
+  render() {
+    return (
+      <pre>
+        <code class="language-css">
+          {Prism.tokenize(this.code, '')}
+        </code>
+      </pre>
+    );
+  }
+}`;
+
+  document.getElementById('code-block-props').tableData = [
+    { name: 'code', description: 'The code snippet to show', type: "string", default: "", required: true },
+    { name: 'language', description: 'The code snippet language', type: "'ts' | 'js' | 'css' | 'html'", default: "'ts'", required: false },
+  ];
+}
+
 window.tooltipPageInit = function() {
   document.getElementById('tooltip-props').tableData = [
     { name: 'position', description: 'The tooltips position relative to the item it\'s wrapping', type: "'bottom' | 'left' | 'right' | 'top'", default: "'bottom'", required: false },
@@ -66,7 +107,30 @@ window.recursiveMenuPageInit = function() {
   ];
 
   document.getElementById('recursive-menu-props').tableData = [
-    { name: 'items', description: 'Items to fill the menu with', type: 'RecursiveMenuItem[]', default: "", required: true }
+    { name: 'items', description: 'Items to populate the menu with', type: 'RecursiveMenuItem[]', default: "", required: true }
+  ];
+}
+
+window.navMenuPageInit = function() {
+  document.getElementById('nav-menu-example').items = [
+    { title: 'Basic Nav Item' },
+    { title: 'Basic Nav Item w/ Icon', icon: 'home' },
+    { title: 'Basic Nav Item w/ Description', description: 'Basic nav item description' },
+    { title: 'Basic Nav Item w/ Separator After', separator: true },
+    { title: 'Basic Nav Item w/ All Applied', icon: 'home', description: 'Basic nav item description', separator: true },
+    {
+      title: 'Nav Item Group', type: 'group', separator: true, description: 'Represents the start of a group of items', children: [
+        { title: 'Group Item 1', type: 'basic', icon: 'chat_bubble' },
+        { title: 'Group Item 2', type: 'basic', icon: 'menu' },
+        { title: 'Group Item 3', type: 'basic', icon: 'list_alt' },
+        { title: 'Group Item 4', type: 'basic', icon: 'menu_open' },
+        { title: 'Group Item 5', type: 'basic', icon: 'refresh' },
+      ]
+    },
+  ];;
+
+  document.getElementById('nav-menu-props').tableData = [
+    { name: 'items', description: 'Items to populate the navigation menu with', type: 'NavMenuItem[]', default: "", required: true }
   ];
 }
 
