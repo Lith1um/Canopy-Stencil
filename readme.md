@@ -227,16 +227,10 @@ with:
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Better documentation of existing components
-  - [ ] Add slot and event related docs
 - [ ] Components
   - [ ] Modal/Dialog
-  - [ ] Tooltip
-  - [ ] Menu
   - [ ] Form inputs
-  - [ ] Code block
   - [ ] Links
-- [ ] Better mobile support
 
 See the <a href="https://github.com/lith1um/Canopy-Stencil/issues" target="_blank">open issues</a> for a full list of proposed features (and known issues).
 
