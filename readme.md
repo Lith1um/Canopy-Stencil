@@ -65,16 +65,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Canopy Stencil Screen Shot](./stencil-homepage.png)
-
 There are many component libraries that exist in the world, but the general opinion I have is that they are too bloated with external dependencies or do not work across multiple frontend frameworks. I've been really interested by web components and the ability they have to work anywhere. Using StencilJS is great as the package size is minimal and it supports building for multiple frameworks, which allows for example Angular developers to use the components in the same way they would use components built natively in Angular.
 
 Here's why I think you should consider using this package:
 * Your time should be focused on creating something amazing. A project that solves a problem and helps others
 * You shouldn't be doing the same tasks over and over like designing new components from scratch
 * Learn one library, then use it again and again no matter the technology you build your app with!
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ### Support
@@ -88,8 +84,6 @@ There is future work planned to build Canopy for the following technologies:
 
 * [![React][React.js]][React-url]
 * [![Vue][Vue.js]][Vue-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## Getting started
@@ -232,7 +226,6 @@ with:
 }
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -248,9 +241,7 @@ with:
   - [ ] Links
 - [ ] Better mobile support
 
-See the [open issues](https://github.com/lith1um/Canopy-Stencil/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+See the <a href="https://github.com/lith1um/Canopy-Stencil/issues" target="_blank">open issues</a> for a full list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -267,14 +258,10 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
