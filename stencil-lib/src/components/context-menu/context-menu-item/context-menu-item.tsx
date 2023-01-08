@@ -1,19 +1,19 @@
 import { Component, h, Prop } from '@stencil/core';
-import { RecursiveMenuItem } from '../recursive-menu.interface';
+import { ContextMenuItem } from '../context-menu.interface';
 
 @Component({
-  tag: 'cpy-recursive-menu-item',
-  styleUrl: 'recursive-menu-item.scss',
+  tag: 'cpy-context-menu-item',
+  styleUrl: 'context-menu-item.scss',
   shadow: true,
 })
-export class RecursiveMenuItemComp {
+export class ContextMenuItemComp {
 
   @Prop()
-  item: RecursiveMenuItem;
+  item: ContextMenuItem;
 
   render() {
     const classes = {
-      'recursive-menu-item': true,
+      'context-menu-item': true,
     }
 
     const itemAttrs: any = {};
@@ -36,18 +36,18 @@ export class RecursiveMenuItemComp {
                 {this.item.icon && <cpy-icon>{this.item.icon}</cpy-icon>}
 
                 <div>
-                  <div class="recursive-menu-item__title">{this.item.title}</div>
-                  {this.item.description && <div class="recursive-menu-item__description">{this.item.description}</div>}
+                  <div class="context-menu-item__title">{this.item.title}</div>
+                  {this.item.description && <div class="context-menu-item__description">{this.item.description}</div>}
                 </div>
 
                 <cpy-icon>chevron_right</cpy-icon>
               </a>
                 
-              {this.item.separator && <div class="recursive-menu-item__separator"></div>}
+              {this.item.separator && <div class="context-menu-item__separator"></div>}
             </div>
 
             <div slot="content">
-              <cpy-recursive-menu items={this.item.children}></cpy-recursive-menu>
+              <cpy-context-menu items={this.item.children}></cpy-context-menu>
             </div>
           </cpy-popup>
         )
@@ -57,15 +57,12 @@ export class RecursiveMenuItemComp {
               {this.item.icon && <cpy-icon>{this.item.icon}</cpy-icon>}
 
               <div>
-                <div class="recursive-menu-item__title">{this.item.title}</div>
-                {this.item.description && <div class="recursive-menu-item__description">{this.item.description}</div>}
+                <div class="context-menu-item__title">{this.item.title}</div>
+                {this.item.description && <div class="context-menu-item__description">{this.item.description}</div>}
               </div>
             </a>
-
-            {this.item.children?.map(item => 
-              <cpy-recursive-menu-item item={item}></cpy-recursive-menu-item>)}
               
-            {this.item.separator && <div class="recursive-menu-item__separator"></div>}
+            {this.item.separator && <div class="context-menu-item__separator"></div>}
           </div>
       );
   }

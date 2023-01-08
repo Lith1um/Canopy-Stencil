@@ -29,7 +29,7 @@ export class Table {
           <tbody>
             {this.tableData.map(row => 
               <tr>
-                {Object.values(row).map(cell => <td>{cell.toString() || '-'}</td>)}
+                {Object.values(row).map(cell => <td>{cell.toString() || '--'}</td>)}
               </tr>)}
           </tbody>
         </table>

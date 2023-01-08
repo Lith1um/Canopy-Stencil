@@ -17,12 +17,12 @@
 
 ### Used by
 
- - [cpy-recursive-menu-item](../recursive-menu/recursive-menu-item)
+ - [cpy-context-menu-item](../context-menu/context-menu-item)
 
 ### Graph
 ```mermaid
 graph TD;
-  cpy-recursive-menu-item --> cpy-popup
+  cpy-context-menu-item --> cpy-popup
   style cpy-popup fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -1,4 +1,4 @@
-export interface RecursiveMenuItem {
+export interface ContextMenuItem {
 
   icon?: string;
   separator?: boolean;
@@ -7,6 +7,6 @@ export interface RecursiveMenuItem {
   url: string;
   openInNewTab?: boolean;
   function?: any;
-  children?: RecursiveMenuItem[];
+  children?: ContextMenuItem[];
 
 }
