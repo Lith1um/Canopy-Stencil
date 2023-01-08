@@ -218,7 +218,7 @@ handleRoute();
 // navigates to an URL, triggers the route
 const navigate = (url) => {
   // bail early if the URL is already active
-  if (url === window.location.href) return false;
+  if (url.split('#')[0] === window.location.href.split('#')[0]) return false;
   // push the URL to the history
   window.history.pushState(null, '', url || '/');
   // trigger the route manually
@@ -234,6 +234,10 @@ window.addEventListener('click', e => {
     const tag = elemPath.tagName;
     if (tag === 'A') {
       if (!elemPath.href || elemPath.target === '_blank') {
+        continue;
+      }
+      // ignore href which is on a different domain to us
+      if (elemPath.href && new URL(elemPath.href).hostname !== window.location.hostname) {
         continue;
       }
       e.preventDefault();

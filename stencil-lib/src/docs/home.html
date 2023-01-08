@@ -1,1 +1,34 @@
-<div>This is the homepage!</div>
+<zero-md src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/readme.md">
+  <!-- This overrides the default template -->
+  <template>
+    <style>
+      :host {
+        display: block;
+        position: relative;
+        contain: content;
+      }
+      :host([hidden]) {
+        display: none;
+      }
+
+      a {
+        color: var(--cpy-text-primary) !important;
+      }
+
+      .markdown-body img {
+        background-color: transparent !important;
+      }
+
+      .markdown-body {
+        color: var(--cpy-text-base) !important;
+      }
+
+      pre[class*=language-] {
+        background-color: var(--cpy-bg-white);
+        border-radius: 12px;
+        padding: 1rem;
+        overflow: auto;
+      }
+    </style>
+  </template>
+</zero-md>
