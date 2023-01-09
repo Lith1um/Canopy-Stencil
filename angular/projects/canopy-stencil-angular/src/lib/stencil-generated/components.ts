@@ -230,6 +230,27 @@ export class CpyIcon {
 }
 
 
+export declare interface CpyLink extends Components.CpyLink {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['href', 'newTab', 'type']
+})
+@Component({
+  selector: 'cpy-link',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['href', 'newTab', 'type']
+})
+export class CpyLink {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface CpyNavMenu extends Components.CpyNavMenu {}
 
 @ProxyCmp({

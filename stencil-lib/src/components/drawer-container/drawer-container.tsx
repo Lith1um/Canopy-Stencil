@@ -19,7 +19,7 @@ export class DrawerContainer {
     }
 
     const drawerWidth = newVal
-      ? this.element.shadowRoot.querySelector('cpy-drawer').shadowRoot.querySelector('.drawer').clientWidth
+      ? (this.element.shadowRoot.querySelector('cpy-drawer').shadowRoot.querySelector('.drawer') as HTMLElement).offsetWidth
       : 0;
     this.contentElem.style.marginLeft = `${drawerWidth}px`;
   }
@@ -66,7 +66,7 @@ export class DrawerContainer {
     return (
       <div class={classes}>
         <cpy-drawer opened={this.opened}>
-          <slot name="menu"></slot>
+          <slot name="drawer"></slot>
         </cpy-drawer>
         <div
           class="drawer-container__content"

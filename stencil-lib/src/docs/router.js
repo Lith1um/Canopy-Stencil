@@ -11,21 +11,29 @@ const closeMenuOnMobileNav = () => {
 
 const menuItems = navMenuElement.items = [
   { title: 'Home', type: 'basic', url: '/', icon: 'home', function: closeMenuOnMobileNav },
+  { title: 'Getting Started', type: 'group', description: 'Installation guides', children: [
+    { title: 'Web Components', type: 'basic', url: '/getting-started/webComps', icon: 'html', function: closeMenuOnMobileNav },
+    { title: 'Angular', type: 'basic', url: '/getting-started/angularComps', icon: 'developer_board', function: closeMenuOnMobileNav },
+  ] },
+  { title: 'Learn more', type: 'group', description: 'Dive into the docs', separator: true, children: [
+    { title: 'Colours & Dark Mode', type: 'basic', url: '/learn-more/colours', icon: 'palette', function: closeMenuOnMobileNav },
+  ] },
   {
     title: 'UI Components', type: 'group', description: 'Building blocks of websites', children: [
-      { title: 'Tooltip', type: 'basic', url: '/tooltip', icon: 'chat_bubble', function: closeMenuOnMobileNav },
-      { title: 'Popup', type: 'basic', url: '/popup', icon: 'menu', function: closeMenuOnMobileNav },
-      { title: 'Code Block', type: 'basic', url: '/codeBlock', icon: 'code', function: closeMenuOnMobileNav },
-      { title: 'Context Menu', type: 'basic', url: '/contextMenu', icon: 'list_alt', function: closeMenuOnMobileNav },
-      { title: 'Navigation Menu', type: 'basic', url: '/navMenu', icon: 'menu_open', function: closeMenuOnMobileNav },
-      { title: 'Spinner', type: 'basic', url: '/spinner', icon: 'refresh', function: closeMenuOnMobileNav },
-      { title: 'Badge', type: 'basic', url: '/badge', icon: 'notifications', function: closeMenuOnMobileNav },
-      { title: 'Button', type: 'basic', url: '/button', icon: 'smart_button', function: closeMenuOnMobileNav },
-      { title: 'Alert', type: 'basic', url: '/alert', icon: 'warning', function: closeMenuOnMobileNav },
-      { title: 'Avatar', type: 'basic', url: '/avatar', icon: 'account_circle', function: closeMenuOnMobileNav },
-      { title: 'Table', type: 'basic', url: '/table', icon: 'table', function: closeMenuOnMobileNav },
-    ]
-  },
+    { title: 'Tooltip', type: 'basic', url: '/comps/tooltip', icon: 'chat_bubble', function: closeMenuOnMobileNav },
+    { title: 'Popup', type: 'basic', url: '/comps/popup', icon: 'menu', function: closeMenuOnMobileNav },
+    { title: 'Code Block', type: 'basic', url: '/comps/codeBlock', icon: 'code', function: closeMenuOnMobileNav },
+    { title: 'Context Menu', type: 'basic', url: '/comps/contextMenu', icon: 'list_alt', function: closeMenuOnMobileNav },
+    { title: 'Navigation Menu', type: 'basic', url: '/comps/navMenu', icon: 'menu_open', function: closeMenuOnMobileNav },
+    { title: 'Drawer', type: 'basic', url: '/comps/drawer', icon: 'space_dashboard', function: closeMenuOnMobileNav },
+    { title: 'Spinner', type: 'basic', url: '/comps/spinner', icon: 'refresh', function: closeMenuOnMobileNav },
+    { title: 'Badge', type: 'basic', url: '/comps/badge', icon: 'notifications', function: closeMenuOnMobileNav },
+    { title: 'Button', type: 'basic', url: '/comps/button', icon: 'smart_button', function: closeMenuOnMobileNav },
+    { title: 'Link', type: 'basic', url: '/comps/link', icon: 'link', function: closeMenuOnMobileNav },
+    { title: 'Alert', type: 'basic', url: '/comps/alert', icon: 'warning', function: closeMenuOnMobileNav },
+    { title: 'Avatar', type: 'basic', url: '/comps/avatar', icon: 'account_circle', function: closeMenuOnMobileNav },
+    { title: 'Table', type: 'basic', url: '/comps/table', icon: 'table', function: closeMenuOnMobileNav },
+  ] },
 ];
 
 function loadPage(page) {
@@ -35,14 +43,14 @@ function loadPage(page) {
 
   page = page || 'home';
 
-  xhr.open('get', `docs/${page}.html`, true);
+  xhr.open('get', `/docs/${page}.html`, true);
 
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
       document.getElementById("router-outlet").innerHTML = xhr.responseText;
       // run any related methods
-      if (pageInits[`${page}`]) {
-        pageInits[`${page}`]();
+      if (pageInits[`${page.split('/').pop()}`]) {
+        pageInits[`${page.split('/').pop()}`]();
       }
     }
   }
@@ -52,7 +60,7 @@ function loadPage(page) {
 
 // this triggers my internal application logic
 const handleRoute = () => {
-  const path = window.location.pathname.split('/')[1];
+  const path = window.location.pathname.substring(1);
   loadPage(path);
   const setActive = (item) => {
     return item.type !== 'group'

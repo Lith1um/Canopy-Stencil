@@ -1,0 +1,26 @@
+:host {
+  @apply inline-flex;
+}
+
+.link {
+  --text-colour: var(--cpy-text-primary);
+  @apply flex items-baseline gap-1.5;
+  color: var(--text-colour);
+
+  &:hover,
+  &:hover ::slotted(*) {
+    @apply underline cursor-pointer;
+  }
+
+  &--primary {
+    --text-colour: var(--cpy-text-primary);
+  }
+
+  &--secondary {
+    --text-colour: var(--cpy-text-secondary);
+  }
+  
+  &--basic {
+    --text-colour: var(--cpy-text-basic);
+  }
+}

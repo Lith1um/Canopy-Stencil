@@ -39,7 +39,7 @@ export namespace Components {
     }
     interface CpyCodeBlock {
         "code": string;
-        "language": 'typescript' | 'javascript' | 'scss' | 'css' | 'html';
+        "language": 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell';
     }
     interface CpyContextMenu {
         "items": ContextMenuItem[];
@@ -54,6 +54,11 @@ export namespace Components {
         "opened": boolean;
     }
     interface CpyIcon {
+    }
+    interface CpyLink {
+        "href": string;
+        "newTab": boolean;
+        "type": 'primary' | 'secondary' | 'basic';
     }
     interface CpyNavMenu {
         "items": NavMenuItem[];
@@ -150,6 +155,12 @@ declare global {
         prototype: HTMLCpyIconElement;
         new (): HTMLCpyIconElement;
     };
+    interface HTMLCpyLinkElement extends Components.CpyLink, HTMLStencilElement {
+    }
+    var HTMLCpyLinkElement: {
+        prototype: HTMLCpyLinkElement;
+        new (): HTMLCpyLinkElement;
+    };
     interface HTMLCpyNavMenuElement extends Components.CpyNavMenu, HTMLStencilElement {
     }
     var HTMLCpyNavMenuElement: {
@@ -209,6 +220,7 @@ declare global {
         "cpy-drawer": HTMLCpyDrawerElement;
         "cpy-drawer-container": HTMLCpyDrawerContainerElement;
         "cpy-icon": HTMLCpyIconElement;
+        "cpy-link": HTMLCpyLinkElement;
         "cpy-nav-menu": HTMLCpyNavMenuElement;
         "cpy-nav-menu-item": HTMLCpyNavMenuItemElement;
         "cpy-page-content": HTMLCpyPageContentElement;
@@ -247,7 +259,7 @@ declare namespace LocalJSX {
     }
     interface CpyCodeBlock {
         "code"?: string;
-        "language"?: 'typescript' | 'javascript' | 'scss' | 'css' | 'html';
+        "language"?: 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell';
     }
     interface CpyContextMenu {
         "items"?: ContextMenuItem[];
@@ -264,6 +276,11 @@ declare namespace LocalJSX {
         "opened"?: boolean;
     }
     interface CpyIcon {
+    }
+    interface CpyLink {
+        "href"?: string;
+        "newTab"?: boolean;
+        "type"?: 'primary' | 'secondary' | 'basic';
     }
     interface CpyNavMenu {
         "items"?: NavMenuItem[];
@@ -301,6 +318,7 @@ declare namespace LocalJSX {
         "cpy-drawer": CpyDrawer;
         "cpy-drawer-container": CpyDrawerContainer;
         "cpy-icon": CpyIcon;
+        "cpy-link": CpyLink;
         "cpy-nav-menu": CpyNavMenu;
         "cpy-nav-menu-item": CpyNavMenuItem;
         "cpy-page-content": CpyPageContent;
@@ -325,6 +343,7 @@ declare module "@stencil/core" {
             "cpy-drawer": LocalJSX.CpyDrawer & JSXBase.HTMLAttributes<HTMLCpyDrawerElement>;
             "cpy-drawer-container": LocalJSX.CpyDrawerContainer & JSXBase.HTMLAttributes<HTMLCpyDrawerContainerElement>;
             "cpy-icon": LocalJSX.CpyIcon & JSXBase.HTMLAttributes<HTMLCpyIconElement>;
+            "cpy-link": LocalJSX.CpyLink & JSXBase.HTMLAttributes<HTMLCpyLinkElement>;
             "cpy-nav-menu": LocalJSX.CpyNavMenu & JSXBase.HTMLAttributes<HTMLCpyNavMenuElement>;
             "cpy-nav-menu-item": LocalJSX.CpyNavMenuItem & JSXBase.HTMLAttributes<HTMLCpyNavMenuItemElement>;
             "cpy-page-content": LocalJSX.CpyPageContent & JSXBase.HTMLAttributes<HTMLCpyPageContentElement>;

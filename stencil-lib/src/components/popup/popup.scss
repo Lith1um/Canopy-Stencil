@@ -6,7 +6,7 @@
   @apply inline-flex items-center justify-center relative;
 
   &--click-container {
-    @apply cursor-pointer;
+    @apply cursor-pointer inline-flex;
   }
 
   &--dropdown {

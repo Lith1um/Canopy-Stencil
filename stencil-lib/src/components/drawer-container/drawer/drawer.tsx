@@ -10,7 +10,7 @@ export class Drawer {
   @Prop()
   opened: boolean = false;
 
-  @Event() toggleOpened: EventEmitter<void>;
+  @Event({bubbles: false}) toggleOpened: EventEmitter<void>;
 
   render() {
     const classes = {

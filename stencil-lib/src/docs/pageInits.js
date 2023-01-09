@@ -1,5 +1,124 @@
 // Methods to handle when a page loads
 export const pageInits = {
+  webComps: () => {
+    document.getElementById('web-comp-install-npm-html').code = `<script
+  type="module"
+  src="node_modules/canopy-stencil-web/dist/canopy-stencil-web/canopy-stencil-web.esm.js">
+</script>
+<link
+  rel="stylesheet"
+  href="node_modules/canopy-stencil-web/dist/canopy-stencil-web/canopy-stencil-web.css"/>`;
+
+    document.getElementById('web-comp-install-unpkg-html').code = `<script
+  type="module"
+  src="https://unpkg.com/canopy-stencil-web@latest/dist/canopy-stencil-web/canopy-stencil-web.esm.js">
+</script>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/canopy-stencil-web@latest/dist/canopy-stencil-web/canopy-stencil-web.css"/>`;
+  },
+
+  angularComps: () => {
+    document.getElementById('angular-comp-install-module').code = `import { CanopyStencilModule } from 'canopy-stencil-angular';
+import { defineCustomElements } from 'canopy-stencil-web/loader';
+
+defineCustomElements();
+
+@NgModule({
+  imports: [
+    CanopyStencilModule,
+    ...
+  ],
+  ...
+});`;
+
+    document.getElementById('angular-comp-install-assets').code = `"assets": [
+  {
+    "glob": "**/*",
+    "input": "node_modules/canopy-stencil-web/dist/canopy-stencil-web/webfonts",
+    "output": "/webfonts/"
+  },
+  ...
+],
+"styles": [
+  "node_modules/canopy-stencil-web/dist/canopy-stencil-web/canopy-stencil-web.css",
+  ...
+],
+...`;
+  },
+
+  colours: () => {
+    document.getElementById('colours-override-simple').code = `html {
+  --cpy-bg-primary-rgb: 8, 145, 178; /* cyan-600 */
+  --cpy-bg-primary-light-rgb: 236, 254, 255;  /* cyan-50 */
+  --cpy-bg-primary-hover-rgb: 6, 182, 212; /* cyan-500 */
+  
+  --cpy-text-primary: rgb(14, 116, 144); /* cyan-700 */
+}
+html.dark {
+  --cpy-bg-primary-light-rgb: 8, 145, 178;  /* cyan-600 */
+      
+  --cpy-text-primary: rgb(6, 182, 212); /* cyan-500 */
+}`;
+    document.getElementById('colours-pallette-css').code = `:root {
+  /* overrides the text colour in dark mode for edge cases
+      like white text on coloured background for alerts */
+  --cpy-dm-text-override: currentColor;
+
+  /* based on tailwind colours */
+  --cpy-bg-light-rgb: 250, 250, 250; /* zinc-50 */
+  --cpy-bg-white-rgb: 255, 255, 255;
+  --cpy-bg-basic-rgb: 75, 85, 99; /* gray-600 */
+  --cpy-bg-basic-light-rgb: 249, 250, 251; /* grey-50 */
+  --cpy-bg-basic-hover-rgb: 107, 114, 128; /* grey-500 */
+  --cpy-bg-basic-border-rgb: 229, 231, 235; /* grey-200 */
+  --cpy-bg-primary-rgb: 124, 58, 237; /* violet-600 */
+  --cpy-bg-primary-light-rgb: 238, 242, 255;  /* violet-50 */
+  --cpy-bg-primary-hover-rgb: 139, 92, 246; /* violet-500 */
+  --cpy-bg-secondary-rgb: 234, 88, 12; /* orange-600 */
+  --cpy-bg-secondary-light-rgb: 255, 247, 237; /* orange-50 */
+  --cpy-bg-secondary-hover-rgb: 249, 115, 22; /* orange-500 */
+  --cpy-bg-success-rgb: 22, 163, 74; /* green-600 */
+  --cpy-bg-success-light-rgb: 240, 253, 244; /* green-50 */
+  --cpy-bg-success-hover-rgb: 34, 197, 94; /* green-500 */
+  --cpy-bg-error-rgb: 220, 38, 38; /* red-600 */
+  --cpy-bg-error-light-rgb: 254, 242, 242; /* red-50 */
+  --cpy-bg-error-hover-rgb: 239, 68, 68; /* red-500 */
+  --cpy-bg-warn-rgb: 217, 119, 6; /* amber-600 */
+  --cpy-bg-warn-light-rgb: 255, 251, 235; /* amber-50 */
+  --cpy-bg-warn-hover-rgb: 245, 158, 11; /* amber-500 */
+  --cpy-bg-disabled-rgb: 229, 231, 235; /* gray-200 */
+
+  --cpy-text-disabled: rgb(156, 163, 175); /* gray-400 */
+  --cpy-text-base: rgb(31, 41, 55); /* gray-800 */
+  --cpy-text-light: rgb(107, 114, 128); /* gray-500 */
+  --cpy-text-primary: rgb(109, 40, 217); /* violet-700 */
+  --cpy-text-secondary: rgb(194, 65, 12); /* orange-700 */
+  --cpy-text-basic: rgb(55, 65, 81); /* gray-700 */
+  --cpy-text-success: rgb(21, 128, 61); /* green-700 */
+  --cpy-text-warn: rgb(180, 83, 9); /* amber-700 */
+  --cpy-text-error: rgb(185, 28, 28); /* red-700 */
+  
+  --cpy-tooltip-bg: var(--cpy-bg-dark);
+  --cpy-tooltip-text: var(--cpy-bg-white);
+}`;
+
+    document.getElementById('colours-pallette-dark-css').code = `html.dark {
+  /* overrides the text colour in dark mode for edge cases
+      like white text on coloured background for alerts */
+  --cpy-dm-text-override: rgb(255, 255, 255);
+
+  /* based on tailwind colours */
+  --cpy-bg-light-rgb: 15, 23, 42; /* slate-900 */
+  --cpy-bg-white-rgb: 30, 41, 59; /* slate-800 */
+  ...
+}`;
+
+    document.getElementById('colours-pallette-dark-alt').code = `@media (prefers-color-scheme: dark) {
+  ...
+}`;
+  },
+
   codeBlock: () => {
     document.getElementById('code-block-scss-example').code = `.nav-menu-item {
   --item-opacity: 0;
@@ -22,7 +141,7 @@ export class CodeBlock {
 
   @Prop() code: string;
 
-  @Prop() language: 'typescript' | 'javascript' | 'scss' | 'css' | 'html' = 'typescript';
+  @Prop() language: 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell' = 'typescript';
 
   codeElem: HTMLElement;
 
@@ -56,7 +175,7 @@ export class CodeBlock {
 
     document.getElementById('code-block-props').tableData = [
       { name: 'code', description: 'The code snippet to show', type: "string", default: "", required: true },
-      { name: 'language', description: 'The code snippet language', type: "'typescript' | 'javascript' | 'scss' | 'css' | 'html'", default: "'typescript'", required: false },
+      { name: 'language', description: 'The code snippet language', type: "'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell'", default: "'typescript'", required: false },
     ];
   },
 
@@ -118,7 +237,7 @@ export class CodeBlock {
 </cpy-popup>`;
 
     document.getElementById('popup-props').tableData = [
-      { name: 'activeOn', description: 'What triggers the popup to show', type: "'click' | 'hover'", default: "'click'", required: false },
+      { name: 'active-on', description: 'What triggers the popup to show', type: "'click' | 'hover'", default: "'click'", required: false },
       { name: 'position', description: 'The position of the popup relative to the element it is linked with', type: "'bottom-start' | 'left-start' | 'right-start' | 'top-start'", default: "'bottom-start'", required: false },
     ];
 
@@ -181,16 +300,44 @@ export class CodeBlock {
     ];
 
     document.getElementById('nav-menu-html-example').code = `<cpy-nav-menu id="nav-menu"></cpy-nav-menu>
-
+    
 <script>
-  document.getElementById('nav-menu').items = [
-    { title: 'Basic Nav Item' },
-    { title: 'Basic Nav Item w/ Icon', icon: 'home' }
-  ];
+document.getElementById('nav-menu').items = [
+  { title: 'Basic Nav Item' },
+  { title: 'Basic Nav Item w/ Icon', icon: 'home' }
+];
 </script>`;
 
     document.getElementById('nav-menu-props').tableData = [
       { name: 'items', description: 'Items to populate the navigation menu with', type: 'NavMenuItem[]', default: "", required: true }
+    ];
+  },
+
+  drawer: () => {
+    document.getElementById('drawer-html-example').code = `<cpy-drawer-container id="drawer-example">
+  <!-- slotted content for drawer contents -->
+  <div slot="drawer" style="padding: 20px;">
+    I'm a drawer!
+  </div>
+  <!-- slot for main content -->
+  <div style="background-color: var(--cpy-bg-white); display: flex; align-items: center; justify-content: center; height: 100%; width: 100%;">
+    <cpy-button id="drawer-toggle">Click me!</cpy-button>
+  </div>
+</cpy-drawer-container>`;
+    const drawerElem = document.getElementById('drawer-example');
+    document.getElementById('drawer-toggle').onclick = () => drawerElem.opened = !drawerElem.opened;
+
+    document.getElementById('drawer-props').tableData = [
+      { name: 'opened', description: 'Whether the drawer in open', type: "boolean", default: "false", required: true }
+    ];
+
+    document.getElementById('drawer-events').tableData = [
+      { name: 'toggleOpened', description: 'Triggered when the drawer has internally changed its opened state', emitsType: "boolean" }
+    ];
+
+    document.getElementById('drawer-slots').tableData = [
+      { slotName: "-- (default)", purpose: 'Main content' },
+      { slotName: "drawer", purpose: 'Contents of the drawer' }
     ];
   },
 
@@ -236,6 +383,27 @@ export class CodeBlock {
 
     document.getElementById('button-slots').tableData = [
       { slotName: "-- (default)", purpose: 'Contents of the button' }
+    ];
+  },
+
+  link: () => {
+    document.getElementById('link-html-example').code = `<cpy-link href="https://www.google.com" newTab>
+  A link to google
+</cpy-link>
+
+<cpy-link href="https://github.com/lith1um/Canopy-Stencil" new-tab>
+  <!-- image within a link -->
+  <img src="https://github.com/Lith1um/Canopy-Stencil/raw/main/logo.png" alt="Logo" width="140">
+</cpy-link>`;
+
+    document.getElementById('link-props').tableData = [
+      { name: 'type', description: 'Colour scheme of the spinner', type: "'primary' | 'secondary' | 'basic'", default: "'primary'", required: false },
+      { name: 'href', description: 'Href for the link', type: "string", default: "", required: true },
+      { name: 'new-tab', description: 'Whether the link should open in a new tab', type: "boolean", default: "false", required: false },
+    ];
+
+    document.getElementById('link-slots').tableData = [
+      { slotName: "-- (default)", purpose: 'Contents of the link' }
     ];
   },
 

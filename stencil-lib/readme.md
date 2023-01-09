@@ -29,18 +29,26 @@ To get Canopy up and running in your application, you have 2 options:
    ```sh
    npm install canopy-stencil-web
    ```
-    - Add a script tag in the head of your index.html to load the package
+    - Add the script and link tags in the head of your index.html to load the package
       ```html
-        <script type="module" src="node_modules/canopy-stencil-web/dist/canopy-stencil-web/canopy-stencil-web.esm.js"></script>
-        <script nomodule src="node_modules/canopy-stencil-web/dist/canopy-stencil-web/canopy-stencil-web.js"></script>
-        <link rel="stylesheet" href="node_modules/canopy-stencil-web/dist/canopy-stencil-web/canopy-stencil-web.css"/>
+        <script
+          type="module"
+          src="node_modules/canopy-stencil-web/dist/canopy-stencil-web/canopy-stencil-web.esm.js">
+        </script>
+        <link
+          rel="stylesheet"
+          href="node_modules/canopy-stencil-web/dist/canopy-stencil-web/canopy-stencil-web.css"/>
       ```
     - You can now use the components anywhere in your template, JSX, html etc
   2. Use via CDN with unpkg
       - Add a script tag in the head of your index.html to load the package
         ```html
-          <script type="module" src="https://unpkg.com/canopy-stencil-web@latest/dist/canopy-stencil-web/canopy-stencil-web.esm.js"></script>
-          <script nomodule src="https://unpkg.com/canopy-stencil-web@latest/dist/canopy-stencil-web/canopy-stencil-web.js"></script>
-          <link rel="stylesheet" href="https://unpkg.com/canopy-stencil-web@latest/dist/canopy-stencil-web/canopy-stencil-web.css"/>
+          <script
+            type="module"
+            src="https://unpkg.com/canopy-stencil-web@latest/dist/canopy-stencil-web/canopy-stencil-web.esm.js">
+          </script>
+          <link
+            rel="stylesheet"
+            href="https://unpkg.com/canopy-stencil-web@latest/dist/canopy-stencil-web/canopy-stencil-web.css"/>
         ```
       - You can now use the components anywhere in your template, JSX, html etc

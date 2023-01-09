@@ -4,9 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-  <title>Stencil Component Starter</title>
+  <title>Canopy.</title>
 
-  <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
   <link rel="stylesheet" href="/build/canopy-stencil-web.css" />
   <script type="module" src="/build/canopy-stencil-web.esm.js"></script>
   <script nomodule src="/build/canopy-stencil-web.js"></script>
@@ -52,12 +51,16 @@
       --cpy-text-primary: rgb(132, 204, 22); /* lime-500 */
       --cpy-text-secondary: rgb(99, 102, 241); /* indigo-500 */
     }
+
+    p {
+      text-align: justify;
+    }
   </style>
 </head>
 
 <body style="height: 100%; width: 100%;">
   <cpy-drawer-container>
-    <div slot="menu" style="position: relative; padding: 20px;">
+    <div slot="drawer" style="padding: 20px;">
       <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="90" style="margin: 40px auto 20px auto;">
       <div style="text-align: center; margin-bottom: 24px;">
         <div style="font-size: 1.2rem;">Canopy</div>
@@ -65,7 +68,7 @@
       </div>
       <cpy-nav-menu></cpy-nav-menu>
       <div style="margin-top: 32px; text-align: center; font-size: 0.875rem; color: var(--cpy-text-light);">
-        <p>Alex Rayner ©2022</p>
+        <p style="text-align: center;">Alex Rayner ©2022</p>
         <a style="text-decoration: underline; color: var(--cpy-text-primary);" target="_blank" href="https://github.com/Lith1um/Canopy-Stencil">Github</a>
       </div>
     </div>
@@ -74,8 +77,8 @@
         <cpy-button icon type="basic" onclick="onMenuClick()">
           <cpy-icon style="color: white">menu</cpy-icon>
         </cpy-button>
-        <div style="flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.2rem; font-weight: 500; text-align: center;">
-          Canopy
+        <div style="flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.2rem; font-weight: 500;">
+          Canopy Web Components
         </div>
         <cpy-popup>
           <cpy-avatar src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
@@ -112,7 +115,7 @@
       </cpy-page-content>
     </div>
   </cpy-drawer-container>
-  <script type="module" src="docs/router.js"></script>
+  <script type="module" src="/docs/router.js"></script>
   <script defer>
     let darkMode = false;
     let currentPalette = 'blue';

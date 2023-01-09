@@ -1,1 +1,25 @@
 @import url(../../styles/prism.css);
+
+@media(min-width: 640px) {
+  pre {
+    &::-webkit-scrollbar {
+      @apply w-2 h-2;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      @apply bg-transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--cpy-bg-basic);
+      @apply rounded;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: var(--cpy-bg-basic);
+    }
+  }
+}

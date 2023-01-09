@@ -94,7 +94,7 @@ This covers the basic install, but extended configuration can be setup to overri
 
 ### Colours
 
-I think canopy is already using the best colour palette you could ever want ;) but I understand it may not fit your needs. Through the use of the `:root` selector in css, you can override almost every colour in the library (current colours are based on [tailwind](https://tailwindcss.com/docs/customizing-colors)). Below is the simplest example of overriding colours (replacing primary colour on light and dark mode):
+Personally I think canopy is already using the best colour palette you could ever want but I understand it may not fit your needs. Through the use of the `:root` selector in css, you can override almost every colour in the library (current colours are based on [tailwind](https://tailwindcss.com/docs/customizing-colors)). Below is the simplest example of overriding colours (replacing primary colour on light and dark mode):
 
 ```css
   html {
@@ -207,15 +207,7 @@ html.dark {
 }
 ```
 
-If you want to use a different method to checking for a dark class on the HTML tag, you can include your own css to set the colour variables. For example, if you want to use dark mode when the user has requested it in their browser settings, replace:
-
-```css
-html.dark {
-  ...
-}
-```
-
-with: 
+If you want to use a different method to checking for a dark class on the HTML tag, you can include your own css to set the colour variables. For example, if you want to use dark mode when the user has requested it in their browser settings, replace the html wrapper for your variables with:
 
 ```css
 @media (prefers-color-scheme: dark) {
@@ -230,7 +222,6 @@ with:
 - [ ] Components
   - [ ] Modal/Dialog
   - [ ] Form inputs
-  - [ ] Links
 
 See the <a href="https://github.com/lith1um/Canopy-Stencil/issues" target="_blank">open issues</a> for a full list of proposed features (and known issues).
 

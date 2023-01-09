@@ -12,6 +12,7 @@ export const DIRECTIVES = [
   d.CpyDrawer,
   d.CpyDrawerContainer,
   d.CpyIcon,
+  d.CpyLink,
   d.CpyNavMenu,
   d.CpyNavMenuItem,
   d.CpyPageContent,
