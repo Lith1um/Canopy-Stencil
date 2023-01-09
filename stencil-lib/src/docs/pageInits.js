@@ -346,7 +346,7 @@ document.getElementById('nav-menu').items = [
 
     document.getElementById('spinner-props').tableData = [
       { name: 'size', description: 'Spinner size', type: "'default' | 'large' | 'small'", default: "'default'", required: false },
-      { name: 'type', description: 'Colour scheme of the spinner', type: "'basic' | 'error' | 'primary' | 'secondary' | 'success' | 'warn'", default: "'primary'", required: false },
+      { name: 'type', description: 'Colour scheme of the spinner', type: "'basic' | 'error' | 'primary' | 'secondary' | 'success' | 'warn'", default: "", required: false },
     ];
   },
 
@@ -387,7 +387,7 @@ document.getElementById('nav-menu').items = [
   },
 
   link: () => {
-    document.getElementById('link-html-example').code = `<cpy-link href="https://www.google.com" newTab>
+    document.getElementById('link-html-example').code = `<cpy-link href="https://www.google.com" new-tab>
   A link to google
 </cpy-link>
 
