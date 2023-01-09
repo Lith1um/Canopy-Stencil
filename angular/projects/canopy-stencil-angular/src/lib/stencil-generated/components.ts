@@ -33,15 +33,36 @@ export declare interface CpyAvatar extends Components.CpyAvatar {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['border', 'size', 'src', 'type']
+  inputs: ['border', 'initials', 'size', 'src', 'type']
 })
 @Component({
   selector: 'cpy-avatar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['border', 'size', 'src', 'type']
+  inputs: ['border', 'initials', 'size', 'src', 'type']
 })
 export class CpyAvatar {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface CpyBadge extends Components.CpyBadge {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['appearance', 'size', 'type']
+})
+@Component({
+  selector: 'cpy-badge',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['appearance', 'size', 'type']
+})
+export class CpyBadge {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

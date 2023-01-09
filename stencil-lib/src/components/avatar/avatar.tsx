@@ -13,6 +13,8 @@ export class Avatar {
 
   @Prop() src: string;
 
+  @Prop() initials: string;
+
   @Prop() size: 'small' | 'default' | 'large' = 'default';
 
   render() {
@@ -21,11 +23,14 @@ export class Avatar {
       [`avatar--${this.type}`]: !!this.type,
       [`avatar--${this.size}`]: !!this.size,
       [`avatar--border`]: this.border,
+      [`avatar--initials`]: !!this.initials,
     };
 
     return (
       <div class={classes}>
-        <img src={this.src} alt="avatar"/>
+        {this.src
+          ? <img src={this.src} alt="avatar"/>
+          : <span>{this.initials}</span>}
       </div>
     );
   }

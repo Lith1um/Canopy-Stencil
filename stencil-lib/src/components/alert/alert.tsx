@@ -22,7 +22,7 @@ export class Alert {
 
   icons: {[level: string]: string} = {
     'success': 'check_circle',
-    'warning': 'warning',
+    'warn': 'warning',
     'error': 'cancel'
   };
 

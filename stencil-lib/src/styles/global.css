@@ -1,5 +1,3 @@
-@import url(./prism.css);
-
 @font-face {
   font-family: "Material Icons";
   font-style: normal;
@@ -124,9 +122,9 @@ html.dark {
 
   --cpy-bg-white-rgb: 30, 41, 59; /* slate-800 */
 
-  --cpy-bg-basic-rgb: 71, 85, 105; /* slate-600 */
+  --cpy-bg-basic-rgb: 100, 116, 139; /* slate-400 */
   --cpy-bg-basic-light-rgb: 71, 85, 105; /* slate-600 */
-  --cpy-bg-basic-hover-rgb: 100, 116, 139; /* slate-500 */
+  --cpy-bg-basic-hover-rgb: 148, 163, 184; /* slate-500 */
   --cpy-bg-basic-border-rgb: 71, 85, 105; /* slate-600 */
 
   --cpy-bg-primary-rgb: 124, 58, 237; /* violet-600 */

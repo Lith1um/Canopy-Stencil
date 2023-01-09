@@ -9,7 +9,7 @@ import { SpinnerAppearance, SpinnerSize } from './spinner.type';
 export class Spinner {
 
   @Prop()
-  type: SpinnerAppearance = 'primary';
+  type: SpinnerAppearance;
 
   @Prop()
   size: SpinnerSize = 'default';

@@ -3,7 +3,7 @@
 }
 
 .button {
-  @apply border-2 leading-9 h-9 relative rounded px-3.5 inline-flex items-center justify-center min-w-[64px] outline-0 select-none appearance-none overflow-visible align-middle bg-transparent;
+  @apply border-2 leading-9 h-9 relative rounded px-3.5 inline-flex items-center justify-center gap-1.5 min-w-[64px] outline-0 select-none appearance-none overflow-visible align-middle bg-transparent;
   --button-opacity: 1;
   --text-colour: var(--cpy-text-primary);
   --bg-colour-rgb: var(--cpy-bg-primary-rgb);
@@ -195,12 +195,4 @@
       }
     }
   }
-}
-
-::slotted(cpy-icon:first-child) {
-  @apply mr-1.5;
-}
-
-::slotted(cpy-icon:last-child:not(:first-child)) {
-  @apply ml-1.5;
 }

@@ -1,6 +1,9 @@
+:host {
+  @apply inline-flex;
+}
+
 .avatar {
-  @apply w-10 h-10 overflow-hidden;
-  background-color: var(--cpy-bg-light-rgb);
+  @apply w-10 h-10 overflow-hidden flex justify-center items-center text-white uppercase;
 
   img {
     @apply object-cover;
@@ -24,11 +27,15 @@
   }
 
   &--small {
-    @apply w-8 h-8;
+    @apply w-8 h-8 text-sm;
   }
 
   &--large {
-    @apply w-14 h-14;
+    @apply w-14 h-14 text-lg;
+  }
+
+  &--initials {
+    background-color: var(--cpy-bg-basic);
   }
   
 }

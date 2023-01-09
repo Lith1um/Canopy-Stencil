@@ -10,7 +10,7 @@
 | Property | Attribute | Description | Type                                                                    | Default     |
 | -------- | --------- | ----------- | ----------------------------------------------------------------------- | ----------- |
 | `size`   | `size`    |             | `"default" \| "large" \| "small"`                                       | `'default'` |
-| `type`   | `type`    |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"` | `'primary'` |
+| `type`   | `type`    |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"` | `undefined` |
 
 
 ----------------------------------------------

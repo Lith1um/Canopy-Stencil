@@ -4,7 +4,7 @@
 
 .spinner {
   @apply rounded-full border-4 h-8 w-8 border-r-transparent;
-  --border-colour: var(--cpy-text-primary);
+  --border-colour: currentColor;
   border-color: var(--border-colour);
   animation: spin 1s linear infinite;
 

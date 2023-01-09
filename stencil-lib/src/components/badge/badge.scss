@@ -1,0 +1,45 @@
+.badge {
+  @apply inline-flex leading-6 px-2 text-sm text-white;
+  --bg-colour: var(--cpy-bg-primary);
+  background-color: var(--bg-colour);
+
+  &--level-primary {
+    --bg-colour: var(--cpy-bg-primary);
+  }
+
+  &--level-secondary {
+    --bg-colour: var(--cpy-bg-secondary);
+  }
+
+  &--level-basic {
+    --bg-colour: var(--cpy-bg-basic);
+  }
+
+  &--level-success {
+    --bg-colour: var(--cpy-bg-success);
+  }
+
+  &--level-warn {
+    --bg-colour: var(--cpy-bg-warn);
+  }
+
+  &--level-error {
+    --bg-colour: var(--cpy-bg-error);
+  }
+
+  &--size-small {
+    @apply leading-5 text-xs px-1.5;
+  }
+
+  &--size-large {
+    @apply leading-8 text-base px-3;
+  }
+
+  &--appearance-counter {
+    @apply rounded-full;
+  }
+
+  &--appearance-tag {
+    @apply rounded-sm;
+  }
+}

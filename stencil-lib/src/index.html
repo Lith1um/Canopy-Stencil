@@ -112,15 +112,16 @@
       </cpy-page-content>
     </div>
   </cpy-drawer-container>
-  <script src="docs/router.js"></script>
+  <script type="module" src="docs/router.js"></script>
   <script defer>
     let darkMode = false;
-    let currentPalette = 'purple';
+    let currentPalette = 'blue';
     document.querySelector("html").classList.toggle(currentPalette);
     const drawerElement = document.querySelector('cpy-drawer-container');
     drawerElement.opened = window.matchMedia('(min-width: 640px)').matches;
     const darkModeCheckbox = document.getElementById('darkModeCheckbox');
     const paletteElement = document.getElementById('palette-picker');
+    paletteElement.value = currentPalette;
     paletteElement.addEventListener('change', () => {
       document.querySelector("html").classList.toggle(currentPalette);
       document.querySelector("html").classList.add(paletteElement.value);

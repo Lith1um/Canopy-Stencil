@@ -4,7 +4,7 @@ import '../../utils/prism';
 @Component({
   tag: 'cpy-code-block',
   styleUrl: 'code-block.scss',
-  shadow: false,
+  shadow: true,
 })
 export class CodeBlock {
 

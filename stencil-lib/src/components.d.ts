@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AlertAppearance, AlertType } from "./components/alert/alert.type";
+import { BadgeAppearance, BadgeSize, BadgeType } from "./components/badge/badge.type";
 import { ButtonAppearance, ButtonSize, ButtonStyle } from "./components/button/button.type";
 import { ContextMenuItem } from "./components/context-menu/context-menu.interface";
 import { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
@@ -19,9 +20,15 @@ export namespace Components {
     }
     interface CpyAvatar {
         "border": boolean;
+        "initials": string;
         "size": 'small' | 'default' | 'large';
         "src": string;
         "type": 'rounded' | 'square';
+    }
+    interface CpyBadge {
+        "appearance": BadgeAppearance;
+        "size": BadgeSize;
+        "type": BadgeType;
     }
     interface CpyButton {
         "appearance": ButtonStyle;
@@ -94,6 +101,12 @@ declare global {
     var HTMLCpyAvatarElement: {
         prototype: HTMLCpyAvatarElement;
         new (): HTMLCpyAvatarElement;
+    };
+    interface HTMLCpyBadgeElement extends Components.CpyBadge, HTMLStencilElement {
+    }
+    var HTMLCpyBadgeElement: {
+        prototype: HTMLCpyBadgeElement;
+        new (): HTMLCpyBadgeElement;
     };
     interface HTMLCpyButtonElement extends Components.CpyButton, HTMLStencilElement {
     }
@@ -188,6 +201,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "cpy-alert": HTMLCpyAlertElement;
         "cpy-avatar": HTMLCpyAvatarElement;
+        "cpy-badge": HTMLCpyBadgeElement;
         "cpy-button": HTMLCpyButtonElement;
         "cpy-code-block": HTMLCpyCodeBlockElement;
         "cpy-context-menu": HTMLCpyContextMenuElement;
@@ -214,9 +228,15 @@ declare namespace LocalJSX {
     }
     interface CpyAvatar {
         "border"?: boolean;
+        "initials"?: string;
         "size"?: 'small' | 'default' | 'large';
         "src"?: string;
         "type"?: 'rounded' | 'square';
+    }
+    interface CpyBadge {
+        "appearance"?: BadgeAppearance;
+        "size"?: BadgeSize;
+        "type"?: BadgeType;
     }
     interface CpyButton {
         "appearance"?: ButtonStyle;
@@ -273,6 +293,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "cpy-alert": CpyAlert;
         "cpy-avatar": CpyAvatar;
+        "cpy-badge": CpyBadge;
         "cpy-button": CpyButton;
         "cpy-code-block": CpyCodeBlock;
         "cpy-context-menu": CpyContextMenu;
@@ -296,6 +317,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "cpy-alert": LocalJSX.CpyAlert & JSXBase.HTMLAttributes<HTMLCpyAlertElement>;
             "cpy-avatar": LocalJSX.CpyAvatar & JSXBase.HTMLAttributes<HTMLCpyAvatarElement>;
+            "cpy-badge": LocalJSX.CpyBadge & JSXBase.HTMLAttributes<HTMLCpyBadgeElement>;
             "cpy-button": LocalJSX.CpyButton & JSXBase.HTMLAttributes<HTMLCpyButtonElement>;
             "cpy-code-block": LocalJSX.CpyCodeBlock & JSXBase.HTMLAttributes<HTMLCpyCodeBlockElement>;
             "cpy-context-menu": LocalJSX.CpyContextMenu & JSXBase.HTMLAttributes<HTMLCpyContextMenuElement>;

@@ -3,7 +3,7 @@ export type AlertType =
   | 'secondary'
   | 'basic'
   | 'success'
-  | 'warning'
+  | 'warn'
   | 'error';
 
 export type AlertAppearance =

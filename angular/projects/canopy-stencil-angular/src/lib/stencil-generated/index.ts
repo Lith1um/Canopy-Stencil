@@ -4,6 +4,7 @@ import * as d from './components';
 export const DIRECTIVES = [
   d.CpyAlert,
   d.CpyAvatar,
+  d.CpyBadge,
   d.CpyButton,
   d.CpyCodeBlock,
   d.CpyContextMenu,
