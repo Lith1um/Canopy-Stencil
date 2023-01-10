@@ -23,6 +23,10 @@ const menuItems = navMenuElement.items = [
     { title: 'Layout', icon: 'dashboard', type: 'collapsible', description: 'Common UI layouts', children: [
       { title: 'Drawer', type: 'basic', url: '/comps/drawer', function: closeMenuOnMobileNav },
       { title: 'Navigation Menu', type: 'basic', url: '/comps/navMenu', function: closeMenuOnMobileNav },
+      { title: 'Layout', icon: 'dashboard', type: 'collapsible', description: 'Common UI layouts', children: [
+        { title: 'Drawer', type: 'basic', url: '/comps/drawer', function: closeMenuOnMobileNav },
+        { title: 'Navigation Menu', type: 'basic', url: '/comps/navMenu', function: closeMenuOnMobileNav },
+      ] },
     ] },
     { title: 'Interactions', icon: 'touch_app', type: 'collapsible', description: 'Floating UI components', children: [
       { title: 'Popup', type: 'basic', url: '/comps/popup', function: closeMenuOnMobileNav },
