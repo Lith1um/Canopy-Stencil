@@ -218,6 +218,35 @@ export class CpyDrawerContainer {
 }
 
 
+export declare interface CpyExpandCollapse extends Components.CpyExpandCollapse {
+  /**
+   *  
+   */
+  toggleExpanded: EventEmitter<CustomEvent<boolean>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['expanded'],
+  methods: ['expand', 'collapse', 'toggle']
+})
+@Component({
+  selector: 'cpy-expand-collapse',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['expanded']
+})
+export class CpyExpandCollapse {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['toggleExpanded']);
+  }
+}
+
+
 export declare interface CpyIcon extends Components.CpyIcon {}
 
 @ProxyCmp({

@@ -30,6 +30,7 @@
 
 - [cpy-icon](../../icon)
 - [cpy-nav-menu-item](.)
+- [cpy-expand-collapse](../../expand-collapse)
 
 ### Graph
 ```mermaid

@@ -28,6 +28,7 @@ const menuItems = navMenuElement.items = [
       { title: 'Popup', type: 'basic', url: '/comps/popup', function: closeMenuOnMobileNav },
       { title: 'Toast', type: 'basic', url: '/comps/toast', function: closeMenuOnMobileNav },
       { title: 'Tooltip', type: 'basic', url: '/comps/tooltip', function: closeMenuOnMobileNav },
+      { title: 'Expand/Collapse', type: 'basic', url: '/comps/expandCollapse', function: closeMenuOnMobileNav },
     ] },
     { title: 'Generic', icon: 'inventory_2', type: 'collapsible', description: 'Simple UI components', children: [
       { title: 'Alert', type: 'basic', url: '/comps/alert', function: closeMenuOnMobileNav },

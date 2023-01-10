@@ -52,10 +52,13 @@ export class DrawerContainer {
 
   componentDidRender(): void {
     // handle initial render case
-    if (this.firstRender) {
+    if (this.firstRender && this.opened) {
+      this.contentElem.style.transitionDuration = '0s';
       this.mediaChange(window.matchMedia('(min-width: 640px)'));
-      this.firstRender = false;
+      // Hacky fix to prevent main content sliding in if drawer is open on load
+      setTimeout(() => this.contentElem.style.transitionDuration = null, 300);
     }
+    this.firstRender = false;
   }
 
   render() {

@@ -55,6 +55,12 @@ export namespace Components {
     interface CpyDrawerContainer {
         "opened": boolean;
     }
+    interface CpyExpandCollapse {
+        "collapse": () => Promise<void>;
+        "expand": () => Promise<void>;
+        "expanded": boolean;
+        "toggle": () => Promise<void>;
+    }
     interface CpyIcon {
     }
     interface CpyLink {
@@ -110,6 +116,10 @@ export interface CpyDrawerCustomEvent<T> extends CustomEvent<T> {
 export interface CpyDrawerContainerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyDrawerContainerElement;
+}
+export interface CpyExpandCollapseCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyExpandCollapseElement;
 }
 export interface CpyNavMenuItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -173,6 +183,12 @@ declare global {
     var HTMLCpyDrawerContainerElement: {
         prototype: HTMLCpyDrawerContainerElement;
         new (): HTMLCpyDrawerContainerElement;
+    };
+    interface HTMLCpyExpandCollapseElement extends Components.CpyExpandCollapse, HTMLStencilElement {
+    }
+    var HTMLCpyExpandCollapseElement: {
+        prototype: HTMLCpyExpandCollapseElement;
+        new (): HTMLCpyExpandCollapseElement;
     };
     interface HTMLCpyIconElement extends Components.CpyIcon, HTMLStencilElement {
     }
@@ -250,6 +266,7 @@ declare global {
         "cpy-context-menu-item": HTMLCpyContextMenuItemElement;
         "cpy-drawer": HTMLCpyDrawerElement;
         "cpy-drawer-container": HTMLCpyDrawerContainerElement;
+        "cpy-expand-collapse": HTMLCpyExpandCollapseElement;
         "cpy-icon": HTMLCpyIconElement;
         "cpy-link": HTMLCpyLinkElement;
         "cpy-nav-menu": HTMLCpyNavMenuElement;
@@ -309,6 +326,10 @@ declare namespace LocalJSX {
         "onToggleDrawer"?: (event: CpyDrawerContainerCustomEvent<void>) => void;
         "opened"?: boolean;
     }
+    interface CpyExpandCollapse {
+        "expanded"?: boolean;
+        "onToggleExpanded"?: (event: CpyExpandCollapseCustomEvent<boolean>) => void;
+    }
     interface CpyIcon {
     }
     interface CpyLink {
@@ -363,6 +384,7 @@ declare namespace LocalJSX {
         "cpy-context-menu-item": CpyContextMenuItem;
         "cpy-drawer": CpyDrawer;
         "cpy-drawer-container": CpyDrawerContainer;
+        "cpy-expand-collapse": CpyExpandCollapse;
         "cpy-icon": CpyIcon;
         "cpy-link": CpyLink;
         "cpy-nav-menu": CpyNavMenu;
@@ -389,6 +411,7 @@ declare module "@stencil/core" {
             "cpy-context-menu-item": LocalJSX.CpyContextMenuItem & JSXBase.HTMLAttributes<HTMLCpyContextMenuItemElement>;
             "cpy-drawer": LocalJSX.CpyDrawer & JSXBase.HTMLAttributes<HTMLCpyDrawerElement>;
             "cpy-drawer-container": LocalJSX.CpyDrawerContainer & JSXBase.HTMLAttributes<HTMLCpyDrawerContainerElement>;
+            "cpy-expand-collapse": LocalJSX.CpyExpandCollapse & JSXBase.HTMLAttributes<HTMLCpyExpandCollapseElement>;
             "cpy-icon": LocalJSX.CpyIcon & JSXBase.HTMLAttributes<HTMLCpyIconElement>;
             "cpy-link": LocalJSX.CpyLink & JSXBase.HTMLAttributes<HTMLCpyLinkElement>;
             "cpy-nav-menu": LocalJSX.CpyNavMenu & JSXBase.HTMLAttributes<HTMLCpyNavMenuElement>;

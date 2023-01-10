@@ -44,11 +44,6 @@ export class NavMenuItemComp {
       [`nav-menu-item--${this.item.type}`]: !!this.item.type,
     }
 
-    const collapseGroupClasses = {
-      'nav-menu-item__collapse': true,
-      'nav-menu-item__collapse--open': !this.collapsed
-    }
-
     const collapseIconClasses = {
       'nav-menu-item__collapse-icon': true,
       'nav-menu-item__collapse-icon--open': !this.collapsed
@@ -87,10 +82,10 @@ export class NavMenuItemComp {
           <cpy-nav-menu-item item={item}></cpy-nav-menu-item>)}
 
         {this.item.type === 'collapsible' && 
-          <div class={collapseGroupClasses}>
+          <cpy-expand-collapse expanded={!this.collapsed}>
             {this.item.children?.map(item =>
               <cpy-nav-menu-item item={item}></cpy-nav-menu-item>)}
-          </div>}
+          </cpy-expand-collapse>}
           
         {this.item.separator && <div class="nav-menu-item__separator"></div>}
       </div>
