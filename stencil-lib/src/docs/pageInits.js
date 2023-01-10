@@ -313,6 +313,77 @@ document.getElementById('nav-menu').items = [
     ];
   },
 
+  toast: () => {
+    const toastElem1 = document.getElementById('toast-comp-1');
+    document.getElementById('toast-show-button-1').onclick = () => {
+      toastElem1.open();
+    };
+    document.getElementById('toast-alert-comp-1').addEventListener('closed', () => toastElem1.close());
+    
+    const toastElem2 = document.getElementById('toast-comp-2');
+    document.getElementById('toast-show-button-2').onclick = () => {
+      toastElem2.open();
+    };
+    document.getElementById('toast-alert-comp-2').addEventListener('closed', () => toastElem2.close());
+
+    const toastElem3 = document.getElementById('toast-comp-3');
+    document.getElementById('toast-show-button-3').onclick = () => {
+      toastElem3.open();
+    };
+    document.getElementById('toast-alert-comp-3').addEventListener('closed', () => toastElem3.close());
+
+    const toastElem4 = document.getElementById('toast-comp-4');
+    document.getElementById('toast-show-button-4').onclick = () => {
+      toastElem4.open();
+    };
+    document.getElementById('toast-alert-comp-4').addEventListener('closed', () => toastElem4.close());
+
+    const toastElem5 = document.getElementById('toast-comp-5');
+    document.getElementById('toast-show-button-5').onclick = () => {
+      toastElem5.open();
+    };
+    document.getElementById('toast-alert-comp-5').addEventListener('closed', () => toastElem5.close());
+
+    const toastElem6 = document.getElementById('toast-comp-6');
+    document.getElementById('toast-show-button-6').onclick = () => {
+      toastElem6.open();
+    };
+    document.getElementById('toast-alert-comp-6').addEventListener('closed', () => toastElem6.close());
+
+    document.getElementById('toast-html-example').code = `<cpy-toast id="toast-comp" position="top-start">
+  <cpy-alert id="toast-alert-comp" type="primary" style="display: block; width: 300px;" dismissible>
+    This is a primary alert
+    <div slot="content">Some additional text about the primary alert</div>
+  </cpy-alert>
+</cpy-toast>
+
+<script>
+  const toastElem = document.getElementById('toast-comp');
+  toastElem.open();
+  document.getElementById('toast-alert-comp').addEventListener('closed', () => toastElem1.close());
+</script>`;
+
+    document.getElementById('toast-props').tableData = [
+      { name: 'position', description: 'Position of the toast message', type: "'top-start' | 'top-middle' | 'top-end' | 'bottom-start' | 'bottom-middle' | 'bottom-end'", default: "'top-end'", required: false },
+      { name: 'zIndex', description: 'Z-index of the toast', type: "string", default: "50", required: false },
+      { name: 'duration', description: 'Duration to keep toast open. A value of 0 will keep it open until the close method is called', type: "number", default: "4000", required: false }
+    ];
+
+    document.getElementById('toast-events').tableData = [
+      { name: 'closed', description: 'Triggered when the toast is closed', emitsType: "" },
+      { name: 'opened', description: 'Triggered when the toast is opened', emitsType: "" }
+    ];
+
+    document.getElementById('toast-methods').tableData = [
+      { name: 'close()', description: 'Closes the toast', returnType: "" },
+      { name: 'open()', description: 'Opens the toast', returnType: "" }
+    ];
+
+    document.getElementById('toast-slots').tableData = [
+      { slotName: "-- (default)", purpose: 'Toast content' }
+    ];
+  },
+
   drawer: () => {
     document.getElementById('drawer-html-example').code = `<cpy-drawer-container id="drawer-example">
   <!-- slotted content for drawer contents -->
@@ -419,7 +490,12 @@ document.getElementById('nav-menu').items = [
       { name: 'appearance', description: 'Alert styles', type: "'border' | 'soft'", default: "'soft'", required: false },
       { name: 'container', description: 'Whether the alert has a container', type: 'boolean', default: "true", required: false },
       { name: 'icon', description: 'The icon (if any) to show', type: 'string', default: "", required: false },
-      { name: 'type', description: 'Colour scheme of the alert', type: "'basic' | 'error' | 'primary' | 'secondary' | 'success' | 'warn'", default: "'error'", required: false }
+      { name: 'type', description: 'Colour scheme of the alert', type: "'basic' | 'error' | 'primary' | 'secondary' | 'success' | 'warn'", default: "'error'", required: false },
+      { name: 'dismissible', description: 'Whether the alert can be dismissed', type: "boolean", default: "false", required: false }
+    ];
+    
+    document.getElementById('alert-events').tableData = [
+      { name: 'closed', description: 'Triggered when the alert dismiss button is clicked', emitsType: "" }
     ];
 
     document.getElementById('alert-slots').tableData = [

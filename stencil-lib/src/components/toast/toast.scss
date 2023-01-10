@@ -1,0 +1,43 @@
+.toast {
+  @apply fixed max-w-full transition-transform duration-300;
+
+  &--container {
+    @apply m-4 shadow-md rounded-md;
+  }
+
+  &--top-start {
+    @apply -translate-x-full top-0 left-0;
+  }
+
+  &--top-middle {
+    @apply -translate-y-full top-0 left-1/2 -translate-x-1/2;
+
+    &.toast--show {
+      @apply translate-y-0;
+    }
+  }
+
+  &--top-end {
+    @apply translate-x-full top-0 right-0;
+  }
+
+  &--bottom-start {
+    @apply -translate-x-full bottom-0 left-0;
+  }
+
+  &--bottom-middle {
+    @apply translate-y-full bottom-0 left-1/2 -translate-x-1/2;
+
+    &.toast--show {
+      @apply translate-y-0;
+    }
+  }
+
+  &--bottom-end {
+    @apply translate-x-full bottom-0 right-0;
+  }
+
+  &--show:not(.toast--top-middle):not(.toast--bottom-middle) {
+    @apply translate-x-0;
+  }
+}

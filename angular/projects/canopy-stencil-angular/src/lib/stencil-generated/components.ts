@@ -8,23 +8,30 @@ import { Components } from 'canopy-stencil-web';
 
 
 
-export declare interface CpyAlert extends Components.CpyAlert {}
+export declare interface CpyAlert extends Components.CpyAlert {
+  /**
+   *  
+   */
+  closed: EventEmitter<CustomEvent<void>>;
+
+}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['appearance', 'container', 'icon', 'type']
+  inputs: ['appearance', 'container', 'dismissible', 'icon', 'type']
 })
 @Component({
   selector: 'cpy-alert',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['appearance', 'container', 'icon', 'type']
+  inputs: ['appearance', 'container', 'dismissible', 'icon', 'type']
 })
 export class CpyAlert {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['closed']);
   }
 }
 
@@ -371,6 +378,39 @@ export class CpyTable {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface CpyToast extends Components.CpyToast {
+  /**
+   *  
+   */
+  closed: EventEmitter<CustomEvent<void>>;
+  /**
+   *  
+   */
+  opened: EventEmitter<CustomEvent<void>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['duration', 'position', 'zIndex'],
+  methods: ['close', 'open']
+})
+@Component({
+  selector: 'cpy-toast',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['duration', 'position', 'zIndex']
+})
+export class CpyToast {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['closed', 'opened']);
   }
 }
 

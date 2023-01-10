@@ -9,6 +9,10 @@
     @apply bg-transparent p-0 mb-2 #{'!important'};
   }
 
+  &__close {
+    @apply absolute top-0 right-0 z-10;
+  }
+
   /* Icon */
   .alert-icon {
     &:not(:empty) {
@@ -55,6 +59,10 @@
     .alert-icon,
     .alert-title {
       color: var(--cpy-dm-text-override);
+
+      .alert__close--icon {
+        color: var(--cpy-dm-text-override);
+      }
     }
   }
 

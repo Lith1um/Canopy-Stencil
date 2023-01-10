@@ -20,11 +20,13 @@
 
 ### Used by
 
+ - [cpy-alert](../alert)
  - [cpy-drawer](../drawer-container/drawer)
 
 ### Graph
 ```mermaid
 graph TD;
+  cpy-alert --> cpy-button
   cpy-drawer --> cpy-button
   style cpy-button fill:#f9f,stroke:#333,stroke-width:4px
 ```

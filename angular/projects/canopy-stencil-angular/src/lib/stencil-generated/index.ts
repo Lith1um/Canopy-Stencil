@@ -19,6 +19,7 @@ export const DIRECTIVES = [
   d.CpyPopup,
   d.CpySpinner,
   d.CpyTable,
+  d.CpyToast,
   d.CpyToolbar,
   d.CpyTooltip
 ];

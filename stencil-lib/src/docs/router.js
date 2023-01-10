@@ -25,6 +25,7 @@ const menuItems = navMenuElement.items = [
     { title: 'Code Block', type: 'basic', url: '/comps/codeBlock', icon: 'code', function: closeMenuOnMobileNav },
     { title: 'Context Menu', type: 'basic', url: '/comps/contextMenu', icon: 'list_alt', function: closeMenuOnMobileNav },
     { title: 'Navigation Menu', type: 'basic', url: '/comps/navMenu', icon: 'menu_open', function: closeMenuOnMobileNav },
+    { title: 'Toast', type: 'basic', url: '/comps/toast', icon: 'breakfast_dining', function: closeMenuOnMobileNav },
     { title: 'Drawer', type: 'basic', url: '/comps/drawer', icon: 'space_dashboard', function: closeMenuOnMobileNav },
     { title: 'Spinner', type: 'basic', url: '/comps/spinner', icon: 'refresh', function: closeMenuOnMobileNav },
     { title: 'Badge', type: 'basic', url: '/comps/badge', icon: 'notifications', function: closeMenuOnMobileNav },

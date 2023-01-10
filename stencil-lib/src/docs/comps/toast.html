@@ -1,0 +1,95 @@
+<h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
+  Toasts
+</h3>
+
+<p style="margin-top: 1rem; margin-bottom: 2rem;">
+  Canopy toasts provide well defined elements for rendering messages that appear from off screen. They are referenced using the &lt;cpy-toast&gt; custom HTML element. This component utilizes the slot element, allowing you to render your own HTML in the toast, however it is best used in conjunction with the &lt;cpy-alert&gt; component.
+</p>
+
+<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
+<div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+  <cpy-button id="toast-show-button-1">
+    Top Left
+  </cpy-button>
+
+  <cpy-toast id="toast-comp-1" position="top-start">
+    <cpy-alert id="toast-alert-comp-1" type="primary" style="display: block; width: 300px;" dismissible>
+      This is a primary alert
+      <div slot="content">Some additional text about the primary alert</div>
+    </cpy-alert>
+  </cpy-toast>
+
+  <cpy-button id="toast-show-button-2">
+    Top Middle
+  </cpy-button>
+
+  <cpy-toast id="toast-comp-2" position="top-middle">
+    <cpy-alert id="toast-alert-comp-2" type="secondary" style="display: block; width: 300px;" dismissible>
+      This is a secondary alert
+      <div slot="content">Some additional text about the secondary alert</div>
+    </cpy-alert>
+  </cpy-toast>
+
+  <cpy-button id="toast-show-button-3">
+    Top Right
+  </cpy-button>
+
+  <cpy-toast id="toast-comp-3" position="top-end">
+    <cpy-alert id="toast-alert-comp-3" type="basic" style="display: block; width: 300px;" dismissible>
+      This is a basic alert
+      <div slot="content">Some additional text about the basic alert</div>
+    </cpy-alert>
+  </cpy-toast>
+  
+  <cpy-button id="toast-show-button-4">
+    Bottom Left
+  </cpy-button>
+
+  <cpy-toast id="toast-comp-4" position="bottom-start">
+    <cpy-alert id="toast-alert-comp-4" type="success" style="display: block; width: 300px;" dismissible>
+      This is a success alert
+      <div slot="content">Some additional text about the success alert</div>
+    </cpy-alert>
+  </cpy-toast>
+  
+  <cpy-button id="toast-show-button-5">
+    Bottom Middle
+  </cpy-button>
+
+  <cpy-toast id="toast-comp-5" position="bottom-middle">
+    <cpy-alert id="toast-alert-comp-5" type="warn" style="display: block; width: 300px;" dismissible>
+      This is a warning alert
+      <div slot="content">Some additional text about the warning alert</div>
+    </cpy-alert>
+  </cpy-toast>
+  
+  <cpy-button id="toast-show-button-6">
+    Bottom Right
+  </cpy-button>
+
+  <cpy-toast id="toast-comp-6" position="bottom-end">
+    <cpy-alert id="toast-alert-comp-6" type="error" style="display: block; width: 300px;" dismissible>
+      This is an error alert
+      <div slot="content">Some additional text about the error alert</div>
+    </cpy-alert>
+  </cpy-toast>
+</div>
+
+<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+
+<div style="margin-top: 1rem; margin-bottom: 2rem;">
+  <p>Language</p>
+  <cpy-code-block id="toast-html-example" language="html"></cpy-code-block>
+</div>
+
+<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
+<cpy-table id="toast-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+
+<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Events</h3>
+<cpy-table id="toast-events" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+
+<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Methods</h3>
+<cpy-table id="toast-methods" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+
+<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
+<cpy-table id="toast-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>

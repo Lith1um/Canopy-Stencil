@@ -222,6 +222,7 @@ If you want to use a different method to checking for a dark class on the HTML t
 - [ ] Components
   - [ ] Modal/Dialog
   - [ ] Form inputs
+  - [ ] Ghost Components?
 
 See the <a href="https://github.com/lith1um/Canopy-Stencil/issues" target="_blank">open issues</a> for a full list of proposed features (and known issues).
 

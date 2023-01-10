@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Event, EventEmitter } from '@stencil/core';
 import { AlertAppearance, AlertType } from './alert.type';
 
 @Component({
@@ -19,6 +19,12 @@ export class Alert {
 
   @Prop()
   icon: string;
+
+  @Prop()
+  dismissible: boolean;
+
+  @Event()
+  closed: EventEmitter<void>;
 
   icons: {[level: string]: string} = {
     'success': 'check_circle',
@@ -49,6 +55,10 @@ export class Alert {
 
           <div class="alert-title">
             <slot></slot>
+
+            {this.dismissible && <cpy-button class="alert__close" icon type="basic" onClick={() => this.closed.emit()}>
+              <cpy-icon class="alert__close--icon">close</cpy-icon>
+            </cpy-button>}
           </div>
 
           <div class="alert-message">

@@ -7,12 +7,20 @@
 
 ## Properties
 
-| Property     | Attribute    | Description | Type                                                                    | Default     |
-| ------------ | ------------ | ----------- | ----------------------------------------------------------------------- | ----------- |
-| `appearance` | `appearance` |             | `"border" \| "soft"`                                                    | `'soft'`    |
-| `container`  | `container`  |             | `boolean`                                                               | `true`      |
-| `icon`       | `icon`       |             | `string`                                                                | `undefined` |
-| `type`       | `type`       |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"` | `'error'`   |
+| Property      | Attribute     | Description | Type                                                                    | Default     |
+| ------------- | ------------- | ----------- | ----------------------------------------------------------------------- | ----------- |
+| `appearance`  | `appearance`  |             | `"border" \| "soft"`                                                    | `'soft'`    |
+| `container`   | `container`   |             | `boolean`                                                               | `true`      |
+| `dismissible` | `dismissible` |             | `boolean`                                                               | `undefined` |
+| `icon`        | `icon`        |             | `string`                                                                | `undefined` |
+| `type`        | `type`        |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"` | `'error'`   |
+
+
+## Events
+
+| Event    | Description | Type                |
+| -------- | ----------- | ------------------- |
+| `closed` |             | `CustomEvent<void>` |
 
 
 ## Dependencies
@@ -20,11 +28,13 @@
 ### Depends on
 
 - [cpy-icon](../icon)
+- [cpy-button](../button)
 
 ### Graph
 ```mermaid
 graph TD;
   cpy-alert --> cpy-icon
+  cpy-alert --> cpy-button
   style cpy-alert fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
