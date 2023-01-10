@@ -111,6 +111,10 @@ export interface CpyDrawerContainerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyDrawerContainerElement;
 }
+export interface CpyNavMenuItemCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyNavMenuItemElement;
+}
 export interface CpyToastCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyToastElement;
@@ -317,6 +321,7 @@ declare namespace LocalJSX {
     }
     interface CpyNavMenuItem {
         "item"?: NavMenuItem;
+        "onItemActive"?: (event: CpyNavMenuItemCustomEvent<void>) => void;
     }
     interface CpyPageContent {
     }

@@ -1,4 +1,4 @@
-export type NavMenuItemType = 'basic' | 'group';
+export type NavMenuItemType = 'basic' | 'group' | 'collapsible';
 
 export interface NavMenuItem {
 

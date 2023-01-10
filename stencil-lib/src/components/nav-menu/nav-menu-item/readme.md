@@ -12,6 +12,13 @@
 | `item`   | --        |             | `NavMenuItem` | `undefined` |
 
 
+## Events
+
+| Event        | Description | Type                |
+| ------------ | ----------- | ------------------- |
+| `itemActive` |             | `CustomEvent<void>` |
+
+
 ## Dependencies
 
 ### Used by

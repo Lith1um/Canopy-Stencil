@@ -1,6 +1,6 @@
 .nav-menu-item {
   --item-opacity: 0;
-  @apply flex gap-4 mb-1 py-2.5 px-4 rounded-md cursor-pointer items-center select-none;
+  @apply flex gap-4 mb-1 py-2.5 px-4 rounded-md cursor-pointer items-center select-none min-h-[3rem];
   background-color: rgba(var(--cpy-bg-basic-rgb), var(--item-opacity));
 
   &:hover, &--active {
@@ -17,6 +17,26 @@
     .nav-menu-item__title {
       @apply uppercase;
       color: var(--cpy-text-primary);
+    }
+  }
+
+  &__content {
+    @apply flex-1;
+  }
+
+  &__collapse-icon {
+    @apply transition-all;
+
+    &--open {
+      @apply rotate-90;
+    }
+  }
+
+  &__collapse {
+    @apply ml-2 h-0 overflow-hidden;
+
+    &--open {
+      @apply h-auto;
     }
   }
 

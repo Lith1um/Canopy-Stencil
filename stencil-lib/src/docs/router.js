@@ -19,21 +19,27 @@ const menuItems = navMenuElement.items = [
     { title: 'Colours & Dark Mode', type: 'basic', url: '/learn-more/colours', icon: 'palette', function: closeMenuOnMobileNav },
   ] },
   {
-    title: 'UI Components', type: 'group', description: 'Building blocks of websites', children: [
-    { title: 'Tooltip', type: 'basic', url: '/comps/tooltip', icon: 'chat_bubble', function: closeMenuOnMobileNav },
-    { title: 'Popup', type: 'basic', url: '/comps/popup', icon: 'menu', function: closeMenuOnMobileNav },
-    { title: 'Code Block', type: 'basic', url: '/comps/codeBlock', icon: 'code', function: closeMenuOnMobileNav },
-    { title: 'Context Menu', type: 'basic', url: '/comps/contextMenu', icon: 'list_alt', function: closeMenuOnMobileNav },
-    { title: 'Navigation Menu', type: 'basic', url: '/comps/navMenu', icon: 'menu_open', function: closeMenuOnMobileNav },
-    { title: 'Toast', type: 'basic', url: '/comps/toast', icon: 'breakfast_dining', function: closeMenuOnMobileNav },
-    { title: 'Drawer', type: 'basic', url: '/comps/drawer', icon: 'space_dashboard', function: closeMenuOnMobileNav },
-    { title: 'Spinner', type: 'basic', url: '/comps/spinner', icon: 'refresh', function: closeMenuOnMobileNav },
-    { title: 'Badge', type: 'basic', url: '/comps/badge', icon: 'notifications', function: closeMenuOnMobileNav },
-    { title: 'Button', type: 'basic', url: '/comps/button', icon: 'smart_button', function: closeMenuOnMobileNav },
-    { title: 'Link', type: 'basic', url: '/comps/link', icon: 'link', function: closeMenuOnMobileNav },
-    { title: 'Alert', type: 'basic', url: '/comps/alert', icon: 'warning', function: closeMenuOnMobileNav },
-    { title: 'Avatar', type: 'basic', url: '/comps/avatar', icon: 'account_circle', function: closeMenuOnMobileNav },
-    { title: 'Table', type: 'basic', url: '/comps/table', icon: 'table', function: closeMenuOnMobileNav },
+    title: 'User Interface', type: 'group', description: 'Building blocks of websites', children: [
+    { title: 'Layout', icon: 'dashboard', type: 'collapsible', description: 'Common UI layouts', children: [
+      { title: 'Drawer', type: 'basic', url: '/comps/drawer', function: closeMenuOnMobileNav },
+      { title: 'Navigation Menu', type: 'basic', url: '/comps/navMenu', function: closeMenuOnMobileNav },
+    ] },
+    { title: 'Interactions', icon: 'touch_app', type: 'collapsible', description: 'Floating UI components', children: [
+      { title: 'Popup', type: 'basic', url: '/comps/popup', function: closeMenuOnMobileNav },
+      { title: 'Toast', type: 'basic', url: '/comps/toast', function: closeMenuOnMobileNav },
+      { title: 'Tooltip', type: 'basic', url: '/comps/tooltip', function: closeMenuOnMobileNav },
+    ] },
+    { title: 'Generic', icon: 'inventory_2', type: 'collapsible', description: 'Simple UI components', children: [
+      { title: 'Alert', type: 'basic', url: '/comps/alert', function: closeMenuOnMobileNav },
+      { title: 'Avatar', type: 'basic', url: '/comps/avatar', function: closeMenuOnMobileNav },
+      { title: 'Badge', type: 'basic', url: '/comps/badge', function: closeMenuOnMobileNav },
+      { title: 'Button', type: 'basic', url: '/comps/button', function: closeMenuOnMobileNav },
+      { title: 'Code Block', type: 'basic', url: '/comps/codeBlock', function: closeMenuOnMobileNav },
+      { title: 'Context Menu', type: 'basic', url: '/comps/contextMenu', function: closeMenuOnMobileNav },
+      { title: 'Link', type: 'basic', url: '/comps/link', function: closeMenuOnMobileNav },
+      { title: 'Spinner', type: 'basic', url: '/comps/spinner', function: closeMenuOnMobileNav },
+      { title: 'Table', type: 'basic', url: '/comps/table', function: closeMenuOnMobileNav },
+    ] },
   ] },
 ];
 
@@ -64,7 +70,7 @@ const handleRoute = () => {
   const path = window.location.pathname.substring(1);
   loadPage(path);
   const setActive = (item) => {
-    return item.type !== 'group'
+    return item.type === 'basic'
       ? { ...item, active: window.location.pathname === item.url }
       : { ...item, children: item.children.map(setActive) };
   };

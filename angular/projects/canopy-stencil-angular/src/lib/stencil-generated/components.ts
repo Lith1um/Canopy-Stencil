@@ -279,7 +279,13 @@ export class CpyNavMenu {
 }
 
 
-export declare interface CpyNavMenuItem extends Components.CpyNavMenuItem {}
+export declare interface CpyNavMenuItem extends Components.CpyNavMenuItem {
+  /**
+   *  
+   */
+  itemActive: EventEmitter<CustomEvent<void>>;
+
+}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
@@ -296,6 +302,7 @@ export class CpyNavMenuItem {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['itemActive']);
   }
 }
 

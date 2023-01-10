@@ -297,6 +297,13 @@ export class CodeBlock {
           { title: 'Group Item 3', type: 'basic', icon: 'list_alt' }
         ]
       },
+      {
+        title: 'Collapsible Nav Item', type: 'collapsible', description: 'A collection of items hidden in a drawer', children: [
+          { title: 'Collapsible Item 1', type: 'basic', icon: 'dashboard' },
+          { title: 'Collapsible Item 2', type: 'basic', icon: 'touch_app' },
+          { title: 'Collapsible Item 3', type: 'basic', icon: 'inventory_2' }
+        ]
+      },
     ];
 
     document.getElementById('nav-menu-html-example').code = `<cpy-nav-menu></cpy-nav-menu>
