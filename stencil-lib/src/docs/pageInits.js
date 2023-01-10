@@ -160,10 +160,10 @@ export class CodeBlock {
   }
 }`;
 
-    document.getElementById('code-block-html-example').code = `<cpy-code-block id="code-block-scss" language="scss"></cpy-code-block>
+    document.getElementById('code-block-html-example').code = `<cpy-code-block language="scss"></cpy-code-block>
 
 <script>
-  document.getElementById('code-block-scss').code = \`.nav-menu-item {
+  document.querySelector('cpy-code-block').code = \`.nav-menu-item {
     --item-opacity: 0;
     background-color: rgba(var(--cpy-bg-basic-rgb), var(--item-opacity));
 
@@ -261,10 +261,10 @@ export class CodeBlock {
       }
     ];
 
-    document.getElementById('menu-html-example').code = `<cpy-context-menu id="menu"></cpy-context-menu>
+    document.getElementById('menu-html-example').code = `<cpy-context-menu></cpy-context-menu>
 
 <script>
-  document.getElementById('menu').items = [
+  document.querySelector('cpy-context-menu').items = [
     { title: 'Option 1', icon: 'home', separator: true },
     {
       title: 'Group of options', description: 'hover this to show more options', children: [
@@ -299,13 +299,13 @@ export class CodeBlock {
       },
     ];
 
-    document.getElementById('nav-menu-html-example').code = `<cpy-nav-menu id="nav-menu"></cpy-nav-menu>
+    document.getElementById('nav-menu-html-example').code = `<cpy-nav-menu></cpy-nav-menu>
     
 <script>
-document.getElementById('nav-menu').items = [
-  { title: 'Basic Nav Item' },
-  { title: 'Basic Nav Item w/ Icon', icon: 'home' }
-];
+  document.querySelector('cpy-nav-menu').items = [
+    { title: 'Basic Nav Item' },
+    { title: 'Basic Nav Item w/ Icon', icon: 'home' }
+  ];
 </script>`;
 
     document.getElementById('nav-menu-props').tableData = [
@@ -318,55 +318,53 @@ document.getElementById('nav-menu').items = [
     document.getElementById('toast-show-button-1').onclick = () => {
       toastElem1.open();
     };
-    document.getElementById('toast-alert-comp-1').addEventListener('closed', () => toastElem1.close());
     
     const toastElem2 = document.getElementById('toast-comp-2');
     document.getElementById('toast-show-button-2').onclick = () => {
       toastElem2.open();
     };
-    document.getElementById('toast-alert-comp-2').addEventListener('closed', () => toastElem2.close());
 
     const toastElem3 = document.getElementById('toast-comp-3');
     document.getElementById('toast-show-button-3').onclick = () => {
       toastElem3.open();
     };
-    document.getElementById('toast-alert-comp-3').addEventListener('closed', () => toastElem3.close());
 
     const toastElem4 = document.getElementById('toast-comp-4');
     document.getElementById('toast-show-button-4').onclick = () => {
       toastElem4.open();
     };
-    document.getElementById('toast-alert-comp-4').addEventListener('closed', () => toastElem4.close());
 
     const toastElem5 = document.getElementById('toast-comp-5');
     document.getElementById('toast-show-button-5').onclick = () => {
       toastElem5.open();
     };
-    document.getElementById('toast-alert-comp-5').addEventListener('closed', () => toastElem5.close());
 
     const toastElem6 = document.getElementById('toast-comp-6');
     document.getElementById('toast-show-button-6').onclick = () => {
       toastElem6.open();
     };
-    document.getElementById('toast-alert-comp-6').addEventListener('closed', () => toastElem6.close());
 
-    document.getElementById('toast-html-example').code = `<cpy-toast id="toast-comp" position="top-start">
-  <cpy-alert id="toast-alert-comp" type="primary" style="display: block; width: 300px;" dismissible>
-    This is a primary alert
-    <div slot="content">Some additional text about the primary alert</div>
-  </cpy-alert>
+    document.getElementById('toast-html-example').code = `<cpy-toast
+  position="top-end"
+  dismissible
+  title="This is a Toast message"
+  icon="build">
+  Some additional details you can add to the toast
 </cpy-toast>
 
 <script>
-  const toastElem = document.getElementById('toast-comp');
+  const toastElem = document.querySelector('cpy-toast');
   toastElem.open();
-  document.getElementById('toast-alert-comp').addEventListener('closed', () => toastElem1.close());
 </script>`;
 
     document.getElementById('toast-props').tableData = [
       { name: 'position', description: 'Position of the toast message', type: "'top-start' | 'top-middle' | 'top-end' | 'bottom-start' | 'bottom-middle' | 'bottom-end'", default: "'top-end'", required: false },
       { name: 'zIndex', description: 'Z-index of the toast', type: "string", default: "50", required: false },
-      { name: 'duration', description: 'Duration to keep toast open. A value of 0 will keep it open until the close method is called', type: "number", default: "4000", required: false }
+      { name: 'dismissible', description: 'Whether the toast can be dismissed', type: "boolean", default: "", required: false },
+      { name: 'duration', description: 'Duration to keep toast open. A value of 0 will keep it open until the close method is called', type: "number", default: "4000", required: false },
+      { name: 'type', description: 'Colour scheme of the toast', type: "'basic' | 'error' | 'primary' | 'secondary' | 'success' | 'warn'", default: "'primary'", required: false },
+      { name: 'toast-title', description: 'Main text for the toast', type: "string", default: "", required: true },
+      { name: 'icon', description: 'The icon (if any) to show', type: 'string', default: "", required: false },
     ];
 
     document.getElementById('toast-events').tableData = [
@@ -380,21 +378,27 @@ document.getElementById('nav-menu').items = [
     ];
 
     document.getElementById('toast-slots').tableData = [
-      { slotName: "-- (default)", purpose: 'Toast content' }
+      { slotName: "-- (default)", purpose: 'Additional content for toast' }
     ];
   },
 
   drawer: () => {
-    document.getElementById('drawer-html-example').code = `<cpy-drawer-container id="drawer-example">
+    document.getElementById('drawer-html-example').code = `<cpy-drawer-container>
   <!-- slotted content for drawer contents -->
   <div slot="drawer" style="padding: 20px;">
     I'm a drawer!
   </div>
   <!-- slot for main content -->
   <div style="background-color: var(--cpy-bg-white); display: flex; align-items: center; justify-content: center; height: 100%; width: 100%;">
-    <cpy-button id="drawer-toggle">Click me!</cpy-button>
+    <cpy-button onclick="toggleDrawer()">Click me!</cpy-button>
   </div>
-</cpy-drawer-container>`;
+</cpy-drawer-container>
+
+<script>
+  const drawerElem = document.querySelector('cpy-drawer-container');
+  const toggleDrawer = () => drawerElem.opened = !drawerElem.opened;
+</script>`;
+
     const drawerElem = document.getElementById('drawer-example');
     document.getElementById('drawer-toggle').onclick = () => drawerElem.opened = !drawerElem.opened;
 
@@ -491,7 +495,7 @@ document.getElementById('nav-menu').items = [
       { name: 'container', description: 'Whether the alert has a container', type: 'boolean', default: "true", required: false },
       { name: 'icon', description: 'The icon (if any) to show', type: 'string', default: "", required: false },
       { name: 'type', description: 'Colour scheme of the alert', type: "'basic' | 'error' | 'primary' | 'secondary' | 'success' | 'warn'", default: "'error'", required: false },
-      { name: 'dismissible', description: 'Whether the alert can be dismissed', type: "boolean", default: "false", required: false }
+      { name: 'dismissible', description: 'Whether the alert can be dismissed (does not work with alert container set to false)', type: "boolean", default: "false", required: false }
     ];
     
     document.getElementById('alert-events').tableData = [
@@ -525,10 +529,10 @@ document.getElementById('nav-menu').items = [
   table: () => {
     document.getElementById('table-example').tableData = [{"id":1,"todo":"Do something nice for someone I care about","completed":true,"userId":26},{"id":2,"todo":"Memorize the fifty states and their capitals","completed":false,"userId":48},{"id":3,"todo":"Watch a classic movie","completed":false,"userId":4},{"id":4,"todo":"Contribute code or a monetary donation to an open-source software project","completed":false,"userId":48},{"id":5,"todo":"Solve a Rubik's cube","completed":false,"userId":31},{"id":6,"todo":"Bake pastries for me and neighbor","completed":false,"userId":39},{"id":7,"todo":"Go see a Broadway production","completed":false,"userId":32},{"id":8,"todo":"Write a thank you letter to an influential person in my life","completed":true,"userId":13}];
 
-    document.getElementById('table-html-example').code = `<cpy-table id="table"></cpy-table>
+    document.getElementById('table-html-example').code = `<cpy-table></cpy-table>
 
 <script>
-  document.getElementById('table').items = [
+  document.querySelector('cpy-table').items = [
     { id: 1, todo: "Do something nice for someone I care about", completed: true, userId:26 },
     { id: 2, todo: "Memorize the fifty states and their capitals", completed: false, userId: 48 }
   ];

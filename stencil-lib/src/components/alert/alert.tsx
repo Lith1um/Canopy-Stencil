@@ -54,11 +54,12 @@ export class Alert {
         <div class="alert-content">
 
           <div class="alert-title">
-            <slot></slot>
-
-            {this.dismissible && <cpy-button class="alert__close" icon type="basic" onClick={() => this.closed.emit()}>
+            {this.dismissible && this.container && <cpy-button class="alert__close" icon type="basic" onClick={() => this.closed.emit()}>
               <cpy-icon class="alert__close--icon">close</cpy-icon>
             </cpy-button>}
+            <div class="alert-title--slot">
+              <slot></slot>
+            </div>
           </div>
 
           <div class="alert-message">

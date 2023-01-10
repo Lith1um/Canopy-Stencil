@@ -1,4 +1,5 @@
 import { Component, Event, EventEmitter, h, Method, Prop, State } from '@stencil/core';
+import { AlertType } from '../alert/alert.type';
 import { ToastPosition } from './toast.type';
 
 @Component({
@@ -9,10 +10,18 @@ import { ToastPosition } from './toast.type';
 export class Toast {
 
   @Prop() position: ToastPosition = 'top-end';
+  
+  @Prop() type: AlertType = 'primary';
+
+  @Prop() toastTitle: string;
 
   @Prop() zIndex = '50';
 
   @Prop() duration = 4000;
+
+  @Prop() dismissible: boolean = false;
+
+  @Prop() icon: string;
 
   @Event() closed: EventEmitter<void>;
 
@@ -57,7 +66,12 @@ export class Toast {
     return (
       <div class={classes} style={{ zIndex: this.zIndex }}>
         <div class="toast--container">
-          <slot/>
+          <cpy-alert type={this.type} icon={this.icon} dismissible={this.dismissible} onClosed={() => this.close()}>
+            {this.toastTitle}
+            <div slot="content">
+              <slot/>
+            </div>
+          </cpy-alert>
         </div>
       </div>
     );

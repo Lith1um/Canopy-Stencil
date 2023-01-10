@@ -5,3 +5,11 @@ export type ToastPosition =
   | 'bottom-start'
   | 'bottom-middle'
   | 'bottom-end';
+
+export type ToastType =
+  | 'primary'
+  | 'basic'
+  | 'info'
+  | 'success'
+  | 'warning'
+  | 'error';

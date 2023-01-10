@@ -1,5 +1,6 @@
 .toast {
-  @apply fixed max-w-full transition-transform duration-300;
+  @apply fixed transition-transform duration-300;
+  max-width: min(360px, 100%);
 
   &--container {
     @apply m-4 shadow-md rounded-md;

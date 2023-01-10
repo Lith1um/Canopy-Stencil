@@ -3,5 +3,6 @@
 
   &__content {
     @apply relative z-20 block h-full overflow-auto transition-all duration-300 min-w-[300px];
+    background-color: var(--cpy-bg-light);
   }
 }

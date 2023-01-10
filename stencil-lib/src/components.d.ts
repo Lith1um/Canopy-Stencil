@@ -83,9 +83,13 @@ export namespace Components {
     }
     interface CpyToast {
         "close": () => Promise<void>;
+        "dismissible": boolean;
         "duration": number;
+        "icon": string;
         "open": () => Promise<void>;
         "position": ToastPosition;
+        "toastTitle": string;
+        "type": AlertType;
         "zIndex": string;
     }
     interface CpyToolbar {
@@ -328,10 +332,14 @@ declare namespace LocalJSX {
         "tableData"?: { [key: string]: string | number | boolean | null | undefined }[];
     }
     interface CpyToast {
+        "dismissible"?: boolean;
         "duration"?: number;
+        "icon"?: string;
         "onClosed"?: (event: CpyToastCustomEvent<void>) => void;
         "onOpened"?: (event: CpyToastCustomEvent<void>) => void;
         "position"?: ToastPosition;
+        "toastTitle"?: string;
+        "type"?: AlertType;
         "zIndex"?: string;
     }
     interface CpyToolbar {

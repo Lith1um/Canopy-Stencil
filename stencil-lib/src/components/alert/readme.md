@@ -25,6 +25,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [cpy-toast](../toast)
+
 ### Depends on
 
 - [cpy-icon](../icon)
@@ -35,6 +39,7 @@
 graph TD;
   cpy-alert --> cpy-icon
   cpy-alert --> cpy-button
+  cpy-toast --> cpy-alert
   style cpy-alert fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

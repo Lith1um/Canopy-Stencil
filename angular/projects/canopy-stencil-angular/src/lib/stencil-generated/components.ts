@@ -396,14 +396,14 @@ export declare interface CpyToast extends Components.CpyToast {
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['duration', 'position', 'zIndex'],
+  inputs: ['dismissible', 'duration', 'icon', 'position', 'toastTitle', 'type', 'zIndex'],
   methods: ['close', 'open']
 })
 @Component({
   selector: 'cpy-toast',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['duration', 'position', 'zIndex']
+  inputs: ['dismissible', 'duration', 'icon', 'position', 'toastTitle', 'type', 'zIndex']
 })
 export class CpyToast {
   protected el: HTMLElement;
