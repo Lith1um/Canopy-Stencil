@@ -249,6 +249,7 @@ export class CodeBlock {
 
     document.getElementById('expand-props').tableData = [
       { name: 'expanded', description: 'Whether the container is expanded or not', type: "boolean", default: "", required: false },
+      { name: 'duration', description: 'Animation duration (ms) for expand/collapse', type: "number", default: "300", required: false },
     ];
 
     document.getElementById('expand-events').tableData = [
