@@ -1,5 +1,5 @@
 import { Component, Event, EventEmitter, h, Method, Prop, Watch } from '@stencil/core';
-import { expandToggle, expandEnter, expandLeave } from '../../utils/animation-transition';
+import { expandToggle, expandEnter, expandLeave } from '../../utils/expand-collapse';
 
 @Component({
   tag: 'cpy-expand-collapse',
@@ -10,6 +10,9 @@ export class ExpandCollapse {
 
   @Prop({mutable: true})
   expanded: boolean;
+
+  @Prop()
+  duration: number = 300;
 
   @Watch('expanded')
   expandedChange(newVal: boolean, oldVal: boolean): void {
@@ -47,15 +50,17 @@ export class ExpandCollapse {
     if (this.firstRender && this.expanded) {
       this.expandElem.style.transitionDuration = '0s';
       await this.expand();
-      this.expandElem.style.transitionDuration = null;
+      this.expandElem.style.transitionDuration = `${this.duration}ms`;
     }
     this.firstRender = false;
   }
 
-
   render() {
     return (
-      <div class="expand-collapse hidden" ref={(el) => this.expandElem = el as HTMLElement}>
+      <div
+        class="expand-collapse hide"
+        ref={(el) => this.expandElem = el as HTMLElement}
+        style={{transitionDuration: `${this.duration}ms`}}>
         <slot/>
       </div>
     );
