@@ -57,6 +57,7 @@ export namespace Components {
     }
     interface CpyExpandCollapse {
         "collapse": () => Promise<void>;
+        "duration": number;
         "expand": () => Promise<void>;
         "expanded": boolean;
         "toggle": () => Promise<void>;
@@ -327,6 +328,7 @@ declare namespace LocalJSX {
         "opened"?: boolean;
     }
     interface CpyExpandCollapse {
+        "duration"?: number;
         "expanded"?: boolean;
         "onToggleExpanded"?: (event: CpyExpandCollapseCustomEvent<boolean>) => void;
     }

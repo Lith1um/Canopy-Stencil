@@ -1,4 +1,5 @@
 import { Component, Event, EventEmitter, h, Method, Prop, Watch } from '@stencil/core';
+import { expandToggle, expandEnter, expandLeave } from '../../utils/expand-collapse';
 
 @Component({
   tag: 'cpy-expand-collapse',
@@ -10,6 +11,9 @@ export class ExpandCollapse {
   @Prop({mutable: true})
   expanded: boolean;
 
+  @Prop()
+  duration: number = 300;
+
   @Watch('expanded')
   expandedChange(newVal: boolean, oldVal: boolean): void {
     if (newVal === oldVal) {
@@ -20,29 +24,19 @@ export class ExpandCollapse {
 
   @Method()
   async expand(): Promise<void> {
-    this.expandElem.style.maxHeight = this.expandElem.scrollHeight + "px";
+    await expandEnter(this.expandElem);
     this.expanded = true;
-    this.toggleExpanded.emit(this.expanded);
-      
-    // Hacky fix to prevent main content sliding open if set to open on load
-    setTimeout(() => this.expandElem.style.overflowY = 'auto', 300);
   }
 
   @Method()
   async collapse(): Promise<void> {
-    this.expandElem.style.overflowY = 'hidden';
-    this.expandElem.style.maxHeight = null;
+    await expandLeave(this.expandElem);
     this.expanded = false;
-    this.toggleExpanded.emit(this.expanded);
   }
 
   @Method()
   async toggle(): Promise<void> {
-    if (this.expandElem.style.maxHeight){
-      this.collapse();
-    } else {
-      this.expand();
-    }
+    await expandToggle(this.expandElem);
   }
 
   @Event({bubbles: false})
@@ -51,22 +45,22 @@ export class ExpandCollapse {
   expandElem: HTMLElement;
   firstRender: boolean = true;
 
-  componentDidRender(): void {
+  async componentDidRender(): Promise<void> {
     // handle initial render case
     if (this.firstRender && this.expanded) {
       this.expandElem.style.transitionDuration = '0s';
-      this.expand();
-
-      // Hacky fix to prevent main content sliding open if set to open on load
-      setTimeout(() => this.expandElem.style.transitionDuration = null, 300);
+      await this.expand();
+      this.expandElem.style.transitionDuration = `${this.duration}ms`;
     }
     this.firstRender = false;
   }
 
-
   render() {
     return (
-      <div class="expand-collapse" ref={(el) => this.expandElem = el as HTMLElement}>
+      <div
+        class="expand-collapse hide"
+        ref={(el) => this.expandElem = el as HTMLElement}
+        style={{transitionDuration: `${this.duration}ms`}}>
         <slot/>
       </div>
     );

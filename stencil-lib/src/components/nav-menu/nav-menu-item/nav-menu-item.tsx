@@ -82,7 +82,7 @@ export class NavMenuItemComp {
           <cpy-nav-menu-item item={item}></cpy-nav-menu-item>)}
 
         {this.item.type === 'collapsible' && 
-          <cpy-expand-collapse expanded={!this.collapsed}>
+          <cpy-expand-collapse class="nav-menu-item__collapse" expanded={!this.collapsed}>
             {this.item.children?.map(item =>
               <cpy-nav-menu-item item={item}></cpy-nav-menu-item>)}
           </cpy-expand-collapse>}
