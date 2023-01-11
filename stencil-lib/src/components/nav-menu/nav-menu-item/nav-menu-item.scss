@@ -32,13 +32,9 @@
     }
   }
 
-  // &__collapse {
-  //   @apply ml-2 h-0 overflow-hidden;
-
-  //   &--open {
-  //     @apply h-auto;
-  //   }
-  // }
+  &__collapse {
+    @apply ml-2 block;
+  }
 
   > cpy-icon {
     @apply icon-size-6;

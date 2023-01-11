@@ -16,6 +16,24 @@ export async function toggle(element, transitionName = null) {
   }
 }
 
+export async function expandEnter(element) {
+  element.classList.remove('hidden');
+  await transitionExpandCollapse('enter', element);
+}
+
+export async function expandLeave(element) {
+  await transitionExpandCollapse('leave', element);
+  element.classList.add('hidden');
+}
+
+export async function expandToggle(element) {
+  if (element.classList.contains('hidden')) {
+    await expandEnter(element);
+  } else {
+    await expandLeave(element);
+  }
+}
+
 async function transition(direction, element, animation) {
   const dataset = element.dataset;
   const animationClass = animation
@@ -41,6 +59,26 @@ async function transition(direction, element, animation) {
   removeClasses(element, end);
   removeClasses(element, genesis);
 }
+
+export const transitionExpandCollapse = async (direction, element) => {
+  if (direction === 'enter') {
+    element.style.overflow = 'overflow-hidden';
+    element.style.transition = 'max-height 0.3s ease-in-out';
+    element.style.maxHeight = '0px';
+    await nextFrame();
+    element.style.maxHeight = element.scrollHeight + "px";
+    await afterTransition(element);
+    element.style.maxHeight = null;
+  } else {
+    element.style.overflow = 'overflow-hidden';
+    element.style.transition = 'max-height 0.3s ease-in-out';
+    element.style.maxHeight = element.scrollHeight + "px";
+    await nextFrame();
+    element.style.maxHeight = "0px";
+    await afterTransition(element);
+    element.style.maxHeight = null;
+  }
+};
 
 function addClasses(element, classes) {
   element.classList.add(...classes);

@@ -1,5 +1,5 @@
 import { Component, Event, EventEmitter, h, Method, Prop, Watch } from '@stencil/core';
-import { toggle, enter, leave } from '../../utils/animation-transition';
+import { expandToggle, expandEnter, expandLeave } from '../../utils/animation-transition';
 
 @Component({
   tag: 'cpy-expand-collapse',
@@ -21,32 +21,19 @@ export class ExpandCollapse {
 
   @Method()
   async expand(): Promise<void> {
-    // this.expandElem.style.maxHeight = this.expandElem.scrollHeight + "px";
+    await expandEnter(this.expandElem);
     this.expanded = true;
-    // this.toggleExpanded.emit(this.expanded);
-      
-    // // Hacky fix to prevent main content sliding open if set to open on load
-    // setTimeout(() => this.expandElem.style.overflowY = 'auto', 300);
-    await enter(this.expandElem, 'dropdown');
   }
 
   @Method()
   async collapse(): Promise<void> {
-    await leave(this.expandElem, 'dropdown');
-    // this.expandElem.style.overflowY = 'hidden';
-    // this.expandElem.style.maxHeight = null;
+    await expandLeave(this.expandElem);
     this.expanded = false;
-    // this.toggleExpanded.emit(this.expanded);
   }
 
   @Method()
   async toggle(): Promise<void> {
-    await toggle(this.expandElem, 'dropdown');
-    // if (this.expanded){
-    //   this.collapse();
-    // } else {
-    //   this.expand();
-    // }
+    await expandToggle(this.expandElem);
   }
 
   @Event({bubbles: false})

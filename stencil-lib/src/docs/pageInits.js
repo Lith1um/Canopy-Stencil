@@ -221,6 +221,18 @@ export class CodeBlock {
         : 'Expand';
     };
 
+    const expandElem2 = document.getElementById('expand-collapse-2');
+    const expandButton2 = document.getElementById('expand-button-2');
+    expandButton2.innerHTML = expandElem2.expanded
+        ? 'Collapse'
+        : 'Expand'
+    expandButton2.onclick = () => {
+      expandElem2.expanded = !expandElem2.expanded;
+      expandButton2.innerHTML = expandElem2.expanded
+        ? 'Collapse'
+        : 'Expand';
+    };
+
     document.getElementById('expand-html-example').code = `<cpy-expand-collapse expanded>
   <div style="padding: 2rem; border: 1px solid var(--cpy-bg-basic-border);">
     I'm in an expandable container!

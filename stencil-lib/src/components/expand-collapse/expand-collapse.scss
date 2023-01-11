@@ -1,33 +1,3 @@
-.hidden {
-  display: none;
-}
-
 .expand-collapse {
   @apply h-auto overflow-auto;
-}
-
-.dropdown-enter {
-  @apply overflow-hidden;
-  transition: max-height 0.3s ease-out;
-}
- 
-.dropdown-enter-start {
-  @apply max-h-0;
-}
-
-.dropdown-enter-end {
-  @apply max-h-[10rem];
-}
- 
-.dropdown-leave {
-  @apply overflow-hidden;
-  transition: max-height 0.3s ease-in;
-}
- 
-.dropdown-leave-start {
-  @apply max-h-[50rem];
-}
- 
-.dropdown-leave-end {
-  @apply max-h-0;
 }
