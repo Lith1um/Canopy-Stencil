@@ -448,6 +448,39 @@ export class CodeBlock {
     ];
   },
 
+  dialog: () => {
+    const dialogElem = document.getElementById('dialog');
+    document.getElementById('dialog-open').onclick = () => dialogElem.open();
+
+    document.getElementById('dialog-html-example').code = `<cpy-dialog id="dialog" dialog-title="Dialog Title">
+  <!-- slot for dialog content -->
+  Here's some additional text to display
+</cpy-dialog>
+
+<script>
+  const dialogElem = document.querySelector('cpy-dialog');
+  dialogElem.open();
+</script>`;
+
+    document.getElementById('dialog-props').tableData = [
+      { name: 'dialog-title', description: 'Title to display in the dialog', type: "string", default: "", required: true },
+      { name: 'z-index', description: 'Z-index of the dialog', type: "string", default: "50", required: false },
+    ];
+
+    document.getElementById('dialog-events').tableData = [
+      { name: 'closed', description: 'Triggered when the is closed', emitsType: "boolean" }
+    ];
+
+    document.getElementById('dialog-methods').tableData = [
+      { name: 'open()', description: 'Opens the dialog', returnType: "" },
+      { name: 'close()', description: 'Closes the dialog', returnType: "" }
+    ];
+
+    document.getElementById('dialog-slots').tableData = [
+      { slotName: "-- (default)", purpose: 'Dialog main content' }
+    ];
+  },
+
   drawer: () => {
     document.getElementById('drawer-html-example').code = `<cpy-drawer-container>
   <!-- slotted content for drawer contents -->

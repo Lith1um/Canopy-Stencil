@@ -11,10 +11,10 @@ export class NavMenuComp {
   @Prop()
   items: NavMenuItem[];
 
-  render() { 
+  render() {
     return (
       <div class="nav-menu">
-        {this.items.map(item =>
+        {this.items?.map(item =>
           <cpy-nav-menu-item item={item}></cpy-nav-menu-item>)}
       </div>
     );

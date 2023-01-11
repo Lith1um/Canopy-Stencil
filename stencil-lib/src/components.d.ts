@@ -49,6 +49,12 @@ export namespace Components {
     interface CpyContextMenuItem {
         "item": ContextMenuItem;
     }
+    interface CpyDialog {
+        "close": () => Promise<void>;
+        "dialogTitle": string;
+        "open": () => Promise<void>;
+        "zIndex": string;
+    }
     interface CpyDrawer {
         "opened": boolean;
     }
@@ -109,6 +115,10 @@ export namespace Components {
 export interface CpyAlertCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyAlertElement;
+}
+export interface CpyDialogCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyDialogElement;
 }
 export interface CpyDrawerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -172,6 +182,12 @@ declare global {
     var HTMLCpyContextMenuItemElement: {
         prototype: HTMLCpyContextMenuItemElement;
         new (): HTMLCpyContextMenuItemElement;
+    };
+    interface HTMLCpyDialogElement extends Components.CpyDialog, HTMLStencilElement {
+    }
+    var HTMLCpyDialogElement: {
+        prototype: HTMLCpyDialogElement;
+        new (): HTMLCpyDialogElement;
     };
     interface HTMLCpyDrawerElement extends Components.CpyDrawer, HTMLStencilElement {
     }
@@ -265,6 +281,7 @@ declare global {
         "cpy-code-block": HTMLCpyCodeBlockElement;
         "cpy-context-menu": HTMLCpyContextMenuElement;
         "cpy-context-menu-item": HTMLCpyContextMenuItemElement;
+        "cpy-dialog": HTMLCpyDialogElement;
         "cpy-drawer": HTMLCpyDrawerElement;
         "cpy-drawer-container": HTMLCpyDrawerContainerElement;
         "cpy-expand-collapse": HTMLCpyExpandCollapseElement;
@@ -318,6 +335,11 @@ declare namespace LocalJSX {
     }
     interface CpyContextMenuItem {
         "item"?: ContextMenuItem;
+    }
+    interface CpyDialog {
+        "dialogTitle"?: string;
+        "onClosed"?: (event: CpyDialogCustomEvent<void>) => void;
+        "zIndex"?: string;
     }
     interface CpyDrawer {
         "onToggleOpened"?: (event: CpyDrawerCustomEvent<void>) => void;
@@ -384,6 +406,7 @@ declare namespace LocalJSX {
         "cpy-code-block": CpyCodeBlock;
         "cpy-context-menu": CpyContextMenu;
         "cpy-context-menu-item": CpyContextMenuItem;
+        "cpy-dialog": CpyDialog;
         "cpy-drawer": CpyDrawer;
         "cpy-drawer-container": CpyDrawerContainer;
         "cpy-expand-collapse": CpyExpandCollapse;
@@ -411,6 +434,7 @@ declare module "@stencil/core" {
             "cpy-code-block": LocalJSX.CpyCodeBlock & JSXBase.HTMLAttributes<HTMLCpyCodeBlockElement>;
             "cpy-context-menu": LocalJSX.CpyContextMenu & JSXBase.HTMLAttributes<HTMLCpyContextMenuElement>;
             "cpy-context-menu-item": LocalJSX.CpyContextMenuItem & JSXBase.HTMLAttributes<HTMLCpyContextMenuItemElement>;
+            "cpy-dialog": LocalJSX.CpyDialog & JSXBase.HTMLAttributes<HTMLCpyDialogElement>;
             "cpy-drawer": LocalJSX.CpyDrawer & JSXBase.HTMLAttributes<HTMLCpyDrawerElement>;
             "cpy-drawer-container": LocalJSX.CpyDrawerContainer & JSXBase.HTMLAttributes<HTMLCpyDrawerContainerElement>;
             "cpy-expand-collapse": LocalJSX.CpyExpandCollapse & JSXBase.HTMLAttributes<HTMLCpyExpandCollapseElement>;

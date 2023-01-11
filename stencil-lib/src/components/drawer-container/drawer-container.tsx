@@ -52,7 +52,7 @@ export class DrawerContainer {
 
   componentDidRender(): void {
     // handle initial render case
-    if (this.firstRender && this.opened) {
+    if (this.firstRender) {
       this.contentElem.style.transitionDuration = '0s';
       this.mediaChange(window.matchMedia('(min-width: 640px)'));
       // Hacky fix to prevent main content sliding in if drawer is open on load
