@@ -12,6 +12,8 @@ export class Dialog {
 
   @Prop() zIndex = '50';
 
+  @Prop() size: 'small' | 'default' | 'large' | 'full-screen' = 'default'
+
   @Event() closed: EventEmitter<void>;
 
   @Method()
@@ -48,9 +50,14 @@ export class Dialog {
   dialogContainerElem: HTMLElement;
 
   render() {
+    const dialogClasses = {
+      'dialog__container': true,
+      [`dialog__container--${this.size}`]: !!this.size
+    };
+
     return (
       <div class="dialog hidden" style={{ zIndex: this.zIndex }} ref={(el) => this.dialogElem = el as HTMLElement}>
-        <div class="dialog__container" ref={(el) => this.dialogContainerElem = el as HTMLElement}>
+        <div class={dialogClasses} ref={(el) => this.dialogContainerElem = el as HTMLElement}>
           <div class="dialog__container-title">
             <span>{this.dialogTitle}</span>
             <cpy-button icon type="basic" onClick={() => this.close()}>
@@ -59,6 +66,9 @@ export class Dialog {
           </div>
           <div class="dialog__container-content">
             <slot/>
+          </div>
+          <div class="dialog__container-buttons">
+            <slot name='buttons'/>
           </div>
         </div>
       </div>

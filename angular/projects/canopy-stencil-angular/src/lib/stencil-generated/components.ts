@@ -162,6 +162,35 @@ export class CpyContextMenuItem {
 }
 
 
+export declare interface CpyDialog extends Components.CpyDialog {
+  /**
+   *  
+   */
+  closed: EventEmitter<CustomEvent<void>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['dialogTitle', 'size', 'zIndex'],
+  methods: ['open', 'close']
+})
+@Component({
+  selector: 'cpy-dialog',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['dialogTitle', 'size', 'zIndex']
+})
+export class CpyDialog {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['closed']);
+  }
+}
+
+
 export declare interface CpyDrawer extends Components.CpyDrawer {
   /**
    *  
@@ -228,14 +257,14 @@ export declare interface CpyExpandCollapse extends Components.CpyExpandCollapse 
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['expanded'],
+  inputs: ['duration', 'expanded'],
   methods: ['expand', 'collapse', 'toggle']
 })
 @Component({
   selector: 'cpy-expand-collapse',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['expanded']
+  inputs: ['duration', 'expanded']
 })
 export class CpyExpandCollapse {
   protected el: HTMLElement;

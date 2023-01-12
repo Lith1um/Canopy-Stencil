@@ -9,6 +9,7 @@
 
 | Property   | Attribute  | Description | Type      | Default     |
 | ---------- | ---------- | ----------- | --------- | ----------- |
+| `duration` | `duration` |             | `number`  | `300`       |
 | `expanded` | `expanded` |             | `boolean` | `undefined` |
 
 

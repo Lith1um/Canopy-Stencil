@@ -9,6 +9,7 @@ export const DIRECTIVES = [
   d.CpyCodeBlock,
   d.CpyContextMenu,
   d.CpyContextMenuItem,
+  d.CpyDialog,
   d.CpyDrawer,
   d.CpyDrawerContainer,
   d.CpyExpandCollapse,

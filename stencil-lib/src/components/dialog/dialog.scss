@@ -5,11 +5,23 @@
   }
 
   &__container {
-    @apply px-2 shadow-md rounded-md max-w-full max-h-full w-[450px];
+    @apply flex flex-col shadow-md rounded-md w-[550px] max-h-[95vh] max-w-[95vw] overflow-hidden;
     background-color: var(--cpy-bg-white);
 
+    &--small {
+      @apply w-[350px];
+    }
+
+    &--large {
+      @apply w-[750px];
+    }
+
+    &--full-screen {
+      @apply w-[95vw];
+    }
+
     &-title {
-      @apply py-2 pl-4 flex items-baseline w-full gap-2 border-b;
+      @apply p-2 pl-6 flex items-baseline w-full gap-2 border-b text-lg;
       border-color: var(--cpy-bg-basic-border);
 
       span {
@@ -22,7 +34,12 @@
     }
 
     &-content {
-      @apply p-4;
+      @apply py-4 px-6 flex-1 overflow-x-auto;
+    }
+
+    &-buttons {
+      @apply py-4 px-6 border-t flex w-full gap-2 justify-end;
+      border-color: var(--cpy-bg-basic-border);
     }
   }
 }
@@ -65,4 +82,28 @@
 }
 .dialog-container-leave-end {
   @apply transform scale-90;
+}
+
+@media(min-width: 640px) {
+  .dialog__container-content {
+    &::-webkit-scrollbar {
+      @apply w-2 h-2;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      @apply bg-transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--cpy-bg-basic);
+      @apply rounded;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: var(--cpy-bg-basic);
+    }
+  }
 }

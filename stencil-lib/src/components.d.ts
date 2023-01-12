@@ -53,6 +53,7 @@ export namespace Components {
         "close": () => Promise<void>;
         "dialogTitle": string;
         "open": () => Promise<void>;
+        "size": 'small' | 'default' | 'large' | 'full-screen';
         "zIndex": string;
     }
     interface CpyDrawer {
@@ -339,6 +340,7 @@ declare namespace LocalJSX {
     interface CpyDialog {
         "dialogTitle"?: string;
         "onClosed"?: (event: CpyDialogCustomEvent<void>) => void;
+        "size"?: 'small' | 'default' | 'large' | 'full-screen';
         "zIndex"?: string;
     }
     interface CpyDrawer {
