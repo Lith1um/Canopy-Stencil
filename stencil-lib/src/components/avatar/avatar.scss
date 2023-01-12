@@ -34,6 +34,10 @@
     @apply w-14 h-14 text-lg;
   }
 
+  &--x-large {
+    @apply w-20 h-20 text-3xl;
+  }
+
   &--initials {
     background-color: var(--cpy-bg-basic);
   }

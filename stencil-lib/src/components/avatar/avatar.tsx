@@ -15,7 +15,7 @@ export class Avatar {
 
   @Prop() initials: string;
 
-  @Prop() size: 'small' | 'default' | 'large' = 'default';
+  @Prop() size: 'small' | 'default' | 'large' | 'x-large' = 'default';
 
   render() {
     const classes = {

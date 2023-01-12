@@ -23,7 +23,7 @@ export namespace Components {
     interface CpyAvatar {
         "border": boolean;
         "initials": string;
-        "size": 'small' | 'default' | 'large';
+        "size": 'small' | 'default' | 'large' | 'x-large';
         "src": string;
         "type": 'rounded' | 'square';
     }
@@ -42,6 +42,7 @@ export namespace Components {
     interface CpyCodeBlock {
         "code": string;
         "language": 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell';
+        "showDetails": boolean;
     }
     interface CpyContextMenu {
         "items": ContextMenuItem[];
@@ -311,7 +312,7 @@ declare namespace LocalJSX {
     interface CpyAvatar {
         "border"?: boolean;
         "initials"?: string;
-        "size"?: 'small' | 'default' | 'large';
+        "size"?: 'small' | 'default' | 'large' | 'x-large';
         "src"?: string;
         "type"?: 'rounded' | 'square';
     }
@@ -330,6 +331,7 @@ declare namespace LocalJSX {
     interface CpyCodeBlock {
         "code"?: string;
         "language"?: 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell';
+        "showDetails"?: boolean;
     }
     interface CpyContextMenu {
         "items"?: ContextMenuItem[];

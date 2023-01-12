@@ -220,9 +220,10 @@ If you want to use a different method to checking for a dark class on the HTML t
 ## Roadmap
 
 - [ ] Components
-  - [ ] Modal/Dialog
   - [ ] Form inputs
   - [ ] Ghost Components?
+- [ ] Look into using css variables to override component colours
+- [ ] Look into using host css to allow for custom styling (and the part attr. selector?)
 
 See the <a href="https://github.com/lith1um/Canopy-Stencil/issues" target="_blank">open issues</a> for a full list of proposed features (and known issues).
 

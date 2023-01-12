@@ -7,13 +7,13 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type                              | Default     |
-| ---------- | ---------- | ----------- | --------------------------------- | ----------- |
-| `border`   | `border`   |             | `boolean`                         | `false`     |
-| `initials` | `initials` |             | `string`                          | `undefined` |
-| `size`     | `size`     |             | `"default" \| "large" \| "small"` | `'default'` |
-| `src`      | `src`      |             | `string`                          | `undefined` |
-| `type`     | `type`     |             | `"rounded" \| "square"`           | `'rounded'` |
+| Property   | Attribute  | Description | Type                                           | Default     |
+| ---------- | ---------- | ----------- | ---------------------------------------------- | ----------- |
+| `border`   | `border`   |             | `boolean`                                      | `false`     |
+| `initials` | `initials` |             | `string`                                       | `undefined` |
+| `size`     | `size`     |             | `"default" \| "large" \| "small" \| "x-large"` | `'default'` |
+| `src`      | `src`      |             | `string`                                       | `undefined` |
+| `type`     | `type`     |             | `"rounded" \| "square"`                        | `'rounded'` |
 
 
 ----------------------------------------------

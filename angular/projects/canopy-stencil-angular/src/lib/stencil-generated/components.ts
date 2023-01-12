@@ -103,13 +103,13 @@ export declare interface CpyCodeBlock extends Components.CpyCodeBlock {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['code', 'language']
+  inputs: ['code', 'language', 'showDetails']
 })
 @Component({
   selector: 'cpy-code-block',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['code', 'language']
+  inputs: ['code', 'language', 'showDetails']
 })
 export class CpyCodeBlock {
   protected el: HTMLElement;

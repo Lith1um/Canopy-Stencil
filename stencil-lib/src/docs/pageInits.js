@@ -175,6 +175,7 @@ export class CodeBlock {
 
     document.getElementById('code-block-props').tableData = [
       { name: 'code', description: 'The code snippet to show', type: "string", default: "", required: true },
+      { name: 'show-details', description: 'Shows the language and copy button', type: "boolean", default: "false", required: false},
       { name: 'language', description: 'The code snippet language', type: "'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell'", default: "'typescript'", required: false },
     ];
   },
@@ -185,7 +186,8 @@ export class CodeBlock {
   <cpy-icon>info</cpy-icon>
 </cpy-tooltip>`;
 
-    document.getElementById('code-block-html-example-two').code = `<cpy-tooltip position="left">
+    document.getElementById('code-block-html-example-two').code = `<!-- tooltip with customised content -->
+<cpy-tooltip position="left">
   <!-- slotted content for tooltip to point at -->
   <cpy-icon>info</cpy-icon>
   <!-- slot for tooltip content to point at -->
@@ -461,7 +463,7 @@ export class CodeBlock {
     const dialogFullElem = document.getElementById('dialog-full');
     document.getElementById('dialog-full-open').onclick = () => dialogFullElem.open();
 
-    document.getElementById('dialog-html-example').code = `<cpy-dialog id="dialog-small" dialog-title="Confirm Delete" size="small">
+    document.getElementById('dialog-html-example').code = `<cpy-dialog dialog-title="Confirm Delete" size="small">
   <!-- slot for dialog content -->
   <p>Are you sure you want to delete this?</p>
   <!-- slotted content for dialog buttons-->
@@ -485,7 +487,7 @@ export class CodeBlock {
     ];
 
     document.getElementById('dialog-events').tableData = [
-      { name: 'closed', description: 'Triggered when the is closed', emitsType: "boolean" }
+      { name: 'closed', description: 'Triggered when the dialog is closed', emitsType: "boolean" }
     ];
 
     document.getElementById('dialog-methods').tableData = [
@@ -636,7 +638,7 @@ export class CodeBlock {
 
     document.getElementById('avatar-props').tableData = [
       { name: 'border', description: 'Shows a border around the avatar', type: 'boolean', default: "false", required: false },
-      { name: 'size', description: 'Size of the avatar', type: "'default' | 'large' | 'small'", default: "'default'", required: false },
+      { name: 'size', description: 'Size of the avatar', type: "'default' | 'large' | 'small' | 'x-large'", default: "'default'", required: false },
       { name: 'src', description: 'Image source for the avatar', type: 'string', default: "", required: false },
       { name: 'initials', description: 'Initials to display in place of an avatar image', type: 'string', default: "", required: false },
       { name: 'type', description: 'Colour scheme of the button', type: "'rounded' | 'square'", default: "'rounded'", required: false }

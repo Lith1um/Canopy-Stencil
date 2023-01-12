@@ -111,7 +111,7 @@
     &.button--icon,
     &.button-appearance--borderless,
     &.button-appearance--outline {
-      --text-colour: var(--cpy-text-basic);
+      --text-colour: var(--cpy-text-base);
       --button-opacity: 0;
   
       &:hover:not(:disabled) {
