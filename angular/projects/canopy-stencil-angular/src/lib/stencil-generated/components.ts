@@ -8,6 +8,35 @@ import { Components } from 'canopy-stencil-web';
 
 
 
+export declare interface CpyAccordion extends Components.CpyAccordion {
+  /**
+   *  
+   */
+  accordionOpened: EventEmitter<CustomEvent<void>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['headerTitle', 'opened', 'size'],
+  methods: ['open', 'close', 'toggle']
+})
+@Component({
+  selector: 'cpy-accordion',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['headerTitle', 'opened', 'size']
+})
+export class CpyAccordion {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['accordionOpened']);
+  }
+}
+
+
 export declare interface CpyAlert extends Components.CpyAlert {
   /**
    *  

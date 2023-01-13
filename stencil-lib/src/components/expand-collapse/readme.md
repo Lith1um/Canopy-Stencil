@@ -57,11 +57,13 @@ Type: `Promise<void>`
 
 ### Used by
 
+ - [cpy-accordion](../accordion)
  - [cpy-nav-menu-item](../nav-menu/nav-menu-item)
 
 ### Graph
 ```mermaid
 graph TD;
+  cpy-accordion --> cpy-expand-collapse
   cpy-nav-menu-item --> cpy-expand-collapse
   style cpy-expand-collapse fill:#f9f,stroke:#333,stroke-width:4px
 ```

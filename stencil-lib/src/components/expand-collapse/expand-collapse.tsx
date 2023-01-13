@@ -8,7 +8,7 @@ import { expandToggle, expandEnter, expandLeave } from '../../utils/expand-colla
 })
 export class ExpandCollapse {
 
-  @Prop({mutable: true})
+  @Prop()
   expanded: boolean;
 
   @Prop()
@@ -25,23 +25,28 @@ export class ExpandCollapse {
   @Method()
   async expand(): Promise<void> {
     await expandEnter(this.expandElem);
-    this.expanded = true;
+    this.trackExpanded = true;
+    this.toggleExpanded.emit(this.trackExpanded);
   }
 
   @Method()
   async collapse(): Promise<void> {
     await expandLeave(this.expandElem);
-    this.expanded = false;
+    this.trackExpanded = false;
+    this.toggleExpanded.emit(this.trackExpanded);
   }
 
   @Method()
   async toggle(): Promise<void> {
     await expandToggle(this.expandElem);
+    this.trackExpanded = !this.toggleExpanded;
+    this.toggleExpanded.emit(this.trackExpanded);
   }
 
   @Event({bubbles: false})
   toggleExpanded: EventEmitter<boolean>;
 
+  trackExpanded: boolean;
   expandElem: HTMLElement;
   firstRender: boolean = true;
 

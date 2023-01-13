@@ -2,6 +2,7 @@
 import * as d from './components';
 
 export const DIRECTIVES = [
+  d.CpyAccordion,
   d.CpyAlert,
   d.CpyAvatar,
   d.CpyBadge,

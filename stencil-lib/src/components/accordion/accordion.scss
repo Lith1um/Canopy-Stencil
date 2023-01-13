@@ -1,0 +1,50 @@
+.accordion {
+  @apply flex gap-4 w-full px-2 py-2 justify-between cursor-pointer select-none items-center;
+
+  &:hover {
+    background-color: rgba(var(--cpy-bg-basic-rgb), 0.1);
+  }
+
+  &__container {
+    @apply border-b;
+    border-color: var(--cpy-bg-basic-border);
+  }
+
+  &__content {
+    @apply px-2 py-2;
+  }
+
+  cpy-icon {
+    @apply transition icon-size-7;
+  }
+
+  &--small {
+    @apply text-sm py-1;
+
+    & + cpy-expand-collapse .accordion__content {
+      @apply text-sm py-1;
+    }
+
+    cpy-icon {
+      @apply icon-size-6;
+    }
+  }
+
+  &--large {
+    @apply text-lg py-4;
+
+    & + cpy-expand-collapse .accordion__content {
+      @apply text-lg py-4;
+    }
+    
+    cpy-icon {
+      @apply icon-size-8;
+    }
+  }
+
+  &--open {
+    cpy-icon {
+      @apply -rotate-180;
+    }
+  }
+}

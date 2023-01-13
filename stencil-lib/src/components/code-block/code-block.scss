@@ -6,10 +6,11 @@
   background-color: #1E293B;
 
   &__details {
-    @apply pl-4 flex justify-between items-center w-full uppercase;
+    @apply pl-4 flex justify-between items-baseline w-full uppercase;
 
     > div {
-      @apply text-sm;
+      @apply text-sm border-b px-1;
+      border-color: #828791;
     }
   }
 

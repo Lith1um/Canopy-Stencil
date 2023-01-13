@@ -13,6 +13,14 @@ import { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
 import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
 import { ToastPosition } from "./components/toast/toast.type";
 export namespace Components {
+    interface CpyAccordion {
+        "close": () => Promise<void>;
+        "headerTitle": string;
+        "open": () => Promise<void>;
+        "opened": boolean;
+        "size": 'small' | 'default' | 'large';
+        "toggle": () => Promise<void>;
+    }
     interface CpyAlert {
         "appearance": AlertAppearance;
         "container": boolean;
@@ -114,6 +122,10 @@ export namespace Components {
         "text": string;
     }
 }
+export interface CpyAccordionCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyAccordionElement;
+}
 export interface CpyAlertCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyAlertElement;
@@ -143,6 +155,12 @@ export interface CpyToastCustomEvent<T> extends CustomEvent<T> {
     target: HTMLCpyToastElement;
 }
 declare global {
+    interface HTMLCpyAccordionElement extends Components.CpyAccordion, HTMLStencilElement {
+    }
+    var HTMLCpyAccordionElement: {
+        prototype: HTMLCpyAccordionElement;
+        new (): HTMLCpyAccordionElement;
+    };
     interface HTMLCpyAlertElement extends Components.CpyAlert, HTMLStencilElement {
     }
     var HTMLCpyAlertElement: {
@@ -276,6 +294,7 @@ declare global {
         new (): HTMLCpyTooltipElement;
     };
     interface HTMLElementTagNameMap {
+        "cpy-accordion": HTMLCpyAccordionElement;
         "cpy-alert": HTMLCpyAlertElement;
         "cpy-avatar": HTMLCpyAvatarElement;
         "cpy-badge": HTMLCpyBadgeElement;
@@ -301,6 +320,12 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface CpyAccordion {
+        "headerTitle"?: string;
+        "onAccordionOpened"?: (event: CpyAccordionCustomEvent<void>) => void;
+        "opened"?: boolean;
+        "size"?: 'small' | 'default' | 'large';
+    }
     interface CpyAlert {
         "appearance"?: AlertAppearance;
         "container"?: boolean;
@@ -403,6 +428,7 @@ declare namespace LocalJSX {
         "text"?: string;
     }
     interface IntrinsicElements {
+        "cpy-accordion": CpyAccordion;
         "cpy-alert": CpyAlert;
         "cpy-avatar": CpyAvatar;
         "cpy-badge": CpyBadge;
@@ -431,6 +457,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "cpy-accordion": LocalJSX.CpyAccordion & JSXBase.HTMLAttributes<HTMLCpyAccordionElement>;
             "cpy-alert": LocalJSX.CpyAlert & JSXBase.HTMLAttributes<HTMLCpyAlertElement>;
             "cpy-avatar": LocalJSX.CpyAvatar & JSXBase.HTMLAttributes<HTMLCpyAvatarElement>;
             "cpy-badge": LocalJSX.CpyBadge & JSXBase.HTMLAttributes<HTMLCpyBadgeElement>;
