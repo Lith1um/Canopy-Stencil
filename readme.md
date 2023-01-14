@@ -222,6 +222,8 @@ If you want to use a different method to checking for a dark class on the HTML t
 - [ ] Components
   - [ ] Form inputs
   - [ ] Ghost Components?
+- [ ] Accessibility
+- [ ] Keyboard events for components?
 - [ ] Look into using css variables to override component colours
 - [ ] Look into using host css to allow for custom styling (and the part attr. selector?)
 

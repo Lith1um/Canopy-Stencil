@@ -1,5 +1,5 @@
 import { Component, Event, EventEmitter, h, Method, Prop, Watch } from '@stencil/core';
-import { expandToggle, expandEnter, expandLeave } from '../../utils/expand-collapse';
+import { ExpandCollapseService } from '../../utils/expand-collapse';
 
 @Component({
   tag: 'cpy-expand-collapse',
@@ -24,33 +24,34 @@ export class ExpandCollapse {
 
   @Method()
   async expand(): Promise<void> {
-    await expandEnter(this.expandElem);
     this.trackExpanded = true;
     this.toggleExpanded.emit(this.trackExpanded);
+    await this.expandCollapseService.expand(this.expandElem);
   }
 
   @Method()
   async collapse(): Promise<void> {
-    await expandLeave(this.expandElem);
     this.trackExpanded = false;
     this.toggleExpanded.emit(this.trackExpanded);
+    await this.expandCollapseService.collapse(this.expandElem);
   }
 
   @Method()
   async toggle(): Promise<void> {
-    await expandToggle(this.expandElem);
     this.trackExpanded = !this.toggleExpanded;
     this.toggleExpanded.emit(this.trackExpanded);
+    await this.expandCollapseService.toggle(this.expandElem);
   }
 
   @Event({bubbles: false})
   toggleExpanded: EventEmitter<boolean>;
 
+  expandCollapseService = new ExpandCollapseService();
   trackExpanded: boolean;
   expandElem: HTMLElement;
   firstRender: boolean = true;
 
-  async componentDidRender(): Promise<void> {
+  async componentDidLoad(): Promise<void> {
     // handle initial render case
     if (this.firstRender && this.expanded) {
       this.expandElem.style.transitionDuration = '0s';

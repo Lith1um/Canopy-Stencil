@@ -65,3 +65,41 @@ export const afterTransition = (element: HTMLElement): Promise<void> => {
     setTimeout(() => resolve(), duration);
   });
 }
+
+export type StackFn = () => Promise<unknown>;
+
+export class AnimationStack {
+
+  private stack: StackFn[] = [];
+
+  executeInProgress = false;
+
+  addToStack(...instructions: StackFn[]): void {
+    this.stack = [...this.stack, ...instructions];
+  }
+
+  clearStack(): void {
+    this.stack = [];
+  }
+
+  nextInstruction(): StackFn | undefined {
+    if (this.stack.length === 0) {
+      return;
+    }
+    const [instruction, ...remainingInstructions] = this.stack;
+    this.stack = remainingInstructions;
+    return instruction;
+  }
+
+  async executeStack(): Promise<void> {
+    this.executeInProgress = true;
+    const instruction = this.nextInstruction();
+    if (instruction) {
+      await instruction();
+      await this.executeStack();
+      return;
+    }
+    this.executeInProgress = false;
+  }
+
+}
