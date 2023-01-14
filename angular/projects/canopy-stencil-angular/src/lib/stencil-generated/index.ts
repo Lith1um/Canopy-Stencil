@@ -23,6 +23,7 @@ export const DIRECTIVES = [
   d.CpySpinner,
   d.CpyTable,
   d.CpyToast,
+  d.CpyToggle,
   d.CpyToolbar,
   d.CpyTooltip
 ];

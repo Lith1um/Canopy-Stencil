@@ -509,6 +509,34 @@ export class CpyToast {
 }
 
 
+export declare interface CpyToggle extends Components.CpyToggle {
+  /**
+   *  
+   */
+  checkedChange: EventEmitter<CustomEvent<boolean>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['checked', 'label', 'size']
+})
+@Component({
+  selector: 'cpy-toggle',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['checked', 'label', 'size']
+})
+export class CpyToggle {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['checkedChange']);
+  }
+}
+
+
 export declare interface CpyToolbar extends Components.CpyToolbar {}
 
 @ProxyCmp({
