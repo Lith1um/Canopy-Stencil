@@ -1,0 +1,8 @@
+:host {
+  @apply block w-full rounded-md cursor-move;
+  background-color: var(--cpy-bg-light);
+}
+
+:host(.ghost) {
+  background-color: var(--cpy-bg-primary);
+}

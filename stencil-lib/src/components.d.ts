@@ -137,6 +137,12 @@ export namespace Components {
         "position": 'bottom' | 'left' | 'right' | 'top';
         "text": string;
     }
+    interface DragDropContainer {
+        "containerTitle": string;
+        "group": string;
+    }
+    interface DragDropItem {
+    }
 }
 export interface CpyAccordionCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -335,6 +341,18 @@ declare global {
         prototype: HTMLCpyTooltipElement;
         new (): HTMLCpyTooltipElement;
     };
+    interface HTMLDragDropContainerElement extends Components.DragDropContainer, HTMLStencilElement {
+    }
+    var HTMLDragDropContainerElement: {
+        prototype: HTMLDragDropContainerElement;
+        new (): HTMLDragDropContainerElement;
+    };
+    interface HTMLDragDropItemElement extends Components.DragDropItem, HTMLStencilElement {
+    }
+    var HTMLDragDropItemElement: {
+        prototype: HTMLDragDropItemElement;
+        new (): HTMLDragDropItemElement;
+    };
     interface HTMLElementTagNameMap {
         "cpy-accordion": HTMLCpyAccordionElement;
         "cpy-alert": HTMLCpyAlertElement;
@@ -362,6 +380,8 @@ declare global {
         "cpy-toggle": HTMLCpyToggleElement;
         "cpy-toolbar": HTMLCpyToolbarElement;
         "cpy-tooltip": HTMLCpyTooltipElement;
+        "drag-drop-container": HTMLDragDropContainerElement;
+        "drag-drop-item": HTMLDragDropItemElement;
     }
 }
 declare namespace LocalJSX {
@@ -489,6 +509,12 @@ declare namespace LocalJSX {
         "position"?: 'bottom' | 'left' | 'right' | 'top';
         "text"?: string;
     }
+    interface DragDropContainer {
+        "containerTitle"?: string;
+        "group"?: string;
+    }
+    interface DragDropItem {
+    }
     interface IntrinsicElements {
         "cpy-accordion": CpyAccordion;
         "cpy-alert": CpyAlert;
@@ -516,6 +542,8 @@ declare namespace LocalJSX {
         "cpy-toggle": CpyToggle;
         "cpy-toolbar": CpyToolbar;
         "cpy-tooltip": CpyTooltip;
+        "drag-drop-container": DragDropContainer;
+        "drag-drop-item": DragDropItem;
     }
 }
 export { LocalJSX as JSX };
@@ -548,6 +576,8 @@ declare module "@stencil/core" {
             "cpy-toggle": LocalJSX.CpyToggle & JSXBase.HTMLAttributes<HTMLCpyToggleElement>;
             "cpy-toolbar": LocalJSX.CpyToolbar & JSXBase.HTMLAttributes<HTMLCpyToolbarElement>;
             "cpy-tooltip": LocalJSX.CpyTooltip & JSXBase.HTMLAttributes<HTMLCpyTooltipElement>;
+            "drag-drop-container": LocalJSX.DragDropContainer & JSXBase.HTMLAttributes<HTMLDragDropContainerElement>;
+            "drag-drop-item": LocalJSX.DragDropItem & JSXBase.HTMLAttributes<HTMLDragDropItemElement>;
         }
     }
 }

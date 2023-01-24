@@ -32,6 +32,7 @@ const menuItems = navMenuElement.items = [
       { title: 'Tooltip', type: 'basic', url: '/comps/tooltip', function: closeMenuOnMobileNav },
       { title: 'Expand/Collapse', type: 'basic', url: '/comps/expandCollapse', function: closeMenuOnMobileNav },
       { title: 'Accordion', type: 'basic', url: '/comps/accordion', function: closeMenuOnMobileNav },
+      { title: 'Drag/Drop', type: 'basic', url: '/comps/dragDrop', function: closeMenuOnMobileNav },
     ] },
     { title: 'Forms', icon: 'checklist', type: 'collapsible', description: 'Complete form elements', children: [
       { title: 'Toggle', type: 'basic', url: '/comps/toggle', function: closeMenuOnMobileNav }

@@ -1,0 +1,12 @@
+:host {
+  @apply flex flex-col p-2 rounded-md max-w-lg min-w-[20rem];
+  background-color: var(--cpy-bg-white);
+}
+
+h1 {
+  @apply m-0 mb-4;
+}
+
+.container {
+  @apply flex flex-col flex-1 gap-2 w-full min-h-[2rem];
+}
