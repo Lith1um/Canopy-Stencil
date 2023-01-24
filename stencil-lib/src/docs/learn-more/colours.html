@@ -1,26 +1,28 @@
-<h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-  Colour palettes & Dark Mode
-</h3>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2; margin-top: 1rem;">Colours</h3>
-<div style="margin-top: 1rem; margin-bottom: 2rem;">
-  <p style="margin-top: 1rem; margin-bottom: 1rem;">
-    Personally I think canopy is already using the best colour palette you could ever want but I understand it may not fit your needs. Through the use of the :root selector in css, you can override almost every colour in the library (current colours are based on <a href="https://tailwindcss.com/docs/customizing-colors">tailwind</a>). Below is the simplest example of overriding colours (replacing primary colour on light and dark mode):
-  </p>
-  <cpy-code-block id="colours-override-simple" language="scss" show-details></cpy-code-block>
-  <p style="margin-top: 1rem; margin-bottom: 1rem;">Some colours (mainly background colours) are set as rgb values without the rgb() container, since they are often manipulated within components to modify their opacity.</p>
-  <p style="margin-top: 1rem; margin-bottom: 1rem;">A full list of the configurable colours is below (along with their defaulted values):</p>
-  <cpy-code-block id="colours-pallette-css" language="scss" show-details></cpy-code-block>
-</div>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Dark Mode</h3>
-<div style="margin-top: 1rem; margin-bottom: 2rem;">
-  <p style="margin-top: 1rem; margin-bottom: 1rem;">
-    By default, Canopy looks for a dark class on the HTML tag to determine if the colour palette should switch to dark mode, however this is easily configurable for your needs. Similarly to the main colour palette, you can override any dark mode colours:
-  </p>
-  <cpy-code-block id="colours-pallette-dark-css" language="scss" show-details></cpy-code-block>
-  <p style="margin-top: 1rem; margin-bottom: 1rem;">
-    If you want to use a different method to checking for a dark class on the HTML tag, you can include your own css to set the colour variables. For example, if you want to use dark mode when the user has requested it in their browser settings, replace the html wrapper for your variables with:
-  </p>
-  <cpy-code-block id="colours-pallette-dark-alt" language="scss" show-details></cpy-code-block>
-</div>
+<cpy-page-content>
+  <h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
+    Colour palettes & Dark Mode
+  </h3>
+  
+  <h3 id="colours" style="font-weight: 600; font-size: 1.2rem; line-height: 2; margin-top: 1rem;">Colours</h3>
+  <div style="margin-top: 1rem; margin-bottom: 2rem;">
+    <p style="margin-top: 1rem; margin-bottom: 1rem;">
+      Personally I think canopy is already using the best colour palette you could ever want but I understand it may not fit your needs. Through the use of the :root selector in css, you can override almost every colour in the library (current colours are based on <a href="https://tailwindcss.com/docs/customizing-colors">tailwind</a>). Below is the simplest example of overriding colours (replacing primary colour on light and dark mode):
+    </p>
+    <cpy-code-block id="colours-override-simple" language="scss" show-details></cpy-code-block>
+    <p style="margin-top: 1rem; margin-bottom: 1rem;">Some colours (mainly background colours) are set as rgb values without the rgb() container, since they are often manipulated within components to modify their opacity.</p>
+    <p style="margin-top: 1rem; margin-bottom: 1rem;">A full list of the configurable colours is below (along with their defaulted values):</p>
+    <cpy-code-block id="colours-pallette-css" language="scss" show-details></cpy-code-block>
+  </div>
+  
+  <h3 id="dark-mode" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Dark Mode</h3>
+  <div style="margin-top: 1rem; margin-bottom: 2rem;">
+    <p style="margin-top: 1rem; margin-bottom: 1rem;">
+      By default, Canopy looks for a dark class on the HTML tag to determine if the colour palette should switch to dark mode, however this is easily configurable for your needs. Similarly to the main colour palette, you can override any dark mode colours:
+    </p>
+    <cpy-code-block id="colours-pallette-dark-css" language="scss" show-details></cpy-code-block>
+    <p style="margin-top: 1rem; margin-bottom: 1rem;">
+      If you want to use a different method to checking for a dark class on the HTML tag, you can include your own css to set the colour variables. For example, if you want to use dark mode when the user has requested it in their browser settings, replace the html wrapper for your variables with:
+    </p>
+    <cpy-code-block id="colours-pallette-dark-alt" language="scss" show-details></cpy-code-block>
+  </div>
+</cpy-page-content>

@@ -1,34 +1,36 @@
-<h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-  Drawer
-</h3>
-
-<p style="margin-top: 1rem; margin-bottom: 2rem;">
-  Canopy drawers provide a toggle-able drawer to a container. They are referenced using the &lt;cpy-drawer&gt; custom HTML element. This component utilises the slot element, allowing you to render your own HTML in the drawer. On Mobile screens, the drawer will open to the full width of the screen, overlaying the main content.
-</p>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-<div style="width: 100%; height: 300px; margin-top: 1rem; margin-bottom: 2rem;">
-  <cpy-drawer-container id="drawer-example">
-    <div slot="drawer" style="padding: 20px;">
-      I'm a drawer!
-    </div>
-    <div style="background-color: var(--cpy-bg-white); display: flex; align-items: center; justify-content: center; height: 100%; width: 100%;">
-      <cpy-button id="drawer-toggle">Click me!</cpy-button>
-    </div>
-  </cpy-drawer-container>
-</div>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
-
-<div style="margin-top: 1rem; margin-bottom: 2rem;">
-  <cpy-code-block id="drawer-html-example" language="html" show-details></cpy-code-block>
-</div>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-<cpy-table id="drawer-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Events</h3>
-<cpy-table id="drawer-events" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
-<cpy-table id="drawer-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+<cpy-page-content>
+  <h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
+    Drawer
+  </h3>
+  
+  <p style="margin-top: 1rem; margin-bottom: 2rem;">
+    Canopy drawers provide a toggle-able drawer to a container. They are referenced using the &lt;cpy-drawer&gt; custom HTML element. This component utilises the slot element, allowing you to render your own HTML in the drawer. On Mobile screens, the drawer will open to the full width of the screen, overlaying the main content.
+  </p>
+  
+  <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
+  <div style="width: 100%; height: 300px; margin-top: 1rem; margin-bottom: 2rem;">
+    <cpy-drawer-container id="drawer-example">
+      <div slot="drawer" style="padding: 20px;">
+        I'm a drawer!
+      </div>
+      <div style="background-color: var(--cpy-bg-white); display: flex; align-items: center; justify-content: center; height: 100%; width: 100%;">
+        <cpy-button id="drawer-toggle">Click me!</cpy-button>
+      </div>
+    </cpy-drawer-container>
+  </div>
+  
+  <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+  
+  <div style="margin-top: 1rem; margin-bottom: 2rem;">
+    <cpy-code-block id="drawer-html-example" language="html" show-details></cpy-code-block>
+  </div>
+  
+  <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
+  <cpy-table id="drawer-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+  
+  <h3 id="events" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Events</h3>
+  <cpy-table id="drawer-events" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+  
+  <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
+  <cpy-table id="drawer-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+</cpy-page-content>

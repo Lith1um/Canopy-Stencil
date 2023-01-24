@@ -1,109 +1,111 @@
-<h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-  Badges
-</h3>
-
-<p style="margin-top: 1rem; margin-bottom: 2rem;">
-  Canopy badges provide non-interactive labels for displaying small amounts of information. They are referenced using the &lt;cpy-badge&gt; custom HTML element. This component utilises the slot element, allowing you to render your own HTML in the badge.
-</p>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-
-<p>Counter</p>
-<div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-  <div style="flex: 1;">
-    <cpy-badge>5</cpy-badge>
+<cpy-page-content>
+  <h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
+    Badges
+  </h3>
+  
+  <p style="margin-top: 1rem; margin-bottom: 2rem;">
+    Canopy badges provide non-interactive labels for displaying small amounts of information. They are referenced using the &lt;cpy-badge&gt; custom HTML element. This component utilises the slot element, allowing you to render your own HTML in the badge.
+  </p>
+  
+  <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
+  
+  <p>Counter</p>
+  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+    <div style="flex: 1;">
+      <cpy-badge>5</cpy-badge>
+    </div>
+    <div style="flex: 1;">
+      <cpy-badge type="secondary">9+</cpy-badge>
+    </div>
+    <div style="flex: 1;">
+      <cpy-badge type="basic">4</cpy-badge>
+    </div>
+    <div style="flex: 1;">
+      <cpy-badge type="success">1</cpy-badge>
+    </div>
+    <div style="flex: 1;">
+      <cpy-badge type="warn">2</cpy-badge>
+    </div>
+    <div style="flex: 1;">
+      <cpy-badge type="error">13</cpy-badge>
+    </div>
   </div>
-  <div style="flex: 1;">
-    <cpy-badge type="secondary">9+</cpy-badge>
+  
+  <p>Tag</p>
+  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+    <div style="flex: 1;">
+      <cpy-badge appearance="tag">Primary</cpy-badge>
+    </div>
+    <div style="flex: 1;">
+      <cpy-badge appearance="tag" type="secondary">Secondary</cpy-badge>
+    </div>
+    <div style="flex: 1;">
+      <cpy-badge appearance="tag" type="basic">Basic</cpy-badge>
+    </div>
+    <div style="flex: 1;">
+      <cpy-badge appearance="tag" type="success">Success</cpy-badge>
+    </div>
+    <div style="flex: 1;">
+      <cpy-badge appearance="tag" type="warn">Warning</cpy-badge>
+    </div>
+    <div style="flex: 1;">
+      <cpy-badge appearance="tag" type="error">Error</cpy-badge>
+    </div>
   </div>
-  <div style="flex: 1;">
-    <cpy-badge type="basic">4</cpy-badge>
+  
+  <p>Small</p>
+  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+    <div style="flex: 1;">
+      <cpy-badge size="small">5</cpy-badge>
+    </div>
+    <div style="flex: 1;">
+      <cpy-badge size="small" type="secondary">9+</cpy-badge>
+    </div>
+    <div style="flex: 1;">
+      <cpy-badge size="small" type="basic">4</cpy-badge>
+    </div>
+    <div style="flex: 1;">
+      <cpy-badge size="small" appearance="tag" type="success">Success</cpy-badge>
+    </div>
+    <div style="flex: 1;">
+      <cpy-badge size="small" appearance="tag" type="warn">Warning</cpy-badge>
+    </div>
+    <div style="flex: 1;">
+      <cpy-badge size="small" appearance="tag" type="error">Error</cpy-badge>
+    </div>
   </div>
-  <div style="flex: 1;">
-    <cpy-badge type="success">1</cpy-badge>
+  
+  <p>Large</p>
+  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+    <div style="flex: 1;">
+      <cpy-badge size="large">5</cpy-badge>
+    </div>
+    <div style="flex: 1;">
+      <cpy-badge size="large" type="secondary">9+</cpy-badge>
+    </div>
+    <div style="flex: 1;">
+      <cpy-badge size="large" type="basic">4</cpy-badge>
+    </div>
+    <div style="flex: 1;">
+      <cpy-badge size="large" appearance="tag" type="success">Success</cpy-badge>
+    </div>
+    <div style="flex: 1;">
+      <cpy-badge size="large" appearance="tag" type="warn">Warning</cpy-badge>
+    </div>
+    <div style="flex: 1;">
+      <cpy-badge size="large" appearance="tag" type="error">Error</cpy-badge>
+    </div>
   </div>
-  <div style="flex: 1;">
-    <cpy-badge type="warn">2</cpy-badge>
+  
+  <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+  
+  <div style="margin-top: 1rem; margin-bottom: 2rem;">
+    <cpy-code-block id="badge-html-example" language="html" show-details></cpy-code-block>
   </div>
-  <div style="flex: 1;">
-    <cpy-badge type="error">13</cpy-badge>
-  </div>
-</div>
-
-<p>Tag</p>
-<div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-  <div style="flex: 1;">
-    <cpy-badge appearance="tag">Primary</cpy-badge>
-  </div>
-  <div style="flex: 1;">
-    <cpy-badge appearance="tag" type="secondary">Secondary</cpy-badge>
-  </div>
-  <div style="flex: 1;">
-    <cpy-badge appearance="tag" type="basic">Basic</cpy-badge>
-  </div>
-  <div style="flex: 1;">
-    <cpy-badge appearance="tag" type="success">Success</cpy-badge>
-  </div>
-  <div style="flex: 1;">
-    <cpy-badge appearance="tag" type="warn">Warning</cpy-badge>
-  </div>
-  <div style="flex: 1;">
-    <cpy-badge appearance="tag" type="error">Error</cpy-badge>
-  </div>
-</div>
-
-<p>Small</p>
-<div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-  <div style="flex: 1;">
-    <cpy-badge size="small">5</cpy-badge>
-  </div>
-  <div style="flex: 1;">
-    <cpy-badge size="small" type="secondary">9+</cpy-badge>
-  </div>
-  <div style="flex: 1;">
-    <cpy-badge size="small" type="basic">4</cpy-badge>
-  </div>
-  <div style="flex: 1;">
-    <cpy-badge size="small" appearance="tag" type="success">Success</cpy-badge>
-  </div>
-  <div style="flex: 1;">
-    <cpy-badge size="small" appearance="tag" type="warn">Warning</cpy-badge>
-  </div>
-  <div style="flex: 1;">
-    <cpy-badge size="small" appearance="tag" type="error">Error</cpy-badge>
-  </div>
-</div>
-
-<p>Large</p>
-<div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-  <div style="flex: 1;">
-    <cpy-badge size="large">5</cpy-badge>
-  </div>
-  <div style="flex: 1;">
-    <cpy-badge size="large" type="secondary">9+</cpy-badge>
-  </div>
-  <div style="flex: 1;">
-    <cpy-badge size="large" type="basic">4</cpy-badge>
-  </div>
-  <div style="flex: 1;">
-    <cpy-badge size="large" appearance="tag" type="success">Success</cpy-badge>
-  </div>
-  <div style="flex: 1;">
-    <cpy-badge size="large" appearance="tag" type="warn">Warning</cpy-badge>
-  </div>
-  <div style="flex: 1;">
-    <cpy-badge size="large" appearance="tag" type="error">Error</cpy-badge>
-  </div>
-</div>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
-
-<div style="margin-top: 1rem; margin-bottom: 2rem;">
-  <cpy-code-block id="badge-html-example" language="html" show-details></cpy-code-block>
-</div>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-<cpy-table id="badge-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
-<cpy-table id="badge-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+  
+  <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
+  <cpy-table id="badge-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+  
+  <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
+  <cpy-table id="badge-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+</cpy-page-content>

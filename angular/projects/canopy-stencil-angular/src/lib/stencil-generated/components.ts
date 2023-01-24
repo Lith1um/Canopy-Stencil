@@ -149,6 +149,55 @@ export class CpyCodeBlock {
 }
 
 
+export declare interface CpyContentsList extends Components.CpyContentsList {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['activeIndex', 'headerTitle', 'items']
+})
+@Component({
+  selector: 'cpy-contents-list',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['activeIndex', 'headerTitle', 'items']
+})
+export class CpyContentsList {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface CpyContentsListItem extends Components.CpyContentsListItem {
+  /**
+   *  
+   */
+  clicked: EventEmitter<CustomEvent<void>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['active', 'item']
+})
+@Component({
+  selector: 'cpy-contents-list-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['active', 'item']
+})
+export class CpyContentsListItem {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['clicked']);
+  }
+}
+
+
 export declare interface CpyContextMenu extends Components.CpyContextMenu {}
 
 @ProxyCmp({
@@ -397,12 +446,14 @@ export class CpyNavMenuItem {
 export declare interface CpyPageContent extends Components.CpyPageContent {}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined
+  defineCustomElementFn: undefined,
+  inputs: ['hideContentsList']
 })
 @Component({
   selector: 'cpy-page-content',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>'
+  template: '<ng-content></ng-content>',
+  inputs: ['hideContentsList']
 })
 export class CpyPageContent {
   protected el: HTMLElement;

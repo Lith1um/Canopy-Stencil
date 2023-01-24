@@ -1,99 +1,101 @@
-<h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-  Alerts
-</h3>
-
-<p style="margin-top: 1rem; margin-bottom: 2rem;">
-  Canopy alerts provide well defined elements for rendering system level messages. They are referenced using the &lt;cpy-alert&gt; custom HTML element.
-</p>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-<div style="display: grid; grid-template-columns: auto; width:100%; gap: 32px; margin-top: 1rem; margin-bottom: 2rem;">
-  <div>
-    <cpy-alert type="primary" icon="home">
-      This is a primary alert
-      <div slot="content">Some additional text about the primary alert</div>
-    </cpy-alert>
-    <cpy-alert type="primary" icon="home" appearance="border">
-      This is a primary alert
-    </cpy-alert>
-    <cpy-alert type="primary" icon="home" container="false">
-      This is a primary alert
-    </cpy-alert>
+<cpy-page-content>
+  <h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
+    Alerts
+  </h3>
+  
+  <p style="margin-top: 1rem; margin-bottom: 2rem;">
+    Canopy alerts provide well defined elements for rendering system level messages. They are referenced using the &lt;cpy-alert&gt; custom HTML element.
+  </p>
+  
+  <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
+  <div style="display: grid; grid-template-columns: auto; width:100%; gap: 32px; margin-top: 1rem; margin-bottom: 2rem;">
+    <div>
+      <cpy-alert type="primary" icon="home">
+        This is a primary alert
+        <div slot="content">Some additional text about the primary alert</div>
+      </cpy-alert>
+      <cpy-alert type="primary" icon="home" appearance="border">
+        This is a primary alert
+      </cpy-alert>
+      <cpy-alert type="primary" icon="home" container="false">
+        This is a primary alert
+      </cpy-alert>
+    </div>
+    <div>
+      <cpy-alert type="secondary" dismissible>
+        This is a secondary alert
+        <div slot="content">Some additional text about the secondary alert</div>
+      </cpy-alert>
+      <cpy-alert type="secondary" appearance="border" dismissible>
+        This is a secondary alert
+      </cpy-alert>
+      <cpy-alert type="secondary" container="false" dismissible>
+        This is a secondary alert
+      </cpy-alert>
+    </div>
+    <div>
+      <cpy-alert type="basic" icon="settings">
+        This is a basic alert
+        <div slot="content">Some additional text about the basic alert</div>
+      </cpy-alert>
+      <cpy-alert type="basic" icon="settings" appearance="border">
+        This is a basic alert
+      </cpy-alert>
+      <cpy-alert type="basic" icon="settings" container="false">
+        This is a basic alert
+      </cpy-alert>
+    </div>
+    <div>
+      <cpy-alert type="success" dismissible>
+        This is a success alert
+        <div slot="content">Some additional text about the success alert</div>
+      </cpy-alert>
+      <cpy-alert type="success" appearance="border" dismissible>
+        This is a success alert
+      </cpy-alert>
+      <cpy-alert type="success" container="false" dismissible>
+        This is a success alert
+      </cpy-alert>
+    </div>
+    <div>
+      <cpy-alert type="warn">
+        This is a warning alert
+        <div slot="content">Some additional text about the warning alert</div>
+      </cpy-alert>
+      <cpy-alert type="warn" appearance="border">
+        This is a warning alert
+      </cpy-alert>
+      <cpy-alert type="warn" container="false">
+        This is a warning alert
+      </cpy-alert>
+    </div>
+    <div>
+      <cpy-alert type="error">
+        This is an error alert
+        <div slot="content">Some additional text about the error alert</div>
+      </cpy-alert>
+      <cpy-alert type="error" appearance="border">
+        This is an error alert
+        <div slot="content">Some additional text about the error alert</div>
+      </cpy-alert>
+      <cpy-alert type="error" container="false">
+        This is an error alert
+      </cpy-alert>
+    </div>
   </div>
-  <div>
-    <cpy-alert type="secondary" dismissible>
-      This is a secondary alert
-      <div slot="content">Some additional text about the secondary alert</div>
-    </cpy-alert>
-    <cpy-alert type="secondary" appearance="border" dismissible>
-      This is a secondary alert
-    </cpy-alert>
-    <cpy-alert type="secondary" container="false" dismissible>
-      This is a secondary alert
-    </cpy-alert>
+  
+  <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+  
+  <div style="margin-top: 1rem; margin-bottom: 2rem;">
+    <cpy-code-block id="alert-html-example" language="html" show-details></cpy-code-block>
   </div>
-  <div>
-    <cpy-alert type="basic" icon="settings">
-      This is a basic alert
-      <div slot="content">Some additional text about the basic alert</div>
-    </cpy-alert>
-    <cpy-alert type="basic" icon="settings" appearance="border">
-      This is a basic alert
-    </cpy-alert>
-    <cpy-alert type="basic" icon="settings" container="false">
-      This is a basic alert
-    </cpy-alert>
-  </div>
-  <div>
-    <cpy-alert type="success" dismissible>
-      This is a success alert
-      <div slot="content">Some additional text about the success alert</div>
-    </cpy-alert>
-    <cpy-alert type="success" appearance="border" dismissible>
-      This is a success alert
-    </cpy-alert>
-    <cpy-alert type="success" container="false" dismissible>
-      This is a success alert
-    </cpy-alert>
-  </div>
-  <div>
-    <cpy-alert type="warn">
-      This is a warning alert
-      <div slot="content">Some additional text about the warning alert</div>
-    </cpy-alert>
-    <cpy-alert type="warn" appearance="border">
-      This is a warning alert
-    </cpy-alert>
-    <cpy-alert type="warn" container="false">
-      This is a warning alert
-    </cpy-alert>
-  </div>
-  <div>
-    <cpy-alert type="error">
-      This is an error alert
-      <div slot="content">Some additional text about the error alert</div>
-    </cpy-alert>
-    <cpy-alert type="error" appearance="border">
-      This is an error alert
-      <div slot="content">Some additional text about the error alert</div>
-    </cpy-alert>
-    <cpy-alert type="error" container="false">
-      This is an error alert
-    </cpy-alert>
-  </div>
-</div>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
-
-<div style="margin-top: 1rem; margin-bottom: 2rem;">
-  <cpy-code-block id="alert-html-example" language="html" show-details></cpy-code-block>
-</div>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-<cpy-table id="alert-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Events</h3>
-<cpy-table id="alert-events" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
-<cpy-table id="alert-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+  
+  <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
+  <cpy-table id="alert-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+  
+  <h3 id="events" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Events</h3>
+  <cpy-table id="alert-events" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+  
+  <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
+  <cpy-table id="alert-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+</cpy-page-content>

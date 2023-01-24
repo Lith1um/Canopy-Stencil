@@ -1,0 +1,18 @@
+.contents {
+  @apply block sticky top-8 mt-8 w-40;
+
+  &__title {
+    @apply text-sm uppercase ml-3 truncate;
+    color: var(--cpy-text-light);
+  }
+
+  &__list {
+    @apply leading-tight p-0 m-0;
+  }
+}
+
+@media(min-width: 1024px) {
+  .contents {
+    @apply w-64;
+  }
+}

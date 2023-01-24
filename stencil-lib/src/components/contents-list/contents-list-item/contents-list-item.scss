@@ -1,0 +1,8 @@
+.contents-list-item {
+  @apply cursor-pointer font-semibold pl-4 mt-2 block border-l-2 border-transparent truncate;
+
+  &--active {
+    @apply border-current;
+    color: var(--cpy-text-primary);
+  }
+}

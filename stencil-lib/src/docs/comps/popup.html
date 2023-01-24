@@ -1,47 +1,49 @@
-<h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-  Popups
-</h3>
-
-<p style="margin-top: 1rem; margin-bottom: 2rem;">
-  Canopy popups display a custom popup attached to an element on the page, either on hover or on clicking the element. They are referenced using the &lt;cpy-popup&gt; custom HTML element. This component utilises the slot element, allowing you to attach a popup to anything.
-</p>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-<div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-  <div style="flex: 1;">
-    <cpy-popup active-on="hover">
-      <cpy-button>
-        Hover me!<cpy-icon>expand_more</cpy-icon>
-      </cpy-button>
-
-      <div slot="content">
-        <cpy-context-menu id="popup-test"></cpy-context-menu>
-      </div>
-    </cpy-popup>
-  </div>
-  <div style="flex: 1;">
-    <cpy-popup>
-      <cpy-button icon>
-        <cpy-icon>info</cpy-icon>
-      </cpy-button>
-      <div slot="content">
-        <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="60" style="margin: 0 auto; padding: 8px 0;">
-        <div style="padding: 8px; background-color: var(--cpy-bg-primary); color: white; border-radius: 0 0 4px 4px;">
-          This is a customised popup
+<cpy-page-content>
+  <h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
+    Popups
+  </h3>
+  
+  <p style="margin-top: 1rem; margin-bottom: 2rem;">
+    Canopy popups display a custom popup attached to an element on the page, either on hover or on clicking the element. They are referenced using the &lt;cpy-popup&gt; custom HTML element. This component utilises the slot element, allowing you to attach a popup to anything.
+  </p>
+  
+  <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
+  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+    <div style="flex: 1;">
+      <cpy-popup active-on="hover">
+        <cpy-button>
+          Hover me!<cpy-icon>expand_more</cpy-icon>
+        </cpy-button>
+  
+        <div slot="content">
+          <cpy-context-menu id="popup-test"></cpy-context-menu>
         </div>
-      </div>
-    </cpy-popup>
+      </cpy-popup>
+    </div>
+    <div style="flex: 1;">
+      <cpy-popup>
+        <cpy-button icon>
+          <cpy-icon>info</cpy-icon>
+        </cpy-button>
+        <div slot="content">
+          <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="60" style="margin: 0 auto; padding: 8px 0;">
+          <div style="padding: 8px; background-color: var(--cpy-bg-primary); color: white; border-radius: 0 0 4px 4px;">
+            This is a customised popup
+          </div>
+        </div>
+      </cpy-popup>
+    </div>
   </div>
-</div>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
-
-<div style="margin-top: 1rem; margin-bottom: 2rem;">
-  <cpy-code-block id="popup-html-example" language="html" show-details></cpy-code-block>
-</div>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-<cpy-table id="popup-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
-<cpy-table id="popup-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+  
+  <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+  
+  <div style="margin-top: 1rem; margin-bottom: 2rem;">
+    <cpy-code-block id="popup-html-example" language="html" show-details></cpy-code-block>
+  </div>
+  
+  <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
+  <cpy-table id="popup-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+  
+  <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
+  <cpy-table id="popup-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+</cpy-page-content>

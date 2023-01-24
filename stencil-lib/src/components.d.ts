@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AlertAppearance, AlertType } from "./components/alert/alert.type";
 import { BadgeAppearance, BadgeSize, BadgeType } from "./components/badge/badge.type";
 import { ButtonAppearance, ButtonSize, ButtonStyle } from "./components/button/button.type";
+import { ContentsListItem } from "./components/contents-list/contents-list.interface";
 import { ContextMenuItem } from "./components/context-menu/context-menu.interface";
 import { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
 import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
@@ -52,6 +53,15 @@ export namespace Components {
         "language": 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell';
         "showDetails": boolean;
     }
+    interface CpyContentsList {
+        "activeIndex": number;
+        "headerTitle": string;
+        "items": ContentsListItem[];
+    }
+    interface CpyContentsListItem {
+        "active": boolean;
+        "item": ContentsListItem;
+    }
     interface CpyContextMenu {
         "items": ContextMenuItem[];
     }
@@ -92,6 +102,7 @@ export namespace Components {
         "item": NavMenuItem;
     }
     interface CpyPageContent {
+        "hideContentsList": boolean;
     }
     interface CpyPopup {
         "activeOn": 'hover' | 'click';
@@ -134,6 +145,10 @@ export interface CpyAccordionCustomEvent<T> extends CustomEvent<T> {
 export interface CpyAlertCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyAlertElement;
+}
+export interface CpyContentsListItemCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyContentsListItemElement;
 }
 export interface CpyDialogCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -199,6 +214,18 @@ declare global {
     var HTMLCpyCodeBlockElement: {
         prototype: HTMLCpyCodeBlockElement;
         new (): HTMLCpyCodeBlockElement;
+    };
+    interface HTMLCpyContentsListElement extends Components.CpyContentsList, HTMLStencilElement {
+    }
+    var HTMLCpyContentsListElement: {
+        prototype: HTMLCpyContentsListElement;
+        new (): HTMLCpyContentsListElement;
+    };
+    interface HTMLCpyContentsListItemElement extends Components.CpyContentsListItem, HTMLStencilElement {
+    }
+    var HTMLCpyContentsListItemElement: {
+        prototype: HTMLCpyContentsListItemElement;
+        new (): HTMLCpyContentsListItemElement;
     };
     interface HTMLCpyContextMenuElement extends Components.CpyContextMenu, HTMLStencilElement {
     }
@@ -315,6 +342,8 @@ declare global {
         "cpy-badge": HTMLCpyBadgeElement;
         "cpy-button": HTMLCpyButtonElement;
         "cpy-code-block": HTMLCpyCodeBlockElement;
+        "cpy-contents-list": HTMLCpyContentsListElement;
+        "cpy-contents-list-item": HTMLCpyContentsListItemElement;
         "cpy-context-menu": HTMLCpyContextMenuElement;
         "cpy-context-menu-item": HTMLCpyContextMenuItemElement;
         "cpy-dialog": HTMLCpyDialogElement;
@@ -374,6 +403,16 @@ declare namespace LocalJSX {
         "language"?: 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell';
         "showDetails"?: boolean;
     }
+    interface CpyContentsList {
+        "activeIndex"?: number;
+        "headerTitle"?: string;
+        "items"?: ContentsListItem[];
+    }
+    interface CpyContentsListItem {
+        "active"?: boolean;
+        "item"?: ContentsListItem;
+        "onClicked"?: (event: CpyContentsListItemCustomEvent<void>) => void;
+    }
     interface CpyContextMenu {
         "items"?: ContextMenuItem[];
     }
@@ -414,6 +453,7 @@ declare namespace LocalJSX {
         "onItemActive"?: (event: CpyNavMenuItemCustomEvent<void>) => void;
     }
     interface CpyPageContent {
+        "hideContentsList"?: boolean;
     }
     interface CpyPopup {
         "activeOn"?: 'hover' | 'click';
@@ -456,6 +496,8 @@ declare namespace LocalJSX {
         "cpy-badge": CpyBadge;
         "cpy-button": CpyButton;
         "cpy-code-block": CpyCodeBlock;
+        "cpy-contents-list": CpyContentsList;
+        "cpy-contents-list-item": CpyContentsListItem;
         "cpy-context-menu": CpyContextMenu;
         "cpy-context-menu-item": CpyContextMenuItem;
         "cpy-dialog": CpyDialog;
@@ -486,6 +528,8 @@ declare module "@stencil/core" {
             "cpy-badge": LocalJSX.CpyBadge & JSXBase.HTMLAttributes<HTMLCpyBadgeElement>;
             "cpy-button": LocalJSX.CpyButton & JSXBase.HTMLAttributes<HTMLCpyButtonElement>;
             "cpy-code-block": LocalJSX.CpyCodeBlock & JSXBase.HTMLAttributes<HTMLCpyCodeBlockElement>;
+            "cpy-contents-list": LocalJSX.CpyContentsList & JSXBase.HTMLAttributes<HTMLCpyContentsListElement>;
+            "cpy-contents-list-item": LocalJSX.CpyContentsListItem & JSXBase.HTMLAttributes<HTMLCpyContentsListItemElement>;
             "cpy-context-menu": LocalJSX.CpyContextMenu & JSXBase.HTMLAttributes<HTMLCpyContextMenuElement>;
             "cpy-context-menu-item": LocalJSX.CpyContextMenuItem & JSXBase.HTMLAttributes<HTMLCpyContextMenuItemElement>;
             "cpy-dialog": LocalJSX.CpyDialog & JSXBase.HTMLAttributes<HTMLCpyDialogElement>;

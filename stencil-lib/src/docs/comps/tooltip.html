@@ -1,56 +1,58 @@
-<h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-  Tooltips
-</h3>
-
-<p style="margin-top: 1rem; margin-bottom: 2rem;">Canopy tooltips display a message attached to an element on the page. They are referenced using the &lt;cpy-tooltip&gt; custom HTML element. This component utilises the slot element, allowing you to attach a tooltip to anything.</p>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-<div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-  <div style="flex: 1;">
-    <cpy-tooltip position="top" text="I'm a tooltip!">
-      <cpy-icon>info</cpy-icon>
-    </cpy-tooltip>
-  </div>
-  <div style="flex: 1;">
-    <cpy-tooltip position="right" text="I'm a tooltip!">
-      <cpy-icon>info</cpy-icon>
-    </cpy-tooltip>
-  </div>
-  <div style="flex: 1;">
-    <cpy-tooltip position="bottom" text="I'm a tooltip!">
-      <cpy-icon>info</cpy-icon>
-    </cpy-tooltip>
-  </div>
-  <div style="flex: 1;">
-    <cpy-tooltip position="left" text="I'm a tooltip!">
-      <cpy-icon>info</cpy-icon>
-    </cpy-tooltip>
-  </div>
-  <div style="flex: 1;">
-    <cpy-tooltip position="left">
-      <cpy-icon>info</cpy-icon>
-      <div slot="content">
-        <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="60" style="margin: 0 auto; padding: 8px 0;">
-        <div style="padding: 8px; background-color: var(--cpy-bg-primary); color: white; border-radius: 0 0 4px 4px;">
-          This is a more customised tooltip
+<cpy-page-content>
+  <h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
+    Tooltips
+  </h3>
+  
+  <p style="margin-top: 1rem; margin-bottom: 2rem;">Canopy tooltips display a message attached to an element on the page. They are referenced using the &lt;cpy-tooltip&gt; custom HTML element. This component utilises the slot element, allowing you to attach a tooltip to anything.</p>
+  
+  <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
+  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+    <div style="flex: 1;">
+      <cpy-tooltip position="top" text="I'm a tooltip!">
+        <cpy-icon>info</cpy-icon>
+      </cpy-tooltip>
+    </div>
+    <div style="flex: 1;">
+      <cpy-tooltip position="right" text="I'm a tooltip!">
+        <cpy-icon>info</cpy-icon>
+      </cpy-tooltip>
+    </div>
+    <div style="flex: 1;">
+      <cpy-tooltip position="bottom" text="I'm a tooltip!">
+        <cpy-icon>info</cpy-icon>
+      </cpy-tooltip>
+    </div>
+    <div style="flex: 1;">
+      <cpy-tooltip position="left" text="I'm a tooltip!">
+        <cpy-icon>info</cpy-icon>
+      </cpy-tooltip>
+    </div>
+    <div style="flex: 1;">
+      <cpy-tooltip position="left">
+        <cpy-icon>info</cpy-icon>
+        <div slot="content">
+          <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="60" style="margin: 0 auto; padding: 8px 0;">
+          <div style="padding: 8px; background-color: var(--cpy-bg-primary); color: white; border-radius: 0 0 4px 4px;">
+            This is a more customised tooltip
+          </div>
         </div>
-      </div>
-    </cpy-tooltip>
+      </cpy-tooltip>
+    </div>
   </div>
-</div>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
-
-<div style="margin-top: 1rem; margin-bottom: 2rem;">
-  <cpy-code-block id="code-block-html-example" language="html" show-details></cpy-code-block>
-</div>
-
-<div style="margin-top: 1rem; margin-bottom: 2rem;">
-  <cpy-code-block id="code-block-html-example-two" language="html" show-details></cpy-code-block>
-</div>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-<cpy-table id="tooltip-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
-<cpy-table id="tooltip-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+  
+  <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+  
+  <div style="margin-top: 1rem; margin-bottom: 2rem;">
+    <cpy-code-block id="code-block-html-example" language="html" show-details></cpy-code-block>
+  </div>
+  
+  <div style="margin-top: 1rem; margin-bottom: 2rem;">
+    <cpy-code-block id="code-block-html-example-two" language="html" show-details></cpy-code-block>
+  </div>
+  
+  <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
+  <cpy-table id="tooltip-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+  
+  <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
+  <cpy-table id="tooltip-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+</cpy-page-content>

@@ -22,7 +22,8 @@ const menuItems = navMenuElement.items = [
     title: 'User Interface', type: 'group', description: 'Building blocks of websites', children: [
     { title: 'Layout', icon: 'dashboard', type: 'collapsible', description: 'Common UI layouts', children: [
       { title: 'Drawer', type: 'basic', url: '/comps/drawer', function: closeMenuOnMobileNav },
-      { title: 'Navigation Menu', type: 'basic', url: '/comps/navMenu', function: closeMenuOnMobileNav }
+      { title: 'Navigation Menu', type: 'basic', url: '/comps/navMenu', function: closeMenuOnMobileNav },
+      { title: 'Page Content', type: 'basic', url: '/comps/pageContent', function: closeMenuOnMobileNav }
     ] },
     { title: 'Interactions', icon: 'touch_app', type: 'collapsible', description: 'Floating UI components', children: [
       { title: 'Dialog', type: 'basic', url: '/comps/dialog', function: closeMenuOnMobileNav },
@@ -42,6 +43,7 @@ const menuItems = navMenuElement.items = [
       { title: 'Button', type: 'basic', url: '/comps/button', function: closeMenuOnMobileNav },
       { title: 'Code Block', type: 'basic', url: '/comps/codeBlock', function: closeMenuOnMobileNav },
       { title: 'Context Menu', type: 'basic', url: '/comps/contextMenu', function: closeMenuOnMobileNav },
+      { title: 'Icon', type: 'basic', url: '/comps/icon', function: closeMenuOnMobileNav },
       { title: 'Link', type: 'basic', url: '/comps/link', function: closeMenuOnMobileNav },
       { title: 'Spinner', type: 'basic', url: '/comps/spinner', function: closeMenuOnMobileNav },
       { title: 'Table', type: 'basic', url: '/comps/table', function: closeMenuOnMobileNav },
@@ -71,9 +73,14 @@ function loadPage(page) {
   xhr.send();
 }
 
+let currentPath;
+
 // this triggers my internal application logic
 const handleRoute = () => {
   const path = window.location.pathname.substring(1);
+  if (path === currentPath) {
+    return;
+  }
   loadPage(path);
   const setActive = (item) => {
     return item.type === 'basic'
@@ -81,6 +88,7 @@ const handleRoute = () => {
       : { ...item, children: item.children.map(setActive) };
   };
   navMenuElement.items = menuItems.map(setActive);
+  currentPath = path;
 }
 // add event handler for when using the browser UI to navigate back and forth
 window.onpopstate = () => handleRoute();
@@ -99,9 +107,10 @@ const navigate = (url) => {
 
 // adds an event listener for all internal links
 window.addEventListener('click', e => {
+  const composedPath = e.composedPath();
   // since some elements are in the shadow root, we can make use of the path on the event to get the anchor
-  for (let i = 0; i < e.path.length - 1; i++) {
-    const elemPath = e.path[i];
+  for (let i = 0; i < composedPath.length - 1; i++) {
+    const elemPath = composedPath[i];
     // get tag name
     const tag = elemPath.tagName;
     if (tag === 'A') {
@@ -109,8 +118,11 @@ window.addEventListener('click', e => {
         continue;
       }
       // ignore href which is on a different domain to us
-      if (elemPath.href && new URL(elemPath.href).hostname !== window.location.hostname) {
-        continue;
+      if (elemPath.href) {
+        const url = new URL(elemPath.href);
+        if (url.hostname !== window.location.hostname || (url.pathname === window.location.pathname && url.hash)) {
+          continue;
+        }
       }
       e.preventDefault();
       navigate(elemPath.href);

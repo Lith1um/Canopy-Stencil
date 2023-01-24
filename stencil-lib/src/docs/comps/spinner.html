@@ -1,63 +1,65 @@
-<h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-  Spinners
-</h3>
-
-<p style="margin-top: 1rem; margin-bottom: 2rem;">
-  Canopy spinners indicate progress by showing a loading state. They are referenced using the &lt;cpy-spinner&gt; custom HTML element.
-</p>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-
-<p>Small</p>
-<div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-  <div style="flex: 1;"><cpy-spinner size="small" type="primary"></cpy-spinner></div>
-  <div style="flex: 1;"><cpy-spinner size="small" type="secondary"></cpy-spinner></div>
-  <div style="flex: 1;"><cpy-spinner size="small" type="basic"></cpy-spinner></div>
-  <div style="flex: 1;"><cpy-spinner size="small" type="success"></cpy-spinner></div>
-  <div style="flex: 1;"><cpy-spinner size="small" type="warn"></cpy-spinner></div>
-  <div style="flex: 1;"><cpy-spinner size="small" type="error"></cpy-spinner></div>
-</div>
-
-<p>Default</p>
-<div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-  <div style="flex: 1;"><cpy-spinner type="primary"></cpy-spinner></div>
-  <div style="flex: 1;"><cpy-spinner type="secondary"></cpy-spinner></div>
-  <div style="flex: 1;"><cpy-spinner type="basic"></cpy-spinner></div>
-  <div style="flex: 1;"><cpy-spinner type="success"></cpy-spinner></div>
-  <div style="flex: 1;"><cpy-spinner type="warn"></cpy-spinner></div>
-  <div style="flex: 1;"><cpy-spinner type="error"></cpy-spinner></div>
-</div>
-
-<p>Large</p>
-<div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-  <div style="flex: 1;"><cpy-spinner size="large" type="primary"></cpy-spinner></div>
-  <div style="flex: 1;"><cpy-spinner size="large" type="secondary"></cpy-spinner></div>
-  <div style="flex: 1;"><cpy-spinner size="large" type="basic"></cpy-spinner></div>
-  <div style="flex: 1;"><cpy-spinner size="large" type="success"></cpy-spinner></div>
-  <div style="flex: 1;"><cpy-spinner size="large" type="warn"></cpy-spinner></div>
-  <div style="flex: 1;"><cpy-spinner size="large" type="error"></cpy-spinner></div>
-</div>
-
-<p>Inside a button</p>
-<div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-  <div style="flex: 1;">
-    <cpy-button>
-      <cpy-spinner size="small"></cpy-spinner>Loading
-    </cpy-button>
+<cpy-page-content>
+  <h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
+    Spinners
+  </h3>
+  
+  <p style="margin-top: 1rem; margin-bottom: 2rem;">
+    Canopy spinners indicate progress by showing a loading state. They are referenced using the &lt;cpy-spinner&gt; custom HTML element.
+  </p>
+  
+  <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
+  
+  <p>Small</p>
+  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+    <div style="flex: 1;"><cpy-spinner size="small" type="primary"></cpy-spinner></div>
+    <div style="flex: 1;"><cpy-spinner size="small" type="secondary"></cpy-spinner></div>
+    <div style="flex: 1;"><cpy-spinner size="small" type="basic"></cpy-spinner></div>
+    <div style="flex: 1;"><cpy-spinner size="small" type="success"></cpy-spinner></div>
+    <div style="flex: 1;"><cpy-spinner size="small" type="warn"></cpy-spinner></div>
+    <div style="flex: 1;"><cpy-spinner size="small" type="error"></cpy-spinner></div>
   </div>
-
-  <div style="flex: 1;">
-    <cpy-button appearance="outline">
-      Loading<cpy-spinner size="small"></cpy-spinner>
-    </cpy-button>
+  
+  <p>Default</p>
+  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+    <div style="flex: 1;"><cpy-spinner type="primary"></cpy-spinner></div>
+    <div style="flex: 1;"><cpy-spinner type="secondary"></cpy-spinner></div>
+    <div style="flex: 1;"><cpy-spinner type="basic"></cpy-spinner></div>
+    <div style="flex: 1;"><cpy-spinner type="success"></cpy-spinner></div>
+    <div style="flex: 1;"><cpy-spinner type="warn"></cpy-spinner></div>
+    <div style="flex: 1;"><cpy-spinner type="error"></cpy-spinner></div>
   </div>
-</div>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
-
-<div style="margin-top: 1rem; margin-bottom: 2rem;">
-  <cpy-code-block id="spinner-html-example" language="html" show-details></cpy-code-block>
-</div>
-
-<h3 style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-<cpy-table id="spinner-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+  
+  <p>Large</p>
+  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+    <div style="flex: 1;"><cpy-spinner size="large" type="primary"></cpy-spinner></div>
+    <div style="flex: 1;"><cpy-spinner size="large" type="secondary"></cpy-spinner></div>
+    <div style="flex: 1;"><cpy-spinner size="large" type="basic"></cpy-spinner></div>
+    <div style="flex: 1;"><cpy-spinner size="large" type="success"></cpy-spinner></div>
+    <div style="flex: 1;"><cpy-spinner size="large" type="warn"></cpy-spinner></div>
+    <div style="flex: 1;"><cpy-spinner size="large" type="error"></cpy-spinner></div>
+  </div>
+  
+  <p>Inside a button</p>
+  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+    <div style="flex: 1;">
+      <cpy-button>
+        <cpy-spinner size="small"></cpy-spinner>Loading
+      </cpy-button>
+    </div>
+  
+    <div style="flex: 1;">
+      <cpy-button appearance="outline">
+        Loading<cpy-spinner size="small"></cpy-spinner>
+      </cpy-button>
+    </div>
+  </div>
+  
+  <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+  
+  <div style="margin-top: 1rem; margin-bottom: 2rem;">
+    <cpy-code-block id="spinner-html-example" language="html" show-details></cpy-code-block>
+  </div>
+  
+  <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
+  <cpy-table id="spinner-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+</cpy-page-content>

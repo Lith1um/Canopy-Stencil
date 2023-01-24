@@ -16,6 +16,8 @@
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
+
+    @apply scroll-smooth;
   }
 
   *:focus {
@@ -23,7 +25,6 @@
   }
   
   html {
-    @apply scroll-smooth;
     -webkit-font-smoothing: auto;
     font-feature-settings: 'salt';
   }

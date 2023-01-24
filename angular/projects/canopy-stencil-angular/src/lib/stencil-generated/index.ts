@@ -8,6 +8,8 @@ export const DIRECTIVES = [
   d.CpyBadge,
   d.CpyButton,
   d.CpyCodeBlock,
+  d.CpyContentsList,
+  d.CpyContentsListItem,
   d.CpyContextMenu,
   d.CpyContextMenuItem,
   d.CpyDialog,

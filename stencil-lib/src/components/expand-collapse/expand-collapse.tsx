@@ -25,22 +25,22 @@ export class ExpandCollapse {
   @Method()
   async expand(): Promise<void> {
     this.trackExpanded = true;
-    this.toggleExpanded.emit(this.trackExpanded);
     await this.expandCollapseService.expand(this.expandElem);
+    this.toggleExpanded.emit(this.trackExpanded);
   }
 
   @Method()
   async collapse(): Promise<void> {
     this.trackExpanded = false;
-    this.toggleExpanded.emit(this.trackExpanded);
     await this.expandCollapseService.collapse(this.expandElem);
+    this.toggleExpanded.emit(this.trackExpanded);
   }
 
   @Method()
   async toggle(): Promise<void> {
     this.trackExpanded = !this.toggleExpanded;
-    this.toggleExpanded.emit(this.trackExpanded);
     await this.expandCollapseService.toggle(this.expandElem);
+    this.toggleExpanded.emit(this.trackExpanded);
   }
 
   @Event({bubbles: false})
