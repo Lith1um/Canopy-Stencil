@@ -626,3 +626,43 @@ export class CpyTooltip {
     this.el = r.nativeElement;
   }
 }
+
+
+export declare interface DragDropContainer extends Components.DragDropContainer {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['containerTitle', 'group']
+})
+@Component({
+  selector: 'drag-drop-container',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['containerTitle', 'group']
+})
+export class DragDropContainer {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface DragDropItem extends Components.DragDropItem {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined
+})
+@Component({
+  selector: 'drag-drop-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class DragDropItem {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}

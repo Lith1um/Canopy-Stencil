@@ -12,11 +12,16 @@ export class DragAndDropContainer {
 
   private container: HTMLElement;
 
+  onSort(e: any): void {
+    console.log('onSort', e);
+  }
+
   componentDidLoad() {
     Sortable.create(this.container, {
       animation: 150,
       group: this.group,
       ghostClass: 'ghost',
+      onSort: (e) => this.onSort(e)
     });
   }
 
