@@ -140,6 +140,7 @@ export namespace Components {
     interface DragDropContainer {
         "containerTitle": string;
         "group": string;
+        "handle": string;
     }
     interface DragDropItem {
     }
@@ -512,6 +513,7 @@ declare namespace LocalJSX {
     interface DragDropContainer {
         "containerTitle"?: string;
         "group"?: string;
+        "handle"?: string;
     }
     interface DragDropItem {
     }

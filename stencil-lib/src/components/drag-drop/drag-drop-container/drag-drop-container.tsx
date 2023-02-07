@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop } from '@stencil/core';
-import Sortable from 'sortablejs';
+import Sortable, { SortableOptions } from 'sortablejs';
 
 @Component({
   tag: 'drag-drop-container',
@@ -7,8 +7,12 @@ import Sortable from 'sortablejs';
   scoped: true,
 })
 export class DragAndDropContainer {
+
   @Prop() containerTitle: string;
+
   @Prop() group: string;
+
+  @Prop() handle: string;
 
   private container: HTMLElement;
 
@@ -17,12 +21,18 @@ export class DragAndDropContainer {
   }
 
   componentDidLoad() {
-    Sortable.create(this.container, {
+    const options: SortableOptions = {
       animation: 150,
       group: this.group,
       ghostClass: 'ghost',
       onSort: (e) => this.onSort(e)
-    });
+    };
+
+    if (this.handle) {
+      options.handle = `.${this.handle}`;
+    }
+
+    Sortable.create(this.container, options);
   }
 
   render() {

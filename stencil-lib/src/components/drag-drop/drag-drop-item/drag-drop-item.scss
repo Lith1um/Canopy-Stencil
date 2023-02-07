@@ -1,8 +1,12 @@
 :host {
-  @apply block w-full rounded-md cursor-move;
+  @apply block w-full rounded-md;
   background-color: var(--cpy-bg-light);
 }
 
 :host(.ghost) {
   background-color: var(--cpy-bg-primary);
+}
+
+:host(.dragging) {
+  cursor: grabbing !important;
 }
