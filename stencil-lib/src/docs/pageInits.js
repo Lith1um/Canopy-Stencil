@@ -304,6 +304,43 @@ export class CodeBlock {
     ];
   },
 
+  dragDrop: () => {
+    document.getElementById('drag-drop-html-example').code = `<drag-drop-container container-title="Backlog" group="kanban">
+  <drag-drop-item>
+    <div style="border-radius: 0.5rem; padding: 1rem;">
+      Item 1
+    </div>
+  </drag-drop-item>
+  <drag-drop-item>
+    <div style="border-radius: 0.5rem; padding: 1rem;">
+      Item 2
+    </div>
+  </drag-drop-item>
+</drag-drop-container>
+<drag-drop-container container-title="In Progress" group="kanban">
+  <drag-drop-item>
+    <div style="border-radius: 0.5rem; padding: 1rem;">
+      Item 3
+    </div>
+  </drag-drop-item>
+  <drag-drop-item>
+    <div style="border-radius: 0.5rem; padding: 1rem;">
+      Item 4
+    </div>
+  </drag-drop-item>
+</drag-drop-container>`;
+
+    document.getElementById('drag-drop-props').tableData = [
+      { name: 'container-title', description: 'Container title', type: "string", default: "", required: false },
+      { name: 'group', description: 'Name for grouping drag/drop containers', type: "string", default: "", required: false },
+      { name: 'handle', description: 'Handle class; only allows drag when selecting element with given class', type: "string", default: "", required: false },
+    ];
+
+    document.getElementById('drag-drop-slots').tableData = [
+      { slotName: "-- (default)", purpose: 'Contents of the drag item' }
+    ];
+  },
+
   toggle: () => {
     document.getElementById('toggle-html-example').code = `<cpy-toggle checked size="large" label="Large toggle"></cpy-toggle>`;
 

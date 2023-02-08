@@ -38,7 +38,7 @@ export class DragAndDropContainer {
       <Host>
         <h1>{this.containerTitle}</h1>
         <div class="container" ref={el => (this.container = el as HTMLElement)}>
-          <slot></slot>
+          <slot/>
         </div>
       </Host>
     );
