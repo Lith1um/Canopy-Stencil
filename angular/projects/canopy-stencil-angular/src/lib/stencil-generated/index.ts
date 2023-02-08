@@ -27,5 +27,7 @@ export const DIRECTIVES = [
   d.CpyToast,
   d.CpyToggle,
   d.CpyToolbar,
-  d.CpyTooltip
+  d.CpyTooltip,
+  d.DragDropContainer,
+  d.DragDropItem
 ];

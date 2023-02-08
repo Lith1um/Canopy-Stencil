@@ -16,14 +16,16 @@ export class DragAndDropContainer {
 
   private container: HTMLElement;
 
-  // TODO:
-  //  - ability to set drag handle
+  onSort(e: any): void {
+    console.log('onSort', e);
+  }
 
   componentDidLoad() {
     const options: SortableOptions = {
       animation: 150,
       group: this.group,
-      ghostClass: 'ghost'
+      ghostClass: 'ghost',
+      onSort: (e) => this.onSort(e)
     };
 
     if (this.handle) {
