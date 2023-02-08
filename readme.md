@@ -219,9 +219,11 @@ If you want to use a different method to checking for a dark class on the HTML t
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Components
+- Minor fixes
+  - [ ] page content sidebar is too wide in most cases
+  - [ ] better copy button for code block
+- Components
   - [ ] Form inputs
-  - [ ] Contents list
   - [ ] Ghost Components?
   - [ ] Grid layouts
 - [ ] Figure out how to let the breakpoints be configurable

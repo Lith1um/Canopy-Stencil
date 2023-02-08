@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Prop, State } from '@stencil/core';
 import '../../utils/prism';
 
 declare const Prism: any;
@@ -12,15 +12,19 @@ export class CodeBlock {
 
   @Prop() code: string;
 
-  @Prop() showDetails: boolean = false;
-
   @Prop() language: 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell' = 'typescript';
 
   codeElem: HTMLElement;
   copyButtonElem: HTMLElement;
 
+  @State()
+  copied = false;
+
   copyCode(): void {
-    navigator.clipboard.writeText(this.code).then(() => this.copyButtonElem.innerHTML = 'Copied!');
+    navigator.clipboard.writeText(this.code).then(() => {
+      this.copied = true;
+      setTimeout(() => this.copied = false, 1000);
+    });
   }
 
   componentDidRender(): void {
@@ -31,12 +35,10 @@ export class CodeBlock {
   render() {
     return (
       <div class="code-block">
-        {this.showDetails && <div class="code-block__details">
-          <div>{this.language}</div>
-          <button class="code-block__copy-button" ref={(el) => this.copyButtonElem = el as HTMLElement} onClick={() => this.copyCode()}>
-            Copy
-          </button>
-        </div>}
+        <button class="code-block__copy" ref={(el) => this.copyButtonElem = el as HTMLElement} onClick={() => this.copyCode()}>
+          <cpy-icon class={this.copied && 'copied'}>{this.copied ? 'done' : 'content_copy'}</cpy-icon>
+        </button>
+
         <pre>
           <code ref={(el) => this.codeElem = el as HTMLElement} class={`language-${this.language}`}>
             {this.code}
