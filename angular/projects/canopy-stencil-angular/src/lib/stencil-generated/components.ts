@@ -128,6 +128,27 @@ export class CpyButton {
 }
 
 
+export declare interface CpyCarousel extends Components.CpyCarousel {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['carouselTitle']
+})
+@Component({
+  selector: 'cpy-carousel',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['carouselTitle']
+})
+export class CpyCarousel {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface CpyCodeBlock extends Components.CpyCodeBlock {}
 
 @ProxyCmp({

@@ -1,0 +1,31 @@
+:host {
+  @apply block;
+}
+
+.carousel {
+  @apply w-full;
+
+  &__header {
+    @apply w-full flex items-center gap-4 mb-2;
+  }
+
+  &__title {
+    @apply flex-1 text-lg font-medium truncate;
+  }
+
+  &__buttons {
+    @apply flex;
+  }
+
+  &__content {
+    @apply overflow-x-auto max-w-full;
+
+    &::-webkit-scrollbar{
+      display: none;
+    }
+  }
+
+  &__scroll-content {
+    @apply flex gap-4 min-w-min;
+  }
+}

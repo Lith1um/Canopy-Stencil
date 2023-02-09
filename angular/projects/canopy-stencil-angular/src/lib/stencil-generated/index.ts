@@ -7,6 +7,7 @@ export const DIRECTIVES = [
   d.CpyAvatar,
   d.CpyBadge,
   d.CpyButton,
+  d.CpyCarousel,
   d.CpyCodeBlock,
   d.CpyContentsList,
   d.CpyContentsListItem,
