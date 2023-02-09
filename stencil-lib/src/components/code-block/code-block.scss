@@ -16,7 +16,7 @@
     --bg-colour-rgb: var(--cpy-bg-basic-rgb);
     background-color: rgba(var(--bg-colour-rgb), var(--button-opacity));
     transition: background-color, opacity 300ms;
-    @apply opacity-0 absolute top-2 right-2 cursor-pointer leading-9 h-9 w-9 rounded-md border;
+    @apply opacity-0 absolute top-2 right-2 cursor-pointer h-8 w-8 rounded-md border;
     border-color: #828791;
     
     &:hover {
@@ -26,6 +26,10 @@
 
     .copied {
       color: var(--cpy-text-success);
+    }
+
+    cpy-icon {
+      @apply icon-size-5;
     }
   }
 }

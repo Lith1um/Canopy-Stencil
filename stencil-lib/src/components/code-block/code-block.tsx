@@ -23,7 +23,7 @@ export class CodeBlock {
   copyCode(): void {
     navigator.clipboard.writeText(this.code).then(() => {
       this.copied = true;
-      setTimeout(() => this.copied = false, 1000);
+      setTimeout(() => this.copied = false, 2000);
     });
   }
 
