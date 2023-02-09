@@ -25,7 +25,7 @@ export class Carousel {
 
   handleScroll(): void {
     this.leftButtonDisabled = this.contentElem.scrollLeft === 0;
-    this.rightButtonDisabled = this.contentElem.scrollLeft >= this.contentElem.scrollWidth - this.contentElem.clientWidth;
+    this.rightButtonDisabled = Math.abs(this.contentElem.scrollWidth - this.contentElem.clientWidth - this.contentElem.scrollLeft) < 1;
   }
 
   handleScrollClick(left: boolean): void {
