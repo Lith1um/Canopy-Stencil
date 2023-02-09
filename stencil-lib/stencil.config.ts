@@ -3,6 +3,7 @@ import { angularOutputTarget } from '@stencil/angular-output-target';
 import tailwind, { TailwindConfig, tailwindHMR } from 'stencil-tailwind-plugin';
 import { sass } from '@stencil/sass';
 import tailwindConf from './tailwind.config';
+import angularValueAccessorBindings from './angular-value-accessor-bindings';
 
 const twConfigurationFn = (filename: string, config: TailwindConfig): TailwindConfig => {
   return {
@@ -30,6 +31,7 @@ export const config: Config = {
       componentCorePackage: 'canopy-stencil-web',
       directivesProxyFile: '../angular/projects/canopy-stencil-angular/src/lib/stencil-generated/components.ts',
       directivesArrayFile: '../angular/projects/canopy-stencil-angular/src/lib/stencil-generated/index.ts',
+      valueAccessorConfigs: angularValueAccessorBindings
     }),
     {
       type: 'dist',

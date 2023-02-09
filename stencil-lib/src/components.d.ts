@@ -54,7 +54,6 @@ export namespace Components {
     interface CpyCodeBlock {
         "code": string;
         "language": 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell';
-        "showDetails": boolean;
     }
     interface CpyContentsList {
         "activeIndex": number;
@@ -414,7 +413,6 @@ declare namespace LocalJSX {
     interface CpyCodeBlock {
         "code"?: string;
         "language"?: 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell';
-        "showDetails"?: boolean;
     }
     interface CpyContentsList {
         "activeIndex"?: number;

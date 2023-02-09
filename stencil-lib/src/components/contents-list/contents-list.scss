@@ -1,5 +1,5 @@
 .contents {
-  @apply block sticky top-8 mt-8 w-40;
+  @apply block sticky top-8 mt-8 max-w-[10rem];
 
   &__title {
     @apply text-sm uppercase ml-3 truncate;
@@ -13,6 +13,6 @@
 
 @media(min-width: 1024px) {
   .contents {
-    @apply w-64;
+    @apply max-w-[16rem];
   }
 }
