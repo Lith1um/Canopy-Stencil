@@ -21,6 +21,7 @@
 ### Used by
 
  - [cpy-alert](../alert)
+ - [cpy-carousel](../carousel)
  - [cpy-dialog](../dialog)
  - [cpy-drawer](../drawer-container/drawer)
 
@@ -28,6 +29,7 @@
 ```mermaid
 graph TD;
   cpy-alert --> cpy-button
+  cpy-carousel --> cpy-button
   cpy-dialog --> cpy-button
   cpy-drawer --> cpy-button
   style cpy-button fill:#f9f,stroke:#333,stroke-width:4px

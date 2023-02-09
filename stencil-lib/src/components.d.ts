@@ -48,6 +48,9 @@ export namespace Components {
         "size": ButtonSize;
         "type": ButtonAppearance;
     }
+    interface CpyCarousel {
+        "carouselTitle": string;
+    }
     interface CpyCodeBlock {
         "code": string;
         "language": 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell';
@@ -208,6 +211,12 @@ declare global {
         prototype: HTMLCpyButtonElement;
         new (): HTMLCpyButtonElement;
     };
+    interface HTMLCpyCarouselElement extends Components.CpyCarousel, HTMLStencilElement {
+    }
+    var HTMLCpyCarouselElement: {
+        prototype: HTMLCpyCarouselElement;
+        new (): HTMLCpyCarouselElement;
+    };
     interface HTMLCpyCodeBlockElement extends Components.CpyCodeBlock, HTMLStencilElement {
     }
     var HTMLCpyCodeBlockElement: {
@@ -340,6 +349,7 @@ declare global {
         "cpy-avatar": HTMLCpyAvatarElement;
         "cpy-badge": HTMLCpyBadgeElement;
         "cpy-button": HTMLCpyButtonElement;
+        "cpy-carousel": HTMLCpyCarouselElement;
         "cpy-code-block": HTMLCpyCodeBlockElement;
         "cpy-contents-list": HTMLCpyContentsListElement;
         "cpy-contents-list-item": HTMLCpyContentsListItemElement;
@@ -396,6 +406,9 @@ declare namespace LocalJSX {
         "icon"?: boolean;
         "size"?: ButtonSize;
         "type"?: ButtonAppearance;
+    }
+    interface CpyCarousel {
+        "carouselTitle"?: string;
     }
     interface CpyCodeBlock {
         "code"?: string;
@@ -493,6 +506,7 @@ declare namespace LocalJSX {
         "cpy-avatar": CpyAvatar;
         "cpy-badge": CpyBadge;
         "cpy-button": CpyButton;
+        "cpy-carousel": CpyCarousel;
         "cpy-code-block": CpyCodeBlock;
         "cpy-contents-list": CpyContentsList;
         "cpy-contents-list-item": CpyContentsListItem;
@@ -525,6 +539,7 @@ declare module "@stencil/core" {
             "cpy-avatar": LocalJSX.CpyAvatar & JSXBase.HTMLAttributes<HTMLCpyAvatarElement>;
             "cpy-badge": LocalJSX.CpyBadge & JSXBase.HTMLAttributes<HTMLCpyBadgeElement>;
             "cpy-button": LocalJSX.CpyButton & JSXBase.HTMLAttributes<HTMLCpyButtonElement>;
+            "cpy-carousel": LocalJSX.CpyCarousel & JSXBase.HTMLAttributes<HTMLCpyCarouselElement>;
             "cpy-code-block": LocalJSX.CpyCodeBlock & JSXBase.HTMLAttributes<HTMLCpyCodeBlockElement>;
             "cpy-contents-list": LocalJSX.CpyContentsList & JSXBase.HTMLAttributes<HTMLCpyContentsListElement>;
             "cpy-contents-list-item": LocalJSX.CpyContentsListItem & JSXBase.HTMLAttributes<HTMLCpyContentsListItemElement>;

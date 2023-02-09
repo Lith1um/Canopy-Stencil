@@ -29,6 +29,11 @@
     Originally built to facilitate building UIs with as minimal effort as possible across multiple frontend technologies.
     <br />
     <br />
+    <a href="https://lith1um.github.io/" target="_blank">Check out a working demo!</a>
+    <br />
+    Built in vanilla HTML and JS with Canopy web components.
+    <br />
+    <br />
     <!-- <a href="https://github.com/lith1um/Canopy-Stencil" target="_blank">View Demo</a> -->
     <a href="https://github.com/lith1um/Canopy-Stencil/issues" target="_blank">Report Bug</a>
     ·
@@ -62,10 +67,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-There are many component libraries that exist in the world, but the general opinion I have is that they are too bloated with external dependencies or do not work across multiple frontend frameworks. I've been really interested by web components and the ability they have to work anywhere. Using StencilJS is great as the package size is minimal and it supports building for multiple frameworks, which allows for example Angular developers to use the components in the same way they would use components built natively in Angular.
+The purpose of Canopy is to provide a strong set of UI tools built using web components, allowing it to be used anywhere on the web, by anyone. By using [Stencil](https://stenciljs.com/) as the backbone for components, Canopy can be built for individual frontend frameworks, allowing Developers to use Canopy as they would any native component library.
 
 Here's why I think you should consider using this package:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
+* Your time should be focused on creating something amazing, not worrying about building common UI
 * You shouldn't be doing the same tasks over and over like designing new components from scratch
 * Learn one library, then use it again and again no matter the technology you build your app with!
 
