@@ -12,6 +12,7 @@
  - [cpy-accordion](../accordion)
  - [cpy-alert](../alert)
  - [cpy-carousel](../carousel)
+ - [cpy-code-block](../code-block)
  - [cpy-context-menu-item](../context-menu/context-menu-item)
  - [cpy-dialog](../dialog)
  - [cpy-drawer](../drawer-container/drawer)
@@ -23,6 +24,7 @@ graph TD;
   cpy-accordion --> cpy-icon
   cpy-alert --> cpy-icon
   cpy-carousel --> cpy-icon
+  cpy-code-block --> cpy-icon
   cpy-context-menu-item --> cpy-icon
   cpy-dialog --> cpy-icon
   cpy-drawer --> cpy-icon
