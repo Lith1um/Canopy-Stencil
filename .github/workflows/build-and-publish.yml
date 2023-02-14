@@ -5,6 +5,9 @@ on:
     types: [closed]
     branches:
       - main
+    # Only trigger the workflow if the pull request was merged
+    # into the master branch
+    merged: true
 
 jobs:
   increment-version:
