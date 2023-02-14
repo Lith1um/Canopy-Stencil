@@ -24,9 +24,9 @@ jobs:
       - name: Increment Version
         # TODO: add way to distinguish version type
         run: |
-          cd stencil-lib && npm version minor -m "Bump version to %s [skip ci]"
-          cd ../angular && npm version minor -m "Bump version to %s [skip ci]"
-          cd projects/canopy-stencil-angular && npm version minor -m "Bump version to %s [skip ci]"
+          cd stencil-lib && npm version patch -m "Bump version to %s [skip ci]"
+          cd ../angular && npm version patch -m "Bump version to %s [skip ci]"
+          cd projects/canopy-stencil-angular && npm version patch -m "Bump version to %s [skip ci]"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -37,8 +37,12 @@ jobs:
         run: cd stencil-lib && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Install dependencies and build angular comps 🔧
-        run: cd angular && npm ci && npm run build
+        run: |
+          TAG=$(node -p "require('./stencil-lib/package.json').version")
+          cd angular && npm i -D canopy-stencil-web@$TAG
+          npm ci && npm run build
       - name: Publish angular package on NPM 📦
         run: cd angular && npm publish
         env:

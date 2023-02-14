@@ -1,6 +1,6 @@
 {
   "name": "angular",
-  "version": "0.0.58",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,7 +10,7 @@
   },
   "private": true,
   "peerDependencies": {
-    "canopy-stencil-web": "0.0.58"
+    "canopy-stencil-web": "0.1.0"
   },
   "dependencies": {
     "@angular/animations": "^14.0.0",
@@ -26,6 +26,7 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "canopy-stencil-web": "0.1.0",
     "@angular-devkit/build-angular": "^14.0.7",
     "@angular/cli": "~14.0.2",
     "@angular/compiler-cli": "^14.0.0",
