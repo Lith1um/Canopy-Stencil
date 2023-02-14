@@ -1,21 +1,30 @@
-name: "Bump Version"
+name: Increment Package Version
+
+# on:
+#   pull_request:
+#     types: [closed]
+#     branches:
+#       - main
 
 on:
   push:
     branches:
-      - "main"
+      - "actions"
 
 jobs:
-  bump-version:
-    name: "Bump Version on main"
+  increment-version:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v2
-      - name: Bumping version
-        uses: jpb06/bump-package@latest
+      - uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v2
         with:
-          major-keywords: BREAKING CHANGE
-          minor-keywords: feat,minor
-          patch-keywords: fix,chore
-          should-default-to-patch: true
+          node-version: 16
+      - name: Increment Version
+        run: npm version minor -m "Bump version to %s [skip ci]"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push Changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
