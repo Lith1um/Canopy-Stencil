@@ -19,7 +19,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
       - name: Increment Version
         run: |
@@ -47,13 +47,13 @@ jobs:
 
       # publish steps
       - name: Install dependencies and build stencil comps 🔧
-        run: npm ci && npm run build
+        run: cd stencil-lib && npm ci && npm run build
       - name: Publish stencil package on NPM 📦
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Install dependencies and build angular comps 🔧
-        run: cd angular && npm ci && npm run build
+        run: cd ../angular && npm ci && npm run build
       - name: Publish angular package on NPM 📦
         run: npm publish
         env:
