@@ -30,20 +30,20 @@ jobs:
       # publish steps
       - name: Install dependencies and build stencil comps 🔧
         run: cd stencil-lib && npm ci && npm run build
-      - name: Publish stencil package on NPM 📦
-        run: cd stencil-lib && npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Publish stencil package on NPM 📦
+      #   run: cd stencil-lib && npm publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install dependencies and build angular comps 🔧
         run: |
           TAG=$(node -p "require('./stencil-lib/package.json').version")
           cd angular && npm i -D canopy-stencil-web@$TAG
           npm ci && npm run build
-      - name: Publish angular package on NPM 📦
-        run: cd angular/dist/canopy-stencil-angular && npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Publish angular package on NPM 📦
+        # run: cd angular/dist/canopy-stencil-angular && npm publish
+        # env:
+        #   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       # Commit and tagging
       - name: Commit Changes
