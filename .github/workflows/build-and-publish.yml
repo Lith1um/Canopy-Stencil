@@ -2,15 +2,14 @@ name: Build and publish
 
 on:
   pull_request:
-    types: [closed]
+    types:
+      - closed
     branches:
       - main
-    # Only trigger the workflow if the pull request was merged
-    # into the master branch
-    merged: true
 
 jobs:
   increment-version:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
