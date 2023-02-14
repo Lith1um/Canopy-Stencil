@@ -1,8 +1,8 @@
 {
   "name": "canopy-stencil-angular",
-  "version": "0.0.65",
+  "version": "0.0.58",
   "peerDependencies": {
-    "canopy-stencil-web": ">= 0.0.1",
+    "canopy-stencil-web": "0.0.58",
     "@angular/common": "^14.0.0",
     "@angular/core": "^14.0.0"
   },
