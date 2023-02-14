@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: 16
       - name: Increment Version
-        run: npm version minor -m "Bump version to %s [skip ci]"
+        run: cd stencil-lib && npm version minor -m "Bump version to %s [skip ci]"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Push Changes
