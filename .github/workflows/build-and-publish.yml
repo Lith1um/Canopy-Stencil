@@ -44,7 +44,7 @@ jobs:
           cd angular && npm i -D canopy-stencil-web@$TAG
           npm ci && npm run build
       - name: Publish angular package on NPM 📦
-        run: cd angular && npm publish
+        run: cd angular/dist/canopy-stencil-angular && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
