@@ -33,6 +33,10 @@ jobs:
           git config user.name "$(git log -n 1 --pretty=format:%an)"
           git add --all
           git commit -m "Bump package version [skip ci]"
+      - name: Create Git Tag
+        run: |
+          TAG=$(node -p "require('./stencil-lib/package.json').version")
+          git tag "v$TAG"
       - name: Push Changes
         uses: ad-m/github-push-action@master
         with:
