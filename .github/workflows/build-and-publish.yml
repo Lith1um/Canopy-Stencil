@@ -1,0 +1,64 @@
+name: Build and publish
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+
+jobs:
+  increment-version:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Increment Version
+        # TODO: add way to distinguish version type
+        run: |
+          cd stencil-lib && npm version patch -m "Bump version to %s [skip ci]"
+          cd ../angular && npm version patch -m "Bump version to %s [skip ci]"
+          cd projects/canopy-stencil-angular && npm version patch -m "Bump version to %s [skip ci]"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # publish steps
+      - name: Install dependencies and build stencil comps 🔧
+        run: cd stencil-lib && npm ci && npm run build
+      - name: Publish stencil package on NPM 📦
+        run: cd stencil-lib && npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Install dependencies and build angular comps 🔧
+        run: |
+          TAG=$(node -p "require('./stencil-lib/package.json').version")
+          cd angular && npm i -D canopy-stencil-web@$TAG
+          npm ci && npm run build
+      - name: Publish angular package on NPM 📦
+        run: cd angular/dist/canopy-stencil-angular && npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # Commit and tagging
+      - name: Commit Changes
+        run: |
+          git config user.email "$(git log -n 1 --pretty=format:%ae)"
+          git config user.name "$(git log -n 1 --pretty=format:%an)"
+          git add --all
+          git commit -m "Bump package version [skip ci]"
+      - name: Create Git Tag
+        run: |
+          TAG=$(node -p "require('./stencil-lib/package.json').version")
+          git tag "v$TAG"
+      - name: Push Changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+          tags: true

@@ -1,6 +1,6 @@
 {
   "name": "canopy-stencil-web",
-  "version": "0.0.58",
+  "version": "0.1.2",
   "description": "Canopy UI Components",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
