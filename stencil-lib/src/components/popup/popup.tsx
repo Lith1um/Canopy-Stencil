@@ -17,7 +17,7 @@ export class Popup {
   popupElem: HTMLElement;
 
   @Method()
-  recalculatePosition(): void {
+  async recalculatePosition(): Promise<void> {
     computePosition(this.wrapperElem, this.popupElem, {
       placement: this.position,
       middleware: [flip(), shift({ crossAxis: true })],

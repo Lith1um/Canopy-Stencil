@@ -15,7 +15,7 @@ export class ContextMenuItemComp {
   item: ContextMenuItem;
 
   @Method()
-  recalculatePosition(): void {
+  async recalculatePosition(): Promise<void> {
     this.host.shadowRoot.querySelectorAll('cpy-popup').forEach(item => item.recalculatePosition());
     this.host.shadowRoot.querySelectorAll('cpy-context-menu').forEach(item => item.recalculatePosition());
   }
