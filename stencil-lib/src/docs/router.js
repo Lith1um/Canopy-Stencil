@@ -27,6 +27,7 @@ const menuItems = navMenuElement.items = [
       { title: 'Page Content', type: 'basic', url: '/comps/pageContent', function: closeMenuOnMobileNav }
     ] },
     { title: 'Interactions', icon: 'touch_app', type: 'collapsible', description: 'Floating UI components', children: [
+      { title: 'Context Menu Trigger', type: 'basic', url: '/comps/contextMenuTrigger', function: closeMenuOnMobileNav },
       { title: 'Dialog', type: 'basic', url: '/comps/dialog', function: closeMenuOnMobileNav },
       { title: 'Popup', type: 'basic', url: '/comps/popup', function: closeMenuOnMobileNav },
       { title: 'Toast', type: 'basic', url: '/comps/toast', function: closeMenuOnMobileNav },

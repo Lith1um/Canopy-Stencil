@@ -1,0 +1,11 @@
+:host {
+  @apply block relative;
+}
+
+.context-menu {
+  @apply hidden absolute top-0 left-0 z-50 shadow-md;
+
+  &--show {
+    @apply block;
+  }
+}

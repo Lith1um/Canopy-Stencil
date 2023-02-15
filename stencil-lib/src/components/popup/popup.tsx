@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Method, Prop } from '@stencil/core';
 
 import { computePosition, flip, shift } from '@floating-ui/dom';
 
@@ -16,6 +16,7 @@ export class Popup {
   wrapperElem: HTMLElement;
   popupElem: HTMLElement;
 
+  @Method()
   recalculatePosition(): void {
     computePosition(this.wrapperElem, this.popupElem, {
       placement: this.position,
