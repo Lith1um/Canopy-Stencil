@@ -66,9 +66,14 @@ export namespace Components {
     }
     interface CpyContextMenu {
         "items": ContextMenuItem[];
+        "recalculatePosition": () => Promise<void>;
     }
     interface CpyContextMenuItem {
         "item": ContextMenuItem;
+        "recalculatePosition": () => Promise<void>;
+    }
+    interface CpyContextMenuTrigger {
+        "items": ContextMenuItem[];
     }
     interface CpyDialog {
         "close": () => Promise<void>;
@@ -109,6 +114,7 @@ export namespace Components {
     interface CpyPopup {
         "activeOn": 'hover' | 'click';
         "position": 'bottom-start' | 'top-start' | 'left-start' | 'right-start';
+        "recalculatePosition": () => Promise<void>;
     }
     interface CpySpinner {
         "size": SpinnerSize;
@@ -247,6 +253,12 @@ declare global {
         prototype: HTMLCpyContextMenuItemElement;
         new (): HTMLCpyContextMenuItemElement;
     };
+    interface HTMLCpyContextMenuTriggerElement extends Components.CpyContextMenuTrigger, HTMLStencilElement {
+    }
+    var HTMLCpyContextMenuTriggerElement: {
+        prototype: HTMLCpyContextMenuTriggerElement;
+        new (): HTMLCpyContextMenuTriggerElement;
+    };
     interface HTMLCpyDialogElement extends Components.CpyDialog, HTMLStencilElement {
     }
     var HTMLCpyDialogElement: {
@@ -355,6 +367,7 @@ declare global {
         "cpy-contents-list-item": HTMLCpyContentsListItemElement;
         "cpy-context-menu": HTMLCpyContextMenuElement;
         "cpy-context-menu-item": HTMLCpyContextMenuItemElement;
+        "cpy-context-menu-trigger": HTMLCpyContextMenuTriggerElement;
         "cpy-dialog": HTMLCpyDialogElement;
         "cpy-drawer": HTMLCpyDrawerElement;
         "cpy-drawer-container": HTMLCpyDrawerContainerElement;
@@ -429,6 +442,9 @@ declare namespace LocalJSX {
     }
     interface CpyContextMenuItem {
         "item"?: ContextMenuItem;
+    }
+    interface CpyContextMenuTrigger {
+        "items"?: ContextMenuItem[];
     }
     interface CpyDialog {
         "dialogTitle"?: string;
@@ -512,6 +528,7 @@ declare namespace LocalJSX {
         "cpy-contents-list-item": CpyContentsListItem;
         "cpy-context-menu": CpyContextMenu;
         "cpy-context-menu-item": CpyContextMenuItem;
+        "cpy-context-menu-trigger": CpyContextMenuTrigger;
         "cpy-dialog": CpyDialog;
         "cpy-drawer": CpyDrawer;
         "cpy-drawer-container": CpyDrawerContainer;
@@ -545,6 +562,7 @@ declare module "@stencil/core" {
             "cpy-contents-list-item": LocalJSX.CpyContentsListItem & JSXBase.HTMLAttributes<HTMLCpyContentsListItemElement>;
             "cpy-context-menu": LocalJSX.CpyContextMenu & JSXBase.HTMLAttributes<HTMLCpyContextMenuElement>;
             "cpy-context-menu-item": LocalJSX.CpyContextMenuItem & JSXBase.HTMLAttributes<HTMLCpyContextMenuItemElement>;
+            "cpy-context-menu-trigger": LocalJSX.CpyContextMenuTrigger & JSXBase.HTMLAttributes<HTMLCpyContextMenuTriggerElement>;
             "cpy-dialog": LocalJSX.CpyDialog & JSXBase.HTMLAttributes<HTMLCpyDialogElement>;
             "cpy-drawer": LocalJSX.CpyDrawer & JSXBase.HTMLAttributes<HTMLCpyDrawerElement>;
             "cpy-drawer-container": LocalJSX.CpyDrawerContainer & JSXBase.HTMLAttributes<HTMLCpyDrawerContainerElement>;

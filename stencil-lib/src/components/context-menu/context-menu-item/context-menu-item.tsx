@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, Element, h, Method, Prop } from '@stencil/core';
 import { ContextMenuItem } from '../context-menu.interface';
 
 @Component({
@@ -8,8 +8,17 @@ import { ContextMenuItem } from '../context-menu.interface';
 })
 export class ContextMenuItemComp {
 
+  @Element()
+  host: HTMLElement;
+
   @Prop()
   item: ContextMenuItem;
+
+  @Method()
+  recalculatePosition(): void {
+    this.host.shadowRoot.querySelectorAll('cpy-popup').forEach(item => item.recalculatePosition());
+    this.host.shadowRoot.querySelectorAll('cpy-context-menu').forEach(item => item.recalculatePosition());
+  }
 
   render() {
     const classes = {
