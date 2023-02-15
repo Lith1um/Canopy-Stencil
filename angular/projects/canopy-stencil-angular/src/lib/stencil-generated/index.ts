@@ -13,6 +13,7 @@ export const DIRECTIVES = [
   d.CpyContentsListItem,
   d.CpyContextMenu,
   d.CpyContextMenuItem,
+  d.CpyContextMenuTrigger,
   d.CpyDialog,
   d.CpyDrawer,
   d.CpyDrawerContainer,

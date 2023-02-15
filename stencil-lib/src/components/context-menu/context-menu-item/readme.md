@@ -12,6 +12,19 @@
 | `item`   | --        |             | `ContextMenuItem` | `undefined` |
 
 
+## Methods
+
+### `recalculatePosition() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Dependencies
 
 ### Used by

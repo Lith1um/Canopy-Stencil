@@ -223,7 +223,8 @@ export declare interface CpyContextMenu extends Components.CpyContextMenu {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['items']
+  inputs: ['items'],
+  methods: ['recalculatePosition']
 })
 @Component({
   selector: 'cpy-context-menu',
@@ -244,7 +245,8 @@ export declare interface CpyContextMenuItem extends Components.CpyContextMenuIte
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['item']
+  inputs: ['item'],
+  methods: ['recalculatePosition']
 })
 @Component({
   selector: 'cpy-context-menu-item',
@@ -253,6 +255,27 @@ export declare interface CpyContextMenuItem extends Components.CpyContextMenuIte
   inputs: ['item']
 })
 export class CpyContextMenuItem {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface CpyContextMenuTrigger extends Components.CpyContextMenuTrigger {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['items']
+})
+@Component({
+  selector: 'cpy-context-menu-trigger',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['items']
+})
+export class CpyContextMenuTrigger {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -489,7 +512,8 @@ export declare interface CpyPopup extends Components.CpyPopup {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['activeOn', 'position']
+  inputs: ['activeOn', 'position'],
+  methods: ['recalculatePosition']
 })
 @Component({
   selector: 'cpy-popup',

@@ -13,6 +13,19 @@
 | `position` | `position`  |             | `"bottom-start" \| "left-start" \| "right-start" \| "top-start"` | `'bottom-start'` |
 
 
+## Methods
+
+### `recalculatePosition() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Dependencies
 
 ### Used by
