@@ -1,6 +1,6 @@
 import { Component, h, Method, Prop } from '@stencil/core';
 
-import { computePosition, flip, shift } from '@floating-ui/dom';
+import { computePosition, flip, offset, Placement, shift } from '@floating-ui/dom';
 
 @Component({
   tag: 'cpy-popup',
@@ -9,9 +9,11 @@ import { computePosition, flip, shift } from '@floating-ui/dom';
 })
 export class Popup {
 
-  @Prop() position: 'bottom-start' | 'top-start' | 'left-start' | 'right-start'  = 'bottom-start';
+  @Prop() position: Placement  = 'bottom-start';
 
   @Prop() activeOn: 'hover' | 'click' = 'click';
+  
+  @Prop() offset: number = 0;
 
   wrapperElem: HTMLElement;
   popupElem: HTMLElement;
@@ -20,7 +22,7 @@ export class Popup {
   async recalculatePosition(): Promise<void> {
     computePosition(this.wrapperElem, this.popupElem, {
       placement: this.position,
-      middleware: [flip(), shift({ crossAxis: true })],
+      middleware: [flip(), shift({ crossAxis: true }), offset(this.offset)],
     }).then(({x, y}) => {
       Object.assign(this.popupElem.style, {
         left: `${x}px`,
@@ -29,11 +31,8 @@ export class Popup {
     });
   }
 
-  onClick(): void {
-    if (this.activeOn !== 'click') {
-      return;
-    }
-    
+  @Method()
+  async togglePopup(): Promise<void> {
     this.wrapperElem.classList.toggle('popup--show');
 
     if (this.wrapperElem.classList.contains('popup--show')) {
@@ -41,6 +40,13 @@ export class Popup {
     } else {
       this.removeClickOutsideListener();
     }
+  }
+
+  onClick(): void {
+    if (this.activeOn !== 'click') {
+      return;
+    }
+    this.togglePopup();
   }
 
   checkClickOutside = (e: Event) => {

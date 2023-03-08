@@ -1,0 +1,31 @@
+.calendar {
+  @apply px-4 py-2 shadow-md flex gap-4 flex-col w-full min-w-[200px];
+
+  &__header {
+    @apply w-full flex items-center;
+  }
+
+  &__month {
+    @apply flex-1;
+  }
+
+  &__weekdays, &__dates {
+    @apply w-full grid grid-cols-7 font-medium;
+
+    > div {
+      @apply text-center;
+    }
+  }
+
+  &__day {
+    @apply m-0.5 rounded-full box-border;
+
+    &-text {
+      @apply font-medium;
+    }
+
+    &--selected {
+      background-color: var(--cpy-bg-primary);
+    }
+  }
+}

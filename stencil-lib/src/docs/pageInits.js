@@ -304,6 +304,10 @@ export class CodeBlock {
     ];
   },
 
+  datePicker: () => {
+    
+  },
+
   toggle: () => {
     document.getElementById('toggle-html-example').code = `<cpy-toggle checked size="large" label="Large toggle"></cpy-toggle>`;
 
@@ -349,6 +353,11 @@ export class CodeBlock {
     document.getElementById('popup-props').tableData = [
       { name: 'active-on', description: 'What triggers the popup to show', type: "'click' | 'hover'", default: "'click'", required: false },
       { name: 'position', description: 'The position of the popup relative to the element it is linked with', type: "'bottom-start' | 'left-start' | 'right-start' | 'top-start'", default: "'bottom-start'", required: false },
+    ];
+
+    document.getElementById('popup-methods').tableData = [
+      { name: 'recalculatePosition()', description: 'Recalculates the position of any menu items to ensure all is visible on the page if moved', returnType: "" },
+      { name: 'togglePopup()', description: 'Toggles the popup. This should be used alongside the "click" active-on property', returnType: "" },
     ];
 
     document.getElementById('popup-slots').tableData = [

@@ -108,6 +108,7 @@
   --cpy-text-warn: rgb(180, 83, 9); /* amber-700 */
   --cpy-text-error: rgb(185, 28, 28); /* red-700 */
 
+  --cpy-button-text-colour: green;
 }
 
 html.dark {

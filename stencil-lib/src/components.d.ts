@@ -11,6 +11,7 @@ import { ButtonAppearance, ButtonSize, ButtonStyle } from "./components/button/b
 import { ContentsListItem } from "./components/contents-list/contents-list.interface";
 import { ContextMenuItem } from "./components/context-menu/context-menu.interface";
 import { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
+import { Placement } from "@floating-ui/dom";
 import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
 import { ToastPosition } from "./components/toast/toast.type";
 export namespace Components {
@@ -48,6 +49,9 @@ export namespace Components {
         "size": ButtonSize;
         "type": ButtonAppearance;
     }
+    interface CpyCalendar {
+        "date": string;
+    }
     interface CpyCarousel {
         "carouselTitle": string;
     }
@@ -74,6 +78,11 @@ export namespace Components {
     }
     interface CpyContextMenuTrigger {
         "items": ContextMenuItem[];
+    }
+    interface CpyDatePicker {
+        "date": string;
+        "label": string;
+        "size": 'small' | 'default' | 'large';
     }
     interface CpyDialog {
         "close": () => Promise<void>;
@@ -113,8 +122,10 @@ export namespace Components {
     }
     interface CpyPopup {
         "activeOn": 'hover' | 'click';
-        "position": 'bottom-start' | 'top-start' | 'left-start' | 'right-start';
+        "offset": number;
+        "position": Placement;
         "recalculatePosition": () => Promise<void>;
+        "togglePopup": () => Promise<void>;
     }
     interface CpySpinner {
         "size": SpinnerSize;
@@ -154,9 +165,17 @@ export interface CpyAlertCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyAlertElement;
 }
+export interface CpyCalendarCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyCalendarElement;
+}
 export interface CpyContentsListItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyContentsListItemElement;
+}
+export interface CpyDatePickerCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyDatePickerElement;
 }
 export interface CpyDialogCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -217,6 +236,12 @@ declare global {
         prototype: HTMLCpyButtonElement;
         new (): HTMLCpyButtonElement;
     };
+    interface HTMLCpyCalendarElement extends Components.CpyCalendar, HTMLStencilElement {
+    }
+    var HTMLCpyCalendarElement: {
+        prototype: HTMLCpyCalendarElement;
+        new (): HTMLCpyCalendarElement;
+    };
     interface HTMLCpyCarouselElement extends Components.CpyCarousel, HTMLStencilElement {
     }
     var HTMLCpyCarouselElement: {
@@ -258,6 +283,12 @@ declare global {
     var HTMLCpyContextMenuTriggerElement: {
         prototype: HTMLCpyContextMenuTriggerElement;
         new (): HTMLCpyContextMenuTriggerElement;
+    };
+    interface HTMLCpyDatePickerElement extends Components.CpyDatePicker, HTMLStencilElement {
+    }
+    var HTMLCpyDatePickerElement: {
+        prototype: HTMLCpyDatePickerElement;
+        new (): HTMLCpyDatePickerElement;
     };
     interface HTMLCpyDialogElement extends Components.CpyDialog, HTMLStencilElement {
     }
@@ -361,6 +392,7 @@ declare global {
         "cpy-avatar": HTMLCpyAvatarElement;
         "cpy-badge": HTMLCpyBadgeElement;
         "cpy-button": HTMLCpyButtonElement;
+        "cpy-calendar": HTMLCpyCalendarElement;
         "cpy-carousel": HTMLCpyCarouselElement;
         "cpy-code-block": HTMLCpyCodeBlockElement;
         "cpy-contents-list": HTMLCpyContentsListElement;
@@ -368,6 +400,7 @@ declare global {
         "cpy-context-menu": HTMLCpyContextMenuElement;
         "cpy-context-menu-item": HTMLCpyContextMenuItemElement;
         "cpy-context-menu-trigger": HTMLCpyContextMenuTriggerElement;
+        "cpy-date-picker": HTMLCpyDatePickerElement;
         "cpy-dialog": HTMLCpyDialogElement;
         "cpy-drawer": HTMLCpyDrawerElement;
         "cpy-drawer-container": HTMLCpyDrawerContainerElement;
@@ -420,6 +453,10 @@ declare namespace LocalJSX {
         "size"?: ButtonSize;
         "type"?: ButtonAppearance;
     }
+    interface CpyCalendar {
+        "date"?: string;
+        "onDateChange"?: (event: CpyCalendarCustomEvent<string>) => void;
+    }
     interface CpyCarousel {
         "carouselTitle"?: string;
     }
@@ -445,6 +482,12 @@ declare namespace LocalJSX {
     }
     interface CpyContextMenuTrigger {
         "items"?: ContextMenuItem[];
+    }
+    interface CpyDatePicker {
+        "date"?: string;
+        "label"?: string;
+        "onDateChange"?: (event: CpyDatePickerCustomEvent<string>) => void;
+        "size"?: 'small' | 'default' | 'large';
     }
     interface CpyDialog {
         "dialogTitle"?: string;
@@ -484,7 +527,8 @@ declare namespace LocalJSX {
     }
     interface CpyPopup {
         "activeOn"?: 'hover' | 'click';
-        "position"?: 'bottom-start' | 'top-start' | 'left-start' | 'right-start';
+        "offset"?: number;
+        "position"?: Placement;
     }
     interface CpySpinner {
         "size"?: SpinnerSize;
@@ -522,6 +566,7 @@ declare namespace LocalJSX {
         "cpy-avatar": CpyAvatar;
         "cpy-badge": CpyBadge;
         "cpy-button": CpyButton;
+        "cpy-calendar": CpyCalendar;
         "cpy-carousel": CpyCarousel;
         "cpy-code-block": CpyCodeBlock;
         "cpy-contents-list": CpyContentsList;
@@ -529,6 +574,7 @@ declare namespace LocalJSX {
         "cpy-context-menu": CpyContextMenu;
         "cpy-context-menu-item": CpyContextMenuItem;
         "cpy-context-menu-trigger": CpyContextMenuTrigger;
+        "cpy-date-picker": CpyDatePicker;
         "cpy-dialog": CpyDialog;
         "cpy-drawer": CpyDrawer;
         "cpy-drawer-container": CpyDrawerContainer;
@@ -556,6 +602,7 @@ declare module "@stencil/core" {
             "cpy-avatar": LocalJSX.CpyAvatar & JSXBase.HTMLAttributes<HTMLCpyAvatarElement>;
             "cpy-badge": LocalJSX.CpyBadge & JSXBase.HTMLAttributes<HTMLCpyBadgeElement>;
             "cpy-button": LocalJSX.CpyButton & JSXBase.HTMLAttributes<HTMLCpyButtonElement>;
+            "cpy-calendar": LocalJSX.CpyCalendar & JSXBase.HTMLAttributes<HTMLCpyCalendarElement>;
             "cpy-carousel": LocalJSX.CpyCarousel & JSXBase.HTMLAttributes<HTMLCpyCarouselElement>;
             "cpy-code-block": LocalJSX.CpyCodeBlock & JSXBase.HTMLAttributes<HTMLCpyCodeBlockElement>;
             "cpy-contents-list": LocalJSX.CpyContentsList & JSXBase.HTMLAttributes<HTMLCpyContentsListElement>;
@@ -563,6 +610,7 @@ declare module "@stencil/core" {
             "cpy-context-menu": LocalJSX.CpyContextMenu & JSXBase.HTMLAttributes<HTMLCpyContextMenuElement>;
             "cpy-context-menu-item": LocalJSX.CpyContextMenuItem & JSXBase.HTMLAttributes<HTMLCpyContextMenuItemElement>;
             "cpy-context-menu-trigger": LocalJSX.CpyContextMenuTrigger & JSXBase.HTMLAttributes<HTMLCpyContextMenuTriggerElement>;
+            "cpy-date-picker": LocalJSX.CpyDatePicker & JSXBase.HTMLAttributes<HTMLCpyDatePickerElement>;
             "cpy-dialog": LocalJSX.CpyDialog & JSXBase.HTMLAttributes<HTMLCpyDialogElement>;
             "cpy-drawer": LocalJSX.CpyDrawer & JSXBase.HTMLAttributes<HTMLCpyDrawerElement>;
             "cpy-drawer-container": LocalJSX.CpyDrawerContainer & JSXBase.HTMLAttributes<HTMLCpyDrawerContainerElement>;
