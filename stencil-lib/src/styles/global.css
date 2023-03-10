@@ -162,7 +162,7 @@ html.dark {
 
 html {
   font-family: 'Inter var', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--cpy-text-base);
   background-color: var(--cpy-bg-light);
 }

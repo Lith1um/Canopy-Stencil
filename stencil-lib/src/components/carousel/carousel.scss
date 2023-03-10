@@ -18,7 +18,7 @@
   }
 
   &__content {
-    @apply overflow-x-auto max-w-full;
+    @apply overflow-x-auto max-w-full scroll-smooth;
 
     &::-webkit-scrollbar{
       display: none;

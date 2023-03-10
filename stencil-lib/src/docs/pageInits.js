@@ -625,16 +625,16 @@ export class CodeBlock {
 
   carousel: () => {
     document.getElementById('carousel-html-example').code = `<cpy-carousel carousel-title="This is a carousel!">
-  <div style="width: 200px; height: 200px; background-color: red;"></div>
-  <div style="width: 200px; height: 200px; background-color: red;"></div>
-  <div style="width: 200px; height: 200px; background-color: red;"></div>
-  <div style="width: 200px; height: 200px; background-color: red;"></div>
-  <div style="width: 200px; height: 200px; background-color: red;"></div>
-  <div style="width: 200px; height: 200px; background-color: red;"></div>
-  <div style="width: 200px; height: 200px; background-color: red;"></div>
-  <div style="width: 200px; height: 200px; background-color: red;"></div>
-  <div style="width: 200px; height: 200px; background-color: red;"></div>
-  <div style="width: 200px; height: 200px; background-color: red;"></div>
+  <div style="width: 200px; height: 200px;"></div>
+  <div style="width: 200px; height: 200px;"></div>
+  <div style="width: 200px; height: 200px;"></div>
+  <div style="width: 200px; height: 200px;"></div>
+  <div style="width: 200px; height: 200px;"></div>
+  <div style="width: 200px; height: 200px;"></div>
+  <div style="width: 200px; height: 200px;"></div>
+  <div style="width: 200px; height: 200px;"></div>
+  <div style="width: 200px; height: 200px;"></div>
+  <div style="width: 200px; height: 200px;"></div>
 </cpy-carousel>`;
 
     document.getElementById('carousel-props').tableData = [
