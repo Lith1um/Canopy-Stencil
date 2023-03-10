@@ -19,6 +19,8 @@ export const DIRECTIVES = [
   d.CpyDrawerContainer,
   d.CpyExpandCollapse,
   d.CpyIcon,
+  d.CpyInputText,
+  d.CpyInputToggle,
   d.CpyLink,
   d.CpyNavMenu,
   d.CpyNavMenuItem,
@@ -27,7 +29,6 @@ export const DIRECTIVES = [
   d.CpySpinner,
   d.CpyTable,
   d.CpyToast,
-  d.CpyToggle,
   d.CpyToolbar,
   d.CpyTooltip
 ];

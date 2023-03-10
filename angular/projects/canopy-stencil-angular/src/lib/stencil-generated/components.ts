@@ -417,6 +417,62 @@ export class CpyIcon {
 }
 
 
+export declare interface CpyInputText extends Components.CpyInputText {
+  /**
+   *  
+   */
+  valueChange: EventEmitter<CustomEvent<string>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['label', 'required', 'size', 'value']
+})
+@Component({
+  selector: 'cpy-input-text',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['label', 'required', 'size', 'value']
+})
+export class CpyInputText {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['valueChange']);
+  }
+}
+
+
+export declare interface CpyInputToggle extends Components.CpyInputToggle {
+  /**
+   *  
+   */
+  checkedChange: EventEmitter<CustomEvent<boolean>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['checked', 'label', 'size']
+})
+@Component({
+  selector: 'cpy-input-toggle',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['checked', 'label', 'size']
+})
+export class CpyInputToggle {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['checkedChange']);
+  }
+}
+
+
 export declare interface CpyLink extends Components.CpyLink {}
 
 @ProxyCmp({
@@ -601,34 +657,6 @@ export class CpyToast {
     c.detach();
     this.el = r.nativeElement;
     proxyOutputs(this, this.el, ['closed', 'opened']);
-  }
-}
-
-
-export declare interface CpyToggle extends Components.CpyToggle {
-  /**
-   *  
-   */
-  checkedChange: EventEmitter<CustomEvent<boolean>>;
-
-}
-
-@ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['checked', 'label', 'size']
-})
-@Component({
-  selector: 'cpy-toggle',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['checked', 'label', 'size']
-})
-export class CpyToggle {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['checkedChange']);
   }
 }
 
