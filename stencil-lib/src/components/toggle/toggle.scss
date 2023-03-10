@@ -5,19 +5,25 @@
 .toggle {
   @apply flex items-center gap-4;
 
+  &:hover {
+    .toggle__slider {
+      border-color: var(--cpy-bg-primary);
+    }
+  }
+
   &--large {
     @apply gap-5 text-lg;
 
     .toggle__switch {
       @apply w-12 h-7;
-
-      input:checked + .toggle__slider:before {
-        @apply translate-x-5;
-      }
     }
 
-    .toggle__slider:before {
-      @apply w-8;
+    .toggle__slider {
+      @apply border-4;
+    
+      &:before {
+        @apply w-[calc(1.75rem-8px)];
+      }
     }
   }
 
@@ -26,14 +32,14 @@
 
     .toggle__switch {
       @apply w-7 h-4;
-
-      input:checked + .toggle__slider:before {
-        @apply translate-x-3;
-      }
     }
 
-    .toggle__slider:before {
-      @apply w-5;
+    .toggle__slider {
+      @apply border-2;
+    
+      &:before {
+        @apply w-[calc(1rem-4px)];
+      }
     }
   }
 
@@ -47,19 +53,21 @@
 
     input:checked + .toggle__slider {
       background-color: var(--cpy-bg-primary);
+      border-color: var(--cpy-bg-primary);
     }
     
     input:checked + .toggle__slider:before {
-      @apply translate-x-4;
+      @apply left-full -translate-x-full;
     }
   }
 
   &__slider {
-    @apply absolute cursor-pointer inset-0 transition duration-[400ms] rounded-full;
+    @apply absolute cursor-pointer inset-0 transition duration-[400ms] rounded-full border-[3px];
     background-color: var(--cpy-bg-basic);
+    border-color: var(--cpy-bg-basic);
 
     &:before {
-      @apply absolute transition duration-[400ms] rounded-full bg-white -left-0.5 -bottom-0.5 -top-0.5 w-6;
+      @apply absolute transition-all ease-linear duration-[200ms] rounded-full bg-white w-[calc(1.25rem-6px)] left-0 h-full;
       content: "";
     }
   }
