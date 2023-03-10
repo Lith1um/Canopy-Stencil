@@ -1,11 +1,11 @@
 import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'cpy-toggle',
-  styleUrl: 'toggle.scss',
+  tag: 'cpy-input-toggle',
+  styleUrl: 'input-toggle.scss',
   shadow: true,
 })
-export class Toggle {
+export class InputToggle {
 
   @Prop()
   label: string;
@@ -19,8 +19,9 @@ export class Toggle {
   @Event()
   checkedChange: EventEmitter<boolean>;
 
-  handleChange(e: any) {
-    this.checked = e.target.checked;
+  handleChange(e: Event) {
+    const target = e.target as HTMLInputElement
+    this.checked = target.checked;
     this.checkedChange.emit(this.checked);
   }
 

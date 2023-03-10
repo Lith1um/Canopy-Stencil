@@ -36,6 +36,10 @@
 
     &.button-size--small {
       @apply p-2 w-10 h-10;
+
+      ::slotted(cpy-icon) {
+        @apply icon-size-5 #{!important};
+      }
     }
   
     &.button-size--large {
