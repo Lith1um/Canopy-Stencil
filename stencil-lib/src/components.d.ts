@@ -97,6 +97,17 @@ export namespace Components {
     }
     interface CpyIcon {
     }
+    interface CpyInputText {
+        "label": string;
+        "required": boolean;
+        "size": 'small' | 'default' | 'large';
+        "value": string;
+    }
+    interface CpyInputToggle {
+        "checked": boolean;
+        "label": string;
+        "size": 'small' | 'default' | 'large';
+    }
     interface CpyLink {
         "href": string;
         "newTab": boolean;
@@ -134,11 +145,6 @@ export namespace Components {
         "type": AlertType;
         "zIndex": string;
     }
-    interface CpyToggle {
-        "checked": boolean;
-        "label": string;
-        "size": 'small' | 'default' | 'large';
-    }
     interface CpyToolbar {
     }
     interface CpyTooltip {
@@ -174,6 +180,14 @@ export interface CpyExpandCollapseCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyExpandCollapseElement;
 }
+export interface CpyInputTextCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyInputTextElement;
+}
+export interface CpyInputToggleCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyInputToggleElement;
+}
 export interface CpyNavMenuItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyNavMenuItemElement;
@@ -181,10 +195,6 @@ export interface CpyNavMenuItemCustomEvent<T> extends CustomEvent<T> {
 export interface CpyToastCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyToastElement;
-}
-export interface CpyToggleCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLCpyToggleElement;
 }
 declare global {
     interface HTMLCpyAccordionElement extends Components.CpyAccordion, HTMLStencilElement {
@@ -289,6 +299,18 @@ declare global {
         prototype: HTMLCpyIconElement;
         new (): HTMLCpyIconElement;
     };
+    interface HTMLCpyInputTextElement extends Components.CpyInputText, HTMLStencilElement {
+    }
+    var HTMLCpyInputTextElement: {
+        prototype: HTMLCpyInputTextElement;
+        new (): HTMLCpyInputTextElement;
+    };
+    interface HTMLCpyInputToggleElement extends Components.CpyInputToggle, HTMLStencilElement {
+    }
+    var HTMLCpyInputToggleElement: {
+        prototype: HTMLCpyInputToggleElement;
+        new (): HTMLCpyInputToggleElement;
+    };
     interface HTMLCpyLinkElement extends Components.CpyLink, HTMLStencilElement {
     }
     var HTMLCpyLinkElement: {
@@ -337,12 +359,6 @@ declare global {
         prototype: HTMLCpyToastElement;
         new (): HTMLCpyToastElement;
     };
-    interface HTMLCpyToggleElement extends Components.CpyToggle, HTMLStencilElement {
-    }
-    var HTMLCpyToggleElement: {
-        prototype: HTMLCpyToggleElement;
-        new (): HTMLCpyToggleElement;
-    };
     interface HTMLCpyToolbarElement extends Components.CpyToolbar, HTMLStencilElement {
     }
     var HTMLCpyToolbarElement: {
@@ -373,6 +389,8 @@ declare global {
         "cpy-drawer-container": HTMLCpyDrawerContainerElement;
         "cpy-expand-collapse": HTMLCpyExpandCollapseElement;
         "cpy-icon": HTMLCpyIconElement;
+        "cpy-input-text": HTMLCpyInputTextElement;
+        "cpy-input-toggle": HTMLCpyInputToggleElement;
         "cpy-link": HTMLCpyLinkElement;
         "cpy-nav-menu": HTMLCpyNavMenuElement;
         "cpy-nav-menu-item": HTMLCpyNavMenuItemElement;
@@ -381,7 +399,6 @@ declare global {
         "cpy-spinner": HTMLCpySpinnerElement;
         "cpy-table": HTMLCpyTableElement;
         "cpy-toast": HTMLCpyToastElement;
-        "cpy-toggle": HTMLCpyToggleElement;
         "cpy-toolbar": HTMLCpyToolbarElement;
         "cpy-tooltip": HTMLCpyTooltipElement;
     }
@@ -467,6 +484,19 @@ declare namespace LocalJSX {
     }
     interface CpyIcon {
     }
+    interface CpyInputText {
+        "label"?: string;
+        "onValueChange"?: (event: CpyInputTextCustomEvent<string>) => void;
+        "required"?: boolean;
+        "size"?: 'small' | 'default' | 'large';
+        "value"?: string;
+    }
+    interface CpyInputToggle {
+        "checked"?: boolean;
+        "label"?: string;
+        "onCheckedChange"?: (event: CpyInputToggleCustomEvent<boolean>) => void;
+        "size"?: 'small' | 'default' | 'large';
+    }
     interface CpyLink {
         "href"?: string;
         "newTab"?: boolean;
@@ -504,12 +534,6 @@ declare namespace LocalJSX {
         "type"?: AlertType;
         "zIndex"?: string;
     }
-    interface CpyToggle {
-        "checked"?: boolean;
-        "label"?: string;
-        "onCheckedChange"?: (event: CpyToggleCustomEvent<boolean>) => void;
-        "size"?: 'small' | 'default' | 'large';
-    }
     interface CpyToolbar {
     }
     interface CpyTooltip {
@@ -534,6 +558,8 @@ declare namespace LocalJSX {
         "cpy-drawer-container": CpyDrawerContainer;
         "cpy-expand-collapse": CpyExpandCollapse;
         "cpy-icon": CpyIcon;
+        "cpy-input-text": CpyInputText;
+        "cpy-input-toggle": CpyInputToggle;
         "cpy-link": CpyLink;
         "cpy-nav-menu": CpyNavMenu;
         "cpy-nav-menu-item": CpyNavMenuItem;
@@ -542,7 +568,6 @@ declare namespace LocalJSX {
         "cpy-spinner": CpySpinner;
         "cpy-table": CpyTable;
         "cpy-toast": CpyToast;
-        "cpy-toggle": CpyToggle;
         "cpy-toolbar": CpyToolbar;
         "cpy-tooltip": CpyTooltip;
     }
@@ -568,6 +593,8 @@ declare module "@stencil/core" {
             "cpy-drawer-container": LocalJSX.CpyDrawerContainer & JSXBase.HTMLAttributes<HTMLCpyDrawerContainerElement>;
             "cpy-expand-collapse": LocalJSX.CpyExpandCollapse & JSXBase.HTMLAttributes<HTMLCpyExpandCollapseElement>;
             "cpy-icon": LocalJSX.CpyIcon & JSXBase.HTMLAttributes<HTMLCpyIconElement>;
+            "cpy-input-text": LocalJSX.CpyInputText & JSXBase.HTMLAttributes<HTMLCpyInputTextElement>;
+            "cpy-input-toggle": LocalJSX.CpyInputToggle & JSXBase.HTMLAttributes<HTMLCpyInputToggleElement>;
             "cpy-link": LocalJSX.CpyLink & JSXBase.HTMLAttributes<HTMLCpyLinkElement>;
             "cpy-nav-menu": LocalJSX.CpyNavMenu & JSXBase.HTMLAttributes<HTMLCpyNavMenuElement>;
             "cpy-nav-menu-item": LocalJSX.CpyNavMenuItem & JSXBase.HTMLAttributes<HTMLCpyNavMenuItemElement>;
@@ -576,7 +603,6 @@ declare module "@stencil/core" {
             "cpy-spinner": LocalJSX.CpySpinner & JSXBase.HTMLAttributes<HTMLCpySpinnerElement>;
             "cpy-table": LocalJSX.CpyTable & JSXBase.HTMLAttributes<HTMLCpyTableElement>;
             "cpy-toast": LocalJSX.CpyToast & JSXBase.HTMLAttributes<HTMLCpyToastElement>;
-            "cpy-toggle": LocalJSX.CpyToggle & JSXBase.HTMLAttributes<HTMLCpyToggleElement>;
             "cpy-toolbar": LocalJSX.CpyToolbar & JSXBase.HTMLAttributes<HTMLCpyToolbarElement>;
             "cpy-tooltip": LocalJSX.CpyTooltip & JSXBase.HTMLAttributes<HTMLCpyTooltipElement>;
         }

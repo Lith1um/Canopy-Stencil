@@ -304,8 +304,28 @@ export class CodeBlock {
     ];
   },
 
+  inputText: () => {
+    document.getElementById('input-text-html-example').code = `<cpy-input-text label="Text Input" value="Test value" size="large"></cpy-input-text>`;
+
+    document.getElementById('input-text-props').tableData = [
+      { name: 'value', description: 'Text input value', type: "string", default: "", required: false },
+      { name: 'size', description: 'Text input size', type: "'small' | 'default' | 'large'", default: "'default'", required: false },
+      { name: 'label', description: 'Label for the text input', type: "string", default: "", required: false },
+      { name: 'required', description: 'Whether the input is required or not', type: "boolean", default: "false", required: false }
+    ];
+
+    document.getElementById('input-text-events').tableData = [
+      { name: 'valueChange', description: 'Triggered when the text input value is changed', emitsType: "string" },
+    ];
+
+    document.getElementById('input-text-slots').tableData = [
+      { slotName: "prefix", purpose: 'Prefix content for the input (intended for use with <cpy-icon>)' },
+      { slotName: "suffix", purpose: 'Suffix content for the input (intended for use with <cpy-icon>)' }
+    ];
+  },
+
   toggle: () => {
-    document.getElementById('toggle-html-example').code = `<cpy-toggle checked size="large" label="Large toggle"></cpy-toggle>`;
+    document.getElementById('toggle-html-example').code = `<cpy-input-toggle checked size="large" label="Large toggle"></cpy-input-toggle>`;
 
     document.getElementById('toggle-props').tableData = [
       { name: 'checked', description: 'Whether the is checked', type: "boolean", default: "", required: false },
