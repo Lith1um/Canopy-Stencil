@@ -1,11 +1,20 @@
-.input-text {
+.input {
   &:focus-within {
-    .input-text__label--required::after {
+    .input__label--required::after {
       color: var(--cpy-text-primary);
     }
 
-    .input-text__input {
+    .input__container {
       border-color: var(--cpy-bg-primary);
+    }
+  }
+
+  &--disabled {
+    @apply cursor-default;
+
+    .input__container {
+      color: var(--cpy-text-disabled) !important;
+      background-color: var(--cpy-bg-disabled) !important;
     }
   }
 
@@ -13,17 +22,17 @@
     @apply text-sm mb-1;
     color: var(--cpy-text-light);
 
-    &.input-text__label--required::after {
+    &.input__label--required::after {
       content: "*";
     }
   }
 
-  &__input {
+  &__container {
     @apply border rounded-md p-2 flex gap-1.5;
     background-color: var(--cpy-bg-white);
     border-color: var(--cpy-bg-basic-border);
 
-    input {
+    ::slotted(input) {
       @apply flex-1 bg-transparent leading-6;
     }
 
@@ -33,14 +42,14 @@
   }
 
   &--small {
-    .input-text__label {
+    .input__label {
       @apply text-xs;
     }
 
-    .input-text__input {
+    .input__container {
       @apply text-sm p-1.5 gap-1;
 
-      input {
+      ::slotted(input) {
         @apply leading-5;
       }
 
@@ -51,14 +60,14 @@
   }
 
   &--large {
-    .input-text__label {
+    .input__label {
       @apply text-base;
     }
 
-    .input-text__input {
+    .input__container {
       @apply text-lg p-2.5 gap-2;
 
-      input {
+      ::slotted(input) {
         @apply leading-7;
       }
 

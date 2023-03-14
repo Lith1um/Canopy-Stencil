@@ -36,6 +36,7 @@ const menuItems = navMenuElement.items = [
       { title: 'Accordion', type: 'basic', url: '/comps/accordion', function: closeMenuOnMobileNav },
     ] },
     { title: 'Forms', icon: 'checklist', type: 'collapsible', description: 'Complete form elements', children: [
+      { title: 'Number', type: 'basic', url: '/comps/inputNumber', function: closeMenuOnMobileNav },
       { title: 'Text', type: 'basic', url: '/comps/inputText', function: closeMenuOnMobileNav },
       { title: 'Toggle', type: 'basic', url: '/comps/toggle', function: closeMenuOnMobileNav }
     ] },

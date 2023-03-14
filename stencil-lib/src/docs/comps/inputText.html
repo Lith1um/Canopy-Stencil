@@ -9,11 +9,14 @@
   
   <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
   <div style="display: flex; flex-direction: column; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 1rem;">
-    <cpy-input-text label="Text Input" value="Test value" size="small">
+    <cpy-input-text label="Text Input" value="Test value" size="small" disabled>
+      <cpy-icon slot="prefix">done</cpy-icon>
     </cpy-input-text>
     <cpy-input-text required label="Text Input" value="Test value">
+      <cpy-icon slot="prefix">done</cpy-icon>
     </cpy-input-text>
     <cpy-input-text label="Text Input" value="Test value" size="large">
+      <cpy-icon slot="prefix">done</cpy-icon>
     </cpy-input-text>
   </div>
   
