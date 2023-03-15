@@ -62,5 +62,5 @@ export function validatorFactory(name: string, options: { [key: string]: any }):
 }
 
 export const defaultValidator: Validator<any> = {
-  validate: (val: any) => true
+  validate: () => true
 }
