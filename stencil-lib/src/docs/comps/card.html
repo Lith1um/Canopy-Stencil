@@ -1,0 +1,32 @@
+<cpy-page-content>
+  <h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
+    Cards
+  </h3>
+  
+  <p style="margin-top: 1rem; margin-bottom: 2rem;">
+    Canopy cards provide a basic wrapper for content and are referenced using the &lt;cpy-card&gt; custom HTML element. The component utilizes the slot element, allowing you to render your own HTML in the card.
+  </p>
+  
+  <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
+  <cpy-card style="margin-top: 1rem; margin-bottom: 2rem;">
+    <div style="display: flex; gap: 1rem; align-items: center;">
+      <cpy-avatar size="x-large" src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
+      <div style="flex: 1;">
+        <p style="font-weight: 500; font-size: 1.125rem;">Alex Rayner</p>
+        <p style="font-size: 0.75rem;">Front End Developer</p>
+      </div>
+    </div>
+    <div slot="footer">
+      This is a footer!
+    </div>
+  </cpy-card>
+  
+  <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+  
+  <div style="margin-top: 1rem; margin-bottom: 2rem;">
+    <cpy-code-block id="card-html-example" language="html"></cpy-code-block>
+  </div>
+  
+  <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
+  <cpy-table id="card-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+</cpy-page-content>

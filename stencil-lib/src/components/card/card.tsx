@@ -1,4 +1,4 @@
-import { Component, h, Host } from '@stencil/core';
+import { Component, Element, h, Host } from '@stencil/core';
 
 @Component({
   tag: 'cpy-card',
@@ -6,10 +6,25 @@ import { Component, h, Host } from '@stencil/core';
   shadow: true,
 })
 export class Card {
+
+  @Element()
+  host: HTMLElement;
+
   render() {
+    const footerClasses = {
+      'card__footer': true,
+      'card__footer--hidden': !this.host.querySelector('[slot="footer"]')
+    };
+
     return (
       <Host>
-        <slot/>
+        <div class='card'>
+          <slot/>
+        </div>
+
+        <div class={footerClasses}>
+          <slot name='footer'/>
+        </div>
       </Host>
     );
   }
