@@ -47,6 +47,7 @@ const menuItems = navMenuElement.items = [
       { title: 'Button', type: 'basic', url: '/comps/button', function: closeMenuOnMobileNav },
       { title: 'Card', type: 'basic', url: '/comps/card', function: closeMenuOnMobileNav },
       { title: 'Code Block', type: 'basic', url: '/comps/codeBlock', function: closeMenuOnMobileNav },
+      { title: 'Code Snippet', type: 'basic', url: '/comps/codeSnippet', function: closeMenuOnMobileNav },
       { title: 'Context Menu', type: 'basic', url: '/comps/contextMenu', function: closeMenuOnMobileNav },
       { title: 'Icon', type: 'basic', url: '/comps/icon', function: closeMenuOnMobileNav },
       { title: 'Link', type: 'basic', url: '/comps/link', function: closeMenuOnMobileNav },

@@ -38,6 +38,9 @@
   --cpy-bg-white-rgb: 255, 255, 255;
   --cpy-bg-white: rgb(var(--cpy-bg-white-rgb));
 
+  --cpy-bg-medium-rgb: 229, 231, 235; /* grey-200 */
+  --cpy-bg-medium: rgb(var(--cpy-bg-medium-rgb));
+
   --cpy-bg-basic-rgb: 75, 85, 99; /* gray-600 */
   --cpy-bg-basic: rgb(var(--cpy-bg-basic-rgb));
 
@@ -121,6 +124,8 @@ html.dark {
   --cpy-bg-dark-rgb: 203, 213, 225; /* slate-300 */
 
   --cpy-bg-white-rgb: 30, 41, 59; /* slate-800 */
+
+  --cpy-bg-medium-rgb: 51, 65, 85; /* slate-700 */
 
   --cpy-bg-basic-rgb: 100, 116, 139; /* slate-400 */
   --cpy-bg-basic-light-rgb: 71, 85, 105; /* slate-600 */

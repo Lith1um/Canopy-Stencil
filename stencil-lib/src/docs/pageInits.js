@@ -60,13 +60,14 @@ html.dark {
       
   --cpy-text-primary: rgb(6, 182, 212); /* cyan-500 */
 }`;
-    document.getElementById('colours-pallette-css').code = `:root {
+    document.getElementById('colours-palette-css').code = `:root {
   /* overrides the text colour in dark mode for edge cases
       like white text on coloured background for alerts */
   --cpy-dm-text-override: currentColor;
 
   /* based on tailwind colours */
   --cpy-bg-light-rgb: 250, 250, 250; /* zinc-50 */
+  --cpy-bg-medium-rgb: 229, 231, 235; /* grey-200 */
   --cpy-bg-white-rgb: 255, 255, 255;
   --cpy-bg-basic-rgb: 75, 85, 99; /* gray-600 */
   --cpy-bg-basic-light-rgb: 249, 250, 251; /* grey-50 */
@@ -242,6 +243,14 @@ export class CodeBlock {
       { name: 'code', description: 'The code snippet to show', type: "string", default: "", required: true },
       { name: 'show-details', description: 'Shows the language and copy button', type: "boolean", default: "false", required: false},
       { name: 'language', description: 'The code snippet language', type: "'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell'", default: "'typescript'", required: false },
+    ];
+  },
+
+  codeSnippet: () => {
+    document.getElementById('code-snippet-html-example').code = `<cpy-code-snippet>console.log('This is a code snippet!');</cpy-code-snippet>`;
+
+    document.getElementById('code-snippet-slots').tableData = [
+      { slotName: "-- (default)", purpose: 'Contents of the code snippet (this should just be basic text)' },
     ];
   },
 
