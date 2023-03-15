@@ -17,6 +17,7 @@ const menuItems = navMenuElement.items = [
   ] },
   { title: 'Learn more', type: 'group', description: 'Dive into the docs', separator: true, children: [
     { title: 'Colours & Dark Mode', type: 'basic', url: '/learn-more/colours', icon: 'palette', function: closeMenuOnMobileNav },
+    { title: 'Form Validation', type: 'basic', url: '/learn-more/formValidation', icon: 'checklist', function: closeMenuOnMobileNav },
   ] },
   {
     title: 'User Interface', type: 'group', description: 'Building blocks of websites', children: [
@@ -35,9 +36,8 @@ const menuItems = navMenuElement.items = [
       { title: 'Expand/Collapse', type: 'basic', url: '/comps/expandCollapse', function: closeMenuOnMobileNav },
       { title: 'Accordion', type: 'basic', url: '/comps/accordion', function: closeMenuOnMobileNav },
     ] },
-    { title: 'Forms', icon: 'checklist', type: 'collapsible', description: 'Complete form elements', children: [
-      { title: 'Number', type: 'basic', url: '/comps/inputNumber', function: closeMenuOnMobileNav },
-      { title: 'Text', type: 'basic', url: '/comps/inputText', function: closeMenuOnMobileNav },
+    { title: 'Forms', icon: 'format_list_numbered', type: 'collapsible', description: 'Complete form elements', children: [
+      { title: 'Basic Inputs', type: 'basic', url: '/comps/input', function: closeMenuOnMobileNav },
       { title: 'Toggle', type: 'basic', url: '/comps/toggle', function: closeMenuOnMobileNav }
     ] },
     { title: 'Generic', icon: 'inventory_2', type: 'collapsible', description: 'Simple UI components', children: [

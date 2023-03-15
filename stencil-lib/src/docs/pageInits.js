@@ -119,6 +119,71 @@ html.dark {
 }`;
   },
 
+  formValidation: () => {
+    document.getElementById('getting-started-types').code = `// Validators input type
+Array<string | ValidatorEntry | Validator<string>>;
+
+export interface ValidatorEntry {
+  name: string;
+  options?: { [key: string]: any; };
+}
+
+interface Validator<T> {
+  validate: (val: T) => boolean;
+  errorMessage?: string;
+}`;
+
+    document.getElementById('built-in-validation').code = `<cpy-input label="Form Input"></cpy-input>
+
+<script>
+  document.querySelector('cpy-input').validators = [
+    'required',
+    'email',
+    'number',
+    {name: 'length', options: {min: 4, max: 10}},
+    {name: 'numberLength', options: {min: 0, max: 100}},
+  ]
+</script>`;
+
+    document.getElementById('custom-validators-typescript').code = `// Custom validator to check if a number is even
+const IsEvenValidator: Validator<string> = {
+  validate: (val: string) => {
+    // ignore empty values
+    val = val ?? '';
+    if (val === '') {
+      return true;
+    }
+
+    // get the value as a number
+    const numVal = parseFloat(val);
+
+    // ignore validation if the number is not valid
+    if (isNaN(numVal)) {
+      return true;
+    }
+    return numVal % 2 === 0;
+  },
+  errorMessage: 'You must enter an even number'
+}
+
+document.querySelector('cpy-input').validators = [IsEvenValidator];`;
+
+    document.getElementById('input-state-valid').code = `<cpy-input label="Form Input"></cpy-input>
+
+<script>
+  (async () => {
+    await customElements.whenDefined('cpy-input');
+    const isValid = await document.querySelector('cpy-input').isValid();
+  })();
+</script>`;
+
+    document.getElementById('input-state-mark-touched').code = `<cpy-input label="Form Input"></cpy-input>
+
+<script>
+  document.querySelector('cpy-input').markAsTouched();
+</script>`;
+  },
+
   codeBlock: () => {
     document.getElementById('code-block-scss-example').code = `.nav-menu-item {
   --item-opacity: 0;
@@ -304,38 +369,16 @@ export class CodeBlock {
     ];
   },
 
-  inputNumber: () => {
-    document.getElementById('input-number-comp').value = 12345.67;
+  input: () => {
+    document.getElementById('input-comp-length').validators = [{name: 'length', options: {min: 4, max: 10}}];
+    document.getElementById('input-comp-number').validators = [{name: 'numberLength', options: {min: 1, max: 100}}];
 
-    document.getElementById('input-number-comp-2').addEventListener('valueChange', (e) => console.log(e.detail));
-
-    document.getElementById('input-number-html-example').code = `<cpy-input-number label="Text Input" size="large"></cpy-input-number>
-    
-<script>
-  document.querySelector('cpy-input-number').value = 12345;
-</script>`;
-
-    document.getElementById('input-number-props').tableData = [
-      { name: 'value', description: 'Input value', type: "number", default: "", required: false },
-      { name: 'size', description: 'Input size', type: "'small' | 'default' | 'large'", default: "'default'", required: false },
-      { name: 'label', description: 'Label for input', type: "string", default: "", required: false },
-      { name: 'required', description: 'Whether the input is required or not', type: "boolean", default: "false", required: false }
-    ];
-
-    document.getElementById('input-number-events').tableData = [
-      { name: 'valueChange', description: 'Triggered when the text input value is changed', emitsType: "string" },
-    ];
-
-    document.getElementById('input-number-slots').tableData = [
-      { slotName: "prefix", purpose: 'Prefix content for the input (intended for use with <cpy-icon>)' },
-      { slotName: "suffix", purpose: 'Suffix content for the input (intended for use with <cpy-icon>)' }
-    ];
-  },
-
-  inputText: () => {
-    document.getElementById('input-text-html-example').code = `<cpy-input-text label="Text Input" value="Test value" size="large"></cpy-input-text>`;
+    document.getElementById('input-text-html-example').code = `<cpy-input type="text" label="Text Input" value="Test value" size="large"></cpy-input>`;
 
     document.getElementById('input-text-props').tableData = [
+      { name: 'type', description: 'Input type', type: "'text' | 'number' | 'email' | 'password'", default: "'text'", required: false },
+      { name: 'disabled', description: 'Whether the input is disabled', type: "boolean", default: "", required: false },
+      { name: 'validators', description: 'list of validators for the input', type: "Array<string | ValidatorEntry | Validator<string>>", default: "", required: false },
       { name: 'value', description: 'Input value', type: "string", default: "", required: false },
       { name: 'size', description: 'Input size', type: "'small' | 'default' | 'large'", default: "'default'", required: false },
       { name: 'label', description: 'Label for input', type: "string", default: "", required: false },
@@ -344,6 +387,11 @@ export class CodeBlock {
 
     document.getElementById('input-text-events').tableData = [
       { name: 'valueChange', description: 'Triggered when the text input value is changed', emitsType: "string" },
+    ];
+
+    document.getElementById('input-text-methods').tableData = [
+      { name: 'isValid()', description: 'Returns validation result for the input', returnType: "Promise<boolean>" },
+      { name: 'markAsTouched()', description: 'Marks the input as interacted with, running validation on it and updating the UI if invalid', returnType: "" },
     ];
 
     document.getElementById('input-text-slots').tableData = [

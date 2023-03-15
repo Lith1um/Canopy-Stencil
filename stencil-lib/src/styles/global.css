@@ -147,8 +147,8 @@ html.dark {
   --cpy-bg-warn-light-rgb: 217, 119, 6; /* amber-600 */
   --cpy-bg-warn-hover-rgb: 245, 158, 11; /* amber-500 */
 
-  --cpy-bg-disabled-rgb: 226, 232, 240; /* slate-200 */
-  --cpy-text-disabled: rgb(148, 163, 184); /* slate-400 */
+  --cpy-bg-disabled-rgb: 51, 65, 85; /* slate-700 */
+  --cpy-text-disabled: rgb(100, 116, 139); /* slate-500 */
 
   --cpy-text-base: rgb(241, 245, 249); /* slate-100 */
   --cpy-text-light: rgb(107, 114, 128); /* gray-500 */

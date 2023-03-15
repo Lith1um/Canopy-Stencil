@@ -11,7 +11,8 @@ import { ButtonAppearance, ButtonSize, ButtonStyle } from "./components/button/b
 import { ContentsListItem } from "./components/contents-list/contents-list.interface";
 import { ContextMenuItem } from "./components/context-menu/context-menu.interface";
 import { InputSize } from "./components/inputs/input/input";
-import { InputSize as InputSize1 } from "./components/inputs/input/input";
+import { ValidatorEntry } from "./components/inputs/validation/types/validator-entry.type";
+import { Validator } from "./components/inputs/validation/types/validator.type";
 import { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
 import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
 import { ToastPosition } from "./components/toast/toast.type";
@@ -49,6 +50,8 @@ export namespace Components {
         "icon": boolean;
         "size": ButtonSize;
         "type": ButtonAppearance;
+    }
+    interface CpyCard {
     }
     interface CpyCarousel {
         "carouselTitle": string;
@@ -101,23 +104,14 @@ export namespace Components {
     }
     interface CpyInput {
         "disabled": boolean;
+        "isValid": () => Promise<boolean>;
         "label": string;
+        "markAsTouched": () => Promise<void>;
         "required": boolean;
         "size": InputSize;
-    }
-    interface CpyInputNumber {
-        "disabled": boolean;
-        "label": string;
-        "required": boolean;
-        "size": InputSize1;
-        "value": number;
-    }
-    interface CpyInputText {
-        "disabled": boolean;
-        "label": string;
-        "required": boolean;
-        "size": InputSize1;
-        "value": string;
+        "type": 'text' | 'number' | 'email' | 'password';
+        "validators": Array<string | ValidatorEntry | Validator<string>>;
+        "value": any;
     }
     interface CpyInputToggle {
         "checked": boolean;
@@ -196,13 +190,9 @@ export interface CpyExpandCollapseCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyExpandCollapseElement;
 }
-export interface CpyInputNumberCustomEvent<T> extends CustomEvent<T> {
+export interface CpyInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLCpyInputNumberElement;
-}
-export interface CpyInputTextCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLCpyInputTextElement;
+    target: HTMLCpyInputElement;
 }
 export interface CpyInputToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -246,6 +236,12 @@ declare global {
     var HTMLCpyButtonElement: {
         prototype: HTMLCpyButtonElement;
         new (): HTMLCpyButtonElement;
+    };
+    interface HTMLCpyCardElement extends Components.CpyCard, HTMLStencilElement {
+    }
+    var HTMLCpyCardElement: {
+        prototype: HTMLCpyCardElement;
+        new (): HTMLCpyCardElement;
     };
     interface HTMLCpyCarouselElement extends Components.CpyCarousel, HTMLStencilElement {
     }
@@ -325,18 +321,6 @@ declare global {
         prototype: HTMLCpyInputElement;
         new (): HTMLCpyInputElement;
     };
-    interface HTMLCpyInputNumberElement extends Components.CpyInputNumber, HTMLStencilElement {
-    }
-    var HTMLCpyInputNumberElement: {
-        prototype: HTMLCpyInputNumberElement;
-        new (): HTMLCpyInputNumberElement;
-    };
-    interface HTMLCpyInputTextElement extends Components.CpyInputText, HTMLStencilElement {
-    }
-    var HTMLCpyInputTextElement: {
-        prototype: HTMLCpyInputTextElement;
-        new (): HTMLCpyInputTextElement;
-    };
     interface HTMLCpyInputToggleElement extends Components.CpyInputToggle, HTMLStencilElement {
     }
     var HTMLCpyInputToggleElement: {
@@ -409,6 +393,7 @@ declare global {
         "cpy-avatar": HTMLCpyAvatarElement;
         "cpy-badge": HTMLCpyBadgeElement;
         "cpy-button": HTMLCpyButtonElement;
+        "cpy-card": HTMLCpyCardElement;
         "cpy-carousel": HTMLCpyCarouselElement;
         "cpy-code-block": HTMLCpyCodeBlockElement;
         "cpy-contents-list": HTMLCpyContentsListElement;
@@ -422,8 +407,6 @@ declare global {
         "cpy-expand-collapse": HTMLCpyExpandCollapseElement;
         "cpy-icon": HTMLCpyIconElement;
         "cpy-input": HTMLCpyInputElement;
-        "cpy-input-number": HTMLCpyInputNumberElement;
-        "cpy-input-text": HTMLCpyInputTextElement;
         "cpy-input-toggle": HTMLCpyInputToggleElement;
         "cpy-link": HTMLCpyLinkElement;
         "cpy-nav-menu": HTMLCpyNavMenuElement;
@@ -470,6 +453,8 @@ declare namespace LocalJSX {
         "icon"?: boolean;
         "size"?: ButtonSize;
         "type"?: ButtonAppearance;
+    }
+    interface CpyCard {
     }
     interface CpyCarousel {
         "carouselTitle"?: string;
@@ -521,24 +506,12 @@ declare namespace LocalJSX {
     interface CpyInput {
         "disabled"?: boolean;
         "label"?: string;
+        "onValueChange"?: (event: CpyInputCustomEvent<string>) => void;
         "required"?: boolean;
         "size"?: InputSize;
-    }
-    interface CpyInputNumber {
-        "disabled"?: boolean;
-        "label"?: string;
-        "onValueChange"?: (event: CpyInputNumberCustomEvent<number>) => void;
-        "required"?: boolean;
-        "size"?: InputSize1;
-        "value"?: number;
-    }
-    interface CpyInputText {
-        "disabled"?: boolean;
-        "label"?: string;
-        "onValueChange"?: (event: CpyInputTextCustomEvent<string>) => void;
-        "required"?: boolean;
-        "size"?: InputSize1;
-        "value"?: string;
+        "type"?: 'text' | 'number' | 'email' | 'password';
+        "validators"?: Array<string | ValidatorEntry | Validator<string>>;
+        "value"?: any;
     }
     interface CpyInputToggle {
         "checked"?: boolean;
@@ -595,6 +568,7 @@ declare namespace LocalJSX {
         "cpy-avatar": CpyAvatar;
         "cpy-badge": CpyBadge;
         "cpy-button": CpyButton;
+        "cpy-card": CpyCard;
         "cpy-carousel": CpyCarousel;
         "cpy-code-block": CpyCodeBlock;
         "cpy-contents-list": CpyContentsList;
@@ -608,8 +582,6 @@ declare namespace LocalJSX {
         "cpy-expand-collapse": CpyExpandCollapse;
         "cpy-icon": CpyIcon;
         "cpy-input": CpyInput;
-        "cpy-input-number": CpyInputNumber;
-        "cpy-input-text": CpyInputText;
         "cpy-input-toggle": CpyInputToggle;
         "cpy-link": CpyLink;
         "cpy-nav-menu": CpyNavMenu;
@@ -632,6 +604,7 @@ declare module "@stencil/core" {
             "cpy-avatar": LocalJSX.CpyAvatar & JSXBase.HTMLAttributes<HTMLCpyAvatarElement>;
             "cpy-badge": LocalJSX.CpyBadge & JSXBase.HTMLAttributes<HTMLCpyBadgeElement>;
             "cpy-button": LocalJSX.CpyButton & JSXBase.HTMLAttributes<HTMLCpyButtonElement>;
+            "cpy-card": LocalJSX.CpyCard & JSXBase.HTMLAttributes<HTMLCpyCardElement>;
             "cpy-carousel": LocalJSX.CpyCarousel & JSXBase.HTMLAttributes<HTMLCpyCarouselElement>;
             "cpy-code-block": LocalJSX.CpyCodeBlock & JSXBase.HTMLAttributes<HTMLCpyCodeBlockElement>;
             "cpy-contents-list": LocalJSX.CpyContentsList & JSXBase.HTMLAttributes<HTMLCpyContentsListElement>;
@@ -645,8 +618,6 @@ declare module "@stencil/core" {
             "cpy-expand-collapse": LocalJSX.CpyExpandCollapse & JSXBase.HTMLAttributes<HTMLCpyExpandCollapseElement>;
             "cpy-icon": LocalJSX.CpyIcon & JSXBase.HTMLAttributes<HTMLCpyIconElement>;
             "cpy-input": LocalJSX.CpyInput & JSXBase.HTMLAttributes<HTMLCpyInputElement>;
-            "cpy-input-number": LocalJSX.CpyInputNumber & JSXBase.HTMLAttributes<HTMLCpyInputNumberElement>;
-            "cpy-input-text": LocalJSX.CpyInputText & JSXBase.HTMLAttributes<HTMLCpyInputTextElement>;
             "cpy-input-toggle": LocalJSX.CpyInputToggle & JSXBase.HTMLAttributes<HTMLCpyInputToggleElement>;
             "cpy-link": LocalJSX.CpyLink & JSXBase.HTMLAttributes<HTMLCpyLinkElement>;
             "cpy-nav-menu": LocalJSX.CpyNavMenu & JSXBase.HTMLAttributes<HTMLCpyNavMenuElement>;
