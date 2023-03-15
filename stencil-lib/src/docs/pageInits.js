@@ -60,13 +60,14 @@ html.dark {
       
   --cpy-text-primary: rgb(6, 182, 212); /* cyan-500 */
 }`;
-    document.getElementById('colours-pallette-css').code = `:root {
+    document.getElementById('colours-palette-css').code = `:root {
   /* overrides the text colour in dark mode for edge cases
       like white text on coloured background for alerts */
   --cpy-dm-text-override: currentColor;
 
   /* based on tailwind colours */
   --cpy-bg-light-rgb: 250, 250, 250; /* zinc-50 */
+  --cpy-bg-medium-rgb: 229, 231, 235; /* grey-200 */
   --cpy-bg-white-rgb: 255, 255, 255;
   --cpy-bg-basic-rgb: 75, 85, 99; /* gray-600 */
   --cpy-bg-basic-light-rgb: 249, 250, 251; /* grey-50 */

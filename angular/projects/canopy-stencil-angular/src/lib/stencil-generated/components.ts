@@ -189,6 +189,25 @@ export class CpyCodeBlock {
 }
 
 
+export declare interface CpyCodeSnippet extends Components.CpyCodeSnippet {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined
+})
+@Component({
+  selector: 'cpy-code-snippet',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class CpyCodeSnippet {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface CpyContentsList extends Components.CpyContentsList {}
 
 @ProxyCmp({
