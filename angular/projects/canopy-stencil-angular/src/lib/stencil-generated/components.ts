@@ -128,6 +128,25 @@ export class CpyButton {
 }
 
 
+export declare interface CpyCard extends Components.CpyCard {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined
+})
+@Component({
+  selector: 'cpy-card',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class CpyCard {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface CpyCarousel extends Components.CpyCarousel {}
 
 @ProxyCmp({
@@ -417,7 +436,7 @@ export class CpyIcon {
 }
 
 
-export declare interface CpyInputText extends Components.CpyInputText {
+export declare interface CpyInput extends Components.CpyInput {
   /**
    *  
    */
@@ -427,15 +446,16 @@ export declare interface CpyInputText extends Components.CpyInputText {
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['label', 'required', 'size', 'value']
+  inputs: ['disabled', 'label', 'required', 'size', 'type', 'validators', 'value'],
+  methods: ['isValid', 'markAsTouched']
 })
 @Component({
-  selector: 'cpy-input-text',
+  selector: 'cpy-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['label', 'required', 'size', 'value']
+  inputs: ['disabled', 'label', 'required', 'size', 'type', 'validators', 'value']
 })
-export class CpyInputText {
+export class CpyInput {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

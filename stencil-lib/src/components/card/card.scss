@@ -1,0 +1,23 @@
+:host {
+  @apply inline-block rounded-xl shadow-lg;
+  background-color: var(--cpy-bg-white);
+}
+
+.card {
+  @apply p-6 rounded-xl;
+  background-color: var(--cpy-bg-white);
+
+  & + .card__footer--hidden {
+    @apply rounded-b-none;
+  }
+
+  &__footer {
+    @apply px-6 py-2 rounded-b-xl;
+    background-color: var(--cpy-bg-primary);
+    color: white;
+
+    &--hidden {
+      @apply hidden;
+    }
+  }
+}
