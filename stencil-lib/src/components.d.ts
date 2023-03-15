@@ -60,6 +60,8 @@ export namespace Components {
         "code": string;
         "language": 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell';
     }
+    interface CpyCodeSnippet {
+    }
     interface CpyContentsList {
         "activeIndex": number;
         "headerTitle": string;
@@ -255,6 +257,12 @@ declare global {
         prototype: HTMLCpyCodeBlockElement;
         new (): HTMLCpyCodeBlockElement;
     };
+    interface HTMLCpyCodeSnippetElement extends Components.CpyCodeSnippet, HTMLStencilElement {
+    }
+    var HTMLCpyCodeSnippetElement: {
+        prototype: HTMLCpyCodeSnippetElement;
+        new (): HTMLCpyCodeSnippetElement;
+    };
     interface HTMLCpyContentsListElement extends Components.CpyContentsList, HTMLStencilElement {
     }
     var HTMLCpyContentsListElement: {
@@ -396,6 +404,7 @@ declare global {
         "cpy-card": HTMLCpyCardElement;
         "cpy-carousel": HTMLCpyCarouselElement;
         "cpy-code-block": HTMLCpyCodeBlockElement;
+        "cpy-code-snippet": HTMLCpyCodeSnippetElement;
         "cpy-contents-list": HTMLCpyContentsListElement;
         "cpy-contents-list-item": HTMLCpyContentsListItemElement;
         "cpy-context-menu": HTMLCpyContextMenuElement;
@@ -462,6 +471,8 @@ declare namespace LocalJSX {
     interface CpyCodeBlock {
         "code"?: string;
         "language"?: 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell';
+    }
+    interface CpyCodeSnippet {
     }
     interface CpyContentsList {
         "activeIndex"?: number;
@@ -571,6 +582,7 @@ declare namespace LocalJSX {
         "cpy-card": CpyCard;
         "cpy-carousel": CpyCarousel;
         "cpy-code-block": CpyCodeBlock;
+        "cpy-code-snippet": CpyCodeSnippet;
         "cpy-contents-list": CpyContentsList;
         "cpy-contents-list-item": CpyContentsListItem;
         "cpy-context-menu": CpyContextMenu;
@@ -607,6 +619,7 @@ declare module "@stencil/core" {
             "cpy-card": LocalJSX.CpyCard & JSXBase.HTMLAttributes<HTMLCpyCardElement>;
             "cpy-carousel": LocalJSX.CpyCarousel & JSXBase.HTMLAttributes<HTMLCpyCarouselElement>;
             "cpy-code-block": LocalJSX.CpyCodeBlock & JSXBase.HTMLAttributes<HTMLCpyCodeBlockElement>;
+            "cpy-code-snippet": LocalJSX.CpyCodeSnippet & JSXBase.HTMLAttributes<HTMLCpyCodeSnippetElement>;
             "cpy-contents-list": LocalJSX.CpyContentsList & JSXBase.HTMLAttributes<HTMLCpyContentsListElement>;
             "cpy-contents-list-item": LocalJSX.CpyContentsListItem & JSXBase.HTMLAttributes<HTMLCpyContentsListItemElement>;
             "cpy-context-menu": LocalJSX.CpyContextMenu & JSXBase.HTMLAttributes<HTMLCpyContextMenuElement>;
