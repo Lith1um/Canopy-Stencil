@@ -38,6 +38,9 @@
   --cpy-bg-white-rgb: 255, 255, 255;
   --cpy-bg-white: rgb(var(--cpy-bg-white-rgb));
 
+  --cpy-bg-medium-rgb: 229, 231, 235; /* grey-200 */
+  --cpy-bg-medium: rgb(var(--cpy-bg-medium-rgb));
+
   --cpy-bg-basic-rgb: 75, 85, 99; /* gray-600 */
   --cpy-bg-basic: rgb(var(--cpy-bg-basic-rgb));
 
@@ -123,6 +126,8 @@ html.dark {
 
   --cpy-bg-white-rgb: 30, 41, 59; /* slate-800 */
 
+  --cpy-bg-medium-rgb: 51, 65, 85; /* slate-700 */
+
   --cpy-bg-basic-rgb: 100, 116, 139; /* slate-400 */
   --cpy-bg-basic-light-rgb: 71, 85, 105; /* slate-600 */
   --cpy-bg-basic-hover-rgb: 148, 163, 184; /* slate-500 */
@@ -148,8 +153,8 @@ html.dark {
   --cpy-bg-warn-light-rgb: 217, 119, 6; /* amber-600 */
   --cpy-bg-warn-hover-rgb: 245, 158, 11; /* amber-500 */
 
-  --cpy-bg-disabled-rgb: 226, 232, 240; /* slate-200 */
-  --cpy-text-disabled: rgb(148, 163, 184); /* slate-400 */
+  --cpy-bg-disabled-rgb: 51, 65, 85; /* slate-700 */
+  --cpy-text-disabled: rgb(100, 116, 139); /* slate-500 */
 
   --cpy-text-base: rgb(241, 245, 249); /* slate-100 */
   --cpy-text-light: rgb(107, 114, 128); /* gray-500 */
@@ -163,7 +168,7 @@ html.dark {
 
 html {
   font-family: 'Inter var', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--cpy-text-base);
   background-color: var(--cpy-bg-light);
 }

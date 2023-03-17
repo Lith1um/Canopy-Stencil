@@ -1,0 +1,89 @@
+<cpy-page-content>
+  <h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
+    Basic Inputs
+  </h3>
+  
+  <p style="margin-top: 1rem; margin-bottom: 2rem;">
+    Canopy inputs display a form input for a basic text/number/email/password field. They are referenced using the<cpy-code-snippet>&lt;cpy-input&gt;</cpy-code-snippet>custom HTML element.
+  </p>
+
+  <p style="margin-top: 1rem; margin-bottom: 2rem;">
+    Canopy forms use a custom validation factory to provide built-in validator functions for your inputs. They can also be extended upon to create your own validators. Learn more about <cpy-link href="/learn-more/formValidation">form validation</cpy-link> in Canopy.
+  </p>
+  
+  <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
+
+  <p>Inputs with validation</p>
+  <cpy-card style="max-width: 350px; margin-top: 1rem; margin-bottom: 2rem;">
+    <div style="display: flex; flex-direction: column; gap: 1rem;">
+      <cpy-input type="text" label="Required Text Input" required>
+      </cpy-input>
+      <cpy-input id="input-comp-length" type="text" label="Min and Max Length Text Input" value="Test value">
+      </cpy-input>
+      <cpy-input id="input-comp-number" type="number" label="Min and Max Number Input">
+      </cpy-input>
+      <cpy-input type="email" label="Email Input">
+      </cpy-input>
+    </div>
+  </cpy-card>
+
+  <p>Inputs with prefix/suffix</p>
+  <cpy-card style="max-width: 350px; margin-top: 1rem; margin-bottom: 2rem;">
+    <div style="display: flex; flex-direction: column; gap: 1rem;">
+      <cpy-input type="text" label="Text Input">
+        <cpy-icon slot="suffix">done</cpy-icon>
+      </cpy-input>
+      <cpy-input type="number" label="Number Input">
+        <cpy-icon slot="prefix">euro</cpy-icon>
+      </cpy-input>
+      <cpy-input type="password" label="Password Input">
+        <cpy-icon slot="suffix">lock</cpy-icon>
+      </cpy-input>
+      <cpy-input type="email" label="Email Input">
+        <cpy-icon slot="prefix">email</cpy-icon>
+      </cpy-input>
+    </div>
+  </cpy-card>
+  
+  <p>Different sizes</p>
+  <cpy-card style="max-width: 350px; margin-top: 1rem; margin-bottom: 2rem;">
+    <div style="display: flex; flex-direction: column; gap: 1rem;">
+      <cpy-input type="text" label="Small Text Input" size="small">
+      </cpy-input>
+      <cpy-input type="email" label="Default Size Email Input">
+      </cpy-input>
+      <cpy-input type="password" label="Large Password Input" size="large">
+      </cpy-input>
+    </div>
+  </cpy-card>
+
+  <p>Disabled Inputs</p>
+  <cpy-card style="max-width: 350px; margin-top: 1rem; margin-bottom: 2rem;">
+    <div style="display: flex; flex-direction: column; gap: 1rem;">
+      <cpy-input type="text" label="Text Input" value="Test" required disabled>
+      </cpy-input>
+      <cpy-input type="number" label="Number Input" disabled>
+      </cpy-input>
+      <cpy-input type="email" label="Email Input" disabled>
+      </cpy-input>
+    </div>
+  </cpy-card>
+  
+  <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+  
+  <div style="margin-top: 1rem; margin-bottom: 2rem;">
+    <cpy-code-block id="input-html-example" language="html"></cpy-code-block>
+  </div>
+  
+  <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
+  <cpy-table id="input-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+  
+  <h3 id="events" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Events</h3>
+  <cpy-table id="input-events" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+  
+  <h3 id="methods" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Methods</h3>
+  <cpy-table id="input-methods" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+  
+  <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
+  <cpy-table id="input-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+</cpy-page-content>

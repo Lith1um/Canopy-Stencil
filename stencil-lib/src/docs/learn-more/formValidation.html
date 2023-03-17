@@ -1,0 +1,68 @@
+<cpy-page-content>
+  <h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
+    Form validation
+  </h3>
+
+  <div style="margin-top: 1rem; margin-bottom: 2rem;">
+    <p style="margin-top: 1rem; margin-bottom: 1rem;">
+      You can improve your experience validating webs forms by taking advantage of the validation tooling built into Canopy. This page shows how to validate user input easily through the use of built-in validators, as well creating your own to work with the validation system.
+    </p>
+  </div>
+
+  <h3 id="getting-started" style="font-weight: 600; font-size: 1.2rem; line-height: 2; margin-top: 1rem;">Getting Started</h3>
+  <div style="margin-top: 1rem; margin-bottom: 2rem;">
+    <p style="margin-top: 1rem; margin-bottom: 1rem;">
+      <cpy-link href="/comps/input">Canopy Inputs</cpy-link> can accept a <cpy-code-snippet>validation</cpy-code-snippet> property containing a list of validators to run on the input. The validation input is of the following type:
+    </p>
+    <cpy-code-block id="getting-started-types" language="typescript"></cpy-code-block>
+  </div>
+
+  <h3 id="built-in-validators" style="font-weight: 600; font-size: 1.2rem; line-height: 2; margin-top: 1rem;">Built-in Validators</h3>
+  <div style="margin-top: 1rem; margin-bottom: 2rem;">
+    <p style="margin-top: 1rem; margin-bottom: 1rem;">
+      Canopy comes with a number of built in validators that handle most basic use cases for form inputs. The list is expected to grow but is currently comprised of the following:
+    </p>
+    <ul style="list-style: unset; margin-top: 1rem; margin-bottom: 1rem; padding-left: 3rem;">
+      <li>Required</li>
+      <li>Email</li>
+      <li>Number</li>
+      <li>Min/Max Length</li>
+      <li>Min/Max Number Length</li>
+    </ul>
+    <p style="margin-top: 1rem; margin-bottom: 1rem;">
+      The following example shows how you can configure the built-in validators for inputs
+    </p>
+    <cpy-code-block id="built-in-validation" language="html"></cpy-code-block>
+    <p style="margin-top: 1rem; margin-bottom: 1rem;">
+      Additional, setting the required flag on an input will add the required validator automatically, and the number and email type fields have regex validations to ensure validity.
+    </p>
+  </div>
+
+  <h3 id="custom-messages" style="font-weight: 600; font-size: 1.2rem; line-height: 2; margin-top: 1rem;">Custom Error Messages</h3>
+  <div style="margin-top: 1rem; margin-bottom: 2rem;">
+    <p style="margin-top: 1rem; margin-bottom: 1rem;">
+      TODO.
+    </p>
+  </div>
+
+  <h3 id="custom-validators" style="font-weight: 600; font-size: 1.2rem; line-height: 2; margin-top: 1rem;">Custom Validators</h3>
+  <div style="margin-top: 1rem; margin-bottom: 2rem;">
+    <p style="margin-top: 1rem; margin-bottom: 1rem;">
+      You can create your own validators for inputs, allowing the validation logic to be customised however you like. An example validator is below:
+    </p>
+    <cpy-code-block id="custom-validators-typescript" language="typescript"></cpy-code-block>
+  </div>
+
+  <h3 id="input-state" style="font-weight: 600; font-size: 1.2rem; line-height: 2; margin-top: 1rem;">Form/Input State</h3>
+  <div style="margin-top: 1rem; margin-bottom: 2rem;">
+    <p style="margin-top: 1rem; margin-bottom: 1rem;">
+      Currently, you can call a method exposed on the input to check the validity of an input (There is future work planned to allow you to wrap a group of inputs in a custom form component which can be used to check the validity of the entire form).
+    </p>
+    <cpy-code-block id="input-state-valid" language="html"></cpy-code-block>
+    <p style="margin-top: 1rem; margin-bottom: 1rem;">
+      Another method, markAsTouched is exposed, allowing you to mark an input as touched and forcing validation to run even if the user has not interacted with the input. This is useful for updating the UI on submit of a form to indicate to the user what fields are invalid (There is future work planned to allow you to wrap a group of inputs in a custom form component which can be used to mark all inputs as touched).
+    </p>
+    <cpy-code-block id="input-state-mark-touched" language="html"></cpy-code-block>
+  </div>
+
+</cpy-page-content>

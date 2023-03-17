@@ -7,8 +7,10 @@ export const DIRECTIVES = [
   d.CpyAvatar,
   d.CpyBadge,
   d.CpyButton,
+  d.CpyCard,
   d.CpyCarousel,
   d.CpyCodeBlock,
+  d.CpyCodeSnippet,
   d.CpyContentsList,
   d.CpyContentsListItem,
   d.CpyContextMenu,
@@ -19,6 +21,8 @@ export const DIRECTIVES = [
   d.CpyDrawerContainer,
   d.CpyExpandCollapse,
   d.CpyIcon,
+  d.CpyInput,
+  d.CpyInputToggle,
   d.CpyLink,
   d.CpyNavMenu,
   d.CpyNavMenuItem,
@@ -27,7 +31,6 @@ export const DIRECTIVES = [
   d.CpySpinner,
   d.CpyTable,
   d.CpyToast,
-  d.CpyToggle,
   d.CpyToolbar,
   d.CpyTooltip
 ];

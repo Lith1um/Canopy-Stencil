@@ -1,5 +1,9 @@
 .contents-list-item {
-  @apply cursor-pointer font-semibold pl-4 mt-2 block border-l-2 border-transparent truncate;
+  @apply cursor-pointer pl-3 mt-2 block border-l-2 border-transparent truncate;
+
+  &:hover {
+    color: var(--cpy-text-primary);
+  }
 
   &--active {
     @apply border-current;

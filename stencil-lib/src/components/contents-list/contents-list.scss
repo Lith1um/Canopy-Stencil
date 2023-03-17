@@ -2,7 +2,7 @@
   @apply block sticky top-8 mt-8 max-w-[10rem];
 
   &__title {
-    @apply text-sm uppercase ml-3 truncate;
+    @apply ml-2 truncate;
     color: var(--cpy-text-light);
   }
 

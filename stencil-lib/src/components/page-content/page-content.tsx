@@ -76,7 +76,7 @@ export class PageContent {
           <div class="page-container__main">
             <slot></slot>
           </div>
-          {!this.hideContentsList && <cpy-contents-list items={this.contents} activeIndex={this.activeIndex}></cpy-contents-list>}
+          {!this.hideContentsList && this.contents.length > 0 && <cpy-contents-list items={this.contents} activeIndex={this.activeIndex}></cpy-contents-list>}
         </div>
       </div>
     );

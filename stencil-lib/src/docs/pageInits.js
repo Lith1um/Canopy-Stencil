@@ -60,13 +60,14 @@ html.dark {
       
   --cpy-text-primary: rgb(6, 182, 212); /* cyan-500 */
 }`;
-    document.getElementById('colours-pallette-css').code = `:root {
+    document.getElementById('colours-palette-css').code = `:root {
   /* overrides the text colour in dark mode for edge cases
       like white text on coloured background for alerts */
   --cpy-dm-text-override: currentColor;
 
   /* based on tailwind colours */
   --cpy-bg-light-rgb: 250, 250, 250; /* zinc-50 */
+  --cpy-bg-medium-rgb: 229, 231, 235; /* grey-200 */
   --cpy-bg-white-rgb: 255, 255, 255;
   --cpy-bg-basic-rgb: 75, 85, 99; /* gray-600 */
   --cpy-bg-basic-light-rgb: 249, 250, 251; /* grey-50 */
@@ -117,6 +118,71 @@ html.dark {
     document.getElementById('colours-pallette-dark-alt').code = `@media (prefers-color-scheme: dark) {
   ...
 }`;
+  },
+
+  formValidation: () => {
+    document.getElementById('getting-started-types').code = `// Validators input type
+Array<string | ValidatorEntry | Validator<string>>;
+
+export interface ValidatorEntry {
+  name: string;
+  options?: { [key: string]: any; };
+}
+
+interface Validator<T> {
+  validate: (val: T) => boolean;
+  errorMessage?: string;
+}`;
+
+    document.getElementById('built-in-validation').code = `<cpy-input label="Form Input"></cpy-input>
+
+<script>
+  document.querySelector('cpy-input').validators = [
+    'required',
+    'email',
+    'number',
+    {name: 'length', options: {min: 4, max: 10}},
+    {name: 'numberLength', options: {min: 0, max: 100}},
+  ]
+</script>`;
+
+    document.getElementById('custom-validators-typescript').code = `// Custom validator to check if a number is even
+const IsEvenValidator: Validator<string> = {
+  validate: (val: string) => {
+    // ignore empty values
+    val = val ?? '';
+    if (val === '') {
+      return true;
+    }
+
+    // get the value as a number
+    const numVal = parseFloat(val);
+
+    // ignore validation if the number is not valid
+    if (isNaN(numVal)) {
+      return true;
+    }
+    return numVal % 2 === 0;
+  },
+  errorMessage: 'You must enter an even number'
+}
+
+document.querySelector('cpy-input').validators = [IsEvenValidator];`;
+
+    document.getElementById('input-state-valid').code = `<cpy-input label="Form Input"></cpy-input>
+
+<script>
+  (async () => {
+    await customElements.whenDefined('cpy-input');
+    const isValid = await document.querySelector('cpy-input').isValid();
+  })();
+</script>`;
+
+    document.getElementById('input-state-mark-touched').code = `<cpy-input label="Form Input"></cpy-input>
+
+<script>
+  document.querySelector('cpy-input').markAsTouched();
+</script>`;
   },
 
   codeBlock: () => {
@@ -177,6 +243,14 @@ export class CodeBlock {
       { name: 'code', description: 'The code snippet to show', type: "string", default: "", required: true },
       { name: 'show-details', description: 'Shows the language and copy button', type: "boolean", default: "false", required: false},
       { name: 'language', description: 'The code snippet language', type: "'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell'", default: "'typescript'", required: false },
+    ];
+  },
+
+  codeSnippet: () => {
+    document.getElementById('code-snippet-html-example').code = `<cpy-code-snippet>console.log('This is a code snippet!');</cpy-code-snippet>`;
+
+    document.getElementById('code-snippet-slots').tableData = [
+      { slotName: "-- (default)", purpose: 'Contents of the code snippet (this should just be basic text)' },
     ];
   },
 
@@ -305,11 +379,41 @@ export class CodeBlock {
   },
 
   datePicker: () => {
+  },
     
+  input: () => {
+    document.getElementById('input-comp-length').validators = [{name: 'length', options: {min: 4, max: 10}}];
+    document.getElementById('input-comp-number').validators = [{name: 'numberLength', options: {min: 1, max: 100}}];
+
+    document.getElementById('input-html-example').code = `<cpy-input type="text" label="Text Input" value="Test value" size="large"></cpy-input>`;
+
+    document.getElementById('input-props').tableData = [
+      { name: 'type', description: 'Input type', type: "'text' | 'number' | 'email' | 'password'", default: "'text'", required: false },
+      { name: 'disabled', description: 'Whether the input is disabled', type: "boolean", default: "", required: false },
+      { name: 'validators', description: 'list of validators for the input', type: "Array<string | ValidatorEntry | Validator<string>>", default: "", required: false },
+      { name: 'value', description: 'Input value', type: "string", default: "", required: false },
+      { name: 'size', description: 'Input size', type: "'small' | 'default' | 'large'", default: "'default'", required: false },
+      { name: 'label', description: 'Label for input', type: "string", default: "", required: false },
+      { name: 'required', description: 'Whether the input is required or not', type: "boolean", default: "false", required: false }
+    ];
+
+    document.getElementById('input-events').tableData = [
+      { name: 'valueChange', description: 'Triggered when the text input value is changed', emitsType: "string" },
+    ];
+
+    document.getElementById('input-methods').tableData = [
+      { name: 'isValid()', description: 'Returns validation result for the input', returnType: "Promise<boolean>" },
+      { name: 'markAsTouched()', description: 'Marks the input as interacted with, running validation on it and updating the UI if invalid', returnType: "" },
+    ];
+
+    document.getElementById('input-slots').tableData = [
+      { slotName: "prefix", purpose: 'Prefix content for the input (intended for use with <cpy-icon>)' },
+      { slotName: "suffix", purpose: 'Suffix content for the input (intended for use with <cpy-icon>)' }
+    ];
   },
 
   toggle: () => {
-    document.getElementById('toggle-html-example').code = `<cpy-toggle checked size="large" label="Large toggle"></cpy-toggle>`;
+    document.getElementById('toggle-html-example').code = `<cpy-input-toggle checked size="large" label="Large toggle"></cpy-input-toggle>`;
 
     document.getElementById('toggle-props').tableData = [
       { name: 'checked', description: 'Whether the is checked', type: "boolean", default: "", required: false },
@@ -634,16 +738,16 @@ export class CodeBlock {
 
   carousel: () => {
     document.getElementById('carousel-html-example').code = `<cpy-carousel carousel-title="This is a carousel!">
-  <div style="width: 200px; height: 200px; background-color: red;"></div>
-  <div style="width: 200px; height: 200px; background-color: red;"></div>
-  <div style="width: 200px; height: 200px; background-color: red;"></div>
-  <div style="width: 200px; height: 200px; background-color: red;"></div>
-  <div style="width: 200px; height: 200px; background-color: red;"></div>
-  <div style="width: 200px; height: 200px; background-color: red;"></div>
-  <div style="width: 200px; height: 200px; background-color: red;"></div>
-  <div style="width: 200px; height: 200px; background-color: red;"></div>
-  <div style="width: 200px; height: 200px; background-color: red;"></div>
-  <div style="width: 200px; height: 200px; background-color: red;"></div>
+  <div style="width: 200px; height: 200px;"></div>
+  <div style="width: 200px; height: 200px;"></div>
+  <div style="width: 200px; height: 200px;"></div>
+  <div style="width: 200px; height: 200px;"></div>
+  <div style="width: 200px; height: 200px;"></div>
+  <div style="width: 200px; height: 200px;"></div>
+  <div style="width: 200px; height: 200px;"></div>
+  <div style="width: 200px; height: 200px;"></div>
+  <div style="width: 200px; height: 200px;"></div>
+  <div style="width: 200px; height: 200px;"></div>
 </cpy-carousel>`;
 
     document.getElementById('carousel-props').tableData = [
@@ -731,6 +835,26 @@ export class CodeBlock {
 
     document.getElementById('button-slots').tableData = [
       { slotName: "-- (default)", purpose: 'Contents of the button' }
+    ];
+  },
+
+  card: () => {
+    document.getElementById('card-html-example').code = `<cpy-card style="margin-top: 1rem; margin-bottom: 2rem;">
+  <div style="display: flex; gap: 1rem; align-items: center;">
+    <cpy-avatar size="x-large" src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
+    <div style="flex: 1;">
+      <p style="font-weight: 500; font-size: 1.125rem;">Alex Rayner</p>
+      <p style="font-size: 0.75rem;">Front End Developer</p>
+    </div>
+  </div>
+  <div slot="footer">
+    This is a footer!
+  </div>
+</cpy-card>`;
+
+    document.getElementById('card-slots').tableData = [
+      { slotName: "-- (default)", purpose: 'Contents of the card' },
+      { slotName: "footer", purpose: 'Footer contents for the card' }
     ];
   },
 

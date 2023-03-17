@@ -128,6 +128,25 @@ export class CpyButton {
 }
 
 
+export declare interface CpyCard extends Components.CpyCard {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined
+})
+@Component({
+  selector: 'cpy-card',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class CpyCard {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface CpyCarousel extends Components.CpyCarousel {}
 
 @ProxyCmp({
@@ -162,6 +181,25 @@ export declare interface CpyCodeBlock extends Components.CpyCodeBlock {}
   inputs: ['code', 'language']
 })
 export class CpyCodeBlock {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface CpyCodeSnippet extends Components.CpyCodeSnippet {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined
+})
+@Component({
+  selector: 'cpy-code-snippet',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class CpyCodeSnippet {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -417,6 +455,63 @@ export class CpyIcon {
 }
 
 
+export declare interface CpyInput extends Components.CpyInput {
+  /**
+   *  
+   */
+  valueChange: EventEmitter<CustomEvent<string>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['disabled', 'label', 'required', 'size', 'type', 'validators', 'value'],
+  methods: ['isValid', 'markAsTouched']
+})
+@Component({
+  selector: 'cpy-input',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['disabled', 'label', 'required', 'size', 'type', 'validators', 'value']
+})
+export class CpyInput {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['valueChange']);
+  }
+}
+
+
+export declare interface CpyInputToggle extends Components.CpyInputToggle {
+  /**
+   *  
+   */
+  checkedChange: EventEmitter<CustomEvent<boolean>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['checked', 'label', 'size']
+})
+@Component({
+  selector: 'cpy-input-toggle',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['checked', 'label', 'size']
+})
+export class CpyInputToggle {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['checkedChange']);
+  }
+}
+
+
 export declare interface CpyLink extends Components.CpyLink {}
 
 @ProxyCmp({
@@ -601,34 +696,6 @@ export class CpyToast {
     c.detach();
     this.el = r.nativeElement;
     proxyOutputs(this, this.el, ['closed', 'opened']);
-  }
-}
-
-
-export declare interface CpyToggle extends Components.CpyToggle {
-  /**
-   *  
-   */
-  checkedChange: EventEmitter<CustomEvent<boolean>>;
-
-}
-
-@ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['checked', 'label', 'size']
-})
-@Component({
-  selector: 'cpy-toggle',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['checked', 'label', 'size']
-})
-export class CpyToggle {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['checkedChange']);
   }
 }
 
