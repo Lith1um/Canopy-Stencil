@@ -9,7 +9,7 @@ export class CodeSnippet {
   render() {
     return (
       <code>
-        <slot/>
+        `<slot/>`
       </code>
     );
   }

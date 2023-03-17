@@ -13,6 +13,9 @@ export class Tooltip {
 
   @Prop() text: string;
 
+  @Prop()
+  hideArrow: boolean = false;
+
   wrapperElem: HTMLElement;
   tooltipElem: HTMLElement;
   arrowElem: HTMLElement;
@@ -57,6 +60,11 @@ export class Tooltip {
       'text--only': !!this.text
     };
 
+    const arrowClasses = {
+      'tooltip__arrow': true,
+      'tooltip__arrow--hidden': this.hideArrow,
+    };    
+
     return (
       <div class="tooltip" ref={(el) => this.wrapperElem = el as HTMLElement} onMouseEnter={() => this.recalculatePosition()}>
         <slot />
@@ -65,7 +73,7 @@ export class Tooltip {
           ref={(el) => this.tooltipElem = el as HTMLElement}
           role="tooltip">
           {this.text || <slot name='content'/>}
-          <div class="tooltip--arrow" ref={(el) => this.arrowElem = el as HTMLElement}></div>
+          <div class={arrowClasses} ref={(el) => this.arrowElem = el as HTMLElement}></div>
         </div>
       </div>
     );

@@ -143,6 +143,10 @@ export namespace Components {
         "size": SpinnerSize;
         "type": SpinnerAppearance;
     }
+    interface CpyStack {
+        "direction": 'left' | 'right';
+        "overlap": number;
+    }
     interface CpyTable {
         "tableData": { [key: string]: string | number | boolean | null | undefined }[];
     }
@@ -160,6 +164,7 @@ export namespace Components {
     interface CpyToolbar {
     }
     interface CpyTooltip {
+        "hideArrow": boolean;
         "position": 'bottom' | 'left' | 'right' | 'top';
         "text": string;
     }
@@ -371,6 +376,12 @@ declare global {
         prototype: HTMLCpySpinnerElement;
         new (): HTMLCpySpinnerElement;
     };
+    interface HTMLCpyStackElement extends Components.CpyStack, HTMLStencilElement {
+    }
+    var HTMLCpyStackElement: {
+        prototype: HTMLCpyStackElement;
+        new (): HTMLCpyStackElement;
+    };
     interface HTMLCpyTableElement extends Components.CpyTable, HTMLStencilElement {
     }
     var HTMLCpyTableElement: {
@@ -423,6 +434,7 @@ declare global {
         "cpy-page-content": HTMLCpyPageContentElement;
         "cpy-popup": HTMLCpyPopupElement;
         "cpy-spinner": HTMLCpySpinnerElement;
+        "cpy-stack": HTMLCpyStackElement;
         "cpy-table": HTMLCpyTableElement;
         "cpy-toast": HTMLCpyToastElement;
         "cpy-toolbar": HTMLCpyToolbarElement;
@@ -553,6 +565,10 @@ declare namespace LocalJSX {
         "size"?: SpinnerSize;
         "type"?: SpinnerAppearance;
     }
+    interface CpyStack {
+        "direction"?: 'left' | 'right';
+        "overlap"?: number;
+    }
     interface CpyTable {
         "tableData"?: { [key: string]: string | number | boolean | null | undefined }[];
     }
@@ -570,6 +586,7 @@ declare namespace LocalJSX {
     interface CpyToolbar {
     }
     interface CpyTooltip {
+        "hideArrow"?: boolean;
         "position"?: 'bottom' | 'left' | 'right' | 'top';
         "text"?: string;
     }
@@ -601,6 +618,7 @@ declare namespace LocalJSX {
         "cpy-page-content": CpyPageContent;
         "cpy-popup": CpyPopup;
         "cpy-spinner": CpySpinner;
+        "cpy-stack": CpyStack;
         "cpy-table": CpyTable;
         "cpy-toast": CpyToast;
         "cpy-toolbar": CpyToolbar;
@@ -638,6 +656,7 @@ declare module "@stencil/core" {
             "cpy-page-content": LocalJSX.CpyPageContent & JSXBase.HTMLAttributes<HTMLCpyPageContentElement>;
             "cpy-popup": LocalJSX.CpyPopup & JSXBase.HTMLAttributes<HTMLCpyPopupElement>;
             "cpy-spinner": LocalJSX.CpySpinner & JSXBase.HTMLAttributes<HTMLCpySpinnerElement>;
+            "cpy-stack": LocalJSX.CpyStack & JSXBase.HTMLAttributes<HTMLCpyStackElement>;
             "cpy-table": LocalJSX.CpyTable & JSXBase.HTMLAttributes<HTMLCpyTableElement>;
             "cpy-toast": LocalJSX.CpyToast & JSXBase.HTMLAttributes<HTMLCpyToastElement>;
             "cpy-toolbar": LocalJSX.CpyToolbar & JSXBase.HTMLAttributes<HTMLCpyToolbarElement>;

@@ -15,7 +15,6 @@ export class CodeBlock {
   @Prop() language: 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell' = 'typescript';
 
   codeElem: HTMLElement;
-  copyButtonElem: HTMLElement;
 
   @State()
   copied = false;
@@ -35,7 +34,7 @@ export class CodeBlock {
   render() {
     return (
       <div class="code-block">
-        <button class="code-block__copy" ref={(el) => this.copyButtonElem = el as HTMLElement} onClick={() => this.copyCode()}>
+        <button class="code-block__copy" onClick={() => this.copyCode()}>
           <cpy-icon class={this.copied && 'copied'}>{this.copied ? 'done' : 'content_copy'}</cpy-icon>
         </button>
 
