@@ -52,6 +52,7 @@ const menuItems = navMenuElement.items = [
       { title: 'Icon', type: 'basic', url: '/comps/icon', function: closeMenuOnMobileNav },
       { title: 'Link', type: 'basic', url: '/comps/link', function: closeMenuOnMobileNav },
       { title: 'Spinner', type: 'basic', url: '/comps/spinner', function: closeMenuOnMobileNav },
+      { title: 'Stack', type: 'basic', url: '/comps/stack', function: closeMenuOnMobileNav },
       { title: 'Table', type: 'basic', url: '/comps/table', function: closeMenuOnMobileNav },
     ] },
   ] },

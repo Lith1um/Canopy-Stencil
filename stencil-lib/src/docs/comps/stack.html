@@ -1,0 +1,97 @@
+<cpy-page-content>
+  <h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
+    Stacks
+  </h3>
+  
+  <p style="margin-top: 1rem; margin-bottom: 2rem;">
+    Canopy stacks display a stacked list of elements that when hovered over will expand to no longer overlap. They were originally designed to should a list of avatars (as seen below). They are referenced using the <cpy-code-snippet>&lt;cpy-stack&gt;</cpy-code-snippet> custom HTML element. This component utilises the slot element, allowing you to stack any elements you want. The current behaviour will mean that each item in the stack is shifted by half its width.
+  </p>
+  
+  <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
+  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+    <div style="text-align: start;">
+      <div style="margin-bottom: 0.25rem;">Right stacked</div>
+      <cpy-stack direction="right">
+        <cpy-tooltip position="bottom" text="Alex Rayner" hide-arrow>
+          <cpy-avatar src="https://images.freeimages.com/images/large-previews/d1f/lady-avatar-1632967.jpg"></cpy-avatar>
+        </cpy-tooltip>
+        <cpy-tooltip position="bottom" text="Tejas Patel" hide-arrow>
+          <cpy-avatar src="https://images.freeimages.com/images/large-previews/d66/woman-avatar-1632963.jpg"></cpy-avatar>
+        </cpy-tooltip>
+        <cpy-tooltip position="bottom" text="Rhys Harris" hide-arrow>
+          <cpy-avatar src="https://images.freeimages.com/images/large-previews/7e8/man-avatar-1632965.jpg"></cpy-avatar>
+        </cpy-tooltip>
+        <cpy-tooltip position="bottom" text="Joe Hawkins" hide-arrow>
+          <cpy-avatar src="https://images.freeimages.com/images/large-previews/962/avatar-man-with-mustages-1632966.jpg"></cpy-avatar>
+        </cpy-tooltip>
+      </cpy-stack>
+    </div>
+    <div style="flex: 1;">
+    </div>
+    <div style="text-align: end;">
+      <div style="margin-bottom: 0.25rem;">Left stacked</div>
+      <cpy-stack>
+        <cpy-tooltip position="bottom" text="Alex Rayner" hide-arrow>
+          <cpy-avatar src="https://images.freeimages.com/images/large-previews/d1f/lady-avatar-1632967.jpg"></cpy-avatar>
+        </cpy-tooltip>
+        <cpy-tooltip position="bottom" text="Tejas Patel" hide-arrow>
+          <cpy-avatar src="https://images.freeimages.com/images/large-previews/d66/woman-avatar-1632963.jpg"></cpy-avatar>
+        </cpy-tooltip>
+        <cpy-tooltip position="bottom" text="Rhys Harris" hide-arrow>
+          <cpy-avatar src="https://images.freeimages.com/images/large-previews/7e8/man-avatar-1632965.jpg"></cpy-avatar>
+        </cpy-tooltip>
+        <cpy-tooltip position="bottom" text="Joe Hawkins" hide-arrow>
+          <cpy-avatar src="https://images.freeimages.com/images/large-previews/962/avatar-man-with-mustages-1632966.jpg"></cpy-avatar>
+        </cpy-tooltip>
+      </cpy-stack>
+    </div>
+  </div>
+
+  <div style="width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+    <div style="margin-bottom: 0.25rem;">25% overlap</div>
+    <cpy-stack direction="right" overlap="0.25">
+      <cpy-tooltip position="bottom" text="Alex Rayner" hide-arrow>
+        <cpy-avatar src="https://images.freeimages.com/images/large-previews/d1f/lady-avatar-1632967.jpg"></cpy-avatar>
+      </cpy-tooltip>
+      <cpy-tooltip position="bottom" text="Tejas Patel" hide-arrow>
+        <cpy-avatar src="https://images.freeimages.com/images/large-previews/d66/woman-avatar-1632963.jpg"></cpy-avatar>
+      </cpy-tooltip>
+      <cpy-tooltip position="bottom" text="Rhys Harris" hide-arrow>
+        <cpy-avatar src="https://images.freeimages.com/images/large-previews/7e8/man-avatar-1632965.jpg"></cpy-avatar>
+      </cpy-tooltip>
+      <cpy-tooltip position="bottom" text="Joe Hawkins" hide-arrow>
+        <cpy-avatar src="https://images.freeimages.com/images/large-previews/962/avatar-man-with-mustages-1632966.jpg"></cpy-avatar>
+      </cpy-tooltip>
+    </cpy-stack>
+  </div>
+
+  <div style="width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+    <div style="margin-bottom: 0.25rem;">75% overlap</div>
+    <cpy-stack direction="right" overlap="0.75">
+      <cpy-tooltip position="bottom" text="Alex Rayner" hide-arrow>
+        <cpy-avatar src="https://images.freeimages.com/images/large-previews/d1f/lady-avatar-1632967.jpg"></cpy-avatar>
+      </cpy-tooltip>
+      <cpy-tooltip position="bottom" text="Tejas Patel" hide-arrow>
+        <cpy-avatar src="https://images.freeimages.com/images/large-previews/d66/woman-avatar-1632963.jpg"></cpy-avatar>
+      </cpy-tooltip>
+      <cpy-tooltip position="bottom" text="Rhys Harris" hide-arrow>
+        <cpy-avatar src="https://images.freeimages.com/images/large-previews/7e8/man-avatar-1632965.jpg"></cpy-avatar>
+      </cpy-tooltip>
+      <cpy-tooltip position="bottom" text="Joe Hawkins" hide-arrow>
+        <cpy-avatar src="https://images.freeimages.com/images/large-previews/962/avatar-man-with-mustages-1632966.jpg"></cpy-avatar>
+      </cpy-tooltip>
+    </cpy-stack>
+  </div>
+  
+  <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+  
+  <div style="margin-top: 1rem; margin-bottom: 2rem;">
+    <cpy-code-block id="stack-html-example" language="html"></cpy-code-block>
+  </div>
+  
+  <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
+  <cpy-table id="stack-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+  
+  <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
+  <cpy-table id="stack-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+</cpy-page-content>
