@@ -646,6 +646,27 @@ export class CpySpinner {
 }
 
 
+export declare interface CpyStack extends Components.CpyStack {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['direction', 'overlap']
+})
+@Component({
+  selector: 'cpy-stack',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['direction', 'overlap']
+})
+export class CpyStack {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface CpyTable extends Components.CpyTable {}
 
 @ProxyCmp({
@@ -723,13 +744,13 @@ export declare interface CpyTooltip extends Components.CpyTooltip {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['position', 'text']
+  inputs: ['hideArrow', 'position', 'text']
 })
 @Component({
   selector: 'cpy-tooltip',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['position', 'text']
+  inputs: ['hideArrow', 'position', 'text']
 })
 export class CpyTooltip {
   protected el: HTMLElement;
