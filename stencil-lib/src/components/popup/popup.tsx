@@ -42,6 +42,18 @@ export class Popup {
     }
   }
 
+  @Method()
+  async showPopup(): Promise<void> {
+    this.wrapperElem.classList.add('popup--show');
+    this.addClickOutsideListener();
+  }
+
+  @Method()
+  async hidePopup(): Promise<void> {
+    this.wrapperElem.classList.remove('popup--show');
+    this.removeClickOutsideListener();
+  }
+
   onClick(): void {
     if (this.activeOn !== 'click') {
       return;

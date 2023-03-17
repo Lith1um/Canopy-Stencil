@@ -1,7 +1,9 @@
-import { Component, Event, EventEmitter, h, Prop, Watch } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 import dayjs from 'dayjs';
 import locale from 'dayjs/locale/en-gb';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+import utc from 'dayjs/plugin/utc';
 
 @Component({
   tag: 'cpy-date-picker',
@@ -16,13 +18,8 @@ export class DatePicker {
   @Prop({mutable: true})
   date: string;
 
-  @Watch('date')
-  onDateChange(date: string): void {
-    console.log(date);
-    if (date) {
-      this.dateObj = dayjs(date).locale({...locale});
-    }
-  }
+  @Prop()
+  format: string = 'DD/MM/YYYY';
 
   @Prop()
   size: 'small' | 'default' | 'large' = 'default';
@@ -30,29 +27,36 @@ export class DatePicker {
   @Event()
   dateChange: EventEmitter<string>;
 
-  dateObj: dayjs.Dayjs;
+  isoDate: string;
   popupElem: HTMLCpyPopupElement;
 
-  handleDateChange(date: string): void {
+  handleDateChange(date: string, hidePopup = true): void {
+    console.log('handleDateChange', date);
+
     this.date = date;
     this.dateChange.emit(date);
-    this.popupElem.togglePopup();
+
+    if (hidePopup) {
+      this.popupElem.hidePopup();
+    }
   }
 
-  handleInputChange(event: Event): void {
+  handleBlur(event: Event): void {
     const text = (event.target as HTMLInputElement).value;
-    console.log(text, 'is valid', dayjs(text, 'MM/DD/YYYY').isValid());
-    if (dayjs(text, 'MM/DD/YYYY').isValid()) {
-      this.handleDateChange(text);
-      return;
+    console.log(text, 'is valid', dayjs(text, this.format, 'en-gb').isValid());
+    // console.log('date === input value', this.date, text);
+    // console.log(dayjs.utc(text, this.format, false));
+    if (dayjs(text, this.format, 'en-gb').isValid()) {
+      return this.handleDateChange(dayjs(text, this.format, 'en-gb').toISOString(), false);
     }
     // else some form of validation check for the input
   }
 
   componentWillLoad(): void {
     dayjs.extend(localizedFormat);
-
-    this.onDateChange(this.date);
+    dayjs.extend(customParseFormat);
+    dayjs.extend(utc);
+    dayjs.locale(locale);
   }
 
   render() {
@@ -61,11 +65,13 @@ export class DatePicker {
       [`date-picker--${this.size}`]: !!this.size
     };
 
+    const date = dayjs(this.date, this.format, 'en-gb');
+
     return (
       <label class={classes}>
         {this.label}
         <div class="date-picker__input">
-          <input type="text" value={this.dateObj?.format('L')} onInput={e => this.handleInputChange(e)}/>
+          <input type="text" value={date.isValid() ? date.format(this.format) : ''} onBlur={e => this.handleBlur(e)}/>
           <cpy-popup position="bottom-end" offset={2} ref={(el) => this.popupElem = el as HTMLCpyPopupElement}>
             <cpy-button icon type="basic" size="small">
               <cpy-icon>today</cpy-icon>

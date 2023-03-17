@@ -52,6 +52,9 @@ export namespace Components {
         "size": ButtonSize;
         "type": ButtonAppearance;
     }
+    interface CpyCalendar {
+        "date": string;
+    }
     interface CpyCard {
     }
     interface CpyCarousel {
@@ -85,6 +88,7 @@ export namespace Components {
     }
     interface CpyDatePicker {
         "date": string;
+        "format": string;
         "label": string;
         "size": 'small' | 'default' | 'large';
     }
@@ -142,9 +146,11 @@ export namespace Components {
     }
     interface CpyPopup {
         "activeOn": 'hover' | 'click';
+        "hidePopup": () => Promise<void>;
         "offset": number;
         "position": Placement;
         "recalculatePosition": () => Promise<void>;
+        "showPopup": () => Promise<void>;
         "togglePopup": () => Promise<void>;
     }
     interface CpySpinner {
@@ -254,6 +260,12 @@ declare global {
     var HTMLCpyButtonElement: {
         prototype: HTMLCpyButtonElement;
         new (): HTMLCpyButtonElement;
+    };
+    interface HTMLCpyCalendarElement extends Components.CpyCalendar, HTMLStencilElement {
+    }
+    var HTMLCpyCalendarElement: {
+        prototype: HTMLCpyCalendarElement;
+        new (): HTMLCpyCalendarElement;
     };
     interface HTMLCpyCardElement extends Components.CpyCard, HTMLStencilElement {
     }
@@ -423,6 +435,7 @@ declare global {
         "cpy-avatar": HTMLCpyAvatarElement;
         "cpy-badge": HTMLCpyBadgeElement;
         "cpy-button": HTMLCpyButtonElement;
+        "cpy-calendar": HTMLCpyCalendarElement;
         "cpy-card": HTMLCpyCardElement;
         "cpy-carousel": HTMLCpyCarouselElement;
         "cpy-code-block": HTMLCpyCodeBlockElement;
@@ -486,6 +499,10 @@ declare namespace LocalJSX {
         "size"?: ButtonSize;
         "type"?: ButtonAppearance;
     }
+    interface CpyCalendar {
+        "date"?: string;
+        "onDateChange"?: (event: CpyCalendarCustomEvent<string>) => void;
+    }
     interface CpyCard {
     }
     interface CpyCarousel {
@@ -518,6 +535,7 @@ declare namespace LocalJSX {
     }
     interface CpyDatePicker {
         "date"?: string;
+        "format"?: string;
         "label"?: string;
         "onDateChange"?: (event: CpyDatePickerCustomEvent<string>) => void;
         "size"?: 'small' | 'default' | 'large';
@@ -609,6 +627,7 @@ declare namespace LocalJSX {
         "cpy-avatar": CpyAvatar;
         "cpy-badge": CpyBadge;
         "cpy-button": CpyButton;
+        "cpy-calendar": CpyCalendar;
         "cpy-card": CpyCard;
         "cpy-carousel": CpyCarousel;
         "cpy-code-block": CpyCodeBlock;
@@ -647,6 +666,7 @@ declare module "@stencil/core" {
             "cpy-avatar": LocalJSX.CpyAvatar & JSXBase.HTMLAttributes<HTMLCpyAvatarElement>;
             "cpy-badge": LocalJSX.CpyBadge & JSXBase.HTMLAttributes<HTMLCpyBadgeElement>;
             "cpy-button": LocalJSX.CpyButton & JSXBase.HTMLAttributes<HTMLCpyButtonElement>;
+            "cpy-calendar": LocalJSX.CpyCalendar & JSXBase.HTMLAttributes<HTMLCpyCalendarElement>;
             "cpy-card": LocalJSX.CpyCard & JSXBase.HTMLAttributes<HTMLCpyCardElement>;
             "cpy-carousel": LocalJSX.CpyCarousel & JSXBase.HTMLAttributes<HTMLCpyCarouselElement>;
             "cpy-code-block": LocalJSX.CpyCodeBlock & JSXBase.HTMLAttributes<HTMLCpyCodeBlockElement>;

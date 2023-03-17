@@ -4,6 +4,7 @@ import locale from 'dayjs/locale/en-gb';
 import weekdayPlugin from 'dayjs/plugin/weekday';
 import objectPlugin from 'dayjs/plugin/toObject';
 import isTodayPlugin from 'dayjs/plugin/isToday';
+import utc from 'dayjs/plugin/utc';
 
 @Component({
   tag: 'cpy-calendar',
@@ -18,8 +19,8 @@ export class Calendar {
   @Watch('date')
   onDateChanged(newVal: string): void {
     this.currentMonth = newVal
-      ? dayjs(newVal).locale({...locale})
-      : dayjs().locale({...locale});
+      ? dayjs.utc(newVal)
+      : dayjs.utc();
 
     this.getAllDays();
   }
@@ -28,7 +29,7 @@ export class Calendar {
   dateChange: EventEmitter<string>;
 
   @State()
-  currentMonth = dayjs().locale({...locale});
+  currentMonth = dayjs.utc();
 
   @State()
   daysOfMonth: any[];
@@ -66,6 +67,8 @@ export class Calendar {
     dayjs.extend(weekdayPlugin);
     dayjs.extend(objectPlugin);
     dayjs.extend(isTodayPlugin);
+    dayjs.extend(utc);
+    dayjs.locale(locale);
 
     this.onDateChanged(this.date);
     this.getAllDays();
