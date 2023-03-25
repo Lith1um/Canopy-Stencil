@@ -126,8 +126,6 @@ A full list of the configurable colours is below (along with their defaulted val
      like white text on coloured background for alerts */
   --cpy-dm-text-override: currentColor;
 
-  --cpy-bg-hover: rgba(0, 0, 0, 0.05);
-
   /* based on tailwind colours */
   --cpy-bg-light-rgb: 250, 250, 250; /* zinc-50 */
   --cpy-bg-white-rgb: 255, 255, 255;
@@ -177,8 +175,6 @@ html.dark {
   /* overrides the text colour in dark mode for edge cases
      like white text on coloured background for alerts */
   --cpy-dm-text-override: rgb(255, 255, 255);
-
-  --cpy-bg-hover: rgba(0, 0, 0, 0.05);
 
   /* based on tailwind colours */
   --cpy-bg-light-rgb: 15, 23, 42; /* slate-900 */
