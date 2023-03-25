@@ -113,8 +113,8 @@ export namespace Components {
         "required": boolean;
         "size": InputSize;
         "type": 'text' | 'number' | 'email' | 'password';
-        "validators": Array<string | ValidatorEntry | Validator<string>>;
-        "value": any;
+        "validators": Array<string | ValidatorEntry | Validator<string | number>>;
+        "value": string | number;
     }
     interface CpyInputBase {
         "disabled": boolean;
@@ -611,12 +611,12 @@ declare namespace LocalJSX {
     interface CpyInput {
         "disabled"?: boolean;
         "label"?: string;
-        "onValueChange"?: (event: CpyInputCustomEvent<string>) => void;
+        "onValueChange"?: (event: CpyInputCustomEvent<string | number>) => void;
         "required"?: boolean;
         "size"?: InputSize;
         "type"?: 'text' | 'number' | 'email' | 'password';
-        "validators"?: Array<string | ValidatorEntry | Validator<string>>;
-        "value"?: any;
+        "validators"?: Array<string | ValidatorEntry | Validator<string | number>>;
+        "value"?: string | number;
     }
     interface CpyInputBase {
         "disabled"?: boolean;

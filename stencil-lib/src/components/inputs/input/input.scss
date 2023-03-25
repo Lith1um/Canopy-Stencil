@@ -50,6 +50,18 @@
       @apply flex-1 bg-transparent leading-6;
     }
 
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+
     ::slotted(cpy-icon) {
       @apply icon-size-5 #{!important};
     }

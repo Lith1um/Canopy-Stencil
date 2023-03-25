@@ -1,4 +1,5 @@
 import { Component, Event, EventEmitter, h, Method, Prop, State } from '@stencil/core';
+import { BaseInput } from '../interfaces/base-input.interface';
 import { InputSize } from '../types/input-size.type';
 import { ValidatorEntry } from '../validation/types/validator-entry.type';
 import { Validator } from '../validation/types/validator.type';
@@ -9,13 +10,13 @@ import { defaultValidator, getValidator } from '../validation/validator';
   styleUrl: 'input.scss',
   shadow: true,
 })
-export class Input {
+export class Input implements BaseInput<string | number> {
 
   @Prop()
   type: 'text' | 'number' | 'email' | 'password' = 'text';
 
   @Prop({mutable: true})
-  value: any;
+  value: string | number;
 
   @Prop()
   label: string;
@@ -30,15 +31,15 @@ export class Input {
   size: InputSize = 'default';
 
   @Prop()
-  validators: Array<string | ValidatorEntry | Validator<string>>;
+  validators: Array<string | ValidatorEntry | Validator<string | number>>;
   
   @Event()
-  valueChange: EventEmitter<string>;
+  valueChange: EventEmitter<string | number>;
 
   @State()
   interacted: boolean = false;
 
-  _validator: Validator<string> = defaultValidator;
+  _validator: Validator<string | number> = defaultValidator;
 
   @Method()
   async isValid(): Promise<boolean> {
@@ -60,8 +61,17 @@ export class Input {
 
   handleChange(e: Event) {
     const target = e.target as HTMLInputElement
-    this.value = target.value;
-    this.valueChange.emit(this.value);
+
+    const value = this.type === 'number'
+      ? target.value.length > 0 ? parseFloat(target.value) : undefined
+      : target.value;
+
+    this.value = value;
+    this.valueChange.emit(value);
+  }
+
+  handleBlur(): void {
+    this.interacted = true;
   }
 
   componentWillLoad() {
@@ -72,7 +82,7 @@ export class Input {
     this._validator = getValidator(this.getValidators());
   }
 
-  private getValidators(): Array<string | ValidatorEntry | Validator<string>> {
+  getValidators(): Array<string | ValidatorEntry | Validator<string>> {
     const validators = [this.type, ...(this.validators ?? [])];
     
     if (this.required) {
@@ -108,12 +118,12 @@ export class Input {
           <slot name='prefix'/>
 
           <input
-            type={this.type === 'number' ? 'text' : this.type}
+            type={this.type}
             required={this.required}
             disabled={this.disabled}
             value={this.value}
             onInput={(e) => this.handleChange(e)}
-            onBlur={() => this.interacted = true}/>
+            onBlur={() => this.handleBlur()}/>
 
           <slot name='suffix'/>
         </div>

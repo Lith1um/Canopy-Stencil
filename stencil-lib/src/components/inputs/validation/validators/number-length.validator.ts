@@ -1,21 +1,20 @@
 import { Validator } from "../types/validator.type";
 
-export function getNumberLengthValidator(min: number, max: number): Validator<string> {
+export function getNumberLengthValidator(min: number, max: number): Validator<number> {
   return {
-    validate: (val: string) => {
-      const numVal = isNaN(parseFloat(val)) ? undefined : parseFloat(val);
-      if (numVal === undefined) {
+    validate: (val: number) => {
+      if (val === undefined) {
         return true;
       }
 
       if (min && max) {
-        return min <= numVal && numVal <= max;
+        return min <= val && val <= max;
       }
       if (min) {
-        return min <= numVal;
+        return min <= val;
       }
       if (max) {
-        return numVal <= max;
+        return val <= max;
       }
       return true;
     },

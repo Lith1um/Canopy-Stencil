@@ -127,7 +127,7 @@ html.dark {
 
   formValidation: () => {
     document.getElementById('getting-started-types').code = `// Validators input type
-Array<string | ValidatorEntry | Validator<string>>;
+validators: Array<string | ValidatorEntry | Validator<string>>;
 
 export interface ValidatorEntry {
   name: string;
@@ -393,7 +393,7 @@ export class CodeBlock {
     document.getElementById('input-props').tableData = [
       { name: 'type', description: 'Input type', type: "'text' | 'number' | 'email' | 'password'", default: "'text'", required: false },
       { name: 'disabled', description: 'Whether the input is disabled', type: "boolean", default: "", required: false },
-      { name: 'validators', description: 'list of validators for the input', type: "Array<string | ValidatorEntry | Validator<string>>", default: "", required: false },
+      { name: 'validators', description: 'list of validators for the input', type: "Array<string | ValidatorEntry | Validator<string | number>>", default: "", required: false },
       { name: 'value', description: 'Input value', type: "string", default: "", required: false },
       { name: 'size', description: 'Input size', type: "'small' | 'default' | 'large'", default: "'default'", required: false },
       { name: 'label', description: 'Label for input', type: "string", default: "", required: false },
@@ -499,6 +499,17 @@ export class CodeBlock {
   ];
 </script>`;
 
+    document.getElementById('context-menu-interface').code = `interface ContextMenuItem {
+  icon?: string;
+  separator?: boolean;
+  title: string;
+  description?: string;
+  url: string;
+  openInNewTab?: boolean;
+  function?: () => any;
+  children?: ContextMenuItem[];
+}`;
+
     document.getElementById('context-menu-props').tableData = [
       { name: 'items', description: 'Items to populate the menu with', type: 'ContextMenuItem[]', default: "", required: true }
     ];
@@ -564,6 +575,22 @@ export class CodeBlock {
     { title: 'Basic Nav Item w/ Icon', icon: 'home' }
   ];
 </script>`;
+
+    document.getElementById('nav-menu-interface').code = `type NavMenuItemType = 'basic' | 'group' | 'collapsible';
+
+interface NavMenuItem {
+  icon?: string;
+  separator?: boolean;
+  title: string;
+  description?: string;
+  type: NavMenuItemType;
+  url: string;
+  active?: boolean;
+  looseMatch?: boolean;
+  openInNewTab?: boolean;
+  function?: any;
+  children?: NavMenuItem[];
+}`;
 
     document.getElementById('nav-menu-props').tableData = [
       { name: 'items', description: 'Items to populate the navigation menu with', type: 'NavMenuItem[]', default: "", required: true }

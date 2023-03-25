@@ -6,7 +6,7 @@ export interface ContextMenuItem {
   description?: string;
   url: string;
   openInNewTab?: boolean;
-  function?: any;
+  function?: () => any;
   children?: ContextMenuItem[];
 
 }
