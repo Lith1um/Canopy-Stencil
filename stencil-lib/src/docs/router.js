@@ -51,6 +51,7 @@ const menuItems = navMenuElement.items = [
       { title: 'Context Menu', type: 'basic', url: '/comps/contextMenu', function: closeMenuOnMobileNav },
       { title: 'Icon', type: 'basic', url: '/comps/icon', function: closeMenuOnMobileNav },
       { title: 'Link', type: 'basic', url: '/comps/link', function: closeMenuOnMobileNav },
+      { title: 'Progress Bar', type: 'basic', url: '/comps/progressBar', function: closeMenuOnMobileNav },
       { title: 'Spinner', type: 'basic', url: '/comps/spinner', function: closeMenuOnMobileNav },
       { title: 'Stack', type: 'basic', url: '/comps/stack', function: closeMenuOnMobileNav },
       { title: 'Table', type: 'basic', url: '/comps/table', function: closeMenuOnMobileNav },

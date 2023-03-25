@@ -1,0 +1,68 @@
+:host {
+  @apply block;
+}
+
+.progress-bar {
+  --bg-colour: var(--cpy-progress-bar-bg, var(--cpy-bg-primary));
+
+  @apply relative h-4 w-full rounded overflow-hidden;
+  background-color: var(--cpy-bg-white);
+  border-color: var(--bg-colour);
+
+  &--border {
+    @apply border;
+  }
+
+  &--indeterminate {
+    .progress-bar__progress {
+      animation: indeterminate-progress-bar 1.5s infinite;
+      @apply absolute bottom-0 top-0 h-auto w-2/5 #{'!important'};
+    }
+  }
+
+  &__progress {
+    @apply h-full max-w-full transition-all duration-300;
+    background-color: var(--bg-colour);
+  }
+
+  &-size--small {
+    @apply h-2;
+  }
+
+  &-size--large {
+    @apply h-6;
+  }
+  
+  &-type--primary {
+    --bg-colour: var(--cpy-bg-primary);
+  }
+  
+  &-type--secondary {
+    --bg-colour: var(--cpy-bg-secondary);
+  }
+
+  &-type--basic {
+    --bg-colour: var(--cpy-bg-basic);
+  }
+
+  &-type--success {
+    --bg-colour: var(--cpy-bg-success);
+  }
+
+  &-type--warn {
+    --bg-colour: var(--cpy-bg-warn);
+  }
+
+  &-type--error {
+    --bg-colour: var(--cpy-bg-error);
+  }
+}
+
+@keyframes indeterminate-progress-bar {
+  from {
+      left: -50%;
+  }
+  to {
+      left: 100%;
+  }
+}
