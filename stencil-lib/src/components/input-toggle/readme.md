@@ -7,19 +7,59 @@
 
 ## Properties
 
-| Property  | Attribute | Description | Type                              | Default     |
-| --------- | --------- | ----------- | --------------------------------- | ----------- |
-| `checked` | `checked` |             | `boolean`                         | `false`     |
-| `label`   | `label`   |             | `string`                          | `undefined` |
-| `size`    | `size`    |             | `"default" \| "large" \| "small"` | `'default'` |
+| Property      | Attribute      | Description | Type                                                 | Default     |
+| ------------- | -------------- | ----------- | ---------------------------------------------------- | ----------- |
+| `disabled`    | `disabled`     |             | `boolean`                                            | `false`     |
+| `label`       | `label`        |             | `string`                                             | `undefined` |
+| `required`    | `required`     |             | `boolean`                                            | `false`     |
+| `size`        | `size`         |             | `"default" \| "large" \| "small"`                    | `'default'` |
+| `switchAfter` | `switch-after` |             | `boolean`                                            | `false`     |
+| `validators`  | --             |             | `(string \| ValidatorEntry \| Validator<boolean>)[]` | `undefined` |
+| `value`       | `value`        |             | `boolean`                                            | `false`     |
 
 
 ## Events
 
-| Event           | Description | Type                   |
-| --------------- | ----------- | ---------------------- |
-| `checkedChange` |             | `CustomEvent<boolean>` |
+| Event         | Description | Type                   |
+| ------------- | ----------- | ---------------------- |
+| `valueChange` |             | `CustomEvent<boolean>` |
 
+
+## Methods
+
+### `isValid() => Promise<boolean>`
+
+
+
+#### Returns
+
+Type: `Promise<boolean>`
+
+
+
+### `markAsTouched() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
+## Dependencies
+
+### Depends on
+
+- [cpy-input-base](../inputs)
+
+### Graph
+```mermaid
+graph TD;
+  cpy-input-toggle --> cpy-input-base
+  style cpy-input-toggle fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

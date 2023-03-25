@@ -22,6 +22,7 @@ export const DIRECTIVES = [
   d.CpyExpandCollapse,
   d.CpyIcon,
   d.CpyInput,
+  d.CpyInputBase,
   d.CpyInputToggle,
   d.CpyLink,
   d.CpyNavMenu,

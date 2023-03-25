@@ -7,12 +7,16 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type                              | Default     |
-| ---------- | ---------- | ----------- | --------------------------------- | ----------- |
-| `label`    | `label`    |             | `string`                          | `undefined` |
-| `required` | `required` |             | `boolean`                         | `undefined` |
-| `size`     | `size`     |             | `"default" \| "large" \| "small"` | `'default'` |
-| `value`    | `value`    |             | `string`                          | `undefined` |
+| Property      | Attribute      | Description | Type                              | Default     |
+| ------------- | -------------- | ----------- | --------------------------------- | ----------- |
+| `disabled`    | `disabled`     |             | `boolean`                         | `undefined` |
+| `error`       | `error`        |             | `string`                          | `undefined` |
+| `interacted`  | `interacted`   |             | `boolean`                         | `false`     |
+| `label`       | `label`        |             | `string`                          | `undefined` |
+| `noContainer` | `no-container` |             | `boolean`                         | `false`     |
+| `required`    | `required`     |             | `boolean`                         | `undefined` |
+| `size`        | `size`         |             | `"default" \| "large" \| "small"` | `'default'` |
+| `value`       | `value`        |             | `any`                             | `undefined` |
 
 
 ## Events
@@ -21,6 +25,19 @@
 | ------------- | ----------- | --------------------- |
 | `valueChange` |             | `CustomEvent<string>` |
 
+
+## Dependencies
+
+### Used by
+
+ - [cpy-input-toggle](../input-toggle)
+
+### Graph
+```mermaid
+graph TD;
+  cpy-input-toggle --> cpy-input-base
+  style cpy-input-base fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

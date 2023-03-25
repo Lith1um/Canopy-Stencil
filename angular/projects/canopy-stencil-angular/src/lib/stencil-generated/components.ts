@@ -484,30 +484,59 @@ export class CpyInput {
 }
 
 
-export declare interface CpyInputToggle extends Components.CpyInputToggle {
+export declare interface CpyInputBase extends Components.CpyInputBase {
   /**
    *  
    */
-  checkedChange: EventEmitter<CustomEvent<boolean>>;
+  valueChange: EventEmitter<CustomEvent<string>>;
 
 }
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['checked', 'label', 'size']
+  inputs: ['disabled', 'error', 'interacted', 'label', 'noContainer', 'required', 'size', 'value']
+})
+@Component({
+  selector: 'cpy-input-base',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['disabled', 'error', 'interacted', 'label', 'noContainer', 'required', 'size', 'value']
+})
+export class CpyInputBase {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['valueChange']);
+  }
+}
+
+
+export declare interface CpyInputToggle extends Components.CpyInputToggle {
+  /**
+   *  
+   */
+  valueChange: EventEmitter<CustomEvent<boolean>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['disabled', 'label', 'required', 'size', 'switchAfter', 'validators', 'value'],
+  methods: ['isValid', 'markAsTouched']
 })
 @Component({
   selector: 'cpy-input-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['checked', 'label', 'size']
+  inputs: ['disabled', 'label', 'required', 'size', 'switchAfter', 'validators', 'value']
 })
 export class CpyInputToggle {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['checkedChange']);
+    proxyOutputs(this, this.el, ['valueChange']);
   }
 }
 
