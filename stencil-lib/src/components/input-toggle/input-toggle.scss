@@ -11,6 +11,21 @@
     }
   }
 
+  &--invalid {
+    &.toggle--required {
+      .toggle__label::after {
+        color: var(--cpy-text-error);
+      }
+    }
+  }
+
+  &--required {
+    .toggle__label::after {
+      @apply ml-0.5;
+      content: "*";
+    }
+  }
+
   &--large {
     @apply gap-5 text-lg;
 
@@ -58,6 +73,10 @@
     
     input:checked + .toggle__slider:before {
       @apply left-full -translate-x-full;
+    }
+
+    &--after {
+      @apply order-2;
     }
   }
 

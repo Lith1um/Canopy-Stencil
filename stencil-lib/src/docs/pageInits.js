@@ -411,7 +411,7 @@ export class CodeBlock {
   },
 
   toggle: () => {
-    document.getElementById('toggle-html-example').code = `<cpy-input-toggle checked size="large" label="Large toggle"></cpy-input-toggle>`;
+    document.getElementById('toggle-html-example').code = `<cpy-input-toggle size="large" label="Large toggle"></cpy-input-toggle>`;
 
     document.getElementById('toggle-props').tableData = [
       { name: 'checked', description: 'Whether the is checked', type: "boolean", default: "", required: false },

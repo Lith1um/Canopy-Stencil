@@ -1,10 +1,10 @@
-.input {
+.input-base {
   &:focus-within {
-    .input__label--required::after {
+    .input-base__label--required::after {
       color: var(--cpy-text-primary);
     }
 
-    .input__container {
+    .input-base__container {
       border-color: var(--cpy-bg-primary);
     }
   }
@@ -12,30 +12,36 @@
   &--disabled {
     @apply cursor-default;
 
-    .input__label {
+    .input-base__label {
       color: var(--cpy-text-disabled) !important;
     }
 
-    .input__container {
+    .input-base__container {
       color: var(--cpy-text-disabled) !important;
       background-color: var(--cpy-bg-disabled) !important;
     }
   }
 
   &--invalid {
-    .input__label--required::after {
+    .input-base__label--required::after {
       color: var(--cpy-text-error);
     }
 
-    .input__container {
+    .input-base__container {
       border-color: var(--cpy-bg-error);
+    }
+  }
+
+  &--no-container {
+    .input-base__container {
+      @apply border-0 p-0 bg-transparent;
     }
   }
 
   &__label {
     @apply text-sm mb-1;
 
-    &.input__label--required::after {
+    &.input-base__label--required::after {
       @apply ml-0.5;
       content: "*";
     }
@@ -46,7 +52,7 @@
     background-color: var(--cpy-bg-white);
     border-color: var(--cpy-bg-basic-border);
 
-    input {
+    .input-base__input {
       @apply flex-1 bg-transparent leading-6;
     }
 
@@ -61,14 +67,14 @@
   }
 
   &--small {
-    .input__label {
+    .input-base__label {
       @apply text-xs;
     }
 
-    .input__container {
+    .input-base__container {
       @apply text-sm p-1.5 gap-1;
 
-      input {
+      .input-base__input {
         @apply leading-5;
       }
 
@@ -79,14 +85,14 @@
   }
 
   &--large {
-    .input__label {
+    .input-base__label {
       @apply text-base;
     }
 
-    .input__container {
+    .input-base__container {
       @apply text-lg p-2.5 gap-2;
 
-      input {
+      .input-base__input {
         @apply leading-7;
       }
 
@@ -95,7 +101,7 @@
       }
     }
 
-    .input__errors {
+    .input-base__errors {
       @apply text-sm;
     }
   }
