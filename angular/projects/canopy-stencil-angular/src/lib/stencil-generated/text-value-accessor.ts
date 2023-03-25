@@ -5,23 +5,20 @@ import { ValueAccessor } from './value-accessor';
 
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: 'cpy-toggle',
+  selector: 'cpy-input',
   host: {
     '(valueChange)': 'handleChangeEvent($event.target.value)'
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: BooleanValueAccessor,
+      useExisting: TextValueAccessor,
       multi: true
     }
   ]
 })
-export class BooleanValueAccessor extends ValueAccessor {
+export class TextValueAccessor extends ValueAccessor {
   constructor(el: ElementRef) {
     super(el);
-  }
-  writeValue(value: any) {
-    this.el.nativeElement.checked = this.lastValue = value == null ? false : value;
   }
 }

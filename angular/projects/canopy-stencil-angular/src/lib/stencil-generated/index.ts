@@ -29,6 +29,7 @@ export const DIRECTIVES = [
   d.CpyNavMenuItem,
   d.CpyPageContent,
   d.CpyPopup,
+  d.CpyProgressBar,
   d.CpySpinner,
   d.CpyStack,
   d.CpyTable,

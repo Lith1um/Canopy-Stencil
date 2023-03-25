@@ -654,6 +654,27 @@ export class CpyPopup {
 }
 
 
+export declare interface CpyProgressBar extends Components.CpyProgressBar {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['border', 'indeterminate', 'size', 'type', 'value']
+})
+@Component({
+  selector: 'cpy-progress-bar',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['border', 'indeterminate', 'size', 'type', 'value']
+})
+export class CpyProgressBar {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface CpySpinner extends Components.CpySpinner {}
 
 @ProxyCmp({
