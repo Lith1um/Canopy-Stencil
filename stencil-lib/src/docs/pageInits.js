@@ -102,6 +102,7 @@ html.dark {
   
   --cpy-tooltip-bg: var(--cpy-bg-dark);
   --cpy-tooltip-text: var(--cpy-bg-white);
+  --cpy-progress-bar-bg: var(--cpy-bg-primary);
 }`;
 
     document.getElementById('colours-pallette-dark-css').code = `html.dark {
