@@ -11,7 +11,7 @@ export interface NavMenuItem {
   active?: boolean;
   looseMatch?: boolean;
   openInNewTab?: boolean;
-  function?: any;
+  function?: () => any;
   children?: NavMenuItem[];
 
 }

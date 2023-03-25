@@ -15,7 +15,8 @@
 
 @media(min-width: 640px) {
   .drawer {
-    @apply w-auto min-w-[300px] border-r z-20;
+    @apply w-auto border-r z-20;
+    scrollbar-gutter: stable both-edges;
 
     &__close {
       @apply hidden;
