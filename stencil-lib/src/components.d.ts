@@ -14,6 +14,7 @@ import { InputSize } from "./components/inputs/types/input-size.type";
 import { ValidatorEntry } from "./components/inputs/validation/types/validator-entry.type";
 import { Validator } from "./components/inputs/validation/types/validator.type";
 import { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
+import { ProgressBarAppearance, ProgressBarSize } from "./components/progress-bar/progress-bar.type";
 import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
 import { ToastPosition } from "./components/toast/toast.type";
 export namespace Components {
@@ -154,6 +155,13 @@ export namespace Components {
         "activeOn": 'hover' | 'click';
         "position": 'bottom-start' | 'top-start' | 'left-start' | 'right-start';
         "recalculatePosition": () => Promise<void>;
+    }
+    interface CpyProgressBar {
+        "border": boolean;
+        "indeterminate": boolean;
+        "size": ProgressBarSize;
+        "type": ProgressBarAppearance;
+        "value": number;
     }
     interface CpySpinner {
         "size": SpinnerSize;
@@ -396,6 +404,12 @@ declare global {
         prototype: HTMLCpyPopupElement;
         new (): HTMLCpyPopupElement;
     };
+    interface HTMLCpyProgressBarElement extends Components.CpyProgressBar, HTMLStencilElement {
+    }
+    var HTMLCpyProgressBarElement: {
+        prototype: HTMLCpyProgressBarElement;
+        new (): HTMLCpyProgressBarElement;
+    };
     interface HTMLCpySpinnerElement extends Components.CpySpinner, HTMLStencilElement {
     }
     var HTMLCpySpinnerElement: {
@@ -460,6 +474,7 @@ declare global {
         "cpy-nav-menu-item": HTMLCpyNavMenuItemElement;
         "cpy-page-content": HTMLCpyPageContentElement;
         "cpy-popup": HTMLCpyPopupElement;
+        "cpy-progress-bar": HTMLCpyProgressBarElement;
         "cpy-spinner": HTMLCpySpinnerElement;
         "cpy-stack": HTMLCpyStackElement;
         "cpy-table": HTMLCpyTableElement;
@@ -603,6 +618,13 @@ declare namespace LocalJSX {
         "activeOn"?: 'hover' | 'click';
         "position"?: 'bottom-start' | 'top-start' | 'left-start' | 'right-start';
     }
+    interface CpyProgressBar {
+        "border"?: boolean;
+        "indeterminate"?: boolean;
+        "size"?: ProgressBarSize;
+        "type"?: ProgressBarAppearance;
+        "value"?: number;
+    }
     interface CpySpinner {
         "size"?: SpinnerSize;
         "type"?: SpinnerAppearance;
@@ -660,6 +682,7 @@ declare namespace LocalJSX {
         "cpy-nav-menu-item": CpyNavMenuItem;
         "cpy-page-content": CpyPageContent;
         "cpy-popup": CpyPopup;
+        "cpy-progress-bar": CpyProgressBar;
         "cpy-spinner": CpySpinner;
         "cpy-stack": CpyStack;
         "cpy-table": CpyTable;
@@ -699,6 +722,7 @@ declare module "@stencil/core" {
             "cpy-nav-menu-item": LocalJSX.CpyNavMenuItem & JSXBase.HTMLAttributes<HTMLCpyNavMenuItemElement>;
             "cpy-page-content": LocalJSX.CpyPageContent & JSXBase.HTMLAttributes<HTMLCpyPageContentElement>;
             "cpy-popup": LocalJSX.CpyPopup & JSXBase.HTMLAttributes<HTMLCpyPopupElement>;
+            "cpy-progress-bar": LocalJSX.CpyProgressBar & JSXBase.HTMLAttributes<HTMLCpyProgressBarElement>;
             "cpy-spinner": LocalJSX.CpySpinner & JSXBase.HTMLAttributes<HTMLCpySpinnerElement>;
             "cpy-stack": LocalJSX.CpyStack & JSXBase.HTMLAttributes<HTMLCpyStackElement>;
             "cpy-table": LocalJSX.CpyTable & JSXBase.HTMLAttributes<HTMLCpyTableElement>;
