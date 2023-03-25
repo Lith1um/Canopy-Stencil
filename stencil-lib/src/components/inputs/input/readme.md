@@ -7,22 +7,22 @@
 
 ## Properties
 
-| Property     | Attribute  | Description | Type                                                | Default     |
-| ------------ | ---------- | ----------- | --------------------------------------------------- | ----------- |
-| `disabled`   | `disabled` |             | `boolean`                                           | `undefined` |
-| `label`      | `label`    |             | `string`                                            | `undefined` |
-| `required`   | `required` |             | `boolean`                                           | `undefined` |
-| `size`       | `size`     |             | `"default" \| "large" \| "small"`                   | `'default'` |
-| `type`       | `type`     |             | `"email" \| "number" \| "password" \| "text"`       | `'text'`    |
-| `validators` | --         |             | `(string \| ValidatorEntry \| Validator<string>)[]` | `undefined` |
-| `value`      | `value`    |             | `any`                                               | `undefined` |
+| Property     | Attribute  | Description | Type                                                          | Default     |
+| ------------ | ---------- | ----------- | ------------------------------------------------------------- | ----------- |
+| `disabled`   | `disabled` |             | `boolean`                                                     | `undefined` |
+| `label`      | `label`    |             | `string`                                                      | `undefined` |
+| `required`   | `required` |             | `boolean`                                                     | `undefined` |
+| `size`       | `size`     |             | `"default" \| "large" \| "small"`                             | `'default'` |
+| `type`       | `type`     |             | `"email" \| "number" \| "password" \| "text"`                 | `'text'`    |
+| `validators` | --         |             | `(string \| ValidatorEntry \| Validator<string \| number>)[]` | `undefined` |
+| `value`      | `value`    |             | `number \| string`                                            | `undefined` |
 
 
 ## Events
 
-| Event         | Description | Type                  |
-| ------------- | ----------- | --------------------- |
-| `valueChange` |             | `CustomEvent<string>` |
+| Event         | Description | Type                            |
+| ------------- | ----------- | ------------------------------- |
+| `valueChange` |             | `CustomEvent<number \| string>` |
 
 
 ## Methods

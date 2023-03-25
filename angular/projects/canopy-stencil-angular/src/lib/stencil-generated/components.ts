@@ -459,7 +459,7 @@ export declare interface CpyInput extends Components.CpyInput {
   /**
    *  
    */
-  valueChange: EventEmitter<CustomEvent<string>>;
+  valueChange: EventEmitter<CustomEvent<string | number>>;
 
 }
 
