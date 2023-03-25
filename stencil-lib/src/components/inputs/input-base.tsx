@@ -1,4 +1,4 @@
-import { Component, Element, Event, EventEmitter, h, Prop } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 import { InputSize } from './types/input-size.type';
 
 @Component({
@@ -7,9 +7,6 @@ import { InputSize } from './types/input-size.type';
   shadow: true,
 })
 export class InputBase {
-
-  @Element()
-  host: HTMLElement;
 
   @Prop({mutable: true})
   value: any;
