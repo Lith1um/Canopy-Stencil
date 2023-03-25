@@ -24,6 +24,7 @@
  - [cpy-carousel](../carousel)
  - [cpy-dialog](../dialog)
  - [cpy-drawer](../drawer-container/drawer)
+ - [cpy-tabs](../tabs)
 
 ### Graph
 ```mermaid
@@ -32,6 +33,7 @@ graph TD;
   cpy-carousel --> cpy-button
   cpy-dialog --> cpy-button
   cpy-drawer --> cpy-button
+  cpy-tabs --> cpy-button
   style cpy-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

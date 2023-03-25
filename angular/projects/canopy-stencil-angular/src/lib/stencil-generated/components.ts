@@ -717,6 +717,54 @@ export class CpyStack {
 }
 
 
+export declare interface CpyTabContent extends Components.CpyTabContent {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  methods: ['unselect', 'select']
+})
+@Component({
+  selector: 'cpy-tab-content',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class CpyTabContent {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface CpyTabHeader extends Components.CpyTabHeader {
+  /**
+   *  
+   */
+  selected: EventEmitter<CustomEvent<string>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['headerId', 'tabTitle']
+})
+@Component({
+  selector: 'cpy-tab-header',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['headerId', 'tabTitle']
+})
+export class CpyTabHeader {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['selected']);
+  }
+}
+
+
 export declare interface CpyTable extends Components.CpyTable {}
 
 @ProxyCmp({
@@ -734,6 +782,34 @@ export class CpyTable {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface CpyTabs extends Components.CpyTabs {
+  /**
+   *  
+   */
+  tabChanged: EventEmitter<CustomEvent<number>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['activeIndex']
+})
+@Component({
+  selector: 'cpy-tabs',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['activeIndex']
+})
+export class CpyTabs {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['tabChanged']);
   }
 }
 

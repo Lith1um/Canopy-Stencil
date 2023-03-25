@@ -17,6 +17,7 @@
  - [cpy-dialog](../dialog)
  - [cpy-drawer](../drawer-container/drawer)
  - [cpy-nav-menu-item](../nav-menu/nav-menu-item)
+ - [cpy-tabs](../tabs)
 
 ### Graph
 ```mermaid
@@ -29,6 +30,7 @@ graph TD;
   cpy-dialog --> cpy-icon
   cpy-drawer --> cpy-icon
   cpy-nav-menu-item --> cpy-icon
+  cpy-tabs --> cpy-icon
   style cpy-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
