@@ -171,8 +171,19 @@ export namespace Components {
         "direction": 'left' | 'right';
         "overlap": number;
     }
+    interface CpyTabContent {
+        "select": () => Promise<void>;
+        "unselect": () => Promise<void>;
+    }
+    interface CpyTabHeader {
+        "headerId": string;
+        "tabTitle": string;
+    }
     interface CpyTable {
         "tableData": { [key: string]: string | number | boolean | null | undefined }[];
+    }
+    interface CpyTabs {
+        "activeIndex": number;
     }
     interface CpyToast {
         "close": () => Promise<void>;
@@ -236,6 +247,14 @@ export interface CpyInputToggleCustomEvent<T> extends CustomEvent<T> {
 export interface CpyNavMenuItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyNavMenuItemElement;
+}
+export interface CpyTabHeaderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyTabHeaderElement;
+}
+export interface CpyTabsCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyTabsElement;
 }
 export interface CpyToastCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -422,11 +441,29 @@ declare global {
         prototype: HTMLCpyStackElement;
         new (): HTMLCpyStackElement;
     };
+    interface HTMLCpyTabContentElement extends Components.CpyTabContent, HTMLStencilElement {
+    }
+    var HTMLCpyTabContentElement: {
+        prototype: HTMLCpyTabContentElement;
+        new (): HTMLCpyTabContentElement;
+    };
+    interface HTMLCpyTabHeaderElement extends Components.CpyTabHeader, HTMLStencilElement {
+    }
+    var HTMLCpyTabHeaderElement: {
+        prototype: HTMLCpyTabHeaderElement;
+        new (): HTMLCpyTabHeaderElement;
+    };
     interface HTMLCpyTableElement extends Components.CpyTable, HTMLStencilElement {
     }
     var HTMLCpyTableElement: {
         prototype: HTMLCpyTableElement;
         new (): HTMLCpyTableElement;
+    };
+    interface HTMLCpyTabsElement extends Components.CpyTabs, HTMLStencilElement {
+    }
+    var HTMLCpyTabsElement: {
+        prototype: HTMLCpyTabsElement;
+        new (): HTMLCpyTabsElement;
     };
     interface HTMLCpyToastElement extends Components.CpyToast, HTMLStencilElement {
     }
@@ -477,7 +514,10 @@ declare global {
         "cpy-progress-bar": HTMLCpyProgressBarElement;
         "cpy-spinner": HTMLCpySpinnerElement;
         "cpy-stack": HTMLCpyStackElement;
+        "cpy-tab-content": HTMLCpyTabContentElement;
+        "cpy-tab-header": HTMLCpyTabHeaderElement;
         "cpy-table": HTMLCpyTableElement;
+        "cpy-tabs": HTMLCpyTabsElement;
         "cpy-toast": HTMLCpyToastElement;
         "cpy-toolbar": HTMLCpyToolbarElement;
         "cpy-tooltip": HTMLCpyTooltipElement;
@@ -633,8 +673,19 @@ declare namespace LocalJSX {
         "direction"?: 'left' | 'right';
         "overlap"?: number;
     }
+    interface CpyTabContent {
+    }
+    interface CpyTabHeader {
+        "headerId"?: string;
+        "onSelected"?: (event: CpyTabHeaderCustomEvent<string>) => void;
+        "tabTitle"?: string;
+    }
     interface CpyTable {
         "tableData"?: { [key: string]: string | number | boolean | null | undefined }[];
+    }
+    interface CpyTabs {
+        "activeIndex"?: number;
+        "onTabChanged"?: (event: CpyTabsCustomEvent<number>) => void;
     }
     interface CpyToast {
         "dismissible"?: boolean;
@@ -685,7 +736,10 @@ declare namespace LocalJSX {
         "cpy-progress-bar": CpyProgressBar;
         "cpy-spinner": CpySpinner;
         "cpy-stack": CpyStack;
+        "cpy-tab-content": CpyTabContent;
+        "cpy-tab-header": CpyTabHeader;
         "cpy-table": CpyTable;
+        "cpy-tabs": CpyTabs;
         "cpy-toast": CpyToast;
         "cpy-toolbar": CpyToolbar;
         "cpy-tooltip": CpyTooltip;
@@ -725,7 +779,10 @@ declare module "@stencil/core" {
             "cpy-progress-bar": LocalJSX.CpyProgressBar & JSXBase.HTMLAttributes<HTMLCpyProgressBarElement>;
             "cpy-spinner": LocalJSX.CpySpinner & JSXBase.HTMLAttributes<HTMLCpySpinnerElement>;
             "cpy-stack": LocalJSX.CpyStack & JSXBase.HTMLAttributes<HTMLCpyStackElement>;
+            "cpy-tab-content": LocalJSX.CpyTabContent & JSXBase.HTMLAttributes<HTMLCpyTabContentElement>;
+            "cpy-tab-header": LocalJSX.CpyTabHeader & JSXBase.HTMLAttributes<HTMLCpyTabHeaderElement>;
             "cpy-table": LocalJSX.CpyTable & JSXBase.HTMLAttributes<HTMLCpyTableElement>;
+            "cpy-tabs": LocalJSX.CpyTabs & JSXBase.HTMLAttributes<HTMLCpyTabsElement>;
             "cpy-toast": LocalJSX.CpyToast & JSXBase.HTMLAttributes<HTMLCpyToastElement>;
             "cpy-toolbar": LocalJSX.CpyToolbar & JSXBase.HTMLAttributes<HTMLCpyToolbarElement>;
             "cpy-tooltip": LocalJSX.CpyTooltip & JSXBase.HTMLAttributes<HTMLCpyTooltipElement>;

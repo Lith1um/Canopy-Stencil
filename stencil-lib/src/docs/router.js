@@ -25,7 +25,9 @@ const menuItems = navMenuElement.items = [
       { title: 'Carousel', type: 'basic', url: '/comps/carousel', function: closeMenuOnMobileNav },
       { title: 'Drawer', type: 'basic', url: '/comps/drawer', function: closeMenuOnMobileNav },
       { title: 'Navigation Menu', type: 'basic', url: '/comps/navMenu', function: closeMenuOnMobileNav },
-      { title: 'Page Content', type: 'basic', url: '/comps/pageContent', function: closeMenuOnMobileNav }
+      { title: 'Page Content', type: 'basic', url: '/comps/pageContent', function: closeMenuOnMobileNav },
+      { title: 'Table', type: 'basic', url: '/comps/table', function: closeMenuOnMobileNav },
+      { title: 'Tabs', type: 'basic', url: '/comps/tabs', function: closeMenuOnMobileNav },
     ] },
     { title: 'Interactions', icon: 'touch_app', type: 'collapsible', description: 'Floating UI components', children: [
       { title: 'Context Menu Trigger', type: 'basic', url: '/comps/contextMenuTrigger', function: closeMenuOnMobileNav },
@@ -54,7 +56,6 @@ const menuItems = navMenuElement.items = [
       { title: 'Progress Bar', type: 'basic', url: '/comps/progressBar', function: closeMenuOnMobileNav },
       { title: 'Spinner', type: 'basic', url: '/comps/spinner', function: closeMenuOnMobileNav },
       { title: 'Stack', type: 'basic', url: '/comps/stack', function: closeMenuOnMobileNav },
-      { title: 'Table', type: 'basic', url: '/comps/table', function: closeMenuOnMobileNav },
     ] },
   ] },
 ];
