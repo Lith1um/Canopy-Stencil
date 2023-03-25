@@ -1,9 +1,8 @@
 import { Component, Event, EventEmitter, h, Method, Prop, State } from '@stencil/core';
+import { InputSize } from '../types/input-size.type';
 import { ValidatorEntry } from '../validation/types/validator-entry.type';
 import { Validator } from '../validation/types/validator.type';
 import { defaultValidator, getValidator } from '../validation/validator';
-
-export type InputSize = 'small' | 'default' | 'large';
 
 @Component({
   tag: 'cpy-input',
