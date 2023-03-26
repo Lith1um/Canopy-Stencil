@@ -68,7 +68,7 @@
   @apply transition ease-in-out duration-300;
 }
 .dialog-container-enter-start {
-  @apply transform -translate-y-full scale-90;
+  @apply transform -translate-y-full scale-110;
 }
 .dialog-container-enter-end {
   @apply transform translate-y-0 scale-100;
@@ -78,10 +78,10 @@
   @apply transition ease-in-out duration-300;
 }
 .dialog-container-leave-start {
-  @apply transform translate-y-0;
+  @apply transform translate-y-0 scale-100;
 }
 .dialog-container-leave-end {
-  @apply transform translate-y-full;
+  @apply transform translate-y-full scale-90;
 }
 
 @media(min-width: 640px) {

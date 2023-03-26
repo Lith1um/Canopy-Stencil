@@ -1,5 +1,3 @@
-import { pageInits } from './pageInits.js';
-
 const drawer = document.querySelector('cpy-drawer-container');
 const navMenuElement = document.querySelector('cpy-nav-menu');
 
@@ -30,13 +28,13 @@ const menuItems = navMenuElement.items = [
       { title: 'Tabs', type: 'basic', url: '/comps/tabs', function: closeMenuOnMobileNav },
     ] },
     { title: 'Interactions', icon: 'touch_app', type: 'collapsible', description: 'Floating UI components', children: [
+      { title: 'Accordion', type: 'basic', url: '/comps/accordion', function: closeMenuOnMobileNav },
       { title: 'Context Menu Trigger', type: 'basic', url: '/comps/contextMenuTrigger', function: closeMenuOnMobileNav },
       { title: 'Dialog', type: 'basic', url: '/comps/dialog', function: closeMenuOnMobileNav },
+      { title: 'Expand/Collapse', type: 'basic', url: '/comps/expandCollapse', function: closeMenuOnMobileNav },
       { title: 'Popup', type: 'basic', url: '/comps/popup', function: closeMenuOnMobileNav },
       { title: 'Toast', type: 'basic', url: '/comps/toast', function: closeMenuOnMobileNav },
       { title: 'Tooltip', type: 'basic', url: '/comps/tooltip', function: closeMenuOnMobileNav },
-      { title: 'Expand/Collapse', type: 'basic', url: '/comps/expandCollapse', function: closeMenuOnMobileNav },
-      { title: 'Accordion', type: 'basic', url: '/comps/accordion', function: closeMenuOnMobileNav },
     ] },
     { title: 'Forms', icon: 'format_list_numbered', type: 'collapsible', description: 'Complete form elements', children: [
       { title: 'Basic Inputs', type: 'basic', url: '/comps/input', function: closeMenuOnMobileNav },
@@ -73,10 +71,14 @@ function loadPage(page) {
 
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      document.getElementById("router-outlet").innerHTML = xhr.responseText;
-      // run any related methods
-      if (pageInits[`${page.split('/').pop()}`]) {
-        pageInits[`${page.split('/').pop()}`]();
+      const routerOutlet = document.getElementById("router-outlet");
+      routerOutlet.innerHTML = xhr.responseText;
+
+      // inject any scripts from the template
+      const pageElements = document.createRange().createContextualFragment(xhr.responseText);
+      const scriptElement = pageElements.querySelector('script');
+      if (scriptElement) {
+        routerOutlet.append(scriptElement);
       }
     }
   }
