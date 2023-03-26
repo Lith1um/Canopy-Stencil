@@ -16,6 +16,19 @@
 | `type`     | `type`     |             | `"rounded" \| "square"`                        | `'rounded'` |
 
 
+## Dependencies
+
+### Used by
+
+ - [cpy-comment](../comment)
+
+### Graph
+```mermaid
+graph TD;
+  cpy-comment --> cpy-avatar
+  style cpy-avatar fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

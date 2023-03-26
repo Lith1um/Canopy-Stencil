@@ -30,7 +30,7 @@
 
 ### Used by
 
- - [cpy-input-toggle](../input-toggle)
+ - [cpy-input-toggle](input-toggle)
 
 ### Graph
 ```mermaid

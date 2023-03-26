@@ -208,6 +208,27 @@ export class CpyCodeSnippet {
 }
 
 
+export declare interface CpyComment extends Components.CpyComment {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['comment', 'maxLines', 'rightAligned', 'showLessText', 'showMoreText', 'size', 'type']
+})
+@Component({
+  selector: 'cpy-comment',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['comment', 'maxLines', 'rightAligned', 'showLessText', 'showMoreText', 'size', 'type']
+})
+export class CpyComment {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface CpyContentsList extends Components.CpyContentsList {}
 
 @ProxyCmp({
@@ -545,13 +566,13 @@ export declare interface CpyLink extends Components.CpyLink {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['href', 'newTab', 'type']
+  inputs: ['func', 'href', 'newTab', 'type']
 })
 @Component({
   selector: 'cpy-link',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['href', 'newTab', 'type']
+  inputs: ['func', 'href', 'newTab', 'type']
 })
 export class CpyLink {
   protected el: HTMLElement;
@@ -667,6 +688,27 @@ export declare interface CpyProgressBar extends Components.CpyProgressBar {}
   inputs: ['border', 'indeterminate', 'size', 'type', 'value']
 })
 export class CpyProgressBar {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface CpyShowMore extends Components.CpyShowMore {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['lines', 'showLessText', 'showMoreText', 'text', 'type']
+})
+@Component({
+  selector: 'cpy-show-more',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['lines', 'showLessText', 'showMoreText', 'text', 'type']
+})
+export class CpyShowMore {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

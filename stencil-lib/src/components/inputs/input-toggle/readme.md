@@ -52,7 +52,7 @@ Type: `Promise<void>`
 
 ### Depends on
 
-- [cpy-input-base](../inputs)
+- [cpy-input-base](..)
 
 ### Graph
 ```mermaid
