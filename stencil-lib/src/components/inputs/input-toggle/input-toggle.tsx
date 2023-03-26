@@ -1,8 +1,8 @@
 import { Component, Event, EventEmitter, h, Method, Prop, State } from '@stencil/core';
-import { BaseInput } from '../inputs/interfaces/base-input.interface';
-import { ValidatorEntry } from '../inputs/validation/types/validator-entry.type';
-import { Validator } from '../inputs/validation/types/validator.type';
-import { defaultValidator, getValidator } from '../inputs/validation/validator';
+import { BaseInput } from '../interfaces/base-input.interface';
+import { ValidatorEntry } from '../validation/types/validator-entry.type';
+import { Validator } from '../validation/types/validator.type';
+import { defaultValidator, getValidator } from '../validation/validator';
 
 @Component({
   tag: 'cpy-input-toggle',

@@ -1,0 +1,58 @@
+<cpy-page-content>
+  <h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
+    Comments
+  </h3>
+  
+  <p style="margin-top: 1rem; margin-bottom: 2rem;">
+    Canopy comments are a stylised way to display a comment that provides a way for discussion and user feedback to take place. They are referenced using the<cpy-code-snippet>&lt;cpy-comment&gt;</cpy-code-snippet>custom HTML element.
+  </p>
+  
+  <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
+  <div style="width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+    <div style="margin-bottom: 0.5rem;">Default comments:</div>
+    <cpy-comment id="comment-comp-1"></cpy-comment>
+    <cpy-comment id="comment-comp-2"></cpy-comment>
+    <cpy-comment id="comment-comp-3"></cpy-comment>
+  </div>
+
+  <div style="width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+    <div style="margin-bottom: 0.5rem;">Small comment:</div>
+    <cpy-comment id="comment-comp-small" size="small"></cpy-comment>
+  </div>
+
+  <div style="width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+    <div style="margin-bottom: 0.5rem;">Large comment:</div>
+    <cpy-comment id="comment-comp-large" size="large"></cpy-comment>
+  </div>
+  
+  <div style="width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+    <div style="margin-bottom: 0.5rem;">Right-aligned comment:</div>
+    <cpy-comment id="comment-comp-right" right-aligned></cpy-comment>
+  </div>
+
+  <div style="width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+    <div style="margin-bottom: 0.5rem;">Comment length restricted:</div>
+    <cpy-comment id="comment-comp-max" max-lines="2"></cpy-comment>
+  </div>
+
+  <div style="width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+    <div style="margin-bottom: 0.5rem;">Alternate types:</div>
+    <cpy-comment id="comment-comp-secondary" type="secondary"></cpy-comment>
+    <cpy-comment id="comment-comp-basic" type="basic"></cpy-comment>
+  </div>
+  
+  <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+  
+  <div style="margin-top: 1rem; margin-bottom: 2rem;">
+    <cpy-code-block id="comment-html-example" language="html"></cpy-code-block>
+  </div>
+
+  <h3 id="interfaces" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Interfaces</h3>
+  
+  <div style="margin-top: 1rem; margin-bottom: 2rem;">
+    <cpy-code-block id="comment-interface" language="typescript"></cpy-code-block>
+  </div>
+  
+  <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
+  <cpy-table id="comment-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+</cpy-page-content>

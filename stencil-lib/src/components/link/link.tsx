@@ -11,7 +11,16 @@ export class Link {
 
   @Prop() newTab: boolean;
 
+  @Prop() func: () => void;
+
   @Prop() type: 'primary' | 'secondary' | 'basic' = 'primary';
+
+  handleClick(e: Event): void {
+    if (this.func) {
+      e.preventDefault();
+      this.func();
+    }
+  }
 
   render() {
     const classes = {
@@ -20,7 +29,7 @@ export class Link {
     };
 
     return (
-      <a class={classes} href={this.href} target={this.newTab ? '_blank' : ''}>
+      <a class={classes} href={this.href} target={this.newTab ? '_blank' : ''} onClick={(e) => this.handleClick(e)}>
         <slot></slot>
       </a>
     );

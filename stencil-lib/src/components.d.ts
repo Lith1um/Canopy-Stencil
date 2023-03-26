@@ -6,8 +6,11 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AlertAppearance, AlertType } from "./components/alert/alert.type";
+import { AvatarSize } from "./components/avatar/types/avatar-size.type";
 import { BadgeAppearance, BadgeSize, BadgeType } from "./components/badge/badge.type";
 import { ButtonAppearance, ButtonSize, ButtonStyle } from "./components/button/button.type";
+import { CommentItem } from "./components/comment/interfaces/comment.interface";
+import { CommentSize } from "./components/comment/types/comment-size.type";
 import { ContentsListItem } from "./components/contents-list/contents-list.interface";
 import { ContextMenuItem } from "./components/context-menu/context-menu.interface";
 import { InputSize } from "./components/inputs/types/input-size.type";
@@ -36,7 +39,7 @@ export namespace Components {
     interface CpyAvatar {
         "border": boolean;
         "initials": string;
-        "size": 'small' | 'default' | 'large' | 'x-large';
+        "size": AvatarSize;
         "src": string;
         "type": 'rounded' | 'square';
     }
@@ -62,6 +65,15 @@ export namespace Components {
         "language": 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell';
     }
     interface CpyCodeSnippet {
+    }
+    interface CpyComment {
+        "comment": CommentItem;
+        "maxLines": number;
+        "rightAligned": boolean;
+        "showLessText": string;
+        "showMoreText": string;
+        "size": CommentSize;
+        "type": 'primary' | 'secondary' | 'basic';
     }
     interface CpyContentsList {
         "activeIndex": number;
@@ -138,6 +150,7 @@ export namespace Components {
         "value": boolean;
     }
     interface CpyLink {
+        "func": () => void;
         "href": string;
         "newTab": boolean;
         "type": 'primary' | 'secondary' | 'basic';
@@ -162,6 +175,13 @@ export namespace Components {
         "size": ProgressBarSize;
         "type": ProgressBarAppearance;
         "value": number;
+    }
+    interface CpyShowMore {
+        "lines": number;
+        "showLessText": string;
+        "showMoreText": string;
+        "text": string;
+        "type": 'primary' | 'secondary' | 'basic';
     }
     interface CpySpinner {
         "size": SpinnerSize;
@@ -315,6 +335,12 @@ declare global {
         prototype: HTMLCpyCodeSnippetElement;
         new (): HTMLCpyCodeSnippetElement;
     };
+    interface HTMLCpyCommentElement extends Components.CpyComment, HTMLStencilElement {
+    }
+    var HTMLCpyCommentElement: {
+        prototype: HTMLCpyCommentElement;
+        new (): HTMLCpyCommentElement;
+    };
     interface HTMLCpyContentsListElement extends Components.CpyContentsList, HTMLStencilElement {
     }
     var HTMLCpyContentsListElement: {
@@ -429,6 +455,12 @@ declare global {
         prototype: HTMLCpyProgressBarElement;
         new (): HTMLCpyProgressBarElement;
     };
+    interface HTMLCpyShowMoreElement extends Components.CpyShowMore, HTMLStencilElement {
+    }
+    var HTMLCpyShowMoreElement: {
+        prototype: HTMLCpyShowMoreElement;
+        new (): HTMLCpyShowMoreElement;
+    };
     interface HTMLCpySpinnerElement extends Components.CpySpinner, HTMLStencilElement {
     }
     var HTMLCpySpinnerElement: {
@@ -493,6 +525,7 @@ declare global {
         "cpy-carousel": HTMLCpyCarouselElement;
         "cpy-code-block": HTMLCpyCodeBlockElement;
         "cpy-code-snippet": HTMLCpyCodeSnippetElement;
+        "cpy-comment": HTMLCpyCommentElement;
         "cpy-contents-list": HTMLCpyContentsListElement;
         "cpy-contents-list-item": HTMLCpyContentsListItemElement;
         "cpy-context-menu": HTMLCpyContextMenuElement;
@@ -512,6 +545,7 @@ declare global {
         "cpy-page-content": HTMLCpyPageContentElement;
         "cpy-popup": HTMLCpyPopupElement;
         "cpy-progress-bar": HTMLCpyProgressBarElement;
+        "cpy-show-more": HTMLCpyShowMoreElement;
         "cpy-spinner": HTMLCpySpinnerElement;
         "cpy-stack": HTMLCpyStackElement;
         "cpy-tab-content": HTMLCpyTabContentElement;
@@ -541,7 +575,7 @@ declare namespace LocalJSX {
     interface CpyAvatar {
         "border"?: boolean;
         "initials"?: string;
-        "size"?: 'small' | 'default' | 'large' | 'x-large';
+        "size"?: AvatarSize;
         "src"?: string;
         "type"?: 'rounded' | 'square';
     }
@@ -567,6 +601,15 @@ declare namespace LocalJSX {
         "language"?: 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell';
     }
     interface CpyCodeSnippet {
+    }
+    interface CpyComment {
+        "comment"?: CommentItem;
+        "maxLines"?: number;
+        "rightAligned"?: boolean;
+        "showLessText"?: string;
+        "showMoreText"?: string;
+        "size"?: CommentSize;
+        "type"?: 'primary' | 'secondary' | 'basic';
     }
     interface CpyContentsList {
         "activeIndex"?: number;
@@ -640,6 +683,7 @@ declare namespace LocalJSX {
         "value"?: boolean;
     }
     interface CpyLink {
+        "func"?: () => void;
         "href"?: string;
         "newTab"?: boolean;
         "type"?: 'primary' | 'secondary' | 'basic';
@@ -664,6 +708,13 @@ declare namespace LocalJSX {
         "size"?: ProgressBarSize;
         "type"?: ProgressBarAppearance;
         "value"?: number;
+    }
+    interface CpyShowMore {
+        "lines"?: number;
+        "showLessText"?: string;
+        "showMoreText"?: string;
+        "text"?: string;
+        "type"?: 'primary' | 'secondary' | 'basic';
     }
     interface CpySpinner {
         "size"?: SpinnerSize;
@@ -715,6 +766,7 @@ declare namespace LocalJSX {
         "cpy-carousel": CpyCarousel;
         "cpy-code-block": CpyCodeBlock;
         "cpy-code-snippet": CpyCodeSnippet;
+        "cpy-comment": CpyComment;
         "cpy-contents-list": CpyContentsList;
         "cpy-contents-list-item": CpyContentsListItem;
         "cpy-context-menu": CpyContextMenu;
@@ -734,6 +786,7 @@ declare namespace LocalJSX {
         "cpy-page-content": CpyPageContent;
         "cpy-popup": CpyPopup;
         "cpy-progress-bar": CpyProgressBar;
+        "cpy-show-more": CpyShowMore;
         "cpy-spinner": CpySpinner;
         "cpy-stack": CpyStack;
         "cpy-tab-content": CpyTabContent;
@@ -758,6 +811,7 @@ declare module "@stencil/core" {
             "cpy-carousel": LocalJSX.CpyCarousel & JSXBase.HTMLAttributes<HTMLCpyCarouselElement>;
             "cpy-code-block": LocalJSX.CpyCodeBlock & JSXBase.HTMLAttributes<HTMLCpyCodeBlockElement>;
             "cpy-code-snippet": LocalJSX.CpyCodeSnippet & JSXBase.HTMLAttributes<HTMLCpyCodeSnippetElement>;
+            "cpy-comment": LocalJSX.CpyComment & JSXBase.HTMLAttributes<HTMLCpyCommentElement>;
             "cpy-contents-list": LocalJSX.CpyContentsList & JSXBase.HTMLAttributes<HTMLCpyContentsListElement>;
             "cpy-contents-list-item": LocalJSX.CpyContentsListItem & JSXBase.HTMLAttributes<HTMLCpyContentsListItemElement>;
             "cpy-context-menu": LocalJSX.CpyContextMenu & JSXBase.HTMLAttributes<HTMLCpyContextMenuElement>;
@@ -777,6 +831,7 @@ declare module "@stencil/core" {
             "cpy-page-content": LocalJSX.CpyPageContent & JSXBase.HTMLAttributes<HTMLCpyPageContentElement>;
             "cpy-popup": LocalJSX.CpyPopup & JSXBase.HTMLAttributes<HTMLCpyPopupElement>;
             "cpy-progress-bar": LocalJSX.CpyProgressBar & JSXBase.HTMLAttributes<HTMLCpyProgressBarElement>;
+            "cpy-show-more": LocalJSX.CpyShowMore & JSXBase.HTMLAttributes<HTMLCpyShowMoreElement>;
             "cpy-spinner": LocalJSX.CpySpinner & JSXBase.HTMLAttributes<HTMLCpySpinnerElement>;
             "cpy-stack": LocalJSX.CpyStack & JSXBase.HTMLAttributes<HTMLCpyStackElement>;
             "cpy-tab-content": LocalJSX.CpyTabContent & JSXBase.HTMLAttributes<HTMLCpyTabContentElement>;
