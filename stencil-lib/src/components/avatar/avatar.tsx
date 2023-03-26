@@ -1,4 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
+import { AvatarSize } from './types/avatar-size.type';
 
 @Component({
   tag: 'cpy-avatar',
@@ -15,7 +16,7 @@ export class Avatar {
 
   @Prop() initials: string;
 
-  @Prop() size: 'small' | 'default' | 'large' | 'x-large' = 'default';
+  @Prop() size: AvatarSize = 'default';
 
   render() {
     const classes = {

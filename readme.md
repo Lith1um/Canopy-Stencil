@@ -165,6 +165,7 @@ A full list of the configurable colours is below (along with their defaulted val
   --cpy-tooltip-bg: var(--cpy-bg-dark);
   --cpy-tooltip-text: var(--cpy-bg-white);
   --cpy-progress-bar-bg: var(--cpy-bg-primary);
+  --cpy-comment-author-text: var(--cpy-text-primary);
 }
 ```
 
