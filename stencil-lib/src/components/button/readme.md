@@ -22,6 +22,7 @@
 
  - [cpy-alert](../alert)
  - [cpy-carousel](../carousel)
+ - [cpy-code-example](../code-example)
  - [cpy-dialog](../dialog)
  - [cpy-drawer](../drawer-container/drawer)
  - [cpy-tabs](../tabs)
@@ -31,6 +32,7 @@
 graph TD;
   cpy-alert --> cpy-button
   cpy-carousel --> cpy-button
+  cpy-code-example --> cpy-button
   cpy-dialog --> cpy-button
   cpy-drawer --> cpy-button
   cpy-tabs --> cpy-button

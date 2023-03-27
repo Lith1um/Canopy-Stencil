@@ -10,6 +10,7 @@ export const DIRECTIVES = [
   d.CpyCard,
   d.CpyCarousel,
   d.CpyCodeBlock,
+  d.CpyCodeExample,
   d.CpyCodeSnippet,
   d.CpyComment,
   d.CpyContentsList,

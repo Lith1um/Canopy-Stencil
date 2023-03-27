@@ -189,6 +189,27 @@ export class CpyCodeBlock {
 }
 
 
+export declare interface CpyCodeExample extends Components.CpyCodeExample {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['code', 'header', 'language']
+})
+@Component({
+  selector: 'cpy-code-example',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['code', 'header', 'language']
+})
+export class CpyCodeExample {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface CpyCodeSnippet extends Components.CpyCodeSnippet {}
 
 @ProxyCmp({
@@ -410,7 +431,8 @@ export declare interface CpyDrawerContainer extends Components.CpyDrawerContaine
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['opened']
+  inputs: ['opened'],
+  methods: ['toggle']
 })
 @Component({
   selector: 'cpy-drawer-container',
@@ -486,14 +508,14 @@ export declare interface CpyInput extends Components.CpyInput {
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['disabled', 'label', 'required', 'size', 'type', 'validators', 'value'],
+  inputs: ['disabled', 'label', 'placeholder', 'required', 'size', 'type', 'validators', 'value'],
   methods: ['isValid', 'markAsTouched']
 })
 @Component({
   selector: 'cpy-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'label', 'required', 'size', 'type', 'validators', 'value']
+  inputs: ['disabled', 'label', 'placeholder', 'required', 'size', 'type', 'validators', 'value']
 })
 export class CpyInput {
   protected el: HTMLElement;

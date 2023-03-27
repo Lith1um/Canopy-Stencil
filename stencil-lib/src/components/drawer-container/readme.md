@@ -19,6 +19,19 @@
 | `toggleDrawer` |             | `CustomEvent<void>` |
 
 
+## Methods
+
+### `toggle() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Dependencies
 
 ### Depends on

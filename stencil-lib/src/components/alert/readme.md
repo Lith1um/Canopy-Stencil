@@ -13,7 +13,7 @@
 | `container`   | `container`   |             | `boolean`                                                               | `true`      |
 | `dismissible` | `dismissible` |             | `boolean`                                                               | `undefined` |
 | `icon`        | `icon`        |             | `string`                                                                | `undefined` |
-| `type`        | `type`        |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"` | `'error'`   |
+| `type`        | `type`        |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"` | `undefined` |
 
 
 ## Events

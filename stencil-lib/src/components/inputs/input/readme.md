@@ -7,15 +7,16 @@
 
 ## Properties
 
-| Property     | Attribute  | Description | Type                                                          | Default     |
-| ------------ | ---------- | ----------- | ------------------------------------------------------------- | ----------- |
-| `disabled`   | `disabled` |             | `boolean`                                                     | `undefined` |
-| `label`      | `label`    |             | `string`                                                      | `undefined` |
-| `required`   | `required` |             | `boolean`                                                     | `undefined` |
-| `size`       | `size`     |             | `"default" \| "large" \| "small"`                             | `'default'` |
-| `type`       | `type`     |             | `"email" \| "number" \| "password" \| "text"`                 | `'text'`    |
-| `validators` | --         |             | `(string \| ValidatorEntry \| Validator<string \| number>)[]` | `undefined` |
-| `value`      | `value`    |             | `number \| string`                                            | `undefined` |
+| Property      | Attribute     | Description | Type                                                          | Default     |
+| ------------- | ------------- | ----------- | ------------------------------------------------------------- | ----------- |
+| `disabled`    | `disabled`    |             | `boolean`                                                     | `undefined` |
+| `label`       | `label`       |             | `string`                                                      | `undefined` |
+| `placeholder` | `placeholder` |             | `string`                                                      | `undefined` |
+| `required`    | `required`    |             | `boolean`                                                     | `undefined` |
+| `size`        | `size`        |             | `"default" \| "large" \| "small"`                             | `'default'` |
+| `type`        | `type`        |             | `"email" \| "number" \| "password" \| "text"`                 | `'text'`    |
+| `validators`  | --            |             | `(string \| ValidatorEntry \| Validator<string \| number>)[]` | `undefined` |
+| `value`       | `value`       |             | `number \| string`                                            | `undefined` |
 
 
 ## Events
