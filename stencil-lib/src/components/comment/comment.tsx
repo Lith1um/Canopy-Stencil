@@ -51,6 +51,10 @@ export class Comment {
       [`comment--${this.size}`]: !!this.size
     };
 
+    if (!this.comment) {
+      return;
+    }
+
     return (
       <div class={classes}>
         {this.comment.imageUrl && <cpy-avatar size={this.avatarSizeMap[this.size]} src={this.comment.imageUrl}></cpy-avatar>}

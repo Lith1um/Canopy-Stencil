@@ -1,0 +1,84 @@
+p {
+  margin-bottom: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.8rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.6rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 1.4rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.section {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.container {
+  display: block;
+  background-color: transparent;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--cpy-bg-basic-border);
+}
+
+.container-title {
+  display: flex;
+  gap: 0.25rem;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: -0.5rem;
+}
+
+.container-title > div:first-child {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hidden {
+  display: none;
+}
+
+.border-b {
+  border-bottom: 1px solid var(--cpy-bg-basic-border);
+}
+
+cpy-code-block {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+cpy-tab-content {
+  display: block;
+  margin-top: 2rem;
+}

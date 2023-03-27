@@ -7,6 +7,7 @@
   <title>Canopy.</title>
 
   <link rel="stylesheet" href="/build/canopy-stencil-web.css" />
+  <link rel="stylesheet" href="/docs/typography.css" />
   <script type="module" src="/build/canopy-stencil-web.esm.js"></script>
   <script nomodule src="/build/canopy-stencil-web.js"></script>
   <style>
@@ -110,7 +111,7 @@
         </cpy-popup>
       </cpy-toolbar>
 
-      <div id="router-outlet" style="flex: 1; min-height: 0; width: 100%;"></div>
+      <div id="router-outlet" style="flex: 1; min-height: 0; width: 100%; overflow-y: auto;"></div>
     </div>
   </cpy-drawer-container>
   <script type="module" src="/docs/router.js"></script>

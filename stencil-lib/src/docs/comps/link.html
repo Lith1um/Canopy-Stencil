@@ -1,86 +1,94 @@
-<cpy-page-content>
-  <h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-    Links
-  </h3>
-  
-  <p style="margin-top: 1rem; margin-bottom: 2rem;">
-    Canopy links are a stylised way to display links. They are referenced using the<cpy-code-snippet>&lt;cpy-tooltip&gt;</cpy-code-snippet>custom HTML element. 
-  </p>
-  
-  <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-  
-  <p>With icon</p>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-    <div style="flex: 1;">
-      <cpy-link>
-        <cpy-icon>link</cpy-icon>primary link
-      </cpy-link>
-    </div>
-  
-    <div style="flex: 1;">
-      <cpy-link type="secondary">
-        <cpy-icon>link</cpy-icon>secondary link
-      </cpy-link>
-    </div>
-  
-    <div style="flex: 1;">
-      <cpy-link type="basic">
-        basic link<cpy-icon>launch</cpy-icon>
-      </cpy-link>
-    </div>
-  </div>
-  
-  <p>Without icon</p>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-    <div style="flex: 1;">
-      <cpy-link>
-        primary link
-      </cpy-link>
-    </div>
-  
-    <div style="flex: 1;">
-      <cpy-link type="secondary">
-        secondary link
-      </cpy-link>
-    </div>
-  
-    <div style="flex: 1;">
-      <cpy-link type="basic">
-        basic link
-      </cpy-link>
-    </div>
-  </div>
-  
-  <p>Link around image</p>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-    <div style="flex: 1;">
-      <cpy-link href="https://github.com/lith1um/Canopy-Stencil" new-tab>
-        <img src="https://github.com/Lith1um/Canopy-Stencil/raw/main/logo.png" alt="Logo" width="140">
-      </cpy-link>
-    </div>
-  </div>
+<cpy-page-container>
+  <cpy-page-content>
+    <h3
+      style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
+      Links
+    </h3>
 
-  <p>Link that calls a function</p>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-    <div style="flex: 1;">
-      <cpy-link id="func-link">
-        primary link
-      </cpy-link>
+    <p style="margin-top: 1rem; margin-bottom: 2rem;">
+      Canopy links are a stylised way to display links. They are referenced using
+      the<cpy-code-snippet>&lt;cpy-tooltip&gt;</cpy-code-snippet>custom HTML element.
+    </p>
+
+    <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
+
+    <p>With icon</p>
+    <div
+      style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+      <div style="flex: 1;">
+        <cpy-link>
+          <cpy-icon>link</cpy-icon>primary link
+        </cpy-link>
+      </div>
+
+      <div style="flex: 1;">
+        <cpy-link type="secondary">
+          <cpy-icon>link</cpy-icon>secondary link
+        </cpy-link>
+      </div>
+
+      <div style="flex: 1;">
+        <cpy-link type="basic">
+          basic link<cpy-icon>launch</cpy-icon>
+        </cpy-link>
+      </div>
     </div>
-  </div>
-  
-  <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
-  
-  <div style="margin-top: 1rem; margin-bottom: 2rem;">
-    <cpy-code-block id="link-html-example" language="html"></cpy-code-block>
-  </div>
-  
-  <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-  <cpy-table id="link-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  
-  <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
-  <cpy-table id="link-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-</cpy-page-content>
+
+    <p>Without icon</p>
+    <div
+      style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+      <div style="flex: 1;">
+        <cpy-link>
+          primary link
+        </cpy-link>
+      </div>
+
+      <div style="flex: 1;">
+        <cpy-link type="secondary">
+          secondary link
+        </cpy-link>
+      </div>
+
+      <div style="flex: 1;">
+        <cpy-link type="basic">
+          basic link
+        </cpy-link>
+      </div>
+    </div>
+
+    <p>Link around image</p>
+    <div
+      style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+      <div style="flex: 1;">
+        <cpy-link href="https://github.com/lith1um/Canopy-Stencil" new-tab>
+          <img src="https://github.com/Lith1um/Canopy-Stencil/raw/main/logo.png" alt="Logo" width="140">
+        </cpy-link>
+      </div>
+    </div>
+
+    <p>Link that calls a function</p>
+    <div
+      style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
+      <div style="flex: 1;">
+        <cpy-link id="func-link">
+          primary link
+        </cpy-link>
+      </div>
+    </div>
+
+    <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+
+    <div style="margin-top: 1rem; margin-bottom: 2rem;">
+      <cpy-code-block id="link-html-example" language="html"></cpy-code-block>
+    </div>
+
+    <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
+    <cpy-table id="link-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+
+    <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
+    <cpy-table id="link-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+  </cpy-page-content>
+</cpy-page-container>
 
 <script src="/docs/comps/link.js">
 </script>

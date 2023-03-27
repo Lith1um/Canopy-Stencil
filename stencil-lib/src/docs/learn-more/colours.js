@@ -1,4 +1,5 @@
-document.getElementById('colours-override-simple').code = `html {
+(function () {
+  document.getElementById('colours-override-simple').code = `html {
   --cpy-bg-primary-rgb: 8, 145, 178; /* cyan-600 */
   --cpy-bg-primary-light-rgb: 236, 254, 255;  /* cyan-50 */
   --cpy-bg-primary-hover-rgb: 6, 182, 212; /* cyan-500 */
@@ -10,7 +11,7 @@ html.dark {
       
   --cpy-text-primary: rgb(6, 182, 212); /* cyan-500 */
 }`;
-document.getElementById('colours-palette-css').code = `:root {
+  document.getElementById('colours-palette-css').code = `:root {
   /* overrides the text colour in dark mode for edge cases
       like white text on coloured background for alerts */
   --cpy-dm-text-override: currentColor;
@@ -58,7 +59,7 @@ document.getElementById('colours-palette-css').code = `:root {
   --cpy-comment-author-text: var(--cpy-text-primary);
 }`;
 
-document.getElementById('colours-pallette-dark-css').code = `html.dark {
+  document.getElementById('colours-pallette-dark-css').code = `html.dark {
   /* overrides the text colour in dark mode for edge cases
       like white text on coloured background for alerts */
   --cpy-dm-text-override: rgb(255, 255, 255);
@@ -71,6 +72,7 @@ document.getElementById('colours-pallette-dark-css').code = `html.dark {
   ...
 }`;
 
-document.getElementById('colours-pallette-dark-alt').code = `@media (prefers-color-scheme: dark) {
+  document.getElementById('colours-pallette-dark-alt').code = `@media (prefers-color-scheme: dark) {
   ...
 }`;
+})();

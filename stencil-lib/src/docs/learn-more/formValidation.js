@@ -1,4 +1,5 @@
-document.getElementById('getting-started-types').code = `// Validators input type
+(function () {
+  document.getElementById('getting-started-types').code = `// Validators input type
 validators: Array<string | ValidatorEntry | Validator<any>>;
 
 export interface ValidatorEntry {
@@ -11,7 +12,7 @@ interface Validator<T> {
   errorMessage?: string;
 }`;
 
-document.getElementById('built-in-validation').code = `<cpy-input label="Form Input"></cpy-input>
+  document.getElementById('built-in-validation').code = `<cpy-input label="Form Input"></cpy-input>
 
 <script>
   document.querySelector('cpy-input').validators = [
@@ -20,10 +21,10 @@ document.getElementById('built-in-validation').code = `<cpy-input label="Form In
     'number',
     {name: 'length', options: {min: 4, max: 10}},
     {name: 'numberLength', options: {min: 0, max: 100}},
-  ]
+  ];
 </script>`;
 
-document.getElementById('custom-validators-typescript').code = `// Custom validator to check if a number is even
+  document.getElementById('custom-validators-typescript').code = `// Custom validator to check if a number is even
 const IsEvenValidator: Validator<string> = {
   validate: (val: string) => {
     // ignore empty values
@@ -46,7 +47,7 @@ const IsEvenValidator: Validator<string> = {
 
 document.querySelector('cpy-input').validators = [IsEvenValidator];`;
 
-document.getElementById('input-state-valid').code = `<cpy-input label="Form Input"></cpy-input>
+  document.getElementById('input-state-valid').code = `<cpy-input label="Form Input"></cpy-input>
 
 <script>
   (async () => {
@@ -55,8 +56,9 @@ document.getElementById('input-state-valid').code = `<cpy-input label="Form Inpu
   })();
 </script>`;
 
-document.getElementById('input-state-mark-touched').code = `<cpy-input label="Form Input"></cpy-input>
+  document.getElementById('input-state-mark-touched').code = `<cpy-input label="Form Input"></cpy-input>
 
 <script>
   document.querySelector('cpy-input').markAsTouched();
 </script>`;
+})();

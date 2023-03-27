@@ -1,55 +1,84 @@
-<cpy-page-content>
-  <h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-    Tabs
-  </h3>
-  
-  <p style="margin-top: 1rem; margin-bottom: 2rem;">
-    Canopy Tabs organize content into separate views where only one view can be visible at a time. They are referenced using the<cpy-code-snippet>&lt;cpy-tabs&gt;</cpy-code-snippet>,<cpy-code-snippet>&lt;cpy-tab-header&gt;</cpy-code-snippet>and<cpy-code-snippet>&lt;cpy-tab-content&gt;</cpy-code-snippet>custom HTML elements. Each tab's label is shown in the tab header and the active tab's label is designated with the animated ink bar. When the list of tab labels exceeds the width of the header, pagination controls appear to let the user scroll left and right across the labels.
-  </p>
-  
-  <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-  <cpy-tabs id="tabs-example" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
-    <cpy-tab-header slot="header" tab-title="Tab 1"></cpy-tab-header>
-    <cpy-tab-header slot="header" tab-title="Tab 2"></cpy-tab-header>
-    <cpy-tab-header slot="header" tab-title="Tab 3"></cpy-tab-header>
+<cpy-page-container>
+  <cpy-page-content>
+    <h3
+      style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
+      Tabs
+    </h3>
 
-    <cpy-tab-content slot="content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida faucibus metus vitae vestibulum. Ut quam risus, tempus in elit ac, convallis posuere arcu. Duis mi nulla, maximus vel nisi eu, malesuada interdum felis. Praesent pharetra eros nec dignissim facilisis. Suspendisse lobortis tortor risus, quis egestas elit dignissim in. Vivamus mollis metus vel lorem egestas lacinia. Sed sit amet hendrerit ligula. Sed porta massa eros, vel efficitur mauris faucibus sed. Nulla facilisi. Nulla sit amet rutrum massa. Phasellus eu magna vitae leo dignissim venenatis nec tempus turpis. Pellentesque lacinia turpis ac tristique aliquam. Nullam volutpat, velit sit amet suscipit aliquam, ligula purus volutpat turpis, convallis malesuada turpis arcu sit amet purus. Morbi in elit vel orci gravida porta.
-    </cpy-tab-content>
-    <cpy-tab-content slot="content">
-      <p style="margin-bottom: 2rem;">Pellentesque et blandit urna, id congue dolor. Donec magna erat, eleifend ut consectetur nec, varius id turpis. Cras malesuada quam at mauris sagittis finibus. In hac habitasse platea dictumst. Nullam nec diam eget nisi maximus tristique sit amet eu velit. Integer in ante magna. Ut imperdiet consequat sem sed commodo. In condimentum dui neque, quis pharetra massa feugiat ac. Maecenas condimentum placerat orci, eget euismod orci.</p>
-      <p>Vestibulum ornare ornare libero eu sagittis. Proin sit amet interdum ante. Aliquam semper in libero a lacinia. Vivamus lobortis sapien ac quam imperdiet commodo ac tincidunt massa. Etiam fringilla auctor gravida. Praesent ipsum ipsum, faucibus id ex eget, vulputate eleifend odio. Duis eget dolor in massa dignissim pharetra rutrum non tortor. Proin consectetur vulputate volutpat. Morbi urna arcu, egestas ut egestas et, rutrum non mauris.</p>
-    </cpy-tab-content>
-    <cpy-tab-content slot="content">
-      Nunc gravida urna eu elit tempor, a faucibus odio consectetur. Vivamus blandit massa risus, non tristique lorem malesuada vel. Nullam in vulputate tortor, vitae volutpat metus. Fusce erat sem, finibus in nunc at, scelerisque tristique nunc. In in dictum ligula. Integer vitae tortor felis. Pellentesque nec lacus vitae massa eleifend ullamcorper. Suspendisse potenti. Proin dapibus urna nibh, sed euismod ligula tempor vitae. Nulla a ligula vehicula, bibendum magna quis, euismod leo. Phasellus blandit diam eu posuere ultricies. Maecenas orci magna, aliquam at mollis quis, posuere quis neque. Aliquam at tincidunt arcu. Quisque porttitor ligula id sapien luctus, cursus faucibus lacus ultricies.
-    </cpy-tab-content>
-  </cpy-tabs>
-  
-  <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
-  
-  <div style="margin-top: 1rem; margin-bottom: 2rem;">
-    <cpy-code-block id="tabs-html-example" language="html"></cpy-code-block>
-  </div>
-  
-  <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-  <p style="margin-top: 1rem;">Tabs (<cpy-code-snippet>&lt;cpy-tabs&gt;</cpy-code-snippet>)</p>
-  <cpy-table id="tabs-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+    <p style="margin-top: 1rem; margin-bottom: 2rem;">
+      Canopy Tabs organize content into separate views where only one view can be visible at a time. They are referenced
+      using
+      the<cpy-code-snippet>&lt;cpy-tabs&gt;</cpy-code-snippet>,<cpy-code-snippet>&lt;cpy-tab-header&gt;</cpy-code-snippet>and<cpy-code-snippet>&lt;cpy-tab-content&gt;</cpy-code-snippet>custom
+      HTML elements. Each tab's label is shown in the tab header and the active tab's label is designated with the
+      animated ink bar. When the list of tab labels exceeds the width of the header, pagination controls appear to let
+      the user scroll left and right across the labels.
+    </p>
 
-  <p style="margin-top: 1rem;">Tab Header (<cpy-code-snippet>&lt;cpy-tab-header&gt;</cpy-code-snippet>)</p>
-  <cpy-table id="tab-header-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  
-  <h3 id="events" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Events</h3>
-  <p style="margin-top: 1rem;">Tabs (<cpy-code-snippet>&lt;cpy-tabs&gt;</cpy-code-snippet>)</p>
-  <cpy-table id="tabs-events" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  
-  <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
-  <p style="margin-top: 1rem;">Tabs (<cpy-code-snippet>&lt;cpy-tabs&gt;</cpy-code-snippet>)</p>
-  <cpy-table id="tabs-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+    <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
+    <cpy-tabs id="tabs-example" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+      <cpy-tab-header slot="header" tab-title="Tab 1"></cpy-tab-header>
+      <cpy-tab-header slot="header" tab-title="Tab 2"></cpy-tab-header>
+      <cpy-tab-header slot="header" tab-title="Tab 3"></cpy-tab-header>
 
-  <p style="margin-top: 1rem;">Tabs Content (<cpy-code-snippet>&lt;cpy-tab-content&gt;</cpy-code-snippet>)</p>
-  <cpy-table id="tab-content-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+      <cpy-tab-content slot="content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida faucibus metus vitae vestibulum. Ut
+        quam risus, tempus in elit ac, convallis posuere arcu. Duis mi nulla, maximus vel nisi eu, malesuada interdum
+        felis. Praesent pharetra eros nec dignissim facilisis. Suspendisse lobortis tortor risus, quis egestas elit
+        dignissim in. Vivamus mollis metus vel lorem egestas lacinia. Sed sit amet hendrerit ligula. Sed porta massa
+        eros, vel efficitur mauris faucibus sed. Nulla facilisi. Nulla sit amet rutrum massa. Phasellus eu magna vitae
+        leo dignissim venenatis nec tempus turpis. Pellentesque lacinia turpis ac tristique aliquam. Nullam volutpat,
+        velit sit amet suscipit aliquam, ligula purus volutpat turpis, convallis malesuada turpis arcu sit amet purus.
+        Morbi in elit vel orci gravida porta.
+      </cpy-tab-content>
+      <cpy-tab-content slot="content">
+        <p style="margin-bottom: 2rem;">Pellentesque et blandit urna, id congue dolor. Donec magna erat, eleifend ut
+          consectetur nec, varius id turpis. Cras malesuada quam at mauris sagittis finibus. In hac habitasse platea
+          dictumst. Nullam nec diam eget nisi maximus tristique sit amet eu velit. Integer in ante magna. Ut imperdiet
+          consequat sem sed commodo. In condimentum dui neque, quis pharetra massa feugiat ac. Maecenas condimentum
+          placerat orci, eget euismod orci.</p>
+        <p>Vestibulum ornare ornare libero eu sagittis. Proin sit amet interdum ante. Aliquam semper in libero a
+          lacinia. Vivamus lobortis sapien ac quam imperdiet commodo ac tincidunt massa. Etiam fringilla auctor gravida.
+          Praesent ipsum ipsum, faucibus id ex eget, vulputate eleifend odio. Duis eget dolor in massa dignissim
+          pharetra rutrum non tortor. Proin consectetur vulputate volutpat. Morbi urna arcu, egestas ut egestas et,
+          rutrum non mauris.</p>
+      </cpy-tab-content>
+      <cpy-tab-content slot="content">
+        Nunc gravida urna eu elit tempor, a faucibus odio consectetur. Vivamus blandit massa risus, non tristique lorem
+        malesuada vel. Nullam in vulputate tortor, vitae volutpat metus. Fusce erat sem, finibus in nunc at, scelerisque
+        tristique nunc. In in dictum ligula. Integer vitae tortor felis. Pellentesque nec lacus vitae massa eleifend
+        ullamcorper. Suspendisse potenti. Proin dapibus urna nibh, sed euismod ligula tempor vitae. Nulla a ligula
+        vehicula, bibendum magna quis, euismod leo. Phasellus blandit diam eu posuere ultricies. Maecenas orci magna,
+        aliquam at mollis quis, posuere quis neque. Aliquam at tincidunt arcu. Quisque porttitor ligula id sapien
+        luctus, cursus faucibus lacus ultricies.
+      </cpy-tab-content>
+    </cpy-tabs>
 
-</cpy-page-content>
+    <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+
+    <div style="margin-top: 1rem; margin-bottom: 2rem;">
+      <cpy-code-block id="tabs-html-example" language="html"></cpy-code-block>
+    </div>
+
+    <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
+    <p style="margin-top: 1rem;">Tabs (<cpy-code-snippet>&lt;cpy-tabs&gt;</cpy-code-snippet>)</p>
+    <cpy-table id="tabs-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+
+    <p style="margin-top: 1rem;">Tab Header (<cpy-code-snippet>&lt;cpy-tab-header&gt;</cpy-code-snippet>)</p>
+    <cpy-table id="tab-header-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+
+    <h3 id="events" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Events</h3>
+    <p style="margin-top: 1rem;">Tabs (<cpy-code-snippet>&lt;cpy-tabs&gt;</cpy-code-snippet>)</p>
+    <cpy-table id="tabs-events" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+
+    <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
+    <p style="margin-top: 1rem;">Tabs (<cpy-code-snippet>&lt;cpy-tabs&gt;</cpy-code-snippet>)</p>
+    <cpy-table id="tabs-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+
+    <p style="margin-top: 1rem;">Tabs Content (<cpy-code-snippet>&lt;cpy-tab-content&gt;</cpy-code-snippet>)</p>
+    <cpy-table id="tab-content-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+
+  </cpy-page-content>
+</cpy-page-container>
 
 <script src="/docs/comps/tabs.js">
 </script>

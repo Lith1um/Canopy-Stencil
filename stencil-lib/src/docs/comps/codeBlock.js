@@ -1,4 +1,5 @@
-document.getElementById('code-block-scss-example').code = `.nav-menu-item {
+(function () {
+  document.getElementById('code-block-scss-example').code = `.nav-menu-item {
   --item-opacity: 0;
   background-color: rgba(var(--cpy-bg-basic-rgb), var(--item-opacity));
 
@@ -7,7 +8,7 @@ document.getElementById('code-block-scss-example').code = `.nav-menu-item {
   }
 }`;
 
-document.getElementById('code-block-ts-example').code = `import { Component, h, Prop } from '@stencil/core';
+  document.getElementById('code-block-ts-example').code = `import { Component, h, Prop } from '@stencil/core';
 import '../../utils/prism';
 
 @Component({
@@ -38,7 +39,7 @@ export class CodeBlock {
   }
 }`;
 
-document.getElementById('code-block-html-example').code = `<cpy-code-block language="scss"></cpy-code-block>
+  document.getElementById('code-block-html-example').code = `<cpy-code-block language="scss"></cpy-code-block>
 
 <script>
   document.querySelector('cpy-code-block').code = \`.nav-menu-item {
@@ -51,8 +52,9 @@ document.getElementById('code-block-html-example').code = `<cpy-code-block langu
   }\`;
 </script>`;
 
-document.getElementById('code-block-props').tableData = [
-  { name: 'code', description: 'The code snippet to show', type: "string", default: "", required: true },
-  { name: 'show-details', description: 'Shows the language and copy button', type: "boolean", default: "false", required: false },
-  { name: 'language', description: 'The code snippet language', type: "'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell'", default: "'typescript'", required: false },
-];
+  document.getElementById('code-block-props').tableData = [
+    { name: 'code', description: 'The code snippet to show', type: "string", default: "", required: true },
+    { name: 'show-details', description: 'Shows the language and copy button', type: "boolean", default: "false", required: false },
+    { name: 'language', description: 'The code snippet language', type: "'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell'", default: "'typescript'", required: false },
+  ];
+})();

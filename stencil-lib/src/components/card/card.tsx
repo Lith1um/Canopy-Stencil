@@ -11,18 +11,18 @@ export class Card {
   host: HTMLElement;
 
   render() {
-    const footerClasses = {
-      'card__footer': true,
-      'card__footer--hidden': !this.host.querySelector('[slot="footer"]')
+    const classes = {
+      'card': true,
+      'card--footer-hidden': !this.host.querySelector('[slot="footer"]')
     };
 
     return (
       <Host>
-        <div class='card'>
+        <div class={classes}>
           <slot/>
         </div>
 
-        <div class={footerClasses}>
+        <div class='card__footer'>
           <slot name='footer'/>
         </div>
       </Host>
