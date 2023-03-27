@@ -632,17 +632,36 @@ export class CpyNavMenuItem {
 }
 
 
+export declare interface CpyPageContainer extends Components.CpyPageContainer {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined
+})
+@Component({
+  selector: 'cpy-page-container',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class CpyPageContainer {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface CpyPageContent extends Components.CpyPageContent {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['hideContentsList']
+  inputs: ['contentsTitle', 'hideContentsList']
 })
 @Component({
   selector: 'cpy-page-content',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['hideContentsList']
+  inputs: ['contentsTitle', 'hideContentsList']
 })
 export class CpyPageContent {
   protected el: HTMLElement;

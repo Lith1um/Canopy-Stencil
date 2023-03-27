@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property           | Attribute            | Description | Type      | Default |
-| ------------------ | -------------------- | ----------- | --------- | ------- |
-| `hideContentsList` | `hide-contents-list` |             | `boolean` | `false` |
+| Property           | Attribute            | Description | Type      | Default     |
+| ------------------ | -------------------- | ----------- | --------- | ----------- |
+| `contentsTitle`    | `contents-title`     |             | `string`  | `undefined` |
+| `hideContentsList` | `hide-contents-list` |             | `boolean` | `false`     |
 
 
 ## Dependencies
