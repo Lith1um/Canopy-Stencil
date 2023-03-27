@@ -21,7 +21,7 @@ const menuItems = navMenuElement.items = [
     title: 'User Interface', type: 'group', description: 'Building blocks of websites', children: [
     { title: 'Layout', icon: 'dashboard', type: 'collapsible', description: 'Common UI layouts', children: [
       { title: 'Carousel', type: 'basic', url: '/comps/carousel', function: closeMenuOnMobileNav },
-      { title: 'Drawer', type: 'basic', url: '/comps/drawer', function: closeMenuOnMobileNav },
+      { title: 'Drawer Container', type: 'basic', url: '/comps/drawer', function: closeMenuOnMobileNav },
       { title: 'Navigation Menu', type: 'basic', url: '/comps/navMenu', function: closeMenuOnMobileNav },
       { title: 'Page Container', type: 'basic', url: '/comps/pageContainer', function: closeMenuOnMobileNav },
       { title: 'Page Content', type: 'basic', url: '/comps/pageContent', function: closeMenuOnMobileNav },

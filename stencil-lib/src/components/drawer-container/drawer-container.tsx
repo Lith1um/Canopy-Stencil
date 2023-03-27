@@ -1,4 +1,4 @@
-import { Component, Element, Event, EventEmitter, h, Listen, Prop, Watch } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, h, Listen, Method, Prop, Watch } from '@stencil/core';
 
 @Component({
   tag: 'cpy-drawer-container',
@@ -25,6 +25,11 @@ export class DrawerContainer {
   }
 
   @Event() toggleDrawer: EventEmitter<void>;
+
+  @Method()
+  async toggle(): Promise<void> {
+    this.opened = !this.opened;
+  }
 
   @Listen('toggleOpened')
   toggleOpenedHandler(): void {

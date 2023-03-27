@@ -113,6 +113,7 @@ export namespace Components {
     }
     interface CpyDrawerContainer {
         "opened": boolean;
+        "toggle": () => Promise<void>;
     }
     interface CpyExpandCollapse {
         "collapse": () => Promise<void>;
