@@ -110,3 +110,18 @@ cpy-tab-content {
   display: block;
   margin-top: 2rem;
 }
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.5rem 0.5rem;
+  background-color: var(--cpy-bg-white);
+}
+
+@media(min-width: 640px) {
+  .footer {
+    padding: 2rem;
+  }
+}
