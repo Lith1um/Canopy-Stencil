@@ -1,4 +1,5 @@
 import { Component, h, Prop, State } from '@stencil/core';
+import { CodeLanguage } from './types/code-language.type';
 import '../../utils/prism';
 
 declare const Prism: any;
@@ -12,7 +13,7 @@ export class CodeBlock {
 
   @Prop() code: string;
 
-  @Prop() language: 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell' = 'typescript';
+  @Prop() language: CodeLanguage = 'typescript';
 
   codeElem: HTMLElement;
 

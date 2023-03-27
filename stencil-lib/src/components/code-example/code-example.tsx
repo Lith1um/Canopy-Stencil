@@ -1,0 +1,42 @@
+import { Component, h, Prop, State } from '@stencil/core';
+import { CodeLanguage } from '../code-block/types/code-language.type';
+
+@Component({
+  tag: 'cpy-code-example',
+  styleUrl: 'code-example.scss',
+  shadow: true,
+})
+export class CodeExample {
+
+  @Prop() header;
+
+  @Prop() code: string;
+
+  @Prop() language: CodeLanguage = 'html';
+
+  @State()
+  showCode = false;
+
+  render() {
+    return (
+      <cpy-card class="code-example">
+        <div class="code-example__title">
+          <div>{this.header}</div>
+          <cpy-tooltip position="bottom" text="Code" hide-arrow>
+            <cpy-button icon size="small" type="basic" onClick={() => this.showCode = !this.showCode}>
+              <cpy-icon>code</cpy-icon>
+            </cpy-button>
+          </cpy-tooltip>
+        </div>
+
+        <cpy-code-block
+          class={this.showCode ? '' : 'code-example--hidden'}
+          language={this.language}
+          code={this.code}>
+        </cpy-code-block>
+      
+        <slot/>
+      </cpy-card>
+    );
+  }
+}

@@ -9,6 +9,7 @@ import { AlertAppearance, AlertType } from "./components/alert/alert.type";
 import { AvatarSize } from "./components/avatar/types/avatar-size.type";
 import { BadgeAppearance, BadgeSize, BadgeType } from "./components/badge/badge.type";
 import { ButtonAppearance, ButtonSize, ButtonStyle } from "./components/button/button.type";
+import { CodeLanguage } from "./components/code-block/types/code-language.type";
 import { CommentItem } from "./components/comment/interfaces/comment.interface";
 import { CommentSize } from "./components/comment/types/comment-size.type";
 import { ContentsListItem } from "./components/contents-list/contents-list.interface";
@@ -62,7 +63,12 @@ export namespace Components {
     }
     interface CpyCodeBlock {
         "code": string;
-        "language": 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell';
+        "language": CodeLanguage;
+    }
+    interface CpyCodeExample {
+        "code": string;
+        "header": any;
+        "language": CodeLanguage;
     }
     interface CpyCodeSnippet {
     }
@@ -332,6 +338,12 @@ declare global {
         prototype: HTMLCpyCodeBlockElement;
         new (): HTMLCpyCodeBlockElement;
     };
+    interface HTMLCpyCodeExampleElement extends Components.CpyCodeExample, HTMLStencilElement {
+    }
+    var HTMLCpyCodeExampleElement: {
+        prototype: HTMLCpyCodeExampleElement;
+        new (): HTMLCpyCodeExampleElement;
+    };
     interface HTMLCpyCodeSnippetElement extends Components.CpyCodeSnippet, HTMLStencilElement {
     }
     var HTMLCpyCodeSnippetElement: {
@@ -533,6 +545,7 @@ declare global {
         "cpy-card": HTMLCpyCardElement;
         "cpy-carousel": HTMLCpyCarouselElement;
         "cpy-code-block": HTMLCpyCodeBlockElement;
+        "cpy-code-example": HTMLCpyCodeExampleElement;
         "cpy-code-snippet": HTMLCpyCodeSnippetElement;
         "cpy-comment": HTMLCpyCommentElement;
         "cpy-contents-list": HTMLCpyContentsListElement;
@@ -608,7 +621,12 @@ declare namespace LocalJSX {
     }
     interface CpyCodeBlock {
         "code"?: string;
-        "language"?: 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell';
+        "language"?: CodeLanguage;
+    }
+    interface CpyCodeExample {
+        "code"?: string;
+        "header"?: any;
+        "language"?: CodeLanguage;
     }
     interface CpyCodeSnippet {
     }
@@ -778,6 +796,7 @@ declare namespace LocalJSX {
         "cpy-card": CpyCard;
         "cpy-carousel": CpyCarousel;
         "cpy-code-block": CpyCodeBlock;
+        "cpy-code-example": CpyCodeExample;
         "cpy-code-snippet": CpyCodeSnippet;
         "cpy-comment": CpyComment;
         "cpy-contents-list": CpyContentsList;
@@ -824,6 +843,7 @@ declare module "@stencil/core" {
             "cpy-card": LocalJSX.CpyCard & JSXBase.HTMLAttributes<HTMLCpyCardElement>;
             "cpy-carousel": LocalJSX.CpyCarousel & JSXBase.HTMLAttributes<HTMLCpyCarouselElement>;
             "cpy-code-block": LocalJSX.CpyCodeBlock & JSXBase.HTMLAttributes<HTMLCpyCodeBlockElement>;
+            "cpy-code-example": LocalJSX.CpyCodeExample & JSXBase.HTMLAttributes<HTMLCpyCodeExampleElement>;
             "cpy-code-snippet": LocalJSX.CpyCodeSnippet & JSXBase.HTMLAttributes<HTMLCpyCodeSnippetElement>;
             "cpy-comment": LocalJSX.CpyComment & JSXBase.HTMLAttributes<HTMLCpyCommentElement>;
             "cpy-contents-list": LocalJSX.CpyContentsList & JSXBase.HTMLAttributes<HTMLCpyContentsListElement>;

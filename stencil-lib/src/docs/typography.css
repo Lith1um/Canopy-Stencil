@@ -47,6 +47,13 @@ ul {
   border-bottom: 1px solid var(--cpy-bg-basic-border);
 }
 
+.flexbox-centered {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .section {
   margin-top: 1rem;
   margin-bottom: 2rem;
@@ -91,6 +98,7 @@ ul {
   border-bottom: 1px solid var(--cpy-bg-basic-border);
 }
 
+cpy-code-example,
 cpy-code-block,
 cpy-table,
 cpy-carousel {

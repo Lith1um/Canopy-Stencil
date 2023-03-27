@@ -58,9 +58,7 @@ export class Accordion {
           <cpy-icon>expand_more</cpy-icon>
         </div>
         <cpy-expand-collapse expanded={this.opened}>
-          <div class="accordion__content">
-            <slot/>
-          </div>
+          <slot/>
         </cpy-expand-collapse>
       </div>
     );

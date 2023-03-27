@@ -4,8 +4,10 @@
   --border-radius: var(--cpy-code-block-border-radius, 0.375rem);
   @apply overflow-hidden relative;
   border-radius: var(--border-radius);
-  color: #abb2bf;
-  background-color: #1E293B;
+  color: var(--cpy-text-light);
+  background-color: var(--cpy-bg-white);
+  // color: #abb2bf;
+  // background-color: #1E293B;
 
   &:hover {
     .code-block__copy {
@@ -14,10 +16,10 @@
   }
 
   &__copy {
-    background-color: #1E293B;
+    background-color: var(--cpy-bg-white);
     transition: background-color, opacity 300ms;
     @apply opacity-0 absolute top-2 right-2 cursor-pointer h-8 w-8 rounded-md border;
-    border-color: #828791;
+    border: 1px solid var(--cpy-bg-basic-border);
 
     .copied {
       color: var(--cpy-text-success);

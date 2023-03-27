@@ -1,0 +1,26 @@
+:host {
+  display: block;
+}
+
+.code-example {
+  @apply block bg-transparent border;
+  border-color: var(--cpy-bg-basic-border);
+
+  &--hidden {
+    @apply hidden #{'!important'};
+  }
+
+  cpy-code-block {
+    @apply -mx-6 block mb-8;
+    --cpy-code-block-border-radius: 0;
+  }
+
+  &__title {
+    @apply flex gap-1 w-full items-center mb-4 -mt-2;
+    color: var(--cpy-text-light);
+
+    & > *:first-child {
+      @apply flex-1 truncate
+    }
+  }
+}
