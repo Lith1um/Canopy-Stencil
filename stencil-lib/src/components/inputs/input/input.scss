@@ -1,3 +1,7 @@
+:host {
+  display: block;
+}
+
 .input {
   &:focus-within {
     .input__label--required::after {
@@ -42,7 +46,7 @@
   }
 
   &__container {
-    @apply border rounded-md p-2 flex gap-1.5;
+    @apply border rounded-md p-2 flex gap-1.5 items-baseline;
     background-color: var(--cpy-bg-white);
     border-color: var(--cpy-bg-basic-border);
 

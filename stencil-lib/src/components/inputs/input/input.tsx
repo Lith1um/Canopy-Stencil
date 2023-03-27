@@ -22,6 +22,9 @@ export class Input implements BaseInput<string | number> {
   label: string;
 
   @Prop()
+  placeholder: string;
+
+  @Prop()
   required: boolean;
 
   @Prop()
@@ -120,6 +123,7 @@ export class Input implements BaseInput<string | number> {
           <input
             type={this.type}
             required={this.required}
+            placeholder={this.placeholder}
             disabled={this.disabled}
             value={this.value}
             onInput={(e) => this.handleChange(e)}

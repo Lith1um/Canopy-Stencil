@@ -7,6 +7,7 @@ import { Validator } from '../validation/types/validator.type';
 export interface BaseInput<T> {
   value: T;
   label: string;
+  placeholder?: string;
   required: boolean;
   disabled: boolean;
   size: InputSize;

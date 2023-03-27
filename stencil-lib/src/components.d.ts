@@ -129,6 +129,7 @@ export namespace Components {
         "isValid": () => Promise<boolean>;
         "label": string;
         "markAsTouched": () => Promise<void>;
+        "placeholder": string;
         "required": boolean;
         "size": InputSize;
         "type": 'text' | 'number' | 'email' | 'password';
@@ -684,6 +685,7 @@ declare namespace LocalJSX {
         "disabled"?: boolean;
         "label"?: string;
         "onValueChange"?: (event: CpyInputCustomEvent<string | number>) => void;
+        "placeholder"?: string;
         "required"?: boolean;
         "size"?: InputSize;
         "type"?: 'text' | 'number' | 'email' | 'password';

@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, Listen, Prop, State } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Listen, Prop, State, Watch } from '@stencil/core';
 import { NavMenuItem } from '../nav-menu.interface';
 
 @Component({
@@ -17,6 +17,18 @@ export class NavMenuItemComp {
   @Event({bubbles: false})
   itemActive: EventEmitter<void>;
 
+  @Watch('item')
+  handleItemChange(item: NavMenuItem): void {
+    if (item.type !== 'collapsible') {
+      return;
+    }
+    if (item.collapsed === undefined || item.collapsed) {
+      return;
+    }
+    console.log('expanding', item.title);
+    this.collapsed = false;
+  }
+
   @Listen('itemActive')
   childItemActive(): void {
     if (this.item.type === 'collapsible') {
@@ -28,6 +40,8 @@ export class NavMenuItemComp {
 
   componentWillRender() {
     const currentPath = window.location.pathname;
+
+    this.handleItemChange(this.item);
 
     this.active = this.item.active
       || this.item.looseMatch ? currentPath.includes(this.item.url) : currentPath === this.item.url;
