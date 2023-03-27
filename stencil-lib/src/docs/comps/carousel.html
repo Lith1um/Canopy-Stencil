@@ -1,42 +1,84 @@
 <cpy-page-container>
-  <cpy-page-content>
-    <h3
-      style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-      Carousel
-    </h3>
+  <h1>Carousels</h1>
 
-    <p style="margin-top: 1rem; margin-bottom: 2rem;">
-      Canopy carousels provide a scrolling list of items that can be scrolled manually or by using buttons in the top
+  <cpy-tabs style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Carousel">
+        <p>
+          Canopy carousels provide a scrolling list of items that can be scrolled manually or by using buttons in the top
       right and are referenced using the <cpy-code-snippet>&lt;cpy-carousel&gt;</cpy-code-snippet> custom HTML element.
       The component utilizes the slot element, allowing you to render your own items in the carousel.
-    </p>
+        </p>
 
-    <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-    <cpy-carousel carousel-title="This is a carousel!" style="margin-bottom: 2rem;">
-      <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
-      <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
-      <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
-      <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
-      <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
-      <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
-      <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
-      <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
-      <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
-      <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
-    </cpy-carousel>
+        <cpy-code-example header="Carousel">
+<cpy-carousel carousel-title="This is a carousel!" style="margin-bottom: 2rem;">
+  <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
+  <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
+  <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
+  <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
+  <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
+  <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
+  <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
+  <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
+  <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
+  <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
+</cpy-carousel>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. There are currently no styling variables for this component. You can learn more about Canopy colours and root configuration <cpy-link href="/learn-more/colours">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
 
-    <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          Carousels serve a wide variety of scenarios and may contain many different types of content. Due to this flexible nature, the appropriate accessibility treatment depends on how you use <cpy-code-snippet>&lt;cpy-carousel&gt;</cpy-code-snippet>.
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
 
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-code-block id="carousel-html-example" language="html" show-details></cpy-code-block>
-    </div>
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Carousel">
+        <h4 id="api" title="API">API Reference for Canopy Carousel</h4>
+        <cpy-code-snippet>&lt;cpy-carousel&gt;</cpy-code-snippet>
 
-    <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-    <cpy-table id="carousel-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+        <div class="section">
+        </div>
 
-    <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
-    <cpy-table id="carousel-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  </cpy-page-content>
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
+
+        <h4 id="slots">Slots</h4>
+        <p>Inject custom content into the component</p>
+        <cpy-table id="comp-slots"></cpy-table>
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic Carousel">
+<cpy-carousel carousel-title="This is a carousel!" style="margin-bottom: 2rem;">
+  <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
+  <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
+  <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
+  <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
+  <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
+  <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
+  <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
+  <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
+  <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
+  <div style="width: 200px; height: 200px; background-color: var(--cpy-bg-dark);"></div>
+</cpy-carousel>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
 </cpy-page-container>
 
 <script src="/docs/comps/carousel.js">
