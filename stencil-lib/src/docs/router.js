@@ -23,6 +23,7 @@ const menuItems = navMenuElement.items = [
       { title: 'Carousel', type: 'basic', url: '/comps/carousel', function: closeMenuOnMobileNav },
       { title: 'Drawer', type: 'basic', url: '/comps/drawer', function: closeMenuOnMobileNav },
       { title: 'Navigation Menu', type: 'basic', url: '/comps/navMenu', function: closeMenuOnMobileNav },
+      { title: 'Page Container', type: 'basic', url: '/comps/pageContainer', function: closeMenuOnMobileNav },
       { title: 'Page Content', type: 'basic', url: '/comps/pageContent', function: closeMenuOnMobileNav },
       { title: 'Table', type: 'basic', url: '/comps/table', function: closeMenuOnMobileNav },
       { title: 'Tabs', type: 'basic', url: '/comps/tabs', function: closeMenuOnMobileNav },
@@ -59,6 +60,15 @@ const menuItems = navMenuElement.items = [
     ] },
   ] },
 ];
+
+const devRoutes = {
+  title: 'Developer Test',
+  type: 'group',
+  description: 'Pages for testing when running locally',
+  children: [
+    { title: 'Template Component Page', type: 'basic', url: '/comps/template', icon: 'aspect_ratio', function: closeMenuOnMobileNav },
+  ]
+};
 
 function loadPage(page) {
   var xhr = typeof XMLHttpRequest != 'undefined'
@@ -100,7 +110,8 @@ const handleRoute = () => {
       ? { ...item, active: window.location.pathname === item.url }
       : { ...item, children: item.children.map(setActive) };
   };
-  navMenuElement.items = menuItems.map(setActive);
+
+  navMenuElement.items = [...menuItems, ...location.hostname === 'localhost' ? [devRoutes] : []].map(setActive);
   currentPath = path;
 }
 // add event handler for when using the browser UI to navigate back and forth

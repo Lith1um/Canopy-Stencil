@@ -1,5 +1,5 @@
 .contents-list-item {
-  @apply cursor-pointer pl-3 mt-2 block border-l-2 border-transparent truncate;
+  @apply cursor-pointer pl-3 mt-1 block border-l-2 border-transparent truncate text-sm;
 
   &:hover {
     color: var(--cpy-text-primary);

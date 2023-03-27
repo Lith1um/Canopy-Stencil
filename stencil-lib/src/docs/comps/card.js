@@ -1,4 +1,5 @@
-document.getElementById('card-html-example').code = `<cpy-card style="margin-top: 1rem; margin-bottom: 2rem;">
+(function () {
+  document.getElementById('card-html-example').code = `<cpy-card style="margin-top: 1rem; margin-bottom: 2rem;">
   <div style="display: flex; gap: 1rem; align-items: center;">
     <cpy-avatar size="x-large" src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
     <div style="flex: 1;">
@@ -11,7 +12,8 @@ document.getElementById('card-html-example').code = `<cpy-card style="margin-top
   </div>
 </cpy-card>`;
 
-document.getElementById('card-slots').tableData = [
-  { slotName: "-- (default)", purpose: 'Contents of the card' },
-  { slotName: "footer", purpose: 'Footer contents for the card' }
-];
+  document.getElementById('card-slots').tableData = [
+    { slotName: "-- (default)", purpose: 'Contents of the card' },
+    { slotName: "footer", purpose: 'Footer contents for the card' }
+  ];
+})();

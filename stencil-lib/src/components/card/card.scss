@@ -1,18 +1,20 @@
 :host {
   @apply inline-block rounded-xl overflow-hidden;
+  background-color: var(--cpy-bg-white);
 }
 
 .card {
-  @apply p-6;
-  background-color: var(--cpy-bg-white);
+  @apply p-6 rounded-t-xl;
+
+  &--footer-hidden {
+    & + .card__footer {
+      @apply hidden;
+    }
+  }
 
   &__footer {
     @apply px-6 py-2;
     background-color: var(--cpy-bg-primary);
     color: white;
-
-    &--hidden {
-      @apply hidden;
-    }
   }
 }

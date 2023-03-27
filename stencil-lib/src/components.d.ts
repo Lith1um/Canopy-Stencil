@@ -161,7 +161,10 @@ export namespace Components {
     interface CpyNavMenuItem {
         "item": NavMenuItem;
     }
+    interface CpyPageContainer {
+    }
     interface CpyPageContent {
+        "contentsTitle": string;
         "hideContentsList": boolean;
     }
     interface CpyPopup {
@@ -437,6 +440,12 @@ declare global {
         prototype: HTMLCpyNavMenuItemElement;
         new (): HTMLCpyNavMenuItemElement;
     };
+    interface HTMLCpyPageContainerElement extends Components.CpyPageContainer, HTMLStencilElement {
+    }
+    var HTMLCpyPageContainerElement: {
+        prototype: HTMLCpyPageContainerElement;
+        new (): HTMLCpyPageContainerElement;
+    };
     interface HTMLCpyPageContentElement extends Components.CpyPageContent, HTMLStencilElement {
     }
     var HTMLCpyPageContentElement: {
@@ -542,6 +551,7 @@ declare global {
         "cpy-link": HTMLCpyLinkElement;
         "cpy-nav-menu": HTMLCpyNavMenuElement;
         "cpy-nav-menu-item": HTMLCpyNavMenuItemElement;
+        "cpy-page-container": HTMLCpyPageContainerElement;
         "cpy-page-content": HTMLCpyPageContentElement;
         "cpy-popup": HTMLCpyPopupElement;
         "cpy-progress-bar": HTMLCpyProgressBarElement;
@@ -695,7 +705,10 @@ declare namespace LocalJSX {
         "item"?: NavMenuItem;
         "onItemActive"?: (event: CpyNavMenuItemCustomEvent<void>) => void;
     }
+    interface CpyPageContainer {
+    }
     interface CpyPageContent {
+        "contentsTitle"?: string;
         "hideContentsList"?: boolean;
     }
     interface CpyPopup {
@@ -783,6 +796,7 @@ declare namespace LocalJSX {
         "cpy-link": CpyLink;
         "cpy-nav-menu": CpyNavMenu;
         "cpy-nav-menu-item": CpyNavMenuItem;
+        "cpy-page-container": CpyPageContainer;
         "cpy-page-content": CpyPageContent;
         "cpy-popup": CpyPopup;
         "cpy-progress-bar": CpyProgressBar;
@@ -828,6 +842,7 @@ declare module "@stencil/core" {
             "cpy-link": LocalJSX.CpyLink & JSXBase.HTMLAttributes<HTMLCpyLinkElement>;
             "cpy-nav-menu": LocalJSX.CpyNavMenu & JSXBase.HTMLAttributes<HTMLCpyNavMenuElement>;
             "cpy-nav-menu-item": LocalJSX.CpyNavMenuItem & JSXBase.HTMLAttributes<HTMLCpyNavMenuItemElement>;
+            "cpy-page-container": LocalJSX.CpyPageContainer & JSXBase.HTMLAttributes<HTMLCpyPageContainerElement>;
             "cpy-page-content": LocalJSX.CpyPageContent & JSXBase.HTMLAttributes<HTMLCpyPageContentElement>;
             "cpy-popup": LocalJSX.CpyPopup & JSXBase.HTMLAttributes<HTMLCpyPopupElement>;
             "cpy-progress-bar": LocalJSX.CpyProgressBar & JSXBase.HTMLAttributes<HTMLCpyProgressBarElement>;

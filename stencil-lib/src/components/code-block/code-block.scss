@@ -12,17 +12,10 @@
   }
 
   &__copy {
-    --button-opacity: 0;
-    --bg-colour-rgb: var(--cpy-bg-basic-rgb);
-    background-color: rgba(var(--bg-colour-rgb), var(--button-opacity));
+    background-color: #1E293B;
     transition: background-color, opacity 300ms;
     @apply opacity-0 absolute top-2 right-2 cursor-pointer h-8 w-8 rounded-md border;
     border-color: #828791;
-    
-    &:hover {
-      --button-opacity: 0.1;
-      --bg-colour-rgb: var(--cpy-bg-basic-hover-rgb);
-    }
 
     .copied {
       color: var(--cpy-text-success);

@@ -1,23 +1,15 @@
 .page-container {
-  @apply h-full w-full overflow-y-auto;
-
-  &__content {
-    @apply max-w-7xl my-8 md:my-16 mx-auto px-4 md:px-8 lg:px-16;
-
-    cpy-contents-list {
-      @apply hidden;
-    }
+  cpy-contents-list {
+    @apply hidden;
   }
 }
 
 @media(min-width: 640px) {
   .page-container {
-    &__content {
-      @apply flex gap-8;
+    @apply flex gap-8;
 
-      cpy-contents-list {
-        @apply block;
-      }
+    cpy-contents-list {
+      @apply block;
     }
 
     &__main {
