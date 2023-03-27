@@ -1,9 +1,6 @@
 (function () {
-  const basicExampleCode = `<cpy-avatar src="https://react.semantic-Ui.com/images/avatar/large/matthew.png">
-</cpy-avatar>`;
-
-  document.getElementById('overview-code').code = basicExampleCode;
-  document.getElementById('example-code').code = basicExampleCode;
+  document.getElementById('overview-code').code = `<cpy-avatar src="https://react.semantic-Ui.com/images/avatar/large/matthew.png">
+  </cpy-avatar>`;
   
   document.getElementById('comp-styles').tableData = [
     { cssVariable: '', description: '', defaultValue: '' },

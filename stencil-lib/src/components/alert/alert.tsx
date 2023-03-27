@@ -9,7 +9,7 @@ import { AlertAppearance, AlertType } from './alert.type';
 export class Alert {
   
   @Prop()
-  type: AlertType = 'error';
+  type: AlertType;
 
   @Prop()
   appearance: AlertAppearance = 'soft';
