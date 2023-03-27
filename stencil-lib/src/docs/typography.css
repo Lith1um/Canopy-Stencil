@@ -9,31 +9,31 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
 }
 
 h2 {
   font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
 }
 
 h3 {
   font-size: 1.6rem;
   font-weight: 600;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.4rem;
 }
 
 h4 {
   font-size: 1.4rem;
   font-weight: 500;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.2rem;
 }
 
 h5 {
   font-size: 1.2rem;
   font-weight: 500;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .section {
@@ -46,7 +46,14 @@ h5 {
   background-color: transparent;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  padding: 0;
   border: 1px solid var(--cpy-bg-basic-border);
+}
+
+.container > cpy-code-block {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  --cpy-code-block-border-radius: 0;
 }
 
 .container-title {
@@ -58,7 +65,7 @@ h5 {
   margin-top: -0.5rem;
 }
 
-.container-title > div:first-child {
+.container-title > *:first-child {
   flex: 1;
   white-space: nowrap;
   overflow: hidden;
@@ -73,7 +80,9 @@ h5 {
   border-bottom: 1px solid var(--cpy-bg-basic-border);
 }
 
-cpy-code-block {
+cpy-code-block,
+cpy-table,
+cpy-carousel {
   display: block;
   margin-bottom: 2rem;
 }

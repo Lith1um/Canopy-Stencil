@@ -1,7 +1,9 @@
 @import url(../../styles/prism.css);
 
 .code-block {
-  @apply rounded-md overflow-hidden relative;
+  --border-radius: var(--cpy-code-block-border-radius, 0.375rem);
+  @apply overflow-hidden relative;
+  border-radius: var(--border-radius);
   color: #abb2bf;
   background-color: #1E293B;
 

@@ -32,7 +32,10 @@ export class PageContent {
     }
 
     this.headers = Array.from(this.host.querySelectorAll('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]'));
-    this.contents = this.headers.map(header => ({title: header.textContent, url: `#${header.id}`}));
+    this.contents = this.headers.map(header => ({
+      title: header.title || header.textContent,
+      url: `#${header.id}`,
+    }));
   }
 
   componentDidLoad(): void {
@@ -66,6 +69,8 @@ export class PageContent {
         }
         
         // do nothing if there is no intersection header
+        // TODO: known bug that scrolling up and having no intersection header will not update the active index
+        // (it should ideally pick the previous one)
         if (!headerId) {
           return;
         }
