@@ -5,9 +5,10 @@
 </cpy-accordion>
 
 <script>
-  const accordionElem = document.querySelector('cpy-accordion');
-  accordionElem.addEventListener('accordionOpened', () => console.log('opened'));
-  accordionElem.toggle();
+  (async () => {
+    await customElements.whenDefined('cpy-accordion');
+    document.querySelector('cpy-accordion').toggle();
+  })();
 </script>`;
   
   document.getElementById('comp-styles').tableData = [
