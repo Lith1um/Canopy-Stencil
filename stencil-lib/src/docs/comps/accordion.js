@@ -9,25 +9,6 @@
   accordionElem.addEventListener('accordionOpened', () => console.log('opened'));
   accordionElem.toggle();
 </script>`;
-
-  document.getElementById('example-code').code = `<cpy-accordion header-title="Accordion">
-  I'm the contents of an Accordion!
-</cpy-accordion>`;
-  document.getElementById('example-code-small').code = `<cpy-accordion header-title="Small Accordion" size="small">
-  I'm the contents of an Accordion!
-</cpy-accordion>`;
-  document.getElementById('example-code-large').code = `<cpy-accordion header-title="Large Accordion" size="large">
-  I'm the contents of an Accordion!
-</cpy-accordion>`;
-  document.getElementById('example-code-custom').code = `<cpy-accordion
-  header-title="Custom Accordion"
-  style="
-    --cpy-accordion-header-bg: var(--cpy-bg-error);
-    --cpy-accordion-header-hover-bg: var(--cpy-bg-error-hover);
-    --cpy-accordion-header-text-colour: white;
-  ">
-  I'm the contents of an Accordion!
-</cpy-accordion>`;
   
   document.getElementById('comp-styles').tableData = [
     { cssVariable: '--cpy-accordion-header-bg', description: 'Background colour of header', defaultValue: 'transparent' },

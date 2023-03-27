@@ -1,4 +1,4 @@
-import { Component, h, Prop, State } from '@stencil/core';
+import { Component, Element, h, Prop, State } from '@stencil/core';
 import { CodeLanguage } from '../code-block/types/code-language.type';
 
 @Component({
@@ -7,6 +7,9 @@ import { CodeLanguage } from '../code-block/types/code-language.type';
   shadow: true,
 })
 export class CodeExample {
+
+  @Element()
+  host: HTMLElement;
 
   @Prop() header;
 
@@ -32,7 +35,7 @@ export class CodeExample {
         <cpy-code-block
           class={this.showCode ? '' : 'code-example--hidden'}
           language={this.language}
-          code={this.code}>
+          code={this.code || this.host.innerHTML.trim()}>
         </cpy-code-block>
       
         <slot/>
