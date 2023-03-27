@@ -3,6 +3,7 @@
 }
 
 .avatar {
+  --avatar-bg: var(--cpy-avatar-bg, var(--cpy-bg-medium));
   @apply w-10 h-10 overflow-hidden flex justify-center items-center uppercase;
 
   img {
@@ -19,7 +20,7 @@
 
   &--border {
     @apply border-2;
-    border-color: var(--cpy-bg-medium);
+    border-color: var(--avatar-bg);
   }
 
   &--small {
@@ -35,7 +36,7 @@
   }
 
   &--initials {
-    background-color: var(--cpy-bg-medium);
+    background-color: var(--avatar-bg);
   }
   
 }

@@ -1,125 +1,97 @@
 <cpy-page-container>
-  <cpy-page-content>
-    <h3
-      style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-      Avatars
-    </h3>
+  <h1>Avatars</h1>
 
-    <p style="margin-top: 1rem; margin-bottom: 2rem;">
-      Canopy avatars provide a simple way to represent the user, and displays the profile picture in a consistent way.
+  <cpy-tabs style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Avatar">
+        <p>
+          Canopy avatars provide a simple way to represent the user, and displays the profile picture in a consistent way.
       They are referenced using the <cpy-code-snippet>&lt;cpy-avatar&gt;</cpy-code-snippet> custom HTML element.
-    </p>
+        </p>
 
-    <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-    <p>Round</p>
-    <div
-      style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-      <div style="flex: 1;">
-        <cpy-avatar size="small" src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
-      </div>
-      <div style="flex: 1;">
-        <cpy-avatar src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
-      </div>
-      <div style="flex: 1;">
-        <cpy-avatar size="large" src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
-      </div>
-      <div style="flex: 1;">
-        <cpy-avatar size="x-large" src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
-      </div>
+        <cpy-code-example header="Avatar">
+<cpy-avatar
+  type="square"
+  size="large"
+  src="https://react.semantic-Ui.com/images/avatar/large/matthew.png">
+</cpy-avatar>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. Below is a list of variables you can use to configure this component. You can learn more about Canopy colours and root configuration <cpy-link href="/learn-more/colours">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
 
-      <div style="flex: 1;">
-        <cpy-avatar border size="small"
-          src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
-      </div>
-      <div style="flex: 1;">
-        <cpy-avatar border src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
-      </div>
-      <div style="flex: 1;">
-        <cpy-avatar border size="large"
-          src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
-      </div>
-      <div style="flex: 1;">
-        <cpy-avatar border size="x-large"
-          src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
-      </div>
-    </div>
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          Avatars serve a wide variety of scenarios and may contain many different types of content. Due to this flexible nature, the appropriate accessibility treatment depends on how you use <cpy-code-snippet>&lt;cpy-avatar&gt;</cpy-code-snippet>.
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
 
-    <p>Square</p>
-    <div
-      style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-      <div style="flex: 1;">
-        <cpy-avatar type="square" size="small"
-          src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
-      </div>
-      <div style="flex: 1;">
-        <cpy-avatar type="square" src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
-      </div>
-      <div style="flex: 1;">
-        <cpy-avatar type="square" size="large"
-          src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
-      </div>
-      <div style="flex: 1;">
-        <cpy-avatar type="square" size="x-large"
-          src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
-      </div>
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Avatar">
+        <h4 id="api" title="API">API Reference for Canopy Avatar</h4>
+        <cpy-code-snippet>&lt;cpy-avatar&gt;</cpy-code-snippet>
 
-      <div style="flex: 1;">
-        <cpy-avatar type="square" border size="small"
-          src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
-      </div>
-      <div style="flex: 1;">
-        <cpy-avatar type="square" border
-          src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
-      </div>
-      <div style="flex: 1;">
-        <cpy-avatar type="square" border size="large"
-          src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
-      </div>
-      <div style="flex: 1;">
-        <cpy-avatar type="square" border size="x-large"
-          src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
-      </div>
-    </div>
+        <div class="section">
+        </div>
 
-    <p>Initials</p>
-    <div
-      style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-      <div style="flex: 1;">
-        <cpy-avatar size="small" initials="AR"></cpy-avatar>
-      </div>
-      <div style="flex: 1;">
-        <cpy-avatar initials="AR"></cpy-avatar>
-      </div>
-      <div style="flex: 1;">
-        <cpy-avatar size="large" initials="AR"></cpy-avatar>
-      </div>
-      <div style="flex: 1;">
-        <cpy-avatar size="x-large" initials="AR"></cpy-avatar>
-      </div>
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
 
-      <div style="flex: 1;">
-        <cpy-avatar type="square" size="small" initials="AR"></cpy-avatar>
-      </div>
-      <div style="flex: 1;">
-        <cpy-avatar type="square" initials="AR"></cpy-avatar>
-      </div>
-      <div style="flex: 1;">
-        <cpy-avatar type="square" size="large" initials="AR"></cpy-avatar>
-      </div>
-      <div style="flex: 1;">
-        <cpy-avatar type="square" size="x-large" initials="AR"></cpy-avatar>
-      </div>
-    </div>
+      </cpy-page-content>
+    </cpy-tab-content>
 
-    <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic avatar">
+<cpy-avatar src="https://react.semantic-Ui.com/images/avatar/large/matthew.png">
+</cpy-avatar>
+      </cpy-code-example>
 
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-code-block id="avatar-html-example" language="html"></cpy-code-block>
-    </div>
+      <cpy-code-example header="Avatar with border">
+<cpy-avatar src="https://react.semantic-Ui.com/images/avatar/large/matthew.png" border>
+</cpy-avatar>
+      </cpy-code-example>
 
-    <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-    <cpy-table id="avatar-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  </cpy-page-content>
+      <cpy-code-example header="Square avatar">
+<cpy-avatar src="https://react.semantic-Ui.com/images/avatar/large/matthew.png" type="square">
+</cpy-avatar>
+      </cpy-code-example>
+
+      <cpy-code-example header="Avatar with initials">
+<cpy-avatar initials="AR">
+</cpy-avatar>
+      </cpy-code-example>
+
+      <cpy-code-example header="Alternate sizes">
+<cpy-avatar src="https://react.semantic-Ui.com/images/avatar/large/matthew.png" size="small">
+</cpy-avatar>
+
+<cpy-avatar src="https://react.semantic-Ui.com/images/avatar/large/matthew.png">
+</cpy-avatar>
+
+<cpy-avatar src="https://react.semantic-Ui.com/images/avatar/large/matthew.png" size="large">
+</cpy-avatar>
+
+<cpy-avatar src="https://react.semantic-Ui.com/images/avatar/large/matthew.png" size="x-large">
+</cpy-avatar>
+      </cpy-code-example>
+
+      <cpy-code-example header="Custom avatar">
+<cpy-avatar size="x-large" initials="AR" style="--cpy-avatar-bg: var(--cpy-bg-error);">
+</cpy-avatar>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
 </cpy-page-container>
 
 <script src="/docs/comps/avatar.js">
