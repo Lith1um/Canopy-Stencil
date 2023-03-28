@@ -50,10 +50,14 @@ export class Tabs {
     this.headerGroupElem.addEventListener('scroll', debounce(() => this.handleScroll(), 100));
     this.handleScrollableHeader();
 
-    window.addEventListener('resize', debounce(() => {
-      this.updateActiveBar();
-      this.handleScrollableHeader();
+    const resize = new ResizeObserver(debounce(entries => {
+      entries.forEach((_) => {
+        this.updateActiveBar();
+        this.handleScrollableHeader();
+      })
     }, 250));
+
+    resize.observe(this.headerGroupElem);
   }
 
   @Listen('selected')
