@@ -12,7 +12,7 @@ export interface NavMenuItem {
   collapsed?: boolean;
   looseMatch?: boolean;
   openInNewTab?: boolean;
-  function?: () => any;
+  function?: (item: NavMenuItem) => any;
   children?: NavMenuItem[];
 
 }

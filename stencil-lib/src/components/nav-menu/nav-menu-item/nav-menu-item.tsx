@@ -43,7 +43,7 @@ export class NavMenuItemComp {
     this.handleItemChange(this.item);
 
     this.active = this.item.active
-      || this.item.looseMatch ? currentPath.includes(this.item.url) : currentPath === this.item.url;
+      || (this.item.looseMatch ? currentPath.includes(this.item.url) : currentPath === this.item.url);
 
     if (this.active) {
       this.itemActive.emit();
@@ -71,11 +71,16 @@ export class NavMenuItemComp {
       itemAttrs.href = this.item.url;
     }
     if (this.item.function) {
-      itemAttrs.onClick = this.item.function;
+      itemAttrs.onClick = () => this.item.function(this.item);
     }
 
     if (this.item.type === 'collapsible') {
-      itemAttrs.onClick = () => this.collapsed = !this.collapsed;
+      itemAttrs.onClick = () => {
+        this.collapsed = !this.collapsed;
+        if (this.item.function) {
+          this.item.function(this.item);
+        }
+      }
     }
 
     return (
