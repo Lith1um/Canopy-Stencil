@@ -45,6 +45,7 @@ searchInputClear.addEventListener('click', () => {
 });
 
 const onMenuItemClick = () => {
+  searchElem.value = '';
   if (!window.matchMedia('(min-width: 640px)').matches) {
     drawer.opened = false;
   }

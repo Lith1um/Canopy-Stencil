@@ -654,6 +654,39 @@ export class CpyNavMenuItem {
 }
 
 
+export declare interface CpyOverlay extends Components.CpyOverlay {
+  /**
+   *  
+   */
+  closed: EventEmitter<CustomEvent<void>>;
+  /**
+   *  
+   */
+  backdropClick: EventEmitter<CustomEvent<void>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['hasBackdropClick', 'show', 'zIndex'],
+  methods: ['open', 'close', 'toggle']
+})
+@Component({
+  selector: 'cpy-overlay',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['hasBackdropClick', 'show', 'zIndex']
+})
+export class CpyOverlay {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['closed', 'backdropClick']);
+  }
+}
+
+
 export declare interface CpyPageContainer extends Components.CpyPageContainer {}
 
 @ProxyCmp({
