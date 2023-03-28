@@ -1,30 +1,65 @@
 <cpy-page-container>
-  <cpy-page-content>
-    <h3
-      style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-      Tables
-    </h3>
+  <h1>Tables</h1>
 
-    <p style="margin-top: 1rem; margin-bottom: 2rem;">
-      Canopy tables are used to organize and display data efficiently. They are referenced using
+  <cpy-tabs style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Table">
+        <p>
+          Canopy tables are used to organize and display data efficiently. They are referenced using
       the<cpy-code-snippet>&lt;cpy-table&gt;</cpy-code-snippet>custom HTML element. The table will by default pick the
       object keys of the first element to create the headers.
-    </p>
+        </p>
 
-    <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-table id="table-example"></cpy-table>
-    </div>
+        <cpy-code-example header="Table" id="overview-code">
+<cpy-table id="overview-table"></cpy-table>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. Below is a list of variables you can use to configure this component. You can learn more about Canopy colours and root configuration <cpy-link href="/learn-more/colours">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
 
-    <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          Tables serve a wide variety of scenarios and may contain many different types of content. Due to this flexible nature, the appropriate accessibility treatment depends on how you use <cpy-code-snippet>&lt;cpy-table&gt;</cpy-code-snippet>.
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
 
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-code-block id="table-html-example" language="html"></cpy-code-block>
-    </div>
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Table">
+        <h4 id="api" title="API">API Reference for Canopy Table</h4>
+        <cpy-code-snippet>&lt;cpy-table&gt;</cpy-code-snippet>
 
-    <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-    <cpy-table id="table-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  </cpy-page-content>
+        <div class="section">
+        </div>
+
+        <h4 id="types">Types</h4>
+        <cpy-code-block id="comp-interfaces"></cpy-code-block>
+
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic Table" id="example-code-1">
+<cpy-table id="example-table-1"></cpy-table>
+      </cpy-code-example>
+
+      <cpy-code-example header="Custom Table" id="example-code-2">
+<cpy-table id="example-table-2" style="--cpy-table-bg: var(--cpy-bg-error);"></cpy-table>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
 </cpy-page-container>
 
 <script src="/docs/comps/table.js">

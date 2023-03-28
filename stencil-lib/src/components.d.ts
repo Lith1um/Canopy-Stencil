@@ -20,6 +20,7 @@ import { Validator } from "./components/inputs/validation/types/validator.type";
 import { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
 import { ProgressBarAppearance, ProgressBarSize } from "./components/progress-bar/progress-bar.type";
 import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
+import { TableData } from "./components/table/types/table-data.type";
 import { ToastPosition } from "./components/toast/toast.type";
 export namespace Components {
     interface CpyAccordion {
@@ -219,7 +220,7 @@ export namespace Components {
         "tabTitle": string;
     }
     interface CpyTable {
-        "tableData": { [key: string]: string | number | boolean | null | undefined }[];
+        "tableData": TableData[];
     }
     interface CpyTabs {
         "activeIndex": number;
@@ -792,7 +793,7 @@ declare namespace LocalJSX {
         "tabTitle"?: string;
     }
     interface CpyTable {
-        "tableData"?: { [key: string]: string | number | boolean | null | undefined }[];
+        "tableData"?: TableData[];
     }
     interface CpyTabs {
         "activeIndex"?: number;

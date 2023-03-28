@@ -1,6 +1,7 @@
 :host {
+  --table-bg: var(--cpy-table-bg, var(--cpy-bg-white));
   @apply relative block rounded-xl overflow-auto border;
-  background-color: var(--cpy-bg-white);
+  background-color: var(--table-bg);
   border-color: var(--cpy-bg-basic-border);
 }
 
