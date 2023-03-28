@@ -25,7 +25,6 @@ export class NavMenuItemComp {
     if (item.collapsed === undefined || item.collapsed) {
       return;
     }
-    console.log('expanding', item.title);
     this.collapsed = false;
   }
 

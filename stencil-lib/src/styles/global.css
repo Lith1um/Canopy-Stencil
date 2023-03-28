@@ -29,6 +29,7 @@
   --cpy-dm-text-override: currentColor;
 
   --cpy-bg-hover: rgba(0, 0, 0, 0.05);
+  --cpy-bg-overlay: rgba(0, 0, 0, 0.5);
 
   /* based on tailwind colours */
   --cpy-bg-light-rgb: 250, 250, 250; /* zinc-50 */

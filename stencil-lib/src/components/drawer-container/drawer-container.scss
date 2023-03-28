@@ -5,4 +5,19 @@
     @apply relative z-20 block h-full overflow-auto transition-all duration-300 min-w-[300px];
     background-color: var(--cpy-bg-light);
   }
+
+  &__overlay {
+    @apply absolute inset-0 z-[25] opacity-0 transition-opacity duration-1000;
+    background-color: var(--cpy-bg-overlay);
+
+    &--show {
+      @apply opacity-100;
+    }
+  }
+}
+
+@media(min-width: 640px) {
+  .drawer-container__overlay {
+    @apply hidden;
+  }
 }

@@ -169,6 +169,14 @@ export namespace Components {
     interface CpyNavMenuItem {
         "item": NavMenuItem;
     }
+    interface CpyOverlay {
+        "close": () => Promise<void>;
+        "hasBackdropClick": boolean;
+        "open": () => Promise<void>;
+        "show": boolean;
+        "toggle": (show: boolean) => Promise<void>;
+        "zIndex": string;
+    }
     interface CpyPageContainer {
     }
     interface CpyPageContent {
@@ -278,6 +286,10 @@ export interface CpyInputToggleCustomEvent<T> extends CustomEvent<T> {
 export interface CpyNavMenuItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyNavMenuItemElement;
+}
+export interface CpyOverlayCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyOverlayElement;
 }
 export interface CpyTabHeaderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -454,6 +466,12 @@ declare global {
         prototype: HTMLCpyNavMenuItemElement;
         new (): HTMLCpyNavMenuItemElement;
     };
+    interface HTMLCpyOverlayElement extends Components.CpyOverlay, HTMLStencilElement {
+    }
+    var HTMLCpyOverlayElement: {
+        prototype: HTMLCpyOverlayElement;
+        new (): HTMLCpyOverlayElement;
+    };
     interface HTMLCpyPageContainerElement extends Components.CpyPageContainer, HTMLStencilElement {
     }
     var HTMLCpyPageContainerElement: {
@@ -566,6 +584,7 @@ declare global {
         "cpy-link": HTMLCpyLinkElement;
         "cpy-nav-menu": HTMLCpyNavMenuElement;
         "cpy-nav-menu-item": HTMLCpyNavMenuItemElement;
+        "cpy-overlay": HTMLCpyOverlayElement;
         "cpy-page-container": HTMLCpyPageContainerElement;
         "cpy-page-content": HTMLCpyPageContentElement;
         "cpy-popup": HTMLCpyPopupElement;
@@ -726,6 +745,13 @@ declare namespace LocalJSX {
         "item"?: NavMenuItem;
         "onItemActive"?: (event: CpyNavMenuItemCustomEvent<void>) => void;
     }
+    interface CpyOverlay {
+        "hasBackdropClick"?: boolean;
+        "onBackdropClick"?: (event: CpyOverlayCustomEvent<void>) => void;
+        "onClosed"?: (event: CpyOverlayCustomEvent<void>) => void;
+        "show"?: boolean;
+        "zIndex"?: string;
+    }
     interface CpyPageContainer {
     }
     interface CpyPageContent {
@@ -818,6 +844,7 @@ declare namespace LocalJSX {
         "cpy-link": CpyLink;
         "cpy-nav-menu": CpyNavMenu;
         "cpy-nav-menu-item": CpyNavMenuItem;
+        "cpy-overlay": CpyOverlay;
         "cpy-page-container": CpyPageContainer;
         "cpy-page-content": CpyPageContent;
         "cpy-popup": CpyPopup;
@@ -865,6 +892,7 @@ declare module "@stencil/core" {
             "cpy-link": LocalJSX.CpyLink & JSXBase.HTMLAttributes<HTMLCpyLinkElement>;
             "cpy-nav-menu": LocalJSX.CpyNavMenu & JSXBase.HTMLAttributes<HTMLCpyNavMenuElement>;
             "cpy-nav-menu-item": LocalJSX.CpyNavMenuItem & JSXBase.HTMLAttributes<HTMLCpyNavMenuItemElement>;
+            "cpy-overlay": LocalJSX.CpyOverlay & JSXBase.HTMLAttributes<HTMLCpyOverlayElement>;
             "cpy-page-container": LocalJSX.CpyPageContainer & JSXBase.HTMLAttributes<HTMLCpyPageContainerElement>;
             "cpy-page-content": LocalJSX.CpyPageContent & JSXBase.HTMLAttributes<HTMLCpyPageContentElement>;
             "cpy-popup": LocalJSX.CpyPopup & JSXBase.HTMLAttributes<HTMLCpyPopupElement>;

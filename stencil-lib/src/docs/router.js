@@ -66,6 +66,7 @@ const menuItems = navMenuElement.items = [
       { title: 'Carousel', type: 'basic', url: '/comps/carousel', function: onMenuItemClick },
       { title: 'Drawer Container', type: 'basic', url: '/comps/drawer', function: onMenuItemClick },
       { title: 'Navigation Menu', type: 'basic', url: '/comps/navMenu', function: onMenuItemClick },
+      { title: 'Overlay', type: 'basic', url: '/comps/overlay', function: onMenuItemClick },
       { title: 'Page Container', type: 'basic', url: '/comps/pageContainer', function: onMenuItemClick },
       { title: 'Page Content', type: 'basic', url: '/comps/pageContent', function: onMenuItemClick },
       { title: 'Table', type: 'basic', url: '/comps/table', function: onMenuItemClick },
@@ -128,6 +129,7 @@ function loadPage(page) {
     if (xhr.readyState == 4 && xhr.status == 200) {
       const routerOutlet = document.getElementById("router-outlet");
       routerOutlet.innerHTML = xhr.responseText;
+      routerOutlet.parentElement.scrollTop = 0;
 
       // inject any scripts from the template
       const pageElements = document.createRange().createContextualFragment(xhr.responseText);
