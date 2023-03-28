@@ -1,12 +1,13 @@
 .contents-list-item {
   @apply cursor-pointer pl-3 mt-1 block border-l-2 border-transparent truncate text-sm;
+  --active-bg: var(--cpy-contents-text-active, var(--cpy-text-primary));
 
   &:hover {
-    color: var(--cpy-text-primary);
+    color: var(--active-bg);
   }
 
   &--active {
     @apply border-current;
-    color: var(--cpy-text-primary);
+    color: var(--active-bg);
   }
 }

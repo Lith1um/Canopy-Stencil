@@ -31,7 +31,7 @@ export class PageContent {
       return;
     }
 
-    this.headers = Array.from(this.host.querySelectorAll('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]'));
+    this.headers = Array.from(this.host.querySelectorAll(':scope > h1[id], :scope > h2[id], :scope > h3[id], :scope > h4[id], :scope > h5[id], :scope > h6[id]'));
     this.contents = this.headers.map(header => ({
       title: header.title || header.textContent,
       url: `#${header.id}`,
