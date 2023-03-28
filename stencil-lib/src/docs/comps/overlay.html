@@ -10,9 +10,10 @@
           Canopy overlays provide a way to open floating panels on the screen. They are referenced using the<cpy-code-snippet>&lt;cpy-overlay&gt;</cpy-code-snippet>custom HTML element. This component utilises the slot element, allowing you to render your own HTML in the overlay.
         </p>
 
-        <cpy-code-example header="Overlay">
+        <cpy-code-example header="Overlay" id="overview-example">
 <div style="position: relative; height: 15rem; width: 100%;">
-  <cpy-overlay show>
+  <cpy-button type="primary" id="overview-button">Show overlay</cpy-button>
+  <cpy-overlay show id="overview-overlay">
     <div style="background-color: var(--cpy-bg-white); text-align: center; padding: 0.5rem;">
       I'm in the overlay! Click the backdrop to close me.
     </div>
@@ -76,6 +77,16 @@
 <div style="position: relative; height: 15rem; width: 100%;">
   <cpy-button type="primary" id="button">Show overlay</cpy-button>
   <cpy-overlay id="overlay">
+  </cpy-overlay>
+</div>
+      </cpy-code-example>
+
+      <cpy-code-example header="Overlay with content">
+<div style="position: relative; height: 15rem; width: 100%;">
+  <cpy-overlay show>
+    <div style="background-color: var(--cpy-bg-white); text-align: center; padding: 0.5rem;">
+      I'm in the overlay!
+    </div>
   </cpy-overlay>
 </div>
       </cpy-code-example>

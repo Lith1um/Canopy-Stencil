@@ -22,8 +22,10 @@
     { slotName: "-- (default)", purpose: 'The contents of the overlay' },
   ];
 
-  const overlay = document.getElementById('overlay');
-  document.getElementById('button').addEventListener('click', () => overlay.open());
+  const overlay = document.getElementById('overview-overlay');
+  document.getElementById('overview-button').addEventListener('click', () => overlay.open());
+  const overlayExample = document.getElementById('overlay');
+  document.getElementById('button').addEventListener('click', () => overlayExample.open());
   document.getElementById('example-overlay').code = `<div style="position: relative; height: 15rem; width: 100%;">
   <cpy-button type="primary" id="button">Show overlay</cpy-button>
   <cpy-overlay id="overlay">
@@ -37,5 +39,22 @@
     document.querySelector('button')
       .addEventListener('click', () => overlay.open());
   })();
-</script>`
+</script>`;
+  document.getElementById('overview-example').code = `<div style="position: relative; height: 15rem; width: 100%;">
+  <cpy-button type="primary">Show overlay</cpy-button>
+  <cpy-overlay show>
+    <div style="background-color: var(--cpy-bg-white); text-align: center; padding: 0.5rem;">
+      I'm in the overlay! Click the backdrop to close me.
+    </div>
+  </cpy-overlay>
+</div>
+
+<script>
+  (async () => {
+    await customElements.whenDefined('cpy-overlay');
+    const overlay = document.querySelector('overlay');
+    document.querySelector('button')
+      .addEventListener('click', () => overlay.open());
+  })();
+</script>`;
 })();
