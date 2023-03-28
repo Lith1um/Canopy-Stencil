@@ -52,7 +52,7 @@ export class Tabs {
 
     const resize = new ResizeObserver(debounce(entries => {
       entries.forEach((_) => {
-        this.updateActiveBar();
+        this.updateActiveBar(false);
         this.handleScrollableHeader();
       })
     }, 250));
@@ -91,14 +91,16 @@ export class Tabs {
     this.updateActiveBar();
   }
 
-  updateActiveBar(): void {
+  updateActiveBar(scroll: boolean = true): void {
     const parentPos = this.headerGroupElem.getBoundingClientRect();
     const childPos  = this.activeTab.header.getBoundingClientRect();
     const left = childPos.left - parentPos.left + this.headerGroupElem.scrollLeft;
 
     this.activeBarElem.style.left = `${left}px`;
     this.activeBarElem.style.width = `${this.activeTab.header.offsetWidth}px`;
-    this.activeTab.header.scrollIntoView({ block: 'nearest' });
+    if (scroll) {
+      this.activeTab.header.scrollIntoView({ block: 'nearest' });
+    }
   }
 
   handleScrollableHeader(): void {

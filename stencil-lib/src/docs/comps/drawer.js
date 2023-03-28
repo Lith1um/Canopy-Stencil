@@ -1,5 +1,5 @@
 (function () {
-  document.getElementById('overview-code').code = `<cpy-drawer-container>
+  const code = `<cpy-drawer-container>
   <!-- slotted content for drawer contents -->
   <div slot="drawer" style="padding: 20px;">
     I'm a drawer!
@@ -14,6 +14,9 @@
   const drawerElem = document.querySelector('cpy-drawer-container');
   const toggleDrawer = () => drawerElem.opened = !drawerElem.opened;
 </script>`;
+
+  document.getElementById('overview-code').code = code;
+  document.getElementById('example-code').code = code;
 
   const drawerElem = document.getElementById('overview-drawer');
   document.getElementById('drawer-toggle').onclick = () => drawerElem.opened = !drawerElem.opened;

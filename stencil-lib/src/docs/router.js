@@ -117,6 +117,34 @@ const devRoutes = {
 
 const getMenuItems = () => [...menuItems, ...location.hostname === 'localhost' ? [devRoutes] : []];
 
+const selectTab = () => {
+  const tabsElem = document.getElementById('url-tabs');
+
+  if (!tabsElem) {
+    return;
+  }
+
+  const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+  tabsElem.activeIndex = params.tab ?? 0;
+};
+
+const setTabListener = () => {
+  const tabsElem = document.getElementById('url-tabs');
+  
+  if (!tabsElem) {
+    return;
+  }
+
+  tabsElem.addEventListener('tabChanged', (e) => {
+    const url = new URL(window.location);
+    url.searchParams.set('tab', e.detail);
+    url.hash = '';
+    window.history.pushState({}, "", url);
+  });
+};
+
 function loadPage(page) {
   var xhr = typeof XMLHttpRequest != 'undefined'
     ? new XMLHttpRequest()
@@ -138,6 +166,8 @@ function loadPage(page) {
       if (scriptElement) {
         routerOutlet.append(scriptElement);
       }
+      selectTab();
+      setTabListener();
     }
   }
 
@@ -149,7 +179,9 @@ let currentPath;
 // this triggers my internal application logic
 const handleRoute = () => {
   const path = window.location.pathname.substring(1);
+
   if (path === currentPath) {
+    selectTab();
     return;
   }
   loadPage(path);
