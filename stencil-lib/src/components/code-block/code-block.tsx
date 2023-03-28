@@ -15,8 +15,6 @@ export class CodeBlock {
 
   @Prop() language: CodeLanguage = 'typescript';
 
-  codeElem: HTMLElement;
-
   @State()
   copied = false;
 
@@ -27,21 +25,20 @@ export class CodeBlock {
     });
   }
 
-  componentDidRender(): void {
-    // @ts-ignore
-    Prism.highlightElement(this.codeElem);
-  }
-
   render() {
+    if (!this.code || !Prism.languages[this.language]) {
+      return;
+    }
+    const codeStr = Prism.highlight(this.code, Prism.languages[this.language], this.language);
+
     return (
       <div class="code-block">
         <button class="code-block__copy" onClick={() => this.copyCode()}>
           <cpy-icon class={this.copied && 'copied'}>{this.copied ? 'done' : 'content_copy'}</cpy-icon>
         </button>
 
-        <pre>
-          <code ref={(el) => this.codeElem = el as HTMLElement} class={`language-${this.language}`}>
-            {this.code}
+        <pre class={`language-${this.language}`}>
+          <code class={`language-${this.language}`} innerHTML={codeStr}>
           </code>
         </pre>
       </div>
