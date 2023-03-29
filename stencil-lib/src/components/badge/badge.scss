@@ -1,30 +1,39 @@
+:host {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
 .badge {
-  @apply inline-flex leading-6 px-2 text-sm text-white;
-  --bg-colour: var(--cpy-bg-primary);
+  @apply inline-flex leading-6 px-2 text-sm;
+  --text-colour: var(--cpy-badge-text, rgb(255, 255, 255));
+  --bg-colour: var(--cpy-badge-bg, var(--cpy-bg-primary));
   background-color: var(--bg-colour);
+  color: var(--text-colour);
 
   &--level-primary {
-    --bg-colour: var(--cpy-bg-primary);
+    --bg-colour: var(--cpy-badge-bg, var(--cpy-bg-primary));
   }
 
   &--level-secondary {
-    --bg-colour: var(--cpy-bg-secondary);
+    --bg-colour: var(--cpy-badge-bg, var(--cpy-bg-secondary));
   }
 
   &--level-basic {
-    --bg-colour: var(--cpy-bg-basic);
+    --bg-colour: var(--cpy-badge-bg, var(--cpy-bg-basic));
   }
 
   &--level-success {
-    --bg-colour: var(--cpy-bg-success);
+    --bg-colour: var(--cpy-badge-bg, var(--cpy-bg-success));
   }
 
   &--level-warn {
-    --bg-colour: var(--cpy-bg-warn);
+    --bg-colour: var(--cpy-badge-bg, var(--cpy-bg-warn));
   }
 
   &--level-error {
-    --bg-colour: var(--cpy-bg-error);
+    --bg-colour: var(--cpy-badge-bg, var(--cpy-bg-error));
   }
 
   &--size-small {
@@ -35,11 +44,11 @@
     @apply leading-8 text-base px-3;
   }
 
-  &--appearance-counter {
+  &--appearance-rounded {
     @apply rounded-full;
   }
 
-  &--appearance-tag {
+  &--appearance-square {
     @apply rounded-sm;
   }
 }

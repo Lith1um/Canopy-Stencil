@@ -47,6 +47,15 @@ ul {
   border-bottom: 1px solid var(--cpy-bg-basic-border);
 }
 
+.box {
+  position: relative;
+  display: inline-block;
+  background-color: var(--cpy-bg-white);
+  border: 1px solid var(--cpy-bg-basic-border);
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+}
+
 .flexbox-centered {
   width: 100%;
   display: flex;

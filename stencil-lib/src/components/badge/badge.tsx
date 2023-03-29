@@ -12,7 +12,7 @@ export class Badge {
   type: BadgeType = 'primary';
 
   @Prop()
-  appearance: BadgeAppearance = 'counter';
+  appearance: BadgeAppearance = 'rounded';
 
   @Prop()
   size: BadgeSize = 'default';
