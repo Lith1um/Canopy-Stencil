@@ -63,8 +63,6 @@ export class InputBase {
           </div>
 
           <slot name='suffix'/>
-
-          <cpy-splash disabled={this.disabled || this.noContainer}></cpy-splash>
         </div>
 
         {!this.disabled && this.interacted && this.error

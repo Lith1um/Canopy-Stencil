@@ -99,7 +99,7 @@ interface NavMenuItem {
 </script>`;
   document.getElementById('example-menu-2').items = [
     {
-      title: 'Nav Item Group', type: 'group', separator: true, description: 'Represents the start of a group of items', children: [
+      title: 'Nav Item Group', type: 'group', description: 'Represents the start of a group of items', children: [
         { title: 'Group Item 1', type: 'basic', icon: 'chat_bubble' },
         { title: 'Group Item 2', type: 'basic', icon: 'menu' },
         { title: 'Group Item 3', type: 'basic', icon: 'list_alt' }

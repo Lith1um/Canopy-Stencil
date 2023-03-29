@@ -107,7 +107,7 @@ export class NavMenuItemComp {
               <cpy-nav-menu-item item={item}></cpy-nav-menu-item>)}
           </cpy-expand-collapse>}
           
-        {this.item.separator && <div class="nav-menu-item__separator"></div>}
+        {(this.item.separator ?? this.item.type === 'collapsible') && <div class="nav-menu-item__separator"></div>}
       </div>
     );
   }

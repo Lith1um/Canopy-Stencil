@@ -130,8 +130,6 @@ export class Input implements BaseInput<string | number> {
             onBlur={() => this.handleBlur()}/>
 
           <slot name='suffix'/>
-
-          <cpy-splash disabled={this.disabled}></cpy-splash>
         </div>
 
         {!this.disabled && error && <div class="input__errors">{error}</div>}

@@ -16,7 +16,7 @@
 @media(min-width: 640px) {
   .drawer {
     @apply w-auto border-r z-20;
-    scrollbar-gutter: stable both-edges;
+    scrollbar-gutter: stable;
 
     &__close {
       @apply hidden;
@@ -29,7 +29,7 @@
 
     /* Track */
     &::-webkit-scrollbar-track {
-      @apply bg-transparent;
+      background-color: var(--cpy-bg-medium);
     }
 
     /* Handle */
