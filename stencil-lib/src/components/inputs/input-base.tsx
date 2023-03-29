@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 import { InputSize } from './types/input-size.type';
 
 @Component({
@@ -7,9 +7,6 @@ import { InputSize } from './types/input-size.type';
   shadow: true,
 })
 export class InputBase {
-
-  @Prop({mutable: true})
-  value: any;
 
   @Prop()
   label: string;
@@ -25,9 +22,6 @@ export class InputBase {
 
   @Prop()
   size: InputSize = 'default';
-  
-  @Event()
-  valueChange: EventEmitter<string>;
 
   @Prop()
   interacted: boolean = false;

@@ -146,7 +146,6 @@ export namespace Components {
         "noContainer": boolean;
         "required": boolean;
         "size": InputSize;
-        "value": any;
     }
     interface CpyInputToggle {
         "disabled": boolean;
@@ -279,10 +278,6 @@ export interface CpyExpandCollapseCustomEvent<T> extends CustomEvent<T> {
 export interface CpyInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyInputElement;
-}
-export interface CpyInputBaseCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLCpyInputBaseElement;
 }
 export interface CpyInputToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -730,10 +725,8 @@ declare namespace LocalJSX {
         "interacted"?: boolean;
         "label"?: string;
         "noContainer"?: boolean;
-        "onValueChange"?: (event: CpyInputBaseCustomEvent<string>) => void;
         "required"?: boolean;
         "size"?: InputSize;
-        "value"?: any;
     }
     interface CpyInputToggle {
         "disabled"?: boolean;
