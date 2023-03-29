@@ -35,7 +35,7 @@ export class CodeExample {
         <cpy-code-block
           class={this.showCode ? '' : 'code-example--hidden'}
           language={this.language}
-          code={this.code || this.host.innerHTML.trim()}>
+          code={this.code || this.host.innerHTML.trim().replace(/ class="hydrated"/g, '')}>
         </cpy-code-block>
       
         <slot/>

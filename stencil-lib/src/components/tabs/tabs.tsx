@@ -25,7 +25,7 @@ export class Tabs {
   @State()
   rightButtonDisabled = false;
 
-  @Event()
+  @Event({bubbles: false})
   tabChanged: EventEmitter<number>;
 
   @Watch('activeIndex')
@@ -62,6 +62,7 @@ export class Tabs {
 
   @Listen('selected')
   onSelectedTab(event: CustomEvent<string>) {
+    event.stopPropagation();
     this.activeTab = this.tabGroup.find(group => group.header.headerId === event.detail);
     this.activeIndex = this.tabGroup.findIndex(group => group.header.headerId === event.detail);
     this.selectGroup();
@@ -69,8 +70,8 @@ export class Tabs {
   }
 
   createGroup() {
-    this.tabsHeader = Array.from(this.host.querySelectorAll('cpy-tab-header')) as HTMLCpyTabHeaderElement[];
-    this.tabsContent = Array.from(this.host.querySelectorAll('cpy-tab-content')) as HTMLCpyTabContentElement[];
+    this.tabsHeader = Array.from(this.host.querySelectorAll(':scope > cpy-tab-header')) as HTMLCpyTabHeaderElement[];
+    this.tabsContent = Array.from(this.host.querySelectorAll(':scope > cpy-tab-content')) as HTMLCpyTabContentElement[];
 
     this.tabGroup = this.tabsHeader.map((header, index) => {
       const content = this.tabsContent[index];

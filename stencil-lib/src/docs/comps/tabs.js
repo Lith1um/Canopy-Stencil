@@ -1,39 +1,48 @@
 (function () {
-  document.getElementById('tabs-example').addEventListener('tabChanged', (e) => console.log('Tab changed, index is:', e.detail));
+  document.getElementById('overview-tabs').addEventListener('tabChanged', (e) => console.log('Tab changed, index is:', e.detail));
 
-  document.getElementById('tabs-html-example').code = `<cpy-tabs id="tabs-example" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+  document.getElementById('overview-code').code = `<cpy-tabs>
   <cpy-tab-header slot="header" tab-title="Tab 1"></cpy-tab-header>
   <cpy-tab-header slot="header" tab-title="Tab 2"></cpy-tab-header>
   <cpy-tab-header slot="header" tab-title="Tab 3"></cpy-tab-header>
 
   <cpy-tab-content slot="content">
-    Content 1
+    <p>...</p>
   </cpy-tab-content>
   <cpy-tab-content slot="content">
-    Content 2
+    <p>...</p>
+    <p>...</p>
   </cpy-tab-content>
   <cpy-tab-content slot="content">
-    Content 3
+    <p>...</p>
   </cpy-tab-content>
-</cpy-tabs>`;
+</cpy-tabs>
 
-  document.getElementById('tabs-props').tableData = [
+<script>
+  document.querySelector('cpy-tabs').addEventListener(
+    'tabChanged',
+    (e) => console.log('Tab changed, index is:', e.detail)
+  );
+</script>`;
+  
+  document.getElementById('comp-styles').tableData = [
+    { cssVariable: '--cpy-tab-active-bg', description: 'Colour to apply to active tab bar', defaultValue: '--cpy-bg-primary' },
+  ];
+
+  document.getElementById('comp-props').tableData = [
     { name: 'active-index', description: 'Current active tab', type: "number", default: "0", required: false }
   ];
-
-  document.getElementById('tab-header-props').tableData = [
+  document.getElementById('comp-props-header').tableData = [
     { name: 'tab-title', description: 'Tab title', type: "string", default: "", required: true }
   ];
-
-  document.getElementById('tabs-events').tableData = [
+  document.getElementById('comp-events').tableData = [
     { name: 'tabChanged', description: 'Triggered when the active tab changes', emitsType: "number" }
   ];
-
-  document.getElementById('tabs-slots').tableData = [
+  document.getElementById('comp-slots').tableData = [
     { slotName: "'header'", purpose: 'Tab headers' },
     { slotName: "'content'", purpose: 'Tab contents' },
   ];
-  document.getElementById('tab-content-slots').tableData = [
+  document.getElementById('comp-slots-content').tableData = [
     { slotName: "-- (default)", purpose: 'Contents of the tab' },
   ];
 })();
