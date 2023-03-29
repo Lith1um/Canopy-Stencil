@@ -20,12 +20,14 @@ export type BadgeAppearance =
 export type BadgeSize =
   | 'default'
   | 'small'
-  | 'large';`;
+  | 'large'
+  | 'x-large';`;
 
   document.getElementById('comp-props').tableData = [
     { name: 'size', description: 'badge size', type: "BadgeSize", default: "'default'", required: false },
     { name: 'appearance', description: 'Button styles', type: "BadgeAppearance", default: "'counter'", required: false },
     { name: 'type', description: 'Colour scheme of the badge', type: "BadgeType", default: "'primary'", required: false },
+    { name: 'block', description: 'Prevents positioning of badge in corner', type: "BadgeType", default: "'primary'", required: false },
   ];
   document.getElementById('comp-slots').tableData = [
     { slotName: "-- (default)", purpose: 'Contents of the badge' }

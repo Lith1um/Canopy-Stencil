@@ -47,6 +47,7 @@ export namespace Components {
     }
     interface CpyBadge {
         "appearance": BadgeAppearance;
+        "block": boolean;
         "size": BadgeSize;
         "type": BadgeType;
     }
@@ -636,6 +637,7 @@ declare namespace LocalJSX {
     }
     interface CpyBadge {
         "appearance"?: BadgeAppearance;
+        "block"?: boolean;
         "size"?: BadgeSize;
         "type"?: BadgeType;
     }

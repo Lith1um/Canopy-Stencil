@@ -6,8 +6,15 @@
   transform: translate(33%, -33%);
 }
 
+:host(.blocked) {
+  position: unset;
+  top: unset;
+  right: unset;
+  transform: unset;
+}
+
 .badge {
-  @apply inline-flex leading-6 h-6 px-2 text-sm min-w-[1.5rem] justify-center;
+  @apply inline-flex leading-5 h-5 px-1.5 text-xs min-w-[1.25rem] justify-center;
   --text-colour: var(--cpy-badge-text, rgb(255, 255, 255));
   --bg-colour: var(--cpy-badge-bg, var(--cpy-bg-primary));
   background-color: var(--bg-colour);
@@ -38,11 +45,15 @@
   }
 
   &--size-small {
-    @apply leading-5 h-5 text-xs px-1.5 min-w-[1.25rem];
+    @apply leading-4 h-4 text-xs px-1 min-w-[1rem];
   }
 
   &--size-large {
-    @apply leading-8 h-8 text-base px-3 min-w-[2rem];
+    @apply leading-6 h-6 px-2 text-sm min-w-[1.5rem];
+  }
+
+  &--size-x-large {
+    @apply leading-7 h-7 text-base px-2.5 min-w-[1.75rem];
   }
 
   &--appearance-rounded {

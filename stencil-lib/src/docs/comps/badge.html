@@ -73,23 +73,28 @@
     <!-- Examples -->
     <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
     <cpy-tab-content slot="content">
-      <cpy-code-example header="Basic Badge">
+      <cpy-code-example header="Basic badge">
 <div class="box" style="height: 4rem; width: 4rem;">
   <cpy-badge></cpy-badge>
 </div>
       </cpy-code-example>
-      <cpy-code-example header="Tag Badge">
+      <cpy-code-example header="Tag badge">
 <div class="box" style="height: 4rem; width: 4rem;">
   <cpy-badge appearance="square">12</cpy-badge>
 </div>
       </cpy-code-example>
+      <cpy-code-example header="Block badge">
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge block>12</cpy-badge>
+</div>
+      </cpy-code-example>
       <cpy-code-example header="Badge attached to avatar">
 <div style="position: relative; display: inline-block;">
-  <cpy-avatar type="square" size="large" src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
+  <cpy-avatar type="square" size="x-large" src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
   <cpy-badge>12</cpy-badge>
 </div>
       </cpy-code-example>
-      <cpy-code-example header="Small Badge">
+      <cpy-code-example header="Small badge">
 <div class="box" style="height: 4rem; width: 4rem;">
   <cpy-badge size="small"></cpy-badge>
 </div>
@@ -97,15 +102,40 @@
   <cpy-badge size="small">6</cpy-badge>
 </div>
 <div class="box" style="height: 4rem; width: 4rem;">
-  <cpy-badge appearance="square"size="small">Value</cpy-badge>
+  <cpy-badge appearance="square" size="small">Value</cpy-badge>
 </div>
       </cpy-code-example>
-      <cpy-code-example header="Large Badge">
+      <cpy-code-example header="Default size badge">
 <div class="box" style="height: 4rem; width: 4rem;">
-  <cpy-badge size="large">94</cpy-badge>
+  <cpy-badge></cpy-badge>
 </div>
 <div class="box" style="height: 4rem; width: 4rem;">
-  <cpy-badge appearance="square" size="large">Info</cpy-badge>
+  <cpy-badge>6</cpy-badge>
+</div>
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge appearance="square">Value</cpy-badge>
+</div>
+      </cpy-code-example>
+      <cpy-code-example header="Large badge">
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge size="large"></cpy-badge>
+</div>
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge size="large">6</cpy-badge>
+</div>
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge appearance="square" size="large">Value</cpy-badge>
+</div>
+      </cpy-code-example>
+      <cpy-code-example header="Extra large badge">
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge size="x-large"></cpy-badge>
+</div>
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge size="x-large">94</cpy-badge>
+</div>
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge appearance="square" size="x-large">Info</cpy-badge>
 </div>
       </cpy-code-example>
       <cpy-code-example header="Alternate badge types">
@@ -128,7 +158,7 @@
   <cpy-badge type="error" size="small"></cpy-badge>
 </div>
       </cpy-code-example>
-      <cpy-code-example header="Custom Badge">
+      <cpy-code-example header="Custom badge">
 <div class="box" style="height: 4rem; width: 4rem;">
   <cpy-badge style="--cpy-badge-bg: coral; --cpy-badge-text: black;">12</cpy-badge>
 </div>

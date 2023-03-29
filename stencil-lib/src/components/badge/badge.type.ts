@@ -11,6 +11,7 @@ export type BadgeAppearance =
   | 'square';
 
 export type BadgeSize =
-  | 'default'
   | 'small'
-  | 'large';
+  | 'default'
+  | 'large'
+  | 'x-large';
