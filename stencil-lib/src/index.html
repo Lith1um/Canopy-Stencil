@@ -146,8 +146,7 @@
       currentPalette = paletteElement.value;
     });
     const onMenuClick = () => drawerElement.opened = !drawerElement.opened;
-    darkModeCheckbox.addEventListener('valueChange', (e) => {
-      darkModeCheckbox.value = e.detail;
+    darkModeCheckbox.addEventListener('valueChange', () => {
       document.querySelector("html").classList.toggle("dark");
     });
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
