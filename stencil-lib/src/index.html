@@ -97,13 +97,10 @@
                 <p style="margin: 0; font-size: 0.75rem;">Front End Developer</p>
               </div>
             </div>
-            <div style="background-color: var(--cpy-bg-primary); padding: 12px; color: white; display: flex; align-items: center; justify-content: space-between;">
-              <label style="display: flex; align-items: center; gap: 0.25rem; cursor: pointer;">
-                <input id="darkModeCheckbox" type="checkbox" style="height: 1rem; width: 1rem;"/>
-                Dark Mode
-              </label>
+            <div style="background-color: var(--cpy-bg-medium); padding: 12px; display: flex; align-items: center; justify-content: space-between;">
+              <cpy-input-toggle id="darkModeCheckbox" size="small" label="Dark mode"></cpy-input-toggle>
               <div>
-                Palette: <select id="palette-picker" style="color: black;">
+                <select id="palette-picker" style="color: black;">
                   <option value="purple">Purple</option>
                   <option value="blue">Blue</option>
                   <option value="lime">Lime</option>
@@ -136,7 +133,6 @@
   </cpy-drawer-container>
   <script type="module" src="/docs/router.js"></script>
   <script defer>
-    let darkMode = false;
     let currentPalette = 'blue';
     document.querySelector("html").classList.toggle(currentPalette);
     const drawerElement = document.querySelector('cpy-drawer-container');
@@ -150,14 +146,13 @@
       currentPalette = paletteElement.value;
     });
     const onMenuClick = () => drawerElement.opened = !drawerElement.opened;
-    const onDarkModeClick = () => {
-      darkMode = !darkMode;
-      darkModeCheckbox.checked = darkMode;
+    darkModeCheckbox.addEventListener('valueChange', (e) => {
+      darkModeCheckbox.value = e.detail;
       document.querySelector("html").classList.toggle("dark");
-    };
-    darkModeCheckbox.addEventListener('change', onDarkModeClick);
+    });
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      onDarkModeClick();
+      darkModeCheckbox.value = true;
+      document.querySelector("html").classList.add("dark");
     }
   </script>
 </body>
