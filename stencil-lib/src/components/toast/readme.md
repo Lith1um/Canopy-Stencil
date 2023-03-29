@@ -61,6 +61,7 @@ graph TD;
   cpy-toast --> cpy-alert
   cpy-alert --> cpy-icon
   cpy-alert --> cpy-button
+  cpy-button --> cpy-splash
   style cpy-toast fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

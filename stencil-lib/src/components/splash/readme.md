@@ -7,65 +7,34 @@
 
 ## Properties
 
-| Property           | Attribute            | Description | Type      | Default |
-| ------------------ | -------------------- | ----------- | --------- | ------- |
-| `hasBackdropClick` | `has-backdrop-click` |             | `boolean` | `true`  |
-| `show`             | `show`               |             | `boolean` | `false` |
-| `zIndex`           | `z-index`            |             | `string`  | `'50'`  |
-
-
-## Events
-
-| Event           | Description | Type                |
-| --------------- | ----------- | ------------------- |
-| `backdropClick` |             | `CustomEvent<void>` |
-| `closed`        |             | `CustomEvent<void>` |
-
-
-## Methods
-
-### `close() => Promise<void>`
-
-
-
-#### Returns
-
-Type: `Promise<void>`
-
-
-
-### `open() => Promise<void>`
-
-
-
-#### Returns
-
-Type: `Promise<void>`
-
-
-
-### `toggle(show: boolean) => Promise<void>`
-
-
-
-#### Returns
-
-Type: `Promise<void>`
-
-
+| Property   | Attribute  | Description | Type      | Default |
+| ---------- | ---------- | ----------- | --------- | ------- |
+| `disabled` | `disabled` |             | `boolean` | `false` |
 
 
 ## Dependencies
 
 ### Used by
 
- - [cpy-drawer-container](../drawer-container)
+ - [cpy-accordion](../accordion)
+ - [cpy-button](../button)
+ - [cpy-context-menu-item](../context-menu/context-menu-item)
+ - [cpy-input](../inputs/input)
+ - [cpy-input-base](../inputs)
+ - [cpy-nav-menu-item](../nav-menu/nav-menu-item)
+ - [cpy-tab-header](../tabs/tab-header)
 
 ### Graph
 ```mermaid
 graph TD;
-  cpy-drawer-container --> cpy-overlay
-  style cpy-overlay fill:#f9f,stroke:#333,stroke-width:4px
+  cpy-accordion --> cpy-splash
+  cpy-button --> cpy-splash
+  cpy-context-menu-item --> cpy-splash
+  cpy-input --> cpy-splash
+  cpy-input-base --> cpy-splash
+  cpy-nav-menu-item --> cpy-splash
+  cpy-tab-header --> cpy-splash
+  style cpy-splash fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

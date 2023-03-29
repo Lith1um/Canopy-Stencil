@@ -27,9 +27,14 @@
  - [cpy-drawer](../drawer-container/drawer)
  - [cpy-tabs](../tabs)
 
+### Depends on
+
+- [cpy-splash](../splash)
+
 ### Graph
 ```mermaid
 graph TD;
+  cpy-button --> cpy-splash
   cpy-alert --> cpy-button
   cpy-carousel --> cpy-button
   cpy-code-example --> cpy-button

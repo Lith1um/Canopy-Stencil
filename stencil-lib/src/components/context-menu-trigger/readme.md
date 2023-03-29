@@ -26,6 +26,7 @@ graph TD;
   cpy-context-menu-item --> cpy-popup
   cpy-context-menu-item --> cpy-icon
   cpy-context-menu-item --> cpy-context-menu
+  cpy-context-menu-item --> cpy-splash
   style cpy-context-menu-trigger fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

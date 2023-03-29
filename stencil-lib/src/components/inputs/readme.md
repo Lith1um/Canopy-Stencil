@@ -32,9 +32,14 @@
 
  - [cpy-input-toggle](input-toggle)
 
+### Depends on
+
+- [cpy-splash](../splash)
+
 ### Graph
 ```mermaid
 graph TD;
+  cpy-input-base --> cpy-splash
   cpy-input-toggle --> cpy-input-base
   style cpy-input-base fill:#f9f,stroke:#333,stroke-width:4px
 ```

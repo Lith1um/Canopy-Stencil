@@ -36,6 +36,7 @@ export const DIRECTIVES = [
   d.CpyProgressBar,
   d.CpyShowMore,
   d.CpySpinner,
+  d.CpySplash,
   d.CpyStack,
   d.CpyTabContent,
   d.CpyTabHeader,

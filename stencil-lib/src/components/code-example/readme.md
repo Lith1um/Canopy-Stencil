@@ -32,6 +32,7 @@ graph TD;
   cpy-code-example --> cpy-button
   cpy-code-example --> cpy-icon
   cpy-code-example --> cpy-code-block
+  cpy-button --> cpy-splash
   cpy-code-block --> cpy-icon
   style cpy-code-example fill:#f9f,stroke:#333,stroke-width:4px
 ```

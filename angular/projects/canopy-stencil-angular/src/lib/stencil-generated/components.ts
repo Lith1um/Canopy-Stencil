@@ -812,6 +812,27 @@ export class CpySpinner {
 }
 
 
+export declare interface CpySplash extends Components.CpySplash {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['disabled']
+})
+@Component({
+  selector: 'cpy-splash',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['disabled']
+})
+export class CpySplash {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface CpyStack extends Components.CpyStack {}
 
 @ProxyCmp({

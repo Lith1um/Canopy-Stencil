@@ -24,6 +24,7 @@
 graph TD;
   cpy-carousel --> cpy-button
   cpy-carousel --> cpy-icon
+  cpy-button --> cpy-splash
   style cpy-carousel fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

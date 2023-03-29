@@ -46,6 +46,7 @@ graph TD;
   cpy-drawer-container --> cpy-overlay
   cpy-drawer --> cpy-button
   cpy-drawer --> cpy-icon
+  cpy-button --> cpy-splash
   style cpy-drawer-container fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

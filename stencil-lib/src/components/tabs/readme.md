@@ -31,6 +31,7 @@
 graph TD;
   cpy-tabs --> cpy-button
   cpy-tabs --> cpy-icon
+  cpy-button --> cpy-splash
   style cpy-tabs fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
