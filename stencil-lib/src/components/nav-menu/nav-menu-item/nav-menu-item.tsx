@@ -103,11 +103,13 @@ export class NavMenuItemComp {
 
         {this.item.type === 'collapsible' && 
           <cpy-expand-collapse class="nav-menu-item__collapse" expanded={!this.collapsed}>
-            {this.item.children?.map(item =>
-              <cpy-nav-menu-item item={item}></cpy-nav-menu-item>)}
+            <div>
+              {this.item.children?.map(item =>
+                <cpy-nav-menu-item item={item}></cpy-nav-menu-item>)}
+            </div>
           </cpy-expand-collapse>}
           
-        {(this.item.separator ?? this.item.type === 'collapsible') && <div class="nav-menu-item__separator"></div>}
+        {this.item.separator && <div class="nav-menu-item__separator"></div>}
       </div>
     );
   }

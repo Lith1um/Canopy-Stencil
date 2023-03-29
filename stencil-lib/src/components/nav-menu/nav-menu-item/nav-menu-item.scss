@@ -29,6 +29,11 @@
 
   &__collapse {
     @apply block;
+
+    > div {
+      @apply border-b;
+      border-color: var(--cpy-bg-basic-border);
+    }
   }
 
   > cpy-icon {
