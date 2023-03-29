@@ -90,13 +90,13 @@ export declare interface CpyBadge extends Components.CpyBadge {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['appearance', 'size', 'type']
+  inputs: ['appearance', 'block', 'size', 'type']
 })
 @Component({
   selector: 'cpy-badge',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['appearance', 'size', 'type']
+  inputs: ['appearance', 'block', 'size', 'type']
 })
 export class CpyBadge {
   protected el: HTMLElement;

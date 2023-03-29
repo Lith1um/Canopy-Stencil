@@ -10,7 +10,8 @@
 | Property     | Attribute    | Description | Type                                                                    | Default     |
 | ------------ | ------------ | ----------- | ----------------------------------------------------------------------- | ----------- |
 | `appearance` | `appearance` |             | `"rounded" \| "square"`                                                 | `'rounded'` |
-| `size`       | `size`       |             | `"default" \| "large" \| "small"`                                       | `'default'` |
+| `block`      | `block`      |             | `boolean`                                                               | `false`     |
+| `size`       | `size`       |             | `"default" \| "large" \| "small" \| "x-large"`                          | `'default'` |
 | `type`       | `type`       |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"` | `'primary'` |
 
 

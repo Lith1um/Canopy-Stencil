@@ -1,6 +1,7 @@
 :host {
   font-size: 1.4rem; /* Preferred icon size */
   line-height: 1;
+  vertical-align: middle;
 }
 
 .material-icons {
@@ -9,7 +10,7 @@
   font-style: normal;
   font-size: inherit;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: inherit;
   line-height: inherit;
   text-transform: none;
   letter-spacing: normal;

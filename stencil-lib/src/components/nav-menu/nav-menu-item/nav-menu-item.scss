@@ -32,11 +32,7 @@
   }
 
   > cpy-icon {
-    @apply icon-size-6;
-    
-    i {
-      @apply align-baseline;
-    }
+    @apply icon-size-6 align-baseline;
   }
 
   &__title {

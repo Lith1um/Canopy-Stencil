@@ -1,5 +1,5 @@
 :host {
-  @apply inline-flex;
+  @apply inline-block;
 }
 
 .button {
@@ -28,7 +28,7 @@
   }
 
   &--icon {
-    @apply rounded-full p-3 min-w-0 w-12 h-12;
+    @apply rounded-full px-3 min-w-0 w-12 h-12;
 
     ::slotted(cpy-icon) {
       @apply m-0 -mt-1 icon-size-6 #{!important};
