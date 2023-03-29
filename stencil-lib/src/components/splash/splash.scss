@@ -1,0 +1,10 @@
+:host {
+  @apply hidden;
+}
+
+span.ripple {
+  @apply absolute rounded-full;
+  transform: scale(0);
+  animation: ripple 450ms linear;
+  background-color: var(--cpy-bg-splash);
+}

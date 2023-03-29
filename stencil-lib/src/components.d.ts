@@ -207,6 +207,9 @@ export namespace Components {
         "size": SpinnerSize;
         "type": SpinnerAppearance;
     }
+    interface CpySplash {
+        "disabled": boolean;
+    }
     interface CpyStack {
         "direction": 'left' | 'right';
         "overlap": number;
@@ -509,6 +512,12 @@ declare global {
         prototype: HTMLCpySpinnerElement;
         new (): HTMLCpySpinnerElement;
     };
+    interface HTMLCpySplashElement extends Components.CpySplash, HTMLStencilElement {
+    }
+    var HTMLCpySplashElement: {
+        prototype: HTMLCpySplashElement;
+        new (): HTMLCpySplashElement;
+    };
     interface HTMLCpyStackElement extends Components.CpyStack, HTMLStencilElement {
     }
     var HTMLCpyStackElement: {
@@ -592,6 +601,7 @@ declare global {
         "cpy-progress-bar": HTMLCpyProgressBarElement;
         "cpy-show-more": HTMLCpyShowMoreElement;
         "cpy-spinner": HTMLCpySpinnerElement;
+        "cpy-splash": HTMLCpySplashElement;
         "cpy-stack": HTMLCpyStackElement;
         "cpy-tab-content": HTMLCpyTabContentElement;
         "cpy-tab-header": HTMLCpyTabHeaderElement;
@@ -781,6 +791,9 @@ declare namespace LocalJSX {
         "size"?: SpinnerSize;
         "type"?: SpinnerAppearance;
     }
+    interface CpySplash {
+        "disabled"?: boolean;
+    }
     interface CpyStack {
         "direction"?: 'left' | 'right';
         "overlap"?: number;
@@ -852,6 +865,7 @@ declare namespace LocalJSX {
         "cpy-progress-bar": CpyProgressBar;
         "cpy-show-more": CpyShowMore;
         "cpy-spinner": CpySpinner;
+        "cpy-splash": CpySplash;
         "cpy-stack": CpyStack;
         "cpy-tab-content": CpyTabContent;
         "cpy-tab-header": CpyTabHeader;
@@ -900,6 +914,7 @@ declare module "@stencil/core" {
             "cpy-progress-bar": LocalJSX.CpyProgressBar & JSXBase.HTMLAttributes<HTMLCpyProgressBarElement>;
             "cpy-show-more": LocalJSX.CpyShowMore & JSXBase.HTMLAttributes<HTMLCpyShowMoreElement>;
             "cpy-spinner": LocalJSX.CpySpinner & JSXBase.HTMLAttributes<HTMLCpySpinnerElement>;
+            "cpy-splash": LocalJSX.CpySplash & JSXBase.HTMLAttributes<HTMLCpySplashElement>;
             "cpy-stack": LocalJSX.CpyStack & JSXBase.HTMLAttributes<HTMLCpyStackElement>;
             "cpy-tab-content": LocalJSX.CpyTabContent & JSXBase.HTMLAttributes<HTMLCpyTabContentElement>;
             "cpy-tab-header": LocalJSX.CpyTabHeader & JSXBase.HTMLAttributes<HTMLCpyTabHeaderElement>;

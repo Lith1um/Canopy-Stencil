@@ -103,7 +103,7 @@ export class InputToggle implements BaseInput<boolean> {
     };    
 
     return (
-      <cpy-input-base noContainer required={this.required} value={this.value} interacted={this.interacted} error={error}>
+      <cpy-input-base noContainer={true} required={this.required} value={this.value} interacted={this.interacted} error={error}>
         <label class={classes}>
           <div class={switchClasses}>
             <input

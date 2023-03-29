@@ -1,5 +1,5 @@
 :host {
-  display: inline-block;
+  @apply inline-flex;
 }
 
 .button {

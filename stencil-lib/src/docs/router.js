@@ -79,6 +79,7 @@ const menuItems = navMenuElement.items = [
       { title: 'Dialog', type: 'basic', url: '/comps/dialog', function: onMenuItemClick },
       { title: 'Expand/Collapse', type: 'basic', url: '/comps/expandCollapse', function: onMenuItemClick },
       { title: 'Popup', type: 'basic', url: '/comps/popup', function: onMenuItemClick },
+      { title: 'Splash', type: 'basic', url: '/comps/splash', function: onMenuItemClick },
       { title: 'Toast', type: 'basic', url: '/comps/toast', function: onMenuItemClick },
       { title: 'Tooltip', type: 'basic', url: '/comps/tooltip', function: onMenuItemClick },
     ] },

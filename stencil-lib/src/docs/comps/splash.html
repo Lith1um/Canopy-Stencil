@@ -1,0 +1,70 @@
+<cpy-page-container>
+  <h1>Splashes</h1>
+
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Splash">
+        <p>
+          Canopy splashes provide a way to open floating panels on the screen. They are referenced using the<cpy-code-snippet>&lt;cpy-splash&gt;</cpy-code-snippet>custom HTML element. This component utilises the slot element, allowing you to render your own HTML in the splash.
+        </p>
+
+        <cpy-code-example header="Splash" id="overview-code">
+<div style="height: 10rem; width: 10rem; background-color: var(--cpy-bg-white);">
+  <cpy-splash>
+  </cpy-splash>
+</div>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. Below is a list of variables you can use to configure this component. You can learn more about Canopy colours and root configuration <cpy-link href="/learn-more/colours">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
+
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          Splashes serve a wide variety of scenarios and may contain many different types of content. Due to this flexible nature, the appropriate accessibility treatment depends on how you use <cpy-code-snippet>&lt;cpy-splash&gt;</cpy-code-snippet>.
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Splash">
+        <h4 id="api" title="API">API Reference for Canopy Splash</h4>
+        <cpy-code-snippet>&lt;cpy-splash&gt;</cpy-code-snippet>
+
+        <div class="section">
+        </div>
+        
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
+
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic splash on a button">
+<cpy-button type="primary">
+  Show splash
+</cpy-button>
+      </cpy-code-example>
+      <cpy-code-example header="Disabled splash" id="example-code">
+<cpy-input-toggle id="splash-toggle" label="Splash disabled" value></cpy-input-toggle>
+<div style="height: 10rem; width: 10rem; background-color: var(--cpy-bg-white);">
+  <cpy-splash disabled id="disabled-splash">
+  </cpy-splash>
+</div>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
+</cpy-page-container>
+
+<script src="/docs/comps/splash.js">
+</script>

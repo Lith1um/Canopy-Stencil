@@ -94,6 +94,8 @@ export class NavMenuItemComp {
           </div>
 
           {this.item.type === 'collapsible' && <cpy-icon class={collapseIconClasses}>chevron_right</cpy-icon>}
+
+          {this.item.type !== 'group' && <cpy-splash></cpy-splash>}
         </a>
 
         {this.item.type === 'group' && this.item.children?.map(item =>

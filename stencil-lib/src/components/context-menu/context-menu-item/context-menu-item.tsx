@@ -69,6 +69,8 @@ export class ContextMenuItemComp {
                 <div class="context-menu-item__title">{this.item.title}</div>
                 {this.item.description && <div class="context-menu-item__description">{this.item.description}</div>}
               </div>
+
+              <cpy-splash></cpy-splash>
             </a>
               
             {this.item.separator && <div class="context-menu-item__separator"></div>}
