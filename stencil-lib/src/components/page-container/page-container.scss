@@ -1,7 +1,11 @@
+:host {
+  @apply block my-8 md:my-16;
+}
+
 .page-container {
   @apply w-full;
 
   &__content {
-    @apply max-w-7xl my-8 md:my-16 mx-auto px-4 md:px-8 lg:px-16;
+    @apply max-w-7xl mx-auto px-4 md:px-8 lg:px-16;
   }
 }

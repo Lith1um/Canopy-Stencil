@@ -116,12 +116,12 @@ cpy-tab-content {
   align-items: center;
   gap: 1rem;
   width: 100%;
-  padding: 1.5rem 0.5rem;
+  padding: 1rem 0;
   background-color: var(--cpy-bg-white);
 }
 
 @media(min-width: 640px) {
   .footer {
-    padding: 2rem;
+    padding: 2rem 0;
   }
 }

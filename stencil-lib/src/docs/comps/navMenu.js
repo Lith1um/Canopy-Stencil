@@ -173,7 +173,6 @@ interface NavMenuItem {
       collapsed: false,
       type: 'collapsible',
       description: 'A collection of items hidden in a drawer',
-      function: (item) => item.collapsed = !item.collapsed,
       children: [
         { title: 'Collapsible Item 1', type: 'basic', icon: 'dashboard' },
         { title: 'Collapsible Item 2', type: 'basic', icon: 'touch_app' },

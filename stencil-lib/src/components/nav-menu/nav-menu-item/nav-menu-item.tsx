@@ -8,7 +8,7 @@ import { NavMenuItem } from '../nav-menu.interface';
 })
 export class NavMenuItemComp {
 
-  @Prop()
+  @Prop({mutable: true})
   item: NavMenuItem;
 
   @State()
@@ -25,13 +25,13 @@ export class NavMenuItemComp {
     if (item.collapsed === undefined || item.collapsed) {
       return;
     }
-    this.collapsed = false;
+    this.collapsed = this.item.collapsed = false;
   }
 
   @Listen('itemActive')
   childItemActive(): void {
     if (this.item.type === 'collapsible') {
-      this.collapsed = false;
+      this.collapsed = this.item.collapsed = false;
     }
   }
 
@@ -76,7 +76,7 @@ export class NavMenuItemComp {
 
     if (this.item.type === 'collapsible') {
       itemAttrs.onClick = () => {
-        this.collapsed = !this.collapsed;
+        this.collapsed = this.item.collapsed = !this.collapsed;
         if (this.item.function) {
           this.item.function(this.item);
         }
