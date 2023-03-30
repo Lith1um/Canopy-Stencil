@@ -73,6 +73,8 @@ export namespace Components {
         "language": CodeLanguage;
     }
     interface CpyCodeSnippet {
+        "code": string;
+        "quotes": boolean;
     }
     interface CpyComment {
         "comment": CommentItem;
@@ -658,6 +660,8 @@ declare namespace LocalJSX {
         "language"?: CodeLanguage;
     }
     interface CpyCodeSnippet {
+        "code"?: string;
+        "quotes"?: boolean;
     }
     interface CpyComment {
         "comment"?: CommentItem;

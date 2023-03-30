@@ -31,7 +31,7 @@
     @apply block;
 
     > div {
-      @apply border-b;
+      @apply border-b mb-1;
       border-color: var(--cpy-bg-basic-border);
     }
   }

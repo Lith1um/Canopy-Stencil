@@ -12,10 +12,6 @@
     @apply underline cursor-pointer;
   }
 
-  ::slotted(cpy-icon) {
-    @apply align-baseline;
-  }
-
   &--primary {
     --text-colour: var(--cpy-text-primary);
   }
