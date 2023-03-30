@@ -4,7 +4,7 @@
 
 .link {
   --text-colour: var(--cpy-text-primary);
-  @apply flex gap-1.5;
+  @apply flex items-center gap-1;
   color: var(--text-colour);
 
   &:hover,

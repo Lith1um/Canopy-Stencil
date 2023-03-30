@@ -527,30 +527,23 @@ export class CpyInput {
 }
 
 
-export declare interface CpyInputBase extends Components.CpyInputBase {
-  /**
-   *  
-   */
-  valueChange: EventEmitter<CustomEvent<string>>;
-
-}
+export declare interface CpyInputBase extends Components.CpyInputBase {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['disabled', 'error', 'interacted', 'label', 'noContainer', 'required', 'size', 'value']
+  inputs: ['disabled', 'error', 'interacted', 'label', 'noContainer', 'required', 'size']
 })
 @Component({
   selector: 'cpy-input-base',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'error', 'interacted', 'label', 'noContainer', 'required', 'size', 'value']
+  inputs: ['disabled', 'error', 'interacted', 'label', 'noContainer', 'required', 'size']
 })
 export class CpyInputBase {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['valueChange']);
   }
 }
 
