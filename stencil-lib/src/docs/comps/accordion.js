@@ -12,9 +12,9 @@
 </script>`;
   
   document.getElementById('comp-styles').tableData = [
-    { cssVariable: '--cpy-accordion-header-bg', description: 'Background colour of header', defaultValue: 'transparent' },
-    { cssVariable: '--cpy-accordion-header-hover-bg', description: 'Background colour of header when hovered', defaultValue: '--cpy-bg-hover' },
-    { cssVariable: '--cpy-accordion-header-text-colour', description: 'Text colour in the header', defaultValue: 'inherit' },
+    { cssVariable: '--cpy-accordion-header-bg', description: 'Background color of header', defaultValue: 'transparent' },
+    { cssVariable: '--cpy-accordion-header-hover-bg', description: 'Background color of header when hovered', defaultValue: '--cpy-bg-hover' },
+    { cssVariable: '--cpy-accordion-header-text-color', description: 'Text color in the header', defaultValue: 'inherit' },
   ];
 
   document.getElementById('comp-props').tableData = [

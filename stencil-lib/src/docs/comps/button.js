@@ -26,7 +26,7 @@ export type ButtonSize =
     { name: 'disabled', description: 'Whether the button is disabled or not', type: 'boolean', default: "false", required: false },
     { name: 'icon', description: 'If the button is only for an icon', type: 'boolean', default: "false", required: false },
     { name: 'size', description: 'Size of the button', type: "ButtonSize", default: "'default'", required: false },
-    { name: 'type', description: 'Colour scheme of the button', type: "ButtonAppearance", default: "'primary'", required: false }
+    { name: 'type', description: 'Color scheme of the button', type: "ButtonAppearance", default: "'primary'", required: false }
   ];
   document.getElementById('comp-slots').tableData = [
     { slotName: "-- (default)", purpose: 'Contents of the button' }

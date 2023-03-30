@@ -11,7 +11,7 @@
 </cpy-link>`;
 
   document.getElementById('link-props').tableData = [
-    { name: 'type', description: 'Colour scheme of the spinner', type: "'primary' | 'secondary' | 'basic'", default: "'primary'", required: false },
+    { name: 'type', description: 'Color scheme of the spinner', type: "'primary' | 'secondary' | 'basic'", default: "'primary'", required: false },
     { name: 'href', description: 'Href for the link', type: "string", default: "", required: false },
     { name: 'func', description: 'Callback to invoke on click (overrides default navigation behaviour)', type: "function", default: "", required: false },
     { name: 'new-tab', description: 'Whether the link should open in a new tab', type: "boolean", default: "false", required: false },

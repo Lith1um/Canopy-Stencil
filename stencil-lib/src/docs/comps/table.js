@@ -37,7 +37,7 @@
   document.getElementById('example-table-2').tableData = tableData;
   
   document.getElementById('comp-styles').tableData = [
-    { cssVariable: '--cpy-table-bg', description: 'Background colour of table', defaultValue: '--cpy-bg-white' },
+    { cssVariable: '--cpy-table-bg', description: 'Background color of table', defaultValue: '--cpy-bg-white' },
   ];
 
   document.getElementById('comp-interfaces').code = `type TableData = { [key: string]: string | number | boolean | null | undefined };`;

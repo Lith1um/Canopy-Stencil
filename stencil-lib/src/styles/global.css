@@ -24,15 +24,15 @@
 }
 
 :root {
-  /* overrides the text colour in dark mode for edge cases
-     like white text on coloured background for alerts */
+  /* overrides the text color in dark mode for edge cases
+     like white text on colored background for alerts */
   --cpy-dm-text-override: currentColor;
 
   --cpy-bg-hover: rgba(0, 0, 0, 0.05);
   --cpy-bg-overlay: rgba(0, 0, 0, 0.5);
   --cpy-bg-splash: rgba(0, 0, 0, 0.3);
 
-  /* based on tailwind colours */
+  /* based on tailwind colors */
   --cpy-bg-light-rgb: 250, 250, 250; /* zinc-50 */
   --cpy-bg-light: rgb(var(--cpy-bg-light-rgb));
 
@@ -118,14 +118,14 @@
 }
 
 html.dark {
-  /* overrides the text colour in dark mode for edge cases
-     like white text on coloured background for alerts */
+  /* overrides the text color in dark mode for edge cases
+     like white text on colored background for alerts */
   --cpy-dm-text-override: rgb(255, 255, 255);
 
   --cpy-bg-hover: rgba(255, 255, 255, 0.05);
   --cpy-bg-splash: rgba(255, 255, 255, 0.3);
 
-  /* based on tailwind colours */
+  /* based on tailwind colors */
   --cpy-bg-light-rgb: 15, 23, 42; /* slate-900 */
 
   --cpy-bg-dark-rgb: 203, 213, 225; /* slate-300 */

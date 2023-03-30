@@ -1,10 +1,10 @@
 .accordion {
   --accordion-bg: var(--cpy-accordion-header-bg, transparent);
   --accordion-hover-bg: var(--cpy-accordion-header-hover-bg, var(--cpy-bg-hover));
-  --accordion-text-colour: var(--cpy-accordion-header-text-colour, inherit);
+  --accordion-text-color: var(--cpy-accordion-header-text-color, inherit);
   @apply flex gap-4 w-full px-2 py-2 justify-between cursor-pointer select-none items-center;
   background-color: var(--accordion-bg);
-  color: var(--accordion-text-colour);
+  color: var(--accordion-text-color);
 
   &:hover {
     background-color: var(--accordion-hover-bg);

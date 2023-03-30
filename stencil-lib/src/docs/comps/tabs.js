@@ -26,7 +26,7 @@
 </script>`;
   
   document.getElementById('comp-styles').tableData = [
-    { cssVariable: '--cpy-tab-active-bg', description: 'Colour to apply to active tab bar', defaultValue: '--cpy-bg-primary' },
+    { cssVariable: '--cpy-tab-active-bg', description: 'Color to apply to active tab bar', defaultValue: '--cpy-bg-primary' },
   ];
 
   document.getElementById('comp-props').tableData = [

@@ -1,7 +1,7 @@
 (function () {
 
   document.getElementById('comp-styles').tableData = [
-    { cssVariable: '--cpy-bg-overlay', description: 'Colour of backdrop for overlay', defaultValue: 'rgba(0, 0, 0, 0.5)' },
+    { cssVariable: '--cpy-bg-overlay', description: 'Color of backdrop for overlay', defaultValue: 'rgba(0, 0, 0, 0.5)' },
   ];
 
   document.getElementById('comp-props').tableData = [

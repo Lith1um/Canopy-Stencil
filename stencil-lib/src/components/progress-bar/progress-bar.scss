@@ -3,11 +3,11 @@
 }
 
 .progress-bar {
-  --bg-colour: var(--cpy-progress-bar-bg, var(--cpy-bg-primary));
+  --bg-color: var(--cpy-progress-bar-bg, var(--cpy-bg-primary));
 
   @apply relative h-4 w-full rounded overflow-hidden;
   background-color: var(--cpy-bg-white);
-  border-color: var(--bg-colour);
+  border-color: var(--bg-color);
 
   &--border {
     @apply border;
@@ -22,7 +22,7 @@
 
   &__progress {
     @apply h-full max-w-full transition-all duration-300;
-    background-color: var(--bg-colour);
+    background-color: var(--bg-color);
   }
 
   &-size--small {
@@ -34,27 +34,27 @@
   }
   
   &-type--primary {
-    --bg-colour: var(--cpy-bg-primary);
+    --bg-color: var(--cpy-bg-primary);
   }
   
   &-type--secondary {
-    --bg-colour: var(--cpy-bg-secondary);
+    --bg-color: var(--cpy-bg-secondary);
   }
 
   &-type--basic {
-    --bg-colour: var(--cpy-bg-basic);
+    --bg-color: var(--cpy-bg-basic);
   }
 
   &-type--success {
-    --bg-colour: var(--cpy-bg-success);
+    --bg-color: var(--cpy-bg-success);
   }
 
   &-type--warn {
-    --bg-colour: var(--cpy-bg-warn);
+    --bg-color: var(--cpy-bg-warn);
   }
 
   &-type--error {
-    --bg-colour: var(--cpy-bg-error);
+    --bg-color: var(--cpy-bg-error);
   }
 }
 

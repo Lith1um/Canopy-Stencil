@@ -5,7 +5,7 @@
 </div>`;
 
   document.getElementById('comp-styles').tableData = [
-    { cssVariable: '--cpy-bg-splash', description: 'Colour of splash', defaultValue: 'rgba(0, 0, 0, 0.3)' },
+    { cssVariable: '--cpy-bg-splash', description: 'Color of splash', defaultValue: 'rgba(0, 0, 0, 0.3)' },
   ];
 
   document.getElementById('comp-props').tableData = [

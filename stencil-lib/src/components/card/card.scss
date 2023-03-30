@@ -1,7 +1,7 @@
 :host {
   --padding: var(--cpy-card-padding, 1.5rem);
   --footer-bg: var(--cpy-card-footer-bg, var(--cpy-bg-primary));
-  --footer-colour: var(--cpy-card-footer-colour, var(--cpy-text-base));
+  --footer-color: var(--cpy-card-footer-color, var(--cpy-text-base));
   --border-radius: var(--cpy-card-border-radius, 0.75rem);
   @apply inline-block overflow-hidden;
   border-radius: var(--border-radius);
@@ -20,7 +20,7 @@
     margin: var(--padding) calc(var(--padding) * -1) calc(var(--padding) * -1) calc(var(--padding) * -1);
     padding: 0.5rem var(--padding);
     background-color: var(--footer-bg);
-    color: var(--footer-colour);
+    color: var(--footer-color);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
   }
 }

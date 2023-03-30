@@ -58,7 +58,7 @@ const menuItems = navMenuElement.items = [
     { title: 'Angular', type: 'basic', url: '/getting-started/angularComps', icon: 'developer_board', function: onMenuItemClick },
   ] },
   { title: 'Learn more', type: 'group', description: 'Dive into the docs', children: [
-    { title: 'Colours & Dark Mode', type: 'basic', url: '/learn-more/colours', icon: 'palette', function: onMenuItemClick },
+    { title: 'Colors & Dark Mode', type: 'basic', url: '/learn-more/colors', icon: 'palette', function: onMenuItemClick },
     { title: 'Form Validation', type: 'basic', url: '/learn-more/formValidation', icon: 'checklist', function: onMenuItemClick },
   ] },
   {
