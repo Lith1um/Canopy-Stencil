@@ -10,7 +10,7 @@ export class CodeSnippet {
   code: string;
 
   @Prop()
-  quotes: boolean = true;
+  quotes: boolean = false;
 
   render() {
     return (
