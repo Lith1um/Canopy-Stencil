@@ -4,12 +4,16 @@
 
 .link {
   --text-colour: var(--cpy-text-primary);
-  @apply flex items-center gap-1;
+  @apply flex items-baseline gap-1;
   color: var(--text-colour);
 
   &:hover,
   &:hover ::slotted(*) {
     @apply underline cursor-pointer;
+  }
+
+  ::slotted(cpy-icon) {
+    @apply align-baseline;
   }
 
   &--primary {
