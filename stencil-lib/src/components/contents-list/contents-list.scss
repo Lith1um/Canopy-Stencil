@@ -13,7 +13,7 @@
 
   &__list-active {
     --active-bar-bg: var(--cpy-contents-color, var(--cpy-text-primary));
-    @apply w-0.5 absolute left-0 h-4 transition-all duration-300;
+    @apply w-0.5 absolute left-0 h-0 top-0 transition-all duration-300;
     background-color: var(--active-bar-bg);
   }
 }
