@@ -3,15 +3,17 @@
 }
 
 .button {
-  @apply whitespace-nowrap border-2 leading-9 h-9 relative rounded px-3.5 inline-flex items-center justify-center gap-1.5 min-w-[64px] outline-0 select-none appearance-none overflow-visible align-middle bg-transparent;
+  @apply whitespace-nowrap leading-9 h-9 relative rounded px-3.5 inline-flex items-center justify-center gap-1.5 min-w-[64px] outline-0 select-none appearance-none overflow-visible align-middle bg-transparent;
   --button-opacity: 1;
   --text-colour: var(--cpy-text-primary);
   --bg-colour-rgb: var(--cpy-bg-primary-rgb);
-  --border-colour: transparent;
   color: var(--text-colour);
-  border-color: var(--border-colour);
   background-color: rgba(var(--bg-colour-rgb), var(--button-opacity));
   transition: background-color 300ms;
+
+  ::slotted(cpy-icon) {
+    @apply icon-size-6 #{!important};
+  }
 
   &:disabled {
     @apply cursor-default;
@@ -21,39 +23,35 @@
 
   &-size--small {
     @apply leading-7 h-7 text-sm px-2 font-light;
+
+    ::slotted(cpy-icon) {
+      @apply icon-size-5 #{!important};
+    }
   }
 
   &-size--large {
     @apply leading-[3rem] h-12 font-medium;
+
+    ::slotted(cpy-icon) {
+      @apply icon-size-7 #{!important};
+    }
   }
 
   &--icon {
     @apply rounded-full px-3 min-w-0 w-12 h-12;
 
-    ::slotted(cpy-icon) {
-      @apply m-0 -mt-1 icon-size-6 #{!important};
-    }
-
     &.button-size--small {
       @apply p-2 w-10 h-10;
-
-      ::slotted(cpy-icon) {
-        @apply icon-size-5 #{!important};
-      }
     }
   
     &.button-size--large {
       @apply p-4 w-14 h-14 text-lg;
-
-      ::slotted(cpy-icon) {
-        @apply icon-size-7 #{!important};
-      }
     }
   }
 
   &-appearance--outline {
-    --border-colour: var(--text-colour);
     @apply border-2;
+    border-color: var(--text-colour);
   }
 
   &-type--primary {

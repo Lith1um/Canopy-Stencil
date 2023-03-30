@@ -62,6 +62,7 @@ export class Splash {
     circle.style.width = circle.style.height = `${diameter}px`;
     circle.style.left = `${e.clientX - bounds.left - radius}px`;
     circle.style.top = `${e.clientY - bounds.top - radius}px`;
+    circle.style.zIndex = '10';
     circle.classList.add('cpy-ripple');
   
     this.host.parentElement.appendChild(circle);

@@ -21,7 +21,7 @@
     }
 
     &-title {
-      @apply p-2 pl-6 flex items-baseline w-full gap-2 border-b text-lg;
+      @apply p-2 pl-6 flex items-center w-full gap-2 border-b text-lg;
       border-color: var(--cpy-bg-basic-border);
 
       span {

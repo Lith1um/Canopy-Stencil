@@ -26,7 +26,7 @@ export class CodeExample {
         <div class="code-example__title">
           <div>{this.header}</div>
           <cpy-tooltip position="bottom" text="Code" hide-arrow>
-            <cpy-button icon size="small" type="basic" onClick={() => this.showCode = !this.showCode}>
+            <cpy-button icon type="basic" onClick={() => this.showCode = !this.showCode}>
               <cpy-icon>code</cpy-icon>
             </cpy-button>
           </cpy-tooltip>

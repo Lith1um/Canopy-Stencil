@@ -18,7 +18,7 @@
   &__copy {
     background-color: var(--cpy-bg-white);
     transition: background-color, opacity 300ms;
-    @apply opacity-0 absolute top-2 right-2 cursor-pointer h-8 w-8 rounded-md border;
+    @apply opacity-0 absolute top-2 right-2 flex items-center justify-center cursor-pointer h-8 w-8 rounded-md border;
     border: 1px solid var(--cpy-bg-basic-border);
 
     .copied {
