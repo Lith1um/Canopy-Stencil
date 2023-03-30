@@ -1,6 +1,6 @@
 (function () {  
   document.getElementById('comp-styles').tableData = [
-    { cssVariable: '--cpy-contents-text-active', description: 'Text color for active contents list item', defaultValue: '--cpy-contents-active-color' },
+    { cssVariable: '--cpy-contents-color', description: 'Color for active contents list item', defaultValue: '--cpy-text-primary' },
   ];
 
   document.getElementById('comp-props').tableData = [

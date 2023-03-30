@@ -213,12 +213,14 @@ export class CpyCodeExample {
 export declare interface CpyCodeSnippet extends Components.CpyCodeSnippet {}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined
+  defineCustomElementFn: undefined,
+  inputs: ['code', 'quotes']
 })
 @Component({
   selector: 'cpy-code-snippet',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>'
+  template: '<ng-content></ng-content>',
+  inputs: ['code', 'quotes']
 })
 export class CpyCodeSnippet {
   protected el: HTMLElement;

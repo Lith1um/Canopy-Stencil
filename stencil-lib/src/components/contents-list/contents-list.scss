@@ -1,5 +1,5 @@
 .contents {
-  @apply block sticky top-4 mt-4 max-w-[10rem];
+  @apply block sticky top-4 max-w-[10rem];
 
   &__title {
     @apply ml-2 truncate;
@@ -7,7 +7,14 @@
   }
 
   &__list {
-    @apply leading-tight p-0 m-0;
+    @apply border-l leading-tight p-0 m-0 relative;
+    border-color: var(--cpy-bg-basic-border);
+  }
+
+  &__list-active {
+    --active-bar-bg: var(--cpy-contents-color, var(--cpy-text-primary));
+    @apply w-0.5 absolute left-0 h-4 transition-all duration-300;
+    background-color: var(--active-bar-bg);
   }
 }
 
