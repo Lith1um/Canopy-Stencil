@@ -67,7 +67,7 @@ export class NavMenuItemComp {
     if (this.item.openInNewTab) {
       itemAttrs.target = '_blank';
     }
-    if (this.item.url !== undefined) {
+    if (this.item.url !== undefined && this.item.function === undefined) {
       itemAttrs.href = this.item.url;
     }
     if (this.item.function) {
