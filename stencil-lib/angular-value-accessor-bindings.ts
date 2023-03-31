@@ -2,7 +2,7 @@ import { ValueAccessorConfig } from '@stencil/angular-output-target';
 
 const angularValueAccessorBindings: ValueAccessorConfig[] = [
   {
-    elementSelectors: ['cpy-toggle'],
+    elementSelectors: ['cpy-input-toggle'],
     event: 'valueChange',
     targetAttr: 'value',
     type: 'boolean',

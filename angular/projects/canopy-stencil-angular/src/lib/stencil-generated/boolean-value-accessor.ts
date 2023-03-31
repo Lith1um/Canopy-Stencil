@@ -5,7 +5,7 @@ import { ValueAccessor } from './value-accessor';
 
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: 'cpy-toggle',
+  selector: 'cpy-input-toggle',
   host: {
     '(valueChange)': 'handleChangeEvent($event.target.value)'
   },
