@@ -18,6 +18,8 @@ export class ContentsList {
   @Prop({mutable: true})
   activeIndex: number;
 
+  resize: ResizeObserver;
+
   @Watch('activeIndex')
   handleIndexChange(index: number): void {
     this.updateActiveBar(index);
@@ -33,13 +35,13 @@ export class ContentsList {
   }
 
   componentDidLoad(): void {
-    const resize = new ResizeObserver(debounce(entries => {
+    this.resize = new ResizeObserver(debounce(entries => {
       entries.forEach((_) => {
         this.updateActiveBar(this.activeIndex);
       })
     }, 250));
 
-    resize.observe(this.activeBarElem.parentElement);
+    this.resize.observe(this.activeBarElem.parentElement);
   }
 
   listElems: HTMLElement[] = [];
@@ -64,5 +66,9 @@ export class ContentsList {
 
       </div>
     );
+  }
+
+  disconnectedCallback(): void {
+    this.resize.disconnect();
   }
 }
