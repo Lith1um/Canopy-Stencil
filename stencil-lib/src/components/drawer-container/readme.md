@@ -14,9 +14,9 @@
 
 ## Events
 
-| Event          | Description | Type                |
-| -------------- | ----------- | ------------------- |
-| `toggleDrawer` |             | `CustomEvent<void>` |
+| Event          | Description | Type                   |
+| -------------- | ----------- | ---------------------- |
+| `toggleDrawer` |             | `CustomEvent<boolean>` |
 
 
 ## Methods

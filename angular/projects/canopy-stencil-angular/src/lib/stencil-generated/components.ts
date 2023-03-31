@@ -427,7 +427,7 @@ export declare interface CpyDrawerContainer extends Components.CpyDrawerContaine
   /**
    *  
    */
-  toggleDrawer: EventEmitter<CustomEvent<void>>;
+  toggleDrawer: EventEmitter<CustomEvent<boolean>>;
 
 }
 

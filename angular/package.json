@@ -1,6 +1,6 @@
 {
   "name": "angular",
-  "version": "0.1.21",
+  "version": "0.1.24",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -30,7 +30,7 @@
     "@angular/cli": "~15.2.4",
     "@angular/compiler-cli": "^15.2.5",
     "@types/jasmine": "~4.0.0",
-    "canopy-stencil-web": "^0.1.21",
+    "canopy-stencil-web": "^0.1.24",
     "jasmine-core": "~4.1.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
