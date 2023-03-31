@@ -64,16 +64,14 @@ const menuItems = navMenuElement.items = [
   {
     title: 'User Interface', type: 'group', description: 'Building blocks of websites', children: [
     { title: 'Layout', icon: 'dashboard', type: 'collapsible', description: 'Common UI layouts', children: [
-      { title: 'Layout', icon: 'dashboard', type: 'collapsible', description: 'Common UI layouts', children: [
-        { title: 'Carousel', type: 'basic', url: '/comps/carousel' },
-        { title: 'Drawer Container', type: 'basic', url: '/comps/drawer' },
-        { title: 'Navigation Menu', type: 'basic', url: '/comps/navMenu' },
-        { title: 'Overlay', type: 'basic', url: '/comps/overlay' },
-        { title: 'Page Container', type: 'basic', url: '/comps/pageContainer' },
-        { title: 'Page Content', type: 'basic', url: '/comps/pageContent' },
-        { title: 'Table', type: 'basic', url: '/comps/table' },
-        { title: 'Tabs', type: 'basic', url: '/comps/tabs' },
-      ] },
+      { title: 'Carousel', type: 'basic', url: '/comps/carousel' },
+      { title: 'Drawer Container', type: 'basic', url: '/comps/drawer' },
+      { title: 'Navigation Menu', type: 'basic', url: '/comps/navMenu' },
+      { title: 'Overlay', type: 'basic', url: '/comps/overlay' },
+      { title: 'Page Container', type: 'basic', url: '/comps/pageContainer' },
+      { title: 'Page Content', type: 'basic', url: '/comps/pageContent' },
+      { title: 'Table', type: 'basic', url: '/comps/table' },
+      { title: 'Tabs', type: 'basic', url: '/comps/tabs' },
     ] },
     { title: 'Interactions', icon: 'touch_app', type: 'collapsible', description: 'Floating UI components', children: [
       { title: 'Accordion', type: 'basic', url: '/comps/accordion' },
