@@ -1,44 +1,109 @@
 <cpy-page-container>
-  <cpy-page-content>
-    <h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-      Accordions
-    </h3>
-    
-    <p style="margin-top: 1rem; margin-bottom: 2rem;">
-      Canopy accordions provide an expandable details-summary view and are referenced using the <cpy-code-snippet>&lt;cpy-accordion&gt;</cpy-code-snippet> custom HTML element. The component utilizes the slot element, allowing you to render your own HTML in the accordion content.
-    </p>
-    
-    <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-accordion size="small" header-title="I'm a small Accordion">
-        I'm the content of an Accordion
-      </cpy-accordion>
-      <cpy-accordion id="accordion-default" header-title="I'm an Accordion">
-        I'm the content of an Accordion
-      </cpy-accordion>
-      <cpy-accordion size="large" header-title="I'm a large Accordion">
-        I'm the content of an Accordion
-      </cpy-accordion>
-    </div>
-    
-    <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
-    
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-code-block id="accordion-html-example" language="html"></cpy-code-block>
-    </div>
-    
-    <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-    <cpy-table id="accordion-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-    
-    <h3 id="events" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Events</h3>
-    <cpy-table id="accordion-events" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-    
-    <h3 id="methods" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Events</h3>
-    <cpy-table id="accordion-methods" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-    
-    <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
-    <cpy-table id="accordion-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  </cpy-page-content>
+  <h1>Accordions</h1>
+
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Accordion">
+        <p>
+          Canopy accordions provide an expandable details-summary view and are referenced using the
+          <cpy-code-snippet code="<cpy-accordion>"></cpy-code-snippet> custom HTML element. The component utilizes the
+          slot element, allowing you to render your own HTML in the accordion content.
+        </p>
+
+        <cpy-code-example header="Accordion" id="overview-code">
+<cpy-accordion header-title="Canopy Accordion - click me!">
+  <div style="height: 10rem;" class="flexbox-centered">
+    I'm the contents of an Accordion!
+  </div>
+</cpy-accordion>
+        </cpy-code-example>
+
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want.
+          Below is a list of variables you can use to configure this component. You can learn more about Canopy colors
+          and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
+
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          Canopy Accordions don't come with any accessibility treatment, because it doesn't have control over its markup.
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Accordion">
+        <h4 id="api" title="API">API Reference for Canopy Accordion</h4>
+        <cpy-code-snippet code="<cpy-accordion>"></cpy-code-snippet>
+
+        <div class="section">
+        </div>
+
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
+
+        <h4 id="events">Events</h4>
+        <p>React to changes in the component</p>
+        <cpy-table id="comp-events"></cpy-table>
+
+        <h4 id="methods">Methods</h4>
+        <p>Exposed methods on the component (All methods are async!)</p>
+        <cpy-table id="comp-methods"></cpy-table>
+
+        <h4 id="slots">Slots</h4>
+        <p>Inject custom content into the component</p>
+        <cpy-table id="comp-slots"></cpy-table>
+
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Default Accordion">
+<cpy-accordion header-title="Canopy Accordion - click me!">
+  I'm the contents of an Accordion!
+</cpy-accordion>
+      </cpy-code-example>
+
+      <cpy-code-example header="Small Accordion">
+<cpy-accordion header-title="Canopy Accordion - click me!" size="small">
+  I'm the contents of an Accordion!
+</cpy-accordion>
+      </cpy-code-example>
+
+      <cpy-code-example header="Large Accordion">
+<cpy-accordion header-title="Canopy Accordion - click me!" size="large">
+  I'm the contents of an Accordion!
+</cpy-accordion>
+      </cpy-code-example>
+
+      <cpy-code-example header="Opened Accordion">
+<cpy-accordion header-title="Canopy Accordion - click me!" opened>
+  I'm the contents of an Accordion!
+</cpy-accordion>
+      </cpy-code-example>
+
+      <cpy-code-example header="Custom Accordion">
+<cpy-accordion
+  header-title="Canopy Accordion - click me!"
+  style="
+    --cpy-accordion-header-bg: var(--cpy-bg-error);
+    --cpy-accordion-header-hover-bg: var(--cpy-bg-error-hover);
+    --cpy-accordion-header-text-color: white;
+  ">
+  I'm the contents of an Accordion!
+</cpy-accordion>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
 </cpy-page-container>
 
 <script src="/docs/comps/accordion.js">

@@ -1,0 +1,39 @@
+<cpy-page-container>
+  <cpy-page-content>
+    <h3 class="border-b">
+      Color palettes & Dark Mode
+    </h3>
+
+    <h4 id="colors">Colors</h4>
+    <p>
+      Personally I think canopy is already using the best color palette you could ever want but I understand it may
+      not fit your needs. Through the use of the :root selector in css, you can override almost every color in the
+      library (current colors are based on <cpy-link href="https://tailwindcss.com/docs/customizing-colors" new-tab>tailwind</cpy-link>).
+      Below is the simplest example of overriding colors (replacing primary color on light and dark mode):
+    </p>
+    <cpy-code-block id="colors-override-simple" language="scss"></cpy-code-block>
+    <p>Some colors (mainly background colors) are set as rgb values
+      without the rgb() container, since they are often manipulated within components to modify their opacity.</p>
+    <p>A full list of the configurable colors is below (along with
+      their defaulted values):</p>
+    <cpy-code-block id="colors-palette-css" language="scss"></cpy-code-block>
+
+    <h4 id="dark-mode">Dark Mode</h4>
+      <p>
+        By default, Canopy looks for a dark class on the HTML tag to determine if the color palette should switch to
+        dark mode, however this is easily configurable for your needs. Similarly to the main color palette, you can
+        override any dark mode colors:
+      </p>
+      <cpy-code-block id="colors-pallette-dark-css" language="scss"></cpy-code-block>
+      <p>
+        If you want to use a different method to checking for a dark class on the HTML tag, you can include your own css
+        to set the color variables. For example, if you want to use dark mode when the user has requested it in their
+        browser settings, replace the html wrapper for your variables with:
+      </p>
+      <cpy-code-block id="colors-pallette-dark-alt" language="scss"></cpy-code-block>
+    </div>
+  </cpy-page-content>
+</cpy-page-container>
+
+<script src="/docs/learn-more/colors.js">
+</script>

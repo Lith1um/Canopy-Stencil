@@ -1,4 +1,4 @@
-import { Component, Element, Event, EventEmitter, h, Listen, Prop, Watch } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, h, Listen, Method, Prop, Watch } from '@stencil/core';
 
 @Component({
   tag: 'cpy-drawer-container',
@@ -26,6 +26,11 @@ export class DrawerContainer {
 
   @Event() toggleDrawer: EventEmitter<void>;
 
+  @Method()
+  async toggle(): Promise<void> {
+    this.opened = !this.opened;
+  }
+
   @Listen('toggleOpened')
   toggleOpenedHandler(): void {
     this.opened = !this.opened;
@@ -33,6 +38,7 @@ export class DrawerContainer {
   }
 
   contentElem: HTMLElement;
+  overlayElem: HTMLCpyOverlayElement;
   isMobile: boolean;
   firstRender: boolean = true;
 
@@ -54,7 +60,15 @@ export class DrawerContainer {
     // handle initial render case
     if (this.firstRender) {
       this.contentElem.style.transitionDuration = '0s';
-      this.mediaChange(window.matchMedia('(min-width: 640px)'));
+      const matchMobileMedia = window.matchMedia('(min-width: 640px)');
+      this.mediaChange(matchMobileMedia);
+
+      matchMobileMedia.addEventListener('change', (media) => {
+        if (!this.opened) {
+          return;
+        }
+        this.overlayElem.toggle(!media.matches);
+      })
       // Hacky fix to prevent main content sliding in if drawer is open on load
       setTimeout(() => this.contentElem.style.transitionDuration = null, 300);
     }
@@ -76,6 +90,12 @@ export class DrawerContainer {
           ref={(el) => this.contentElem = el as HTMLElement}>
           <slot></slot>
         </div>
+        <cpy-overlay
+          zIndex='25'
+          ref={(el) => this.overlayElem = el as HTMLCpyOverlayElement}
+          show={this.opened && this.isMobile}
+          onBackdropClick={() => this.opened = false}
+        ></cpy-overlay>
       </div>
     );
   }

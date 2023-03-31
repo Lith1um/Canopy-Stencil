@@ -1,18 +1,13 @@
 .nav-menu-item {
-  --item-opacity: 0;
-  @apply flex gap-3 mb-1 py-2 px-3 rounded-md cursor-pointer items-center select-none min-h-[2.5rem];
-  background-color: rgba(var(--cpy-bg-basic-rgb), var(--item-opacity));
+  @apply flex gap-3 mb-1 py-2 px-5 cursor-pointer items-center select-none min-h-[2.5rem] bg-transparent;
 
   &:hover, &--active {
-    --item-opacity: 0.1;
+    background-color: var(--cpy-bg-hover);
   }
 
   &--group {
     @apply cursor-default;
-
-    &:hover {
-      --item-opacity: 0;
-    }
+    background-color: transparent !important;
 
     .nav-menu-item__title {
       @apply uppercase;
@@ -21,7 +16,7 @@
   }
 
   &__content {
-    @apply flex-1;
+    @apply flex-1 min-w-0;
   }
 
   &__collapse-icon {
@@ -33,15 +28,16 @@
   }
 
   &__collapse {
-    @apply ml-2 block;
+    @apply block;
+
+    > div {
+      @apply border-b mb-1;
+      border-color: var(--cpy-bg-basic-border);
+    }
   }
 
   > cpy-icon {
     @apply icon-size-6;
-    
-    i {
-      @apply align-baseline;
-    }
   }
 
   &__title {
@@ -54,7 +50,7 @@
   }
 
   &__separator {
-    @apply border-b w-full my-2;
+    @apply border-b w-full mb-1;
     border-color: var(--cpy-bg-basic-border);
   }
 }

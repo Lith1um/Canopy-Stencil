@@ -32,9 +32,8 @@ https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clik
 
  code[class*="language-"],
 pre[class*="language-"] {
-	background: #1E293B;
-	color: hsl(220, 14%, 71%);
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  color: var(--cpy-text-light);
+  background-color: var(--cpy-bg-white);
 	font-family: "Fira Code", "Fira Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
 	direction: ltr;
 	text-align: left;

@@ -1,73 +1,71 @@
 :host {
-  display: inline-block;
+  @apply inline-block;
 }
 
 .button {
-  @apply whitespace-nowrap border-2 leading-9 h-9 relative rounded px-3.5 inline-flex items-center justify-center gap-1.5 min-w-[64px] outline-0 select-none appearance-none overflow-visible align-middle bg-transparent;
+  @apply whitespace-nowrap leading-9 h-9 relative rounded px-3.5 inline-flex items-center justify-center gap-1.5 min-w-[64px] outline-0 select-none appearance-none overflow-visible align-middle bg-transparent;
   --button-opacity: 1;
-  --text-colour: var(--cpy-text-primary);
-  --bg-colour-rgb: var(--cpy-bg-primary-rgb);
-  --border-colour: transparent;
-  color: var(--text-colour);
-  border-color: var(--border-colour);
-  background-color: rgba(var(--bg-colour-rgb), var(--button-opacity));
+  --text-color: var(--cpy-text-primary);
+  --bg-color-rgb: var(--cpy-bg-primary-rgb);
+  color: var(--text-color);
+  background-color: rgba(var(--bg-color-rgb), var(--button-opacity));
   transition: background-color 300ms;
+
+  ::slotted(cpy-icon) {
+    @apply icon-size-6 #{!important};
+  }
 
   &:disabled {
     @apply cursor-default;
-    --text-colour: var(--cpy-text-disabled) !important;
-    --bg-colour-rgb: var(--cpy-bg-disabled-rgb) !important;
+    --text-color: var(--cpy-text-disabled) !important;
+    --bg-color-rgb: var(--cpy-bg-disabled-rgb) !important;
   }
 
   &-size--small {
     @apply leading-7 h-7 text-sm px-2 font-light;
+
+    ::slotted(cpy-icon) {
+      @apply icon-size-5 #{!important};
+    }
   }
 
   &-size--large {
     @apply leading-[3rem] h-12 font-medium;
+
+    ::slotted(cpy-icon) {
+      @apply icon-size-7 #{!important};
+    }
   }
 
   &--icon {
-    @apply rounded-full p-3 min-w-0 w-12 h-12;
-
-    ::slotted(cpy-icon) {
-      @apply m-0 -mt-1 icon-size-6 #{!important};
-    }
+    @apply rounded-full px-3 min-w-0 w-12 h-12;
 
     &.button-size--small {
       @apply p-2 w-10 h-10;
-
-      ::slotted(cpy-icon) {
-        @apply icon-size-5 #{!important};
-      }
     }
   
     &.button-size--large {
       @apply p-4 w-14 h-14 text-lg;
-
-      ::slotted(cpy-icon) {
-        @apply icon-size-7 #{!important};
-      }
     }
   }
 
   &-appearance--outline {
-    --border-colour: var(--text-colour);
     @apply border-2;
+    border-color: var(--text-color);
   }
 
   &-type--primary {
-    --text-colour: white;
-    --bg-colour-rgb: var(--cpy-bg-primary-rgb);
+    --text-color: white;
+    --bg-color-rgb: var(--cpy-bg-primary-rgb);
     
     &:hover:not(:disabled) {
-      --bg-colour-rgb: var(--cpy-bg-primary-hover-rgb);
+      --bg-color-rgb: var(--cpy-bg-primary-hover-rgb);
     }
 
     &.button--icon,
     &.button-appearance--borderless,
     &.button-appearance--outline {
-      --text-colour: var(--cpy-text-primary);
+      --text-color: var(--cpy-text-primary);
       --button-opacity: 0;
   
       &:hover:not(:disabled) {
@@ -81,17 +79,17 @@
   }
 
   &-type--secondary {
-    --text-colour: white;
-    --bg-colour-rgb: var(--cpy-bg-secondary-rgb);
+    --text-color: white;
+    --bg-color-rgb: var(--cpy-bg-secondary-rgb);
     
     &:hover:not(:disabled) {
-      --bg-colour-rgb: var(--cpy-bg-secondary-hover-rgb);
+      --bg-color-rgb: var(--cpy-bg-secondary-hover-rgb);
     }
 
     &.button--icon,
     &.button-appearance--borderless,
     &.button-appearance--outline {
-      --text-colour: var(--cpy-text-secondary);
+      --text-color: var(--cpy-text-secondary);
       --button-opacity: 0;
   
       &:hover:not(:disabled) {
@@ -105,17 +103,17 @@
   }
 
   &-type--basic {
-    --text-colour: white;
-    --bg-colour-rgb: var(--cpy-bg-basic-rgb);
+    --text-color: white;
+    --bg-color-rgb: var(--cpy-bg-basic-rgb);
     
     &:hover:not(:disabled) {
-      --bg-colour-rgb: var(--cpy-bg-basic-hover-rgb);
+      --bg-color-rgb: var(--cpy-bg-basic-hover-rgb);
     }
 
     &.button--icon,
     &.button-appearance--borderless,
     &.button-appearance--outline {
-      --text-colour: var(--cpy-text-base);
+      --text-color: var(--cpy-text-base);
       --button-opacity: 0;
   
       &:hover:not(:disabled) {
@@ -129,17 +127,17 @@
   }
 
   &-type--success {
-    --text-colour: white;
-    --bg-colour-rgb: var(--cpy-bg-success-rgb);
+    --text-color: white;
+    --bg-color-rgb: var(--cpy-bg-success-rgb);
     
     &:hover:not(:disabled) {
-      --bg-colour-rgb: var(--cpy-bg-success-hover-rgb);
+      --bg-color-rgb: var(--cpy-bg-success-hover-rgb);
     }
 
     &.button--icon,
     &.button-appearance--borderless,
     &.button-appearance--outline {
-      --text-colour: var(--cpy-text-success);
+      --text-color: var(--cpy-text-success);
       --button-opacity: 0;
   
       &:hover:not(:disabled) {
@@ -153,17 +151,17 @@
   }
 
   &-type--warn {
-    --text-colour: white;
-    --bg-colour-rgb: var(--cpy-bg-warn-rgb);
+    --text-color: white;
+    --bg-color-rgb: var(--cpy-bg-warn-rgb);
     
     &:hover:not(:disabled) {
-      --bg-colour-rgb: var(--cpy-bg-warn-hover-rgb);
+      --bg-color-rgb: var(--cpy-bg-warn-hover-rgb);
     }
 
     &.button--icon,
     &.button-appearance--borderless,
     &.button-appearance--outline {
-      --text-colour: var(--cpy-text-warn);
+      --text-color: var(--cpy-text-warn);
       --button-opacity: 0;
   
       &:hover:not(:disabled) {
@@ -177,17 +175,17 @@
   }
 
   &-type--error {
-    --text-colour: white;
-    --bg-colour-rgb: var(--cpy-bg-error-rgb);
+    --text-color: white;
+    --bg-color-rgb: var(--cpy-bg-error-rgb);
     
     &:hover:not(:disabled) {
-      --bg-colour-rgb: var(--cpy-bg-error-hover-rgb);
+      --bg-color-rgb: var(--cpy-bg-error-hover-rgb);
     }
 
     &.button--icon,
     &.button-appearance--borderless,
     &.button-appearance--outline {
-      --text-colour: var(--cpy-text-error);
+      --text-color: var(--cpy-text-error);
       --button-opacity: 0;
   
       &:hover:not(:disabled) {

@@ -90,13 +90,13 @@ export declare interface CpyBadge extends Components.CpyBadge {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['appearance', 'size', 'type']
+  inputs: ['appearance', 'block', 'size', 'type']
 })
 @Component({
   selector: 'cpy-badge',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['appearance', 'size', 'type']
+  inputs: ['appearance', 'block', 'size', 'type']
 })
 export class CpyBadge {
   protected el: HTMLElement;
@@ -189,15 +189,38 @@ export class CpyCodeBlock {
 }
 
 
+export declare interface CpyCodeExample extends Components.CpyCodeExample {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['code', 'header', 'language']
+})
+@Component({
+  selector: 'cpy-code-example',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['code', 'header', 'language']
+})
+export class CpyCodeExample {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface CpyCodeSnippet extends Components.CpyCodeSnippet {}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined
+  defineCustomElementFn: undefined,
+  inputs: ['code', 'quotes']
 })
 @Component({
   selector: 'cpy-code-snippet',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>'
+  template: '<ng-content></ng-content>',
+  inputs: ['code', 'quotes']
 })
 export class CpyCodeSnippet {
   protected el: HTMLElement;
@@ -410,7 +433,8 @@ export declare interface CpyDrawerContainer extends Components.CpyDrawerContaine
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['opened']
+  inputs: ['opened'],
+  methods: ['toggle']
 })
 @Component({
   selector: 'cpy-drawer-container',
@@ -486,14 +510,14 @@ export declare interface CpyInput extends Components.CpyInput {
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['disabled', 'label', 'required', 'size', 'type', 'validators', 'value'],
+  inputs: ['disabled', 'label', 'placeholder', 'required', 'size', 'type', 'validators', 'value'],
   methods: ['isValid', 'markAsTouched']
 })
 @Component({
   selector: 'cpy-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'label', 'required', 'size', 'type', 'validators', 'value']
+  inputs: ['disabled', 'label', 'placeholder', 'required', 'size', 'type', 'validators', 'value']
 })
 export class CpyInput {
   protected el: HTMLElement;
@@ -505,30 +529,23 @@ export class CpyInput {
 }
 
 
-export declare interface CpyInputBase extends Components.CpyInputBase {
-  /**
-   *  
-   */
-  valueChange: EventEmitter<CustomEvent<string>>;
-
-}
+export declare interface CpyInputBase extends Components.CpyInputBase {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['disabled', 'error', 'interacted', 'label', 'noContainer', 'required', 'size', 'value']
+  inputs: ['disabled', 'error', 'interacted', 'label', 'noContainer', 'required', 'size']
 })
 @Component({
   selector: 'cpy-input-base',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'error', 'interacted', 'label', 'noContainer', 'required', 'size', 'value']
+  inputs: ['disabled', 'error', 'interacted', 'label', 'noContainer', 'required', 'size']
 })
 export class CpyInputBase {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['valueChange']);
   }
 }
 
@@ -628,6 +645,39 @@ export class CpyNavMenuItem {
     c.detach();
     this.el = r.nativeElement;
     proxyOutputs(this, this.el, ['itemActive']);
+  }
+}
+
+
+export declare interface CpyOverlay extends Components.CpyOverlay {
+  /**
+   *  
+   */
+  closed: EventEmitter<CustomEvent<void>>;
+  /**
+   *  
+   */
+  backdropClick: EventEmitter<CustomEvent<void>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['hasBackdropClick', 'show', 'zIndex'],
+  methods: ['open', 'close', 'toggle']
+})
+@Component({
+  selector: 'cpy-overlay',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['hasBackdropClick', 'show', 'zIndex']
+})
+export class CpyOverlay {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['closed', 'backdropClick']);
   }
 }
 
@@ -749,6 +799,27 @@ export declare interface CpySpinner extends Components.CpySpinner {}
   inputs: ['size', 'type']
 })
 export class CpySpinner {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface CpySplash extends Components.CpySplash {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['disabled']
+})
+@Component({
+  selector: 'cpy-splash',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['disabled']
+})
+export class CpySplash {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

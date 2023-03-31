@@ -19,18 +19,34 @@
 | `toggleDrawer` |             | `CustomEvent<void>` |
 
 
+## Methods
+
+### `toggle() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Dependencies
 
 ### Depends on
 
 - [cpy-drawer](drawer)
+- [cpy-overlay](../overlay)
 
 ### Graph
 ```mermaid
 graph TD;
   cpy-drawer-container --> cpy-drawer
+  cpy-drawer-container --> cpy-overlay
   cpy-drawer --> cpy-button
   cpy-drawer --> cpy-icon
+  cpy-button --> cpy-splash
   style cpy-drawer-container fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

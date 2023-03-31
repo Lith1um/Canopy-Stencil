@@ -76,7 +76,7 @@ export class InputToggle implements BaseInput<boolean> {
   }
 
   handleChange(e: Event) {
-    const target = e.target as HTMLInputElement
+    const target = e.target as HTMLInputElement;
     this.value = target.checked;
     this.valueChange.emit(this.value);
   }
@@ -103,7 +103,7 @@ export class InputToggle implements BaseInput<boolean> {
     };    
 
     return (
-      <cpy-input-base noContainer required={this.required} value={this.value} interacted={this.interacted} error={error}>
+      <cpy-input-base noContainer={true} required={this.required} interacted={this.interacted} error={error}>
         <label class={classes}>
           <div class={switchClasses}>
             <input

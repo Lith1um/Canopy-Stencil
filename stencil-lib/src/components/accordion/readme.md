@@ -59,12 +59,14 @@ Type: `Promise<void>`
 ### Depends on
 
 - [cpy-icon](../icon)
+- [cpy-splash](../splash)
 - [cpy-expand-collapse](../expand-collapse)
 
 ### Graph
 ```mermaid
 graph TD;
   cpy-accordion --> cpy-icon
+  cpy-accordion --> cpy-splash
   cpy-accordion --> cpy-expand-collapse
   style cpy-accordion fill:#f9f,stroke:#333,stroke-width:4px
 ```

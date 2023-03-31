@@ -1,29 +1,73 @@
 <cpy-page-container>
-  <cpy-page-content>
-    <h3
-      style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-      Code Snippets
-    </h3>
+  <h1>Code Snippets</h1>
 
-    <p style="margin-top: 1rem; margin-bottom: 2rem;">
-      Canopy Code Snippets provide basic inline styling for code snippets. They are referenced using the
-      <cpy-code-snippet>&lt;cpy-code-snippet&gt;</cpy-code-snippet> custom HTML element.
-    </p>
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Code Snippet">
+        <p>
+          Canopy Code Snippets provide basic inline styling for code snippets. They are referenced using the
+          <cpy-code-snippet code="<cpy-code-snippet>"></cpy-code-snippet> custom HTML element.
+        </p>
 
-    <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      Here is some text with some code: <cpy-code-snippet>console.log('This is a code snippet!');</cpy-code-snippet>
-      which shows inline with the text contents.
-    </div>
+        <cpy-code-example header="Code Snippet">
+<cpy-code-snippet code="console.log('This is a code snippet!');"></cpy-code-snippet>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. Below is a list of variables you can use to configure this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
 
-    <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-code-block id="code-snippet-html-example" language="html"></cpy-code-block>
-    </div>
+        <h4 id="host">Host styles</h4>
+        <p>
+          Canopy components are designed to have their host element styled directly so that it can be overridden for specific implementation purposes.This is generally used to adjust <cpy-code-snippet code="display"></cpy-code-snippet>, <cpy-code-snippet code="position"></cpy-code-snippet>, <cpy-code-snippet code="background-color"></cpy-code-snippet>, <cpy-code-snippet code="padding"></cpy-code-snippet>, <cpy-code-snippet code="margin"></cpy-code-snippet>, <cpy-code-snippet code="width"></cpy-code-snippet>, <cpy-code-snippet code="height"></cpy-code-snippet> etc.
+        </p>
+        <p>
+          There are likely other properties that you can alter on the host element for each individual component, open your dev tools and inspect each component to see what you can override on the host!
+        </p>
 
-    <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
-    <cpy-table id="code-snippet-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  </cpy-page-content>
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          TODO: ...
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Code Snippet">
+        <h4 id="api" title="API">API Reference for Canopy Code Snippet</h4>
+        <cpy-code-snippet code="<cpy-code-snippet>"></cpy-code-snippet>
+
+        <div class="section">
+        </div>
+
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
+
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic code snippet">
+<cpy-code-snippet code="const obj = { value: 2 };"></cpy-code-snippet>
+      </cpy-code-example>
+      <cpy-code-example header="Code snippet inline with text">
+Here is some text with some code: <cpy-code-snippet code="obj.map(() => {})"></cpy-code-snippet>
+which shows inline with the text contents.
+      </cpy-code-example>
+      <cpy-code-example header="Code snippet with quotes">
+<cpy-code-snippet quotes code='<div class="flex"></div>'></cpy-code-snippet>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
 </cpy-page-container>
 
 <script src="/docs/comps/codeSnippet.js">

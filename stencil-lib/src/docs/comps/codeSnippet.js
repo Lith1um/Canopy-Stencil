@@ -1,7 +1,10 @@
-(function () {
-  document.getElementById('code-snippet-html-example').code = `<cpy-code-snippet>console.log('This is a code snippet!');</cpy-code-snippet>`;
+(function () {  
+  document.getElementById('comp-styles').tableData = [
+    { cssVariable: '--cpy-code-snippet-bg', description: 'Background color for the snippet', defaultValue: '--cpy-bg-hover' },
+  ];
 
-  document.getElementById('code-snippet-slots').tableData = [
-    { slotName: "-- (default)", purpose: 'Contents of the code snippet (this should just be basic text)' },
+  document.getElementById('comp-props').tableData = [
+    { name: 'code', description: 'The code snippet to show', type: "string", default: "", required: true },
+    { name: 'quotes', description: 'Shows `` characters around the snippet', type: 'boolean', default: 'true', required: false }
   ];
 })();

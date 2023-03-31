@@ -1,33 +1,65 @@
 <cpy-page-container>
-  <cpy-page-content>
-    <h3
-      style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-      Page Container
-    </h3>
+  <h1>Page Containers</h1>
 
-    <p style="margin-top: 1rem; margin-bottom: 2rem;">
-      Canopy page container components are containers for displaying content on a page. They are referenced using
-      the<cpy-code-snippet>&lt;cpy-page-container&gt;</cpy-code-snippet>custom HTML element. This component utilises the
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Page Container">
+        <p>
+          Canopy page container components are stylised layout components for blog/doc style content. They are used to provide a basic set of padding/margins based on screen size. They are referenced using
+      the <cpy-code-snippet code="<cpy-page-container>"></cpy-code-snippet> custom HTML element. This component utilises the
       slot element, allowing you to render your own HTML in the content.
-    </p>
+        </p>
 
-    <p style="margin-top: 1rem; margin-bottom: 2rem;">
-      All canopy doc pages are presented in a page-container, try changing your browser window size to see it change!
-    </p>
+        <cpy-code-example header="Page Container" id="overview-code">
+<cpy-page-container id="page-container">
+  <!-- slotted content -->
+  <img style="margin: 1rem auto;" src="https://github.com/Lith1um/Canopy-Stencil/raw/main/logo.png" alt="Logo" width="140">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis faucibus ligula. Nullam vulputate sed purus ac pulvinar. Maecenas consectetur ultricies eros eu feugiat. In purus tellus, molestie at gravida id, ornare in risus. Phasellus quis quam id orci convallis iaculis at a eros. Aenean eleifend consequat nulla hendrerit lobortis. Maecenas aliquet tincidunt ante, a scelerisque massa iaculis in. Suspendisse convallis iaculis pharetra. Sed imperdiet semper mauris nec cursus. Aenean placerat dapibus tortor nec aliquet. Suspendisse euismod felis quis lectus fringilla blandit. Quisque metus nulla, mattis nec iaculis et, blandit nec purus. Aenean nec quam in augue bibendum convallis. Etiam vel magna aliquam, consequat ex nec, fringilla neque. Maecenas vel justo id sapien facilisis efficitur quis non sapien. Duis vitae bibendum sapien.</p>
+  <p>Cras lacinia posuere sapien a consequat. Ut vel mauris porttitor, vestibulum metus a, rutrum lorem. In at libero hendrerit, consectetur felis et, accumsan leo. Phasellus non tincidunt ante, eget maximus justo. Duis ac arcu dui. Nam lacinia, nunc ut luctus suscipit, dui dolor scelerisque ligula, eu molestie ante dui id arcu. Morbi id ante enim. Cras at nibh vestibulum, rutrum turpis maximus, fermentum leo. Donec sed congue eros, in varius urna. Quisque vitae convallis lacus. Nunc at aliquet erat. Integer pulvinar ut libero vitae fringilla. Proin ornare, nulla vel hendrerit aliquam, massa ipsum pharetra nisl, nec egestas odio nulla vel quam. Quisque condimentum ultrices urna. Suspendisse maximus varius tristique.</p>
+</cpy-page-container>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. There are currently no styling variables for this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
 
-    <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-    <div style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-page-container id="page-container">
-        Some content to display!
-      </cpy-page-container>
-    </div>
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          Page Containers serve a wide variety of scenarios and may contain many different types of content. Due to this flexible nature, the appropriate accessibility treatment depends on how you use <cpy-code-snippet code="<cpy-page-container>"></cpy-code-snippet>.
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
 
-    <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Page Container">
+        <h4 id="api" title="API">API Reference for Canopy Page Container</h4>
+        <cpy-code-snippet code="<cpy-page-container>"></cpy-code-snippet>
 
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-code-block id="page-container-html-example" language="html"></cpy-code-block>
-    </div>
-  </cpy-page-content>
+        <div class="section">
+        </div>
+
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic Page Container">
+<cpy-page-container id="page-container">
+  <!-- slotted content -->
+  <img style="margin: 1rem auto;" src="https://github.com/Lith1um/Canopy-Stencil/raw/main/logo.png" alt="Logo" width="140">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis faucibus ligula. Nullam vulputate sed purus ac pulvinar. Maecenas consectetur ultricies eros eu feugiat. In purus tellus, molestie at gravida id, ornare in risus. Phasellus quis quam id orci convallis iaculis at a eros. Aenean eleifend consequat nulla hendrerit lobortis. Maecenas aliquet tincidunt ante, a scelerisque massa iaculis in. Suspendisse convallis iaculis pharetra. Sed imperdiet semper mauris nec cursus. Aenean placerat dapibus tortor nec aliquet. Suspendisse euismod felis quis lectus fringilla blandit. Quisque metus nulla, mattis nec iaculis et, blandit nec purus. Aenean nec quam in augue bibendum convallis. Etiam vel magna aliquam, consequat ex nec, fringilla neque. Maecenas vel justo id sapien facilisis efficitur quis non sapien. Duis vitae bibendum sapien.</p>
+  <p>Cras lacinia posuere sapien a consequat. Ut vel mauris porttitor, vestibulum metus a, rutrum lorem. In at libero hendrerit, consectetur felis et, accumsan leo. Phasellus non tincidunt ante, eget maximus justo. Duis ac arcu dui. Nam lacinia, nunc ut luctus suscipit, dui dolor scelerisque ligula, eu molestie ante dui id arcu. Morbi id ante enim. Cras at nibh vestibulum, rutrum turpis maximus, fermentum leo. Donec sed congue eros, in varius urna. Quisque vitae convallis lacus. Nunc at aliquet erat. Integer pulvinar ut libero vitae fringilla. Proin ornare, nulla vel hendrerit aliquam, massa ipsum pharetra nisl, nec egestas odio nulla vel quam. Quisque condimentum ultrices urna. Suspendisse maximus varius tristique.</p>
+</cpy-page-container>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
 </cpy-page-container>
 
 <script src="/docs/comps/pageContainer.js">

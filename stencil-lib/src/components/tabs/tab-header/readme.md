@@ -20,6 +20,19 @@
 | `selected` |             | `CustomEvent<string>` |
 
 
+## Dependencies
+
+### Depends on
+
+- [cpy-splash](../../splash)
+
+### Graph
+```mermaid
+graph TD;
+  cpy-tab-header --> cpy-splash
+  style cpy-tab-header fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

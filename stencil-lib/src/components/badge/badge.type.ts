@@ -7,10 +7,11 @@ export type BadgeType =
   | 'error';
 
 export type BadgeAppearance =
-  | 'counter'
-  | 'tag';
+  | 'rounded'
+  | 'square';
 
 export type BadgeSize =
-  | 'default'
   | 'small'
-  | 'large';
+  | 'default'
+  | 'large'
+  | 'x-large';

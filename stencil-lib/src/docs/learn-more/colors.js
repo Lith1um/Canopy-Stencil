@@ -1,5 +1,5 @@
 (function () {
-  document.getElementById('colours-override-simple').code = `html {
+  document.getElementById('colors-override-simple').code = `html {
   --cpy-bg-primary-rgb: 8, 145, 178; /* cyan-600 */
   --cpy-bg-primary-light-rgb: 236, 254, 255;  /* cyan-50 */
   --cpy-bg-primary-hover-rgb: 6, 182, 212; /* cyan-500 */
@@ -11,14 +11,14 @@ html.dark {
       
   --cpy-text-primary: rgb(6, 182, 212); /* cyan-500 */
 }`;
-  document.getElementById('colours-palette-css').code = `:root {
-  /* overrides the text colour in dark mode for edge cases
-      like white text on coloured background for alerts */
+  document.getElementById('colors-palette-css').code = `:root {
+  /* overrides the text color in dark mode for edge cases
+      like white text on colored background for alerts */
   --cpy-dm-text-override: currentColor;
 
   --cpy-bg-hover: rgba(0, 0, 0, 0.05);
 
-  /* based on tailwind colours */
+  /* based on tailwind colors */
   --cpy-bg-light-rgb: 250, 250, 250; /* zinc-50 */
   --cpy-bg-medium-rgb: 229, 231, 235; /* grey-200 */
   --cpy-bg-white-rgb: 255, 255, 255;
@@ -59,20 +59,20 @@ html.dark {
   --cpy-comment-author-text: var(--cpy-text-primary);
 }`;
 
-  document.getElementById('colours-pallette-dark-css').code = `html.dark {
-  /* overrides the text colour in dark mode for edge cases
-      like white text on coloured background for alerts */
+  document.getElementById('colors-pallette-dark-css').code = `html.dark {
+  /* overrides the text color in dark mode for edge cases
+      like white text on colored background for alerts */
   --cpy-dm-text-override: rgb(255, 255, 255);
 
   --cpy-bg-hover: rgba(0, 0, 0, 0.05);
 
-  /* based on tailwind colours */
+  /* based on tailwind colors */
   --cpy-bg-light-rgb: 15, 23, 42; /* slate-900 */
   --cpy-bg-white-rgb: 30, 41, 59; /* slate-800 */
   ...
 }`;
 
-  document.getElementById('colours-pallette-dark-alt').code = `@media (prefers-color-scheme: dark) {
+  document.getElementById('colors-pallette-dark-alt').code = `@media (prefers-color-scheme: dark) {
   ...
 }`;
 })();

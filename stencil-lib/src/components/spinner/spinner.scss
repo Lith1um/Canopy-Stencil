@@ -4,8 +4,8 @@
 
 .spinner {
   @apply rounded-full border-4 h-8 w-8 border-r-transparent;
-  --border-colour: currentColor;
-  border-color: var(--border-colour);
+  --border-color: currentColor;
+  border-color: var(--border-color);
   animation: spin 1s linear infinite;
 
   &-size--small {
@@ -17,27 +17,27 @@
   }
   
   &-type--primary {
-    --border-colour: var(--cpy-text-primary);
+    --border-color: var(--cpy-text-primary);
   }
   
   &-type--secondary {
-    --border-colour: var(--cpy-text-secondary);
+    --border-color: var(--cpy-text-secondary);
   }
 
   &-type--basic {
-    --border-colour: var(--cpy-text-basic);
+    --border-color: var(--cpy-text-basic);
   }
 
   &-type--success {
-    --border-colour: var(--cpy-text-success);
+    --border-color: var(--cpy-text-success);
   }
 
   &-type--warn {
-    --border-colour: var(--cpy-text-warn);
+    --border-color: var(--cpy-text-warn);
   }
 
   &-type--error {
-    --border-colour: var(--cpy-text-error);
+    --border-color: var(--cpy-text-error);
   }
 
 }

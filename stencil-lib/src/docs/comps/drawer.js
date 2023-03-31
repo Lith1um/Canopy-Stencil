@@ -1,5 +1,5 @@
 (function () {
-  document.getElementById('drawer-html-example').code = `<cpy-drawer-container>
+  const code = `<cpy-drawer-container>
   <!-- slotted content for drawer contents -->
   <div slot="drawer" style="padding: 20px;">
     I'm a drawer!
@@ -15,18 +15,28 @@
   const toggleDrawer = () => drawerElem.opened = !drawerElem.opened;
 </script>`;
 
-  const drawerElem = document.getElementById('drawer-example');
-  document.getElementById('drawer-toggle').onclick = () => drawerElem.opened = !drawerElem.opened;
+  document.getElementById('overview-code').code = code;
+  document.getElementById('example-code').code = code;
 
-  document.getElementById('drawer-props').tableData = [
+  const drawerElem = document.getElementById('overview-drawer');
+  document.getElementById('drawer-toggle').onclick = () => drawerElem.opened = !drawerElem.opened;
+  const drawerExample = document.getElementById('example-drawer');
+  document.getElementById('example-drawer-toggle').onclick = () => drawerExample.toggle();
+  
+  document.getElementById('comp-styles').tableData = [
+    { cssVariable: '', description: '', defaultValue: '' },
+  ];
+
+  document.getElementById('comp-props').tableData = [
     { name: 'opened', description: 'Whether the drawer in open', type: "boolean", default: "false", required: true }
   ];
-
-  document.getElementById('drawer-events').tableData = [
+  document.getElementById('comp-events').tableData = [
     { name: 'toggleOpened', description: 'Triggered when the drawer has internally changed its opened state', emitsType: "boolean" }
   ];
-
-  document.getElementById('drawer-slots').tableData = [
+  document.getElementById('comp-methods').tableData = [
+    { name: 'toggle()', description: 'Toggles the drawer', returnType: 'void' },
+  ];
+  document.getElementById('comp-slots').tableData = [
     { slotName: "-- (default)", purpose: 'Main content' },
     { slotName: "drawer", purpose: 'Contents of the drawer' }
   ];

@@ -48,7 +48,7 @@
   }
 
   &__container {
-    @apply border rounded-md p-2 flex gap-1.5;
+    @apply border rounded-md p-2 flex items-center gap-1.5;
     background-color: var(--cpy-bg-white);
     border-color: var(--cpy-bg-basic-border);
 

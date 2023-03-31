@@ -1,3 +1,7 @@
+:host {
+  @apply inline-flex;
+}
+
 .tab-header {
   @apply leading-10 truncate px-6 min-w-[10rem] max-w-[16rem] cursor-pointer border-b-2 text-center border-transparent transition-colors duration-300;
 

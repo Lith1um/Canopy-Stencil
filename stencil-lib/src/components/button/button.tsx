@@ -35,6 +35,7 @@ export class Button {
     return (
       <button class={classes} disabled={this.disabled} role="button">
         <slot></slot>
+        <cpy-splash disabled={this.disabled}></cpy-splash>
       </button>
     );
   }

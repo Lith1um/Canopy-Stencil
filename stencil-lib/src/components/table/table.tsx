@@ -1,4 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
+import { TableData } from './types/table-data.type';
 
 @Component({
   tag: 'cpy-table',
@@ -7,7 +8,7 @@ import { Component, h, Prop } from '@stencil/core';
 })
 export class Table {
 
-  @Prop() tableData: { [key: string]: string | number | boolean | null | undefined }[];
+  @Prop() tableData: TableData[];
 
   render() {
     if (!this.tableData?.length) {

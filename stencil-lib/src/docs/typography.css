@@ -1,5 +1,6 @@
 p {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: justify;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -9,31 +10,57 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
 }
 
 h2 {
   font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
 }
 
 h3 {
   font-size: 1.6rem;
   font-weight: 600;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.4rem;
 }
 
 h4 {
   font-size: 1.4rem;
   font-weight: 500;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.2rem;
 }
 
 h5 {
   font-size: 1.2rem;
   font-weight: 500;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style: unset;
+  margin-bottom: 2rem;
+  padding-left: 3rem;
+}
+
+.border-b {
+  border-bottom: 1px solid var(--cpy-bg-basic-border);
+}
+
+.box {
+  position: relative;
+  display: inline-block;
+  background-color: var(--cpy-bg-white);
+  border: 1px solid var(--cpy-bg-basic-border);
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+}
+
+.flexbox-centered {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .section {
@@ -46,7 +73,14 @@ h5 {
   background-color: transparent;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  padding: 0;
   border: 1px solid var(--cpy-bg-basic-border);
+}
+
+.container > cpy-code-block {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  --cpy-code-block-border-radius: 0;
 }
 
 .container-title {
@@ -58,7 +92,7 @@ h5 {
   margin-top: -0.5rem;
 }
 
-.container-title > div:first-child {
+.container-title > *:first-child {
   flex: 1;
   white-space: nowrap;
   overflow: hidden;
@@ -73,7 +107,10 @@ h5 {
   border-bottom: 1px solid var(--cpy-bg-basic-border);
 }
 
-cpy-code-block {
+cpy-code-example:not(:last-child),
+cpy-code-block:not(:last-child),
+cpy-table:not(:last-child),
+cpy-carousel:not(:last-child) {
   display: block;
   margin-bottom: 2rem;
 }
@@ -81,4 +118,19 @@ cpy-code-block {
 cpy-tab-content {
   display: block;
   margin-top: 2rem;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: var(--cpy-bg-white);
+}
+
+@media(min-width: 640px) {
+  .footer {
+    padding: 2rem 0;
+  }
 }

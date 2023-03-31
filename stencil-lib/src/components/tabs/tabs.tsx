@@ -25,7 +25,7 @@ export class Tabs {
   @State()
   rightButtonDisabled = false;
 
-  @Event()
+  @Event({bubbles: false})
   tabChanged: EventEmitter<number>;
 
   @Watch('activeIndex')
@@ -50,14 +50,19 @@ export class Tabs {
     this.headerGroupElem.addEventListener('scroll', debounce(() => this.handleScroll(), 100));
     this.handleScrollableHeader();
 
-    window.addEventListener('resize', debounce(() => {
-      this.updateActiveBar();
-      this.handleScrollableHeader();
+    const resize = new ResizeObserver(debounce(entries => {
+      entries.forEach((_) => {
+        this.updateActiveBar(false);
+        this.handleScrollableHeader();
+      })
     }, 250));
+
+    resize.observe(this.headerGroupElem);
   }
 
   @Listen('selected')
   onSelectedTab(event: CustomEvent<string>) {
+    event.stopPropagation();
     this.activeTab = this.tabGroup.find(group => group.header.headerId === event.detail);
     this.activeIndex = this.tabGroup.findIndex(group => group.header.headerId === event.detail);
     this.selectGroup();
@@ -65,8 +70,8 @@ export class Tabs {
   }
 
   createGroup() {
-    this.tabsHeader = Array.from(this.host.querySelectorAll('cpy-tab-header')) as HTMLCpyTabHeaderElement[];
-    this.tabsContent = Array.from(this.host.querySelectorAll('cpy-tab-content')) as HTMLCpyTabContentElement[];
+    this.tabsHeader = Array.from(this.host.querySelectorAll(':scope > cpy-tab-header')) as HTMLCpyTabHeaderElement[];
+    this.tabsContent = Array.from(this.host.querySelectorAll(':scope > cpy-tab-content')) as HTMLCpyTabContentElement[];
 
     this.tabGroup = this.tabsHeader.map((header, index) => {
       const content = this.tabsContent[index];
@@ -87,14 +92,16 @@ export class Tabs {
     this.updateActiveBar();
   }
 
-  updateActiveBar(): void {
+  updateActiveBar(scroll: boolean = true): void {
     const parentPos = this.headerGroupElem.getBoundingClientRect();
     const childPos  = this.activeTab.header.getBoundingClientRect();
     const left = childPos.left - parentPos.left + this.headerGroupElem.scrollLeft;
 
     this.activeBarElem.style.left = `${left}px`;
     this.activeBarElem.style.width = `${this.activeTab.header.offsetWidth}px`;
-    this.activeTab.header.scrollIntoView({ block: 'nearest' });
+    if (scroll) {
+      this.activeTab.header.scrollIntoView({ block: 'nearest' });
+    }
   }
 
   handleScrollableHeader(): void {

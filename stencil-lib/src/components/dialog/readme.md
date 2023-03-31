@@ -56,6 +56,7 @@ Type: `Promise<void>`
 graph TD;
   cpy-dialog --> cpy-button
   cpy-dialog --> cpy-icon
+  cpy-button --> cpy-splash
   style cpy-dialog fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

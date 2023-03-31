@@ -1,5 +1,5 @@
 .drawer {
-  @apply absolute block w-full top-0 bottom-0 z-30 outline-0 overflow-y-auto invisible transition-all duration-300;
+  @apply absolute block w-4/5 top-0 bottom-0 z-30 outline-0 overflow-y-auto invisible transition-all duration-300;
   border-color: var(--cpy-bg-basic-border);
   transform: translate3d(-100%, 0, 0);
   background-color: var(--cpy-bg-white);
@@ -16,7 +16,7 @@
 @media(min-width: 640px) {
   .drawer {
     @apply w-auto border-r z-20;
-    scrollbar-gutter: stable both-edges;
+    scrollbar-gutter: stable;
 
     &__close {
       @apply hidden;
@@ -29,7 +29,7 @@
 
     /* Track */
     &::-webkit-scrollbar-track {
-      @apply bg-transparent;
+      background-color: var(--cpy-bg-medium);
     }
 
     /* Handle */

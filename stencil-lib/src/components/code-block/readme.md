@@ -15,6 +15,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [cpy-code-example](../code-example)
+
 ### Depends on
 
 - [cpy-icon](../icon)
@@ -23,6 +27,7 @@
 ```mermaid
 graph TD;
   cpy-code-block --> cpy-icon
+  cpy-code-example --> cpy-code-block
   style cpy-code-block fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

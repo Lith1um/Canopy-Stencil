@@ -29,6 +29,7 @@
 ### Depends on
 
 - [cpy-icon](../../icon)
+- [cpy-splash](../../splash)
 - [cpy-nav-menu-item](.)
 - [cpy-expand-collapse](../../expand-collapse)
 

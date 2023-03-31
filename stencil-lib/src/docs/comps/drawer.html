@@ -1,45 +1,87 @@
 <cpy-page-container>
-  <cpy-page-content>
-    <h3
-      style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-      Drawer
-    </h3>
+  <h1>Drawer Containers</h1>
 
-    <p style="margin-top: 1rem; margin-bottom: 2rem;">
-      Canopy drawers provide a toggle-able drawer to a container. They are referenced using
-      the<cpy-code-snippet>&lt;cpy-drawer&gt;</cpy-code-snippet>custom HTML element. This component utilises the slot
-      element, allowing you to render your own HTML in the drawer. On Mobile screens, the drawer will open to the full
-      width of the screen, overlaying the main content.
-    </p>
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Drawer Container">
+        <p>
+          Canopy drawers provide a toggle-able drawer to a container. They are referenced using
+      the <cpy-code-snippet code="<cpy-drawer-container>"></cpy-code-snippet> custom HTML element. This component utilises the slot
+      element, allowing you to render your own HTML in the drawer. On Mobile screens, the drawer will open to the 80% width of the screen, overlaying the main content.
+        </p>
 
-    <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-    <div style="width: 100%; height: 300px; margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-drawer-container id="drawer-example">
-        <div slot="drawer" style="padding: 20px;">
-          I'm a drawer!
+        <cpy-code-example header="Drawer Container" id="overview-code">
+<cpy-drawer-container id="overview-drawer">
+  <div slot="drawer" style="padding: 20px;">
+    I'm a drawer!
+  </div>
+  <div
+    style="background-color: var(--cpy-bg-white); display: flex; align-items: center; justify-content: center; height: 15rem; width: 100%;">
+    <cpy-button id="drawer-toggle">Click me!</cpy-button>
+  </div>
+</cpy-drawer-container>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. There are currently no styling variables for this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
+
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          TODO: ...
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Drawer Container">
+        <h4 id="api" title="API">API Reference for Canopy Drawer Container</h4>
+        <cpy-code-snippet code="<cpy-drawer-container>"></cpy-code-snippet>
+
+        <div class="section">
         </div>
-        <div
-          style="background-color: var(--cpy-bg-white); display: flex; align-items: center; justify-content: center; height: 100%; width: 100%;">
-          <cpy-button id="drawer-toggle">Click me!</cpy-button>
-        </div>
-      </cpy-drawer-container>
-    </div>
 
-    <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
 
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-code-block id="drawer-html-example" language="html"></cpy-code-block>
-    </div>
+        <h4 id="events">Events</h4>
+        <p>React to changes in the component</p>
+        <cpy-table id="comp-events"></cpy-table>
 
-    <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-    <cpy-table id="drawer-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+        <h4 id="methods">Methods</h4>
+        <p>Exposed methods on the component (All methods are async!)</p>
+        <cpy-table id="comp-methods"></cpy-table>
 
-    <h3 id="events" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Events</h3>
-    <cpy-table id="drawer-events" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+        <h4 id="slots">Slots</h4>
+        <p>Inject custom content into the component</p>
+        <cpy-table id="comp-slots"></cpy-table>
 
-    <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
-    <cpy-table id="drawer-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  </cpy-page-content>
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic Drawer Container" id="example-code">
+<cpy-drawer-container id="example-drawer">
+  <div slot="drawer" style="padding: 20px;">
+    I'm a drawer!
+  </div>
+  <div
+    style="background-color: var(--cpy-bg-white); display: flex; align-items: center; justify-content: center; height: 15rem; width: 100%;">
+    <cpy-button id="example-drawer-toggle">Click me!</cpy-button>
+  </div>
+</cpy-drawer-container>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
 </cpy-page-container>
 
 <script src="/docs/comps/drawer.js">

@@ -9,6 +9,7 @@ import { AlertAppearance, AlertType } from "./components/alert/alert.type";
 import { AvatarSize } from "./components/avatar/types/avatar-size.type";
 import { BadgeAppearance, BadgeSize, BadgeType } from "./components/badge/badge.type";
 import { ButtonAppearance, ButtonSize, ButtonStyle } from "./components/button/button.type";
+import { CodeLanguage } from "./components/code-block/types/code-language.type";
 import { CommentItem } from "./components/comment/interfaces/comment.interface";
 import { CommentSize } from "./components/comment/types/comment-size.type";
 import { ContentsListItem } from "./components/contents-list/contents-list.interface";
@@ -19,6 +20,7 @@ import { Validator } from "./components/inputs/validation/types/validator.type";
 import { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
 import { ProgressBarAppearance, ProgressBarSize } from "./components/progress-bar/progress-bar.type";
 import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
+import { TableData } from "./components/table/types/table-data.type";
 import { ToastPosition } from "./components/toast/toast.type";
 export namespace Components {
     interface CpyAccordion {
@@ -45,6 +47,7 @@ export namespace Components {
     }
     interface CpyBadge {
         "appearance": BadgeAppearance;
+        "block": boolean;
         "size": BadgeSize;
         "type": BadgeType;
     }
@@ -62,9 +65,16 @@ export namespace Components {
     }
     interface CpyCodeBlock {
         "code": string;
-        "language": 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell';
+        "language": CodeLanguage;
+    }
+    interface CpyCodeExample {
+        "code": string;
+        "header": any;
+        "language": CodeLanguage;
     }
     interface CpyCodeSnippet {
+        "code": string;
+        "quotes": boolean;
     }
     interface CpyComment {
         "comment": CommentItem;
@@ -107,6 +117,7 @@ export namespace Components {
     }
     interface CpyDrawerContainer {
         "opened": boolean;
+        "toggle": () => Promise<void>;
     }
     interface CpyExpandCollapse {
         "collapse": () => Promise<void>;
@@ -122,6 +133,7 @@ export namespace Components {
         "isValid": () => Promise<boolean>;
         "label": string;
         "markAsTouched": () => Promise<void>;
+        "placeholder": string;
         "required": boolean;
         "size": InputSize;
         "type": 'text' | 'number' | 'email' | 'password';
@@ -136,7 +148,6 @@ export namespace Components {
         "noContainer": boolean;
         "required": boolean;
         "size": InputSize;
-        "value": any;
     }
     interface CpyInputToggle {
         "disabled": boolean;
@@ -160,6 +171,14 @@ export namespace Components {
     }
     interface CpyNavMenuItem {
         "item": NavMenuItem;
+    }
+    interface CpyOverlay {
+        "close": () => Promise<void>;
+        "hasBackdropClick": boolean;
+        "open": () => Promise<void>;
+        "show": boolean;
+        "toggle": (show: boolean) => Promise<void>;
+        "zIndex": string;
     }
     interface CpyPageContainer {
     }
@@ -190,6 +209,9 @@ export namespace Components {
         "size": SpinnerSize;
         "type": SpinnerAppearance;
     }
+    interface CpySplash {
+        "disabled": boolean;
+    }
     interface CpyStack {
         "direction": 'left' | 'right';
         "overlap": number;
@@ -203,7 +225,7 @@ export namespace Components {
         "tabTitle": string;
     }
     interface CpyTable {
-        "tableData": { [key: string]: string | number | boolean | null | undefined }[];
+        "tableData": TableData[];
     }
     interface CpyTabs {
         "activeIndex": number;
@@ -259,10 +281,6 @@ export interface CpyInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyInputElement;
 }
-export interface CpyInputBaseCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLCpyInputBaseElement;
-}
 export interface CpyInputToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyInputToggleElement;
@@ -270,6 +288,10 @@ export interface CpyInputToggleCustomEvent<T> extends CustomEvent<T> {
 export interface CpyNavMenuItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyNavMenuItemElement;
+}
+export interface CpyOverlayCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyOverlayElement;
 }
 export interface CpyTabHeaderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -331,6 +353,12 @@ declare global {
     var HTMLCpyCodeBlockElement: {
         prototype: HTMLCpyCodeBlockElement;
         new (): HTMLCpyCodeBlockElement;
+    };
+    interface HTMLCpyCodeExampleElement extends Components.CpyCodeExample, HTMLStencilElement {
+    }
+    var HTMLCpyCodeExampleElement: {
+        prototype: HTMLCpyCodeExampleElement;
+        new (): HTMLCpyCodeExampleElement;
     };
     interface HTMLCpyCodeSnippetElement extends Components.CpyCodeSnippet, HTMLStencilElement {
     }
@@ -440,6 +468,12 @@ declare global {
         prototype: HTMLCpyNavMenuItemElement;
         new (): HTMLCpyNavMenuItemElement;
     };
+    interface HTMLCpyOverlayElement extends Components.CpyOverlay, HTMLStencilElement {
+    }
+    var HTMLCpyOverlayElement: {
+        prototype: HTMLCpyOverlayElement;
+        new (): HTMLCpyOverlayElement;
+    };
     interface HTMLCpyPageContainerElement extends Components.CpyPageContainer, HTMLStencilElement {
     }
     var HTMLCpyPageContainerElement: {
@@ -475,6 +509,12 @@ declare global {
     var HTMLCpySpinnerElement: {
         prototype: HTMLCpySpinnerElement;
         new (): HTMLCpySpinnerElement;
+    };
+    interface HTMLCpySplashElement extends Components.CpySplash, HTMLStencilElement {
+    }
+    var HTMLCpySplashElement: {
+        prototype: HTMLCpySplashElement;
+        new (): HTMLCpySplashElement;
     };
     interface HTMLCpyStackElement extends Components.CpyStack, HTMLStencilElement {
     }
@@ -533,6 +573,7 @@ declare global {
         "cpy-card": HTMLCpyCardElement;
         "cpy-carousel": HTMLCpyCarouselElement;
         "cpy-code-block": HTMLCpyCodeBlockElement;
+        "cpy-code-example": HTMLCpyCodeExampleElement;
         "cpy-code-snippet": HTMLCpyCodeSnippetElement;
         "cpy-comment": HTMLCpyCommentElement;
         "cpy-contents-list": HTMLCpyContentsListElement;
@@ -551,12 +592,14 @@ declare global {
         "cpy-link": HTMLCpyLinkElement;
         "cpy-nav-menu": HTMLCpyNavMenuElement;
         "cpy-nav-menu-item": HTMLCpyNavMenuItemElement;
+        "cpy-overlay": HTMLCpyOverlayElement;
         "cpy-page-container": HTMLCpyPageContainerElement;
         "cpy-page-content": HTMLCpyPageContentElement;
         "cpy-popup": HTMLCpyPopupElement;
         "cpy-progress-bar": HTMLCpyProgressBarElement;
         "cpy-show-more": HTMLCpyShowMoreElement;
         "cpy-spinner": HTMLCpySpinnerElement;
+        "cpy-splash": HTMLCpySplashElement;
         "cpy-stack": HTMLCpyStackElement;
         "cpy-tab-content": HTMLCpyTabContentElement;
         "cpy-tab-header": HTMLCpyTabHeaderElement;
@@ -591,6 +634,7 @@ declare namespace LocalJSX {
     }
     interface CpyBadge {
         "appearance"?: BadgeAppearance;
+        "block"?: boolean;
         "size"?: BadgeSize;
         "type"?: BadgeType;
     }
@@ -608,9 +652,16 @@ declare namespace LocalJSX {
     }
     interface CpyCodeBlock {
         "code"?: string;
-        "language"?: 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell';
+        "language"?: CodeLanguage;
+    }
+    interface CpyCodeExample {
+        "code"?: string;
+        "header"?: any;
+        "language"?: CodeLanguage;
     }
     interface CpyCodeSnippet {
+        "code"?: string;
+        "quotes"?: boolean;
     }
     interface CpyComment {
         "comment"?: CommentItem;
@@ -665,6 +716,7 @@ declare namespace LocalJSX {
         "disabled"?: boolean;
         "label"?: string;
         "onValueChange"?: (event: CpyInputCustomEvent<string | number>) => void;
+        "placeholder"?: string;
         "required"?: boolean;
         "size"?: InputSize;
         "type"?: 'text' | 'number' | 'email' | 'password';
@@ -677,10 +729,8 @@ declare namespace LocalJSX {
         "interacted"?: boolean;
         "label"?: string;
         "noContainer"?: boolean;
-        "onValueChange"?: (event: CpyInputBaseCustomEvent<string>) => void;
         "required"?: boolean;
         "size"?: InputSize;
-        "value"?: any;
     }
     interface CpyInputToggle {
         "disabled"?: boolean;
@@ -704,6 +754,13 @@ declare namespace LocalJSX {
     interface CpyNavMenuItem {
         "item"?: NavMenuItem;
         "onItemActive"?: (event: CpyNavMenuItemCustomEvent<void>) => void;
+    }
+    interface CpyOverlay {
+        "hasBackdropClick"?: boolean;
+        "onBackdropClick"?: (event: CpyOverlayCustomEvent<void>) => void;
+        "onClosed"?: (event: CpyOverlayCustomEvent<void>) => void;
+        "show"?: boolean;
+        "zIndex"?: string;
     }
     interface CpyPageContainer {
     }
@@ -733,6 +790,9 @@ declare namespace LocalJSX {
         "size"?: SpinnerSize;
         "type"?: SpinnerAppearance;
     }
+    interface CpySplash {
+        "disabled"?: boolean;
+    }
     interface CpyStack {
         "direction"?: 'left' | 'right';
         "overlap"?: number;
@@ -745,7 +805,7 @@ declare namespace LocalJSX {
         "tabTitle"?: string;
     }
     interface CpyTable {
-        "tableData"?: { [key: string]: string | number | boolean | null | undefined }[];
+        "tableData"?: TableData[];
     }
     interface CpyTabs {
         "activeIndex"?: number;
@@ -778,6 +838,7 @@ declare namespace LocalJSX {
         "cpy-card": CpyCard;
         "cpy-carousel": CpyCarousel;
         "cpy-code-block": CpyCodeBlock;
+        "cpy-code-example": CpyCodeExample;
         "cpy-code-snippet": CpyCodeSnippet;
         "cpy-comment": CpyComment;
         "cpy-contents-list": CpyContentsList;
@@ -796,12 +857,14 @@ declare namespace LocalJSX {
         "cpy-link": CpyLink;
         "cpy-nav-menu": CpyNavMenu;
         "cpy-nav-menu-item": CpyNavMenuItem;
+        "cpy-overlay": CpyOverlay;
         "cpy-page-container": CpyPageContainer;
         "cpy-page-content": CpyPageContent;
         "cpy-popup": CpyPopup;
         "cpy-progress-bar": CpyProgressBar;
         "cpy-show-more": CpyShowMore;
         "cpy-spinner": CpySpinner;
+        "cpy-splash": CpySplash;
         "cpy-stack": CpyStack;
         "cpy-tab-content": CpyTabContent;
         "cpy-tab-header": CpyTabHeader;
@@ -824,6 +887,7 @@ declare module "@stencil/core" {
             "cpy-card": LocalJSX.CpyCard & JSXBase.HTMLAttributes<HTMLCpyCardElement>;
             "cpy-carousel": LocalJSX.CpyCarousel & JSXBase.HTMLAttributes<HTMLCpyCarouselElement>;
             "cpy-code-block": LocalJSX.CpyCodeBlock & JSXBase.HTMLAttributes<HTMLCpyCodeBlockElement>;
+            "cpy-code-example": LocalJSX.CpyCodeExample & JSXBase.HTMLAttributes<HTMLCpyCodeExampleElement>;
             "cpy-code-snippet": LocalJSX.CpyCodeSnippet & JSXBase.HTMLAttributes<HTMLCpyCodeSnippetElement>;
             "cpy-comment": LocalJSX.CpyComment & JSXBase.HTMLAttributes<HTMLCpyCommentElement>;
             "cpy-contents-list": LocalJSX.CpyContentsList & JSXBase.HTMLAttributes<HTMLCpyContentsListElement>;
@@ -842,12 +906,14 @@ declare module "@stencil/core" {
             "cpy-link": LocalJSX.CpyLink & JSXBase.HTMLAttributes<HTMLCpyLinkElement>;
             "cpy-nav-menu": LocalJSX.CpyNavMenu & JSXBase.HTMLAttributes<HTMLCpyNavMenuElement>;
             "cpy-nav-menu-item": LocalJSX.CpyNavMenuItem & JSXBase.HTMLAttributes<HTMLCpyNavMenuItemElement>;
+            "cpy-overlay": LocalJSX.CpyOverlay & JSXBase.HTMLAttributes<HTMLCpyOverlayElement>;
             "cpy-page-container": LocalJSX.CpyPageContainer & JSXBase.HTMLAttributes<HTMLCpyPageContainerElement>;
             "cpy-page-content": LocalJSX.CpyPageContent & JSXBase.HTMLAttributes<HTMLCpyPageContentElement>;
             "cpy-popup": LocalJSX.CpyPopup & JSXBase.HTMLAttributes<HTMLCpyPopupElement>;
             "cpy-progress-bar": LocalJSX.CpyProgressBar & JSXBase.HTMLAttributes<HTMLCpyProgressBarElement>;
             "cpy-show-more": LocalJSX.CpyShowMore & JSXBase.HTMLAttributes<HTMLCpyShowMoreElement>;
             "cpy-spinner": LocalJSX.CpySpinner & JSXBase.HTMLAttributes<HTMLCpySpinnerElement>;
+            "cpy-splash": LocalJSX.CpySplash & JSXBase.HTMLAttributes<HTMLCpySplashElement>;
             "cpy-stack": LocalJSX.CpyStack & JSXBase.HTMLAttributes<HTMLCpyStackElement>;
             "cpy-tab-content": LocalJSX.CpyTabContent & JSXBase.HTMLAttributes<HTMLCpyTabContentElement>;
             "cpy-tab-header": LocalJSX.CpyTabHeader & JSXBase.HTMLAttributes<HTMLCpyTabHeaderElement>;

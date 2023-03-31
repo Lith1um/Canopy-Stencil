@@ -25,6 +25,7 @@ export class TabHeader {
     return (
       <div class='tab-header' onClick={() => this.onClick()}>
         {this.tabTitle}
+        <cpy-splash></cpy-splash>
       </div>
     );
   }

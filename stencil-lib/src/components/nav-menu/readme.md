@@ -23,6 +23,7 @@
 graph TD;
   cpy-nav-menu --> cpy-nav-menu-item
   cpy-nav-menu-item --> cpy-icon
+  cpy-nav-menu-item --> cpy-splash
   cpy-nav-menu-item --> cpy-nav-menu-item
   cpy-nav-menu-item --> cpy-expand-collapse
   style cpy-nav-menu fill:#f9f,stroke:#333,stroke-width:4px

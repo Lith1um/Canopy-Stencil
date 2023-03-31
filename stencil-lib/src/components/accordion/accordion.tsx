@@ -56,11 +56,10 @@ export class Accordion {
             {this.headerTitle}
           </span>
           <cpy-icon>expand_more</cpy-icon>
+          <cpy-splash></cpy-splash>
         </div>
         <cpy-expand-collapse expanded={this.opened}>
-          <div class="accordion__content">
-            <slot/>
-          </div>
+          <slot/>
         </cpy-expand-collapse>
       </div>
     );

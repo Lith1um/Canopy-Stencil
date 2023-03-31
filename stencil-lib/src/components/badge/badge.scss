@@ -1,45 +1,66 @@
+:host {
+  display: inline-flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(33%, -33%);
+}
+
+:host(.blocked) {
+  position: unset;
+  top: unset;
+  right: unset;
+  transform: unset;
+}
+
 .badge {
-  @apply inline-flex leading-6 px-2 text-sm text-white;
-  --bg-colour: var(--cpy-bg-primary);
-  background-color: var(--bg-colour);
+  @apply inline-flex leading-5 h-5 px-1.5 text-xs min-w-[1.25rem] justify-center;
+  --text-color: var(--cpy-badge-text, rgb(255, 255, 255));
+  --bg-color: var(--cpy-badge-bg, var(--cpy-bg-primary));
+  background-color: var(--bg-color);
+  color: var(--text-color);
 
   &--level-primary {
-    --bg-colour: var(--cpy-bg-primary);
+    --bg-color: var(--cpy-badge-bg, var(--cpy-bg-primary));
   }
 
   &--level-secondary {
-    --bg-colour: var(--cpy-bg-secondary);
+    --bg-color: var(--cpy-badge-bg, var(--cpy-bg-secondary));
   }
 
   &--level-basic {
-    --bg-colour: var(--cpy-bg-basic);
+    --bg-color: var(--cpy-badge-bg, var(--cpy-bg-basic));
   }
 
   &--level-success {
-    --bg-colour: var(--cpy-bg-success);
+    --bg-color: var(--cpy-badge-bg, var(--cpy-bg-success));
   }
 
   &--level-warn {
-    --bg-colour: var(--cpy-bg-warn);
+    --bg-color: var(--cpy-badge-bg, var(--cpy-bg-warn));
   }
 
   &--level-error {
-    --bg-colour: var(--cpy-bg-error);
+    --bg-color: var(--cpy-badge-bg, var(--cpy-bg-error));
   }
 
   &--size-small {
-    @apply leading-5 text-xs px-1.5;
+    @apply leading-4 h-4 text-xs px-1 min-w-[1rem];
   }
 
   &--size-large {
-    @apply leading-8 text-base px-3;
+    @apply leading-6 h-6 px-2 text-sm min-w-[1.5rem];
   }
 
-  &--appearance-counter {
+  &--size-x-large {
+    @apply leading-7 h-7 text-base px-2.5 min-w-[1.75rem];
+  }
+
+  &--appearance-rounded {
     @apply rounded-full;
   }
 
-  &--appearance-tag {
+  &--appearance-square {
     @apply rounded-sm;
   }
 }

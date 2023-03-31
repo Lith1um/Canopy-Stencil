@@ -52,24 +52,27 @@
       --cpy-text-primary: rgb(132, 204, 22); /* lime-500 */
       --cpy-text-secondary: rgb(99, 102, 241); /* indigo-500 */
     }
-
-    p {
-      text-align: justify;
-    }
   </style>
 </head>
 
 <body style="height: 100%; width: 100%;">
   <cpy-drawer-container>
-    <div slot="drawer" style="padding: 20px 10px; min-width: 300px;">
+    <div slot="drawer" style="padding: 20px 0px; min-width: 300px;">
       <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="90" style="margin: 40px auto 20px auto;">
-      <div style="text-align: center; margin-bottom: 24px;">
+      <div style="text-align: center; margin-bottom: 1.5rem;">
         <div style="font-size: 1.2rem;">Canopy</div>
         <div style="font-size: 0.75rem; color: var(--cpy-text-light);">Lets you focus on the next big thing.</div>
       </div>
+      <cpy-input id="search-input" style="margin-bottom: 1rem; padding: 0 1.25rem;" placeholder="Search the docs" size="small">
+        <cpy-icon slot="prefix">search</cpy-icon>
+        <cpy-icon id="search-input-clear" slot="suffix" style="cursor: pointer;">close</cpy-icon>
+      </cpy-input>
+      <p id="no-results" class="hidden" style="padding: 0 1.25rem;">
+        No results
+      </p>
       <cpy-nav-menu></cpy-nav-menu>
       <div style="margin-top: 32px; text-align: center; font-size: 0.875rem; color: var(--cpy-text-light);">
-        <p style="text-align: center;">Alex Rayner ©2022</p>
+        <p style="text-align: center; margin: 0;">Alex Rayner ©2023</p>
         <cpy-link href="https://github.com/Lith1um/Canopy-Stencil" new-tab>Github</cpy-link>
       </div>
     </div>
@@ -83,24 +86,21 @@
         </div>
         <cpy-popup>
           <cpy-button icon type="basic">
-            <cpy-icon style="color: white;">settings</cpy-icon>
+            <cpy-icon style="color: white;">format_color_fill</cpy-icon>
           </cpy-button>
 
           <div slot="content" style="width: 250px; text-align: left; border-radius: 0.25rem; overflow: hidden; font-size: 0.875rem;">
             <div style="display: flex; gap: 1rem; align-items: center; padding: 12px;">
               <cpy-avatar size="x-large" src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
               <div style="flex: 1;">
-                <p style="font-weight: 500; font-size: 1.125rem;">Alex Rayner</p>
-                <p style="font-size: 0.75rem;">Front End Developer</p>
+                <p style="margin: 0; font-weight: 500; font-size: 1.125rem;">Alex Rayner</p>
+                <p style="margin: 0; font-size: 0.75rem;">Front End Developer</p>
               </div>
             </div>
-            <div style="background-color: var(--cpy-bg-primary); padding: 12px; color: white; display: flex; align-items: center; justify-content: space-between;">
-              <label style="display: flex; align-items: center; gap: 0.25rem; cursor: pointer;">
-                <input id="darkModeCheckbox" type="checkbox" style="height: 1rem; width: 1rem;"/>
-                Dark Mode
-              </label>
+            <div style="background-color: var(--cpy-bg-medium); padding: 12px; display: flex; align-items: center; justify-content: space-between;">
+              <cpy-input-toggle id="darkModeCheckbox" size="small" label="Dark mode"></cpy-input-toggle>
               <div>
-                Palette: <select id="palette-picker" style="color: black;">
+                <select id="palette-picker" style="color: black;">
                   <option value="purple">Purple</option>
                   <option value="blue">Blue</option>
                   <option value="lime">Lime</option>
@@ -111,12 +111,28 @@
         </cpy-popup>
       </cpy-toolbar>
 
-      <div id="router-outlet" style="flex: 1; min-height: 0; width: 100%; overflow-y: auto;"></div>
+      <div style="flex: 1; min-height: 0; width: 100%; overflow-y: auto;">
+        <div id="router-outlet" style="min-height: 100%;"></div>
+        
+        <cpy-page-container style="margin-top: 0; margin-bottom: 0; background-color: var(--cpy-bg-white);">
+          <div class="footer">
+            <img src="https://github.com/Lith1um/Canopy-Stencil/raw/main/logo.png" alt="Logo" width="60" style="opacity: 0.75;">
+          
+            <div style="flex: 1; font-size: 1.25rem;">
+              Canopy.
+              <div style="font-size: 0.75rem;">
+                Alex Rayner ©2023
+              </div>
+            </div>
+          
+            <cpy-link href="https://github.com/Lith1um/Canopy-Stencil" new-tab>Github<cpy-icon>terminal</cpy-icon></cpy-link>
+          </div>
+        </cpy-page-container>
+      </div>
     </div>
   </cpy-drawer-container>
   <script type="module" src="/docs/router.js"></script>
   <script defer>
-    let darkMode = false;
     let currentPalette = 'blue';
     document.querySelector("html").classList.toggle(currentPalette);
     const drawerElement = document.querySelector('cpy-drawer-container');
@@ -130,14 +146,12 @@
       currentPalette = paletteElement.value;
     });
     const onMenuClick = () => drawerElement.opened = !drawerElement.opened;
-    const onDarkModeClick = () => {
-      darkMode = !darkMode;
-      darkModeCheckbox.checked = darkMode;
+    darkModeCheckbox.addEventListener('valueChange', () => {
       document.querySelector("html").classList.toggle("dark");
-    };
-    darkModeCheckbox.addEventListener('change', onDarkModeClick);
+    });
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      onDarkModeClick();
+      darkModeCheckbox.value = true;
+      document.querySelector("html").classList.add("dark");
     }
   </script>
 </body>

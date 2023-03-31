@@ -6,6 +6,6 @@
     { name: 'size', description: 'Progress Bar size', type: "'default' | 'large' | 'small'", default: "'default'", required: false },
     { name: 'border', description: 'Whether the Progress Bar has a border', type: "boolean", default: "false", required: false },
     { name: 'indeterminate', description: 'Whether the Progress Bar has an animated unknown value', type: "boolean", default: "false", required: false },
-    { name: 'type', description: 'Colour scheme of the Progress Bar', type: "'basic' | 'error' | 'primary' | 'secondary' | 'success' | 'warn'", default: "", required: false },
+    { name: 'type', description: 'Color scheme of the Progress Bar', type: "'basic' | 'error' | 'primary' | 'secondary' | 'success' | 'warn'", default: "", required: false },
   ];
 })();

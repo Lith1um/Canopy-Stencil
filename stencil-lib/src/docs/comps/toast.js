@@ -47,7 +47,7 @@
     { name: 'zIndex', description: 'Z-index of the toast', type: "string", default: "50", required: false },
     { name: 'dismissible', description: 'Whether the toast can be dismissed', type: "boolean", default: "", required: false },
     { name: 'duration', description: 'Duration to keep toast open. A value of 0 will keep it open until the close method is called', type: "number", default: "4000", required: false },
-    { name: 'type', description: 'Colour scheme of the toast', type: "'basic' | 'error' | 'primary' | 'secondary' | 'success' | 'warn'", default: "'primary'", required: false },
+    { name: 'type', description: 'Color scheme of the toast', type: "'basic' | 'error' | 'primary' | 'secondary' | 'success' | 'warn'", default: "'primary'", required: false },
     { name: 'toast-title', description: 'Main text for the toast', type: "string", default: "", required: true },
     { name: 'icon', description: 'The icon (if any) to show', type: 'string', default: "", required: false },
   ];

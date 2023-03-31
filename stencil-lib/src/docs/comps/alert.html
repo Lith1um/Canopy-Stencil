@@ -1,110 +1,135 @@
 <cpy-page-container>
-  <cpy-page-content>
-    <h3
-      style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-      Alerts
-    </h3>
+  <h1>Alerts</h1>
 
-    <p style="margin-top: 1rem; margin-bottom: 2rem;">
-      Canopy alerts provide well defined elements for rendering system level messages. They are referenced using the
-      <cpy-code-snippet>&lt;cpy-alert&gt;</cpy-code-snippet> custom HTML element.
-    </p>
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Alert">
+        <p>
+          Canopy alerts provide well defined elements for rendering system level messages. They are referenced using the
+          <cpy-code-snippet code="<cpy-alert>"></cpy-code-snippet> custom HTML element.
+        </p>
 
-    <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-    <div
-      style="display: grid; grid-template-columns: auto; width:100%; gap: 32px; margin-top: 1rem; margin-bottom: 2rem;">
-      <div>
-        <cpy-alert type="primary" icon="home">
-          This is a primary alert
-          <div slot="content">Some additional text about the primary alert</div>
-        </cpy-alert>
-        <cpy-alert type="primary" icon="home" appearance="border">
-          This is a primary alert
-        </cpy-alert>
-        <cpy-alert type="primary" icon="home" container="false">
-          This is a primary alert
-        </cpy-alert>
-      </div>
-      <div>
-        <cpy-alert type="secondary" dismissible>
-          This is a secondary alert
-          <div slot="content">Some additional text about the secondary alert</div>
-        </cpy-alert>
-        <cpy-alert type="secondary" appearance="border" dismissible>
-          This is a secondary alert
-        </cpy-alert>
-        <cpy-alert type="secondary" container="false" dismissible>
-          This is a secondary alert
-        </cpy-alert>
-      </div>
-      <div>
-        <cpy-alert type="basic" icon="settings">
-          This is a basic alert
-          <div slot="content">Some additional text about the basic alert</div>
-        </cpy-alert>
-        <cpy-alert type="basic" icon="settings" appearance="border">
-          This is a basic alert
-        </cpy-alert>
-        <cpy-alert type="basic" icon="settings" container="false">
-          This is a basic alert
-        </cpy-alert>
-      </div>
-      <div>
-        <cpy-alert type="success" dismissible>
-          This is a success alert
-          <div slot="content">Some additional text about the success alert</div>
-        </cpy-alert>
-        <cpy-alert type="success" appearance="border" dismissible>
-          This is a success alert
-        </cpy-alert>
-        <cpy-alert type="success" container="false" dismissible>
-          This is a success alert
-        </cpy-alert>
-      </div>
-      <div>
-        <cpy-alert type="warn">
-          This is a warning alert
-          <div slot="content">Some additional text about the warning alert</div>
-        </cpy-alert>
-        <cpy-alert type="warn" appearance="border">
-          This is a warning alert
-        </cpy-alert>
-        <cpy-alert type="warn" container="false">
-          This is a warning alert
-        </cpy-alert>
-      </div>
-      <div>
-        <cpy-alert type="error">
-          This is an error alert
-          <div slot="content">Some additional text about the error alert</div>
-        </cpy-alert>
-        <cpy-alert type="error" appearance="border">
-          This is an error alert
-          <div slot="content">Some additional text about the error alert</div>
-        </cpy-alert>
-        <cpy-alert type="error" container="false">
-          This is an error alert
-        </cpy-alert>
-      </div>
-    </div>
+        <cpy-code-example header="Alert" id="overview-code">
+<cpy-alert id="alert-comp" type="primary" icon="home" dismissible>
+  <!-- slotted content for alert message -->
+  This is a primary alert
+  <!-- slot for additional content -->
+  <div slot="content">Some additional text about the primary alert</div>
+</cpy-alert>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. Below is a list of variables you can use to configure this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
 
-    <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          Alerts serve a wide variety of scenarios and may contain many different types of content. Due to this flexible nature, the appropriate accessibility treatment depends on how you use <cpy-code-snippet code="<cpy-alert>"></cpy-code-snippet>.
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
 
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-code-block id="alert-html-example" language="html"></cpy-code-block>
-    </div>
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Alert">
+        <h4 id="api" title="API">API Reference for Canopy Alert</h4>
+        <cpy-code-snippet code="<cpy-alert>"></cpy-code-snippet>
 
-    <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-    <cpy-table id="alert-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+        <div class="section">
+        </div>
 
-    <h3 id="events" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Events</h3>
-    <cpy-table id="alert-events" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
 
-    <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
-    <cpy-table id="alert-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  </cpy-page-content>
+        <h4 id="events">Events</h4>
+        <p>React to changes in the component</p>
+        <cpy-table id="comp-events"></cpy-table>
+
+        <h4 id="slots">Slots</h4>
+        <p>Inject custom content into the component</p>
+        <cpy-table id="comp-slots"></cpy-table>
+
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Primary Alert">
+<cpy-alert type="primary">
+  This is a primary alert
+</cpy-alert>
+      </cpy-code-example>
+
+      <cpy-code-example header="Alert with icon">
+<cpy-alert type="primary" icon="home">
+  This is a primary alert
+</cpy-alert>
+      </cpy-code-example>
+
+      <cpy-code-example header="Alert with additional text">
+<cpy-alert type="primary">
+  This is a primary alert
+  <div slot="content">Some additional text about the primary alert</div>
+</cpy-alert>
+      </cpy-code-example>
+
+      <cpy-code-example header="Dismissible alert">
+<cpy-alert type="primary" dismissible>
+  This is a dismissible primary alert 
+</cpy-alert>
+      </cpy-code-example>
+
+      <cpy-code-example header="Alert with no container">
+<cpy-alert type="primary" container="false">
+  This is a primary alert
+</cpy-alert>
+      </cpy-code-example>
+
+      <cpy-code-example header="Alert with border">
+<cpy-alert type="primary" appearance="border">
+  This is a primary alert
+</cpy-alert>
+      </cpy-code-example>
+
+      <cpy-code-example header="All alert types">
+<cpy-alert type="primary">
+  This is a primary alert
+</cpy-alert>
+<cpy-alert type="secondary">
+  This is a secondary alert
+</cpy-alert>
+<cpy-alert type="basic">
+  This is a basic alert
+</cpy-alert>
+<cpy-alert type="success">
+  This is a success alert
+</cpy-alert>
+<cpy-alert type="warn">
+  This is a warn alert
+</cpy-alert>
+<cpy-alert type="error">
+  This is a error alert
+</cpy-alert>
+      </cpy-code-example>
+
+      <cpy-code-example header="Custom alert">
+<cpy-alert dismissible style="--cpy-alert-bg: #475569;">
+  This is a custom alert
+  <div slot="content">
+    <img src="https://github.com/Lith1um/Canopy-Stencil/raw/main/logo.png" alt="Logo" width="60" style="opacity: 0.75;">
+  </div>
+</cpy-alert>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
 </cpy-page-container>
-
 
 <script src="/docs/comps/alert.js">
 </script>

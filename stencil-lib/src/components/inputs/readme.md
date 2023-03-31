@@ -16,14 +16,6 @@
 | `noContainer` | `no-container` |             | `boolean`                         | `false`     |
 | `required`    | `required`     |             | `boolean`                         | `undefined` |
 | `size`        | `size`         |             | `"default" \| "large" \| "small"` | `'default'` |
-| `value`       | `value`        |             | `any`                             | `undefined` |
-
-
-## Events
-
-| Event         | Description | Type                  |
-| ------------- | ----------- | --------------------- |
-| `valueChange` |             | `CustomEvent<string>` |
 
 
 ## Dependencies
