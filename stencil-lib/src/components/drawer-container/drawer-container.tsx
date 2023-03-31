@@ -24,7 +24,7 @@ export class DrawerContainer {
     this.contentElem.style.marginLeft = `${drawerWidth}px`;
   }
 
-  @Event() toggleDrawer: EventEmitter<void>;
+  @Event() toggleDrawer: EventEmitter<boolean>;
 
   @Method()
   async toggle(): Promise<void> {
@@ -34,7 +34,7 @@ export class DrawerContainer {
   @Listen('toggleOpened')
   toggleOpenedHandler(): void {
     this.opened = !this.opened;
-    this.toggleDrawer.emit();
+    this.toggleDrawer.emit(this.opened);
   }
 
   contentElem: HTMLElement;
@@ -94,7 +94,7 @@ export class DrawerContainer {
           zIndex='25'
           ref={(el) => this.overlayElem = el as HTMLCpyOverlayElement}
           show={this.opened && this.isMobile}
-          onBackdropClick={() => this.opened = false}
+          onBackdropClick={this.toggleOpenedHandler}
         ></cpy-overlay>
       </div>
     );
