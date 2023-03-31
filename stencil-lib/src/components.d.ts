@@ -702,7 +702,7 @@ declare namespace LocalJSX {
         "opened"?: boolean;
     }
     interface CpyDrawerContainer {
-        "onToggleDrawer"?: (event: CpyDrawerContainerCustomEvent<void>) => void;
+        "onToggleDrawer"?: (event: CpyDrawerContainerCustomEvent<boolean>) => void;
         "opened"?: boolean;
     }
     interface CpyExpandCollapse {
