@@ -10,7 +10,7 @@
   },
   "private": true,
   "peerDependencies": {
-    "canopy-stencil-web": "0.1.0"
+    "canopy-stencil-web": "^0.1.18"
   },
   "dependencies": {
     "@angular/animations": "^15.2.5",
