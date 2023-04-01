@@ -23,4 +23,16 @@
   &--basic {
     --text-color: var(--cpy-link-color, var(--cpy-text-basic));
   }
+
+  &--success {
+    --text-color: var(--cpy-link-color, var(--cpy-text-success));
+  }
+
+  &--warn {
+    --text-color: var(--cpy-link-color, var(--cpy-text-warn));
+  }
+  
+  &--error {
+    --text-color: var(--cpy-link-color, var(--cpy-text-error));
+  }
 }

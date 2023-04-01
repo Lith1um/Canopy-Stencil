@@ -17,6 +17,7 @@ import { ContextMenuItem } from "./components/context-menu/context-menu.interfac
 import { InputSize } from "./components/inputs/types/input-size.type";
 import { ValidatorEntry } from "./components/inputs/validation/types/validator-entry.type";
 import { Validator } from "./components/inputs/validation/types/validator.type";
+import { LinkType } from "./components/link/types/link.type";
 import { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
 import { ProgressBarAppearance, ProgressBarSize } from "./components/progress-bar/progress-bar.type";
 import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
@@ -164,7 +165,7 @@ export namespace Components {
         "func": () => void;
         "href": string;
         "newTab": boolean;
-        "type": 'primary' | 'secondary' | 'basic';
+        "type": LinkType;
     }
     interface CpyNavMenu {
         "items": NavMenuItem[];
@@ -746,7 +747,7 @@ declare namespace LocalJSX {
         "func"?: () => void;
         "href"?: string;
         "newTab"?: boolean;
-        "type"?: 'primary' | 'secondary' | 'basic';
+        "type"?: LinkType;
     }
     interface CpyNavMenu {
         "items"?: NavMenuItem[];
