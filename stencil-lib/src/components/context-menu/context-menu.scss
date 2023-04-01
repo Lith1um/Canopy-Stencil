@@ -1,4 +1,4 @@
 .context-menu {
-  @apply w-full max-w-[250px] flex flex-col py-2 rounded-[0.25rem];
+  @apply min-w-[8rem] max-w-[20rem] inline-flex flex-col py-2 rounded-[0.25rem];
   background-color: var(--cpy-bg-white);
 }

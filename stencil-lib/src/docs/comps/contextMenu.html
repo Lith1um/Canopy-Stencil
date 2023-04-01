@@ -1,42 +1,82 @@
 <cpy-page-container>
-  <cpy-page-content>
-    <h3
-      style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-      Context Menu
-    </h3>
+  <h1>Context Menus</h1>
 
-    <p style="margin-top: 1rem; margin-bottom: 2rem;">
-      Canopy context menus show a list of options. Their purpose is generally to populate a
-      <cpy-code-snippet code="<cpy-context-menu-trigger>"></cpy-code-snippet> with a list of items when the container is
-      right-clicked. They are referenced using the <cpy-code-snippet code="<cpy-context-menu>"></cpy-code-snippet> custom
-      HTML element. This component takes an array of items, and supports item clicks either navigating to links/paths or
-      running custom functions if you need side-effects or a different behaviour to a traditional link.
-    </p>
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Context Menu">
+        <p>
+          Canopy context menus show a list of options. Their purpose is generally to populate a
+          <cpy-code-snippet code="<cpy-context-menu-trigger>"></cpy-code-snippet> with a list of items when the container is
+          right-clicked. They are referenced using the <cpy-code-snippet code="<cpy-context-menu>"></cpy-code-snippet> custom
+          HTML element. This component takes an array of items, and supports item clicks either navigating to links/paths or
+          running custom functions if you need side-effects or a different behaviour to a traditional link.
+        </p>
 
-    <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-    <div
-      style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-      <cpy-context-menu id="context-menu-example"></cpy-context-menu>
-    </div>
+        <cpy-code-example header="Context Menu" id="overview-code">
+          <cpy-context-menu id="overview-context-menu"></cpy-context-menu>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. Below is a list of variables you can use to configure this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
 
-    <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+        <h4 id="host">Host styles</h4>
+        <p>
+          Canopy components are designed to have their host element styled directly so that it can be overridden for specific implementation purposes.This is generally used to adjust <cpy-code-snippet code="display"></cpy-code-snippet>, <cpy-code-snippet code="position"></cpy-code-snippet>, <cpy-code-snippet code="background-color"></cpy-code-snippet>, <cpy-code-snippet code="padding"></cpy-code-snippet>, <cpy-code-snippet code="margin"></cpy-code-snippet>, <cpy-code-snippet code="width"></cpy-code-snippet>, <cpy-code-snippet code="height"></cpy-code-snippet> etc.
+        </p>
+        <p>
+          There are likely other properties that you can alter on the host element for each individual component, open your dev tools and inspect each component to see what you can override on the host!
+        </p>
 
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-code-block id="menu-html-example" language="html"></cpy-code-block>
-    </div>
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          Context Menus serve a wide variety of scenarios and may contain many different types of content. Due to this flexible nature, the appropriate accessibility treatment depends on how you use <cpy-code-snippet code="<cpy-context-menu>"></cpy-code-snippet>.
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
 
-    <h3 id="interfaces" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Interfaces</h3>
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Context Menu">
+        <h4 id="api" title="API">API Reference for Canopy Context Menu</h4>
+        <cpy-code-snippet code="<cpy-context-menu>"></cpy-code-snippet>
 
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-code-block id="context-menu-interface" language="typescript"></cpy-code-block>
-    </div>
+        <div class="section">
+        </div>
 
-    <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-    <cpy-table id="context-menu-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+        <h4 id="types">Types</h4>
+        <cpy-code-block id="comp-interfaces"></cpy-code-block>
 
-    <h3 id="methods" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Methods</h3>
-    <cpy-table id="context-menu-methods" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  </cpy-page-content>
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
+
+        <h4 id="methods">Methods</h4>
+        <p>Exposed methods on the component (All methods are async!)</p>
+        <cpy-table id="comp-methods"></cpy-table>
+
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic Context Menu" id="example-code">
+<cpy-context-menu id="example-menu"></cpy-context-menu>
+      </cpy-code-example>
+      <cpy-code-example header="Complex context menu" id="example-code-2">
+<cpy-context-menu id="example-menu-2"></cpy-context-menu>
+      </cpy-code-example>
+      <cpy-code-example header="Custom context menu" id="example-code-3">
+<cpy-context-menu id="example-menu-3" style="--cpy-bg-white: var(--cpy-bg-error); --cpy-text-light: var(--cpy-text-base);"></cpy-context-menu>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
 </cpy-page-container>
 
 <script src="/docs/comps/contextMenu.js">
