@@ -1,4 +1,5 @@
 import { Component, h, Prop, State } from '@stencil/core';
+import { onResize } from '../../utils/elements';
 
 @Component({
   tag: 'cpy-show-more',
@@ -22,16 +23,23 @@ export class ShowMore {
 
   showMoreButtonElem: HTMLElement;
   showMoreTextElem: HTMLElement;
+  resize: ResizeObserver;
 
   toggle(): void {
     this.expanded = !this.expanded;
   }
 
-  componentDidRender(): void {
-    if (this.expanded) {
-      this.showMoreButtonElem.style.display = 'inline';
-    } else if (this.showMoreTextElem.scrollHeight <= this.showMoreTextElem.offsetHeight) {
-      this.showMoreButtonElem.style.display = 'none';
+  componentDidLoad(): void {
+    if (this.lines) {
+      this.resize = onResize(this.showMoreTextElem, () => {
+        if (this.expanded) {
+          this.showMoreButtonElem.style.display = 'inline';
+        } else if (this.showMoreTextElem.scrollHeight <= this.showMoreTextElem.clientHeight) {
+          this.showMoreButtonElem.style.display = 'none';
+        } else {
+          this.showMoreButtonElem.style.display = 'unset';
+        }
+      });
     }
   }
 
@@ -44,6 +52,7 @@ export class ShowMore {
       <div class='show-more'>
         <p class='show-more__text' style={lineClampStyle} ref={(el) => this.showMoreTextElem = el as HTMLElement}>{this.text}</p>
         <cpy-link
+          style={{display: 'none'}}
           type={this.type}
           func={() => this.toggle()}
           ref={(el) => this.showMoreButtonElem = el as HTMLElement}>
@@ -51,5 +60,9 @@ export class ShowMore {
         </cpy-link>
       </div>
     );
+  }
+
+  disconnectedCallback(): void {
+    this.resize?.disconnect();
   }
 }
