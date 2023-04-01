@@ -22,6 +22,7 @@ import { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
 import { ProgressBarAppearance, ProgressBarSize } from "./components/progress-bar/progress-bar.type";
 import { ShowMoreAppearance } from "./components/show-more/show-more.type";
 import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
+import { StackDirection } from "./components/stack/stack.type";
 import { TableData } from "./components/table/types/table-data.type";
 import { ToastPosition } from "./components/toast/toast.type";
 export namespace Components {
@@ -215,7 +216,7 @@ export namespace Components {
         "disabled": boolean;
     }
     interface CpyStack {
-        "direction": 'left' | 'right';
+        "direction": StackDirection;
         "overlap": number;
     }
     interface CpyTabContent {
@@ -796,7 +797,7 @@ declare namespace LocalJSX {
         "disabled"?: boolean;
     }
     interface CpyStack {
-        "direction"?: 'left' | 'right';
+        "direction"?: StackDirection;
         "overlap"?: number;
     }
     interface CpyTabContent {

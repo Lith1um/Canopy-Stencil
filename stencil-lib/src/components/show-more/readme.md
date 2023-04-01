@@ -7,13 +7,13 @@
 
 ## Properties
 
-| Property       | Attribute        | Description | Type                                  | Default       |
-| -------------- | ---------------- | ----------- | ------------------------------------- | ------------- |
-| `lines`        | `lines`          |             | `number`                              | `3`           |
-| `showLessText` | `show-less-text` |             | `string`                              | `'show less'` |
-| `showMoreText` | `show-more-text` |             | `string`                              | `'show more'` |
-| `text`         | `text`           |             | `string`                              | `undefined`   |
-| `type`         | `type`           |             | `"basic" \| "primary" \| "secondary"` | `'primary'`   |
+| Property       | Attribute        | Description | Type                                                                    | Default       |
+| -------------- | ---------------- | ----------- | ----------------------------------------------------------------------- | ------------- |
+| `lines`        | `lines`          |             | `number`                                                                | `3`           |
+| `showLessText` | `show-less-text` |             | `string`                                                                | `'show less'` |
+| `showMoreText` | `show-more-text` |             | `string`                                                                | `'show more'` |
+| `text`         | `text`           |             | `string`                                                                | `undefined`   |
+| `type`         | `type`           |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"` | `'primary'`   |
 
 
 ## Dependencies
