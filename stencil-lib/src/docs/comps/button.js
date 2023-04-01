@@ -3,7 +3,7 @@
     { cssVariable: '', description: '', defaultValue: '' },
   ];
 
-  document.getElementById('comp-interfaces').code = `export type ButtonAppearance =
+  document.getElementById('comp-interfaces').code = `type ButtonAppearance =
   | 'primary'
   | 'secondary'
   | 'basic'

@@ -5,7 +5,7 @@
     { cssVariable: '--cpy-badge-bg', description: 'Background color for the badge', defaultValue: '--cpy-bg-primary' }
   ];
   
-  document.getElementById('comp-interfaces').code = `export type BadgeType =
+  document.getElementById('comp-interfaces').code = `type BadgeType =
   | 'primary'
   | 'secondary'
   | 'basic'

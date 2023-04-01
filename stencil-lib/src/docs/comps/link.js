@@ -3,7 +3,7 @@
     { cssVariable: '--cpy-link-color', description: 'Text color for the link', defaultValue: '--cpy-text-primary' },
   ];
 
-  document.getElementById('comp-interfaces').code = `export type LinkType =
+  document.getElementById('comp-interfaces').code = `type LinkType =
   | 'primary'
   | 'secondary'
   | 'basic'
