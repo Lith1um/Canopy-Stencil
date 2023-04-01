@@ -14,6 +14,7 @@ import { CommentItem } from "./components/comment/interfaces/comment.interface";
 import { CommentSize } from "./components/comment/types/comment-size.type";
 import { ContentsListItem } from "./components/contents-list/contents-list.interface";
 import { ContextMenuItem } from "./components/context-menu/context-menu.interface";
+import { DialogSize } from "./components/dialog/dialog.type";
 import { InputSize } from "./components/inputs/types/input-size.type";
 import { ValidatorEntry } from "./components/inputs/validation/types/validator-entry.type";
 import { Validator } from "./components/inputs/validation/types/validator.type";
@@ -112,7 +113,7 @@ export namespace Components {
         "close": () => Promise<void>;
         "dialogTitle": string;
         "open": () => Promise<void>;
-        "size": 'small' | 'default' | 'large' | 'full-screen';
+        "size": DialogSize;
         "zIndex": string;
     }
     interface CpyDrawer {
@@ -697,7 +698,7 @@ declare namespace LocalJSX {
     interface CpyDialog {
         "dialogTitle"?: string;
         "onClosed"?: (event: CpyDialogCustomEvent<void>) => void;
-        "size"?: 'small' | 'default' | 'large' | 'full-screen';
+        "size"?: DialogSize;
         "zIndex"?: string;
     }
     interface CpyDrawer {
