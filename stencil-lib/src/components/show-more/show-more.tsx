@@ -1,5 +1,6 @@
 import { Component, h, Prop, State } from '@stencil/core';
 import { onResize } from '../../utils/elements';
+import { ShowMoreAppearance } from './show-more.type';
 
 @Component({
   tag: 'cpy-show-more',
@@ -12,7 +13,7 @@ export class ShowMore {
 
   @Prop() text: string;
 
-  @Prop() type: 'primary' | 'secondary' | 'basic' = 'primary';
+  @Prop() type: ShowMoreAppearance = 'primary';
 
   @Prop() showMoreText: string = 'show more';
 

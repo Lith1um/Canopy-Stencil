@@ -20,6 +20,7 @@ import { Validator } from "./components/inputs/validation/types/validator.type";
 import { LinkType } from "./components/link/types/link.type";
 import { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
 import { ProgressBarAppearance, ProgressBarSize } from "./components/progress-bar/progress-bar.type";
+import { ShowMoreAppearance } from "./components/show-more/show-more.type";
 import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
 import { TableData } from "./components/table/types/table-data.type";
 import { ToastPosition } from "./components/toast/toast.type";
@@ -204,7 +205,7 @@ export namespace Components {
         "showLessText": string;
         "showMoreText": string;
         "text": string;
-        "type": 'primary' | 'secondary' | 'basic';
+        "type": ShowMoreAppearance;
     }
     interface CpySpinner {
         "size": SpinnerSize;
@@ -785,7 +786,7 @@ declare namespace LocalJSX {
         "showLessText"?: string;
         "showMoreText"?: string;
         "text"?: string;
-        "type"?: 'primary' | 'secondary' | 'basic';
+        "type"?: ShowMoreAppearance;
     }
     interface CpySpinner {
         "size"?: SpinnerSize;
