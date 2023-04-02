@@ -3,7 +3,7 @@
 }
 
 .link {
-  --text-color: var(--cpy-text-primary);
+  --text-color: var(--cpy-link-color, var(--cpy-text-primary));
   @apply flex items-baseline gap-1;
   color: var(--text-color);
 
@@ -13,14 +13,26 @@
   }
 
   &--primary {
-    --text-color: var(--cpy-text-primary);
+    --text-color: var(--cpy-link-color, var(--cpy-text-primary));
   }
 
   &--secondary {
-    --text-color: var(--cpy-text-secondary);
+    --text-color: var(--cpy-link-color, var(--cpy-text-secondary));
   }
   
   &--basic {
-    --text-color: var(--cpy-text-basic);
+    --text-color: var(--cpy-link-color, var(--cpy-text-basic));
+  }
+
+  &--success {
+    --text-color: var(--cpy-link-color, var(--cpy-text-success));
+  }
+
+  &--warn {
+    --text-color: var(--cpy-link-color, var(--cpy-text-warn));
+  }
+  
+  &--error {
+    --text-color: var(--cpy-link-color, var(--cpy-text-error));
   }
 }

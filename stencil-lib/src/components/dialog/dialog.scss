@@ -1,12 +1,12 @@
 .dialog {
   &:not(.hidden) {
     @apply fixed inset-0 flex items-center justify-center;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--cpy-bg-overlay);
   }
 
   &__container {
     @apply flex flex-col shadow-md rounded-md w-[550px] max-h-[95vh] max-w-[95vw] overflow-hidden;
-    background-color: var(--cpy-bg-white);
+    background-color: var(--cpy-dialog-bg, var(--cpy-bg-white));
 
     &--small {
       @apply w-[350px];
@@ -38,7 +38,7 @@
     }
 
     &-buttons {
-      @apply py-4 px-6 border-t flex w-full gap-2 justify-end;
+      @apply py-3 px-6 border-t flex w-full gap-2 justify-end;
       border-color: var(--cpy-bg-basic-border);
     }
   }

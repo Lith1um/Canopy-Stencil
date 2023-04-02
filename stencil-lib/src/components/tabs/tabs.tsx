@@ -41,6 +41,7 @@ export class Tabs {
   headerGroupElem: HTMLElement;
   activeBarElem: HTMLElement;
   activeTab: TabGroup;
+  resize: ResizeObserver;
 
   componentDidLoad() {
     this.createGroup();
@@ -50,14 +51,14 @@ export class Tabs {
     this.headerGroupElem.addEventListener('scroll', debounce(() => this.handleScroll(), 100));
     this.handleScrollableHeader();
 
-    const resize = new ResizeObserver(debounce(entries => {
+    this.resize = new ResizeObserver(debounce(entries => {
       entries.forEach((_) => {
         this.updateActiveBar(false);
         this.handleScrollableHeader();
       })
     }, 250));
 
-    resize.observe(this.headerGroupElem);
+    this.resize.observe(this.headerGroupElem);
   }
 
   @Listen('selected')
@@ -140,5 +141,9 @@ export class Tabs {
         <slot name="content"/>
       </div>
     ];
+  }
+
+  disconnectedCallback(): void {
+    this.resize.disconnect();
   }
 }

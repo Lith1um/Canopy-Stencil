@@ -26,6 +26,18 @@
     }
   }
 
+  &--disabled {
+    &:hover {
+      .toggle__slider {
+        @apply border-transparent;
+      }
+    }
+
+    .toggle__slider {
+      @apply cursor-default;
+    }
+  }
+
   &--large {
     @apply gap-5 text-lg;
 

@@ -14,14 +14,21 @@ import { CommentItem } from "./components/comment/interfaces/comment.interface";
 import { CommentSize } from "./components/comment/types/comment-size.type";
 import { ContentsListItem } from "./components/contents-list/contents-list.interface";
 import { ContextMenuItem } from "./components/context-menu/context-menu.interface";
+import { DialogSize } from "./components/dialog/dialog.type";
+import { InputType } from "./components/inputs/input/input.type";
 import { InputSize } from "./components/inputs/types/input-size.type";
 import { ValidatorEntry } from "./components/inputs/validation/types/validator-entry.type";
 import { Validator } from "./components/inputs/validation/types/validator.type";
+import { LinkType } from "./components/link/types/link.type";
 import { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
+import { PopupActiveOn, PopupPosition } from "./components/popup/popup.type";
 import { ProgressBarAppearance, ProgressBarSize } from "./components/progress-bar/progress-bar.type";
+import { ShowMoreAppearance } from "./components/show-more/show-more.type";
 import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
+import { StackDirection } from "./components/stack/stack.type";
 import { TableData } from "./components/table/types/table-data.type";
-import { ToastPosition } from "./components/toast/toast.type";
+import { ToastPosition, ToastType } from "./components/toast/toast.type";
+import { TooltipPosition } from "./components/tooltip/tooltip.type";
 export namespace Components {
     interface CpyAccordion {
         "close": () => Promise<void>;
@@ -109,7 +116,7 @@ export namespace Components {
         "close": () => Promise<void>;
         "dialogTitle": string;
         "open": () => Promise<void>;
-        "size": 'small' | 'default' | 'large' | 'full-screen';
+        "size": DialogSize;
         "zIndex": string;
     }
     interface CpyDrawer {
@@ -136,7 +143,7 @@ export namespace Components {
         "placeholder": string;
         "required": boolean;
         "size": InputSize;
-        "type": 'text' | 'number' | 'email' | 'password';
+        "type": InputType;
         "validators": Array<string | ValidatorEntry | Validator<string | number>>;
         "value": string | number;
     }
@@ -155,7 +162,7 @@ export namespace Components {
         "label": string;
         "markAsTouched": () => Promise<void>;
         "required": boolean;
-        "size": 'small' | 'default' | 'large';
+        "size": InputSize;
         "switchAfter": boolean;
         "validators": Array<string | ValidatorEntry | Validator<boolean>>;
         "value": boolean;
@@ -164,7 +171,7 @@ export namespace Components {
         "func": () => void;
         "href": string;
         "newTab": boolean;
-        "type": 'primary' | 'secondary' | 'basic';
+        "type": LinkType;
     }
     interface CpyNavMenu {
         "items": NavMenuItem[];
@@ -187,8 +194,8 @@ export namespace Components {
         "hideContentsList": boolean;
     }
     interface CpyPopup {
-        "activeOn": 'hover' | 'click';
-        "position": 'bottom-start' | 'top-start' | 'left-start' | 'right-start';
+        "activeOn": PopupActiveOn;
+        "position": PopupPosition;
         "recalculatePosition": () => Promise<void>;
     }
     interface CpyProgressBar {
@@ -203,7 +210,7 @@ export namespace Components {
         "showLessText": string;
         "showMoreText": string;
         "text": string;
-        "type": 'primary' | 'secondary' | 'basic';
+        "type": ShowMoreAppearance;
     }
     interface CpySpinner {
         "size": SpinnerSize;
@@ -213,7 +220,7 @@ export namespace Components {
         "disabled": boolean;
     }
     interface CpyStack {
-        "direction": 'left' | 'right';
+        "direction": StackDirection;
         "overlap": number;
     }
     interface CpyTabContent {
@@ -238,14 +245,14 @@ export namespace Components {
         "open": () => Promise<void>;
         "position": ToastPosition;
         "toastTitle": string;
-        "type": AlertType;
+        "type": ToastType;
         "zIndex": string;
     }
     interface CpyToolbar {
     }
     interface CpyTooltip {
         "hideArrow": boolean;
-        "position": 'bottom' | 'left' | 'right' | 'top';
+        "position": TooltipPosition;
         "text": string;
     }
 }
@@ -694,7 +701,7 @@ declare namespace LocalJSX {
     interface CpyDialog {
         "dialogTitle"?: string;
         "onClosed"?: (event: CpyDialogCustomEvent<void>) => void;
-        "size"?: 'small' | 'default' | 'large' | 'full-screen';
+        "size"?: DialogSize;
         "zIndex"?: string;
     }
     interface CpyDrawer {
@@ -719,7 +726,7 @@ declare namespace LocalJSX {
         "placeholder"?: string;
         "required"?: boolean;
         "size"?: InputSize;
-        "type"?: 'text' | 'number' | 'email' | 'password';
+        "type"?: InputType;
         "validators"?: Array<string | ValidatorEntry | Validator<string | number>>;
         "value"?: string | number;
     }
@@ -737,7 +744,7 @@ declare namespace LocalJSX {
         "label"?: string;
         "onValueChange"?: (event: CpyInputToggleCustomEvent<boolean>) => void;
         "required"?: boolean;
-        "size"?: 'small' | 'default' | 'large';
+        "size"?: InputSize;
         "switchAfter"?: boolean;
         "validators"?: Array<string | ValidatorEntry | Validator<boolean>>;
         "value"?: boolean;
@@ -746,7 +753,7 @@ declare namespace LocalJSX {
         "func"?: () => void;
         "href"?: string;
         "newTab"?: boolean;
-        "type"?: 'primary' | 'secondary' | 'basic';
+        "type"?: LinkType;
     }
     interface CpyNavMenu {
         "items"?: NavMenuItem[];
@@ -769,8 +776,8 @@ declare namespace LocalJSX {
         "hideContentsList"?: boolean;
     }
     interface CpyPopup {
-        "activeOn"?: 'hover' | 'click';
-        "position"?: 'bottom-start' | 'top-start' | 'left-start' | 'right-start';
+        "activeOn"?: PopupActiveOn;
+        "position"?: PopupPosition;
     }
     interface CpyProgressBar {
         "border"?: boolean;
@@ -784,7 +791,7 @@ declare namespace LocalJSX {
         "showLessText"?: string;
         "showMoreText"?: string;
         "text"?: string;
-        "type"?: 'primary' | 'secondary' | 'basic';
+        "type"?: ShowMoreAppearance;
     }
     interface CpySpinner {
         "size"?: SpinnerSize;
@@ -794,7 +801,7 @@ declare namespace LocalJSX {
         "disabled"?: boolean;
     }
     interface CpyStack {
-        "direction"?: 'left' | 'right';
+        "direction"?: StackDirection;
         "overlap"?: number;
     }
     interface CpyTabContent {
@@ -819,14 +826,14 @@ declare namespace LocalJSX {
         "onOpened"?: (event: CpyToastCustomEvent<void>) => void;
         "position"?: ToastPosition;
         "toastTitle"?: string;
-        "type"?: AlertType;
+        "type"?: ToastType;
         "zIndex"?: string;
     }
     interface CpyToolbar {
     }
     interface CpyTooltip {
         "hideArrow"?: boolean;
-        "position"?: 'bottom' | 'left' | 'right' | 'top';
+        "position"?: TooltipPosition;
         "text"?: string;
     }
     interface IntrinsicElements {

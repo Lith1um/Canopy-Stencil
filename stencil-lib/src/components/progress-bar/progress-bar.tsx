@@ -9,7 +9,7 @@ import { ProgressBarSize, ProgressBarAppearance } from './progress-bar.type';
 export class ProgressBar {
 
   @Prop()
-  type: ProgressBarAppearance;
+  type: ProgressBarAppearance = 'primary';
 
   @Prop()
   size: ProgressBarSize = 'default';

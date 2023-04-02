@@ -1,6 +1,5 @@
 p {
   margin-bottom: 1.5rem;
-  text-align: justify;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -108,6 +107,7 @@ ul {
 }
 
 cpy-code-example:not(:last-child),
+cpy-card:not(:last-child),
 cpy-code-block:not(:last-child),
 cpy-table:not(:last-child),
 cpy-carousel:not(:last-child) {
@@ -125,7 +125,7 @@ cpy-tab-content {
   align-items: center;
   gap: 1rem;
   width: 100%;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   background-color: var(--cpy-bg-white);
 }
 

@@ -1,40 +1,76 @@
 <cpy-page-container>
-  <cpy-page-content>
-    <h3
-      style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-      Icons
-    </h3>
+  <h1>Icons</h1>
 
-    <p style="margin-top: 1rem; margin-bottom: 2rem;">
-      Canopy icons are an easy way to add icons to your application. They utilise the <cpy-link new-tab
-        href="https://fonts.google.com/icons?icon.set=Material+Icons">Material
-        Icons<cpy-icon>open_in_new</cpy-icon></cpy-link> font. They are referenced using
-      the <cpy-code-snippet code="<cpy-icon>"></cpy-code-snippet> custom HTML element. This component utilizes the slot
-      element.
-    </p>
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Icon">
+        <p>
+          Canopy icons are an easy way to add icons to your application. They utilise the <cpy-link new-tab
+            href="https://fonts.google.com/icons?icon.set=Material+Icons">Material
+            Icons<cpy-icon>open_in_new</cpy-icon></cpy-link> font. They are referenced using
+          the <cpy-code-snippet code="<cpy-icon>"></cpy-code-snippet> custom HTML element. This component utilizes the slot
+          element.
+        </p>
 
-    <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-    <div
-      style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 1rem;">
-      <cpy-icon style="font-size: 1rem;">account_circle</cpy-icon>
-      <cpy-icon style="font-size: 1.5rem;">visibility_off</cpy-icon>
-      <cpy-icon style="font-size: 2rem;">delete</cpy-icon>
-      <cpy-icon style="font-size: 3rem;">verified_user</cpy-icon>
-      <cpy-icon style="font-size: 1rem;">print</cpy-icon>
-      <cpy-icon style="font-size: 1.5rem;">rocket_launch</cpy-icon>
-      <cpy-icon style="font-size: 2rem;">question_answer</cpy-icon>
-      <cpy-icon style="font-size: 3rem;">flight_land</cpy-icon>
-    </div>
+        <cpy-code-example header="Icon">
+<cpy-icon style="font-size: 2rem;">rocket_launch</cpy-icon>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. There are currently no styling variables for this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
 
-    <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+        <h4 id="host">Host styles</h4>
+        <p>
+          Canopy components are designed to have their host element styled directly so that it can be overridden for specific implementation purposes.This is generally used to adjust <cpy-code-snippet code="display"></cpy-code-snippet>, <cpy-code-snippet code="position"></cpy-code-snippet>, <cpy-code-snippet code="background-color"></cpy-code-snippet>, <cpy-code-snippet code="padding"></cpy-code-snippet>, <cpy-code-snippet code="margin"></cpy-code-snippet>, <cpy-code-snippet code="width"></cpy-code-snippet>, <cpy-code-snippet code="height"></cpy-code-snippet> etc.
+        </p>
+        <p>
+          There are likely other properties that you can alter on the host element for each individual component, open your dev tools and inspect each component to see what you can override on the host!
+        </p>
 
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-code-block id="icon-html-example" language="html"></cpy-code-block>
-    </div>
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          Icons serve a wide variety of scenarios and may contain many different types of content. Due to this flexible nature, the appropriate accessibility treatment depends on how you use <cpy-code-snippet code="<cpy-icon>"></cpy-code-snippet>.
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
 
-    <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
-    <cpy-table id="icon-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  </cpy-page-content>
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Icon">
+        <h4 id="api" title="API">API Reference for Canopy Icon</h4>
+        <cpy-code-snippet code="<cpy-icon>"></cpy-code-snippet>
+
+        <div class="section">
+        </div>
+
+        <h4 id="slots">Slots</h4>
+        <p>Inject custom content into the component</p>
+        <cpy-table id="comp-slots"></cpy-table>
+
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic Icons">
+<cpy-icon style="font-size: 1rem;">account_circle</cpy-icon>
+<cpy-icon style="font-size: 1.5rem;">visibility_off</cpy-icon>
+<cpy-icon style="font-size: 2rem;">delete</cpy-icon>
+<cpy-icon style="font-size: 3rem;">verified_user</cpy-icon>
+<cpy-icon style="font-size: 1rem;">print</cpy-icon>
+<cpy-icon style="font-size: 1.5rem;">rocket_launch</cpy-icon>
+<cpy-icon style="font-size: 2rem;">question_answer</cpy-icon>
+<cpy-icon style="font-size: 3rem;">flight_land</cpy-icon>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
 </cpy-page-container>
 
 <script src="/docs/comps/icon.js">

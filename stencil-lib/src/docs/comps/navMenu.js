@@ -49,7 +49,7 @@ interface NavMenuItem {
   title: string;
   description?: string;
   type: NavMenuItemType;
-  url: string;
+  url?: string;
   active?: boolean;
   collapsed?: boolean;
   looseMatch?: boolean;

@@ -1,187 +1,208 @@
 <cpy-page-container>
-  <cpy-page-content>
-    <h3
-      style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-      Dialogs
-    </h3>
+  <h1>Dialogs</h1>
 
-    <p style="margin-top: 1rem; margin-bottom: 2rem;">
-      Canopy dialogs interrupt workflows when user interaction is required. They are referenced using
-      the <cpy-code-snippet code="<cpy-dialog>"></cpy-code-snippet> custom HTML element. This component utilizes the slot
-      element, allowing you to render your own HTML in the content portion of the dialog.
-    </p>
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Dialog">
+        <p>
+          Canopy dialogs interrupt workflows when user interaction is required. They are referenced using
+          the <cpy-code-snippet code="<cpy-dialog>"></cpy-code-snippet> custom HTML element. This component utilizes the slot
+          element, allowing you to render your own HTML in the content portion of the dialog.
+        </p>
 
-    <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-    <div style="display: flex; flex-direction: column; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 1rem;">
-      <div>
-        <cpy-button id="dialog-small-open">Open Small Dialog</cpy-button>
+        <cpy-code-example header="Dialog" id="overview-code">
+<cpy-button id="overview-button">Open Dialog</cpy-button>
 
-        <cpy-dialog id="dialog-small" dialog-title="Confirm Delete" size="small">
-          <p>Are you sure you want to delete this?</p>
-          <cpy-button slot="buttons" appearance="borderless" type="basic">
-            Cancel
-          </cpy-button>
-          <cpy-button slot="buttons" type="error">
-            Delete
-          </cpy-button>
-        </cpy-dialog>
-      </div>
+<cpy-dialog id="overview-dialog" dialog-title="Confirm Delete" size="small">
+  <p style="margin: 0;">Are you sure you want to delete this?</p>
+  <cpy-button slot="buttons" appearance="borderless" type="basic">
+    Cancel
+  </cpy-button>
+  <cpy-button slot="buttons" type="error">
+    Delete
+  </cpy-button>
+</cpy-dialog>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. Below is a list of variables you can use to configure this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
 
-      <div>
-        <cpy-button id="dialog-default-open">Open Default Size Dialog</cpy-button>
+        <h4 id="host">Host styles</h4>
+        <p>
+          Canopy components are designed to have their host element styled directly so that it can be overridden for specific implementation purposes.This is generally used to adjust <cpy-code-snippet code="display"></cpy-code-snippet>, <cpy-code-snippet code="position"></cpy-code-snippet>, <cpy-code-snippet code="background-color"></cpy-code-snippet>, <cpy-code-snippet code="padding"></cpy-code-snippet>, <cpy-code-snippet code="margin"></cpy-code-snippet>, <cpy-code-snippet code="width"></cpy-code-snippet>, <cpy-code-snippet code="height"></cpy-code-snippet> etc.
+        </p>
+        <p>
+          There are likely other properties that you can alter on the host element for each individual component, open your dev tools and inspect each component to see what you can override on the host!
+        </p>
 
-        <cpy-dialog id="dialog-default" dialog-title="Dialog Title">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tristique, est id dapibus mattis, eros
-            arcu maximus dolor, sit amet aliquet turpis mi faucibus tellus. Mauris vel vulputate diam. Sed dolor sapien,
-            feugiat eget lacinia vel, fermentum ac lacus. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-            Sed porttitor, mi vitae pretium sagittis, enim dolor interdum ipsum, quis fringilla dolor leo at ligula. Sed
-            feugiat purus ut tellus mattis euismod. In sodales accumsan urna, eget pulvinar enim iaculis non. Curabitur
-            risus nisl, scelerisque mollis lorem sed, lacinia interdum leo.</p>
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          TODO: ...
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
 
-          <cpy-button slot="buttons" appearance="borderless" type="basic">
-            Cancel
-          </cpy-button>
-          <cpy-button slot="buttons">
-            Submit
-          </cpy-button>
-        </cpy-dialog>
-      </div>
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Dialog">
+        <h4 id="api" title="API">API Reference for Canopy Dialog</h4>
+        <cpy-code-snippet code="<cpy-dialog>"></cpy-code-snippet>
 
-      <div>
-        <cpy-button id="dialog-large-open">Open Large Dialog</cpy-button>
+        <div class="section">
+        </div>
 
-        <cpy-dialog id="dialog-large" dialog-title="Dialog Title" size="large">
-          <p style="margin-bottom: 2rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tristique,
-            est id dapibus mattis, eros arcu maximus dolor, sit amet aliquet turpis mi faucibus tellus. Mauris vel
-            vulputate diam. Sed dolor sapien, feugiat eget lacinia vel, fermentum ac lacus. Interdum et malesuada fames
-            ac ante ipsum primis in faucibus. Sed porttitor, mi vitae pretium sagittis, enim dolor interdum ipsum, quis
-            fringilla dolor leo at ligula. Sed feugiat purus ut tellus mattis euismod. In sodales accumsan urna, eget
-            pulvinar enim iaculis non. Curabitur risus nisl, scelerisque mollis lorem sed, lacinia interdum leo.</p>
-          <p style="margin-bottom: 2rem;">Integer aliquam, nisi ut rhoncus laoreet, lacus lectus venenatis mi, ac
-            sollicitudin elit mi ut odio. Morbi eleifend odio at sem facilisis sagittis. Donec est eros, elementum quis
-            velit a, laoreet fringilla nunc. Nulla a ex quis odio consectetur tempor quis quis nulla. Suspendisse
-            egestas varius arcu in ultricies. Curabitur ornare in orci a laoreet. Aliquam sapien risus, suscipit eget
-            molestie ac, efficitur pulvinar justo. Aliquam at lectus id arcu gravida ullamcorper. Quisque nulla ex,
-            blandit nec velit sed, tempor faucibus dolor. Nunc egestas risus vitae massa cursus interdum. Donec tempor
-            vulputate erat id convallis. Maecenas euismod consequat ante sed cursus. Fusce sollicitudin vehicula ante at
-            pharetra. Fusce feugiat nibh in egestas scelerisque. Suspendisse sodales tincidunt magna quis volutpat. Sed
-            dolor lectus, interdum eget purus a, fermentum posuere leo.</p>
-          <p>Duis ligula orci, pretium eu dui vel, consectetur suscipit est. Suspendisse potenti. Integer eleifend
-            auctor velit efficitur consequat. Nam dictum egestas egestas. Proin purus augue, cursus ut bibendum
-            tincidunt, condimentum eu lacus. Curabitur consectetur scelerisque sapien, ut commodo lorem mattis eget.
-            Aenean eget nulla nec massa feugiat ultricies nec id nisl. Nulla a risus accumsan est sagittis elementum nec
-            et arcu. Ut pharetra ipsum sapien, sit amet fringilla arcu pretium a. Sed auctor maximus ipsum, non auctor
-            dolor fringilla id. Duis leo leo, vulputate quis augue sed, volutpat convallis odio. Maecenas porta justo ut
-            nunc convallis venenatis.</p>
+        <h4 id="types">Types</h4>
+        <cpy-code-block id="comp-interfaces"></cpy-code-block>
 
-          <cpy-button slot="buttons" appearance="borderless" type="basic">
-            Cancel
-          </cpy-button>
-          <cpy-button slot="buttons">
-            Submit
-          </cpy-button>
-        </cpy-dialog>
-      </div>
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
 
-      <div>
-        <cpy-button id="dialog-full-open">Open Full-Screen Dialog</cpy-button>
+        <h4 id="events">Events</h4>
+        <p>React to changes in the component</p>
+        <cpy-table id="comp-events"></cpy-table>
 
-        <cpy-dialog id="dialog-full" dialog-title="Dialog Title" size="full-screen">
-          <p style="margin-bottom: 2rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tristique,
-            est id dapibus mattis, eros arcu maximus dolor, sit amet aliquet turpis mi faucibus tellus. Mauris vel
-            vulputate diam. Sed dolor sapien, feugiat eget lacinia vel, fermentum ac lacus. Interdum et malesuada fames
-            ac ante ipsum primis in faucibus. Sed porttitor, mi vitae pretium sagittis, enim dolor interdum ipsum, quis
-            fringilla dolor leo at ligula. Sed feugiat purus ut tellus mattis euismod. In sodales accumsan urna, eget
-            pulvinar enim iaculis non. Curabitur risus nisl, scelerisque mollis lorem sed, lacinia interdum leo.</p>
-          <p style="margin-bottom: 2rem;">Integer aliquam, nisi ut rhoncus laoreet, lacus lectus venenatis mi, ac
-            sollicitudin elit mi ut odio. Morbi eleifend odio at sem facilisis sagittis. Donec est eros, elementum quis
-            velit a, laoreet fringilla nunc. Nulla a ex quis odio consectetur tempor quis quis nulla. Suspendisse
-            egestas varius arcu in ultricies. Curabitur ornare in orci a laoreet. Aliquam sapien risus, suscipit eget
-            molestie ac, efficitur pulvinar justo. Aliquam at lectus id arcu gravida ullamcorper. Quisque nulla ex,
-            blandit nec velit sed, tempor faucibus dolor. Nunc egestas risus vitae massa cursus interdum. Donec tempor
-            vulputate erat id convallis. Maecenas euismod consequat ante sed cursus. Fusce sollicitudin vehicula ante at
-            pharetra. Fusce feugiat nibh in egestas scelerisque. Suspendisse sodales tincidunt magna quis volutpat. Sed
-            dolor lectus, interdum eget purus a, fermentum posuere leo.</p>
-          <p style="margin-bottom: 2rem;">Duis ligula orci, pretium eu dui vel, consectetur suscipit est. Suspendisse
-            potenti. Integer eleifend auctor velit efficitur consequat. Nam dictum egestas egestas. Proin purus augue,
-            cursus ut bibendum tincidunt, condimentum eu lacus. Curabitur consectetur scelerisque sapien, ut commodo
-            lorem mattis eget. Aenean eget nulla nec massa feugiat ultricies nec id nisl. Nulla a risus accumsan est
-            sagittis elementum nec et arcu. Ut pharetra ipsum sapien, sit amet fringilla arcu pretium a. Sed auctor
-            maximus ipsum, non auctor dolor fringilla id. Duis leo leo, vulputate quis augue sed, volutpat convallis
-            odio. Maecenas porta justo ut nunc convallis venenatis.</p>
-          <p style="margin-bottom: 2rem;">Vestibulum iaculis aliquet libero non hendrerit. Aliquam id diam sed sem
-            euismod aliquam. Ut eleifend leo sed risus sollicitudin bibendum. Vestibulum ornare enim urna, eu dictum
-            nisi congue eu. Vivamus condimentum congue erat id sodales. Etiam luctus dui ac sem imperdiet, eget tempor
-            neque scelerisque. Nunc et ex magna. Suspendisse nulla risus, vestibulum vitae iaculis ac, maximus eget
-            ipsum.</p>
-          <p style="margin-bottom: 2rem;">Nulla ullamcorper egestas eros, id rhoncus eros aliquet a. Class aptent taciti
-            sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque hendrerit fermentum
-            nisl, in porttitor mauris placerat lacinia. Vivamus ac nulla et metus elementum vehicula. Maecenas venenatis
-            nibh et lectus interdum vehicula. Mauris nulla libero, euismod tempor venenatis ut, consectetur sed urna.
-            Nam nunc orci, mattis vitae bibendum eget, pretium consequat ipsum. Mauris suscipit lacus pharetra eleifend
-            mattis. Proin et sollicitudin ex.</p>
-          <p style="margin-bottom: 2rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tristique,
-            est id dapibus mattis, eros arcu maximus dolor, sit amet aliquet turpis mi faucibus tellus. Mauris vel
-            vulputate diam. Sed dolor sapien, feugiat eget lacinia vel, fermentum ac lacus. Interdum et malesuada fames
-            ac ante ipsum primis in faucibus. Sed porttitor, mi vitae pretium sagittis, enim dolor interdum ipsum, quis
-            fringilla dolor leo at ligula. Sed feugiat purus ut tellus mattis euismod. In sodales accumsan urna, eget
-            pulvinar enim iaculis non. Curabitur risus nisl, scelerisque mollis lorem sed, lacinia interdum leo.</p>
-          <p style="margin-bottom: 2rem;">Integer aliquam, nisi ut rhoncus laoreet, lacus lectus venenatis mi, ac
-            sollicitudin elit mi ut odio. Morbi eleifend odio at sem facilisis sagittis. Donec est eros, elementum quis
-            velit a, laoreet fringilla nunc. Nulla a ex quis odio consectetur tempor quis quis nulla. Suspendisse
-            egestas varius arcu in ultricies. Curabitur ornare in orci a laoreet. Aliquam sapien risus, suscipit eget
-            molestie ac, efficitur pulvinar justo. Aliquam at lectus id arcu gravida ullamcorper. Quisque nulla ex,
-            blandit nec velit sed, tempor faucibus dolor. Nunc egestas risus vitae massa cursus interdum. Donec tempor
-            vulputate erat id convallis. Maecenas euismod consequat ante sed cursus. Fusce sollicitudin vehicula ante at
-            pharetra. Fusce feugiat nibh in egestas scelerisque. Suspendisse sodales tincidunt magna quis volutpat. Sed
-            dolor lectus, interdum eget purus a, fermentum posuere leo.</p>
-          <p style="margin-bottom: 2rem;">Duis ligula orci, pretium eu dui vel, consectetur suscipit est. Suspendisse
-            potenti. Integer eleifend auctor velit efficitur consequat. Nam dictum egestas egestas. Proin purus augue,
-            cursus ut bibendum tincidunt, condimentum eu lacus. Curabitur consectetur scelerisque sapien, ut commodo
-            lorem mattis eget. Aenean eget nulla nec massa feugiat ultricies nec id nisl. Nulla a risus accumsan est
-            sagittis elementum nec et arcu. Ut pharetra ipsum sapien, sit amet fringilla arcu pretium a. Sed auctor
-            maximus ipsum, non auctor dolor fringilla id. Duis leo leo, vulputate quis augue sed, volutpat convallis
-            odio. Maecenas porta justo ut nunc convallis venenatis.</p>
-          <p style="margin-bottom: 2rem;">Vestibulum iaculis aliquet libero non hendrerit. Aliquam id diam sed sem
-            euismod aliquam. Ut eleifend leo sed risus sollicitudin bibendum. Vestibulum ornare enim urna, eu dictum
-            nisi congue eu. Vivamus condimentum congue erat id sodales. Etiam luctus dui ac sem imperdiet, eget tempor
-            neque scelerisque. Nunc et ex magna. Suspendisse nulla risus, vestibulum vitae iaculis ac, maximus eget
-            ipsum.</p>
-          <p style="margin-bottom: 2rem;">Nulla ullamcorper egestas eros, id rhoncus eros aliquet a. Class aptent taciti
-            sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque hendrerit fermentum
-            nisl, in porttitor mauris placerat lacinia. Vivamus ac nulla et metus elementum vehicula. Maecenas venenatis
-            nibh et lectus interdum vehicula. Mauris nulla libero, euismod tempor venenatis ut, consectetur sed urna.
-            Nam nunc orci, mattis vitae bibendum eget, pretium consequat ipsum. Mauris suscipit lacus pharetra eleifend
-            mattis. Proin et sollicitudin ex.</p>
+        <h4 id="methods">Methods</h4>
+        <p>Exposed methods on the component (All methods are async!)</p>
+        <cpy-table id="comp-methods"></cpy-table>
 
-          <cpy-button slot="buttons" appearance="borderless" type="basic">
-            Cancel
-          </cpy-button>
-          <cpy-button slot="buttons">
-            Submit
-          </cpy-button>
-        </cpy-dialog>
-      </div>
-    </div>
+        <h4 id="slots">Slots</h4>
+        <p>Inject custom content into the component</p>
+        <cpy-table id="comp-slots"></cpy-table>
 
-    <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+      </cpy-page-content>
+    </cpy-tab-content>
 
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-code-block id="dialog-html-example" language="html"></cpy-code-block>
-    </div>
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic Dialog" id="example-code">
+<cpy-button id="example-button">Open Dialog</cpy-button>
 
-    <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-    <cpy-table id="dialog-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+<cpy-dialog id="example-dialog" dialog-title="Basic Dialog">
+  <p style="margin: 0;">Nunc sit amet porta augue. Vivamus efficitur sit amet urna quis ullamcorper. Pellentesque id dui egestas, fringilla est facilisis, vulputate orci. Nunc pellentesque ultricies risus vitae venenatis. In sodales suscipit turpis nec viverra.</p>
+</cpy-dialog>
+      </cpy-code-example>
+      <cpy-code-example header="Small Dialog" id="example-code-2">
+<cpy-button id="example-button-2">Open Dialog</cpy-button>
 
-    <h3 id="events" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Events</h3>
-    <cpy-table id="dialog-events" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+<cpy-dialog id="example-dialog-2" dialog-title="Small Dialog" size="small">
+  <p style="margin: 0;">Nunc sit amet porta augue. Vivamus efficitur sit amet urna quis ullamcorper.</p>
+</cpy-dialog>
+      </cpy-code-example>
+      <cpy-code-example header="Large Dialog" id="example-code-3">
+<cpy-button id="example-button-3">Open Dialog</cpy-button>
 
-    <h3 id="methods" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Methods</h3>
-    <cpy-table id="dialog-methods" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+<cpy-dialog id="example-dialog-3" dialog-title="Large Dialog" size="large">
+  <p style="margin: 0;">Integer aliquam, nisi ut rhoncus laoreet, lacus lectus venenatis mi, ac sollicitudin elit mi ut odio. Morbi eleifend odio at sem facilisis sagittis. Donec est eros, elementum quis velit a, laoreet fringilla nunc. Nulla a ex quis odio consectetur tempor quis quis nulla. Suspendisse egestas varius arcu in ultricies. Curabitur ornare in orci a laoreet. Aliquam sapien risus, suscipit eget molestie ac, efficitur pulvinar justo. Aliquam at lectus id arcu gravida ullamcorper. Quisque nulla ex, blandit nec velit sed, tempor faucibus dolor. Nunc egestas risus vitae massa cursus interdum. Donec tempor vulputate erat id convallis. Maecenas euismod consequat ante sed cursus. Fusce sollicitudin vehicula ante at pharetra. Fusce feugiat nibh in egestas scelerisque. Suspendisse sodales tincidunt magna quis volutpat. Sed dolor lectus, interdum eget purus a, fermentum posuere leo.</p>
+</cpy-dialog>
+      </cpy-code-example>
+      <cpy-code-example header="Full screen Dialog" id="example-code-4">
+<cpy-button id="example-button-4">Open Dialog</cpy-button>
 
-    <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
-    <cpy-table id="dialog-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  </cpy-page-content>
+<cpy-dialog id="example-dialog-4" dialog-title="Full screen Dialog" size="full-screen">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tristique,
+    est id dapibus mattis, eros arcu maximus dolor, sit amet aliquet turpis mi faucibus tellus. Mauris vel
+    vulputate diam. Sed dolor sapien, feugiat eget lacinia vel, fermentum ac lacus. Interdum et malesuada fames
+    ac ante ipsum primis in faucibus. Sed porttitor, mi vitae pretium sagittis, enim dolor interdum ipsum, quis
+    fringilla dolor leo at ligula. Sed feugiat purus ut tellus mattis euismod. In sodales accumsan urna, eget
+    pulvinar enim iaculis non. Curabitur risus nisl, scelerisque mollis lorem sed, lacinia interdum leo.</p>
+  <p>Integer aliquam, nisi ut rhoncus laoreet, lacus lectus venenatis mi, ac
+    sollicitudin elit mi ut odio. Morbi eleifend odio at sem facilisis sagittis. Donec est eros, elementum quis
+    velit a, laoreet fringilla nunc. Nulla a ex quis odio consectetur tempor quis quis nulla. Suspendisse
+    egestas varius arcu in ultricies. Curabitur ornare in orci a laoreet. Aliquam sapien risus, suscipit eget
+    molestie ac, efficitur pulvinar justo. Aliquam at lectus id arcu gravida ullamcorper. Quisque nulla ex,
+    blandit nec velit sed, tempor faucibus dolor. Nunc egestas risus vitae massa cursus interdum. Donec tempor
+    vulputate erat id convallis. Maecenas euismod consequat ante sed cursus. Fusce sollicitudin vehicula ante at
+    pharetra. Fusce feugiat nibh in egestas scelerisque. Suspendisse sodales tincidunt magna quis volutpat. Sed
+    dolor lectus, interdum eget purus a, fermentum posuere leo.</p>
+  <p>Duis ligula orci, pretium eu dui vel, consectetur suscipit est. Suspendisse
+    potenti. Integer eleifend auctor velit efficitur consequat. Nam dictum egestas egestas. Proin purus augue,
+    cursus ut bibendum tincidunt, condimentum eu lacus. Curabitur consectetur scelerisque sapien, ut commodo
+    lorem mattis eget. Aenean eget nulla nec massa feugiat ultricies nec id nisl. Nulla a risus accumsan est
+    sagittis elementum nec et arcu. Ut pharetra ipsum sapien, sit amet fringilla arcu pretium a. Sed auctor
+    maximus ipsum, non auctor dolor fringilla id. Duis leo leo, vulputate quis augue sed, volutpat convallis
+    odio. Maecenas porta justo ut nunc convallis venenatis.</p>
+  <p>Vestibulum iaculis aliquet libero non hendrerit. Aliquam id diam sed sem
+    euismod aliquam. Ut eleifend leo sed risus sollicitudin bibendum. Vestibulum ornare enim urna, eu dictum
+    nisi congue eu. Vivamus condimentum congue erat id sodales. Etiam luctus dui ac sem imperdiet, eget tempor
+    neque scelerisque. Nunc et ex magna. Suspendisse nulla risus, vestibulum vitae iaculis ac, maximus eget
+    ipsum.</p>
+  <p>Nulla ullamcorper egestas eros, id rhoncus eros aliquet a. Class aptent taciti
+    sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque hendrerit fermentum
+    nisl, in porttitor mauris placerat lacinia. Vivamus ac nulla et metus elementum vehicula. Maecenas venenatis
+    nibh et lectus interdum vehicula. Mauris nulla libero, euismod tempor venenatis ut, consectetur sed urna.
+    Nam nunc orci, mattis vitae bibendum eget, pretium consequat ipsum. Mauris suscipit lacus pharetra eleifend
+    mattis. Proin et sollicitudin ex.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tristique,
+    est id dapibus mattis, eros arcu maximus dolor, sit amet aliquet turpis mi faucibus tellus. Mauris vel
+    vulputate diam. Sed dolor sapien, feugiat eget lacinia vel, fermentum ac lacus. Interdum et malesuada fames
+    ac ante ipsum primis in faucibus. Sed porttitor, mi vitae pretium sagittis, enim dolor interdum ipsum, quis
+    fringilla dolor leo at ligula. Sed feugiat purus ut tellus mattis euismod. In sodales accumsan urna, eget
+    pulvinar enim iaculis non. Curabitur risus nisl, scelerisque mollis lorem sed, lacinia interdum leo.</p>
+  <p>Integer aliquam, nisi ut rhoncus laoreet, lacus lectus venenatis mi, ac
+    sollicitudin elit mi ut odio. Morbi eleifend odio at sem facilisis sagittis. Donec est eros, elementum quis
+    velit a, laoreet fringilla nunc. Nulla a ex quis odio consectetur tempor quis quis nulla. Suspendisse
+    egestas varius arcu in ultricies. Curabitur ornare in orci a laoreet. Aliquam sapien risus, suscipit eget
+    molestie ac, efficitur pulvinar justo. Aliquam at lectus id arcu gravida ullamcorper. Quisque nulla ex,
+    blandit nec velit sed, tempor faucibus dolor. Nunc egestas risus vitae massa cursus interdum. Donec tempor
+    vulputate erat id convallis. Maecenas euismod consequat ante sed cursus. Fusce sollicitudin vehicula ante at
+    pharetra. Fusce feugiat nibh in egestas scelerisque. Suspendisse sodales tincidunt magna quis volutpat. Sed
+    dolor lectus, interdum eget purus a, fermentum posuere leo.</p>
+  <p>Duis ligula orci, pretium eu dui vel, consectetur suscipit est. Suspendisse
+    potenti. Integer eleifend auctor velit efficitur consequat. Nam dictum egestas egestas. Proin purus augue,
+    cursus ut bibendum tincidunt, condimentum eu lacus. Curabitur consectetur scelerisque sapien, ut commodo
+    lorem mattis eget. Aenean eget nulla nec massa feugiat ultricies nec id nisl. Nulla a risus accumsan est
+    sagittis elementum nec et arcu. Ut pharetra ipsum sapien, sit amet fringilla arcu pretium a. Sed auctor
+    maximus ipsum, non auctor dolor fringilla id. Duis leo leo, vulputate quis augue sed, volutpat convallis
+    odio. Maecenas porta justo ut nunc convallis venenatis.</p>
+  <p>Vestibulum iaculis aliquet libero non hendrerit. Aliquam id diam sed sem
+    euismod aliquam. Ut eleifend leo sed risus sollicitudin bibendum. Vestibulum ornare enim urna, eu dictum
+    nisi congue eu. Vivamus condimentum congue erat id sodales. Etiam luctus dui ac sem imperdiet, eget tempor
+    neque scelerisque. Nunc et ex magna. Suspendisse nulla risus, vestibulum vitae iaculis ac, maximus eget
+    ipsum.</p>
+  <p>Nulla ullamcorper egestas eros, id rhoncus eros aliquet a. Class aptent taciti
+    sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque hendrerit fermentum
+    nisl, in porttitor mauris placerat lacinia. Vivamus ac nulla et metus elementum vehicula. Maecenas venenatis
+    nibh et lectus interdum vehicula. Mauris nulla libero, euismod tempor venenatis ut, consectetur sed urna.
+    Nam nunc orci, mattis vitae bibendum eget, pretium consequat ipsum. Mauris suscipit lacus pharetra eleifend
+    mattis. Proin et sollicitudin ex.</p>
+</cpy-dialog>
+      </cpy-code-example>
+      <cpy-code-example header="Dialog with buttons" id="example-code-5">
+<cpy-button id="example-button-5">Open Dialog</cpy-button>
+
+<cpy-dialog id="example-dialog-5" dialog-title="Dialog with buttons">
+  <p style="margin: 0;">Integer aliquam, nisi ut rhoncus laoreet, lacus lectus venenatis mi, ac sollicitudin elit mi ut odio. Morbi eleifend odio at sem facilisis sagittis. Donec est eros, elementum quis velit a, laoreet fringilla nunc. Nulla a ex quis odio consectetur tempor quis quis nulla. Suspendisse egestas varius arcu in ultricies. Curabitur ornare in orci a laoreet. Aliquam sapien risus, suscipit eget molestie ac, efficitur pulvinar justo. Aliquam at lectus id arcu gravida ullamcorper. Quisque nulla ex, blandit nec velit sed, tempor faucibus dolor. Nunc egestas risus vitae massa cursus interdum. Donec tempor vulputate erat id convallis.</p>
+  <cpy-button slot="buttons" appearance="borderless" type="basic">
+    Cancel
+  </cpy-button>
+  <cpy-button slot="buttons" type="error">
+    Delete
+  </cpy-button>
+</cpy-dialog>
+      </cpy-code-example>
+      <cpy-code-example header="Custom Dialog" id="example-code-6">
+<cpy-button id="example-button-6">Open Dialog</cpy-button>
+
+<cpy-dialog id="example-dialog-6" dialog-title="Dialog with buttons" style="--cpy-dialog-bg: brown;">
+  <p style="margin: 0;">Integer aliquam, nisi ut rhoncus laoreet, lacus lectus venenatis mi, ac sollicitudin elit mi ut odio. Morbi eleifend odio at sem facilisis sagittis. Donec est eros, elementum quis velit a, laoreet fringilla nunc. Nulla a ex quis odio consectetur tempor quis quis nulla. Suspendisse egestas varius arcu in ultricies. Curabitur ornare in orci a laoreet. Aliquam sapien risus, suscipit eget molestie ac, efficitur pulvinar justo. Aliquam at lectus id arcu gravida ullamcorper. Quisque nulla ex, blandit nec velit sed, tempor faucibus dolor. Nunc egestas risus vitae massa cursus interdum. Donec tempor vulputate erat id convallis.</p>
+  <cpy-button slot="buttons" appearance="borderless" type="basic">
+    Cancel
+  </cpy-button>
+  <cpy-button slot="buttons" type="error">
+    Delete
+  </cpy-button>
+</cpy-dialog>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
 </cpy-page-container>
 
 <script src="/docs/comps/dialog.js">

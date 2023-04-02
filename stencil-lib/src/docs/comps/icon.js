@@ -1,7 +1,9 @@
-(function () {
-  document.getElementById('icon-html-example').code = `<cpy-icon style="font-size: 2rem;">rocket_launch</cpy-icon>`;
-
-  document.getElementById('icon-slots').tableData = [
+(function () {  
+  document.getElementById('comp-styles').tableData = [
+    { cssVariable: '', description: '', defaultValue: '' },
+  ];
+  
+  document.getElementById('comp-slots').tableData = [
     { slotName: "-- (default)", purpose: 'The icon name' },
   ];
 })();

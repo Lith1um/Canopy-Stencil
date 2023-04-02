@@ -1,4 +1,6 @@
 import { Component, Element, h, Prop } from '@stencil/core';
+import { StackDirection } from './stack.type';
+import { onVisible } from '../../utils/elements';
 
 @Component({
   tag: 'cpy-stack',
@@ -8,7 +10,7 @@ import { Component, Element, h, Prop } from '@stencil/core';
 export class Stack {
 
   @Prop()
-  direction: 'left' | 'right' = 'left';
+  direction: StackDirection = 'left';
 
   @Prop()
   overlap: number = 0.5;
@@ -16,7 +18,12 @@ export class Stack {
   @Element()
   host: HTMLElement;
 
+  stackElem: HTMLElement;
   slotChildren: HTMLElement[] = [];
+
+  componentDidLoad(): void {
+    onVisible(this.stackElem, () => this.stackItems());
+  }
 
   handleSlotChange(): void {
     const slotElem = this.host.shadowRoot.querySelector('slot');
@@ -65,7 +72,11 @@ export class Stack {
     };
 
     return (
-      <div class={classes} onMouseEnter={() => this.handleMouseOver()} onMouseLeave={() => this.stackItems()}>
+      <div
+        class={classes}
+        onMouseEnter={() => this.handleMouseOver()}
+        onMouseLeave={() => this.stackItems()}
+        ref={(el) => this.stackElem = el as HTMLElement}>
         <slot onSlotchange={() => this.handleSlotChange()}></slot>
       </div>
     );

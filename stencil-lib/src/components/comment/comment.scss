@@ -1,17 +1,17 @@
 .comment {
-  --author-text: var(--cpy-comment-author-text, var(--cpy-text-primary));
+  --cpy-link-color: var(--cpy-comment-color, var(--cpy-text-primary));
   @apply flex w-full gap-4 items-start mb-4;
 
   &--primary {
-    --author-text: var(--cpy-text-primary);
+    --cpy-link-color: var(--cpy-comment-color, var(--cpy-text-primary));
   }
 
   &--secondary {
-    --author-text: var(--cpy-text-secondary);
+    --cpy-link-color: var(--cpy-comment-color, var(--cpy-text-secondary));
   }
 
   &--basic {
-    --author-text: var(--cpy-text-basic);
+    --cpy-link-color: var(--cpy-comment-color, var(--cpy-text-basic));
   }
 
   &--small {
@@ -68,7 +68,7 @@
 
   &__author {
     @apply text-xl leading-none mb-0.5;
-    color: var(--author-text);
+    color: var(--cpy-link-color);
   }
 
   &__timestamp {

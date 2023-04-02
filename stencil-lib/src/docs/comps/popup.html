@@ -1,4 +1,125 @@
 <cpy-page-container>
+  <h1>Popups</h1>
+
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Popup">
+        <p>
+          Canopy popups display a custom popup attached to an element on the page, either on hover or on clicking the
+          element. They are referenced using the <cpy-code-snippet code="<cpy-popup>"></cpy-code-snippet> custom HTML element.
+          This component utilises the slot element, allowing you to attach a popup to anything.
+        </p>
+
+        <cpy-code-example header="Popup on button hover" id="overview-code">
+<cpy-popup active-on="hover">
+  <cpy-button>
+    Hover me!<cpy-icon>expand_more</cpy-icon>
+  </cpy-button>
+
+  <cpy-context-menu slot="content" id="overview-popup-menu"></cpy-context-menu>
+</cpy-popup>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. Below is a list of variables you can use to configure this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
+
+        <h4 id="host">Host styles</h4>
+        <p>
+          Canopy components are designed to have their host element styled directly so that it can be overridden for specific implementation purposes.This is generally used to adjust <cpy-code-snippet code="display"></cpy-code-snippet>, <cpy-code-snippet code="position"></cpy-code-snippet>, <cpy-code-snippet code="background-color"></cpy-code-snippet>, <cpy-code-snippet code="padding"></cpy-code-snippet>, <cpy-code-snippet code="margin"></cpy-code-snippet>, <cpy-code-snippet code="width"></cpy-code-snippet>, <cpy-code-snippet code="height"></cpy-code-snippet> etc.
+        </p>
+        <p>
+          There are likely other properties that you can alter on the host element for each individual component, open your dev tools and inspect each component to see what you can override on the host!
+        </p>
+
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          Popups serve a wide variety of scenarios and may contain many different types of content. Due to this flexible nature, the appropriate accessibility treatment depends on how you use <cpy-code-snippet code="<cpy-popup>"></cpy-code-snippet>.
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Popup">
+        <h4 id="api" title="API">API Reference for Canopy Popup</h4>
+        <cpy-code-snippet code="<cpy-popup>"></cpy-code-snippet>
+
+        <div class="section">
+        </div>
+
+        <h4 id="types">Types</h4>
+        <cpy-code-block id="comp-interfaces"></cpy-code-block>
+
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
+
+        <h4 id="slots">Slots</h4>
+        <p>Inject custom content into the component</p>
+        <cpy-table id="comp-slots"></cpy-table>
+
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic Popup (click the icon button)">
+<cpy-popup>
+  <cpy-button icon>
+    <cpy-icon>touch_app</cpy-icon>
+  </cpy-button>
+  <div slot="content">
+    <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="60"
+      style="margin: 0 auto; padding: 8px 0;">
+    <div
+      style="padding: 8px; background-color: var(--cpy-bg-primary); color: white; border-radius: 0 0 4px 4px;">
+      This is a customised popup
+    </div>
+  </div>
+</cpy-popup>
+      </cpy-code-example>
+      <cpy-code-example header="Hover active popup">
+<cpy-popup active-on="hover">
+  <cpy-button>
+    Hover me!<cpy-icon>expand_more</cpy-icon>
+  </cpy-button>
+  <div slot="content">
+    <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="60"
+      style="margin: 0 auto; padding: 8px 0;">
+    <div
+      style="padding: 8px; background-color: var(--cpy-bg-primary); color: white; border-radius: 0 0 4px 4px;">
+      This is a customised popup
+    </div>
+  </div>
+</cpy-popup>
+      </cpy-code-example>
+      <cpy-code-example header="Right aligned popup">
+<cpy-popup active-on="hover" position="right-start">
+  <cpy-button>
+    Hover me!<cpy-icon>chevron_right</cpy-icon>
+  </cpy-button>
+  <div slot="content">
+    <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="60"
+      style="margin: 0 auto; padding: 8px 0;">
+    <div
+      style="padding: 8px; background-color: var(--cpy-bg-primary); color: white; border-radius: 0 0 4px 4px;">
+      This is a customised popup
+    </div>
+  </div>
+</cpy-popup>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
+</cpy-page-container>
+
+<cpy-page-container>
   <cpy-page-content>
     <h3
       style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">

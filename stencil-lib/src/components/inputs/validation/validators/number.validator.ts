@@ -1,4 +1,4 @@
-import { Validator } from "../types/validator.type";
+import { Validator } from '../types/validator.type';
 
 export const NumberValidator: Validator<number> = {
   validate: (val: number) => {

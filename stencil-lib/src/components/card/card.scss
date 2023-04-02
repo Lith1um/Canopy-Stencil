@@ -3,7 +3,7 @@
   --footer-bg: var(--cpy-card-footer-bg, var(--cpy-bg-primary));
   --footer-color: var(--cpy-card-footer-color, var(--cpy-text-base));
   --border-radius: var(--cpy-card-border-radius, 0.75rem);
-  @apply inline-block overflow-hidden;
+  @apply inline-block;
   border-radius: var(--border-radius);
   padding: var(--padding);
   background-color: var(--cpy-bg-white);

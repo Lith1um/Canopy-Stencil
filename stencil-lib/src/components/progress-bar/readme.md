@@ -12,7 +12,7 @@
 | `border`        | `border`        |             | `boolean`                                                               | `false`     |
 | `indeterminate` | `indeterminate` |             | `boolean`                                                               | `false`     |
 | `size`          | `size`          |             | `"default" \| "large" \| "small"`                                       | `'default'` |
-| `type`          | `type`          |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"` | `undefined` |
+| `type`          | `type`          |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"` | `'primary'` |
 | `value`         | `value`         |             | `number`                                                                | `undefined` |
 
 

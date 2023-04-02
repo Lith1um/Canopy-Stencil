@@ -3,9 +3,11 @@
 }
 
 .spinner {
-  @apply rounded-full border-4 h-8 w-8 border-r-transparent;
-  --border-color: currentColor;
+  --border-color: var(--cpy-spinner-color, currentColor);
+  --border-width: var(--cpy-spinner-border-width, 0.25rem);
   border-color: var(--border-color);
+  border-width: var(--border-width);
+  @apply rounded-full h-8 w-8 border-r-transparent;
   animation: spin 1s linear infinite;
 
   &-size--small {
@@ -44,9 +46,9 @@
 
 @keyframes spin {
   from {
-      transform:rotate(0deg);
+    transform:rotate(0deg);
   }
   to {
-      transform:rotate(360deg);
+    transform:rotate(360deg);
   }
 }

@@ -1,56 +1,119 @@
 <cpy-page-container>
-  <cpy-page-content>
-    <h3
-      style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-      Expand/Collapse
-    </h3>
+  <h1>Expand/Collapse</h1>
 
-    <p style="margin-top: 1rem; margin-bottom: 2rem;">
-      Canopy expand/collapses are an easy way to hide content until it needs to be shown. They are referenced using
-      the <cpy-code-snippet code="<cpy-expand-collapse>"></cpy-code-snippet> custom HTML element. This component utilises
-      the slot element, allowing you to render your own HTML in the container.
-    </p>
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Expand/Collapse">
+        <p>
+          Canopy expand/collapses are an easy way to hide content until it needs to be shown. They are referenced using
+          the <cpy-code-snippet code="<cpy-expand-collapse>"></cpy-code-snippet> custom HTML element. This component utilises
+          the slot element, allowing you to render your own HTML in the container.
+        </p>
 
-    <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-    <div
-      style="display: flex; align-items: flex-start; flex-direction: column; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-      <cpy-button id="expand-button">Expand</cpy-button>
+        <cpy-code-example header="Expand/Collapse" id="overview-code">
+<cpy-button id="overview-button">Expand</cpy-button>
 
-      <cpy-expand-collapse id="expand-collapse" expanded>
+<cpy-expand-collapse id="overview-expand" expanded>
+  <div style="padding: 2rem; border: 1px solid var(--cpy-bg-basic-border);">
+    I'm in an expandable container!
+
+    <div style="display: flex; align-items: flex-start; flex-direction: column; width: 100%; gap: 0.5rem;">
+      <cpy-button id="overview-button-2">Expand</cpy-button>
+
+      <cpy-expand-collapse id="overview-expand-2">
         <div style="padding: 2rem; border: 1px solid var(--cpy-bg-basic-border);">
-          I'm in an expandable container!
-
-          <div style="display: flex; align-items: flex-start; flex-direction: column; width: 100%; gap: 0.5rem;">
-            <cpy-button id="expand-button-2">Expand</cpy-button>
-
-            <cpy-expand-collapse id="expand-collapse-2">
-              <div style="padding: 2rem; border: 1px solid var(--cpy-bg-basic-border);">
-                I'm in a nested expandable container!
-              </div>
-            </cpy-expand-collapse>
-          </div>
+          I'm in a nested expandable container!
         </div>
       </cpy-expand-collapse>
     </div>
+  </div>
+</cpy-expand-collapse>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. There are currently no styling variables for this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
 
-    <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+        <h4 id="host">Host styles</h4>
+        <p>
+          Canopy components are designed to have their host element styled directly so that it can be overridden for specific implementation purposes.This is generally used to adjust <cpy-code-snippet code="display"></cpy-code-snippet>, <cpy-code-snippet code="position"></cpy-code-snippet>, <cpy-code-snippet code="background-color"></cpy-code-snippet>, <cpy-code-snippet code="padding"></cpy-code-snippet>, <cpy-code-snippet code="margin"></cpy-code-snippet>, <cpy-code-snippet code="width"></cpy-code-snippet>, <cpy-code-snippet code="height"></cpy-code-snippet> etc.
+        </p>
+        <p>
+          There are likely other properties that you can alter on the host element for each individual component, open your dev tools and inspect each component to see what you can override on the host!
+        </p>
 
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-code-block id="expand-html-example" language="html"></cpy-code-block>
-    </div>
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          Expand/Collapses serve a wide variety of scenarios and may contain many different types of content. Due to this flexible nature, the appropriate accessibility treatment depends on how you use <cpy-code-snippet code="<cpy-expand-collapse>"></cpy-code-snippet>.
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
 
-    <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-    <cpy-table id="expand-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Expand/Collapse">
+        <h4 id="api" title="API">API Reference for Canopy Expand/Collapse</h4>
+        <cpy-code-snippet code="<cpy-expand-collapse>"></cpy-code-snippet>
 
-    <h3 id="events" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Events</h3>
-    <cpy-table id="expand-events" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+        <div class="section">
+        </div>
 
-    <h3 id="methods" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Methods</h3>
-    <cpy-table id="expand-methods" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
 
-    <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
-    <cpy-table id="expand-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  </cpy-page-content>
+        <h4 id="events">Events</h4>
+        <p>React to changes in the component</p>
+        <cpy-table id="comp-events"></cpy-table>
+
+        <h4 id="methods">Methods</h4>
+        <p>Exposed methods on the component (All methods are async!)</p>
+        <cpy-table id="comp-methods"></cpy-table>
+
+        <h4 id="slots">Slots</h4>
+        <p>Inject custom content into the component</p>
+        <cpy-table id="comp-slots"></cpy-table>
+
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic Expand/Collapse" id="example-code">
+<cpy-button id="example-button">Expand</cpy-button>
+
+<cpy-expand-collapse id="example-expand">
+  <div style="padding: 2rem; border: 1px solid var(--cpy-bg-basic-border);">
+    I'm in an expandable container!
+  </div>
+</cpy-expand-collapse>
+      </cpy-code-example>
+      <cpy-code-example header="Expanded Expand/Collapse" id="example-code-2">
+<cpy-button id="example-button-2">Expand</cpy-button>
+
+<cpy-expand-collapse id="example-expand-2" expanded>
+  <div style="padding: 2rem; border: 1px solid var(--cpy-bg-basic-border);">
+    I'm in an expandable container!
+  </div>
+</cpy-expand-collapse>
+      </cpy-code-example>
+      <cpy-code-example header="Expand/Collapse with 1s duration" id="example-code-3">
+<cpy-button id="example-button-3">Expand</cpy-button>
+
+<cpy-expand-collapse id="example-expand-3" duration="1000">
+  <div style="padding: 2rem; border: 1px solid var(--cpy-bg-basic-border);">
+    I'm in an expandable container!
+  </div>
+</cpy-expand-collapse>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
 </cpy-page-container>
 
 <script src="/docs/comps/expandCollapse.js">

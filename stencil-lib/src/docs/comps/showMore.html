@@ -1,31 +1,98 @@
 <cpy-page-container>
-  <cpy-page-content>
-    <h3
-      style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-      Show More
-    </h3>
+  <h1>Show More</h1>
 
-    <p style="margin-top: 1rem; margin-bottom: 2rem;">
-      Canopy show more components provide an easy way to truncate text over multiple lines with user interaction to
-      expand/collapse the text. They are referenced using
-      the <cpy-code-snippet code="<cpy-show-more>"></cpy-code-snippet> custom HTML element.
-    </p>
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Show More">
+        <p>
+          Canopy show more components provide an easy way to truncate text over multiple lines with user interaction to
+          expand/collapse the text. They are referenced using
+          the <cpy-code-snippet code="<cpy-show-more>"></cpy-code-snippet> custom HTML element.
+        </p>
 
-    <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-show-more
-        text="Nunc sit amet porta augue. Vivamus efficitur sit amet urna quis ullamcorper. Pellentesque id dui egestas, fringilla est facilisis, vulputate orci. Nunc pellentesque ultricies risus vitae venenatis. In sodales suscipit turpis nec viverra. Integer in rutrum odio. Maecenas ornare, ligula et consequat iaculis, lacus quam eleifend ante, non aliquam lectus diam nec diam. Aenean rhoncus sed nunc vitae lacinia. Aenean id risus sodales tortor sollicitudin dignissim sed a tellus. Vivamus suscipit tristique lacus vitae ultricies."></cpy-show-more>
-    </div>
+        <cpy-code-example header="Show More" id="overview-code">
+<cpy-show-more text="Nunc sit amet porta augue. Vivamus efficitur sit amet urna quis ullamcorper. Pellentesque id dui egestas, fringilla est facilisis, vulputate orci. Nunc pellentesque ultricies risus vitae venenatis. In sodales suscipit turpis nec viverra. Integer in rutrum odio. Maecenas ornare, ligula et consequat iaculis, lacus quam eleifend ante, non aliquam lectus diam nec diam. Aenean rhoncus sed nunc vitae lacinia. Aenean id risus sodales tortor sollicitudin dignissim sed a tellus. Vivamus suscipit tristique lacus vitae ultricies.">
+</cpy-show-more>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. Below is a list of variables you can use to configure this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
 
-    <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+        <h4 id="host">Host styles</h4>
+        <p>
+          Canopy components are designed to have their host element styled directly so that it can be overridden for specific implementation purposes.This is generally used to adjust <cpy-code-snippet code="display"></cpy-code-snippet>, <cpy-code-snippet code="position"></cpy-code-snippet>, <cpy-code-snippet code="background-color"></cpy-code-snippet>, <cpy-code-snippet code="padding"></cpy-code-snippet>, <cpy-code-snippet code="margin"></cpy-code-snippet>, <cpy-code-snippet code="width"></cpy-code-snippet>, <cpy-code-snippet code="height"></cpy-code-snippet> etc.
+        </p>
+        <p>
+          There are likely other properties that you can alter on the host element for each individual component, open your dev tools and inspect each component to see what you can override on the host!
+        </p>
 
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-code-block id="show-more-html-example" language="html"></cpy-code-block>
-    </div>
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          Show Mores serve a wide variety of scenarios and may contain many different types of content. Due to this flexible nature, the appropriate accessibility treatment depends on how you use <cpy-code-snippet code="<cpy-show-more>"></cpy-code-snippet>.
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
 
-    <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-    <cpy-table id="show-more-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  </cpy-page-content>
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Show More">
+        <h4 id="api" title="API">API Reference for Canopy Show More</h4>
+        <cpy-code-snippet code="<cpy-show-more>"></cpy-code-snippet>
+
+        <div class="section">
+        </div>
+
+        <h4 id="types">Types</h4>
+        <cpy-code-block id="comp-interfaces"></cpy-code-block>
+
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
+
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic Show More">
+<cpy-show-more text="Nunc sit amet porta augue. Vivamus efficitur sit amet urna quis ullamcorper. Pellentesque id dui egestas, fringilla est facilisis, vulputate orci. Nunc pellentesque ultricies risus vitae venenatis. In sodales suscipit turpis nec viverra. Integer in rutrum odio. Maecenas ornare, ligula et consequat iaculis, lacus quam eleifend ante, non aliquam lectus diam nec diam. Aenean rhoncus sed nunc vitae lacinia. Aenean id risus sodales tortor sollicitudin dignissim sed a tellus. Vivamus suscipit tristique lacus vitae ultricies.">
+</cpy-show-more>
+      </cpy-code-example>
+      <cpy-code-example header="Show more with more max lines">
+<cpy-show-more max-lines="1" text="Nunc sit amet porta augue. Vivamus efficitur sit amet urna quis ullamcorper. Pellentesque id dui egestas, fringilla est facilisis, vulputate orci. Nunc pellentesque ultricies risus vitae venenatis. In sodales suscipit turpis nec viverra. Integer in rutrum odio. Maecenas ornare, ligula et consequat iaculis, lacus quam eleifend ante, non aliquam lectus diam nec diam. Aenean rhoncus sed nunc vitae lacinia. Aenean id risus sodales tortor sollicitudin dignissim sed a tellus. Vivamus suscipit tristique lacus vitae ultricies.">
+</cpy-show-more>
+      </cpy-code-example>
+      <cpy-code-example header="Show more with alternate text">
+<cpy-show-more show-more-text="Expand" show-less-text="Collapse" text="Nunc sit amet porta augue. Vivamus efficitur sit amet urna quis ullamcorper. Pellentesque id dui egestas, fringilla est facilisis, vulputate orci. Nunc pellentesque ultricies risus vitae venenatis. In sodales suscipit turpis nec viverra. Integer in rutrum odio. Maecenas ornare, ligula et consequat iaculis, lacus quam eleifend ante, non aliquam lectus diam nec diam. Aenean rhoncus sed nunc vitae lacinia. Aenean id risus sodales tortor sollicitudin dignissim sed a tellus. Vivamus suscipit tristique lacus vitae ultricies.">
+</cpy-show-more>
+      </cpy-code-example>
+      <cpy-code-example header="Alternate types">
+<div style="display: flex; flex-direction: column; gap: 0.5rem;">
+  <cpy-show-more type="secondary" text="Nunc sit amet porta augue. Vivamus efficitur sit amet urna quis ullamcorper. Pellentesque id dui egestas, fringilla est facilisis, vulputate orci. Nunc pellentesque ultricies risus vitae venenatis. In sodales suscipit turpis nec viverra. Integer in rutrum odio. Maecenas ornare, ligula et consequat iaculis, lacus quam eleifend ante, non aliquam lectus diam nec diam. Aenean rhoncus sed nunc vitae lacinia. Aenean id risus sodales tortor sollicitudin dignissim sed a tellus. Vivamus suscipit tristique lacus vitae ultricies.">
+  </cpy-show-more>
+  <cpy-show-more type="basic" text="Nunc sit amet porta augue. Vivamus efficitur sit amet urna quis ullamcorper. Pellentesque id dui egestas, fringilla est facilisis, vulputate orci. Nunc pellentesque ultricies risus vitae venenatis. In sodales suscipit turpis nec viverra. Integer in rutrum odio. Maecenas ornare, ligula et consequat iaculis, lacus quam eleifend ante, non aliquam lectus diam nec diam. Aenean rhoncus sed nunc vitae lacinia. Aenean id risus sodales tortor sollicitudin dignissim sed a tellus. Vivamus suscipit tristique lacus vitae ultricies.">
+  </cpy-show-more>
+  <cpy-show-more type="success" text="Nunc sit amet porta augue. Vivamus efficitur sit amet urna quis ullamcorper. Pellentesque id dui egestas, fringilla est facilisis, vulputate orci. Nunc pellentesque ultricies risus vitae venenatis. In sodales suscipit turpis nec viverra. Integer in rutrum odio. Maecenas ornare, ligula et consequat iaculis, lacus quam eleifend ante, non aliquam lectus diam nec diam. Aenean rhoncus sed nunc vitae lacinia. Aenean id risus sodales tortor sollicitudin dignissim sed a tellus. Vivamus suscipit tristique lacus vitae ultricies.">
+  </cpy-show-more>
+  <cpy-show-more type="warn" text="Nunc sit amet porta augue. Vivamus efficitur sit amet urna quis ullamcorper. Pellentesque id dui egestas, fringilla est facilisis, vulputate orci. Nunc pellentesque ultricies risus vitae venenatis. In sodales suscipit turpis nec viverra. Integer in rutrum odio. Maecenas ornare, ligula et consequat iaculis, lacus quam eleifend ante, non aliquam lectus diam nec diam. Aenean rhoncus sed nunc vitae lacinia. Aenean id risus sodales tortor sollicitudin dignissim sed a tellus. Vivamus suscipit tristique lacus vitae ultricies.">
+  </cpy-show-more>
+  <cpy-show-more type="error" text="Nunc sit amet porta augue. Vivamus efficitur sit amet urna quis ullamcorper. Pellentesque id dui egestas, fringilla est facilisis, vulputate orci. Nunc pellentesque ultricies risus vitae venenatis. In sodales suscipit turpis nec viverra. Integer in rutrum odio. Maecenas ornare, ligula et consequat iaculis, lacus quam eleifend ante, non aliquam lectus diam nec diam. Aenean rhoncus sed nunc vitae lacinia. Aenean id risus sodales tortor sollicitudin dignissim sed a tellus. Vivamus suscipit tristique lacus vitae ultricies.">
+  </cpy-show-more>
+</div>
+      </cpy-code-example>
+      <cpy-code-example header="Custom show more">
+<cpy-show-more style="--cpy-link-color: pink;" text="Nunc sit amet porta augue. Vivamus efficitur sit amet urna quis ullamcorper. Pellentesque id dui egestas, fringilla est facilisis, vulputate orci. Nunc pellentesque ultricies risus vitae venenatis. In sodales suscipit turpis nec viverra. Integer in rutrum odio. Maecenas ornare, ligula et consequat iaculis, lacus quam eleifend ante, non aliquam lectus diam nec diam. Aenean rhoncus sed nunc vitae lacinia. Aenean id risus sodales tortor sollicitudin dignissim sed a tellus. Vivamus suscipit tristique lacus vitae ultricies.">
+</cpy-show-more>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
 </cpy-page-container>
 
 <script src="/docs/comps/showMore.js">

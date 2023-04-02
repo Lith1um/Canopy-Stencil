@@ -17,6 +17,8 @@ html.dark {
   --cpy-dm-text-override: currentColor;
 
   --cpy-bg-hover: rgba(0, 0, 0, 0.05);
+  --cpy-bg-overlay: rgba(0, 0, 0, 0.5);
+  --cpy-bg-splash: rgba(0, 0, 0, 0.3);
 
   /* based on tailwind colors */
   --cpy-bg-light-rgb: 250, 250, 250; /* zinc-50 */
@@ -52,11 +54,6 @@ html.dark {
   --cpy-text-success: rgb(21, 128, 61); /* green-700 */
   --cpy-text-warn: rgb(180, 83, 9); /* amber-700 */
   --cpy-text-error: rgb(185, 28, 28); /* red-700 */
-  
-  --cpy-tooltip-bg: var(--cpy-bg-dark);
-  --cpy-tooltip-text: var(--cpy-bg-white);
-  --cpy-progress-bar-bg: var(--cpy-bg-primary);
-  --cpy-comment-author-text: var(--cpy-text-primary);
 }`;
 
   document.getElementById('colors-pallette-dark-css').code = `html.dark {

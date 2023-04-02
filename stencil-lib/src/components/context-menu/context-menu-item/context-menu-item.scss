@@ -1,10 +1,8 @@
 .context-menu-item {
-  --item-opacity: 0;
   @apply flex gap-4 py-2.5 px-4 cursor-pointer items-center select-none min-h-[3rem];
-  background-color: rgba(var(--cpy-bg-basic-rgb), var(--item-opacity));
 
   &:hover, &--active {
-    --item-opacity: 0.1;
+    background-color: var(--cpy-bg-hover);
   }
 
   > cpy-icon {

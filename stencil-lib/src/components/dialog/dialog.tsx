@@ -1,5 +1,6 @@
-import { Component, Event, EventEmitter, h, Method, Prop } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, h, Method, Prop } from '@stencil/core';
 import { enter, leave } from '../../utils/animation-transition';
+import { DialogSize } from './dialog.type';
 
 @Component({
   tag: 'cpy-dialog',
@@ -8,11 +9,13 @@ import { enter, leave } from '../../utils/animation-transition';
 })
 export class Dialog {
 
+  @Element() host: HTMLElement;
+
   @Prop() dialogTitle: string;
 
   @Prop() zIndex = '50';
 
-  @Prop() size: 'small' | 'default' | 'large' | 'full-screen' = 'default'
+  @Prop() size: DialogSize = 'default'
 
   @Event() closed: EventEmitter<void>;
 
@@ -67,9 +70,9 @@ export class Dialog {
           <div class="dialog__container-content">
             <slot/>
           </div>
-          <div class="dialog__container-buttons">
+          {this.host.querySelector('[slot="buttons"]') && <div class="dialog__container-buttons">
             <slot name='buttons'/>
-          </div>
+          </div>}
         </div>
       </div>
     );

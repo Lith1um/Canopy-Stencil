@@ -1,6 +1,7 @@
 import { Component, h, Prop } from '@stencil/core';
-
 import { arrow, computePosition, flip, offset, shift } from '@floating-ui/dom';
+import { onVisible } from '../../utils/elements';
+import { TooltipPosition } from './tooltip.type';
 
 @Component({
   tag: 'cpy-tooltip',
@@ -9,12 +10,11 @@ import { arrow, computePosition, flip, offset, shift } from '@floating-ui/dom';
 })
 export class Tooltip {
 
-  @Prop() position: 'bottom' | 'left' | 'right' | 'top' = 'bottom';
+  @Prop() position: TooltipPosition = 'bottom';
 
   @Prop() text: string;
 
-  @Prop()
-  hideArrow: boolean = false;
+  @Prop() hideArrow: boolean = false;
 
   wrapperElem: HTMLElement;
   tooltipElem: HTMLElement;
@@ -51,7 +51,7 @@ export class Tooltip {
   }
 
   componentDidRender(): void {
-    this.recalculatePosition();
+    onVisible(this.wrapperElem, () => this.recalculatePosition());
   }
 
   render() {

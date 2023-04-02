@@ -1,4 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
+import { LinkType } from './types/link.type';
 
 @Component({
   tag: 'cpy-link',
@@ -13,7 +14,7 @@ export class Link {
 
   @Prop() func: () => void;
 
-  @Prop() type: 'primary' | 'secondary' | 'basic' = 'primary';
+  @Prop() type: LinkType = 'primary';
 
   handleClick(e: Event): void {
     if (this.func) {

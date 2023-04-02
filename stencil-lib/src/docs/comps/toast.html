@@ -1,86 +1,110 @@
 <cpy-page-container>
-  <cpy-page-content>
-    <h3
-      style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-      Toasts
-    </h3>
+  <h1>Toasts</h1>
 
-    <p style="margin-top: 1rem; margin-bottom: 2rem;">
-      Canopy toasts provide well defined elements for rendering messages that appear from off screen. They are
-      referenced using the <cpy-code-snippet code="<cpy-toast>"></cpy-code-snippet> custom HTML element and utilises
-      the <cpy-code-snippet code="<cpy-alert>"></cpy-code-snippet> component to display.
-    </p>
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Toast">
+        <p>
+          Canopy toasts provide well defined elements for rendering messages that appear from off screen. They are
+          referenced using the <cpy-code-snippet code="<cpy-toast>"></cpy-code-snippet> custom HTML element and utilises
+          the <cpy-code-snippet code="<cpy-alert>"></cpy-code-snippet> component to display.
+        </p>
 
-    <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-    <div
-      style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-      <cpy-button id="toast-show-button-1">
-        Top Left
-      </cpy-button>
+        <cpy-code-example header="Toast" id="overview-code">
+<cpy-button id="overview-button">
+  Top Right
+</cpy-button>
 
-      <cpy-toast id="toast-comp-1" position="top-start" dismissible toast-title="This is a Toast message" icon="build">
-        Some additional details you can add to the toast
-      </cpy-toast>
+<cpy-toast id="overview-toast" position="top-end" type="warn" dismissible toast-title="This is a Toast message" icon="warning">
+  This is an example warning
+</cpy-toast>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. Below is a list of variables you can use to configure this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
 
-      <cpy-button id="toast-show-button-2">
-        Top Middle
-      </cpy-button>
+        <h4 id="host">Host styles</h4>
+        <p>
+          Canopy components are designed to have their host element styled directly so that it can be overridden for specific implementation purposes.This is generally used to adjust <cpy-code-snippet code="display"></cpy-code-snippet>, <cpy-code-snippet code="position"></cpy-code-snippet>, <cpy-code-snippet code="background-color"></cpy-code-snippet>, <cpy-code-snippet code="padding"></cpy-code-snippet>, <cpy-code-snippet code="margin"></cpy-code-snippet>, <cpy-code-snippet code="width"></cpy-code-snippet>, <cpy-code-snippet code="height"></cpy-code-snippet> etc.
+        </p>
+        <p>
+          There are likely other properties that you can alter on the host element for each individual component, open your dev tools and inspect each component to see what you can override on the host!
+        </p>
 
-      <cpy-toast id="toast-comp-2" position="top-middle" type="secondary" dismissible
-        toast-title="This is a Toast message">
-      </cpy-toast>
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          TODO: ...
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
 
-      <cpy-button id="toast-show-button-3">
-        Top Right
-      </cpy-button>
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Toast">
+        <h4 id="api" title="API">API Reference for Canopy Toast</h4>
+        <cpy-code-snippet code="<cpy-toast>"></cpy-code-snippet>
 
-      <cpy-toast id="toast-comp-3" position="top-end" type="basic" dismissible toast-title="This is a Toast message">
-        Some additional details you can add to the toast
-      </cpy-toast>
+        <div class="section">
+        </div>
 
-      <cpy-button id="toast-show-button-4">
-        Bottom Left
-      </cpy-button>
+        <h4 id="types">Types</h4>
+        <cpy-code-block id="comp-interfaces"></cpy-code-block>
 
-      <cpy-toast id="toast-comp-4" position="bottom-start" type="success" dismissible
-        toast-title="This is a Toast message">
-      </cpy-toast>
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
 
-      <cpy-button id="toast-show-button-5">
-        Bottom Middle
-      </cpy-button>
+        <h4 id="events">Events</h4>
+        <p>React to changes in the component</p>
+        <cpy-table id="comp-events"></cpy-table>
 
-      <cpy-toast id="toast-comp-5" position="bottom-middle" type="warn" dismissible
-        toast-title="This is a Toast message">
-        Some additional details you can add to the toast
-      </cpy-toast>
+        <h4 id="methods">Methods</h4>
+        <p>Exposed methods on the component (All methods are async!)</p>
+        <cpy-table id="comp-methods"></cpy-table>
 
-      <cpy-button id="toast-show-button-6">
-        Bottom Right
-      </cpy-button>
+        <h4 id="slots">Slots</h4>
+        <p>Inject custom content into the component</p>
+        <cpy-table id="comp-slots"></cpy-table>
 
-      <cpy-toast id="toast-comp-6" position="bottom-end" type="error" dismissible toast-title="This is a Toast message">
-      </cpy-toast>
-    </div>
+      </cpy-page-content>
+    </cpy-tab-content>
 
-    <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic Toast" id="example-code">
+<cpy-button id="example-button">
+  Top Right
+</cpy-button>
 
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-code-block id="toast-html-example" language="html"></cpy-code-block>
-    </div>
+<cpy-toast id="example-toast" type="primary" position="top-start" toast-title="This is a Toast message">
+</cpy-toast>
+      </cpy-code-example>
+      <cpy-code-example header="Dismissible Toast" id="example-code-2">
+<cpy-button id="example-button-2">
+  Top Middle
+</cpy-button>
 
-    <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-    <cpy-table id="toast-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+<cpy-toast id="example-toast-2" dismissible position="top-middle" type="secondary" toast-title="This is a Toast message">
+</cpy-toast>
+      </cpy-code-example>
+      <cpy-code-example header="Custom Toast" id="example-code-3">
+<cpy-button id="example-button-3">
+  Bottom Middle
+</cpy-button>
 
-    <h3 id="events" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Events</h3>
-    <cpy-table id="toast-events" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-
-    <h3 id="methods" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Methods</h3>
-    <cpy-table id="toast-methods" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-
-    <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
-    <cpy-table id="toast-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  </cpy-page-content>
+<cpy-toast id="example-toast-3" dismissible position="bottom-middle" icon="settings" toast-title="This is a custom Toast message" style="--cpy-alert-bg: var(--cpy-bg-white);">
+  Some additional text about the toast
+</cpy-toast>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
 </cpy-page-container>
 
 <script src="/docs/comps/toast.js">
