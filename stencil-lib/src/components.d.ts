@@ -27,6 +27,7 @@ import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.typ
 import { StackDirection } from "./components/stack/stack.type";
 import { TableData } from "./components/table/types/table-data.type";
 import { ToastPosition, ToastType } from "./components/toast/toast.type";
+import { TooltipPosition } from "./components/tooltip/tooltip.type";
 export namespace Components {
     interface CpyAccordion {
         "close": () => Promise<void>;
@@ -250,7 +251,7 @@ export namespace Components {
     }
     interface CpyTooltip {
         "hideArrow": boolean;
-        "position": 'bottom' | 'left' | 'right' | 'top';
+        "position": TooltipPosition;
         "text": string;
     }
 }
@@ -831,7 +832,7 @@ declare namespace LocalJSX {
     }
     interface CpyTooltip {
         "hideArrow"?: boolean;
-        "position"?: 'bottom' | 'left' | 'right' | 'top';
+        "position"?: TooltipPosition;
         "text"?: string;
     }
     interface IntrinsicElements {
