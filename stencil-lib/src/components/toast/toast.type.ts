@@ -8,8 +8,8 @@ export type ToastPosition =
 
 export type ToastType =
   | 'primary'
+  | 'secondary'
   | 'basic'
-  | 'info'
   | 'success'
-  | 'warning'
+  | 'warn'
   | 'error';

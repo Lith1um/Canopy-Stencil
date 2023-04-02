@@ -26,7 +26,7 @@ import { ShowMoreAppearance } from "./components/show-more/show-more.type";
 import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
 import { StackDirection } from "./components/stack/stack.type";
 import { TableData } from "./components/table/types/table-data.type";
-import { ToastPosition } from "./components/toast/toast.type";
+import { ToastPosition, ToastType } from "./components/toast/toast.type";
 export namespace Components {
     interface CpyAccordion {
         "close": () => Promise<void>;
@@ -243,7 +243,7 @@ export namespace Components {
         "open": () => Promise<void>;
         "position": ToastPosition;
         "toastTitle": string;
-        "type": AlertType;
+        "type": ToastType;
         "zIndex": string;
     }
     interface CpyToolbar {
@@ -824,7 +824,7 @@ declare namespace LocalJSX {
         "onOpened"?: (event: CpyToastCustomEvent<void>) => void;
         "position"?: ToastPosition;
         "toastTitle"?: string;
-        "type"?: AlertType;
+        "type"?: ToastType;
         "zIndex"?: string;
     }
     interface CpyToolbar {
