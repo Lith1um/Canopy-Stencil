@@ -1,13 +1,17 @@
 (function () {
-  document.getElementById('toggle-html-example').code = `<cpy-input-toggle size="large" label="Large toggle"></cpy-input-toggle>`;
-
-  document.getElementById('toggle-props').tableData = [
-    { name: 'checked', description: 'Whether the is checked', type: "boolean", default: "", required: false },
-    { name: 'size', description: 'Toggle size', type: "'small' | 'default' | 'large'", default: "'default'", required: false },
-    { name: 'label', description: 'Label for the toggle', type: "string", default: "", required: false }
+  document.getElementById('comp-styles').tableData = [
+    { cssVariable: '--cpy-bg-primary', description: 'Active color of toggle', defaultValue: '--cpy-bg-primary' },
+    { cssVariable: '--cpy-bg-basic', description: 'Inactive color of toggle', defaultValue: '--cpy-bg-basic' },
   ];
 
-  document.getElementById('toggle-events').tableData = [
-    { name: 'checkedChange', description: 'Triggered when the toggle value is changed', emitsType: "boolean" },
+  document.getElementById('comp-interfaces').code = `type InputSize = 'small' | 'default' | 'large';`;
+
+  document.getElementById('comp-props').tableData = [
+    { name: 'value', description: 'Whether the toggle is checked', type: "boolean", default: "", required: false },
+    { name: 'size', description: 'Toggle size', type: "InputSize", default: "'default'", required: false },
+    { name: 'label', description: 'Label for the toggle', type: "string", default: "", required: false }
+  ];
+  document.getElementById('comp-events').tableData = [
+    { name: 'valueChange', description: 'Triggered when the toggle value is changed', emitsType: "boolean" },
   ];
 })();

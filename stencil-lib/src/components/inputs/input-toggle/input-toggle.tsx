@@ -3,6 +3,7 @@ import { BaseInput } from '../interfaces/base-input.interface';
 import { ValidatorEntry } from '../validation/types/validator-entry.type';
 import { Validator } from '../validation/types/validator.type';
 import { defaultValidator, getValidator } from '../validation/validator';
+import { InputSize } from '../types/input-size.type';
 
 @Component({
   tag: 'cpy-input-toggle',
@@ -24,7 +25,7 @@ export class InputToggle implements BaseInput<boolean> {
   disabled: boolean = false;
 
   @Prop()
-  size: 'small' | 'default' | 'large' = 'default';
+  size: InputSize = 'default';
 
   @Prop()
   switchAfter: boolean = false;

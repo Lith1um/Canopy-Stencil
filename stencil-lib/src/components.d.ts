@@ -161,7 +161,7 @@ export namespace Components {
         "label": string;
         "markAsTouched": () => Promise<void>;
         "required": boolean;
-        "size": 'small' | 'default' | 'large';
+        "size": InputSize;
         "switchAfter": boolean;
         "validators": Array<string | ValidatorEntry | Validator<boolean>>;
         "value": boolean;
@@ -743,7 +743,7 @@ declare namespace LocalJSX {
         "label"?: string;
         "onValueChange"?: (event: CpyInputToggleCustomEvent<boolean>) => void;
         "required"?: boolean;
-        "size"?: 'small' | 'default' | 'large';
+        "size"?: InputSize;
         "switchAfter"?: boolean;
         "validators"?: Array<string | ValidatorEntry | Validator<boolean>>;
         "value"?: boolean;

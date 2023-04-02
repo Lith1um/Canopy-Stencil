@@ -1,43 +1,91 @@
 <cpy-page-container>
-  <cpy-page-content>
-    <h3
-      style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-      Toggles
-    </h3>
+  <h1>Toggles</h1>
 
-    <p style="margin-top: 1rem; margin-bottom: 2rem;">
-      Canopy toggles display a form input in the shape of a switch. They are referenced using
-      the <cpy-code-snippet code="<cpy-input-toggle>"></cpy-code-snippet> custom HTML element.
-    </p>
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Toggle">
+        <p>
+          Canopy toggles display a form input in the shape of a switch. They are referenced using
+          the <cpy-code-snippet code="<cpy-input-toggle>"></cpy-code-snippet> custom HTML element.
+        </p>
 
-    <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-    <div
-      style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 3rem;">
-      <cpy-input-toggle checked size="small" label="Small toggle"></cpy-input-toggle>
-      <cpy-input-toggle label="Default toggle" required></cpy-input-toggle>
-      <cpy-input-toggle checked size="large" label="Large toggle"></cpy-input-toggle>
-    </div>
+        <cpy-code-example header="Toggle">
+<cpy-input-toggle label="Basic toggle"></cpy-input-toggle>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. Below is a list of variables you can use to configure this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
 
-    <p style="margin-top: 1rem;">Switch after label:</p>
-    <div
-      style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 3rem;">
-      <cpy-input-toggle checked size="small" label="Small toggle" switch-after></cpy-input-toggle>
-      <cpy-input-toggle label="Default toggle" switch-after required></cpy-input-toggle>
-      <cpy-input-toggle checked size="large" label="Large toggle" switch-after></cpy-input-toggle>
-    </div>
+        <h4 id="host">Host styles</h4>
+        <p>
+          Canopy components are designed to have their host element styled directly so that it can be overridden for specific implementation purposes.This is generally used to adjust <cpy-code-snippet code="display"></cpy-code-snippet>, <cpy-code-snippet code="position"></cpy-code-snippet>, <cpy-code-snippet code="background-color"></cpy-code-snippet>, <cpy-code-snippet code="padding"></cpy-code-snippet>, <cpy-code-snippet code="margin"></cpy-code-snippet>, <cpy-code-snippet code="width"></cpy-code-snippet>, <cpy-code-snippet code="height"></cpy-code-snippet> etc.
+        </p>
+        <p>
+          There are likely other properties that you can alter on the host element for each individual component, open your dev tools and inspect each component to see what you can override on the host!
+        </p>
 
-    <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          TODO: ...
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
 
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-code-block id="toggle-html-example" language="html"></cpy-code-block>
-    </div>
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Toggle">
+        <h4 id="api" title="API">API Reference for Canopy Toggle</h4>
+        <cpy-code-snippet code="<cpy-input-toggle>"></cpy-code-snippet>
 
-    <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-    <cpy-table id="toggle-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+        <div class="section">
+        </div>
 
-    <h3 id="events" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Events</h3>
-    <cpy-table id="toggle-events" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  </cpy-page-content>
+        <h4 id="types">Types</h4>
+        <cpy-code-block id="comp-interfaces"></cpy-code-block>
+
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
+
+        <h4 id="events">Events</h4>
+        <p>React to changes in the component</p>
+        <cpy-table id="comp-events"></cpy-table>
+
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic Toggle">
+<cpy-input-toggle label="Basic toggle"></cpy-input-toggle>
+      </cpy-code-example>
+      <cpy-code-example header="Required toggle">
+<cpy-input-toggle label="Required toggle" required></cpy-input-toggle>
+      </cpy-code-example>
+      <cpy-code-example header="Small toggle">
+<cpy-input-toggle label="Small Toggle" size="small"></cpy-input-toggle>
+      </cpy-code-example>
+      <cpy-code-example header="Large toggle">
+<cpy-input-toggle label="Large Toggle" size="large"></cpy-input-toggle>
+      </cpy-code-example>
+      <cpy-code-example header="Switch after label">
+<cpy-input-toggle label="Toggle" switch-after></cpy-input-toggle>
+      </cpy-code-example>
+      <cpy-code-example header="Custom toggle">
+<cpy-input-toggle label="Toggle" size="large" style="
+  --cpy-bg-primary: var(--cpy-bg-success);
+  --cpy-bg-basic: var(--cpy-bg-error);
+"></cpy-input-toggle>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
 </cpy-page-container>
 
 <script src="/docs/comps/toggle.js">
