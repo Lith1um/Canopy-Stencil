@@ -1,5 +1,6 @@
 import { Component, Element, Event, EventEmitter, h, Listen, Prop, State, Watch } from '@stencil/core';
 import { debounce } from '../../utils/events';
+import { onResize } from '../../utils/elements';
 
 interface TabGroup {
   header: HTMLCpyTabHeaderElement;
@@ -51,14 +52,10 @@ export class Tabs {
     this.headerGroupElem.addEventListener('scroll', debounce(() => this.handleScroll(), 100));
     this.handleScrollableHeader();
 
-    this.resize = new ResizeObserver(debounce(entries => {
-      entries.forEach((_) => {
-        this.updateActiveBar(false);
-        this.handleScrollableHeader();
-      })
-    }, 250));
-
-    this.resize.observe(this.headerGroupElem);
+    this.resize = onResize(this.headerGroupElem, () => {
+      this.updateActiveBar(false);
+      this.handleScrollableHeader();
+    })
   }
 
   @Listen('selected')

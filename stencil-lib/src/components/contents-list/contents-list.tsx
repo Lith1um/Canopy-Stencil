@@ -1,6 +1,6 @@
 import { Component, h, Prop, Watch } from '@stencil/core';
-import { debounce } from '../../utils/events';
 import { ContentsListItem } from './contents-list.interface';
+import { onResize } from '../../utils/elements';
 
 @Component({
   tag: 'cpy-contents-list',
@@ -35,13 +35,7 @@ export class ContentsList {
   }
 
   componentDidLoad(): void {
-    this.resize = new ResizeObserver(debounce(entries => {
-      entries.forEach((_) => {
-        this.updateActiveBar(this.activeIndex);
-      })
-    }, 250));
-
-    this.resize.observe(this.activeBarElem.parentElement);
+    this.resize = onResize(this.activeBarElem.parentElement, () => this.updateActiveBar(this.activeIndex));
   }
 
   listElems: HTMLElement[] = [];
