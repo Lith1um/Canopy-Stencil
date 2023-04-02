@@ -1,100 +1,145 @@
 <cpy-page-container>
-  <cpy-page-content>
-    <h3
-      style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-      Basic Inputs
-    </h3>
+  <h1>Basic Inputs</h1>
 
-    <p style="margin-top: 1rem; margin-bottom: 2rem;">
-      Canopy inputs display a form input for a basic text/number/email/password field. They are referenced using
-      the <cpy-code-snippet code="<cpy-input>"></cpy-code-snippet> custom HTML element.
-    </p>
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Basic Input">
+        <p>
+          Canopy inputs display a form input for a basic text/number/email/password field. They are referenced using
+          the <cpy-code-snippet code="<cpy-input>"></cpy-code-snippet> custom HTML element.
+        </p>
 
-    <p style="margin-top: 1rem; margin-bottom: 2rem;">
-      Canopy forms use a custom validation factory to provide built-in validator functions for your inputs. They can
-      also be extended upon to create your own validators.
-    </p>
+        <p>
+          Canopy forms use a custom validation factory to provide built-in validator functions for your inputs. They can
+          also be extended upon to create your own validators.
+        </p>
+    
+        <p>
+          Learn more about <cpy-link href="/learn-more/formValidation">form validation</cpy-link> in Canopy.
+        </p>
 
-    <p style="margin-top: 1rem; margin-bottom: 2rem;">
-      Learn more about <cpy-link href="/learn-more/formValidation">form validation</cpy-link> in Canopy.
-    </p>
+        <cpy-code-example header="Input" id="overview-code">
+<cpy-input label="Required Text Input" required>
+</cpy-input>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. Below is a list of variables you can use to configure this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
 
-    <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
+        <h4 id="host">Host styles</h4>
+        <p>
+          Canopy components are designed to have their host element styled directly so that it can be overridden for specific implementation purposes.This is generally used to adjust <cpy-code-snippet code="display"></cpy-code-snippet>, <cpy-code-snippet code="position"></cpy-code-snippet>, <cpy-code-snippet code="background-color"></cpy-code-snippet>, <cpy-code-snippet code="padding"></cpy-code-snippet>, <cpy-code-snippet code="margin"></cpy-code-snippet>, <cpy-code-snippet code="width"></cpy-code-snippet>, <cpy-code-snippet code="height"></cpy-code-snippet> etc.
+        </p>
+        <p>
+          There are likely other properties that you can alter on the host element for each individual component, open your dev tools and inspect each component to see what you can override on the host!
+        </p>
 
-    <p>Inputs with validation</p>
-    <cpy-card style="width: 100%; max-width: 400px; margin-top: 1rem; margin-bottom: 2rem;">
-      <div style="display: flex; flex-direction: column; gap: 1rem;">
-        <cpy-input type="text" label="Required Text Input" required>
-        </cpy-input>
-        <cpy-input id="input-comp-length" type="text" label="Min and Max Length Text Input" value="Test value">
-        </cpy-input>
-        <cpy-input id="input-comp-number" type="number" label="Min and Max Number Input">
-        </cpy-input>
-        <cpy-input type="email" label="Email Input">
-        </cpy-input>
-      </div>
-    </cpy-card>
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          Basic Inputs serve a wide variety of scenarios and may contain many different types of content. Due to this flexible nature, the appropriate accessibility treatment depends on how you use <cpy-code-snippet code="<cpy-input>"></cpy-code-snippet>.
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
 
-    <p>Inputs with prefix/suffix</p>
-    <cpy-card style="width: 100%; max-width: 400px; margin-top: 1rem; margin-bottom: 2rem;">
-      <div style="display: flex; flex-direction: column; gap: 1rem;">
-        <cpy-input type="text" label="Text Input">
-          <cpy-icon slot="suffix">done</cpy-icon>
-        </cpy-input>
-        <cpy-input type="number" label="Number Input">
-          <cpy-icon slot="prefix">euro</cpy-icon>
-        </cpy-input>
-        <cpy-input type="password" label="Password Input">
-          <cpy-icon slot="suffix">lock</cpy-icon>
-        </cpy-input>
-        <cpy-input type="email" label="Email Input">
-          <cpy-icon slot="prefix">email</cpy-icon>
-        </cpy-input>
-      </div>
-    </cpy-card>
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Basic Input">
+        <h4 id="api" title="API">API Reference for Canopy Basic Input</h4>
+        <cpy-code-snippet code="<cpy-input>"></cpy-code-snippet>
 
-    <p>Different sizes</p>
-    <cpy-card style="width: 100%; max-width: 400px; margin-top: 1rem; margin-bottom: 2rem;">
-      <div style="display: flex; flex-direction: column; gap: 1rem;">
-        <cpy-input type="text" label="Small Text Input" size="small">
-        </cpy-input>
-        <cpy-input type="email" label="Default Size Email Input">
-        </cpy-input>
-        <cpy-input type="password" label="Large Password Input" size="large">
-        </cpy-input>
-      </div>
-    </cpy-card>
+        <div class="section">
+        </div>
 
-    <p>Disabled Inputs</p>
-    <cpy-card style="width: 100%; max-width: 400px; margin-top: 1rem; margin-bottom: 2rem;">
-      <div style="display: flex; flex-direction: column; gap: 1rem;">
-        <cpy-input type="text" label="Text Input" value="Test" required disabled>
-        </cpy-input>
-        <cpy-input type="number" label="Number Input" disabled>
-        </cpy-input>
-        <cpy-input type="email" label="Email Input" disabled>
-        </cpy-input>
-      </div>
-    </cpy-card>
+        <h4 id="types">Types</h4>
+        <cpy-code-block id="comp-interfaces"></cpy-code-block>
 
-    <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
 
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-code-block id="input-html-example" language="html"></cpy-code-block>
-    </div>
+        <h4 id="events">Events</h4>
+        <p>React to changes in the component</p>
+        <cpy-table id="comp-events"></cpy-table>
 
-    <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-    <cpy-table id="input-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+        <h4 id="methods">Methods</h4>
+        <p>Exposed methods on the component (All methods are async!)</p>
+        <cpy-table id="comp-methods"></cpy-table>
 
-    <h3 id="events" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Events</h3>
-    <cpy-table id="input-events" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+        <h4 id="slots">Slots</h4>
+        <p>Inject custom content into the component</p>
+        <cpy-table id="comp-slots"></cpy-table>
 
-    <h3 id="methods" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Methods</h3>
-    <cpy-table id="input-methods" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+      </cpy-page-content>
+    </cpy-tab-content>
 
-    <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
-    <cpy-table id="input-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  </cpy-page-content>
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic Input">
+<cpy-input label="Basic Text Input">
+</cpy-input>
+      </cpy-code-example>
+      <cpy-code-example header="Number Input">
+<cpy-input type="number" label="Number Input">
+</cpy-input>
+      </cpy-code-example>
+      <cpy-code-example header="Password Input">
+<cpy-input type="password" label="Password Input">
+</cpy-input>
+      </cpy-code-example>
+      <cpy-code-example header="Email Input">
+<cpy-input type="email" label="Email Input">
+</cpy-input>
+      </cpy-code-example>
+      <cpy-code-example header="Required Input">
+<cpy-input label="Text Input" required>
+</cpy-input>
+      </cpy-code-example>
+      <cpy-code-example header="Small Input">
+<cpy-input label="Small Input" size="small">
+</cpy-input>
+      </cpy-code-example>
+      <cpy-code-example header="Large Input">
+<cpy-input label="Large Input" size="large">
+</cpy-input>
+      </cpy-code-example>
+      <cpy-code-example header="Input with prefix/suffix">
+<cpy-input label="Text Input">
+  <cpy-icon slot="prefix">email</cpy-icon>
+  <cpy-icon slot="suffix">lock</cpy-icon>
+</cpy-input>
+      </cpy-code-example>
+      <cpy-code-example header="Text input with length validator">
+<cpy-input id="example-text" label="Min and Max Length Text Input" value="Test value">
+</cpy-input>
+      </cpy-code-example>
+      <cpy-code-example header="Number input with min/max validator">
+<cpy-input id="example-number" type="number" label="Min and Max Number Input">
+</cpy-input>
+      </cpy-code-example>
+      <cpy-code-example header="Disabled Input">
+<cpy-input label="Text Input" disabled>
+</cpy-input>
+      </cpy-code-example>
+      <cpy-code-example header="Input with placeholder">
+<cpy-input label="Text Input" placeholder="I'm a placeholder">
+</cpy-input>
+      </cpy-code-example>
+      <cpy-code-example header="Custom Input">
+<cpy-input label="Text Input" required style="
+  --cpy-text-primary: green;
+  --cpy-bg-white: transparent;
+">
+</cpy-input>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
 </cpy-page-container>
 
 <script src="/docs/comps/input.js">

@@ -107,6 +107,7 @@ ul {
 }
 
 cpy-code-example:not(:last-child),
+cpy-card:not(:last-child),
 cpy-code-block:not(:last-child),
 cpy-table:not(:last-child),
 cpy-carousel:not(:last-child) {

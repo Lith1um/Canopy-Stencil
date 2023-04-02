@@ -15,6 +15,7 @@ import { CommentSize } from "./components/comment/types/comment-size.type";
 import { ContentsListItem } from "./components/contents-list/contents-list.interface";
 import { ContextMenuItem } from "./components/context-menu/context-menu.interface";
 import { DialogSize } from "./components/dialog/dialog.type";
+import { InputType } from "./components/inputs/input/input.type";
 import { InputSize } from "./components/inputs/types/input-size.type";
 import { ValidatorEntry } from "./components/inputs/validation/types/validator-entry.type";
 import { Validator } from "./components/inputs/validation/types/validator.type";
@@ -142,7 +143,7 @@ export namespace Components {
         "placeholder": string;
         "required": boolean;
         "size": InputSize;
-        "type": 'text' | 'number' | 'email' | 'password';
+        "type": InputType;
         "validators": Array<string | ValidatorEntry | Validator<string | number>>;
         "value": string | number;
     }
@@ -725,7 +726,7 @@ declare namespace LocalJSX {
         "placeholder"?: string;
         "required"?: boolean;
         "size"?: InputSize;
-        "type"?: 'text' | 'number' | 'email' | 'password';
+        "type"?: InputType;
         "validators"?: Array<string | ValidatorEntry | Validator<string | number>>;
         "value"?: string | number;
     }

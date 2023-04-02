@@ -59,6 +59,9 @@ document.querySelector('cpy-input').validators = [IsEvenValidator];`;
   document.getElementById('input-state-mark-touched').code = `<cpy-input label="Form Input"></cpy-input>
 
 <script>
-  document.querySelector('cpy-input').markAsTouched();
+  (async () => {
+    await customElements.whenDefined('cpy-input');
+    document.querySelector('cpy-input').markAsTouched();
+  })();
 </script>`;
 })();

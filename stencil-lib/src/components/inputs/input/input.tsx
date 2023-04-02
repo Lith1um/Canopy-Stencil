@@ -4,6 +4,7 @@ import { InputSize } from '../types/input-size.type';
 import { ValidatorEntry } from '../validation/types/validator-entry.type';
 import { Validator } from '../validation/types/validator.type';
 import { defaultValidator, getValidator } from '../validation/validator';
+import { InputType } from './input.type';
 
 @Component({
   tag: 'cpy-input',
@@ -13,7 +14,7 @@ import { defaultValidator, getValidator } from '../validation/validator';
 export class Input implements BaseInput<string | number> {
 
   @Prop()
-  type: 'text' | 'number' | 'email' | 'password' = 'text';
+  type: InputType = 'text';
 
   @Prop({mutable: true})
   value: string | number;

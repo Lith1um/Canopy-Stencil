@@ -57,6 +57,10 @@
         <p>React to changes in the component</p>
         <cpy-table id="comp-events"></cpy-table>
 
+        <h4 id="methods">Methods</h4>
+        <p>Exposed methods on the component (All methods are async!)</p>
+        <cpy-table id="comp-methods"></cpy-table>
+
       </cpy-page-content>
     </cpy-tab-content>
 
@@ -73,10 +77,13 @@
 <cpy-input-toggle label="Small Toggle" size="small"></cpy-input-toggle>
       </cpy-code-example>
       <cpy-code-example header="Large toggle">
-<cpy-input-toggle label="Large Toggle" size="large"></cpy-input-toggle>
+<cpy-input-toggle label="Large Toggle" size="large" value="true"></cpy-input-toggle>
       </cpy-code-example>
       <cpy-code-example header="Switch after label">
 <cpy-input-toggle label="Toggle" switch-after></cpy-input-toggle>
+      </cpy-code-example>
+      <cpy-code-example header="Disabled toggle">
+<cpy-input-toggle label="Disabled Toggle" disabled></cpy-input-toggle>
       </cpy-code-example>
       <cpy-code-example header="Custom toggle">
 <cpy-input-toggle label="Toggle" size="large" style="
