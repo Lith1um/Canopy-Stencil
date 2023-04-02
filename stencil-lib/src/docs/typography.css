@@ -124,7 +124,7 @@ cpy-tab-content {
   align-items: center;
   gap: 1rem;
   width: 100%;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   background-color: var(--cpy-bg-white);
 }
 
