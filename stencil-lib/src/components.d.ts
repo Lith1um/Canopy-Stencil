@@ -20,6 +20,7 @@ import { ValidatorEntry } from "./components/inputs/validation/types/validator-e
 import { Validator } from "./components/inputs/validation/types/validator.type";
 import { LinkType } from "./components/link/types/link.type";
 import { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
+import { PopupActiveOn, PopupPosition } from "./components/popup/popup.type";
 import { ProgressBarAppearance, ProgressBarSize } from "./components/progress-bar/progress-bar.type";
 import { ShowMoreAppearance } from "./components/show-more/show-more.type";
 import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
@@ -191,8 +192,8 @@ export namespace Components {
         "hideContentsList": boolean;
     }
     interface CpyPopup {
-        "activeOn": 'hover' | 'click';
-        "position": 'bottom-start' | 'top-start' | 'left-start' | 'right-start';
+        "activeOn": PopupActiveOn;
+        "position": PopupPosition;
         "recalculatePosition": () => Promise<void>;
     }
     interface CpyProgressBar {
@@ -773,8 +774,8 @@ declare namespace LocalJSX {
         "hideContentsList"?: boolean;
     }
     interface CpyPopup {
-        "activeOn"?: 'hover' | 'click';
-        "position"?: 'bottom-start' | 'top-start' | 'left-start' | 'right-start';
+        "activeOn"?: PopupActiveOn;
+        "position"?: PopupPosition;
     }
     interface CpyProgressBar {
         "border"?: boolean;

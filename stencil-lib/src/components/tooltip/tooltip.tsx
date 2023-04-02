@@ -1,6 +1,7 @@
 import { Component, h, Prop } from '@stencil/core';
 
 import { arrow, computePosition, flip, offset, shift } from '@floating-ui/dom';
+import { onVisible } from '../../utils/elements';
 
 @Component({
   tag: 'cpy-tooltip',
@@ -51,7 +52,7 @@ export class Tooltip {
   }
 
   componentDidRender(): void {
-    this.recalculatePosition();
+    onVisible(this.wrapperElem, () => this.recalculatePosition());
   }
 
   render() {

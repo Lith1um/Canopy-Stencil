@@ -1,6 +1,7 @@
 import { Component, h, Method, Prop } from '@stencil/core';
 
 import { computePosition, flip, shift } from '@floating-ui/dom';
+import { PopupActiveOn, PopupPosition } from './popup.type';
 
 @Component({
   tag: 'cpy-popup',
@@ -9,9 +10,9 @@ import { computePosition, flip, shift } from '@floating-ui/dom';
 })
 export class Popup {
 
-  @Prop() position: 'bottom-start' | 'top-start' | 'left-start' | 'right-start'  = 'bottom-start';
+  @Prop() position: PopupPosition  = 'bottom-start';
 
-  @Prop() activeOn: 'hover' | 'click' = 'click';
+  @Prop() activeOn: PopupActiveOn = 'click';
 
   wrapperElem: HTMLElement;
   popupElem: HTMLElement;
