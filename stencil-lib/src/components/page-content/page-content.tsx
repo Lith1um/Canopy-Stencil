@@ -46,17 +46,12 @@ export class PageContent {
     // callback for on intersection change
     const onIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
-        // no current tracked position
-        if (!this.headersPos.get(entry.target.id)) {
-          this.headersPos.set(entry.target.id, entry.isIntersecting);
-        }
-
+        this.headersPos.set(entry.target.id, entry.isIntersecting);
+        
         // do nothing for initial states
         if (entry.boundingClientRect.y === 0) {
           return;
         }
-
-        this.headersPos.set(entry.target.id, entry.isIntersecting);
 
         // set active index based on highest elem that is visible
         let headerId: string;
@@ -68,11 +63,23 @@ export class PageContent {
           }
         }
         
-        // do nothing if there is no intersection header
-        // TODO: known bug that scrolling up and having no intersection header will not update the active index
-        // (it should ideally pick the previous one)
+        // if there is no intersection header then find the header with
+        // the lowest position off the top of the screen
         if (!headerId) {
-          return;
+          const closestHeader = this.headers.reduce((trackedHeader: HTMLElement, currHeader: HTMLElement) => {
+            if (!trackedHeader) {
+              return currHeader;
+            }
+
+            const currBounds = currHeader.getBoundingClientRect();
+            const trackedBounds = trackedHeader.getBoundingClientRect();
+
+            if (currBounds.top < 0 && currBounds.top > trackedBounds.top) {
+              return currHeader;
+            }
+            return trackedHeader;
+          });
+          headerId = closestHeader.id;
         }
         this.activeIndex = this.headers.findIndex(header => header.id === headerId);
       });
