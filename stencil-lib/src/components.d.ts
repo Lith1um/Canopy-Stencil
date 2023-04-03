@@ -5,13 +5,14 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AccordionSize } from "./components/accordion/accordion.type";
 import { AlertAppearance, AlertType } from "./components/alert/alert.type";
-import { AvatarSize } from "./components/avatar/types/avatar-size.type";
+import { AvatarSize, AvatarType } from "./components/avatar/avatar.type";
 import { BadgeAppearance, BadgeSize, BadgeType } from "./components/badge/badge.type";
 import { ButtonAppearance, ButtonSize, ButtonStyle } from "./components/button/button.type";
 import { CodeLanguage } from "./components/code-block/types/code-language.type";
 import { CommentItem } from "./components/comment/interfaces/comment.interface";
-import { CommentSize } from "./components/comment/types/comment-size.type";
+import { CommentSize, CommentType } from "./components/comment/types/comment-size.type";
 import { ContentsListItem } from "./components/contents-list/contents-list.interface";
 import { ContextMenuItem } from "./components/context-menu/context-menu.interface";
 import { DialogSize } from "./components/dialog/dialog.type";
@@ -35,7 +36,7 @@ export namespace Components {
         "headerTitle": string;
         "open": () => Promise<void>;
         "opened": boolean;
-        "size": 'small' | 'default' | 'large';
+        "size": AccordionSize;
         "toggle": () => Promise<void>;
     }
     interface CpyAlert {
@@ -50,7 +51,7 @@ export namespace Components {
         "initials": string;
         "size": AvatarSize;
         "src": string;
-        "type": 'rounded' | 'square';
+        "type": AvatarType;
     }
     interface CpyBadge {
         "appearance": BadgeAppearance;
@@ -90,7 +91,7 @@ export namespace Components {
         "showLessText": string;
         "showMoreText": string;
         "size": CommentSize;
-        "type": 'primary' | 'secondary' | 'basic';
+        "type": CommentType;
     }
     interface CpyContentsList {
         "activeIndex": number;
@@ -622,7 +623,7 @@ declare namespace LocalJSX {
         "headerTitle"?: string;
         "onAccordionOpened"?: (event: CpyAccordionCustomEvent<void>) => void;
         "opened"?: boolean;
-        "size"?: 'small' | 'default' | 'large';
+        "size"?: AccordionSize;
     }
     interface CpyAlert {
         "appearance"?: AlertAppearance;
@@ -637,7 +638,7 @@ declare namespace LocalJSX {
         "initials"?: string;
         "size"?: AvatarSize;
         "src"?: string;
-        "type"?: 'rounded' | 'square';
+        "type"?: AvatarType;
     }
     interface CpyBadge {
         "appearance"?: BadgeAppearance;
@@ -677,7 +678,7 @@ declare namespace LocalJSX {
         "showLessText"?: string;
         "showMoreText"?: string;
         "size"?: CommentSize;
-        "type"?: 'primary' | 'secondary' | 'basic';
+        "type"?: CommentType;
     }
     interface CpyContentsList {
         "activeIndex"?: number;

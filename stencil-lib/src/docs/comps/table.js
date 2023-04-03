@@ -43,6 +43,6 @@
   document.getElementById('comp-interfaces').code = `type TableData = { [key: string]: string | number | boolean | null | undefined };`;
 
   document.getElementById('comp-props').tableData = [
-    { name: 'table-data', description: 'Data to display in the table', type: "{ [key: string]: string | number | boolean | null | undefined }", default: "", required: true }
+    { name: 'table-data', description: 'Data to display in the table', type: "TableData", default: "", required: true }
   ];
 })();

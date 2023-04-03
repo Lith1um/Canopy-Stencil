@@ -1,4 +1,5 @@
 import { Component, h, Event, Prop, EventEmitter, Method } from '@stencil/core';
+import { AccordionSize } from './accordion.type';
 
 @Component({
   tag: 'cpy-accordion',
@@ -11,7 +12,7 @@ export class Accordion {
   headerTitle: string;
 
   @Prop()
-  size: 'small' | 'default' | 'large' = 'default';
+  size: AccordionSize = 'default';
 
   @Prop({mutable: true})
   opened: boolean;
