@@ -1,5 +1,6 @@
 import { Component, Element, h, Prop, State } from '@stencil/core';
 import { ContentsListItem } from '../contents-list/contents-list.interface';
+import { getScrollParent } from '../../utils/elements';
 
 @Component({
   tag: 'cpy-page-content',
@@ -25,6 +26,7 @@ export class PageContent {
 
   headers: HTMLElement[];
   headersPos: Map<string, boolean> = new Map();
+  scrollParent: HTMLElement;
 
   componentWillLoad(): void {
     if (this.hideContentsList) {
@@ -42,6 +44,8 @@ export class PageContent {
     if (this.hideContentsList) {
       return;
     }
+
+    this.scrollParent = getScrollParent(this.host);
 
     // callback for on intersection change
     const onIntersection = (entries: IntersectionObserverEntry[]) => {
@@ -73,8 +77,9 @@ export class PageContent {
 
             const currBounds = currHeader.getBoundingClientRect();
             const trackedBounds = trackedHeader.getBoundingClientRect();
+            const scrollParentBounds = this.scrollParent.getBoundingClientRect();
 
-            if (currBounds.top < 0 && currBounds.top > trackedBounds.top) {
+            if (currBounds.top < scrollParentBounds.top && currBounds.top > trackedBounds.top) {
               return currHeader;
             }
             return trackedHeader;
