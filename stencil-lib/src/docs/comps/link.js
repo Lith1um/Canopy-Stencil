@@ -14,7 +14,7 @@
   document.getElementById('comp-props').tableData = [
     { name: 'type', description: 'Color scheme of the link', type: "LinkType", default: "'primary'", required: false },
     { name: 'href', description: 'Href for the link', type: "string", default: "", required: false },
-    { name: 'func', description: 'Callback to invoke on click (overrides default navigation behaviour)', type: "function", default: "", required: false },
+    { name: 'func', description: 'Callback to invoke on click (overrides default navigation behaviour)', type: "Function", default: "", required: false },
     { name: 'new-tab', description: 'Whether the link should open in a new tab', type: "boolean", default: "false", required: false },
   ];
   document.getElementById('comp-slots').tableData = [

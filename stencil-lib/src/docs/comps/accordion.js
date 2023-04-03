@@ -17,9 +17,11 @@
     { cssVariable: '--cpy-accordion-header-text-color', description: 'Text color in the header', defaultValue: 'inherit' },
   ];
 
+  document.getElementById('comp-interfaces').code = `type AccordionSize = 'small' | 'default' | 'large';`;
+
   document.getElementById('comp-props').tableData = [
     { name: 'opened', description: 'Whether the accordion is open or not', type: "boolean", default: "", required: false },
-    { name: 'size', description: 'Accordion size', type: "'small' | 'default' | 'large'", default: "'default'", required: false },
+    { name: 'size', description: 'Accordion size', type: "AccordionSize", default: "'default'", required: false },
     { name: 'header-title', description: 'Title to display on the accordion', type: "string", default: "", required: true }
   ];
   document.getElementById('comp-events').tableData = [

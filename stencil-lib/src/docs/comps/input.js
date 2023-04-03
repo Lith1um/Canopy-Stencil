@@ -6,12 +6,14 @@
 
   document.getElementById('comp-interfaces').code = `type InputType = 'text' | 'number' | 'email' | 'password';
   
-type InputSize = 'small' | 'default' | 'large';`;
+type InputSize = 'small' | 'default' | 'large';
+
+type Validators = Array<string | ValidatorEntry | Validator<string | number>>;`;
 
   document.getElementById('comp-props').tableData = [
     { name: 'type', description: 'Input type', type: "InputType", default: "'text'", required: false },
     { name: 'disabled', description: 'Whether the input is disabled', type: "boolean", default: "", required: false },
-    { name: 'validators', description: 'list of validators for the input', type: "Array<string | ValidatorEntry | Validator<string | number>>", default: "", required: false },
+    { name: 'validators', description: 'list of validators for the input', type: "Validators", default: "", required: false },
     { name: 'value', description: 'Input value', type: "string", default: "", required: false },
     { name: 'size', description: 'Input size', type: "InputSize", default: "'default'", required: false },
     { name: 'label', description: 'Label for input', type: "string", default: "", required: false },

@@ -1,7 +1,7 @@
 import { Component, h, Prop } from '@stencil/core';
-import { AvatarSize } from '../avatar/types/avatar-size.type';
+import { AvatarSize } from '../avatar/avatar.type';
 import { CommentItem } from './interfaces/comment.interface';
-import { CommentSize } from './types/comment-size.type';
+import { CommentSize, CommentType } from './types/comment-size.type';
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import { getUserLocale } from '../../utils/user-locale';
@@ -21,7 +21,7 @@ export class Comment {
 
   @Prop() size: CommentSize = 'default';
 
-  @Prop() type: 'primary' | 'secondary' | 'basic' = 'primary';
+  @Prop() type: CommentType = 'primary';
 
   @Prop() showMoreText: string;
 

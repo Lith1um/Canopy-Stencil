@@ -130,14 +130,18 @@
   date?: string;
   imageUrl: string;
   text: string;
-}`;
+}
+
+type CommentSize = 'small' | 'default' | 'large';
+
+type CommentType = 'primary' | 'secondary' | 'basic';`;
 
   document.getElementById('comp-props').tableData = [
     { name: 'comment', description: 'The comment data to display', type: "CommentItem", default: "", required: true },
     { name: 'right-aligned', description: 'Setting this will right align the comments', type: "boolean", default: "false", required: false },
     { name: 'max-lines', description: 'The max lines to truncate comment message to (not setting this will cause the comment not to truncate)', type: "number", default: "null", required: false },
-    { name: 'size', description: 'Comment size', type: "'small' | 'default' | 'large'", default: "'default'", required: false },
-    { name: 'type', description: 'Color scheme of the comment', type: "'primary' | 'secondary' | 'basic'", default: "'primary'", required: false },
+    { name: 'size', description: 'Comment size', type: "CommentSize", default: "'default'", required: false },
+    { name: 'type', description: 'Color scheme of the comment', type: "CommentType", default: "'primary'", required: false },
     { name: 'show-more-text', description: 'Text to display for the "show more" button if max lines is true', type: "string", default: "'show more'", required: false },
     { name: 'show-less-text', description: 'Text to display for the "show less" button if max lines is true', type: "string", default: "'show less'", required: false },
   ];

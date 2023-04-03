@@ -50,6 +50,14 @@ export class Icon {
     return <i class="material-icons"><slot></slot></i>;
   }
 }`;
+
+  document.getElementById('comp-interfaces').code = `type CodeLanguage = 'typescript'
+  | 'javascript'
+  | 'scss'
+  | 'css'
+  | 'html'
+  | 'json'
+  | 'shell';`;
   
   document.getElementById('comp-styles').tableData = [
     { cssVariable: '', description: '', defaultValue: '' },
