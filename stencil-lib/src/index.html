@@ -58,7 +58,7 @@
 <body style="height: 100%; width: 100%;">
   <cpy-drawer-container>
     <div slot="drawer" style="padding: 20px 0px; min-width: 300px;">
-      <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="90" style="margin: 40px auto 20px auto;">
+      <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo-alt.png" alt="Logo" width="90" style="margin: 40px auto 20px auto;">
       <div style="text-align: center; margin-bottom: 1.5rem;">
         <div style="font-size: 1.2rem;">Canopy</div>
         <div style="font-size: 0.75rem; color: var(--cpy-text-light);">Lets you focus on the next big thing.</div>
@@ -114,7 +114,7 @@
         
         <cpy-page-container style="margin-top: 0; margin-bottom: 0; background-color: var(--cpy-bg-white);">
           <div class="footer">
-            <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="60" style="opacity: 0.75;">
+            <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo-alt.png" alt="Logo" width="60" style="opacity: 0.75;">
           
             <div style="flex: 1; font-size: 1.25rem;">
               Canopy.
@@ -131,7 +131,7 @@
   </cpy-drawer-container>
   <script type="module" src="/docs/router.js"></script>
   <script defer>
-    let currentPalette = 'blue';
+    let currentPalette = 'emerald';
     document.querySelector("html").classList.toggle(currentPalette);
     const drawerElement = document.querySelector('cpy-drawer-container');
     drawerElement.opened = window.matchMedia('(min-width: 640px)').matches;
