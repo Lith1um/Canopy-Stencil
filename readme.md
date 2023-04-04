@@ -17,7 +17,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/lith1um/Canopy-Stencil" target="_blank">
-    <img src="https://github.com/Lith1um/Canopy-Stencil/raw/main/logo.png" alt="Logo" width="140">
+    <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="140">
   </a>
 
   <h3 align="center">Canopy</h3>
