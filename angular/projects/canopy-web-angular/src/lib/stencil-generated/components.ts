@@ -193,13 +193,13 @@ export declare interface CpyCodeExample extends Components.CpyCodeExample {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['code', 'header', 'language']
+  inputs: ['code', 'header', 'language', 'showCode']
 })
 @Component({
   selector: 'cpy-code-example',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['code', 'header', 'language']
+  inputs: ['code', 'header', 'language', 'showCode']
 })
 export class CpyCodeExample {
   protected el: HTMLElement;

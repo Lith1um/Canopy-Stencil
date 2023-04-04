@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type                                                                             | Default     |
-| ---------- | ---------- | ----------- | -------------------------------------------------------------------------------- | ----------- |
-| `code`     | `code`     |             | `string`                                                                         | `undefined` |
-| `header`   | `header`   |             | `any`                                                                            | `undefined` |
-| `language` | `language` |             | `"css" \| "html" \| "javascript" \| "json" \| "scss" \| "shell" \| "typescript"` | `'html'`    |
+| Property   | Attribute   | Description | Type                                                                             | Default     |
+| ---------- | ----------- | ----------- | -------------------------------------------------------------------------------- | ----------- |
+| `code`     | `code`      |             | `string`                                                                         | `undefined` |
+| `header`   | `header`    |             | `any`                                                                            | `undefined` |
+| `language` | `language`  |             | `"css" \| "html" \| "javascript" \| "json" \| "scss" \| "shell" \| "typescript"` | `'html'`    |
+| `showCode` | `show-code` |             | `boolean`                                                                        | `false`     |
 
 
 ## Dependencies
