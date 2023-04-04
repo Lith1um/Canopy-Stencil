@@ -19,7 +19,6 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
       - name: Increment Version
-        # TODO: add way to distinguish version type
         run: |
           cd stencil-lib && npm version patch -m "Bump version to %s [skip ci]"
           cd ../angular && npm version patch -m "Bump version to %s [skip ci]"
