@@ -1,4 +1,4 @@
-export * from './components';
+export * from './components'
 
 export { AccordionSize } from "./components/accordion/accordion.type";
 export { AlertAppearance, AlertType } from "./components/alert/alert.type";

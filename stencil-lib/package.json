@@ -1,7 +1,7 @@
 {
-  "name": "canopy-stencil-web",
-  "version": "0.2.7",
-  "description": "Canopy UI Components",
+  "name": "@canopy-web/core",
+  "version": "0.2.8",
+  "description": "Canopy Web Components",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -9,7 +9,7 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/canopy-stencil-web/canopy-stencil-web.esm.js",
+  "unpkg": "dist/core/core.esm.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/Lith1um/Canopy-Stencil.git"
