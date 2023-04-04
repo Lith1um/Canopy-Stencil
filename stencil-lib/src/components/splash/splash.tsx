@@ -14,19 +14,6 @@ export class Splash {
   disabled: boolean = false;
 
   componentDidLoad(): void {
-    this.handleDisableChange(this.disabled);
-  }
-
-  @Watch('disabled')
-  handleDisableChange(disabled: boolean): void {
-    if (disabled) {
-      this.host.parentElement.removeEventListener('click', this.handleOnClick);
-      this.host.parentElement.style.position = 'unset';
-      this.host.parentElement.style.overflow = 'unset';
-      this.host.parentElement.style.cursor = 'unset';
-      return;
-    }
-
     // insert the animation into a style on the component, since
     // defining in the stylesheet does not work for slotted content
     this.host.parentElement.insertAdjacentHTML('afterbegin', `<style>
@@ -46,9 +33,24 @@ export class Splash {
   }
 </style>`);
 
+    this.handleDisableChange(this.disabled);
+  }
+
+  @Watch('disabled')
+  handleDisableChange(disabled: boolean): void {
+    if (disabled) {
+      this.host.parentElement.removeEventListener('click', this.handleOnClick);
+      this.host.parentElement.style.position = 'unset';
+      this.host.parentElement.style.overflow = 'unset';
+      this.host.parentElement.style.cursor = 'unset';
+      this.host.parentElement.style.transform = 'unset';
+      return;
+    }
+
     this.host.parentElement.style.position = 'relative';
     this.host.parentElement.style.overflow = 'hidden';
     this.host.parentElement.style.cursor = 'pointer';
+    this.host.parentElement.style.transform = 'translateZ(0)';
 
     this.host.parentElement.addEventListener('click', this.handleOnClick);
   }

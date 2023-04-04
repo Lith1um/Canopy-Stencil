@@ -77,9 +77,8 @@ export class PageContent {
 
             const currBounds = currHeader.getBoundingClientRect();
             const trackedBounds = trackedHeader.getBoundingClientRect();
-            const scrollParentBounds = this.scrollParent.getBoundingClientRect();
 
-            if (currBounds.top < scrollParentBounds.top && currBounds.top > trackedBounds.top) {
+            if (currBounds.top < entry.rootBounds.top && currBounds.top > trackedBounds.top) {
               return currHeader;
             }
             return trackedHeader;
@@ -92,7 +91,7 @@ export class PageContent {
     
     // define an observer instance
     var observer = new IntersectionObserver(onIntersection, {
-      root: null,   // default is the viewport
+      root: this.scrollParent,   // default is the viewport
       threshold: .5 // percentage of target's visible area. Triggers "onIntersection"
     })
 

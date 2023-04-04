@@ -32,24 +32,24 @@
       --cpy-text-secondary: rgb(236, 72, 153); /* pink-500 */
     }
 
-    html.lime {
-      --cpy-bg-primary-rgb: 101, 163, 13; /* lime-600 */
-      --cpy-bg-primary-light-rgb: 247, 254, 231;  /* lime-50 */
-      --cpy-bg-primary-hover-rgb: 132, 204, 22; /* lime-500 */
+    html.emerald {
+      --cpy-bg-primary-rgb: 5, 150, 105; /* Emerald-600 */
+      --cpy-bg-primary-light-rgb: 236, 253, 245;  /* Emerald-50 */
+      --cpy-bg-primary-hover-rgb: 16, 185, 129; /* Emerald-500 */
 
       --cpy-bg-secondary-rgb: 79, 70, 229; /* indigo-600 */
       --cpy-bg-secondary-light-rgb: 238, 242, 255; /* indigo-50 */
       --cpy-bg-secondary-hover-rgb: 99, 102, 241; /* indigo-500 */
       
-      --cpy-text-primary: rgb(77, 124, 15); /* lime-700 */
+      --cpy-text-primary: rgb(4, 120, 87); /* Emerald-700 */
       --cpy-text-secondary: rgb(67, 56, 202); /* indigo-700 */
     }
-    html.lime.dark {
-      --cpy-bg-primary-light-rgb: 101, 163, 13;  /* lime-600 */
+    html.emerald.dark {
+      --cpy-bg-primary-light-rgb: 5, 150, 105; /* Emerald-600 */
 
       --cpy-bg-secondary-light-rgb: 79, 70, 229; /* indigo-600 */
           
-      --cpy-text-primary: rgb(132, 204, 22); /* lime-500 */
+      --cpy-text-primary: rgb(16, 185, 129); /* Emerald-500 */
       --cpy-text-secondary: rgb(99, 102, 241); /* indigo-500 */
     }
   </style>
@@ -81,9 +81,9 @@
         <cpy-button icon type="basic" onclick="onMenuClick()">
           <cpy-icon style="color: white">menu</cpy-icon>
         </cpy-button>
-        <div style="flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.2rem; font-weight: 500;">
-          Canopy Web Components
-        </div>
+        <h3 style="flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 0;">
+          Canopy.
+        </h3>
         <cpy-popup>
           <cpy-button icon type="basic">
             <cpy-icon style="color: white;">format_color_fill</cpy-icon>
@@ -97,20 +97,13 @@
                 <p style="margin: 0; font-size: 0.75rem;">Front End Developer</p>
               </div>
             </div>
-            <div style="background-color: var(--cpy-bg-medium); padding: 12px; display: flex; align-items: center; gap: 1rem;">
+            <div style="background-color: var(--cpy-bg-medium); padding: 12px; display: flex; align-items: center; gap: 1rem; border-radius: 0 0 0.25rem 0.25rem;">
               <cpy-input-toggle id="darkModeCheckbox" size="small" label="Dark mode"></cpy-input-toggle>
               <cpy-input-select id="palette-picker" size="small" style="flex: 1;">
-                <cpy-input-select-option label="Purple" value="purple"></cpy-input-select-option>
+                <cpy-input-select-option label="Emerald" value="emerald"></cpy-input-select-option>
                 <cpy-input-select-option label="Blue" value="blue"></cpy-input-select-option>
-                <cpy-input-select-option label="Lime" value="lime"></cpy-input-select-option>
+                <cpy-input-select-option label="Purple" value="purple"></cpy-input-select-option>
               </cpy-input-select>
-              <!-- <div>
-                <select id="palette-picker" style="color: black;">
-                  <option value="purple">Purple</option>
-                  <option value="blue">Blue</option>
-                  <option value="lime">Lime</option>
-                </select>
-              </div> -->
             </div>
           </div>
         </cpy-popup>
@@ -121,7 +114,7 @@
         
         <cpy-page-container style="margin-top: 0; margin-bottom: 0; background-color: var(--cpy-bg-white);">
           <div class="footer">
-            <img src="https://github.com/Lith1um/Canopy-Stencil/raw/main/logo.png" alt="Logo" width="60" style="opacity: 0.75;">
+            <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="60" style="opacity: 0.75;">
           
             <div style="flex: 1; font-size: 1.25rem;">
               Canopy.
