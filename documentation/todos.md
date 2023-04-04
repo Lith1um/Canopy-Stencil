@@ -1,0 +1,30 @@
+## TODOs
+- Components
+	- horizontal nav bar
+	- inputs
+		- checkbox
+		- radio
+		- datepicker
+		- select
+		- time
+		- colour
+		- slider
+	- form group?
+	- carousel: change arrow location
+	- image slideshow (with fullscreen support)
+	- comments
+		- can reply prop
+		- support showing replies
+	- comment list
+	- breadcrumbs
+	- pagination
+	- grids
+	- marketing style components (...shudders)
+	- more drawer options/configurations
+- Keyboard events
+- Accessibility
+- Change component dom structure such that styles like margin/padding can be overridden
+- Add all prop types to type section of comp docs
+- Improve customising of splash comp
+- Fix tabs arrow buttons
+- Add input base docs

@@ -1,4 +1,4 @@
-import { Component, Element, h, Prop, State } from '@stencil/core';
+import { Component, Element, h, Prop } from '@stencil/core';
 import { CodeLanguage } from '../code-block/types/code-language.type';
 
 @Component({
@@ -17,8 +17,8 @@ export class CodeExample {
 
   @Prop() language: CodeLanguage = 'html';
 
-  @State()
-  showCode = false;
+  @Prop({mutable: true})
+  showCode: boolean = false;
 
   render() {
     return (
