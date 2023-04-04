@@ -5,4 +5,4 @@ import { NgModule } from '@angular/core';
   declarations: [...DIRECTIVES],
   exports: [...DIRECTIVES],
 })
-export class CanopyStencilModule {}
+export class CanopyAngularModule {}

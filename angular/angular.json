@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "canopy-stencil-angular": {
+    "canopy-web-angular": {
       "projectType": "library",
-      "root": "projects/canopy-stencil-angular",
-      "sourceRoot": "projects/canopy-stencil-angular/src",
+      "root": "projects/canopy-web-angular",
+      "sourceRoot": "projects/canopy-web-angular/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/canopy-stencil-angular/ng-package.json"
+            "project": "projects/canopy-web-angular/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/canopy-stencil-angular/tsconfig.lib.prod.json"
+              "tsConfig": "projects/canopy-web-angular/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/canopy-stencil-angular/tsconfig.lib.json"
+              "tsConfig": "projects/canopy-web-angular/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,9 +27,9 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/canopy-stencil-angular/src/test.ts",
-            "tsConfig": "projects/canopy-stencil-angular/tsconfig.spec.json",
-            "karmaConfig": "projects/canopy-stencil-angular/karma.conf.js"
+            "main": "projects/canopy-web-angular/src/test.ts",
+            "tsConfig": "projects/canopy-web-angular/tsconfig.spec.json",
+            "karmaConfig": "projects/canopy-web-angular/karma.conf.js"
           }
         }
       }

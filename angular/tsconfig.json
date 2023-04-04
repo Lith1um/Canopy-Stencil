@@ -4,8 +4,8 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "canopy-stencil-angular": [
-        "dist/canopy-stencil-angular"
+      "canopy-web-angular": [
+        "dist/canopy-web-angular"
       ]
     },
     "outDir": "./dist/out-tsc",

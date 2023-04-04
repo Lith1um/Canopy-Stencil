@@ -1,12 +1,12 @@
 (function () {
-  document.getElementById('angular-comp-install-module').code = `import { CanopyStencilModule } from 'canopy-stencil-angular';
-import { defineCustomElements } from 'canopy-stencil-web/loader';
+  document.getElementById('angular-comp-install-module').code = `import { CanopyAngularModule } from '@canopy-web/angular';
+import { defineCustomElements } from '@canopy-web/core/loader';
 
 defineCustomElements();
 
 @NgModule({
   imports: [
-    CanopyStencilModule,
+    CanopyAngularModule,
     ...
   ],
   ...
@@ -15,13 +15,13 @@ defineCustomElements();
   document.getElementById('angular-comp-install-assets').code = `"assets": [
   {
     "glob": "**/*",
-    "input": "node_modules/canopy-stencil-web/dist/canopy-stencil-web/webfonts",
+    "input": "node_modules/@canopy-web/core/dist/core/webfonts",
     "output": "/webfonts/"
   },
   ...
 ],
 "styles": [
-  "node_modules/canopy-stencil-web/dist/canopy-stencil-web/canopy-stencil-web.css",
+  "node_modules/@canopy-web/core/dist/core/core.css",
   ...
 ],
 ...`;
