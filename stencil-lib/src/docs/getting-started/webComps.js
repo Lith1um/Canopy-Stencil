@@ -9,7 +9,7 @@
 
   document.getElementById('web-comp-install-unpkg-html').code = `<script
   type="module"
-  src="https://unpkg.com/@canopy-web/core@latest/dist/core/core.esm.js">
+  src="https://unpkg.com/@canopy-web/core">
 </script>
 <link
   rel="stylesheet"

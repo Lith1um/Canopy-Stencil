@@ -79,6 +79,7 @@ export namespace Components {
         "code": string;
         "header": any;
         "language": CodeLanguage;
+        "showCode": boolean;
     }
     interface CpyCodeSnippet {
         "code": string;
@@ -718,6 +719,7 @@ declare namespace LocalJSX {
         "code"?: string;
         "header"?: any;
         "language"?: CodeLanguage;
+        "showCode"?: boolean;
     }
     interface CpyCodeSnippet {
         "code"?: string;
