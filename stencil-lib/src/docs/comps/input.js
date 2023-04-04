@@ -21,7 +21,7 @@ type Validators = Array<string | ValidatorEntry | Validator<string | number>>;`;
     { name: 'placeholder', description: 'Input placeholder', type: "string", default: "", required: false }
   ];
   document.getElementById('comp-events').tableData = [
-    { name: 'valueChange', description: 'Triggered when the text input value is changed', emitsType: "string" },
+    { name: 'valueChange', description: 'Triggered when the text input value is changed', emitsType: "string | number" },
   ];
   document.getElementById('comp-methods').tableData = [
     { name: 'isValid()', description: 'Returns validation result for the input', returnType: "Promise<boolean>" },

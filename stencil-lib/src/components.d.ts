@@ -149,13 +149,31 @@ export namespace Components {
         "value": string | number;
     }
     interface CpyInputBase {
+        "closePopup": () => Promise<void>;
         "disabled": boolean;
         "error": string;
         "interacted": boolean;
         "label": string;
         "noContainer": boolean;
+        "popup": boolean;
         "required": boolean;
         "size": InputSize;
+    }
+    interface CpyInputSelect {
+        "disabled": boolean;
+        "isValid": () => Promise<boolean>;
+        "label": string;
+        "markAsTouched": () => Promise<void>;
+        "required": boolean;
+        "size": InputSize;
+        "validators": Array<string | ValidatorEntry | Validator<string | number>>;
+        "value": string | number;
+    }
+    interface CpyInputSelectOption {
+        "active": boolean;
+        "label": string;
+        "size": InputSize;
+        "value": string | number;
     }
     interface CpyInputToggle {
         "disabled": boolean;
@@ -196,8 +214,12 @@ export namespace Components {
     }
     interface CpyPopup {
         "activeOn": PopupActiveOn;
+        "disabled": boolean;
+        "hide": () => Promise<void>;
         "position": PopupPosition;
         "recalculatePosition": () => Promise<void>;
+        "show": () => Promise<void>;
+        "stretch": boolean;
     }
     interface CpyProgressBar {
         "border": boolean;
@@ -289,6 +311,18 @@ export interface CpyInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyInputElement;
 }
+export interface CpyInputBaseCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyInputBaseElement;
+}
+export interface CpyInputSelectCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyInputSelectElement;
+}
+export interface CpyInputSelectOptionCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyInputSelectOptionElement;
+}
 export interface CpyInputToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyInputToggleElement;
@@ -300,6 +334,10 @@ export interface CpyNavMenuItemCustomEvent<T> extends CustomEvent<T> {
 export interface CpyOverlayCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyOverlayElement;
+}
+export interface CpyPopupCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyPopupElement;
 }
 export interface CpyTabHeaderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -452,6 +490,18 @@ declare global {
         prototype: HTMLCpyInputBaseElement;
         new (): HTMLCpyInputBaseElement;
     };
+    interface HTMLCpyInputSelectElement extends Components.CpyInputSelect, HTMLStencilElement {
+    }
+    var HTMLCpyInputSelectElement: {
+        prototype: HTMLCpyInputSelectElement;
+        new (): HTMLCpyInputSelectElement;
+    };
+    interface HTMLCpyInputSelectOptionElement extends Components.CpyInputSelectOption, HTMLStencilElement {
+    }
+    var HTMLCpyInputSelectOptionElement: {
+        prototype: HTMLCpyInputSelectOptionElement;
+        new (): HTMLCpyInputSelectOptionElement;
+    };
     interface HTMLCpyInputToggleElement extends Components.CpyInputToggle, HTMLStencilElement {
     }
     var HTMLCpyInputToggleElement: {
@@ -596,6 +646,8 @@ declare global {
         "cpy-icon": HTMLCpyIconElement;
         "cpy-input": HTMLCpyInputElement;
         "cpy-input-base": HTMLCpyInputBaseElement;
+        "cpy-input-select": HTMLCpyInputSelectElement;
+        "cpy-input-select-option": HTMLCpyInputSelectOptionElement;
         "cpy-input-toggle": HTMLCpyInputToggleElement;
         "cpy-link": HTMLCpyLinkElement;
         "cpy-nav-menu": HTMLCpyNavMenuElement;
@@ -737,8 +789,26 @@ declare namespace LocalJSX {
         "interacted"?: boolean;
         "label"?: string;
         "noContainer"?: boolean;
+        "onPopupClosed"?: (event: CpyInputBaseCustomEvent<void>) => void;
+        "popup"?: boolean;
         "required"?: boolean;
         "size"?: InputSize;
+    }
+    interface CpyInputSelect {
+        "disabled"?: boolean;
+        "label"?: string;
+        "onValueChange"?: (event: CpyInputSelectCustomEvent<string | number>) => void;
+        "required"?: boolean;
+        "size"?: InputSize;
+        "validators"?: Array<string | ValidatorEntry | Validator<string | number>>;
+        "value"?: string | number;
+    }
+    interface CpyInputSelectOption {
+        "active"?: boolean;
+        "label"?: string;
+        "onOptionSelected"?: (event: CpyInputSelectOptionCustomEvent<string | number>) => void;
+        "size"?: InputSize;
+        "value"?: string | number;
     }
     interface CpyInputToggle {
         "disabled"?: boolean;
@@ -778,7 +848,11 @@ declare namespace LocalJSX {
     }
     interface CpyPopup {
         "activeOn"?: PopupActiveOn;
+        "disabled"?: boolean;
+        "onClosed"?: (event: CpyPopupCustomEvent<void>) => void;
+        "onOpened"?: (event: CpyPopupCustomEvent<void>) => void;
         "position"?: PopupPosition;
+        "stretch"?: boolean;
     }
     interface CpyProgressBar {
         "border"?: boolean;
@@ -861,6 +935,8 @@ declare namespace LocalJSX {
         "cpy-icon": CpyIcon;
         "cpy-input": CpyInput;
         "cpy-input-base": CpyInputBase;
+        "cpy-input-select": CpyInputSelect;
+        "cpy-input-select-option": CpyInputSelectOption;
         "cpy-input-toggle": CpyInputToggle;
         "cpy-link": CpyLink;
         "cpy-nav-menu": CpyNavMenu;
@@ -910,6 +986,8 @@ declare module "@stencil/core" {
             "cpy-icon": LocalJSX.CpyIcon & JSXBase.HTMLAttributes<HTMLCpyIconElement>;
             "cpy-input": LocalJSX.CpyInput & JSXBase.HTMLAttributes<HTMLCpyInputElement>;
             "cpy-input-base": LocalJSX.CpyInputBase & JSXBase.HTMLAttributes<HTMLCpyInputBaseElement>;
+            "cpy-input-select": LocalJSX.CpyInputSelect & JSXBase.HTMLAttributes<HTMLCpyInputSelectElement>;
+            "cpy-input-select-option": LocalJSX.CpyInputSelectOption & JSXBase.HTMLAttributes<HTMLCpyInputSelectOptionElement>;
             "cpy-input-toggle": LocalJSX.CpyInputToggle & JSXBase.HTMLAttributes<HTMLCpyInputToggleElement>;
             "cpy-link": LocalJSX.CpyLink & JSXBase.HTMLAttributes<HTMLCpyLinkElement>;
             "cpy-nav-menu": LocalJSX.CpyNavMenu & JSXBase.HTMLAttributes<HTMLCpyNavMenuElement>;

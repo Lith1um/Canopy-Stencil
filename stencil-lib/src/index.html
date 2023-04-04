@@ -89,7 +89,7 @@
             <cpy-icon style="color: white;">format_color_fill</cpy-icon>
           </cpy-button>
 
-          <div slot="content" style="width: 250px; text-align: left; border-radius: 0.25rem; overflow: hidden; font-size: 0.875rem;">
+          <div slot="content" style="width: 250px; text-align: left; border-radius: 0.25rem; font-size: 0.875rem;">
             <div style="display: flex; gap: 1rem; align-items: center; padding: 12px;">
               <cpy-avatar size="x-large" src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
               <div style="flex: 1;">
@@ -97,15 +97,20 @@
                 <p style="margin: 0; font-size: 0.75rem;">Front End Developer</p>
               </div>
             </div>
-            <div style="background-color: var(--cpy-bg-medium); padding: 12px; display: flex; align-items: center; justify-content: space-between;">
+            <div style="background-color: var(--cpy-bg-medium); padding: 12px; display: flex; align-items: center; gap: 1rem;">
               <cpy-input-toggle id="darkModeCheckbox" size="small" label="Dark mode"></cpy-input-toggle>
-              <div>
+              <cpy-input-select id="palette-picker" size="small" style="flex: 1;">
+                <cpy-input-select-option label="Purple" value="purple"></cpy-input-select-option>
+                <cpy-input-select-option label="Blue" value="blue"></cpy-input-select-option>
+                <cpy-input-select-option label="Lime" value="lime"></cpy-input-select-option>
+              </cpy-input-select>
+              <!-- <div>
                 <select id="palette-picker" style="color: black;">
                   <option value="purple">Purple</option>
                   <option value="blue">Blue</option>
                   <option value="lime">Lime</option>
                 </select>
-              </div>
+              </div> -->
             </div>
           </div>
         </cpy-popup>
@@ -140,9 +145,9 @@
     const darkModeCheckbox = document.getElementById('darkModeCheckbox');
     const paletteElement = document.getElementById('palette-picker');
     paletteElement.value = currentPalette;
-    paletteElement.addEventListener('change', () => {
+    paletteElement.addEventListener('valueChange', (e) => {
       document.querySelector("html").classList.toggle(currentPalette);
-      document.querySelector("html").classList.add(paletteElement.value);
+      document.querySelector("html").classList.add(e.detail);
       currentPalette = paletteElement.value;
     });
     const onMenuClick = () => drawerElement.opened = !drawerElement.opened;

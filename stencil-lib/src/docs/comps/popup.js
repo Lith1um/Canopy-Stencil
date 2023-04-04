@@ -32,47 +32,19 @@ type PopupActiveOn = 'hover' | 'click';`;
   document.getElementById('comp-props').tableData = [
     { name: 'active-on', description: 'What triggers the popup to show', type: "PopupActiveOn", default: "'click'", required: false },
     { name: 'position', description: 'The position of the popup relative to the element it is linked with', type: "PopupPosition", default: "'bottom-start'", required: false },
+    { name: 'stretch', description: 'Whether the popup stretches to the bounds of the attached node', type: "boolean", default: "false", required: false },
+    { name: 'disabled', description: 'Whether the popup is disabled', type: "boolean", default: "false", required: false },
+  ];
+  document.getElementById('comp-events').tableData = [
+    { name: 'opened', description: 'Triggers when the popup is closed', emitsType: '' },
+    { name: 'closed', description: 'Triggers when the popup is opened', emitsType: '' },
+  ];
+  document.getElementById('comp-methods').tableData = [
+    { name: 'show()', description: 'Shows the popup', returnType: '' },
+    { name: 'hide()', description: 'Hides the popup', returnType: '' },
+    { name: 'recalculatePosition()', description: 'Recalculates the position of the popup to ensure it is visible on the page if the parent moves (used internally)', returnType: '' },
   ];
   document.getElementById('comp-slots').tableData = [
-    { slotName: "-- (default)", purpose: 'Content the popup attaches to' },
-    { slotName: "'content'", purpose: 'Contents of the popup' },
-  ];
-})();
-
-(function () {
-  document.getElementById('popup-test').items = [
-    { title: 'Option 1', icon: 'home', separator: true },
-    {
-      title: 'Group of options', description: 'hover this to show more options', children: [
-        { title: 'Option 1', icon: 'chat_bubble' },
-        { title: 'Option 2', icon: 'menu' },
-        { title: 'Option 3', icon: 'refresh' },
-        { title: 'Option 4', icon: 'smart_button' },
-        { title: 'Option 5', icon: 'warning' },
-      ]
-    }
-  ];
-
-  document.getElementById('popup-html-example').code = `<cpy-popup>
-  <!-- slotted content for popup to attach to -->
-  <cpy-button icon>
-    <cpy-icon>info</cpy-icon>
-  </cpy-button>
-  <!-- slot for popup content to point at -->
-  <div slot="content">
-    <img src="logo.png" alt="Logo" width="60" style="margin: 0 auto; padding: 8px 0;">
-    <div style="padding: 8px; background-color: var(--cpy-bg-primary); color: white; border-radius: 0 0 4px 4px;">
-      This is a customised popup
-    </div>
-  </div>
-</cpy-popup>`;
-
-  document.getElementById('popup-props').tableData = [
-    { name: 'active-on', description: 'What triggers the popup to show', type: "'click' | 'hover'", default: "'click'", required: false },
-    { name: 'position', description: 'The position of the popup relative to the element it is linked with', type: "'bottom-start' | 'left-start' | 'right-start' | 'top-start'", default: "'bottom-start'", required: false },
-  ];
-
-  document.getElementById('popup-slots').tableData = [
     { slotName: "-- (default)", purpose: 'Content the popup attaches to' },
     { slotName: "'content'", purpose: 'Contents of the popup' },
   ];
