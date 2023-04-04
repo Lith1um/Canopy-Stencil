@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/lith1um/Canopy-Stencil">
-    <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="140">
+    <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo-alt.png" alt="Logo" width="140">
   </a>
 
   <h3 align="center">Canopy - Angular</h3>
