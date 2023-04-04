@@ -3,22 +3,30 @@
 }
 
 .popup {
-  @apply inline-flex items-center justify-center relative;
+  @apply relative;
 
   &--click-container {
-    @apply cursor-pointer inline-flex;
+    @apply cursor-pointer;
   }
 
-  &--dropdown {
+  &__dropdown {
     @apply rounded-[0.25rem] opacity-0 absolute invisible w-max z-50 shadow-md;
     background-color: var(--cpy-bg-white);
     color: var(--cpy-text-base);
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+
+    &--stretch-x {
+      @apply w-full max-w-full;
+    }
+
+    &--stretch-y {
+      @apply h-full max-h-full;
+    }
   }
 
   &--allow-hover {
     &:hover {
-      .popup--dropdown {
+      .popup__dropdown {
         opacity: 1;
         visibility: visible;
       }
@@ -26,7 +34,7 @@
   }
 
   &--show {
-    .popup--dropdown {
+    .popup__dropdown {
       opacity: 1;
       visibility: visible;
     }

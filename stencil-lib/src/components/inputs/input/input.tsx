@@ -96,14 +96,14 @@ export class Input implements BaseInput<string | number> {
   }
 
   render() {
-    const error = this.interacted && !this._validator.validate(this.value)
+    const error = !this._validator.validate(this.value)
       ? this._validator.errorMessage
       : '';
 
     const classes = {
       'input': true,
       'input--disabled': this.disabled,
-      'input--invalid': !!error,
+      'input--invalid': this.interacted && !!error,
       [`input--${this.size}`]: !!this.size
     };
 
@@ -112,7 +112,7 @@ export class Input implements BaseInput<string | number> {
       'input__label--required': this.required
     };
 
-    return (
+    return [
       <label class={classes}>
         <div class={labelClasses}>
           {this.label}
@@ -132,9 +132,9 @@ export class Input implements BaseInput<string | number> {
 
           <slot name='suffix'/>
         </div>
-
-        {!this.disabled && error && <div class="input__errors">{error}</div>}
-      </label>
-    );
+      </label>,
+      !this.disabled && this.interacted && error
+        && <div class='input__errors'>{error}</div>
+    ];
   }
 }

@@ -1,0 +1,15 @@
+.input-select-option {
+  @apply p-2 leading-6;
+
+  &:hover, &--active {
+    background-color: var(--cpy-bg-hover);
+  }
+
+  &--small {
+    @apply p-1.5 leading-5 text-sm;
+  }
+
+  &--large {
+    @apply p-2.5 leading-7 text-lg;
+  }
+}

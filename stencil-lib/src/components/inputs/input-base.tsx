@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Method, Prop } from '@stencil/core';
 import { InputSize } from './types/input-size.type';
 
 @Component({
@@ -29,11 +29,26 @@ export class InputBase {
   @Prop()
   error: string;
 
+  @Prop()
+  popup: boolean = false;
+
+  @Event()
+  popupClosed: EventEmitter<void>;
+
+  @Method()
+  async closePopup(): Promise<void> {
+    if (this.popup) {
+      this.popupElem.hide();
+    }
+  }
+
+  popupElem: HTMLCpyPopupElement;
+
   render() {
     const classes = {
       'input-base': true,
       'input-base--disabled': this.disabled,
-      'input-base--invalid': !!this.error,
+      'input-base--invalid': this.interacted && !!this.error,
       [`input-base--${this.size}`]: !!this.size,
       [`input-base--no-container`]: this.noContainer
     };
@@ -43,25 +58,45 @@ export class InputBase {
       'input-base__label--required': this.required
     };
 
-    return (
+    return [
       <label class={classes}>
         {this.label && <div class={labelClasses}>
           {this.label}
         </div>}
 
-        <div class='input-base__container'>
-          <slot name='prefix'/>
+        {this.popup
+          ? <cpy-popup
+              style={{display: 'block'}}
+              stretch={true}
+              disabled={this.disabled}
+              ref={(el) => this.popupElem = el as HTMLCpyPopupElement}
+              onClosed={() => this.popupClosed.emit()}>
+              <div class='input-base__container' tabindex={this.disabled ? -1 : 0}>
+                <slot name='prefix'/>
 
-          <div class='input-base__input'>
-            <slot/>
-          </div>
+                <div class='input-base__input'>
+                  <slot/>
+                </div>
 
-          <slot name='suffix'/>
-        </div>
+                <slot name='suffix'/>
+              </div>
 
-        {!this.disabled && this.interacted && this.error
-          && <div class='input-base__errors'>{this.error}</div>}
-      </label>
-    );
+              <div slot='content' class='input-base__dropdown'>
+                <slot name='popup-content'/>
+              </div>
+            </cpy-popup>
+          : <div class='input-base__container' tabindex={this.disabled ? -1 : 0}>
+              <slot name='prefix'/>
+
+              <div class='input-base__input'>
+                <slot/>
+              </div>
+
+              <slot name='suffix'/>
+            </div>}
+      </label>,
+      !this.disabled && this.interacted && this.error
+        && <div class='input-base__errors'>{this.error}</div>
+    ];
   }
 }
