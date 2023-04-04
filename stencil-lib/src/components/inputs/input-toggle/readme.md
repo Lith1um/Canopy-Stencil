@@ -58,6 +58,7 @@ Type: `Promise<void>`
 ```mermaid
 graph TD;
   cpy-input-toggle --> cpy-input-base
+  cpy-input-base --> cpy-popup
   style cpy-input-toggle fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

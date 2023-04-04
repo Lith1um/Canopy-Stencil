@@ -529,23 +529,88 @@ export class CpyInput {
 }
 
 
-export declare interface CpyInputBase extends Components.CpyInputBase {}
+export declare interface CpyInputBase extends Components.CpyInputBase {
+  /**
+   *  
+   */
+  popupClosed: EventEmitter<CustomEvent<void>>;
+
+}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['disabled', 'error', 'interacted', 'label', 'noContainer', 'required', 'size']
+  inputs: ['disabled', 'error', 'interacted', 'label', 'noContainer', 'popup', 'required', 'size'],
+  methods: ['closePopup']
 })
 @Component({
   selector: 'cpy-input-base',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'error', 'interacted', 'label', 'noContainer', 'required', 'size']
+  inputs: ['disabled', 'error', 'interacted', 'label', 'noContainer', 'popup', 'required', 'size']
 })
 export class CpyInputBase {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['popupClosed']);
+  }
+}
+
+
+export declare interface CpyInputSelect extends Components.CpyInputSelect {
+  /**
+   *  
+   */
+  valueChange: EventEmitter<CustomEvent<string | number>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['disabled', 'label', 'required', 'size', 'validators', 'value'],
+  methods: ['isValid', 'markAsTouched']
+})
+@Component({
+  selector: 'cpy-input-select',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['disabled', 'label', 'required', 'size', 'validators', 'value']
+})
+export class CpyInputSelect {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['valueChange']);
+  }
+}
+
+
+export declare interface CpyInputSelectOption extends Components.CpyInputSelectOption {
+  /**
+   *  
+   */
+  optionSelected: EventEmitter<CustomEvent<string | number>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['active', 'label', 'size', 'value']
+})
+@Component({
+  selector: 'cpy-input-select-option',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['active', 'label', 'size', 'value']
+})
+export class CpyInputSelectOption {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['optionSelected']);
   }
 }
 
@@ -722,24 +787,35 @@ export class CpyPageContent {
 }
 
 
-export declare interface CpyPopup extends Components.CpyPopup {}
+export declare interface CpyPopup extends Components.CpyPopup {
+  /**
+   *  
+   */
+  opened: EventEmitter<CustomEvent<void>>;
+  /**
+   *  
+   */
+  closed: EventEmitter<CustomEvent<void>>;
+
+}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['activeOn', 'position'],
-  methods: ['recalculatePosition']
+  inputs: ['activeOn', 'disabled', 'position', 'stretch'],
+  methods: ['show', 'hide', 'recalculatePosition']
 })
 @Component({
   selector: 'cpy-popup',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeOn', 'position']
+  inputs: ['activeOn', 'disabled', 'position', 'stretch']
 })
 export class CpyPopup {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['opened', 'closed']);
   }
 }
 
