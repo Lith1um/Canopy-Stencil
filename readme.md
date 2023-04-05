@@ -21,6 +21,7 @@
   </a>
 
   <h3 align="center">Canopy</h3>
+  <p align="center">Elevate your UI to new heights.</p>
 
   <p align="center">
     A UI library built on <a href="https://stenciljs.com/" target="_blank">Stencil</a>.
@@ -29,7 +30,7 @@
     Originally built to facilitate building UIs with as minimal effort as possible across multiple frontend technologies.
     <br />
     <br />
-    <a href="https://lith1um.github.io/" target="_blank">Check out a working demo!</a>
+    <a href="https://lith1um.github.io/" target="_blank">Check out the docs!</a>
     <br />
     Built in vanilla HTML and JS with Canopy web components.
     <br />
@@ -67,13 +68,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The purpose of Canopy is to provide a strong set of UI tools built using web components, allowing it to be used anywhere on the web, by anyone. By using [Stencil](https://stenciljs.com/) as the backbone for components, Canopy can be built for individual frontend frameworks, allowing Developers to use Canopy as they would any native component library.
+Introducing the latest addition to the world of front-end UI libraries: a powerful and flexible solution built with Stencil! This cutting-edge library is designed to make it easier than ever to create beautiful, interactive web interfaces that are both highly functional and visually stunning.
 
-Here's why I think you should consider using this package:
-* Your time should be focused on creating something amazing, not worrying about building common UI
-* You shouldn't be doing the same tasks over and over like designing new components from scratch
-* Learn one library, then use it again and again no matter the technology you build your app with!
+With its intuitive API and robust set of components, this Stencil-based library offers developers an unparalleled level of control and flexibility over their UI designs. Whether you're building a simple web app or a complex enterprise-level application, this library has everything you need to create an amazing user experience.
 
+One of the key advantages of this Stencil-based UI library is its ability to seamlessly integrate with a wide range of other web technologies, including popular front-end frameworks like React, Angular, and Vue. This makes it incredibly easy to incorporate into your existing workflow, without having to make major changes to your development process.
+
+So if you're looking for a powerful, flexible, and easy-to-use front-end UI library that can help you create stunning web interfaces in less time, look no further than this amazing new solution built with Stencil!
 
 ### Support
 
@@ -99,7 +100,9 @@ This covers the basic install, but extended configuration can be setup to overri
 
 ### Colours
 
-Personally I think canopy is already using the best colour palette you could ever want but I understand it may not fit your needs. Through the use of the `:root` selector in css, you can override almost every colour in the library (current colours are based on [tailwind](https://tailwindcss.com/docs/customizing-colors)). Below is the simplest example of overriding colours (replacing primary colour on light and dark mode):
+Colors play an essential role in the design and user experience of a web application. They can evoke emotions, convey information, and enhance the overall look and feel of the interface. Choosing the right color palette is crucial for creating a visually appealing and effective design that meets the needs of your users.
+
+Through the use of the `:root` selector in css, you can override almost every colour in the library (current colours are based on [tailwind](https://tailwindcss.com/docs/customizing-colors)). Below is the simplest example of overriding colours (replacing primary colour on light and dark mode):
 
 ```css
   html {
@@ -116,6 +119,14 @@ Personally I think canopy is already using the best colour palette you could eve
   }
 ```
 
+Colors and other styles can also be overridden at a component level, by setting the relevant css variables on the component tag:
+
+```html
+<cpy-link style="--cpy-link-color: violet;">
+  link<cpy-icon>launch</cpy-icon>
+</cpy-link>
+```
+
 Some colours (mainly background colours) are set as rgb values without the `rgb()` container, since they are often manipulated within components to modify their opacity.
 
 A full list of the configurable colours is below (along with their defaulted values):
@@ -127,6 +138,8 @@ A full list of the configurable colours is below (along with their defaulted val
   --cpy-dm-text-override: currentColor;
 
   --cpy-bg-hover: rgba(0, 0, 0, 0.05);
+  --cpy-bg-overlay: rgba(0, 0, 0, 0.5);
+  --cpy-bg-splash: rgba(0, 0, 0, 0.3);
 
   /* based on tailwind colours */
   --cpy-bg-light-rgb: 250, 250, 250; /* zinc-50 */
@@ -161,11 +174,6 @@ A full list of the configurable colours is below (along with their defaulted val
   --cpy-text-success: rgb(21, 128, 61); /* green-700 */
   --cpy-text-warn: rgb(180, 83, 9); /* amber-700 */
   --cpy-text-error: rgb(185, 28, 28); /* red-700 */
-  
-  --cpy-tooltip-bg: var(--cpy-bg-dark);
-  --cpy-tooltip-text: var(--cpy-bg-white);
-  --cpy-progress-bar-bg: var(--cpy-bg-primary);
-  --cpy-comment-author-text: var(--cpy-text-primary);
 }
 ```
 
@@ -230,18 +238,9 @@ If you want to use a different method to checking for a dark class on the HTML t
 <!-- ROADMAP -->
 ## Roadmap
 
-- Minor fixes
-- Components
-  - [ ] Form inputs
-  - [ ] Ghost Components?
-  - [ ] Grid layouts
-- [ ] Figure out how to let the breakpoints be configurable
-- [ ] Accessibility
-- [ ] Keyboard events for components?
-- [ ] Look into using css variables to override component colours
-- [ ] Look into using host css to allow for custom styling (and the part attr. selector?)
+Check out the upcoming work for Canopy [here](./documentation/todos.md)
 
-See the <a href="https://github.com/lith1um/Canopy-Stencil/issues" target="_blank">open issues</a> for a full list of proposed features (and known issues).
+See the <a href="https://github.com/lith1um/Canopy-Stencil/issues" target="_blank">open issues</a>.
 
 <!-- CONTRIBUTING -->
 ## Contributing
