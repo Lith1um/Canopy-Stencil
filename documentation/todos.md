@@ -32,3 +32,4 @@
 - Improve customising of splash comp
 - Fix tabs arrow buttons
 - Add input base docs
+- Think about removing the weird color scheme of rgb values that facilitate opacity setting. This is probably unnecessary as only the button uses it?
