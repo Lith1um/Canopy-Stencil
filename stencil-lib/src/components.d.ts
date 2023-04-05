@@ -87,6 +87,7 @@ export namespace Components {
     }
     interface CpyComment {
         "comment": CommentItem;
+        "hideAvatar": boolean;
         "maxLines": number;
         "rightAligned": boolean;
         "showLessText": string;
@@ -727,6 +728,7 @@ declare namespace LocalJSX {
     }
     interface CpyComment {
         "comment"?: CommentItem;
+        "hideAvatar"?: boolean;
         "maxLines"?: number;
         "rightAligned"?: boolean;
         "showLessText"?: string;
