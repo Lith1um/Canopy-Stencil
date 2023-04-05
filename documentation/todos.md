@@ -1,7 +1,7 @@
 ## TODOs
 - Components
 	- Ghost Components?
-  - Grid layouts
+  	- Grid layouts
 	- horizontal nav bar
 	- inputs
     - textarea
