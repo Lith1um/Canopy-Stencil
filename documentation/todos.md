@@ -4,7 +4,7 @@
   	- Grid layouts
 	- horizontal nav bar
 	- inputs
-    - textarea
+    	- textarea
 		- checkbox
 		- radio
 		- datepicker
