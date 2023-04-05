@@ -1,6 +1,6 @@
 {
   "name": "angular",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "description": "Canopy Web Components for Angular",
   "scripts": {
     "ng": "ng",
@@ -30,7 +30,7 @@
     "@angular-devkit/build-angular": "^15.2.4",
     "@angular/cli": "~15.2.4",
     "@angular/compiler-cli": "^15.2.5",
-    "@canopy-web/core": "^0.2.13",
+    "@canopy-web/core": "^0.2.14",
     "@types/jasmine": "~4.0.0",
     "jasmine-core": "~4.1.0",
     "karma": "~6.3.0",
