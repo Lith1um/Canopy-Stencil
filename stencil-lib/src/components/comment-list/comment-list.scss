@@ -1,0 +1,7 @@
+:host {
+  @apply block;
+}
+
+cpy-comment:not(:last-child) {
+  @apply mb-8;
+}

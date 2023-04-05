@@ -65,6 +65,7 @@ const menuItems = navMenuElement.items = [
     title: 'User Interface', type: 'group', description: 'Building blocks of websites', children: [
     { title: 'Layout', icon: 'dashboard', type: 'collapsible', description: 'Common UI layouts', children: [
       { title: 'Carousel', type: 'basic', url: '/comps/carousel' },
+      { title: 'Comment List', type: 'basic', url: '/comps/commentList' },
       { title: 'Drawer Container', type: 'basic', url: '/comps/drawer' },
       { title: 'Navigation Menu', type: 'basic', url: '/comps/navMenu' },
       { title: 'Overlay', type: 'basic', url: '/comps/overlay' },

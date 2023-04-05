@@ -152,7 +152,7 @@
   date?: string;
   imageUrl?: string;
   text: string;
-}
+};
 
 type CommentSize = 'small' | 'default' | 'large';
 
