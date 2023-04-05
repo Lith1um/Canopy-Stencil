@@ -230,18 +230,9 @@ If you want to use a different method to checking for a dark class on the HTML t
 <!-- ROADMAP -->
 ## Roadmap
 
-- Minor fixes
-- Components
-  - [ ] Form inputs
-  - [ ] Ghost Components?
-  - [ ] Grid layouts
-- [ ] Figure out how to let the breakpoints be configurable
-- [ ] Accessibility
-- [ ] Keyboard events for components?
-- [ ] Look into using css variables to override component colours
-- [ ] Look into using host css to allow for custom styling (and the part attr. selector?)
+Check out the upcoming work for Canopy [here](./documentation/todos.md)
 
-See the <a href="https://github.com/lith1um/Canopy-Stencil/issues" target="_blank">open issues</a> for a full list of proposed features (and known issues).
+See the <a href="https://github.com/lith1um/Canopy-Stencil/issues" target="_blank">open issues</a>.
 
 <!-- CONTRIBUTING -->
 ## Contributing

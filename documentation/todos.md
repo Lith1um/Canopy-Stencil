@@ -1,7 +1,10 @@
 ## TODOs
 - Components
+	- Ghost Components?
+  - Grid layouts
 	- horizontal nav bar
 	- inputs
+    - textarea
 		- checkbox
 		- radio
 		- datepicker
@@ -21,6 +24,7 @@
 	- grids
 	- marketing style components (...shudders)
 	- more drawer options/configurations
+
 - Keyboard events
 - Accessibility
 - Change component dom structure such that styles like margin/padding can be overridden
