@@ -1,19 +1,19 @@
 <cpy-page-container>
-  <h1>Comments</h1>
+  <h1>Comment Lists</h1>
 
   <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
     <!-- Overview -->
     <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
     <cpy-tab-content slot="content">
-      <cpy-page-content contents-title="Comment">
+      <cpy-page-content contents-title="Comment List">
         <p>
-          Canopy comments are a stylised way to display a comment that provides a way for discussion and user feedback to
-          take place. They are referenced using the <cpy-code-snippet code="<cpy-comment>"></cpy-code-snippet> custom HTML
+          Canopy comment lists are a stylised way to display a conversation that provides a way for discussion and user feedback to
+          take place. They are referenced using the <cpy-code-snippet code="<cpy-comment-list>"></cpy-code-snippet> custom HTML
           element.
         </p>
 
-        <cpy-code-example header="Comment" id="overview-code">
-<cpy-comment id="overview-comment" max-lines="2"></cpy-comment>
+        <cpy-code-example header="Comment List" id="overview-code">
+<cpy-comment-list id="overview-comment-list"></cpy-comment-list>
         </cpy-code-example>
         
         <h4 id="examples">Custom Styles</h4>
@@ -32,7 +32,7 @@
 
         <h4 id="accessibility">Accessibility</h4>
         <p>
-          Comments serve a wide variety of scenarios and may contain many different types of content. Due to this flexible nature, the appropriate accessibility treatment depends on how you use <cpy-code-snippet code="<cpy-comment>"></cpy-code-snippet>.
+          Comment Lists serve a wide variety of scenarios and may contain many different types of content. Due to this flexible nature, the appropriate accessibility treatment depends on how you use <cpy-code-snippet code="<cpy-comment-list>"></cpy-code-snippet>.
         </p>
       </cpy-page-content>
     </cpy-tab-content>
@@ -40,9 +40,9 @@
     <!-- API -->
     <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
     <cpy-tab-content slot="content">
-      <cpy-page-content contents-title="Comment">
-        <h4 id="api" title="API">API Reference for Canopy Comment</h4>
-        <cpy-code-snippet code="<cpy-comment>"></cpy-code-snippet>
+      <cpy-page-content contents-title="Comment List">
+        <h4 id="api" title="API">API Reference for Canopy Comment List</h4>
+        <cpy-code-snippet code="<cpy-comment-list>"></cpy-code-snippet>
 
         <div class="section">
         </div>
@@ -60,40 +60,33 @@
     <!-- Examples -->
     <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
     <cpy-tab-content slot="content">
-      <cpy-code-example header="Basic comment" id="example-code">
-        <cpy-comment id="example-comment"></cpy-comment>
+      <cpy-code-example header="Basic comment List" id="example-code">
+        <cpy-comment-list id="example-list"></cpy-comment-list>
       </cpy-code-example>
-      <cpy-code-example header="Comment with max lines" id="example-code-2">
-        <cpy-comment id="example-comment-2" max-lines="2"></cpy-comment>
+      <cpy-code-example header="Comment list with max lines" id="example-code-2">
+        <cpy-comment-list id="example-list-2" max-lines="2"></cpy-comment-list>
       </cpy-code-example>
-      <cpy-code-example header="Comment with no image but has author" id="example-code-10">
-        <cpy-comment id="example-comment-10"></cpy-comment>
+      <cpy-code-example header="Comment list with no image but has author" id="example-code-3">
+        <cpy-comment-list id="example-list-3"></cpy-comment-list>
       </cpy-code-example>
-      <cpy-code-example header="Comment with author name but no image" id="example-code-11">
-        <cpy-comment id="example-comment-11" hide-avatar></cpy-comment>
+      <cpy-code-example header="Comment list with author name but no image" id="example-code-4">
+        <cpy-comment-list id="example-list-4" hide-avatar></cpy-comment-list>
       </cpy-code-example>
-      <cpy-code-example header="Comment with all data set" id="example-code-3">
-        <cpy-comment id="example-comment-3"></cpy-comment>
+      <cpy-code-example header="Small comment list" id="example-code-5">
+        <cpy-comment-list id="example-list-5" size="small"></cpy-comment-list>
       </cpy-code-example>
-      <cpy-code-example header="Small comment" id="example-code-4">
-        <cpy-comment id="example-comment-4" size="small"></cpy-comment>
+      <cpy-code-example header="Large comment list" id="example-code-6">
+        <cpy-comment-list id="example-list-6" size="large"></cpy-comment-list>
       </cpy-code-example>
-      <cpy-code-example header="Large comment" id="example-code-5">
-        <cpy-comment id="example-comment-5" size="large"></cpy-comment>
+      <cpy-code-example header="Right aligned comment list" id="example-code-7">
+        <cpy-comment-list id="example-list-7" right-aligned></cpy-comment-list>
       </cpy-code-example>
-      <cpy-code-example header="Right aligned comment" id="example-code-6">
-        <cpy-comment id="example-comment-6" right-aligned></cpy-comment>
-      </cpy-code-example>
-      <cpy-code-example header="Alternate comment types" id="example-code-7">
-        <cpy-comment id="example-comment-7" type="secondary"></cpy-comment>
-        <cpy-comment id="example-comment-8" type="basic"></cpy-comment>
-      </cpy-code-example>
-      <cpy-code-example header="Custom comment" id="example-code-8">
-        <cpy-comment id="example-comment-9" style="--cpy-comment-color: var(--cpy-text-warn);" max-lines="2" show-more-text="More" show-less-text="Less"></cpy-comment>
+      <cpy-code-example header="Custom comment list" id="example-code-8">
+        <cpy-comment-list id="example-list-8" style="--cpy-comment-color: var(--cpy-text-warn);" max-lines="2" show-more-text="More" show-less-text="Less"></cpy-comment-list>
       </cpy-code-example>
     </cpy-tab-content>
   </cpy-tabs>
 </cpy-page-container>
 
-<script src="/docs/comps/comment.js">
+<script src="/docs/comps/commentList.js">
 </script>

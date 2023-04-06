@@ -5,6 +5,7 @@ import { CommentSize, CommentType } from './types/comment-size.type';
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import { getUserLocale } from '../../utils/user-locale';
+import { acronym } from '../../utils/string';
 
 @Component({
   tag: 'cpy-comment',
@@ -18,6 +19,8 @@ export class Comment {
   @Prop() rightAligned: boolean = false;
 
   @Prop() maxLines: number = null;
+
+  @Prop() hideAvatar: boolean = false;
 
   @Prop() size: CommentSize = 'default';
 
@@ -57,7 +60,12 @@ export class Comment {
 
     return (
       <div class={classes}>
-        {this.comment.imageUrl && <cpy-avatar size={this.avatarSizeMap[this.size]} src={this.comment.imageUrl}></cpy-avatar>}
+        {!this.hideAvatar && (this.comment.imageUrl || this.comment.author) &&
+          <cpy-avatar
+            size={this.avatarSizeMap[this.size]}
+            src={this.comment.imageUrl}
+            initials={acronym(this.comment.author)}>
+          </cpy-avatar>}
 
         <div class='comment__bubble'>
           {this.comment.author && <div class='comment__author'>{this.comment.author}</div>}

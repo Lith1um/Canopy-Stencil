@@ -1,6 +1,6 @@
 (function () {  
   document.getElementById('comp-styles').tableData = [
-    { cssVariable: '--cpy-code-snippet-bg', description: 'Background color for the snippet', defaultValue: '--cpy-bg-hover' },
+    { cssVariable: '--cpy-code-snippet-bg', description: 'Background color for the snippet', defaultValue: '--cpy-bg-medium' },
   ];
 
   document.getElementById('comp-props').tableData = [

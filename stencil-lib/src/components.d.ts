@@ -87,6 +87,17 @@ export namespace Components {
     }
     interface CpyComment {
         "comment": CommentItem;
+        "hideAvatar": boolean;
+        "maxLines": number;
+        "rightAligned": boolean;
+        "showLessText": string;
+        "showMoreText": string;
+        "size": CommentSize;
+        "type": CommentType;
+    }
+    interface CpyCommentList {
+        "comments": CommentItem[];
+        "hideAvatar": boolean;
         "maxLines": number;
         "rightAligned": boolean;
         "showLessText": string;
@@ -419,6 +430,12 @@ declare global {
         prototype: HTMLCpyCommentElement;
         new (): HTMLCpyCommentElement;
     };
+    interface HTMLCpyCommentListElement extends Components.CpyCommentList, HTMLStencilElement {
+    }
+    var HTMLCpyCommentListElement: {
+        prototype: HTMLCpyCommentListElement;
+        new (): HTMLCpyCommentListElement;
+    };
     interface HTMLCpyContentsListElement extends Components.CpyContentsList, HTMLStencilElement {
     }
     var HTMLCpyContentsListElement: {
@@ -635,6 +652,7 @@ declare global {
         "cpy-code-example": HTMLCpyCodeExampleElement;
         "cpy-code-snippet": HTMLCpyCodeSnippetElement;
         "cpy-comment": HTMLCpyCommentElement;
+        "cpy-comment-list": HTMLCpyCommentListElement;
         "cpy-contents-list": HTMLCpyContentsListElement;
         "cpy-contents-list-item": HTMLCpyContentsListItemElement;
         "cpy-context-menu": HTMLCpyContextMenuElement;
@@ -727,6 +745,17 @@ declare namespace LocalJSX {
     }
     interface CpyComment {
         "comment"?: CommentItem;
+        "hideAvatar"?: boolean;
+        "maxLines"?: number;
+        "rightAligned"?: boolean;
+        "showLessText"?: string;
+        "showMoreText"?: string;
+        "size"?: CommentSize;
+        "type"?: CommentType;
+    }
+    interface CpyCommentList {
+        "comments"?: CommentItem[];
+        "hideAvatar"?: boolean;
         "maxLines"?: number;
         "rightAligned"?: boolean;
         "showLessText"?: string;
@@ -925,6 +954,7 @@ declare namespace LocalJSX {
         "cpy-code-example": CpyCodeExample;
         "cpy-code-snippet": CpyCodeSnippet;
         "cpy-comment": CpyComment;
+        "cpy-comment-list": CpyCommentList;
         "cpy-contents-list": CpyContentsList;
         "cpy-contents-list-item": CpyContentsListItem;
         "cpy-context-menu": CpyContextMenu;
@@ -976,6 +1006,7 @@ declare module "@stencil/core" {
             "cpy-code-example": LocalJSX.CpyCodeExample & JSXBase.HTMLAttributes<HTMLCpyCodeExampleElement>;
             "cpy-code-snippet": LocalJSX.CpyCodeSnippet & JSXBase.HTMLAttributes<HTMLCpyCodeSnippetElement>;
             "cpy-comment": LocalJSX.CpyComment & JSXBase.HTMLAttributes<HTMLCpyCommentElement>;
+            "cpy-comment-list": LocalJSX.CpyCommentList & JSXBase.HTMLAttributes<HTMLCpyCommentListElement>;
             "cpy-contents-list": LocalJSX.CpyContentsList & JSXBase.HTMLAttributes<HTMLCpyContentsListElement>;
             "cpy-contents-list-item": LocalJSX.CpyContentsListItem & JSXBase.HTMLAttributes<HTMLCpyContentsListItemElement>;
             "cpy-context-menu": LocalJSX.CpyContextMenu & JSXBase.HTMLAttributes<HTMLCpyContextMenuElement>;
