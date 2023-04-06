@@ -60,7 +60,30 @@
     <!-- Examples -->
     <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
     <cpy-tab-content slot="content">
-
+      <cpy-code-example header="Basic comment List" id="example-code">
+        <cpy-comment-list id="example-list"></cpy-comment-list>
+      </cpy-code-example>
+      <cpy-code-example header="Comment list with max lines" id="example-code-2">
+        <cpy-comment-list id="example-list-2" max-lines="2"></cpy-comment-list>
+      </cpy-code-example>
+      <cpy-code-example header="Comment list with no image but has author" id="example-code-3">
+        <cpy-comment-list id="example-list-3"></cpy-comment-list>
+      </cpy-code-example>
+      <cpy-code-example header="Comment list with author name but no image" id="example-code-4">
+        <cpy-comment-list id="example-list-4" hide-avatar></cpy-comment-list>
+      </cpy-code-example>
+      <cpy-code-example header="Small comment list" id="example-code-5">
+        <cpy-comment-list id="example-list-5" size="small"></cpy-comment-list>
+      </cpy-code-example>
+      <cpy-code-example header="Large comment list" id="example-code-6">
+        <cpy-comment-list id="example-list-6" size="large"></cpy-comment-list>
+      </cpy-code-example>
+      <cpy-code-example header="Right aligned comment list" id="example-code-7">
+        <cpy-comment-list id="example-list-7" right-aligned></cpy-comment-list>
+      </cpy-code-example>
+      <cpy-code-example header="Custom comment list" id="example-code-8">
+        <cpy-comment-list id="example-list-8" style="--cpy-comment-color: var(--cpy-text-warn);" max-lines="2" show-more-text="More" show-less-text="Less"></cpy-comment-list>
+      </cpy-code-example>
     </cpy-tab-content>
   </cpy-tabs>
 </cpy-page-container>

@@ -33,12 +33,10 @@ export class ShowMore {
   componentDidLoad(): void {
     if (this.lines) {
       this.resize = onResize(this.showMoreTextElem, () => {
-        if (this.expanded) {
-          this.showMoreButtonElem.style.display = 'inline';
-        } else if (this.showMoreTextElem.scrollHeight <= this.showMoreTextElem.clientHeight) {
+        if (!this.expanded && this.showMoreTextElem.scrollHeight <= this.showMoreTextElem.clientHeight) {
           this.showMoreButtonElem.style.display = 'none';
         } else {
-          this.showMoreButtonElem.style.display = 'unset';
+          this.showMoreButtonElem.style.display = 'inline-flex';
         }
       });
     }
