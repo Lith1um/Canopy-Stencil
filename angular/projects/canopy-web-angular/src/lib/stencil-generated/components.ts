@@ -555,6 +555,10 @@ export declare interface CpyInputBase extends Components.CpyInputBase {
    *  
    */
   popupClosed: EventEmitter<CustomEvent<void>>;
+  /**
+   *  
+   */
+  labelClicked: EventEmitter<CustomEvent<void>>;
 
 }
 
@@ -574,7 +578,7 @@ export class CpyInputBase {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['popupClosed']);
+    proxyOutputs(this, this.el, ['popupClosed', 'labelClicked']);
   }
 }
 
@@ -632,6 +636,35 @@ export class CpyInputSelectOption {
     c.detach();
     this.el = r.nativeElement;
     proxyOutputs(this, this.el, ['optionSelected']);
+  }
+}
+
+
+export declare interface CpyInputTextarea extends Components.CpyInputTextarea {
+  /**
+   *  
+   */
+  valueChange: EventEmitter<CustomEvent<string>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['disabled', 'label', 'maxRows', 'placeholder', 'required', 'size', 'validators', 'value'],
+  methods: ['isValid', 'markAsTouched']
+})
+@Component({
+  selector: 'cpy-input-textarea',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['disabled', 'label', 'maxRows', 'placeholder', 'required', 'size', 'validators', 'value']
+})
+export class CpyInputTextarea {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['valueChange']);
   }
 }
 

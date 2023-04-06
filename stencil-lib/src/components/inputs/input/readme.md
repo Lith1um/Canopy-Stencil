@@ -49,6 +49,20 @@ Type: `Promise<void>`
 
 
 
+## Dependencies
+
+### Depends on
+
+- [cpy-input-base](..)
+
+### Graph
+```mermaid
+graph TD;
+  cpy-input --> cpy-input-base
+  cpy-input-base --> cpy-popup
+  style cpy-input fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

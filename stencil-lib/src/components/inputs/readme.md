@@ -21,9 +21,10 @@
 
 ## Events
 
-| Event         | Description | Type                |
-| ------------- | ----------- | ------------------- |
-| `popupClosed` |             | `CustomEvent<void>` |
+| Event          | Description | Type                |
+| -------------- | ----------- | ------------------- |
+| `labelClicked` |             | `CustomEvent<void>` |
+| `popupClosed`  |             | `CustomEvent<void>` |
 
 
 ## Methods
@@ -43,7 +44,9 @@ Type: `Promise<void>`
 
 ### Used by
 
+ - [cpy-input](input)
  - [cpy-input-select](input-select)
+ - [cpy-input-textarea](input-textarea)
  - [cpy-input-toggle](input-toggle)
 
 ### Depends on
@@ -54,7 +57,9 @@ Type: `Promise<void>`
 ```mermaid
 graph TD;
   cpy-input-base --> cpy-popup
+  cpy-input --> cpy-input-base
   cpy-input-select --> cpy-input-base
+  cpy-input-textarea --> cpy-input-base
   cpy-input-toggle --> cpy-input-base
   style cpy-input-base fill:#f9f,stroke:#333,stroke-width:4px
 ```
