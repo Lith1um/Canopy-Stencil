@@ -13,6 +13,7 @@ export const DIRECTIVES = [
   d.CpyCodeExample,
   d.CpyCodeSnippet,
   d.CpyComment,
+  d.CpyCommentList,
   d.CpyContentsList,
   d.CpyContentsListItem,
   d.CpyContextMenu,

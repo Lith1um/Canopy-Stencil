@@ -1,4 +1,4 @@
-# cpy-comment
+# cpy-comment-list
 
 
 
@@ -9,7 +9,7 @@
 
 | Property       | Attribute        | Description | Type                                  | Default     |
 | -------------- | ---------------- | ----------- | ------------------------------------- | ----------- |
-| `comment`      | --               |             | `CommentItem`                         | `undefined` |
+| `comments`     | --               |             | `CommentItem[]`                       | `undefined` |
 | `hideAvatar`   | `hide-avatar`    |             | `boolean`                             | `false`     |
 | `maxLines`     | `max-lines`      |             | `number`                              | `null`      |
 | `rightAligned` | `right-aligned`  |             | `boolean`                             | `false`     |
@@ -21,23 +21,18 @@
 
 ## Dependencies
 
-### Used by
-
- - [cpy-comment-list](../comment-list)
-
 ### Depends on
 
-- [cpy-avatar](../avatar)
-- [cpy-show-more](../show-more)
+- [cpy-comment](../comment)
 
 ### Graph
 ```mermaid
 graph TD;
+  cpy-comment-list --> cpy-comment
   cpy-comment --> cpy-avatar
   cpy-comment --> cpy-show-more
   cpy-show-more --> cpy-link
-  cpy-comment-list --> cpy-comment
-  style cpy-comment fill:#f9f,stroke:#333,stroke-width:4px
+  style cpy-comment-list fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

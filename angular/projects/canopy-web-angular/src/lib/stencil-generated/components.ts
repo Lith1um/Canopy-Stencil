@@ -235,15 +235,36 @@ export declare interface CpyComment extends Components.CpyComment {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['comment', 'maxLines', 'rightAligned', 'showLessText', 'showMoreText', 'size', 'type']
+  inputs: ['comment', 'hideAvatar', 'maxLines', 'rightAligned', 'showLessText', 'showMoreText', 'size', 'type']
 })
 @Component({
   selector: 'cpy-comment',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['comment', 'maxLines', 'rightAligned', 'showLessText', 'showMoreText', 'size', 'type']
+  inputs: ['comment', 'hideAvatar', 'maxLines', 'rightAligned', 'showLessText', 'showMoreText', 'size', 'type']
 })
 export class CpyComment {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface CpyCommentList extends Components.CpyCommentList {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['comments', 'hideAvatar', 'maxLines', 'rightAligned', 'showLessText', 'showMoreText', 'size', 'type']
+})
+@Component({
+  selector: 'cpy-comment-list',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['comments', 'hideAvatar', 'maxLines', 'rightAligned', 'showLessText', 'showMoreText', 'size', 'type']
+})
+export class CpyCommentList {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
