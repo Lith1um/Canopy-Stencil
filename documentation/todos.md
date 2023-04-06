@@ -27,6 +27,3 @@
 - Add all prop types to type section of comp docs
 - Improve customising of splash comp
 - Add input base docs
-
-
-- Think about removing the weird color scheme of rgb values that facilitate opacity setting. This is probably unnecessary as only the button uses it?
