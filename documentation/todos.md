@@ -7,7 +7,7 @@
 		- radio
 		- datepicker
 		- time
-		- colour
+		- color
 		- slider
 	- form group?
 	- carousel: change arrow location

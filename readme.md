@@ -55,7 +55,7 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#colours">Colours</a></li>
+        <li><a href="#colors">Colors</a></li>
         <li><a href="#dark-mode">Dark Mode</a></li>
       </ul>
     </li>
@@ -98,11 +98,11 @@ Depending on your apps implementation, you can use the links below to get starte
 
 This covers the basic install, but extended configuration can be setup to override Canopy to your liking.
 
-### Colours
+### Colors
 
 Colors play an essential role in the design and user experience of a web application. They can evoke emotions, convey information, and enhance the overall look and feel of the interface. Choosing the right color palette is crucial for creating a visually appealing and effective design that meets the needs of your users.
 
-Through the use of the `:root` selector in css, you can override almost every colour in the library (current colours are based on [tailwind](https://tailwindcss.com/docs/customizing-colors)). Below is the simplest example of overriding colours (replacing primary colour on light and dark mode):
+Through the use of the `:root` selector in css, you can override almost every color in the library (current colors are based on [tailwind](https://tailwindcss.com/docs/customizing-colors)). Below is the simplest example of overriding colors (replacing primary color on light and dark mode):
 
 ```css
   html {
@@ -127,7 +127,7 @@ Colors and other styles can also be overridden at a component level, by setting 
 </cpy-link>
 ```
 
-A full list of the configurable colours is below (along with their defaulted values):
+A full list of the configurable colors is below (along with their defaulted values):
 
 ```css
 :root {
@@ -186,7 +186,7 @@ A full list of the configurable colours is below (along with their defaulted val
 
 ### Dark Mode
 
-By default, Canopy looks for a `dark` class on the HTML tag to determine if the colour palette should switch to dark mode, however this is easily configurable for your needs. Similarly to the main colour palette, you can override any dark mode colours:
+By default, Canopy looks for a `dark` class on the HTML tag to determine if the color palette should switch to dark mode, however this is easily configurable for your needs. Similarly to the main color palette, you can override any dark mode colors:
 
 ```css
 html.dark {
@@ -243,7 +243,7 @@ html.dark {
 }
 ```
 
-If you want to use a different method to checking for a dark class on the HTML tag, you can include your own css to set the colour variables. For example, if you want to use dark mode when the user has requested it in their browser settings, replace the html wrapper for your variables with:
+If you want to use a different method to checking for a dark class on the HTML tag, you can include your own css to set the color variables. For example, if you want to use dark mode when the user has requested it in their browser settings, replace the html wrapper for your variables with:
 
 ```css
 @media (prefers-color-scheme: dark) {
