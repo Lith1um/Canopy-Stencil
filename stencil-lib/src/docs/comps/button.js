@@ -1,6 +1,8 @@
 (function () {  
   document.getElementById('comp-styles').tableData = [
-    { cssVariable: '', description: '', defaultValue: '' },
+    { cssVariable: '--cpy-button-text', description: 'Button text color', defaultValue: 'white (for fill style, type color otherwise)' },
+    { cssVariable: '--cpy-button-bg', description: 'Button background color', defaultValue: '--cpy-bg-primary' },
+    { cssVariable: '--cpy-button-bg-hover', description: 'Button background color on hover', defaultValue: '--cpy-bg-hover' },
   ];
 
   document.getElementById('comp-interfaces').code = `type ButtonAppearance =
@@ -27,6 +29,9 @@ export type ButtonSize =
     { name: 'icon', description: 'If the button is only for an icon', type: 'boolean', default: "false", required: false },
     { name: 'size', description: 'Size of the button', type: "ButtonSize", default: "'default'", required: false },
     { name: 'type', description: 'Color scheme of the button', type: "ButtonAppearance", default: "'primary'", required: false }
+  ];
+  document.getElementById('comp-events').tableData = [
+    { name: 'buttonClicked', description: 'Triggers when the button is clicked', emitsType: '' },
   ];
   document.getElementById('comp-slots').tableData = [
     { slotName: "-- (default)", purpose: 'Contents of the button' }
