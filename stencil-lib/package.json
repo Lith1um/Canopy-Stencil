@@ -1,6 +1,6 @@
 {
   "name": "@canopy-web/core",
-  "version": "0.2.17",
+  "version": "0.3.0",
   "description": "Canopy Web Components",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -26,9 +26,9 @@
     "generate": "stencil generate"
   },
   "devDependencies": {
-    "@stencil/angular-output-target": "^0.4.0",
-    "@stencil/core": "^2.13.0",
-    "@stencil/sass": "^2.0.1",
+    "@stencil/angular-output-target": "^0.6.0",
+    "@stencil/core": "^3.2.0",
+    "@stencil/sass": "^3.0.0",
     "@types/jest": "^27.0.3",
     "jest": "^27.4.5",
     "jest-cli": "^27.4.5",

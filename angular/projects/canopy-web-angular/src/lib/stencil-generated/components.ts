@@ -1,23 +1,13 @@
 /* tslint:disable */
 /* auto-generated angular directive proxies */
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, NgZone } from '@angular/core';
+
 import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
 
 import { Components } from '@canopy-web/core';
 
 
-
-
-export declare interface CpyAccordion extends Components.CpyAccordion {
-  /**
-   *  
-   */
-  accordionOpened: EventEmitter<CustomEvent<void>>;
-
-}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['headerTitle', 'opened', 'size'],
   methods: ['open', 'close', 'toggle']
 })
@@ -25,7 +15,8 @@ export declare interface CpyAccordion extends Components.CpyAccordion {
   selector: 'cpy-accordion',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['headerTitle', 'opened', 'size']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['headerTitle', 'opened', 'size'],
 })
 export class CpyAccordion {
   protected el: HTMLElement;
@@ -37,23 +28,21 @@ export class CpyAccordion {
 }
 
 
-export declare interface CpyAlert extends Components.CpyAlert {
-  /**
-   *  
-   */
-  closed: EventEmitter<CustomEvent<void>>;
+export declare interface CpyAccordion extends Components.CpyAccordion {
 
+  accordionOpened: EventEmitter<CustomEvent<void>>;
 }
 
+
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['appearance', 'container', 'dismissible', 'icon', 'type']
 })
 @Component({
   selector: 'cpy-alert',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['appearance', 'container', 'dismissible', 'icon', 'type']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['appearance', 'container', 'dismissible', 'icon', 'type'],
 })
 export class CpyAlert {
   protected el: HTMLElement;
@@ -65,17 +54,21 @@ export class CpyAlert {
 }
 
 
-export declare interface CpyAvatar extends Components.CpyAvatar {}
+export declare interface CpyAlert extends Components.CpyAlert {
+
+  closed: EventEmitter<CustomEvent<void>>;
+}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['border', 'initials', 'size', 'src', 'type']
 })
 @Component({
   selector: 'cpy-avatar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['border', 'initials', 'size', 'src', 'type']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['border', 'initials', 'size', 'src', 'type'],
 })
 export class CpyAvatar {
   protected el: HTMLElement;
@@ -86,17 +79,18 @@ export class CpyAvatar {
 }
 
 
-export declare interface CpyBadge extends Components.CpyBadge {}
+export declare interface CpyAvatar extends Components.CpyAvatar {}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['appearance', 'block', 'size', 'type']
 })
 @Component({
   selector: 'cpy-badge',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['appearance', 'block', 'size', 'type']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['appearance', 'block', 'size', 'type'],
 })
 export class CpyBadge {
   protected el: HTMLElement;
@@ -107,23 +101,18 @@ export class CpyBadge {
 }
 
 
-export declare interface CpyButton extends Components.CpyButton {
-  /**
-   *  
-   */
-  buttonClicked: EventEmitter<CustomEvent<void>>;
+export declare interface CpyBadge extends Components.CpyBadge {}
 
-}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['appearance', 'disabled', 'icon', 'size', 'type']
 })
 @Component({
   selector: 'cpy-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['appearance', 'disabled', 'icon', 'size', 'type']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['appearance', 'disabled', 'icon', 'size', 'type'],
 })
 export class CpyButton {
   protected el: HTMLElement;
@@ -135,15 +124,20 @@ export class CpyButton {
 }
 
 
-export declare interface CpyCard extends Components.CpyCard {}
+export declare interface CpyButton extends Components.CpyButton {
+
+  buttonClicked: EventEmitter<CustomEvent<void>>;
+}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined
 })
 @Component({
   selector: 'cpy-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>'
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: [],
 })
 export class CpyCard {
   protected el: HTMLElement;
@@ -154,17 +148,18 @@ export class CpyCard {
 }
 
 
-export declare interface CpyCarousel extends Components.CpyCarousel {}
+export declare interface CpyCard extends Components.CpyCard {}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['carouselTitle']
 })
 @Component({
   selector: 'cpy-carousel',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['carouselTitle']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['carouselTitle'],
 })
 export class CpyCarousel {
   protected el: HTMLElement;
@@ -175,17 +170,18 @@ export class CpyCarousel {
 }
 
 
-export declare interface CpyCodeBlock extends Components.CpyCodeBlock {}
+export declare interface CpyCarousel extends Components.CpyCarousel {}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['code', 'language']
 })
 @Component({
   selector: 'cpy-code-block',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['code', 'language']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['code', 'language'],
 })
 export class CpyCodeBlock {
   protected el: HTMLElement;
@@ -196,17 +192,18 @@ export class CpyCodeBlock {
 }
 
 
-export declare interface CpyCodeExample extends Components.CpyCodeExample {}
+export declare interface CpyCodeBlock extends Components.CpyCodeBlock {}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['code', 'header', 'language', 'showCode']
 })
 @Component({
   selector: 'cpy-code-example',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['code', 'header', 'language', 'showCode']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['code', 'header', 'language', 'showCode'],
 })
 export class CpyCodeExample {
   protected el: HTMLElement;
@@ -217,17 +214,18 @@ export class CpyCodeExample {
 }
 
 
-export declare interface CpyCodeSnippet extends Components.CpyCodeSnippet {}
+export declare interface CpyCodeExample extends Components.CpyCodeExample {}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['code', 'quotes']
 })
 @Component({
   selector: 'cpy-code-snippet',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['code', 'quotes']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['code', 'quotes'],
 })
 export class CpyCodeSnippet {
   protected el: HTMLElement;
@@ -238,17 +236,18 @@ export class CpyCodeSnippet {
 }
 
 
-export declare interface CpyComment extends Components.CpyComment {}
+export declare interface CpyCodeSnippet extends Components.CpyCodeSnippet {}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['comment', 'hideAvatar', 'maxLines', 'rightAligned', 'showLessText', 'showMoreText', 'size', 'type']
 })
 @Component({
   selector: 'cpy-comment',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['comment', 'hideAvatar', 'maxLines', 'rightAligned', 'showLessText', 'showMoreText', 'size', 'type']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['comment', 'hideAvatar', 'maxLines', 'rightAligned', 'showLessText', 'showMoreText', 'size', 'type'],
 })
 export class CpyComment {
   protected el: HTMLElement;
@@ -259,17 +258,18 @@ export class CpyComment {
 }
 
 
-export declare interface CpyCommentList extends Components.CpyCommentList {}
+export declare interface CpyComment extends Components.CpyComment {}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['comments', 'hideAvatar', 'maxLines', 'rightAligned', 'showLessText', 'showMoreText', 'size', 'type']
 })
 @Component({
   selector: 'cpy-comment-list',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['comments', 'hideAvatar', 'maxLines', 'rightAligned', 'showLessText', 'showMoreText', 'size', 'type']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['comments', 'hideAvatar', 'maxLines', 'rightAligned', 'showLessText', 'showMoreText', 'size', 'type'],
 })
 export class CpyCommentList {
   protected el: HTMLElement;
@@ -280,17 +280,18 @@ export class CpyCommentList {
 }
 
 
-export declare interface CpyContentsList extends Components.CpyContentsList {}
+export declare interface CpyCommentList extends Components.CpyCommentList {}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['activeIndex', 'headerTitle', 'items']
 })
 @Component({
   selector: 'cpy-contents-list',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeIndex', 'headerTitle', 'items']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['activeIndex', 'headerTitle', 'items'],
 })
 export class CpyContentsList {
   protected el: HTMLElement;
@@ -301,23 +302,18 @@ export class CpyContentsList {
 }
 
 
-export declare interface CpyContentsListItem extends Components.CpyContentsListItem {
-  /**
-   *  
-   */
-  clicked: EventEmitter<CustomEvent<void>>;
+export declare interface CpyContentsList extends Components.CpyContentsList {}
 
-}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['active', 'item']
 })
 @Component({
   selector: 'cpy-contents-list-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['active', 'item']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['active', 'item'],
 })
 export class CpyContentsListItem {
   protected el: HTMLElement;
@@ -329,10 +325,13 @@ export class CpyContentsListItem {
 }
 
 
-export declare interface CpyContextMenu extends Components.CpyContextMenu {}
+export declare interface CpyContentsListItem extends Components.CpyContentsListItem {
+
+  clicked: EventEmitter<CustomEvent<void>>;
+}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['items'],
   methods: ['recalculatePosition']
 })
@@ -340,7 +339,8 @@ export declare interface CpyContextMenu extends Components.CpyContextMenu {}
   selector: 'cpy-context-menu',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['items']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['items'],
 })
 export class CpyContextMenu {
   protected el: HTMLElement;
@@ -351,10 +351,10 @@ export class CpyContextMenu {
 }
 
 
-export declare interface CpyContextMenuItem extends Components.CpyContextMenuItem {}
+export declare interface CpyContextMenu extends Components.CpyContextMenu {}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['item'],
   methods: ['recalculatePosition']
 })
@@ -362,7 +362,8 @@ export declare interface CpyContextMenuItem extends Components.CpyContextMenuIte
   selector: 'cpy-context-menu-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['item']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['item'],
 })
 export class CpyContextMenuItem {
   protected el: HTMLElement;
@@ -373,17 +374,18 @@ export class CpyContextMenuItem {
 }
 
 
-export declare interface CpyContextMenuTrigger extends Components.CpyContextMenuTrigger {}
+export declare interface CpyContextMenuItem extends Components.CpyContextMenuItem {}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['items']
 })
 @Component({
   selector: 'cpy-context-menu-trigger',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['items']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['items'],
 })
 export class CpyContextMenuTrigger {
   protected el: HTMLElement;
@@ -394,16 +396,10 @@ export class CpyContextMenuTrigger {
 }
 
 
-export declare interface CpyDialog extends Components.CpyDialog {
-  /**
-   *  
-   */
-  closed: EventEmitter<CustomEvent<void>>;
+export declare interface CpyContextMenuTrigger extends Components.CpyContextMenuTrigger {}
 
-}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['dialogTitle', 'size', 'zIndex'],
   methods: ['open', 'close']
 })
@@ -411,7 +407,8 @@ export declare interface CpyDialog extends Components.CpyDialog {
   selector: 'cpy-dialog',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['dialogTitle', 'size', 'zIndex']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['dialogTitle', 'size', 'zIndex'],
 })
 export class CpyDialog {
   protected el: HTMLElement;
@@ -423,23 +420,21 @@ export class CpyDialog {
 }
 
 
-export declare interface CpyDrawer extends Components.CpyDrawer {
-  /**
-   *  
-   */
-  toggleOpened: EventEmitter<CustomEvent<void>>;
+export declare interface CpyDialog extends Components.CpyDialog {
 
+  closed: EventEmitter<CustomEvent<void>>;
 }
 
+
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['opened']
 })
 @Component({
   selector: 'cpy-drawer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['opened']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['opened'],
 })
 export class CpyDrawer {
   protected el: HTMLElement;
@@ -451,16 +446,13 @@ export class CpyDrawer {
 }
 
 
-export declare interface CpyDrawerContainer extends Components.CpyDrawerContainer {
-  /**
-   *  
-   */
-  toggleDrawer: EventEmitter<CustomEvent<boolean>>;
+export declare interface CpyDrawer extends Components.CpyDrawer {
 
+  toggleOpened: EventEmitter<CustomEvent<void>>;
 }
 
+
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['opened'],
   methods: ['toggle']
 })
@@ -468,7 +460,8 @@ export declare interface CpyDrawerContainer extends Components.CpyDrawerContaine
   selector: 'cpy-drawer-container',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['opened']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['opened'],
 })
 export class CpyDrawerContainer {
   protected el: HTMLElement;
@@ -480,16 +473,13 @@ export class CpyDrawerContainer {
 }
 
 
-export declare interface CpyExpandCollapse extends Components.CpyExpandCollapse {
-  /**
-   *  
-   */
-  toggleExpanded: EventEmitter<CustomEvent<boolean>>;
+export declare interface CpyDrawerContainer extends Components.CpyDrawerContainer {
 
+  toggleDrawer: EventEmitter<CustomEvent<boolean>>;
 }
 
+
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['duration', 'expanded'],
   methods: ['expand', 'collapse', 'toggle']
 })
@@ -497,7 +487,8 @@ export declare interface CpyExpandCollapse extends Components.CpyExpandCollapse 
   selector: 'cpy-expand-collapse',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['duration', 'expanded']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['duration', 'expanded'],
 })
 export class CpyExpandCollapse {
   protected el: HTMLElement;
@@ -509,15 +500,20 @@ export class CpyExpandCollapse {
 }
 
 
-export declare interface CpyIcon extends Components.CpyIcon {}
+export declare interface CpyExpandCollapse extends Components.CpyExpandCollapse {
+
+  toggleExpanded: EventEmitter<CustomEvent<boolean>>;
+}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined
 })
 @Component({
   selector: 'cpy-icon',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>'
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: [],
 })
 export class CpyIcon {
   protected el: HTMLElement;
@@ -528,16 +524,10 @@ export class CpyIcon {
 }
 
 
-export declare interface CpyInput extends Components.CpyInput {
-  /**
-   *  
-   */
-  valueChange: EventEmitter<CustomEvent<string | number>>;
+export declare interface CpyIcon extends Components.CpyIcon {}
 
-}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['disabled', 'label', 'placeholder', 'required', 'size', 'type', 'validators', 'value'],
   methods: ['isValid', 'markAsTouched']
 })
@@ -545,7 +535,8 @@ export declare interface CpyInput extends Components.CpyInput {
   selector: 'cpy-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'label', 'placeholder', 'required', 'size', 'type', 'validators', 'value']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['disabled', 'label', 'placeholder', 'required', 'size', 'type', 'validators', 'value'],
 })
 export class CpyInput {
   protected el: HTMLElement;
@@ -557,20 +548,13 @@ export class CpyInput {
 }
 
 
-export declare interface CpyInputBase extends Components.CpyInputBase {
-  /**
-   *  
-   */
-  popupClosed: EventEmitter<CustomEvent<void>>;
-  /**
-   *  
-   */
-  labelClicked: EventEmitter<CustomEvent<void>>;
+export declare interface CpyInput extends Components.CpyInput {
 
+  valueChange: EventEmitter<CustomEvent<string | number>>;
 }
 
+
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['disabled', 'error', 'interacted', 'label', 'noContainer', 'popup', 'required', 'size'],
   methods: ['closePopup']
 })
@@ -578,7 +562,8 @@ export declare interface CpyInputBase extends Components.CpyInputBase {
   selector: 'cpy-input-base',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'error', 'interacted', 'label', 'noContainer', 'popup', 'required', 'size']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['disabled', 'error', 'interacted', 'label', 'noContainer', 'popup', 'required', 'size'],
 })
 export class CpyInputBase {
   protected el: HTMLElement;
@@ -590,16 +575,15 @@ export class CpyInputBase {
 }
 
 
-export declare interface CpyInputSelect extends Components.CpyInputSelect {
-  /**
-   *  
-   */
-  valueChange: EventEmitter<CustomEvent<string | number>>;
+export declare interface CpyInputBase extends Components.CpyInputBase {
 
+  popupClosed: EventEmitter<CustomEvent<void>>;
+
+  labelClicked: EventEmitter<CustomEvent<void>>;
 }
 
+
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['disabled', 'label', 'required', 'size', 'validators', 'value'],
   methods: ['isValid', 'markAsTouched']
 })
@@ -607,7 +591,8 @@ export declare interface CpyInputSelect extends Components.CpyInputSelect {
   selector: 'cpy-input-select',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'label', 'required', 'size', 'validators', 'value']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['disabled', 'label', 'required', 'size', 'validators', 'value'],
 })
 export class CpyInputSelect {
   protected el: HTMLElement;
@@ -619,23 +604,21 @@ export class CpyInputSelect {
 }
 
 
-export declare interface CpyInputSelectOption extends Components.CpyInputSelectOption {
-  /**
-   *  
-   */
-  optionSelected: EventEmitter<CustomEvent<string | number>>;
+export declare interface CpyInputSelect extends Components.CpyInputSelect {
 
+  valueChange: EventEmitter<CustomEvent<string | number>>;
 }
 
+
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['active', 'label', 'size', 'value']
 })
 @Component({
   selector: 'cpy-input-select-option',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['active', 'label', 'size', 'value']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['active', 'label', 'size', 'value'],
 })
 export class CpyInputSelectOption {
   protected el: HTMLElement;
@@ -647,16 +630,13 @@ export class CpyInputSelectOption {
 }
 
 
-export declare interface CpyInputTextarea extends Components.CpyInputTextarea {
-  /**
-   *  
-   */
-  valueChange: EventEmitter<CustomEvent<string>>;
+export declare interface CpyInputSelectOption extends Components.CpyInputSelectOption {
 
+  optionSelected: EventEmitter<CustomEvent<string | number>>;
 }
 
+
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['disabled', 'label', 'maxRows', 'placeholder', 'required', 'size', 'validators', 'value'],
   methods: ['isValid', 'markAsTouched']
 })
@@ -664,7 +644,8 @@ export declare interface CpyInputTextarea extends Components.CpyInputTextarea {
   selector: 'cpy-input-textarea',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'label', 'maxRows', 'placeholder', 'required', 'size', 'validators', 'value']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['disabled', 'label', 'maxRows', 'placeholder', 'required', 'size', 'validators', 'value'],
 })
 export class CpyInputTextarea {
   protected el: HTMLElement;
@@ -676,16 +657,13 @@ export class CpyInputTextarea {
 }
 
 
-export declare interface CpyInputToggle extends Components.CpyInputToggle {
-  /**
-   *  
-   */
-  valueChange: EventEmitter<CustomEvent<boolean>>;
+export declare interface CpyInputTextarea extends Components.CpyInputTextarea {
 
+  valueChange: EventEmitter<CustomEvent<string>>;
 }
 
+
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['disabled', 'label', 'required', 'size', 'switchAfter', 'validators', 'value'],
   methods: ['isValid', 'markAsTouched']
 })
@@ -693,7 +671,8 @@ export declare interface CpyInputToggle extends Components.CpyInputToggle {
   selector: 'cpy-input-toggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'label', 'required', 'size', 'switchAfter', 'validators', 'value']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['disabled', 'label', 'required', 'size', 'switchAfter', 'validators', 'value'],
 })
 export class CpyInputToggle {
   protected el: HTMLElement;
@@ -705,17 +684,21 @@ export class CpyInputToggle {
 }
 
 
-export declare interface CpyLink extends Components.CpyLink {}
+export declare interface CpyInputToggle extends Components.CpyInputToggle {
+
+  valueChange: EventEmitter<CustomEvent<boolean>>;
+}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['func', 'href', 'newTab', 'type']
 })
 @Component({
   selector: 'cpy-link',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['func', 'href', 'newTab', 'type']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['func', 'href', 'newTab', 'type'],
 })
 export class CpyLink {
   protected el: HTMLElement;
@@ -726,17 +709,18 @@ export class CpyLink {
 }
 
 
-export declare interface CpyNavMenu extends Components.CpyNavMenu {}
+export declare interface CpyLink extends Components.CpyLink {}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['items']
 })
 @Component({
   selector: 'cpy-nav-menu',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['items']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['items'],
 })
 export class CpyNavMenu {
   protected el: HTMLElement;
@@ -747,23 +731,18 @@ export class CpyNavMenu {
 }
 
 
-export declare interface CpyNavMenuItem extends Components.CpyNavMenuItem {
-  /**
-   *  
-   */
-  itemActive: EventEmitter<CustomEvent<void>>;
+export declare interface CpyNavMenu extends Components.CpyNavMenu {}
 
-}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['item']
 })
 @Component({
   selector: 'cpy-nav-menu-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['item']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['item'],
 })
 export class CpyNavMenuItem {
   protected el: HTMLElement;
@@ -775,20 +754,13 @@ export class CpyNavMenuItem {
 }
 
 
-export declare interface CpyOverlay extends Components.CpyOverlay {
-  /**
-   *  
-   */
-  closed: EventEmitter<CustomEvent<void>>;
-  /**
-   *  
-   */
-  backdropClick: EventEmitter<CustomEvent<void>>;
+export declare interface CpyNavMenuItem extends Components.CpyNavMenuItem {
 
+  itemActive: EventEmitter<CustomEvent<void>>;
 }
 
+
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['hasBackdropClick', 'show', 'zIndex'],
   methods: ['open', 'close', 'toggle']
 })
@@ -796,7 +768,8 @@ export declare interface CpyOverlay extends Components.CpyOverlay {
   selector: 'cpy-overlay',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['hasBackdropClick', 'show', 'zIndex']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['hasBackdropClick', 'show', 'zIndex'],
 })
 export class CpyOverlay {
   protected el: HTMLElement;
@@ -808,15 +781,22 @@ export class CpyOverlay {
 }
 
 
-export declare interface CpyPageContainer extends Components.CpyPageContainer {}
+export declare interface CpyOverlay extends Components.CpyOverlay {
+
+  closed: EventEmitter<CustomEvent<void>>;
+
+  backdropClick: EventEmitter<CustomEvent<void>>;
+}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined
 })
 @Component({
   selector: 'cpy-page-container',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>'
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: [],
 })
 export class CpyPageContainer {
   protected el: HTMLElement;
@@ -827,17 +807,18 @@ export class CpyPageContainer {
 }
 
 
-export declare interface CpyPageContent extends Components.CpyPageContent {}
+export declare interface CpyPageContainer extends Components.CpyPageContainer {}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['contentsTitle', 'hideContentsList']
 })
 @Component({
   selector: 'cpy-page-content',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['contentsTitle', 'hideContentsList']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['contentsTitle', 'hideContentsList'],
 })
 export class CpyPageContent {
   protected el: HTMLElement;
@@ -848,20 +829,10 @@ export class CpyPageContent {
 }
 
 
-export declare interface CpyPopup extends Components.CpyPopup {
-  /**
-   *  
-   */
-  opened: EventEmitter<CustomEvent<void>>;
-  /**
-   *  
-   */
-  closed: EventEmitter<CustomEvent<void>>;
+export declare interface CpyPageContent extends Components.CpyPageContent {}
 
-}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['activeOn', 'disabled', 'position', 'stretch'],
   methods: ['show', 'hide', 'recalculatePosition']
 })
@@ -869,7 +840,8 @@ export declare interface CpyPopup extends Components.CpyPopup {
   selector: 'cpy-popup',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeOn', 'disabled', 'position', 'stretch']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['activeOn', 'disabled', 'position', 'stretch'],
 })
 export class CpyPopup {
   protected el: HTMLElement;
@@ -881,17 +853,23 @@ export class CpyPopup {
 }
 
 
-export declare interface CpyProgressBar extends Components.CpyProgressBar {}
+export declare interface CpyPopup extends Components.CpyPopup {
+
+  opened: EventEmitter<CustomEvent<void>>;
+
+  closed: EventEmitter<CustomEvent<void>>;
+}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['border', 'indeterminate', 'size', 'type', 'value']
 })
 @Component({
   selector: 'cpy-progress-bar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['border', 'indeterminate', 'size', 'type', 'value']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['border', 'indeterminate', 'size', 'type', 'value'],
 })
 export class CpyProgressBar {
   protected el: HTMLElement;
@@ -902,17 +880,18 @@ export class CpyProgressBar {
 }
 
 
-export declare interface CpyShowMore extends Components.CpyShowMore {}
+export declare interface CpyProgressBar extends Components.CpyProgressBar {}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['lines', 'showLessText', 'showMoreText', 'text', 'type']
 })
 @Component({
   selector: 'cpy-show-more',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['lines', 'showLessText', 'showMoreText', 'text', 'type']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['lines', 'showLessText', 'showMoreText', 'text', 'type'],
 })
 export class CpyShowMore {
   protected el: HTMLElement;
@@ -923,17 +902,18 @@ export class CpyShowMore {
 }
 
 
-export declare interface CpySpinner extends Components.CpySpinner {}
+export declare interface CpyShowMore extends Components.CpyShowMore {}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size', 'type']
 })
 @Component({
   selector: 'cpy-spinner',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['size', 'type']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['size', 'type'],
 })
 export class CpySpinner {
   protected el: HTMLElement;
@@ -944,17 +924,18 @@ export class CpySpinner {
 }
 
 
-export declare interface CpySplash extends Components.CpySplash {}
+export declare interface CpySpinner extends Components.CpySpinner {}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['disabled']
 })
 @Component({
   selector: 'cpy-splash',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['disabled'],
 })
 export class CpySplash {
   protected el: HTMLElement;
@@ -965,17 +946,18 @@ export class CpySplash {
 }
 
 
-export declare interface CpyStack extends Components.CpyStack {}
+export declare interface CpySplash extends Components.CpySplash {}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['direction', 'overlap']
 })
 @Component({
   selector: 'cpy-stack',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['direction', 'overlap']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['direction', 'overlap'],
 })
 export class CpyStack {
   protected el: HTMLElement;
@@ -986,16 +968,18 @@ export class CpyStack {
 }
 
 
-export declare interface CpyTabContent extends Components.CpyTabContent {}
+export declare interface CpyStack extends Components.CpyStack {}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   methods: ['unselect', 'select']
 })
 @Component({
   selector: 'cpy-tab-content',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>'
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: [],
 })
 export class CpyTabContent {
   protected el: HTMLElement;
@@ -1006,23 +990,18 @@ export class CpyTabContent {
 }
 
 
-export declare interface CpyTabHeader extends Components.CpyTabHeader {
-  /**
-   *  
-   */
-  selected: EventEmitter<CustomEvent<string>>;
+export declare interface CpyTabContent extends Components.CpyTabContent {}
 
-}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['headerId', 'tabTitle']
 })
 @Component({
   selector: 'cpy-tab-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['headerId', 'tabTitle']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['headerId', 'tabTitle'],
 })
 export class CpyTabHeader {
   protected el: HTMLElement;
@@ -1034,17 +1013,21 @@ export class CpyTabHeader {
 }
 
 
-export declare interface CpyTable extends Components.CpyTable {}
+export declare interface CpyTabHeader extends Components.CpyTabHeader {
+
+  selected: EventEmitter<CustomEvent<string>>;
+}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['tableData']
 })
 @Component({
   selector: 'cpy-table',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['tableData']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['tableData'],
 })
 export class CpyTable {
   protected el: HTMLElement;
@@ -1055,23 +1038,18 @@ export class CpyTable {
 }
 
 
-export declare interface CpyTabs extends Components.CpyTabs {
-  /**
-   *  
-   */
-  tabChanged: EventEmitter<CustomEvent<number>>;
+export declare interface CpyTable extends Components.CpyTable {}
 
-}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['activeIndex']
 })
 @Component({
   selector: 'cpy-tabs',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeIndex']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['activeIndex'],
 })
 export class CpyTabs {
   protected el: HTMLElement;
@@ -1083,20 +1061,13 @@ export class CpyTabs {
 }
 
 
-export declare interface CpyToast extends Components.CpyToast {
-  /**
-   *  
-   */
-  closed: EventEmitter<CustomEvent<void>>;
-  /**
-   *  
-   */
-  opened: EventEmitter<CustomEvent<void>>;
+export declare interface CpyTabs extends Components.CpyTabs {
 
+  tabChanged: EventEmitter<CustomEvent<number>>;
 }
 
+
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['dismissible', 'duration', 'icon', 'position', 'toastTitle', 'type', 'zIndex'],
   methods: ['close', 'open']
 })
@@ -1104,7 +1075,8 @@ export declare interface CpyToast extends Components.CpyToast {
   selector: 'cpy-toast',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['dismissible', 'duration', 'icon', 'position', 'toastTitle', 'type', 'zIndex']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['dismissible', 'duration', 'icon', 'position', 'toastTitle', 'type', 'zIndex'],
 })
 export class CpyToast {
   protected el: HTMLElement;
@@ -1116,15 +1088,22 @@ export class CpyToast {
 }
 
 
-export declare interface CpyToolbar extends Components.CpyToolbar {}
+export declare interface CpyToast extends Components.CpyToast {
+
+  closed: EventEmitter<CustomEvent<void>>;
+
+  opened: EventEmitter<CustomEvent<void>>;
+}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined
 })
 @Component({
   selector: 'cpy-toolbar',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>'
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: [],
 })
 export class CpyToolbar {
   protected el: HTMLElement;
@@ -1135,17 +1114,18 @@ export class CpyToolbar {
 }
 
 
-export declare interface CpyTooltip extends Components.CpyTooltip {}
+export declare interface CpyToolbar extends Components.CpyToolbar {}
+
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['hideArrow', 'position', 'text']
 })
 @Component({
   selector: 'cpy-tooltip',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['hideArrow', 'position', 'text']
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['hideArrow', 'position', 'text'],
 })
 export class CpyTooltip {
   protected el: HTMLElement;
@@ -1154,3 +1134,8 @@ export class CpyTooltip {
     this.el = r.nativeElement;
   }
 }
+
+
+export declare interface CpyTooltip extends Components.CpyTooltip {}
+
+
