@@ -311,6 +311,10 @@ export interface CpyAlertCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyAlertElement;
 }
+export interface CpyButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyButtonElement;
+}
 export interface CpyContentsListItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyContentsListItemElement;
@@ -744,6 +748,7 @@ declare namespace LocalJSX {
         "appearance"?: ButtonStyle;
         "disabled"?: boolean;
         "icon"?: boolean;
+        "onButtonClicked"?: (event: CpyButtonCustomEvent<void>) => void;
         "size"?: ButtonSize;
         "type"?: ButtonAppearance;
     }

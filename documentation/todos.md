@@ -1,16 +1,13 @@
 ## TODOs
 - Components
 	- Ghost Components?
-  	- Grid layouts
 	- horizontal nav bar
 	- inputs
-    	- textarea
 		- checkbox
 		- radio
 		- datepicker
-		- select
 		- time
-		- colour
+		- color
 		- slider
 	- form group?
 	- carousel: change arrow location
@@ -18,7 +15,6 @@
 	- comments
 		- can reply prop
 		- support showing replies
-	- comment list
 	- breadcrumbs
 	- pagination
 	- grids
@@ -30,6 +26,4 @@
 - Change component dom structure such that styles like margin/padding can be overridden
 - Add all prop types to type section of comp docs
 - Improve customising of splash comp
-- Fix tabs arrow buttons
 - Add input base docs
-- Think about removing the weird color scheme of rgb values that facilitate opacity setting. This is probably unnecessary as only the button uses it?

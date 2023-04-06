@@ -4,3 +4,4 @@
 - Maybe remove tailwind?
 - could use zod for typechecking with form inputs?
 - Add all root styles used in each component to docs?
+- Should I split out the global styles into core/fonts/colors?

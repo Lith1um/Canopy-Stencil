@@ -18,6 +18,12 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
     event: 'valueChange',
     targetAttr: 'value',
     type: 'text',
+  },
+  {
+    elementSelectors: ['cpy-input-textarea'],
+    event: 'valueChange',
+    targetAttr: 'value',
+    type: 'text',
   }
 ];
 

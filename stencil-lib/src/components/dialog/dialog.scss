@@ -29,10 +29,6 @@
       }
     }
 
-    &-close {
-      color: var(--cpy-dm-text-override);
-    }
-
     &-content {
       @apply py-4 px-6 flex-1 overflow-x-auto;
     }
