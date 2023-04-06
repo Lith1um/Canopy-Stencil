@@ -1,6 +1,6 @@
 import { Component, Element, h, Prop, State } from '@stencil/core';
 import { ContentsListItem } from '../contents-list/contents-list.interface';
-import { getScrollParent } from '../../utils/elements';
+import { getScrollParent, onResize } from '../../utils/elements';
 
 @Component({
   tag: 'cpy-page-content',
@@ -101,8 +101,12 @@ export class PageContent {
     // scroll anything with the hash into view
     if (window.location.hash) {
       const anchor = this.headers.find(header => header.id === window.location.hash.substring(1));
-      // seems to fix scroll for tabs
-      setTimeout(() => anchor?.scrollIntoView(), 10);
+      if (anchor) {
+        onResize(anchor, (_, observer) => {
+          anchor.scrollIntoView();
+          observer.disconnect();
+        });
+      }
     }
   }
 
