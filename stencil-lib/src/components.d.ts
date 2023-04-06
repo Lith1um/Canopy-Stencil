@@ -187,6 +187,18 @@ export namespace Components {
         "size": InputSize;
         "value": string | number;
     }
+    interface CpyInputTextarea {
+        "disabled": boolean;
+        "isValid": () => Promise<boolean>;
+        "label": string;
+        "markAsTouched": () => Promise<void>;
+        "maxRows": number;
+        "placeholder": string;
+        "required": boolean;
+        "size": InputSize;
+        "validators": Array<string | ValidatorEntry | Validator<string>>;
+        "value": string;
+    }
     interface CpyInputToggle {
         "disabled": boolean;
         "isValid": () => Promise<boolean>;
@@ -334,6 +346,10 @@ export interface CpyInputSelectCustomEvent<T> extends CustomEvent<T> {
 export interface CpyInputSelectOptionCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyInputSelectOptionElement;
+}
+export interface CpyInputTextareaCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyInputTextareaElement;
 }
 export interface CpyInputToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -520,6 +536,12 @@ declare global {
         prototype: HTMLCpyInputSelectOptionElement;
         new (): HTMLCpyInputSelectOptionElement;
     };
+    interface HTMLCpyInputTextareaElement extends Components.CpyInputTextarea, HTMLStencilElement {
+    }
+    var HTMLCpyInputTextareaElement: {
+        prototype: HTMLCpyInputTextareaElement;
+        new (): HTMLCpyInputTextareaElement;
+    };
     interface HTMLCpyInputToggleElement extends Components.CpyInputToggle, HTMLStencilElement {
     }
     var HTMLCpyInputToggleElement: {
@@ -667,6 +689,7 @@ declare global {
         "cpy-input-base": HTMLCpyInputBaseElement;
         "cpy-input-select": HTMLCpyInputSelectElement;
         "cpy-input-select-option": HTMLCpyInputSelectOptionElement;
+        "cpy-input-textarea": HTMLCpyInputTextareaElement;
         "cpy-input-toggle": HTMLCpyInputToggleElement;
         "cpy-link": HTMLCpyLinkElement;
         "cpy-nav-menu": HTMLCpyNavMenuElement;
@@ -820,6 +843,7 @@ declare namespace LocalJSX {
         "interacted"?: boolean;
         "label"?: string;
         "noContainer"?: boolean;
+        "onLabelClicked"?: (event: CpyInputBaseCustomEvent<void>) => void;
         "onPopupClosed"?: (event: CpyInputBaseCustomEvent<void>) => void;
         "popup"?: boolean;
         "required"?: boolean;
@@ -840,6 +864,17 @@ declare namespace LocalJSX {
         "onOptionSelected"?: (event: CpyInputSelectOptionCustomEvent<string | number>) => void;
         "size"?: InputSize;
         "value"?: string | number;
+    }
+    interface CpyInputTextarea {
+        "disabled"?: boolean;
+        "label"?: string;
+        "maxRows"?: number;
+        "onValueChange"?: (event: CpyInputTextareaCustomEvent<string>) => void;
+        "placeholder"?: string;
+        "required"?: boolean;
+        "size"?: InputSize;
+        "validators"?: Array<string | ValidatorEntry | Validator<string>>;
+        "value"?: string;
     }
     interface CpyInputToggle {
         "disabled"?: boolean;
@@ -969,6 +1004,7 @@ declare namespace LocalJSX {
         "cpy-input-base": CpyInputBase;
         "cpy-input-select": CpyInputSelect;
         "cpy-input-select-option": CpyInputSelectOption;
+        "cpy-input-textarea": CpyInputTextarea;
         "cpy-input-toggle": CpyInputToggle;
         "cpy-link": CpyLink;
         "cpy-nav-menu": CpyNavMenu;
@@ -1021,6 +1057,7 @@ declare module "@stencil/core" {
             "cpy-input-base": LocalJSX.CpyInputBase & JSXBase.HTMLAttributes<HTMLCpyInputBaseElement>;
             "cpy-input-select": LocalJSX.CpyInputSelect & JSXBase.HTMLAttributes<HTMLCpyInputSelectElement>;
             "cpy-input-select-option": LocalJSX.CpyInputSelectOption & JSXBase.HTMLAttributes<HTMLCpyInputSelectOptionElement>;
+            "cpy-input-textarea": LocalJSX.CpyInputTextarea & JSXBase.HTMLAttributes<HTMLCpyInputTextareaElement>;
             "cpy-input-toggle": LocalJSX.CpyInputToggle & JSXBase.HTMLAttributes<HTMLCpyInputToggleElement>;
             "cpy-link": LocalJSX.CpyLink & JSXBase.HTMLAttributes<HTMLCpyLinkElement>;
             "cpy-nav-menu": LocalJSX.CpyNavMenu & JSXBase.HTMLAttributes<HTMLCpyNavMenuElement>;

@@ -35,6 +35,9 @@ export class InputBase {
   @Event()
   popupClosed: EventEmitter<void>;
 
+  @Event()
+  labelClicked: EventEmitter<void>;
+
   @Method()
   async closePopup(): Promise<void> {
     if (this.popup) {
@@ -43,6 +46,16 @@ export class InputBase {
   }
 
   popupElem: HTMLCpyPopupElement;
+
+  handleLabelClick(): void {
+    if (this.disabled) {
+      return;
+    }
+    if (this.popup) {
+      this.popupElem.show();
+    }
+    this.labelClicked.emit();
+  }
 
   render() {
     const classes = {
@@ -59,7 +72,7 @@ export class InputBase {
     };
 
     return [
-      <label class={classes}>
+      <label class={classes} onClick={() => this.handleLabelClick()}>
         {this.label && <div class={labelClasses}>
           {this.label}
         </div>}
@@ -71,7 +84,7 @@ export class InputBase {
               disabled={this.disabled}
               ref={(el) => this.popupElem = el as HTMLCpyPopupElement}
               onClosed={() => this.popupClosed.emit()}>
-              <div class='input-base__container' tabindex={this.disabled ? -1 : 0}>
+              <div class='input-base__container'>
                 <slot name='prefix'/>
 
                 <div class='input-base__input'>
@@ -85,7 +98,7 @@ export class InputBase {
                 <slot name='popup-content'/>
               </div>
             </cpy-popup>
-          : <div class='input-base__container' tabindex={this.disabled ? -1 : 0}>
+          : <div class='input-base__container'>
               <slot name='prefix'/>
 
               <div class='input-base__input'>
