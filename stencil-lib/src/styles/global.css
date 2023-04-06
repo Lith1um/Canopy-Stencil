@@ -52,7 +52,7 @@
   --cpy-bg-basic-light: rgb(var(--cpy-bg-basic-light-rgb));
 
   --cpy-bg-basic-hover-rgb: 107, 114, 128; /* grey-500 */
-  --cpy-bg-basic-hover: rgb(var(--cpy-bg-primary-basic-rgb));
+  --cpy-bg-basic-hover: rgb(var(--cpy-bg-basic-hover-rgb));
 
   --cpy-bg-basic-border-rgb: 229, 231, 235; /* grey-200 */
   --cpy-bg-basic-border: rgb(var(--cpy-bg-basic-border-rgb));

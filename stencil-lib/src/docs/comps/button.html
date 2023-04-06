@@ -244,6 +244,38 @@
   <cpy-icon>cancel</cpy-icon>
 </cpy-button>
       </cpy-code-example>
+      <cpy-code-example header="Custom button">
+<div style="
+--cpy-button-text: coral;
+--cpy-button-bg: blue;
+--cpy-button-bg-hover: green;
+">
+  <cpy-button icon>
+    <cpy-icon>build</cpy-icon>
+  </cpy-button>
+  <cpy-button icon appearance="outline" type="secondary">
+    <cpy-icon>account_circle</cpy-icon>
+  </cpy-button>
+  <cpy-button>
+    Primary
+  </cpy-button>
+  <cpy-button type="secondary" appearance="outline">
+    Secondary
+  </cpy-button>
+  <cpy-button type="basic" appearance="borderless">
+    Basic
+  </cpy-button>
+  <cpy-button type="success" size="small">
+    <cpy-icon>check_circle</cpy-icon>Success
+  </cpy-button>
+  <cpy-button type="warn">
+    <cpy-icon>warning</cpy-icon>Warning
+  </cpy-button>
+  <cpy-button type="error" size="large">
+    <cpy-icon>cancel</cpy-icon>Error
+  </cpy-button>
+</div>
+      </cpy-code-example>
     </cpy-tab-content>
   </cpy-tabs>
 </cpy-page-container>
