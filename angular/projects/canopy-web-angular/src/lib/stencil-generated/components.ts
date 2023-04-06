@@ -107,7 +107,13 @@ export class CpyBadge {
 }
 
 
-export declare interface CpyButton extends Components.CpyButton {}
+export declare interface CpyButton extends Components.CpyButton {
+  /**
+   *  
+   */
+  buttonClicked: EventEmitter<CustomEvent<void>>;
+
+}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
@@ -124,6 +130,7 @@ export class CpyButton {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['buttonClicked']);
   }
 }
 

@@ -16,6 +16,13 @@
 | `type`       | `type`       |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"` | `'primary'` |
 
 
+## Events
+
+| Event           | Description | Type                |
+| --------------- | ----------- | ------------------- |
+| `buttonClicked` |             | `CustomEvent<void>` |
+
+
 ## Dependencies
 
 ### Used by
