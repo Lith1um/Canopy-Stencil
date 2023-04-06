@@ -23,6 +23,11 @@ export class InputSelectOption {
   @Event()
   optionSelected: EventEmitter<string | number>;
 
+  handleOptionClick(e: Event): void {
+    e.stopPropagation();
+    this.optionSelected.emit(this.value)
+  }
+
   render() {
     const classes = {
       'input-select-option': true,
@@ -30,7 +35,7 @@ export class InputSelectOption {
       [`input-select-option--${this.size}`]: !!this.size,
     }
     return (
-      <div class={classes} onClick={() => this.optionSelected.emit(this.value)}>
+      <div class={classes} onClick={(e) => this.handleOptionClick(e)}>
         {this.label}
         <cpy-splash></cpy-splash>
       </div>

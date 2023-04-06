@@ -73,6 +73,7 @@ export class InputSelect implements BaseInput<string | number> {
 
   _validator: Validator<string | number> = defaultValidator;
   inputElem: HTMLCpyInputBaseElement;
+  selectElem: HTMLElement;
   optionElems: HTMLCpyInputSelectOptionElement[];
 
   componentWillLoad() {
@@ -132,6 +133,10 @@ export class InputSelect implements BaseInput<string | number> {
     this.handleValueChange(this.value);
   }
 
+  focusSelect(): void {
+    this.selectElem?.focus();
+  }
+
   render() {
     const error = !this._validator.validate(this.value)
       ? this._validator.errorMessage
@@ -147,10 +152,16 @@ export class InputSelect implements BaseInput<string | number> {
         disabled={this.disabled}
         error={error}
         onPopupClosed={() => this.handleBlur()}
-        ref={(el) => this.inputElem = el as HTMLCpyInputBaseElement}>
+        ref={(el) => this.inputElem = el as HTMLCpyInputBaseElement}
+        onLabelClicked={() => this.focusSelect()}>
         <slot name='prefix' slot='prefix'/>
 
-        <div class='input-select' tabindex={this.disabled ? -1 : 0}>{this.selectedLabel}</div>
+        <div
+          class='input-select'
+          tabindex={this.disabled ? -1 : 0}
+          ref={(el) => this.selectElem = el as HTMLElement}>
+          {this.selectedLabel}
+        </div>
 
         <cpy-icon slot="suffix">expand_more</cpy-icon>
 
