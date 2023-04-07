@@ -1097,13 +1097,14 @@ export declare interface CpyToast extends Components.CpyToast {
 
 
 @ProxyCmp({
+  inputs: ['size', 'type']
 })
 @Component({
   selector: 'cpy-toolbar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: [],
+  inputs: ['size', 'type'],
 })
 export class CpyToolbar {
   protected el: HTMLElement;
