@@ -6,11 +6,11 @@ import { defaultValidator, getValidator } from '../validation/validator';
 import { InputSize } from '../types/input-size.type';
 
 @Component({
-  tag: 'cpy-input-toggle',
-  styleUrl: 'input-toggle.scss',
+  tag: 'cpy-input-checkbox',
+  styleUrl: 'input-checkbox.scss',
   shadow: true,
 })
-export class InputToggle implements BaseInput<boolean> {
+export class InputCheckbox implements BaseInput<boolean> {
 
   @Prop()
   label: string;
@@ -26,9 +26,6 @@ export class InputToggle implements BaseInput<boolean> {
 
   @Prop()
   size: InputSize = 'default';
-
-  @Prop()
-  switchAfter: boolean = false;
 
   @Prop()
   validators: Array<string | ValidatorEntry | Validator<boolean>>;
@@ -95,17 +92,12 @@ export class InputToggle implements BaseInput<boolean> {
       : '';
 
     const classes = {
-      'toggle': true,
-      [`toggle--${this.size}`]: !!this.size,
-      [`toggle--required`]: this.required,
-      [`toggle--disabled`]: this.disabled,
-      [`toggle--invalid`]: !!error && this.interacted
+      'checkbox': true,
+      [`checkbox--${this.size}`]: !!this.size,
+      [`checkbox--required`]: this.required,
+      [`checkbox--disabled`]: this.disabled,
+      [`checkbox--invalid`]: !!error && this.interacted
     };
-
-    const switchClasses = {
-      'toggle__switch': true,
-      [`toggle__switch--after`]: this.switchAfter
-    };    
 
     return (
       <cpy-input-base
@@ -116,16 +108,16 @@ export class InputToggle implements BaseInput<boolean> {
         error={error}
         disabled={this.disabled}>
         <label class={classes}>
-          <div class={switchClasses}>
+          <div class='checkbox__container'>
             <input
               type="checkbox"
               disabled={this.disabled}
               checked={this.value}
               onInput={(e) => this.handleChange(e)}
               onBlur={() => this.handleBlur()}/>
-            <span class="toggle__slider"></span>
+            <span class="checkbox__checkmark"></span>
           </div>
-          {this.label && <div class="toggle__label">
+          {this.label && <div class="checkbox__label">
             {this.label}
           </div>}
         </label>

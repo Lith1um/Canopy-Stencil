@@ -198,6 +198,16 @@ export namespace Components {
         "required": boolean;
         "size": InputSize;
     }
+    interface CpyInputCheckbox {
+        "disabled": boolean;
+        "isValid": () => Promise<boolean>;
+        "label": string;
+        "markAsTouched": () => Promise<void>;
+        "required": boolean;
+        "size": InputSize;
+        "validators": Array<string | ValidatorEntry | Validator<boolean>>;
+        "value": boolean;
+    }
     interface CpyInputSelect {
         "disabled": boolean;
         "isValid": () => Promise<boolean>;
@@ -372,6 +382,10 @@ export interface CpyInputCustomEvent<T> extends CustomEvent<T> {
 export interface CpyInputBaseCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyInputBaseElement;
+}
+export interface CpyInputCheckboxCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyInputCheckboxElement;
 }
 export interface CpyInputSelectCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -558,6 +572,12 @@ declare global {
         prototype: HTMLCpyInputBaseElement;
         new (): HTMLCpyInputBaseElement;
     };
+    interface HTMLCpyInputCheckboxElement extends Components.CpyInputCheckbox, HTMLStencilElement {
+    }
+    var HTMLCpyInputCheckboxElement: {
+        prototype: HTMLCpyInputCheckboxElement;
+        new (): HTMLCpyInputCheckboxElement;
+    };
     interface HTMLCpyInputSelectElement extends Components.CpyInputSelect, HTMLStencilElement {
     }
     var HTMLCpyInputSelectElement: {
@@ -721,6 +741,7 @@ declare global {
         "cpy-icon": HTMLCpyIconElement;
         "cpy-input": HTMLCpyInputElement;
         "cpy-input-base": HTMLCpyInputBaseElement;
+        "cpy-input-checkbox": HTMLCpyInputCheckboxElement;
         "cpy-input-select": HTMLCpyInputSelectElement;
         "cpy-input-select-option": HTMLCpyInputSelectOptionElement;
         "cpy-input-textarea": HTMLCpyInputTextareaElement;
@@ -884,6 +905,15 @@ declare namespace LocalJSX {
         "required"?: boolean;
         "size"?: InputSize;
     }
+    interface CpyInputCheckbox {
+        "disabled"?: boolean;
+        "label"?: string;
+        "onValueChange"?: (event: CpyInputCheckboxCustomEvent<boolean>) => void;
+        "required"?: boolean;
+        "size"?: InputSize;
+        "validators"?: Array<string | ValidatorEntry | Validator<boolean>>;
+        "value"?: boolean;
+    }
     interface CpyInputSelect {
         "disabled"?: boolean;
         "label"?: string;
@@ -1040,6 +1070,7 @@ declare namespace LocalJSX {
         "cpy-icon": CpyIcon;
         "cpy-input": CpyInput;
         "cpy-input-base": CpyInputBase;
+        "cpy-input-checkbox": CpyInputCheckbox;
         "cpy-input-select": CpyInputSelect;
         "cpy-input-select-option": CpyInputSelectOption;
         "cpy-input-textarea": CpyInputTextarea;
@@ -1093,6 +1124,7 @@ declare module "@stencil/core" {
             "cpy-icon": LocalJSX.CpyIcon & JSXBase.HTMLAttributes<HTMLCpyIconElement>;
             "cpy-input": LocalJSX.CpyInput & JSXBase.HTMLAttributes<HTMLCpyInputElement>;
             "cpy-input-base": LocalJSX.CpyInputBase & JSXBase.HTMLAttributes<HTMLCpyInputBaseElement>;
+            "cpy-input-checkbox": LocalJSX.CpyInputCheckbox & JSXBase.HTMLAttributes<HTMLCpyInputCheckboxElement>;
             "cpy-input-select": LocalJSX.CpyInputSelect & JSXBase.HTMLAttributes<HTMLCpyInputSelectElement>;
             "cpy-input-select-option": LocalJSX.CpyInputSelectOption & JSXBase.HTMLAttributes<HTMLCpyInputSelectOptionElement>;
             "cpy-input-textarea": LocalJSX.CpyInputTextarea & JSXBase.HTMLAttributes<HTMLCpyInputTextareaElement>;

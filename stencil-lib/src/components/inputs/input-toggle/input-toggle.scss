@@ -39,7 +39,7 @@
   }
 
   &--large {
-    @apply gap-5 text-lg;
+    @apply gap-5;
 
     .toggle__switch {
       @apply w-12 h-7;
@@ -55,7 +55,7 @@
   }
 
   &--small {
-    @apply gap-3 text-sm;
+    @apply gap-3;
 
     .toggle__switch {
       @apply w-7 h-4;

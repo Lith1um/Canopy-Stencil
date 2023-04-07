@@ -87,6 +87,7 @@ const menuItems = navMenuElement.items = [
     ] },
     { title: 'Forms', icon: 'format_list_numbered', type: 'collapsible', description: 'Complete form elements', children: [
       { title: 'Basic Inputs', type: 'basic', url: '/comps/input' },
+      { title: 'Checkbox', type: 'basic', url: '/comps/inputCheckbox' },
       { title: 'Select', type: 'basic', url: '/comps/inputSelect' },
       { title: 'Textarea', type: 'basic', url: '/comps/inputTextarea' },
       { title: 'Toggle', type: 'basic', url: '/comps/toggle' }
