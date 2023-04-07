@@ -3,7 +3,7 @@
 }
 
 .button {
-  @apply whitespace-nowrap leading-9 h-9 relative rounded px-3.5 inline-flex items-center justify-center gap-1.5 min-w-[64px] outline-0 select-none appearance-none overflow-visible align-middle bg-transparent;
+  @apply text-base whitespace-nowrap leading-9 h-9 relative rounded px-3.5 inline-flex items-center justify-center gap-1.5 min-w-[64px] outline-0 select-none appearance-none overflow-visible align-middle bg-transparent;
   --text-color: var(--cpy-button-text, white);
   --bg-color: var(--cpy-button-bg, var(--cpy-bg-primary));
   color: var(--text-color);
@@ -18,8 +18,6 @@
     @apply cursor-default;
     --text-color: var(--cpy-text-disabled) !important;
     --bg-color: var(--cpy-bg-disabled) !important;
-
-
   }
 
   &-size--small {

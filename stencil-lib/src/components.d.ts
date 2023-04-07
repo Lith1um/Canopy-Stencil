@@ -29,6 +29,7 @@ import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.typ
 import { StackDirection } from "./components/stack/stack.type";
 import { TableData } from "./components/table/types/table-data.type";
 import { ToastPosition, ToastType } from "./components/toast/toast.type";
+import { ToolbarSize, ToolbarType } from "./components/toolbar/toolbar.type";
 import { TooltipPosition } from "./components/tooltip/tooltip.type";
 export { AccordionSize } from "./components/accordion/accordion.type";
 export { AlertAppearance, AlertType } from "./components/alert/alert.type";
@@ -54,6 +55,7 @@ export { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.typ
 export { StackDirection } from "./components/stack/stack.type";
 export { TableData } from "./components/table/types/table-data.type";
 export { ToastPosition, ToastType } from "./components/toast/toast.type";
+export { ToolbarSize, ToolbarType } from "./components/toolbar/toolbar.type";
 export { TooltipPosition } from "./components/tooltip/tooltip.type";
 export namespace Components {
     interface CpyAccordion {
@@ -322,6 +324,8 @@ export namespace Components {
         "zIndex": string;
     }
     interface CpyToolbar {
+        "size": ToolbarSize;
+        "type": ToolbarType;
     }
     interface CpyTooltip {
         "hideArrow": boolean;
@@ -1003,6 +1007,8 @@ declare namespace LocalJSX {
         "zIndex"?: string;
     }
     interface CpyToolbar {
+        "size"?: ToolbarSize;
+        "type"?: ToolbarType;
     }
     interface CpyTooltip {
         "hideArrow"?: boolean;
