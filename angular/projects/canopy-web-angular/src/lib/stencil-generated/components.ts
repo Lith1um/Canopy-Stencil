@@ -588,6 +588,33 @@ export declare interface CpyInputBase extends Components.CpyInputBase {
   methods: ['isValid', 'markAsTouched']
 })
 @Component({
+  selector: 'cpy-input-checkbox',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['disabled', 'label', 'required', 'size', 'validators', 'value'],
+})
+export class CpyInputCheckbox {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['valueChange']);
+  }
+}
+
+
+export declare interface CpyInputCheckbox extends Components.CpyInputCheckbox {
+
+  valueChange: EventEmitter<CustomEvent<boolean>>;
+}
+
+
+@ProxyCmp({
+  inputs: ['disabled', 'label', 'required', 'size', 'validators', 'value'],
+  methods: ['isValid', 'markAsTouched']
+})
+@Component({
   selector: 'cpy-input-select',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
