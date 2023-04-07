@@ -218,6 +218,7 @@ export namespace Components {
         "label": string;
         "markAsTouched": () => Promise<void>;
         "maxRows": number;
+        "minRows": number;
         "placeholder": string;
         "required": boolean;
         "size": InputSize;
@@ -899,6 +900,7 @@ declare namespace LocalJSX {
         "disabled"?: boolean;
         "label"?: string;
         "maxRows"?: number;
+        "minRows"?: number;
         "onValueChange"?: (event: CpyInputTextareaCustomEvent<string>) => void;
         "placeholder"?: string;
         "required"?: boolean;

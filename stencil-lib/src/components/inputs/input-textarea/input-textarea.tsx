@@ -23,6 +23,9 @@ export class InputTextarea implements BaseInput<string> {
   placeholder: string;
 
   @Prop()
+  minRows: number = 1;
+
+  @Prop()
   maxRows: number;
 
   @Prop()
@@ -50,7 +53,7 @@ export class InputTextarea implements BaseInput<string> {
     this.textareaElem.style.height = 'auto';
     const scrollHeight = this.textareaElem.scrollHeight;
 
-    if (!this.maxRows) {
+    if (!this.maxRows && !this.minRows) {
       this.textareaElem.style.overflow = 'hidden';
       this.textareaElem.style.height = `${Math.max(scrollHeight, lineHeight)}px`;
       return;
@@ -136,7 +139,7 @@ export class InputTextarea implements BaseInput<string> {
 
         <textarea
           ref={(el) => this.textareaElem = el as HTMLTextAreaElement}
-          rows={1}
+          rows={this.minRows}
           required={this.required}
           placeholder={this.placeholder}
           disabled={this.disabled}
