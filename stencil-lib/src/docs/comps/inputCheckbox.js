@@ -1,7 +1,8 @@
 (function () {
   document.getElementById('comp-styles').tableData = [
     { cssVariable: '--cpy-bg-primary', description: 'Active color of checkbox', defaultValue: '--cpy-bg-primary' },
-    { cssVariable: '--cpy-bg-basic', description: 'Inactive color of checkbox', defaultValue: '--cpy-bg-basic' },
+    { cssVariable: '--cpy-checkbox-tick-color', description: 'Color of the checkbox tick', defaultValue: 'white' },
+    { cssVariable: '--cpy-bg-white', description: 'Inactive color of checkbox', defaultValue: '--cpy-bg-white' },
   ];
 
   document.getElementById('comp-interfaces').code = `type InputSize = 'small' | 'default' | 'large';

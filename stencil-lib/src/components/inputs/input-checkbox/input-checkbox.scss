@@ -42,7 +42,7 @@
     @apply gap-5;
 
     .checkbox__container {
-      @apply w-7 h-7;
+      @apply rounded-md w-7 h-7;
     }
 
     .checkbox__checkmark {
@@ -58,7 +58,7 @@
     @apply gap-3;
 
     .checkbox__container {
-      @apply w-4 h-4;
+      @apply rounded-sm w-4 h-4;
     }
 
     .checkbox__checkmark {
@@ -71,8 +71,9 @@
   }
 
   &__container {
-    @apply relative inline-block;
-    @apply w-5 h-5;
+    @apply relative inline-block outline outline-1 w-5 h-5 rounded;
+    outline-color: var(--cpy-bg-basic-border);
+    background-color: var(--cpy-bg-white);
 
     input {
       @apply opacity-0 w-0 h-0;
@@ -89,12 +90,12 @@
   }
 
   &__checkmark {
-    @apply absolute cursor-pointer inset-0 rounded border-[3px];
-    background-color: var(--cpy-bg-basic);
-    border-color: var(--cpy-bg-basic);
+    @apply absolute cursor-pointer inset-0 transition duration-300 rounded border-[3px];
+    border-color: transparent;
     
     &::after {
       @apply absolute left-0 bottom-0 w-full h-1/2 -rotate-45 translate-x-[0.3125rem] -translate-y-[0.0625rem] origin-bottom-left border-l-[3px] border-b-[3px] scale-0;
+      border-color: var(--cpy-checkbox-tick-color, white);
       content: "";
     }
   }
