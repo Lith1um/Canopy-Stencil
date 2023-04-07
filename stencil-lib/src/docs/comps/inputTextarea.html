@@ -12,7 +12,7 @@
         </p>
 
         <p>
-          Textarea inputs will autosize to fit the text content and make sure it is all visible. You can use the <cpy-code-snippet code="max-rows"></cpy-code-snippet> property to set a limit on how tall a textarea can become.
+          Textarea inputs will autosize to fit the text content and make sure it is all visible. You can use the <cpy-code-snippet code="min-rows"></cpy-code-snippet> and <cpy-code-snippet code="max-rows"></cpy-code-snippet> properties to set a limit on how short or tall a textarea can become.
         </p>
 
         <cpy-code-example header="Textarea input" id="overview-code">
@@ -84,6 +84,10 @@
 <cpy-input-textarea label="Required textarea" required>
 </cpy-input-textarea>
       </cpy-code-example>
+      <cpy-code-example header="Textarea with min rows (3)">
+<cpy-input-textarea label="Textarea" min-rows="3">
+</cpy-input-textarea>
+      </cpy-code-example>
       <cpy-code-example header="Textarea with max rows (3)">
 <cpy-input-textarea label="Textarea" max-rows="3">
 </cpy-input-textarea>
@@ -104,6 +108,10 @@
       </cpy-code-example>
       <cpy-code-example header="Disabled textarea">
 <cpy-input-textarea label="Disabled textarea" disabled>
+</cpy-input-textarea>
+      </cpy-code-example>
+      <cpy-code-example header="Textarea with placeholder">
+<cpy-input-textarea label="Textarea" placeholder="I'm a placeholder">
 </cpy-input-textarea>
       </cpy-code-example>
       <cpy-code-example header="Custom textarea">

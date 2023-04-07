@@ -40,7 +40,7 @@
 
   const commentListNoImage = commentList.map(({ author, text, imageUrl, date }) => ({ author, text, date }));
 
-  document.getElementById('overview-code').code = `<cpy-comment></cpy-comment>
+  document.getElementById('overview-code').code = `<cpy-comment-list></cpy-comment-list>
 
 <script>
   document.querySelector('cpy-comment-list').comments = [
@@ -98,7 +98,7 @@ type CommentType = 'primary' | 'secondary' | 'basic';`;
     { name: 'show-less-text', description: 'Text to display for the "show less" button if max lines is true', type: "string", default: "'show less'", required: false },
   ];
 
-  document.getElementById('example-code').code = `<cpy-comment></cpy-comment>
+  document.getElementById('example-code').code = `<cpy-comment-list></cpy-comment-list>
 
 <script>
   document.querySelector('cpy-comment-list').comments = [
@@ -107,7 +107,7 @@ type CommentType = 'primary' | 'secondary' | 'basic';`;
 </script>`;
   document.getElementById('example-list').comments = commentList;
 
-  document.getElementById('example-code-2').code = `<cpy-comment max-lines="2"></cpy-comment>
+  document.getElementById('example-code-2').code = `<cpy-comment-list max-lines="2"></cpy-comment-list>
 
 <script>
   document.querySelector('cpy-comment-list').comments = [
@@ -116,25 +116,25 @@ type CommentType = 'primary' | 'secondary' | 'basic';`;
 </script>`;
   document.getElementById('example-list-2').comments = commentList;
   
-  document.getElementById('example-code-3').code = `<cpy-comment></cpy-comment>
+  document.getElementById('example-code-3').code = `<cpy-comment-list></cpy-comment-list>
   
-  <script>
+<script>
   document.querySelector('cpy-comment-list').comments = [
     ...
   ];
-  </script>`;
+</script>`;
   document.getElementById('example-list-3').comments = commentListNoImage;
   
-  document.getElementById('example-code-4').code = `<cpy-comment hide-avatar></cpy-comment>
+  document.getElementById('example-code-4').code = `<cpy-comment-list hide-avatar></cpy-comment-list>
   
-  <script>
+<script>
   document.querySelector('cpy-comment-list').comments = [
     ...
   ];
-  </script>`;
+</script>`;
   document.getElementById('example-list-4').comments = commentListNoImage;
 
-  document.getElementById('example-code-5').code = `<cpy-comment size="small"></cpy-comment>
+  document.getElementById('example-code-5').code = `<cpy-comment-list size="small"></cpy-comment-list>
 
 <script>
   document.querySelector('cpy-comment-list').comments = [
@@ -143,7 +143,7 @@ type CommentType = 'primary' | 'secondary' | 'basic';`;
 </script>`;
   document.getElementById('example-list-5').comments = commentList;
 
-  document.getElementById('example-code-6').code = `<cpy-comment size="large"></cpy-comment>
+  document.getElementById('example-code-6').code = `<cpy-comment-list size="large"></cpy-comment-list>
 
 <script>
   document.querySelector('cpy-comment-list').comments = [
@@ -152,7 +152,7 @@ type CommentType = 'primary' | 'secondary' | 'basic';`;
 </script>`;
   document.getElementById('example-list-6').comments = commentList;
 
-  document.getElementById('example-code-7').code = `<cpy-comment right-aligned></cpy-comment>
+  document.getElementById('example-code-7').code = `<cpy-comment-list right-aligned></cpy-comment-list>
 
 <script>
   document.querySelector('cpy-comment-list').comments = [
@@ -161,7 +161,7 @@ type CommentType = 'primary' | 'secondary' | 'basic';`;
 </script>`;
   document.getElementById('example-list-7').comments = commentList;
 
-  document.getElementById('example-code-8').code = `<cpy-comment style="--cpy-comment-color: var(--cpy-text-warn);" max-lines="2" show-more-text="More" show-less-text="Less"></cpy-comment>
+  document.getElementById('example-code-8').code = `<cpy-comment-list style="--cpy-comment-color: var(--cpy-text-warn);" max-lines="2" show-more-text="More" show-less-text="Less"></cpy-comment-list>
 
 <script>
   document.querySelector('cpy-comment-list').comments = [
