@@ -73,6 +73,7 @@ const menuItems = navMenuElement.items = [
       { title: 'Page Content', type: 'basic', url: '/comps/pageContent' },
       { title: 'Table', type: 'basic', url: '/comps/table' },
       { title: 'Tabs', type: 'basic', url: '/comps/tabs' },
+      { title: 'Toolbar', type: 'basic', url: '/comps/toolbar' },
     ] },
     { title: 'Interactions', icon: 'touch_app', type: 'collapsible', description: 'Floating UI components', children: [
       { title: 'Accordion', type: 'basic', url: '/comps/accordion' },

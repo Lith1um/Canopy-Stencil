@@ -5,11 +5,11 @@
 </script>
 <link
   rel="stylesheet"
-  href="node_modules/@canopy-web/core/dist/@canopy-web/core/@canopy-web/core.css"/>`;
+  href="node_modules/@canopy-web/core/dist/core/core.css"/>`;
 
   document.getElementById('web-comp-install-unpkg-html').code = `<script
   type="module"
-  src="https://unpkg.com/@canopy-web/core">
+  src="https://unpkg.com/@canopy-web/core@latest/dist/core/core.esm.js">
 </script>
 <link
   rel="stylesheet"

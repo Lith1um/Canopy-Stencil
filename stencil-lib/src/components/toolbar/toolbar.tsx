@@ -1,4 +1,5 @@
-import { Component, h } from '@stencil/core';
+import { Component, Host, Prop, h } from '@stencil/core';
+import { ToolbarSize, ToolbarType } from './toolbar.type';
 
 @Component({
   tag: 'cpy-toolbar',
@@ -7,11 +8,23 @@ import { Component, h } from '@stencil/core';
 })
 export class Toolbar {
 
+  @Prop()
+  size: ToolbarSize = 'default';
+
+  @Prop()
+  type: ToolbarType = 'primary';
+
   render() {
+    const classes = {
+      'toolbar': true,
+      [`toolbar--${this.size}`]: !!this.size,
+      [`toolbar--${this.type}`]: !!this.type
+    };
+
     return (
-      <div class="toolbar">
+      <Host class={classes}>
         <slot></slot>
-      </div>
+      </Host>
     );
   }
 }
