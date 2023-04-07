@@ -5,6 +5,8 @@ import { Component, Element, Event, EventEmitter, h, Listen, Method, Prop, Watch
   styleUrl: 'drawer-container.scss',
   shadow: true,
 })
+// TODO: bug here where the splash doesn't disappear
+// when closing menu on mobile after screen resized
 export class DrawerContainer {
 
   @Element() element: HTMLElement;

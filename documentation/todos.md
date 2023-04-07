@@ -3,7 +3,6 @@
 	- Ghost Components?
 	- horizontal nav bar
 	- inputs
-		- checkbox
 		- radio
 		- datepicker
 		- time
