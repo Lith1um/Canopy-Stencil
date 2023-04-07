@@ -637,7 +637,7 @@ export declare interface CpyInputSelectOption extends Components.CpyInputSelectO
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'label', 'maxRows', 'placeholder', 'required', 'size', 'validators', 'value'],
+  inputs: ['disabled', 'label', 'maxRows', 'minRows', 'placeholder', 'required', 'size', 'validators', 'value'],
   methods: ['isValid', 'markAsTouched']
 })
 @Component({
@@ -645,7 +645,7 @@ export declare interface CpyInputSelectOption extends Components.CpyInputSelectO
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'label', 'maxRows', 'placeholder', 'required', 'size', 'validators', 'value'],
+  inputs: ['disabled', 'label', 'maxRows', 'minRows', 'placeholder', 'required', 'size', 'validators', 'value'],
 })
 export class CpyInputTextarea {
   protected el: HTMLElement;

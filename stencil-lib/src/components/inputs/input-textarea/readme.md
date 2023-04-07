@@ -12,6 +12,7 @@
 | `disabled`    | `disabled`    |             | `boolean`                                           | `undefined` |
 | `label`       | `label`       |             | `string`                                            | `undefined` |
 | `maxRows`     | `max-rows`    |             | `number`                                            | `undefined` |
+| `minRows`     | `min-rows`    |             | `number`                                            | `1`         |
 | `placeholder` | `placeholder` |             | `string`                                            | `undefined` |
 | `required`    | `required`    |             | `boolean`                                           | `undefined` |
 | `size`        | `size`        |             | `"default" \| "large" \| "small"`                   | `'default'` |
