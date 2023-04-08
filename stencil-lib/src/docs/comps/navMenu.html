@@ -1,23 +1,79 @@
-<cpy-page-content>
-  <h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-    Navigation Menu
-  </h3>
-  
-  <p style="margin-top: 1rem; margin-bottom: 2rem;">
-    Canopy navigation menus show a list of navigation items. They are referenced using the<cpy-code-snippet>&lt;cpy-nav-menu&gt;</cpy-code-snippet>custom HTML element. This component takes an array of items, and supports item clicks either navigating to links/paths or running custom functions if you need side-effects or a different behaviour to a traditional link.
-  </p>
-  
-  <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-  <div style="padding: 12px; margin-top: 1rem; margin-bottom: 2rem; width: 300px; max-width: 100%; background-color: var(--cpy-bg-white);">
-    <cpy-nav-menu id="nav-menu-example"></cpy-nav-menu>
-  </div>
-  
-  <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
-  
-  <div style="margin-top: 1rem; margin-bottom: 2rem;">
-    <cpy-code-block id="nav-menu-html-example" language="html"></cpy-code-block>
-  </div>
-  
-  <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-  <cpy-table id="nav-menu-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-</cpy-page-content>
+<cpy-page-container>
+  <h1>Navigation Menus</h1>
+
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Navigation Menu">
+        <p>
+          Canopy navigation menus show a list of navigation items. They are referenced using
+      the <cpy-code-snippet code="<cpy-nav-menu>"></cpy-code-snippet> custom HTML element. This component takes an array of
+      items, and supports item clicks either navigating to links/paths or running custom functions if you need
+      side-effects or a different behaviour to a traditional link.
+        </p>
+
+        <cpy-code-example header="Navigation Menu" id="overview-code">
+<cpy-nav-menu id="overview-example"></cpy-nav-menu>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. There are currently no styling variables for this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
+
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          TODO: ...
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Navigation Menu">
+        <h4 id="api" title="API">API Reference for Canopy Navigation Menu</h4>
+        <cpy-code-snippet code="<cpy-nav-menu>"></cpy-code-snippet>
+
+        <div class="section">
+        </div>
+
+        <h4 id="types">Types</h4>
+        <cpy-code-block id="comp-interfaces"></cpy-code-block>
+
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Navigation Menu with basic items" id="example-code-1">
+<cpy-nav-menu id="example-menu-1"></cpy-nav-menu>
+      </cpy-code-example>
+
+      <cpy-code-example header="Navigation Menu group item" id="example-code-2">
+<cpy-nav-menu id="example-menu-2"></cpy-nav-menu>
+      </cpy-code-example>
+
+      <cpy-code-example header="Navigation Menu collapsible item" id="example-code-3">
+<cpy-nav-menu id="example-menu-3"></cpy-nav-menu>
+      </cpy-code-example>
+
+      <cpy-code-example header="Navigation Menu with active item" id="example-code-4">
+<cpy-nav-menu id="example-menu-4"></cpy-nav-menu>
+      </cpy-code-example>
+
+      <cpy-code-example header="Navigation Menu with collapsible item auto-expanded" id="example-code-5">
+<cpy-nav-menu id="example-menu-5"></cpy-nav-menu>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
+</cpy-page-container>
+
+<script src="/docs/comps/navMenu.js">
+</script>

@@ -1,4 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
+import { LinkType } from './types/link.type';
 
 @Component({
   tag: 'cpy-link',
@@ -11,7 +12,16 @@ export class Link {
 
   @Prop() newTab: boolean;
 
-  @Prop() type: 'primary' | 'secondary' | 'basic' = 'primary';
+  @Prop() func: () => void;
+
+  @Prop() type: LinkType = 'primary';
+
+  handleClick(e: Event): void {
+    if (this.func) {
+      e.preventDefault();
+      this.func();
+    }
+  }
 
   render() {
     const classes = {
@@ -20,7 +30,7 @@ export class Link {
     };
 
     return (
-      <a class={classes} href={this.href} target={this.newTab ? '_blank' : ''}>
+      <a class={classes} href={this.href} target={this.newTab ? '_blank' : ''} onClick={(e) => this.handleClick(e)}>
         <slot></slot>
       </a>
     );

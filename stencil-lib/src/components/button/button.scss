@@ -1,202 +1,153 @@
 :host {
-  display: inline-block;
+  @apply inline-block;
 }
 
 .button {
-  @apply whitespace-nowrap border-2 leading-9 h-9 relative rounded px-3.5 inline-flex items-center justify-center gap-1.5 min-w-[64px] outline-0 select-none appearance-none overflow-visible align-middle bg-transparent;
-  --button-opacity: 1;
-  --text-colour: var(--cpy-text-primary);
-  --bg-colour-rgb: var(--cpy-bg-primary-rgb);
-  --border-colour: transparent;
-  color: var(--text-colour);
-  border-color: var(--border-colour);
-  background-color: rgba(var(--bg-colour-rgb), var(--button-opacity));
+  @apply text-base whitespace-nowrap leading-9 h-9 relative rounded px-3.5 inline-flex items-center justify-center gap-1.5 min-w-[64px] outline-0 select-none appearance-none overflow-visible align-middle bg-transparent;
+  --text-color: var(--cpy-button-text, white);
+  --bg-color: var(--cpy-button-bg, var(--cpy-bg-primary));
+  color: var(--text-color);
+  background-color: var(--bg-color);
   transition: background-color 300ms;
+
+  ::slotted(cpy-icon) {
+    @apply icon-size-6 #{!important};
+  }
 
   &:disabled {
     @apply cursor-default;
-    --text-colour: var(--cpy-text-disabled) !important;
-    --bg-colour-rgb: var(--cpy-bg-disabled-rgb) !important;
+    --text-color: var(--cpy-text-disabled) !important;
+    --bg-color: var(--cpy-bg-disabled) !important;
   }
 
   &-size--small {
     @apply leading-7 h-7 text-sm px-2 font-light;
+
+    ::slotted(cpy-icon) {
+      @apply icon-size-5 #{!important};
+    }
   }
 
   &-size--large {
     @apply leading-[3rem] h-12 font-medium;
+
+    ::slotted(cpy-icon) {
+      @apply icon-size-7 #{!important};
+    }
   }
 
   &--icon {
-    @apply rounded-full p-3 min-w-0 w-12 h-12;
-
-    ::slotted(cpy-icon) {
-      @apply m-0 -mt-1 icon-size-6 #{!important};
-    }
+    @apply rounded-full px-3 min-w-0 w-12 h-12;
 
     &.button-size--small {
       @apply p-2 w-10 h-10;
-
-      ::slotted(cpy-icon) {
-        @apply icon-size-5 #{!important};
-      }
     }
   
     &.button-size--large {
       @apply p-4 w-14 h-14 text-lg;
-
-      ::slotted(cpy-icon) {
-        @apply icon-size-7 #{!important};
-      }
     }
   }
 
   &-appearance--outline {
-    --border-colour: var(--text-colour);
     @apply border-2;
+    border-color: var(--text-color);
+  }
+
+  &--icon,
+  &-appearance--borderless,
+  &-appearance--outline {
+    --bg-color: var(--cpy-button-bg, transparent) !important;
+
+    &:hover:not(:disabled) {
+      --bg-color: var(--cpy-button-bg-hover, var(--cpy-bg-hover)) !important;
+    }
+
+    &:disabled {
+      --bg-color: transparent !important;
+    }
   }
 
   &-type--primary {
-    --text-colour: white;
-    --bg-colour-rgb: var(--cpy-bg-primary-rgb);
+    --bg-color: var(--cpy-button-bg, var(--cpy-bg-primary));
     
     &:hover:not(:disabled) {
-      --bg-colour-rgb: var(--cpy-bg-primary-hover-rgb);
+      --bg-color: var(--cpy-button-bg-hover, var(--cpy-bg-primary-hover));
     }
 
     &.button--icon,
     &.button-appearance--borderless,
     &.button-appearance--outline {
-      --text-colour: var(--cpy-text-primary);
-      --button-opacity: 0;
-  
-      &:hover:not(:disabled) {
-        --button-opacity: 0.1;
-      }
-      
-      &:disabled {
-        @apply bg-transparent;
-      }
+      --text-color: var(--cpy-button-text, var(--cpy-text-primary));
     }
   }
 
   &-type--secondary {
-    --text-colour: white;
-    --bg-colour-rgb: var(--cpy-bg-secondary-rgb);
+    --bg-color: var(--cpy-button-bg, var(--cpy-bg-secondary));
     
     &:hover:not(:disabled) {
-      --bg-colour-rgb: var(--cpy-bg-secondary-hover-rgb);
+      --bg-color: var(--cpy-button-bg-hover, var(--cpy-bg-secondary-hover));
     }
 
     &.button--icon,
     &.button-appearance--borderless,
     &.button-appearance--outline {
-      --text-colour: var(--cpy-text-secondary);
-      --button-opacity: 0;
-  
-      &:hover:not(:disabled) {
-        --button-opacity: 0.1;
-      }
-      
-      &:disabled {
-        @apply bg-transparent;
-      }
+      --text-color: var(--cpy-button-text, var(--cpy-text-secondary));
     }
   }
 
   &-type--basic {
-    --text-colour: white;
-    --bg-colour-rgb: var(--cpy-bg-basic-rgb);
+    --bg-color: var(--cpy-button-bg, var(--cpy-bg-basic));
     
     &:hover:not(:disabled) {
-      --bg-colour-rgb: var(--cpy-bg-basic-hover-rgb);
+      --bg-color: var(--cpy-button-bg-hover, var(--cpy-bg-basic-hover));
     }
 
     &.button--icon,
     &.button-appearance--borderless,
     &.button-appearance--outline {
-      --text-colour: var(--cpy-text-base);
-      --button-opacity: 0;
-  
-      &:hover:not(:disabled) {
-        --button-opacity: 0.1;
-      }
-      
-      &:disabled {
-        @apply bg-transparent;
-      }
+      --text-color: var(--cpy-button-text, var(--cpy-text-base));
     }
   }
 
   &-type--success {
-    --text-colour: white;
-    --bg-colour-rgb: var(--cpy-bg-success-rgb);
+    --bg-color: var(--cpy-button-bg, var(--cpy-bg-success));
     
     &:hover:not(:disabled) {
-      --bg-colour-rgb: var(--cpy-bg-success-hover-rgb);
+      --bg-color: var(--cpy-button-bg-hover, var(--cpy-bg-success-hover));
     }
 
     &.button--icon,
     &.button-appearance--borderless,
     &.button-appearance--outline {
-      --text-colour: var(--cpy-text-success);
-      --button-opacity: 0;
-  
-      &:hover:not(:disabled) {
-        --button-opacity: 0.1;
-      }
-      
-      &:disabled {
-        @apply bg-transparent;
-      }
+      --text-color: var(--cpy-button-text, var(--cpy-text-success));
     }
   }
 
   &-type--warn {
-    --text-colour: white;
-    --bg-colour-rgb: var(--cpy-bg-warn-rgb);
+    --bg-color: var(--cpy-button-bg, var(--cpy-bg-warn));
     
     &:hover:not(:disabled) {
-      --bg-colour-rgb: var(--cpy-bg-warn-hover-rgb);
+      --bg-color: var(--cpy-button-bg-hover, var(--cpy-bg-warn-hover));
     }
 
     &.button--icon,
     &.button-appearance--borderless,
     &.button-appearance--outline {
-      --text-colour: var(--cpy-text-warn);
-      --button-opacity: 0;
-  
-      &:hover:not(:disabled) {
-        --button-opacity: 0.1;
-      }
-      
-      &:disabled {
-        @apply bg-transparent;
-      }
+      --text-color: var(--cpy-button-text, var(--cpy-text-warn));
     }
   }
 
   &-type--error {
-    --text-colour: white;
-    --bg-colour-rgb: var(--cpy-bg-error-rgb);
+    --bg-color: var(--cpy-button-bg, var(--cpy-bg-error));
     
     &:hover:not(:disabled) {
-      --bg-colour-rgb: var(--cpy-bg-error-hover-rgb);
+      --bg-color: var(--cpy-button-bg-hover, var(--cpy-bg-error-hover));
     }
 
     &.button--icon,
     &.button-appearance--borderless,
     &.button-appearance--outline {
-      --text-colour: var(--cpy-text-error);
-      --button-opacity: 0;
-  
-      &:hover:not(:disabled) {
-        --button-opacity: 0.1;
-      }
-      
-      &:disabled {
-        @apply bg-transparent;
-      }
+      --text-color: var(--cpy-button-text, var(--cpy-text-error));
     }
   }
 }

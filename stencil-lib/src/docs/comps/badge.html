@@ -1,111 +1,166 @@
-<cpy-page-content>
-  <h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-    Badges
-  </h3>
-  
-  <p style="margin-top: 1rem; margin-bottom: 2rem;">
-    Canopy badges provide non-interactive labels for displaying small amounts of information. They are referenced using the <cpy-code-snippet>&lt;cpy-badge&gt;</cpy-code-snippet> custom HTML element. This component utilises the slot element, allowing you to render your own HTML in the badge.
-  </p>
-  
-  <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-  
-  <p>Counter</p>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-    <div style="flex: 1;">
-      <cpy-badge>5</cpy-badge>
-    </div>
-    <div style="flex: 1;">
-      <cpy-badge type="secondary">9+</cpy-badge>
-    </div>
-    <div style="flex: 1;">
-      <cpy-badge type="basic">4</cpy-badge>
-    </div>
-    <div style="flex: 1;">
-      <cpy-badge type="success">1</cpy-badge>
-    </div>
-    <div style="flex: 1;">
-      <cpy-badge type="warn">2</cpy-badge>
-    </div>
-    <div style="flex: 1;">
-      <cpy-badge type="error">13</cpy-badge>
-    </div>
-  </div>
-  
-  <p>Tag</p>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-    <div style="flex: 1;">
-      <cpy-badge appearance="tag">Primary</cpy-badge>
-    </div>
-    <div style="flex: 1;">
-      <cpy-badge appearance="tag" type="secondary">Secondary</cpy-badge>
-    </div>
-    <div style="flex: 1;">
-      <cpy-badge appearance="tag" type="basic">Basic</cpy-badge>
-    </div>
-    <div style="flex: 1;">
-      <cpy-badge appearance="tag" type="success">Success</cpy-badge>
-    </div>
-    <div style="flex: 1;">
-      <cpy-badge appearance="tag" type="warn">Warning</cpy-badge>
-    </div>
-    <div style="flex: 1;">
-      <cpy-badge appearance="tag" type="error">Error</cpy-badge>
-    </div>
-  </div>
-  
-  <p>Small</p>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-    <div style="flex: 1;">
-      <cpy-badge size="small">5</cpy-badge>
-    </div>
-    <div style="flex: 1;">
-      <cpy-badge size="small" type="secondary">9+</cpy-badge>
-    </div>
-    <div style="flex: 1;">
-      <cpy-badge size="small" type="basic">4</cpy-badge>
-    </div>
-    <div style="flex: 1;">
-      <cpy-badge size="small" appearance="tag" type="success">Success</cpy-badge>
-    </div>
-    <div style="flex: 1;">
-      <cpy-badge size="small" appearance="tag" type="warn">Warning</cpy-badge>
-    </div>
-    <div style="flex: 1;">
-      <cpy-badge size="small" appearance="tag" type="error">Error</cpy-badge>
-    </div>
-  </div>
-  
-  <p>Large</p>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-    <div style="flex: 1;">
-      <cpy-badge size="large">5</cpy-badge>
-    </div>
-    <div style="flex: 1;">
-      <cpy-badge size="large" type="secondary">9+</cpy-badge>
-    </div>
-    <div style="flex: 1;">
-      <cpy-badge size="large" type="basic">4</cpy-badge>
-    </div>
-    <div style="flex: 1;">
-      <cpy-badge size="large" appearance="tag" type="success">Success</cpy-badge>
-    </div>
-    <div style="flex: 1;">
-      <cpy-badge size="large" appearance="tag" type="warn">Warning</cpy-badge>
-    </div>
-    <div style="flex: 1;">
-      <cpy-badge size="large" appearance="tag" type="error">Error</cpy-badge>
-    </div>
-  </div>
-  
-  <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
-  
-  <div style="margin-top: 1rem; margin-bottom: 2rem;">
-    <cpy-code-block id="badge-html-example" language="html"></cpy-code-block>
-  </div>
-  
-  <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-  <cpy-table id="badge-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  
-  <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
-  <cpy-table id="badge-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-</cpy-page-content>
+<cpy-page-container>
+  <h1>Badges</h1>
+
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Badge">
+        <p>
+          Canopy badges provide non-interactive labels for displaying small amounts of information. They are referenced
+      using the <cpy-code-snippet code="<cpy-badge>"></cpy-code-snippet> custom HTML element. This component utilises the
+      slot element, allowing you to render your own HTML in the badge.
+        </p>
+
+        <p>Parent elements of a Canopy badge should be styled with <cpy-code-snippet code="position: relative;"></cpy-code-snippet>.</p>
+
+        <cpy-code-example header="Badge" id="overview-code">
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge>12</cpy-badge>
+</div>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. Below is a list of variables you can use to configure this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
+
+        <h4 id="host">Host styles</h4>
+        <p>
+          Canopy components are designed to have their host element styled directly so that it can be overridden for specific implementation purposes.This is generally used to adjust <cpy-code-snippet code="display"></cpy-code-snippet>, <cpy-code-snippet code="position"></cpy-code-snippet>, <cpy-code-snippet code="background-color"></cpy-code-snippet>, <cpy-code-snippet code="padding"></cpy-code-snippet>, <cpy-code-snippet code="margin"></cpy-code-snippet>, <cpy-code-snippet code="width"></cpy-code-snippet>, <cpy-code-snippet code="height"></cpy-code-snippet> etc.
+        </p>
+        <p>
+          There are likely other properties that you can alter on the host element for each individual component, open your dev tools and inspect each component to see what you can override on the host!
+        </p>
+
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          TODO: ...
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Badge">
+        <h4 id="api" title="API">API Reference for Canopy Badge</h4>
+        <cpy-code-snippet code="<cpy-badge>"></cpy-code-snippet>
+
+        <div class="section">
+        </div>
+
+        <h4 id="types">Types</h4>
+        <cpy-code-block id="comp-interfaces"></cpy-code-block>
+
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
+
+        <h4 id="slots">Slots</h4>
+        <p>Inject custom content into the component</p>
+        <cpy-table id="comp-slots"></cpy-table>
+
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic badge">
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge></cpy-badge>
+</div>
+      </cpy-code-example>
+      <cpy-code-example header="Tag badge">
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge appearance="square">12</cpy-badge>
+</div>
+      </cpy-code-example>
+      <cpy-code-example header="Block badge">
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge block>12</cpy-badge>
+</div>
+      </cpy-code-example>
+      <cpy-code-example header="Badge attached to avatar">
+<div style="position: relative; display: inline-block;">
+  <cpy-avatar type="square" size="x-large" src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
+  <cpy-badge>12</cpy-badge>
+</div>
+      </cpy-code-example>
+      <cpy-code-example header="Small badge">
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge size="small"></cpy-badge>
+</div>
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge size="small">6</cpy-badge>
+</div>
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge appearance="square" size="small">Value</cpy-badge>
+</div>
+      </cpy-code-example>
+      <cpy-code-example header="Default size badge">
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge></cpy-badge>
+</div>
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge>6</cpy-badge>
+</div>
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge appearance="square">Value</cpy-badge>
+</div>
+      </cpy-code-example>
+      <cpy-code-example header="Large badge">
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge size="large"></cpy-badge>
+</div>
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge size="large">6</cpy-badge>
+</div>
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge appearance="square" size="large">Value</cpy-badge>
+</div>
+      </cpy-code-example>
+      <cpy-code-example header="Extra large badge">
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge size="x-large"></cpy-badge>
+</div>
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge size="x-large">94</cpy-badge>
+</div>
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge appearance="square" size="x-large">Info</cpy-badge>
+</div>
+      </cpy-code-example>
+      <cpy-code-example header="Alternate badge types">
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge type="primary">12</cpy-badge>
+</div>
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge type="secondary">6</cpy-badge>
+</div>
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge type="basic">94</cpy-badge>
+</div>
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge type="success">200</cpy-badge>
+</div>
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge type="warn">99+</cpy-badge>
+</div>
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge type="error" size="small"></cpy-badge>
+</div>
+      </cpy-code-example>
+      <cpy-code-example header="Custom badge">
+<div class="box" style="height: 4rem; width: 4rem;">
+  <cpy-badge style="--cpy-badge-bg: coral; --cpy-badge-text: black;">12</cpy-badge>
+</div>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
+</cpy-page-container>
+
+<script src="/docs/comps/badge.js">
+</script>

@@ -1,0 +1,102 @@
+:host {
+  display: inline-flex;
+}
+
+.checkbox {
+  @apply flex items-center gap-4;
+
+  &:hover {
+    .checkbox__checkmark {
+      border-color: var(--cpy-bg-primary);
+    }
+  }
+
+  &--invalid {
+    &.checkbox--required {
+      .checkbox__label::after {
+        color: var(--cpy-text-error);
+      }
+    }
+  }
+
+  &--required {
+    .checkbox__label::after {
+      @apply ml-0.5;
+      content: "*";
+    }
+  }
+
+  &--disabled {
+    &:hover {
+      .checkbox__checkmark {
+        @apply border-transparent;
+      }
+    }
+
+    .checkbox__checkmark {
+      @apply cursor-default;
+    }
+  }
+
+  &--large {
+    @apply gap-5;
+
+    .checkbox__container {
+      @apply rounded-md w-7 h-7;
+    }
+
+    .checkbox__checkmark {
+      @apply rounded-md border-4;
+
+      &::after {
+        @apply translate-x-[0.375rem] origin-bottom-left border-l-4 border-b-4;
+      }
+    }
+  }
+
+  &--small {
+    @apply gap-3;
+
+    .checkbox__container {
+      @apply rounded-sm w-4 h-4;
+    }
+
+    .checkbox__checkmark {
+      @apply rounded-sm border-2;
+      
+      &::after {
+        @apply translate-x-[0.25rem] origin-bottom-left border-l-2 border-b-2;
+      }
+    }
+  }
+
+  &__container {
+    @apply relative inline-block outline outline-1 w-5 h-5 rounded;
+    outline-color: var(--cpy-bg-basic-border);
+    background-color: var(--cpy-bg-white);
+
+    input {
+      @apply opacity-0 w-0 h-0;
+    }
+
+    input:checked + .checkbox__checkmark {
+      background-color: var(--cpy-bg-primary);
+      border-color: var(--cpy-bg-primary);
+
+      &::after {
+        @apply scale-100;
+      }
+    }
+  }
+
+  &__checkmark {
+    @apply absolute cursor-pointer inset-0 transition duration-300 rounded border-[3px];
+    border-color: transparent;
+    
+    &::after {
+      @apply absolute left-0 bottom-0 w-full h-1/2 -rotate-45 translate-x-[0.3125rem] -translate-y-[0.0625rem] origin-bottom-left border-l-[3px] border-b-[3px] scale-0;
+      border-color: var(--cpy-checkbox-tick-color, white);
+      content: "";
+    }
+  }
+}

@@ -1,0 +1,98 @@
+<cpy-page-container>
+  <h1>Overlays</h1>
+
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Overlay">
+        <p>
+          Canopy overlays provide a way to open floating panels on the screen. They are referenced using the <cpy-code-snippet code="<cpy-overlay>"></cpy-code-snippet> custom HTML element. This component utilises the slot element, allowing you to render your own HTML in the overlay.
+        </p>
+
+        <cpy-code-example header="Overlay" id="overview-example">
+<div style="position: relative; height: 15rem; width: 100%;">
+  <cpy-button type="primary" id="overview-button">Show overlay</cpy-button>
+  <cpy-overlay show id="overview-overlay">
+    <div style="background-color: var(--cpy-bg-white); text-align: center; padding: 0.5rem;">
+      I'm in the overlay! Click the backdrop to close me.
+    </div>
+  </cpy-overlay>
+</div>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. Below is a list of variables you can use to configure this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
+
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          Overlays serve a wide variety of scenarios and may contain many different types of content. Due to this flexible nature, the appropriate accessibility treatment depends on how you use <cpy-code-snippet code="<cpy-overlay>"></cpy-code-snippet>.
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Overlay">
+        <h4 id="api" title="API">API Reference for Canopy Overlay</h4>
+        <cpy-code-snippet code="<cpy-overlay>"></cpy-code-snippet>
+
+        <div class="section">
+        </div>
+
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
+
+        <h4 id="events">Events</h4>
+        <p>React to changes in the component</p>
+        <cpy-table id="comp-events"></cpy-table>
+
+        <h4 id="methods">Methods</h4>
+        <p>Exposed methods on the component (All methods are async!)</p>
+        <cpy-table id="comp-methods"></cpy-table>
+
+        <h4 id="slots">Slots</h4>
+        <p>Inject custom content into the component</p>
+        <cpy-table id="comp-slots"></cpy-table>
+
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic Overlay">
+<div style="position: relative; height: 15rem; width: 100%;">
+  <cpy-overlay show>
+  </cpy-overlay>
+</div>
+      </cpy-code-example>
+
+      <cpy-code-example header="Overlay triggered by a button" id="example-overlay">
+<div style="position: relative; height: 15rem; width: 100%;">
+  <cpy-button type="primary" id="button">Show overlay</cpy-button>
+  <cpy-overlay id="overlay">
+  </cpy-overlay>
+</div>
+      </cpy-code-example>
+
+      <cpy-code-example header="Overlay with content">
+<div style="position: relative; height: 15rem; width: 100%;">
+  <cpy-overlay show>
+    <div style="background-color: var(--cpy-bg-white); text-align: center; padding: 0.5rem;">
+      I'm in the overlay!
+    </div>
+  </cpy-overlay>
+</div>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
+</cpy-page-container>
+
+<script src="/docs/comps/overlay.js">
+</script>

@@ -2,16 +2,17 @@ export type NavMenuItemType = 'basic' | 'group' | 'collapsible';
 
 export interface NavMenuItem {
 
+  title: string;
+  type: NavMenuItemType;
   icon?: string;
   separator?: boolean;
-  title: string;
   description?: string;
-  type: NavMenuItemType;
-  url: string;
+  url?: string;
   active?: boolean;
+  collapsed?: boolean;
   looseMatch?: boolean;
   openInNewTab?: boolean;
-  function?: any;
+  function?: (item: NavMenuItem) => any;
   children?: NavMenuItem[];
 
 }

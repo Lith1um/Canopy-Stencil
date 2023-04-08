@@ -1,6 +1,8 @@
-import { Component, h, Method, Prop } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Method, Prop } from '@stencil/core';
 
-import { computePosition, flip, offset, Placement, shift } from '@floating-ui/dom';
+import { computePosition, flip, shift } from '@floating-ui/dom';
+import { PopupActiveOn, PopupPosition } from './popup.type';
+import { onVisible } from '../../utils/elements';
 
 @Component({
   tag: 'cpy-popup',
@@ -9,20 +11,38 @@ import { computePosition, flip, offset, Placement, shift } from '@floating-ui/do
 })
 export class Popup {
 
-  @Prop() position: Placement  = 'bottom-start';
+  @Prop() position: PopupPosition  = 'bottom-start';
 
-  @Prop() activeOn: 'hover' | 'click' = 'click';
-  
-  @Prop() offset: number = 0;
+  @Prop() activeOn: PopupActiveOn = 'click';
+
+  @Prop() stretch: boolean = false;
+
+  @Prop() disabled: boolean = false;
+
+  @Event() opened: EventEmitter<void>;
+
+  @Event() closed: EventEmitter<void>;
 
   wrapperElem: HTMLElement;
   popupElem: HTMLElement;
 
   @Method()
+  async show(): Promise<void> {
+    this.wrapperElem.classList.add('popup--show');
+    this.addClickOutsideListener();
+  }
+
+  @Method()
+  async hide(): Promise<void> {
+    this.wrapperElem.classList.remove('popup--show');
+    this.removeClickOutsideListener();
+  }
+
+  @Method()
   async recalculatePosition(): Promise<void> {
     computePosition(this.wrapperElem, this.popupElem, {
       placement: this.position,
-      middleware: [flip(), shift({ crossAxis: true }), offset(this.offset)],
+      middleware: [flip(), shift({ crossAxis: true })],
     }).then(({x, y}) => {
       Object.assign(this.popupElem.style, {
         left: `${x}px`,
@@ -37,8 +57,10 @@ export class Popup {
 
     if (this.wrapperElem.classList.contains('popup--show')) {
       this.addClickOutsideListener();
+      this.opened.emit();
     } else {
       this.removeClickOutsideListener();
+      this.closed.emit();
     }
   }
 
@@ -65,6 +87,7 @@ export class Popup {
     if (!e.composedPath().includes(this.wrapperElem)) {
       this.wrapperElem.classList.remove('popup--show');
       this.removeClickOutsideListener();
+      this.closed.emit();
     }
   }
 
@@ -77,17 +100,19 @@ export class Popup {
   }
 
   componentDidRender(): void {
-    this.recalculatePosition();
+    onVisible(this.wrapperElem, ()=> this.recalculatePosition());
   }
 
   render() {
     const classes = {
       'popup': true,
-      'popup--allow-hover': this.activeOn === 'hover'
+      'popup--allow-hover': !this.disabled && this.activeOn === 'hover'
     }
 
     const popupClasses = {
-      'popup--dropdown': true,
+      'popup__dropdown': true,
+      'popup__dropdown--stretch-x': this.stretch && (this.position.includes('top') || this.position.includes('bottom')),
+      'popup__dropdown--stretch-y': this.stretch && (this.position.includes('left') || this.position.includes('right'))
     };
 
     return (
@@ -96,7 +121,7 @@ export class Popup {
         ref={(el) => this.wrapperElem = el as HTMLElement}
         onMouseEnter={() => this.recalculatePosition()}>
 
-        {this.activeOn === 'click'
+        {!this.disabled && this.activeOn === 'click'
           ? <div class="popup--click-container" onClick={() => this.onClick()}>
               <slot />
             </div>

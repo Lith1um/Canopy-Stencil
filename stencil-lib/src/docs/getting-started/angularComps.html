@@ -1,30 +1,32 @@
-<cpy-page-content>
-  <h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-    Canopy Angular Components Installation
-  </h3>
-  
-  <p style="margin-top: 1rem; margin-bottom: 2rem;">
-    To get Canopy up and running in Angular, you'll need to install the relevant packages and configure your app to use web components.
-  </p>
-  
-  <h3 id="npm-install" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Install NPM packages</h3>
-  <div style="margin-top: 1rem; margin-bottom: 2rem;">
-    <cpy-code-block language="shell" code="npm install canopy-stencil-web canopy-stencil-angular"></cpy-code-block>
-  </div>
-  
-  <h3 id="app-module" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Configure your app module</h3>
-  <div style="margin-top: 1rem; margin-bottom: 2rem;">
-    <p style="margin-top: 1rem; margin-bottom: 1rem;">Import the angular module and custom elements loader for canopy, calling the loader and follow up by adding the Canopy module to your imports.</p>
+<cpy-page-container>
+  <cpy-page-content>
+    <h3 class="border-b">
+      Canopy Angular Components Installation
+    </h3>
+
+    <p>
+      To get Canopy up and running in Angular, you'll need to install the relevant packages and configure your app to
+      use web components.
+    </p>
+
+    <h4 id="npm-install">Install NPM packages</h4>
+    <cpy-code-block language="shell" code="npm install @canopy-web/core @canopy-web/angular"></cpy-code-block>
+
+    <h4 id="app-module">Configure your app module</h4>
+    <p>Import the angular module and custom elements loader for canopy,
+      calling the loader and follow up by adding the Canopy module to your imports.</p>
     <cpy-code-block id="angular-comp-install-module"></cpy-code-block>
-  </div>
-  
-  <h3 id="build" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Including assets and styles</h3>
-  <div style="margin-top: 1rem; margin-bottom: 2rem;">
-    <p style="margin-top: 1rem; margin-bottom: 1rem;">Modify you angular.json file to load assets and css from Canopy, adding the following into the build options for your project</p>
+
+    <h4 id="build">Including assets and styles</h4>
+    <p>Modify you angular.json file to load assets and css from Canopy,
+      adding the following into the build options for your project</p>
     <cpy-code-block id="angular-comp-install-assets" language="json"></cpy-code-block>
-  </div>
-  
-  <p style="margin-top: 1rem; margin-bottom: 2rem;">
-    And that's it! You should now be able to use Canopy within your angular application.
-  </p>
-</cpy-page-content>
+
+    <p>
+      And that's it! You should now be able to use Canopy within your angular application.
+    </p>
+  </cpy-page-content>
+</cpy-page-container>
+
+<script src="/docs/getting-started/angularComps.js">
+</script>

@@ -1,65 +1,98 @@
-<cpy-page-content>
-  <h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-    Spinners
-  </h3>
-  
-  <p style="margin-top: 1rem; margin-bottom: 2rem;">
-    Canopy spinners indicate progress by showing a loading state. They are referenced using the<cpy-code-snippet>&lt;cpy-spinner&gt;</cpy-code-snippet>custom HTML element.
-  </p>
-  
-  <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-  
-  <p>Small</p>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-    <div style="flex: 1;"><cpy-spinner size="small" type="primary"></cpy-spinner></div>
-    <div style="flex: 1;"><cpy-spinner size="small" type="secondary"></cpy-spinner></div>
-    <div style="flex: 1;"><cpy-spinner size="small" type="basic"></cpy-spinner></div>
-    <div style="flex: 1;"><cpy-spinner size="small" type="success"></cpy-spinner></div>
-    <div style="flex: 1;"><cpy-spinner size="small" type="warn"></cpy-spinner></div>
-    <div style="flex: 1;"><cpy-spinner size="small" type="error"></cpy-spinner></div>
-  </div>
-  
-  <p>Default</p>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-    <div style="flex: 1;"><cpy-spinner type="primary"></cpy-spinner></div>
-    <div style="flex: 1;"><cpy-spinner type="secondary"></cpy-spinner></div>
-    <div style="flex: 1;"><cpy-spinner type="basic"></cpy-spinner></div>
-    <div style="flex: 1;"><cpy-spinner type="success"></cpy-spinner></div>
-    <div style="flex: 1;"><cpy-spinner type="warn"></cpy-spinner></div>
-    <div style="flex: 1;"><cpy-spinner type="error"></cpy-spinner></div>
-  </div>
-  
-  <p>Large</p>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-    <div style="flex: 1;"><cpy-spinner size="large" type="primary"></cpy-spinner></div>
-    <div style="flex: 1;"><cpy-spinner size="large" type="secondary"></cpy-spinner></div>
-    <div style="flex: 1;"><cpy-spinner size="large" type="basic"></cpy-spinner></div>
-    <div style="flex: 1;"><cpy-spinner size="large" type="success"></cpy-spinner></div>
-    <div style="flex: 1;"><cpy-spinner size="large" type="warn"></cpy-spinner></div>
-    <div style="flex: 1;"><cpy-spinner size="large" type="error"></cpy-spinner></div>
-  </div>
-  
-  <p>Inside a button</p>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-    <div style="flex: 1;">
-      <cpy-button>
-        <cpy-spinner size="small"></cpy-spinner>Loading
-      </cpy-button>
-    </div>
-  
-    <div style="flex: 1;">
-      <cpy-button appearance="outline">
-        Loading<cpy-spinner size="small"></cpy-spinner>
-      </cpy-button>
-    </div>
-  </div>
-  
-  <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
-  
-  <div style="margin-top: 1rem; margin-bottom: 2rem;">
-    <cpy-code-block id="spinner-html-example" language="html"></cpy-code-block>
-  </div>
-  
-  <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-  <cpy-table id="spinner-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-</cpy-page-content>
+<cpy-page-container>
+  <h1>Spinners</h1>
+
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Spinner">
+        <p>
+          Canopy spinners indicate progress by showing a loading state. They are referenced using
+          the <cpy-code-snippet code="<cpy-spinner>"></cpy-code-snippet> custom HTML element.
+        </p>
+
+        <cpy-code-example header="Spinner" id="overview-code">
+<cpy-spinner type="primary"></cpy-spinner>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. Below is a list of variables you can use to configure this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
+
+        <h4 id="host">Host styles</h4>
+        <p>
+          Canopy components are designed to have their host element styled directly so that it can be overridden for specific implementation purposes.This is generally used to adjust <cpy-code-snippet code="display"></cpy-code-snippet>, <cpy-code-snippet code="position"></cpy-code-snippet>, <cpy-code-snippet code="background-color"></cpy-code-snippet>, <cpy-code-snippet code="padding"></cpy-code-snippet>, <cpy-code-snippet code="margin"></cpy-code-snippet>, <cpy-code-snippet code="width"></cpy-code-snippet>, <cpy-code-snippet code="height"></cpy-code-snippet> etc.
+        </p>
+        <p>
+          There are likely other properties that you can alter on the host element for each individual component, open your dev tools and inspect each component to see what you can override on the host!
+        </p>
+
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          Spinners serve a wide variety of scenarios and may contain many different types of content. Due to this flexible nature, the appropriate accessibility treatment depends on how you use <cpy-code-snippet code="<cpy-spinner>"></cpy-code-snippet>.
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Spinner">
+        <h4 id="api" title="API">API Reference for Canopy Spinner</h4>
+        <cpy-code-snippet code="<cpy-spinner>"></cpy-code-snippet>
+
+        <div class="section">
+        </div>
+
+        <h4 id="types">Types</h4>
+        <cpy-code-block id="comp-interfaces"></cpy-code-block>
+
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
+
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic Spinner">
+<cpy-spinner></cpy-spinner>
+      </cpy-code-example>
+      <cpy-code-example header="Small Spinner">
+<cpy-spinner type="primary" size="small"></cpy-spinner>
+      </cpy-code-example>
+      <cpy-code-example header="Large Spinner">
+<cpy-spinner type="primary" size="large"></cpy-spinner>
+      </cpy-code-example>
+      <cpy-code-example header="Spinner inside button">
+<cpy-button>
+  <cpy-spinner size="small"></cpy-spinner>Loading
+</cpy-button>
+<cpy-button appearance="outline">
+  Loading<cpy-spinner size="small"></cpy-spinner>
+</cpy-button>
+      </cpy-code-example>
+      <cpy-code-example header="Alternate types">
+<cpy-spinner type="primary"></cpy-spinner>
+<cpy-spinner type="secondary"></cpy-spinner>
+<cpy-spinner type="basic"></cpy-spinner>
+<cpy-spinner type="success"></cpy-spinner>
+<cpy-spinner type="warn"></cpy-spinner>
+<cpy-spinner type="error"></cpy-spinner>
+      </cpy-code-example>
+      <cpy-code-example header="Custom Spinner">
+<cpy-spinner style="
+  --cpy-spinner-color: pink;
+  --cpy-spinner-border-width: 0.5rem;
+"></cpy-spinner>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
+</cpy-page-container>
+
+<script src="/docs/comps/spinner.js">
+</script>

@@ -5,25 +5,65 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AccordionSize } from "./components/accordion/accordion.type";
 import { AlertAppearance, AlertType } from "./components/alert/alert.type";
+import { AvatarSize, AvatarType } from "./components/avatar/avatar.type";
 import { BadgeAppearance, BadgeSize, BadgeType } from "./components/badge/badge.type";
 import { ButtonAppearance, ButtonSize, ButtonStyle } from "./components/button/button.type";
+import { CodeLanguage } from "./components/code-block/types/code-language.type";
+import { CommentItem } from "./components/comment/interfaces/comment.interface";
+import { CommentSize, CommentType } from "./components/comment/types/comment-size.type";
 import { ContentsListItem } from "./components/contents-list/contents-list.interface";
 import { ContextMenuItem } from "./components/context-menu/context-menu.interface";
-import { InputSize } from "./components/inputs/input/input";
+import { DialogSize } from "./components/dialog/dialog.type";
+import { InputType } from "./components/inputs/input/input.type";
+import { InputSize } from "./components/inputs/types/input-size.type";
 import { ValidatorEntry } from "./components/inputs/validation/types/validator-entry.type";
 import { Validator } from "./components/inputs/validation/types/validator.type";
+import { LinkType } from "./components/link/types/link.type";
 import { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
-import { Placement } from "@floating-ui/dom";
+import { PopupActiveOn, PopupPosition } from "./components/popup/popup.type";
+import { ProgressBarAppearance, ProgressBarSize } from "./components/progress-bar/progress-bar.type";
+import { ShowMoreAppearance } from "./components/show-more/show-more.type";
 import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
-import { ToastPosition } from "./components/toast/toast.type";
+import { StackDirection } from "./components/stack/stack.type";
+import { TableData } from "./components/table/types/table-data.type";
+import { ToastPosition, ToastType } from "./components/toast/toast.type";
+import { ToolbarSize, ToolbarType } from "./components/toolbar/toolbar.type";
+import { TooltipPosition } from "./components/tooltip/tooltip.type";
+export { AccordionSize } from "./components/accordion/accordion.type";
+export { AlertAppearance, AlertType } from "./components/alert/alert.type";
+export { AvatarSize, AvatarType } from "./components/avatar/avatar.type";
+export { BadgeAppearance, BadgeSize, BadgeType } from "./components/badge/badge.type";
+export { ButtonAppearance, ButtonSize, ButtonStyle } from "./components/button/button.type";
+export { CodeLanguage } from "./components/code-block/types/code-language.type";
+export { CommentItem } from "./components/comment/interfaces/comment.interface";
+export { CommentSize, CommentType } from "./components/comment/types/comment-size.type";
+export { ContentsListItem } from "./components/contents-list/contents-list.interface";
+export { ContextMenuItem } from "./components/context-menu/context-menu.interface";
+export { DialogSize } from "./components/dialog/dialog.type";
+export { InputType } from "./components/inputs/input/input.type";
+export { InputSize } from "./components/inputs/types/input-size.type";
+export { ValidatorEntry } from "./components/inputs/validation/types/validator-entry.type";
+export { Validator } from "./components/inputs/validation/types/validator.type";
+export { LinkType } from "./components/link/types/link.type";
+export { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
+export { PopupActiveOn, PopupPosition } from "./components/popup/popup.type";
+export { ProgressBarAppearance, ProgressBarSize } from "./components/progress-bar/progress-bar.type";
+export { ShowMoreAppearance } from "./components/show-more/show-more.type";
+export { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
+export { StackDirection } from "./components/stack/stack.type";
+export { TableData } from "./components/table/types/table-data.type";
+export { ToastPosition, ToastType } from "./components/toast/toast.type";
+export { ToolbarSize, ToolbarType } from "./components/toolbar/toolbar.type";
+export { TooltipPosition } from "./components/tooltip/tooltip.type";
 export namespace Components {
     interface CpyAccordion {
         "close": () => Promise<void>;
         "headerTitle": string;
         "open": () => Promise<void>;
         "opened": boolean;
-        "size": 'small' | 'default' | 'large';
+        "size": AccordionSize;
         "toggle": () => Promise<void>;
     }
     interface CpyAlert {
@@ -36,12 +76,13 @@ export namespace Components {
     interface CpyAvatar {
         "border": boolean;
         "initials": string;
-        "size": 'small' | 'default' | 'large' | 'x-large';
+        "size": AvatarSize;
         "src": string;
-        "type": 'rounded' | 'square';
+        "type": AvatarType;
     }
     interface CpyBadge {
         "appearance": BadgeAppearance;
+        "block": boolean;
         "size": BadgeSize;
         "type": BadgeType;
     }
@@ -62,9 +103,37 @@ export namespace Components {
     }
     interface CpyCodeBlock {
         "code": string;
-        "language": 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell';
+        "language": CodeLanguage;
+    }
+    interface CpyCodeExample {
+        "code": string;
+        "header": any;
+        "language": CodeLanguage;
+        "showCode": boolean;
     }
     interface CpyCodeSnippet {
+        "code": string;
+        "quotes": boolean;
+    }
+    interface CpyComment {
+        "comment": CommentItem;
+        "hideAvatar": boolean;
+        "maxLines": number;
+        "rightAligned": boolean;
+        "showLessText": string;
+        "showMoreText": string;
+        "size": CommentSize;
+        "type": CommentType;
+    }
+    interface CpyCommentList {
+        "comments": CommentItem[];
+        "hideAvatar": boolean;
+        "maxLines": number;
+        "rightAligned": boolean;
+        "showLessText": string;
+        "showMoreText": string;
+        "size": CommentSize;
+        "type": CommentType;
     }
     interface CpyContentsList {
         "activeIndex": number;
@@ -96,7 +165,7 @@ export namespace Components {
         "close": () => Promise<void>;
         "dialogTitle": string;
         "open": () => Promise<void>;
-        "size": 'small' | 'default' | 'large' | 'full-screen';
+        "size": DialogSize;
         "zIndex": string;
     }
     interface CpyDrawer {
@@ -104,6 +173,7 @@ export namespace Components {
     }
     interface CpyDrawerContainer {
         "opened": boolean;
+        "toggle": () => Promise<void>;
     }
     interface CpyExpandCollapse {
         "collapse": () => Promise<void>;
@@ -119,21 +189,79 @@ export namespace Components {
         "isValid": () => Promise<boolean>;
         "label": string;
         "markAsTouched": () => Promise<void>;
+        "placeholder": string;
         "required": boolean;
         "size": InputSize;
-        "type": 'text' | 'number' | 'email' | 'password';
+        "type": InputType;
+        "validators": Array<string | ValidatorEntry | Validator<string | number>>;
+        "value": string | number;
+    }
+    interface CpyInputBase {
+        "closePopup": () => Promise<void>;
+        "disabled": boolean;
+        "error": string;
+        "interacted": boolean;
+        "label": string;
+        "noContainer": boolean;
+        "popup": boolean;
+        "required": boolean;
+        "size": InputSize;
+    }
+    interface CpyInputCheckbox {
+        "disabled": boolean;
+        "isValid": () => Promise<boolean>;
+        "label": string;
+        "markAsTouched": () => Promise<void>;
+        "required": boolean;
+        "size": InputSize;
+        "validators": Array<string | ValidatorEntry | Validator<boolean>>;
+        "value": boolean;
+    }
+    interface CpyInputSelect {
+        "disabled": boolean;
+        "isValid": () => Promise<boolean>;
+        "label": string;
+        "markAsTouched": () => Promise<void>;
+        "required": boolean;
+        "size": InputSize;
+        "validators": Array<string | ValidatorEntry | Validator<string | number>>;
+        "value": string | number;
+    }
+    interface CpyInputSelectOption {
+        "active": boolean;
+        "label": string;
+        "size": InputSize;
+        "value": string | number;
+    }
+    interface CpyInputTextarea {
+        "disabled": boolean;
+        "isValid": () => Promise<boolean>;
+        "label": string;
+        "markAsTouched": () => Promise<void>;
+        "maxRows": number;
+        "minRows": number;
+        "placeholder": string;
+        "required": boolean;
+        "size": InputSize;
         "validators": Array<string | ValidatorEntry | Validator<string>>;
-        "value": any;
+        "value": string;
     }
     interface CpyInputToggle {
-        "checked": boolean;
+        "disabled": boolean;
+        "isValid": () => Promise<boolean>;
         "label": string;
-        "size": 'small' | 'default' | 'large';
+        "markAsTouched": () => Promise<void>;
+        "required": boolean;
+        "size": InputSize;
+        "switchAfter": boolean;
+        "validators": Array<string | ValidatorEntry | Validator<boolean>>;
+        "value": boolean;
     }
     interface CpyLink {
+        "func": () => void;
         "href": string;
         "newTab": boolean;
-        "type": 'primary' | 'secondary' | 'basic';
+        "type": LinkType;
     }
     interface CpyNavMenu {
         "items": NavMenuItem[];
@@ -141,24 +269,67 @@ export namespace Components {
     interface CpyNavMenuItem {
         "item": NavMenuItem;
     }
+    interface CpyOverlay {
+        "close": () => Promise<void>;
+        "hasBackdropClick": boolean;
+        "open": () => Promise<void>;
+        "show": boolean;
+        "toggle": (show: boolean) => Promise<void>;
+        "zIndex": string;
+    }
+    interface CpyPageContainer {
+    }
     interface CpyPageContent {
+        "contentsTitle": string;
         "hideContentsList": boolean;
     }
     interface CpyPopup {
-        "activeOn": 'hover' | 'click';
-        "hidePopup": () => Promise<void>;
-        "offset": number;
-        "position": Placement;
+        "activeOn": PopupActiveOn;
+        "disabled": boolean;
+        "hide": () => Promise<void>;
+        "position": PopupPosition;
         "recalculatePosition": () => Promise<void>;
-        "showPopup": () => Promise<void>;
-        "togglePopup": () => Promise<void>;
+        "show": () => Promise<void>;
+        "stretch": boolean;
+    }
+    interface CpyProgressBar {
+        "border": boolean;
+        "indeterminate": boolean;
+        "size": ProgressBarSize;
+        "type": ProgressBarAppearance;
+        "value": number;
+    }
+    interface CpyShowMore {
+        "lines": number;
+        "showLessText": string;
+        "showMoreText": string;
+        "text": string;
+        "type": ShowMoreAppearance;
     }
     interface CpySpinner {
         "size": SpinnerSize;
         "type": SpinnerAppearance;
     }
+    interface CpySplash {
+        "disabled": boolean;
+    }
+    interface CpyStack {
+        "direction": StackDirection;
+        "overlap": number;
+    }
+    interface CpyTabContent {
+        "select": () => Promise<void>;
+        "unselect": () => Promise<void>;
+    }
+    interface CpyTabHeader {
+        "headerId": string;
+        "tabTitle": string;
+    }
     interface CpyTable {
-        "tableData": { [key: string]: string | number | boolean | null | undefined }[];
+        "tableData": TableData[];
+    }
+    interface CpyTabs {
+        "activeIndex": number;
     }
     interface CpyToast {
         "close": () => Promise<void>;
@@ -168,13 +339,16 @@ export namespace Components {
         "open": () => Promise<void>;
         "position": ToastPosition;
         "toastTitle": string;
-        "type": AlertType;
+        "type": ToastType;
         "zIndex": string;
     }
     interface CpyToolbar {
+        "size": ToolbarSize;
+        "type": ToolbarType;
     }
     interface CpyTooltip {
-        "position": 'bottom' | 'left' | 'right' | 'top';
+        "hideArrow": boolean;
+        "position": TooltipPosition;
         "text": string;
     }
 }
@@ -186,9 +360,9 @@ export interface CpyAlertCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyAlertElement;
 }
-export interface CpyCalendarCustomEvent<T> extends CustomEvent<T> {
+export interface CpyButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLCpyCalendarElement;
+    target: HTMLCpyButtonElement;
 }
 export interface CpyContentsListItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -218,6 +392,26 @@ export interface CpyInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyInputElement;
 }
+export interface CpyInputBaseCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyInputBaseElement;
+}
+export interface CpyInputCheckboxCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyInputCheckboxElement;
+}
+export interface CpyInputSelectCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyInputSelectElement;
+}
+export interface CpyInputSelectOptionCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyInputSelectOptionElement;
+}
+export interface CpyInputTextareaCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyInputTextareaElement;
+}
 export interface CpyInputToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyInputToggleElement;
@@ -225,6 +419,22 @@ export interface CpyInputToggleCustomEvent<T> extends CustomEvent<T> {
 export interface CpyNavMenuItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyNavMenuItemElement;
+}
+export interface CpyOverlayCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyOverlayElement;
+}
+export interface CpyPopupCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyPopupElement;
+}
+export interface CpyTabHeaderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyTabHeaderElement;
+}
+export interface CpyTabsCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyTabsElement;
 }
 export interface CpyToastCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -285,11 +495,29 @@ declare global {
         prototype: HTMLCpyCodeBlockElement;
         new (): HTMLCpyCodeBlockElement;
     };
+    interface HTMLCpyCodeExampleElement extends Components.CpyCodeExample, HTMLStencilElement {
+    }
+    var HTMLCpyCodeExampleElement: {
+        prototype: HTMLCpyCodeExampleElement;
+        new (): HTMLCpyCodeExampleElement;
+    };
     interface HTMLCpyCodeSnippetElement extends Components.CpyCodeSnippet, HTMLStencilElement {
     }
     var HTMLCpyCodeSnippetElement: {
         prototype: HTMLCpyCodeSnippetElement;
         new (): HTMLCpyCodeSnippetElement;
+    };
+    interface HTMLCpyCommentElement extends Components.CpyComment, HTMLStencilElement {
+    }
+    var HTMLCpyCommentElement: {
+        prototype: HTMLCpyCommentElement;
+        new (): HTMLCpyCommentElement;
+    };
+    interface HTMLCpyCommentListElement extends Components.CpyCommentList, HTMLStencilElement {
+    }
+    var HTMLCpyCommentListElement: {
+        prototype: HTMLCpyCommentListElement;
+        new (): HTMLCpyCommentListElement;
     };
     interface HTMLCpyContentsListElement extends Components.CpyContentsList, HTMLStencilElement {
     }
@@ -363,6 +591,36 @@ declare global {
         prototype: HTMLCpyInputElement;
         new (): HTMLCpyInputElement;
     };
+    interface HTMLCpyInputBaseElement extends Components.CpyInputBase, HTMLStencilElement {
+    }
+    var HTMLCpyInputBaseElement: {
+        prototype: HTMLCpyInputBaseElement;
+        new (): HTMLCpyInputBaseElement;
+    };
+    interface HTMLCpyInputCheckboxElement extends Components.CpyInputCheckbox, HTMLStencilElement {
+    }
+    var HTMLCpyInputCheckboxElement: {
+        prototype: HTMLCpyInputCheckboxElement;
+        new (): HTMLCpyInputCheckboxElement;
+    };
+    interface HTMLCpyInputSelectElement extends Components.CpyInputSelect, HTMLStencilElement {
+    }
+    var HTMLCpyInputSelectElement: {
+        prototype: HTMLCpyInputSelectElement;
+        new (): HTMLCpyInputSelectElement;
+    };
+    interface HTMLCpyInputSelectOptionElement extends Components.CpyInputSelectOption, HTMLStencilElement {
+    }
+    var HTMLCpyInputSelectOptionElement: {
+        prototype: HTMLCpyInputSelectOptionElement;
+        new (): HTMLCpyInputSelectOptionElement;
+    };
+    interface HTMLCpyInputTextareaElement extends Components.CpyInputTextarea, HTMLStencilElement {
+    }
+    var HTMLCpyInputTextareaElement: {
+        prototype: HTMLCpyInputTextareaElement;
+        new (): HTMLCpyInputTextareaElement;
+    };
     interface HTMLCpyInputToggleElement extends Components.CpyInputToggle, HTMLStencilElement {
     }
     var HTMLCpyInputToggleElement: {
@@ -387,6 +645,18 @@ declare global {
         prototype: HTMLCpyNavMenuItemElement;
         new (): HTMLCpyNavMenuItemElement;
     };
+    interface HTMLCpyOverlayElement extends Components.CpyOverlay, HTMLStencilElement {
+    }
+    var HTMLCpyOverlayElement: {
+        prototype: HTMLCpyOverlayElement;
+        new (): HTMLCpyOverlayElement;
+    };
+    interface HTMLCpyPageContainerElement extends Components.CpyPageContainer, HTMLStencilElement {
+    }
+    var HTMLCpyPageContainerElement: {
+        prototype: HTMLCpyPageContainerElement;
+        new (): HTMLCpyPageContainerElement;
+    };
     interface HTMLCpyPageContentElement extends Components.CpyPageContent, HTMLStencilElement {
     }
     var HTMLCpyPageContentElement: {
@@ -399,17 +669,59 @@ declare global {
         prototype: HTMLCpyPopupElement;
         new (): HTMLCpyPopupElement;
     };
+    interface HTMLCpyProgressBarElement extends Components.CpyProgressBar, HTMLStencilElement {
+    }
+    var HTMLCpyProgressBarElement: {
+        prototype: HTMLCpyProgressBarElement;
+        new (): HTMLCpyProgressBarElement;
+    };
+    interface HTMLCpyShowMoreElement extends Components.CpyShowMore, HTMLStencilElement {
+    }
+    var HTMLCpyShowMoreElement: {
+        prototype: HTMLCpyShowMoreElement;
+        new (): HTMLCpyShowMoreElement;
+    };
     interface HTMLCpySpinnerElement extends Components.CpySpinner, HTMLStencilElement {
     }
     var HTMLCpySpinnerElement: {
         prototype: HTMLCpySpinnerElement;
         new (): HTMLCpySpinnerElement;
     };
+    interface HTMLCpySplashElement extends Components.CpySplash, HTMLStencilElement {
+    }
+    var HTMLCpySplashElement: {
+        prototype: HTMLCpySplashElement;
+        new (): HTMLCpySplashElement;
+    };
+    interface HTMLCpyStackElement extends Components.CpyStack, HTMLStencilElement {
+    }
+    var HTMLCpyStackElement: {
+        prototype: HTMLCpyStackElement;
+        new (): HTMLCpyStackElement;
+    };
+    interface HTMLCpyTabContentElement extends Components.CpyTabContent, HTMLStencilElement {
+    }
+    var HTMLCpyTabContentElement: {
+        prototype: HTMLCpyTabContentElement;
+        new (): HTMLCpyTabContentElement;
+    };
+    interface HTMLCpyTabHeaderElement extends Components.CpyTabHeader, HTMLStencilElement {
+    }
+    var HTMLCpyTabHeaderElement: {
+        prototype: HTMLCpyTabHeaderElement;
+        new (): HTMLCpyTabHeaderElement;
+    };
     interface HTMLCpyTableElement extends Components.CpyTable, HTMLStencilElement {
     }
     var HTMLCpyTableElement: {
         prototype: HTMLCpyTableElement;
         new (): HTMLCpyTableElement;
+    };
+    interface HTMLCpyTabsElement extends Components.CpyTabs, HTMLStencilElement {
+    }
+    var HTMLCpyTabsElement: {
+        prototype: HTMLCpyTabsElement;
+        new (): HTMLCpyTabsElement;
     };
     interface HTMLCpyToastElement extends Components.CpyToast, HTMLStencilElement {
     }
@@ -439,7 +751,10 @@ declare global {
         "cpy-card": HTMLCpyCardElement;
         "cpy-carousel": HTMLCpyCarouselElement;
         "cpy-code-block": HTMLCpyCodeBlockElement;
+        "cpy-code-example": HTMLCpyCodeExampleElement;
         "cpy-code-snippet": HTMLCpyCodeSnippetElement;
+        "cpy-comment": HTMLCpyCommentElement;
+        "cpy-comment-list": HTMLCpyCommentListElement;
         "cpy-contents-list": HTMLCpyContentsListElement;
         "cpy-contents-list-item": HTMLCpyContentsListItemElement;
         "cpy-context-menu": HTMLCpyContextMenuElement;
@@ -452,14 +767,28 @@ declare global {
         "cpy-expand-collapse": HTMLCpyExpandCollapseElement;
         "cpy-icon": HTMLCpyIconElement;
         "cpy-input": HTMLCpyInputElement;
+        "cpy-input-base": HTMLCpyInputBaseElement;
+        "cpy-input-checkbox": HTMLCpyInputCheckboxElement;
+        "cpy-input-select": HTMLCpyInputSelectElement;
+        "cpy-input-select-option": HTMLCpyInputSelectOptionElement;
+        "cpy-input-textarea": HTMLCpyInputTextareaElement;
         "cpy-input-toggle": HTMLCpyInputToggleElement;
         "cpy-link": HTMLCpyLinkElement;
         "cpy-nav-menu": HTMLCpyNavMenuElement;
         "cpy-nav-menu-item": HTMLCpyNavMenuItemElement;
+        "cpy-overlay": HTMLCpyOverlayElement;
+        "cpy-page-container": HTMLCpyPageContainerElement;
         "cpy-page-content": HTMLCpyPageContentElement;
         "cpy-popup": HTMLCpyPopupElement;
+        "cpy-progress-bar": HTMLCpyProgressBarElement;
+        "cpy-show-more": HTMLCpyShowMoreElement;
         "cpy-spinner": HTMLCpySpinnerElement;
+        "cpy-splash": HTMLCpySplashElement;
+        "cpy-stack": HTMLCpyStackElement;
+        "cpy-tab-content": HTMLCpyTabContentElement;
+        "cpy-tab-header": HTMLCpyTabHeaderElement;
         "cpy-table": HTMLCpyTableElement;
+        "cpy-tabs": HTMLCpyTabsElement;
         "cpy-toast": HTMLCpyToastElement;
         "cpy-toolbar": HTMLCpyToolbarElement;
         "cpy-tooltip": HTMLCpyTooltipElement;
@@ -470,7 +799,7 @@ declare namespace LocalJSX {
         "headerTitle"?: string;
         "onAccordionOpened"?: (event: CpyAccordionCustomEvent<void>) => void;
         "opened"?: boolean;
-        "size"?: 'small' | 'default' | 'large';
+        "size"?: AccordionSize;
     }
     interface CpyAlert {
         "appearance"?: AlertAppearance;
@@ -483,12 +812,13 @@ declare namespace LocalJSX {
     interface CpyAvatar {
         "border"?: boolean;
         "initials"?: string;
-        "size"?: 'small' | 'default' | 'large' | 'x-large';
+        "size"?: AvatarSize;
         "src"?: string;
-        "type"?: 'rounded' | 'square';
+        "type"?: AvatarType;
     }
     interface CpyBadge {
         "appearance"?: BadgeAppearance;
+        "block"?: boolean;
         "size"?: BadgeSize;
         "type"?: BadgeType;
     }
@@ -496,6 +826,7 @@ declare namespace LocalJSX {
         "appearance"?: ButtonStyle;
         "disabled"?: boolean;
         "icon"?: boolean;
+        "onButtonClicked"?: (event: CpyButtonCustomEvent<void>) => void;
         "size"?: ButtonSize;
         "type"?: ButtonAppearance;
     }
@@ -510,9 +841,37 @@ declare namespace LocalJSX {
     }
     interface CpyCodeBlock {
         "code"?: string;
-        "language"?: 'typescript' | 'javascript' | 'scss' | 'css' | 'html' | 'json' | 'shell';
+        "language"?: CodeLanguage;
+    }
+    interface CpyCodeExample {
+        "code"?: string;
+        "header"?: any;
+        "language"?: CodeLanguage;
+        "showCode"?: boolean;
     }
     interface CpyCodeSnippet {
+        "code"?: string;
+        "quotes"?: boolean;
+    }
+    interface CpyComment {
+        "comment"?: CommentItem;
+        "hideAvatar"?: boolean;
+        "maxLines"?: number;
+        "rightAligned"?: boolean;
+        "showLessText"?: string;
+        "showMoreText"?: string;
+        "size"?: CommentSize;
+        "type"?: CommentType;
+    }
+    interface CpyCommentList {
+        "comments"?: CommentItem[];
+        "hideAvatar"?: boolean;
+        "maxLines"?: number;
+        "rightAligned"?: boolean;
+        "showLessText"?: string;
+        "showMoreText"?: string;
+        "size"?: CommentSize;
+        "type"?: CommentType;
     }
     interface CpyContentsList {
         "activeIndex"?: number;
@@ -543,7 +902,7 @@ declare namespace LocalJSX {
     interface CpyDialog {
         "dialogTitle"?: string;
         "onClosed"?: (event: CpyDialogCustomEvent<void>) => void;
-        "size"?: 'small' | 'default' | 'large' | 'full-screen';
+        "size"?: DialogSize;
         "zIndex"?: string;
     }
     interface CpyDrawer {
@@ -551,7 +910,7 @@ declare namespace LocalJSX {
         "opened"?: boolean;
     }
     interface CpyDrawerContainer {
-        "onToggleDrawer"?: (event: CpyDrawerContainerCustomEvent<void>) => void;
+        "onToggleDrawer"?: (event: CpyDrawerContainerCustomEvent<boolean>) => void;
         "opened"?: boolean;
     }
     interface CpyExpandCollapse {
@@ -564,23 +923,78 @@ declare namespace LocalJSX {
     interface CpyInput {
         "disabled"?: boolean;
         "label"?: string;
-        "onValueChange"?: (event: CpyInputCustomEvent<string>) => void;
+        "onValueChange"?: (event: CpyInputCustomEvent<string | number>) => void;
+        "placeholder"?: string;
         "required"?: boolean;
         "size"?: InputSize;
-        "type"?: 'text' | 'number' | 'email' | 'password';
+        "type"?: InputType;
+        "validators"?: Array<string | ValidatorEntry | Validator<string | number>>;
+        "value"?: string | number;
+    }
+    interface CpyInputBase {
+        "disabled"?: boolean;
+        "error"?: string;
+        "interacted"?: boolean;
+        "label"?: string;
+        "noContainer"?: boolean;
+        "onLabelClicked"?: (event: CpyInputBaseCustomEvent<void>) => void;
+        "onPopupClosed"?: (event: CpyInputBaseCustomEvent<void>) => void;
+        "popup"?: boolean;
+        "required"?: boolean;
+        "size"?: InputSize;
+    }
+    interface CpyInputCheckbox {
+        "disabled"?: boolean;
+        "label"?: string;
+        "onValueChange"?: (event: CpyInputCheckboxCustomEvent<boolean>) => void;
+        "required"?: boolean;
+        "size"?: InputSize;
+        "validators"?: Array<string | ValidatorEntry | Validator<boolean>>;
+        "value"?: boolean;
+    }
+    interface CpyInputSelect {
+        "disabled"?: boolean;
+        "label"?: string;
+        "onValueChange"?: (event: CpyInputSelectCustomEvent<string | number>) => void;
+        "required"?: boolean;
+        "size"?: InputSize;
+        "validators"?: Array<string | ValidatorEntry | Validator<string | number>>;
+        "value"?: string | number;
+    }
+    interface CpyInputSelectOption {
+        "active"?: boolean;
+        "label"?: string;
+        "onOptionSelected"?: (event: CpyInputSelectOptionCustomEvent<string | number>) => void;
+        "size"?: InputSize;
+        "value"?: string | number;
+    }
+    interface CpyInputTextarea {
+        "disabled"?: boolean;
+        "label"?: string;
+        "maxRows"?: number;
+        "minRows"?: number;
+        "onValueChange"?: (event: CpyInputTextareaCustomEvent<string>) => void;
+        "placeholder"?: string;
+        "required"?: boolean;
+        "size"?: InputSize;
         "validators"?: Array<string | ValidatorEntry | Validator<string>>;
-        "value"?: any;
+        "value"?: string;
     }
     interface CpyInputToggle {
-        "checked"?: boolean;
+        "disabled"?: boolean;
         "label"?: string;
-        "onCheckedChange"?: (event: CpyInputToggleCustomEvent<boolean>) => void;
-        "size"?: 'small' | 'default' | 'large';
+        "onValueChange"?: (event: CpyInputToggleCustomEvent<boolean>) => void;
+        "required"?: boolean;
+        "size"?: InputSize;
+        "switchAfter"?: boolean;
+        "validators"?: Array<string | ValidatorEntry | Validator<boolean>>;
+        "value"?: boolean;
     }
     interface CpyLink {
+        "func"?: () => void;
         "href"?: string;
         "newTab"?: boolean;
-        "type"?: 'primary' | 'secondary' | 'basic';
+        "type"?: LinkType;
     }
     interface CpyNavMenu {
         "items"?: NavMenuItem[];
@@ -589,20 +1003,65 @@ declare namespace LocalJSX {
         "item"?: NavMenuItem;
         "onItemActive"?: (event: CpyNavMenuItemCustomEvent<void>) => void;
     }
+    interface CpyOverlay {
+        "hasBackdropClick"?: boolean;
+        "onBackdropClick"?: (event: CpyOverlayCustomEvent<void>) => void;
+        "onClosed"?: (event: CpyOverlayCustomEvent<void>) => void;
+        "show"?: boolean;
+        "zIndex"?: string;
+    }
+    interface CpyPageContainer {
+    }
     interface CpyPageContent {
+        "contentsTitle"?: string;
         "hideContentsList"?: boolean;
     }
     interface CpyPopup {
-        "activeOn"?: 'hover' | 'click';
-        "offset"?: number;
-        "position"?: Placement;
+        "activeOn"?: PopupActiveOn;
+        "disabled"?: boolean;
+        "onClosed"?: (event: CpyPopupCustomEvent<void>) => void;
+        "onOpened"?: (event: CpyPopupCustomEvent<void>) => void;
+        "position"?: PopupPosition;
+        "stretch"?: boolean;
+    }
+    interface CpyProgressBar {
+        "border"?: boolean;
+        "indeterminate"?: boolean;
+        "size"?: ProgressBarSize;
+        "type"?: ProgressBarAppearance;
+        "value"?: number;
+    }
+    interface CpyShowMore {
+        "lines"?: number;
+        "showLessText"?: string;
+        "showMoreText"?: string;
+        "text"?: string;
+        "type"?: ShowMoreAppearance;
     }
     interface CpySpinner {
         "size"?: SpinnerSize;
         "type"?: SpinnerAppearance;
     }
+    interface CpySplash {
+        "disabled"?: boolean;
+    }
+    interface CpyStack {
+        "direction"?: StackDirection;
+        "overlap"?: number;
+    }
+    interface CpyTabContent {
+    }
+    interface CpyTabHeader {
+        "headerId"?: string;
+        "onSelected"?: (event: CpyTabHeaderCustomEvent<string>) => void;
+        "tabTitle"?: string;
+    }
     interface CpyTable {
-        "tableData"?: { [key: string]: string | number | boolean | null | undefined }[];
+        "tableData"?: TableData[];
+    }
+    interface CpyTabs {
+        "activeIndex"?: number;
+        "onTabChanged"?: (event: CpyTabsCustomEvent<number>) => void;
     }
     interface CpyToast {
         "dismissible"?: boolean;
@@ -612,13 +1071,16 @@ declare namespace LocalJSX {
         "onOpened"?: (event: CpyToastCustomEvent<void>) => void;
         "position"?: ToastPosition;
         "toastTitle"?: string;
-        "type"?: AlertType;
+        "type"?: ToastType;
         "zIndex"?: string;
     }
     interface CpyToolbar {
+        "size"?: ToolbarSize;
+        "type"?: ToolbarType;
     }
     interface CpyTooltip {
-        "position"?: 'bottom' | 'left' | 'right' | 'top';
+        "hideArrow"?: boolean;
+        "position"?: TooltipPosition;
         "text"?: string;
     }
     interface IntrinsicElements {
@@ -631,7 +1093,10 @@ declare namespace LocalJSX {
         "cpy-card": CpyCard;
         "cpy-carousel": CpyCarousel;
         "cpy-code-block": CpyCodeBlock;
+        "cpy-code-example": CpyCodeExample;
         "cpy-code-snippet": CpyCodeSnippet;
+        "cpy-comment": CpyComment;
+        "cpy-comment-list": CpyCommentList;
         "cpy-contents-list": CpyContentsList;
         "cpy-contents-list-item": CpyContentsListItem;
         "cpy-context-menu": CpyContextMenu;
@@ -644,14 +1109,28 @@ declare namespace LocalJSX {
         "cpy-expand-collapse": CpyExpandCollapse;
         "cpy-icon": CpyIcon;
         "cpy-input": CpyInput;
+        "cpy-input-base": CpyInputBase;
+        "cpy-input-checkbox": CpyInputCheckbox;
+        "cpy-input-select": CpyInputSelect;
+        "cpy-input-select-option": CpyInputSelectOption;
+        "cpy-input-textarea": CpyInputTextarea;
         "cpy-input-toggle": CpyInputToggle;
         "cpy-link": CpyLink;
         "cpy-nav-menu": CpyNavMenu;
         "cpy-nav-menu-item": CpyNavMenuItem;
+        "cpy-overlay": CpyOverlay;
+        "cpy-page-container": CpyPageContainer;
         "cpy-page-content": CpyPageContent;
         "cpy-popup": CpyPopup;
+        "cpy-progress-bar": CpyProgressBar;
+        "cpy-show-more": CpyShowMore;
         "cpy-spinner": CpySpinner;
+        "cpy-splash": CpySplash;
+        "cpy-stack": CpyStack;
+        "cpy-tab-content": CpyTabContent;
+        "cpy-tab-header": CpyTabHeader;
         "cpy-table": CpyTable;
+        "cpy-tabs": CpyTabs;
         "cpy-toast": CpyToast;
         "cpy-toolbar": CpyToolbar;
         "cpy-tooltip": CpyTooltip;
@@ -670,7 +1149,10 @@ declare module "@stencil/core" {
             "cpy-card": LocalJSX.CpyCard & JSXBase.HTMLAttributes<HTMLCpyCardElement>;
             "cpy-carousel": LocalJSX.CpyCarousel & JSXBase.HTMLAttributes<HTMLCpyCarouselElement>;
             "cpy-code-block": LocalJSX.CpyCodeBlock & JSXBase.HTMLAttributes<HTMLCpyCodeBlockElement>;
+            "cpy-code-example": LocalJSX.CpyCodeExample & JSXBase.HTMLAttributes<HTMLCpyCodeExampleElement>;
             "cpy-code-snippet": LocalJSX.CpyCodeSnippet & JSXBase.HTMLAttributes<HTMLCpyCodeSnippetElement>;
+            "cpy-comment": LocalJSX.CpyComment & JSXBase.HTMLAttributes<HTMLCpyCommentElement>;
+            "cpy-comment-list": LocalJSX.CpyCommentList & JSXBase.HTMLAttributes<HTMLCpyCommentListElement>;
             "cpy-contents-list": LocalJSX.CpyContentsList & JSXBase.HTMLAttributes<HTMLCpyContentsListElement>;
             "cpy-contents-list-item": LocalJSX.CpyContentsListItem & JSXBase.HTMLAttributes<HTMLCpyContentsListItemElement>;
             "cpy-context-menu": LocalJSX.CpyContextMenu & JSXBase.HTMLAttributes<HTMLCpyContextMenuElement>;
@@ -683,14 +1165,28 @@ declare module "@stencil/core" {
             "cpy-expand-collapse": LocalJSX.CpyExpandCollapse & JSXBase.HTMLAttributes<HTMLCpyExpandCollapseElement>;
             "cpy-icon": LocalJSX.CpyIcon & JSXBase.HTMLAttributes<HTMLCpyIconElement>;
             "cpy-input": LocalJSX.CpyInput & JSXBase.HTMLAttributes<HTMLCpyInputElement>;
+            "cpy-input-base": LocalJSX.CpyInputBase & JSXBase.HTMLAttributes<HTMLCpyInputBaseElement>;
+            "cpy-input-checkbox": LocalJSX.CpyInputCheckbox & JSXBase.HTMLAttributes<HTMLCpyInputCheckboxElement>;
+            "cpy-input-select": LocalJSX.CpyInputSelect & JSXBase.HTMLAttributes<HTMLCpyInputSelectElement>;
+            "cpy-input-select-option": LocalJSX.CpyInputSelectOption & JSXBase.HTMLAttributes<HTMLCpyInputSelectOptionElement>;
+            "cpy-input-textarea": LocalJSX.CpyInputTextarea & JSXBase.HTMLAttributes<HTMLCpyInputTextareaElement>;
             "cpy-input-toggle": LocalJSX.CpyInputToggle & JSXBase.HTMLAttributes<HTMLCpyInputToggleElement>;
             "cpy-link": LocalJSX.CpyLink & JSXBase.HTMLAttributes<HTMLCpyLinkElement>;
             "cpy-nav-menu": LocalJSX.CpyNavMenu & JSXBase.HTMLAttributes<HTMLCpyNavMenuElement>;
             "cpy-nav-menu-item": LocalJSX.CpyNavMenuItem & JSXBase.HTMLAttributes<HTMLCpyNavMenuItemElement>;
+            "cpy-overlay": LocalJSX.CpyOverlay & JSXBase.HTMLAttributes<HTMLCpyOverlayElement>;
+            "cpy-page-container": LocalJSX.CpyPageContainer & JSXBase.HTMLAttributes<HTMLCpyPageContainerElement>;
             "cpy-page-content": LocalJSX.CpyPageContent & JSXBase.HTMLAttributes<HTMLCpyPageContentElement>;
             "cpy-popup": LocalJSX.CpyPopup & JSXBase.HTMLAttributes<HTMLCpyPopupElement>;
+            "cpy-progress-bar": LocalJSX.CpyProgressBar & JSXBase.HTMLAttributes<HTMLCpyProgressBarElement>;
+            "cpy-show-more": LocalJSX.CpyShowMore & JSXBase.HTMLAttributes<HTMLCpyShowMoreElement>;
             "cpy-spinner": LocalJSX.CpySpinner & JSXBase.HTMLAttributes<HTMLCpySpinnerElement>;
+            "cpy-splash": LocalJSX.CpySplash & JSXBase.HTMLAttributes<HTMLCpySplashElement>;
+            "cpy-stack": LocalJSX.CpyStack & JSXBase.HTMLAttributes<HTMLCpyStackElement>;
+            "cpy-tab-content": LocalJSX.CpyTabContent & JSXBase.HTMLAttributes<HTMLCpyTabContentElement>;
+            "cpy-tab-header": LocalJSX.CpyTabHeader & JSXBase.HTMLAttributes<HTMLCpyTabHeaderElement>;
             "cpy-table": LocalJSX.CpyTable & JSXBase.HTMLAttributes<HTMLCpyTableElement>;
+            "cpy-tabs": LocalJSX.CpyTabs & JSXBase.HTMLAttributes<HTMLCpyTabsElement>;
             "cpy-toast": LocalJSX.CpyToast & JSXBase.HTMLAttributes<HTMLCpyToastElement>;
             "cpy-toolbar": LocalJSX.CpyToolbar & JSXBase.HTMLAttributes<HTMLCpyToolbarElement>;
             "cpy-tooltip": LocalJSX.CpyTooltip & JSXBase.HTMLAttributes<HTMLCpyTooltipElement>;

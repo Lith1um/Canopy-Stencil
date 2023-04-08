@@ -1,0 +1,151 @@
+<cpy-page-container>
+  <h1>Progress Bars</h1>
+
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Progress Bar">
+        <p>
+          Canopy progress bars show a horizontal progress bar for indicating progress and activity. They are referenced
+          using the <cpy-code-snippet code="<cpy-progress-bar>"></cpy-code-snippet> custom HTML element.
+        </p>
+
+        <cpy-code-example header="Progress Bar" id="overview-code">
+<cpy-progress-bar indeterminate></cpy-progress-bar>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. Below is a list of variables you can use to configure this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
+
+        <h4 id="host">Host styles</h4>
+        <p>
+          Canopy components are designed to have their host element styled directly so that it can be overridden for specific implementation purposes.This is generally used to adjust <cpy-code-snippet code="display"></cpy-code-snippet>, <cpy-code-snippet code="position"></cpy-code-snippet>, <cpy-code-snippet code="background-color"></cpy-code-snippet>, <cpy-code-snippet code="padding"></cpy-code-snippet>, <cpy-code-snippet code="margin"></cpy-code-snippet>, <cpy-code-snippet code="width"></cpy-code-snippet>, <cpy-code-snippet code="height"></cpy-code-snippet> etc.
+        </p>
+        <p>
+          There are likely other properties that you can alter on the host element for each individual component, open your dev tools and inspect each component to see what you can override on the host!
+        </p>
+
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          Progress Bars serve a wide variety of scenarios and may contain many different types of content. Due to this flexible nature, the appropriate accessibility treatment depends on how you use <cpy-code-snippet code="<cpy-progress-bar>"></cpy-code-snippet>.
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Progress Bar">
+        <h4 id="api" title="API">API Reference for Canopy Progress Bar</h4>
+        <cpy-code-snippet code="<cpy-progress-bar>"></cpy-code-snippet>
+
+        <div class="section">
+        </div>
+
+        <h4 id="types">Types</h4>
+        <cpy-code-block id="comp-interfaces"></cpy-code-block>
+
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
+
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic progress bar">
+<cpy-progress-bar value="25"></cpy-progress-bar>
+      </cpy-code-example>
+      <cpy-code-example header="Progress bar with border">
+<cpy-progress-bar value="75" border></cpy-progress-bar>
+      </cpy-code-example>
+      <cpy-code-example header="Indeterminate Progress bar">
+<cpy-progress-bar indeterminate></cpy-progress-bar>
+      </cpy-code-example>
+      <cpy-code-example header="Progress bar updating" id="example-code">
+<cpy-progress-bar id="example-bar" value="25" style="margin-bottom: 1rem;"></cpy-progress-bar>
+<cpy-button id="example-button">
+  Update
+</cpy-button>
+      </cpy-code-example>
+      <cpy-code-example header="Small progress bar">
+<cpy-progress-bar value="75" size="small"></cpy-progress-bar>
+      </cpy-code-example>
+      <cpy-code-example header="Large progress bar">
+<cpy-progress-bar value="50" size="large"></cpy-progress-bar>
+      </cpy-code-example>
+      <cpy-code-example header="Alternate type progress bars">
+<div style="display: flex; flex-direction: column; gap: 0.5rem;">
+  <cpy-progress-bar value="15" type="secondary"></cpy-progress-bar>
+  <cpy-progress-bar value="30" type="basic"></cpy-progress-bar>
+  <cpy-progress-bar value="45" type="success"></cpy-progress-bar>
+  <cpy-progress-bar value="60" type="warn"></cpy-progress-bar>
+  <cpy-progress-bar value="75" type="error"></cpy-progress-bar>
+</div>
+      </cpy-code-example>
+      <cpy-code-example header="Custom progress bar">
+<cpy-progress-bar
+  value="75"
+  style="
+    --cpy-progress-bar-bg: yellow;
+    --cpy-progress-bar-border-radius: 0;
+    --cpy-bg-white: brown;
+"></cpy-progress-bar>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
+</cpy-page-container>
+
+<cpy-page-container>
+  <cpy-page-content>
+    <h3
+      style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
+      Progress Bars
+    </h3>
+
+    <p style="margin-top: 1rem; margin-bottom: 2rem;">
+      Canopy progress bars show a horizontal progress bar for indicating progress and activity. They are referenced
+      using the <cpy-code-snippet code="<cpy-progress-bar>"></cpy-code-snippet> custom HTML element.
+    </p>
+
+    <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
+    <div style="display: flex; flex-direction: column; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 1rem;">
+      <p style="margin-top: 1rem;">Small</p>
+      <cpy-progress-bar value="25" size="small"></cpy-progress-bar>
+      <cpy-progress-bar border value="50" size="small"></cpy-progress-bar>
+      <cpy-progress-bar indeterminate size="small"></cpy-progress-bar>
+      <p style="margin-top: 1rem;">Default</p>
+      <cpy-progress-bar value="15"></cpy-progress-bar>
+      <cpy-progress-bar border value="65"></cpy-progress-bar>
+      <cpy-progress-bar indeterminate></cpy-progress-bar>
+      <p style="margin-top: 1rem;">Large</p>
+      <cpy-progress-bar value="75" size="large"></cpy-progress-bar>
+      <cpy-progress-bar border value="40" size="large"></cpy-progress-bar>
+      <cpy-progress-bar indeterminate size="large"></cpy-progress-bar>
+      <p style="margin-top: 1rem;">Alternate Types</p>
+      <cpy-progress-bar value="15" type="secondary"></cpy-progress-bar>
+      <cpy-progress-bar value="30" type="basic"></cpy-progress-bar>
+      <cpy-progress-bar value="45" type="success"></cpy-progress-bar>
+      <cpy-progress-bar value="60" type="warn"></cpy-progress-bar>
+      <cpy-progress-bar value="75" type="error"></cpy-progress-bar>
+    </div>
+
+    <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
+
+    <div style="margin-top: 1rem; margin-bottom: 2rem;">
+      <cpy-code-block id="progress-bar-html-example" language="html"></cpy-code-block>
+    </div>
+
+    <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
+    <cpy-table id="progress-bar-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
+  </cpy-page-content>
+</cpy-page-container>
+
+<script src="/docs/comps/progressBar.js">
+</script>

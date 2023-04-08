@@ -1,0 +1,17 @@
+:host {
+  @apply inline-flex;
+}
+
+.tab-header {
+  @apply leading-10 truncate px-6 min-w-[10rem] max-w-[16rem] cursor-pointer border-b-2 text-center border-transparent transition-colors duration-300;
+
+  &:hover {
+    background-color: var(--cpy-bg-hover);
+  }
+}
+
+@media (max-width: 640px) {
+  .tab-header {
+    @apply px-4 min-w-[4rem] max-w-[12rem];
+  }
+}

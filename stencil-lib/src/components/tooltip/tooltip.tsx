@@ -1,6 +1,7 @@
 import { Component, h, Prop } from '@stencil/core';
-
 import { arrow, computePosition, flip, offset, shift } from '@floating-ui/dom';
+import { onVisible } from '../../utils/elements';
+import { TooltipPosition } from './tooltip.type';
 
 @Component({
   tag: 'cpy-tooltip',
@@ -9,9 +10,11 @@ import { arrow, computePosition, flip, offset, shift } from '@floating-ui/dom';
 })
 export class Tooltip {
 
-  @Prop() position: 'bottom' | 'left' | 'right' | 'top' = 'bottom';
+  @Prop() position: TooltipPosition = 'bottom';
 
   @Prop() text: string;
+
+  @Prop() hideArrow: boolean = false;
 
   wrapperElem: HTMLElement;
   tooltipElem: HTMLElement;
@@ -48,7 +51,7 @@ export class Tooltip {
   }
 
   componentDidRender(): void {
-    this.recalculatePosition();
+    onVisible(this.wrapperElem, () => this.recalculatePosition());
   }
 
   render() {
@@ -56,6 +59,11 @@ export class Tooltip {
       'text': true,
       'text--only': !!this.text
     };
+
+    const arrowClasses = {
+      'tooltip__arrow': true,
+      'tooltip__arrow--hidden': this.hideArrow,
+    };    
 
     return (
       <div class="tooltip" ref={(el) => this.wrapperElem = el as HTMLElement} onMouseEnter={() => this.recalculatePosition()}>
@@ -65,7 +73,7 @@ export class Tooltip {
           ref={(el) => this.tooltipElem = el as HTMLElement}
           role="tooltip">
           {this.text || <slot name='content'/>}
-          <div class="tooltip--arrow" ref={(el) => this.arrowElem = el as HTMLElement}></div>
+          <div class={arrowClasses} ref={(el) => this.arrowElem = el as HTMLElement}></div>
         </div>
       </div>
     );

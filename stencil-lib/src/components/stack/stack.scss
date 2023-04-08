@@ -1,0 +1,15 @@
+:host {
+  @apply inline-flex;
+}
+
+.stack {
+  @apply inline-flex gap-1;
+
+  &--left {
+    @apply flex-row;
+  }
+
+  &--right {
+    @apply flex-row-reverse;
+  }
+}

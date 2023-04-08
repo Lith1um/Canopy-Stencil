@@ -3,7 +3,9 @@
 }
 
 .alert {
+  --alert-bg: var(--cpy-alert-bg, transparent);
   @apply relative flex p-4 rounded-md mb-5;
+  background-color: var(--alert-bg);
 
   &--no-container {
     @apply bg-transparent p-0 mb-2 #{'!important'};
@@ -19,8 +21,8 @@
       @apply mr-2;
     }
      
-    cpy-icon i {
-      @apply icon-size-6;
+    cpy-icon {
+      @apply block icon-size-6;
     }
   }
 
@@ -55,6 +57,7 @@
 
     .alert-border {
       @apply absolute left-0 top-0 bottom-0 w-1;
+      background-color: var(--alert-bg);
     }
 
   }

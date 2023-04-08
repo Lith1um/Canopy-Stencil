@@ -1,18 +1,26 @@
 :host {
-  @apply inline-block rounded-xl overflow-hidden max-w-full;
+  --padding: var(--cpy-card-padding, 1.5rem);
+  --footer-bg: var(--cpy-card-footer-bg, var(--cpy-bg-primary));
+  --footer-color: var(--cpy-card-footer-color, var(--cpy-text-base));
+  --border-radius: var(--cpy-card-border-radius, 0.75rem);
+  @apply inline-block;
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  background-color: var(--cpy-bg-white);
 }
 
 .card {
-  @apply p-6;
-  background-color: var(--cpy-bg-white);
-
-  &__footer {
-    @apply px-6 py-2;
-    background-color: var(--cpy-bg-primary);
-    color: white;
-
-    &--hidden {
+  &--footer-hidden {
+    & + .card__footer {
       @apply hidden;
     }
+  }
+
+  &__footer {
+    margin: var(--padding) calc(var(--padding) * -1) calc(var(--padding) * -1) calc(var(--padding) * -1);
+    padding: 0.5rem var(--padding);
+    background-color: var(--footer-bg);
+    color: var(--footer-color);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
   }
 }

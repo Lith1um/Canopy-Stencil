@@ -1,5 +1,6 @@
 code {
-  @apply inline mx-2 outline-2 outline px-1;
-  outline-color: var(--cpy-bg-medium);
-  background-color: var(--cpy-bg-medium);
+  --bg-color: var(--cpy-code-snippet-bg, var(--cpy-bg-medium));
+  @apply inline mx-1 outline-2 outline px-0.5;
+  outline-color: var(--bg-color);
+  background-color: var(--bg-color);
 }

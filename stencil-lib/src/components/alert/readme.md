@@ -13,7 +13,7 @@
 | `container`   | `container`   |             | `boolean`                                                               | `true`      |
 | `dismissible` | `dismissible` |             | `boolean`                                                               | `undefined` |
 | `icon`        | `icon`        |             | `string`                                                                | `undefined` |
-| `type`        | `type`        |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"` | `'error'`   |
+| `type`        | `type`        |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"` | `undefined` |
 
 
 ## Events
@@ -39,6 +39,7 @@
 graph TD;
   cpy-alert --> cpy-icon
   cpy-alert --> cpy-button
+  cpy-button --> cpy-splash
   cpy-toast --> cpy-alert
   style cpy-alert fill:#f9f,stroke:#333,stroke-width:4px
 ```

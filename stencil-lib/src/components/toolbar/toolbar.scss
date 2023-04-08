@@ -1,4 +1,43 @@
-.toolbar {
-  @apply flex px-4 w-full h-16 items-center gap-4 shadow-md relative z-30 text-white;
-  background-color: var(--cpy-bg-primary);
+:host(.toolbar) {
+  --toolbar-color: var(--cpy-toolbar-color, white);
+  --toolbar-bg-color: var(--cpy-toolbar-bg, var(--cpy-bg-primary));
+  @apply flex px-4 w-full h-16 items-center gap-4 shadow-md relative z-30 text-2xl font-medium;
+  color: var(--toolbar-color);
+  background-color: var(--toolbar-bg-color);
+
+  ::slotted(cpy-button[icon]) {
+    --cpy-button-text: var(--toolbar-color);
+  }
+}
+
+:host(.toolbar--small) {
+  @apply h-12 px-2 gap-2 text-xl;
+}
+
+:host(.toolbar--large) {
+  @apply h-20 px-6 gap-6 text-[1.75rem];
+}
+
+:host(.toolbar--primary) {
+  --toolbar-bg-color: var(--cpy-toolbar-bg, var(--cpy-bg-primary));
+}
+
+:host(.toolbar--secondary) {
+  --toolbar-bg-color: var(--cpy-toolbar-bg, var(--cpy-bg-secondary));
+}
+
+:host(.toolbar--basic) {
+  --toolbar-bg-color: var(--cpy-toolbar-bg, var(--cpy-bg-basic));
+}
+
+:host(.toolbar--success) {
+  --toolbar-bg-color: var(--cpy-toolbar-bg, var(--cpy-bg-success));
+}
+
+:host(.toolbar--warn) {
+  --toolbar-bg-color: var(--cpy-toolbar-bg, var(--cpy-bg-warn));
+}
+
+:host(.toolbar--error) {
+  --toolbar-bg-color: var(--cpy-toolbar-bg, var(--cpy-bg-error));
 }

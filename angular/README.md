@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/lith1um/Canopy-Stencil">
-    <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="140">
+    <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo-alt.png" alt="Logo" width="140">
   </a>
 
   <h3 align="center">Canopy - Angular</h3>
@@ -27,12 +27,12 @@ To get Canopy up and running in Angular, you'll need to install the relevant pac
 
 1. Install NPM packages
    ```sh
-   npm install canopy-stencil-web canopy-stencil-angular
+   npm install @canopy-web/core @canopy-web/angular
    ```
 2. Configure your app module to import the angular module and custom elements loader for canopy, calling the loader 
     ```ts
-    import { CanopyStencilModule } from 'canopy-stencil-angular';
-    import { defineCustomElements } from 'canopy-stencil-web/loader';
+    import { CanopyAngularModule } from '@canopy-web/angular';
+    import { defineCustomElements } from '@canopy-web/core/loader';
 
     defineCustomElements();
     ```
@@ -41,7 +41,7 @@ To get Canopy up and running in Angular, you'll need to install the relevant pac
     ```ts
     @NgModule({
     imports: [
-      CanopyStencilModule,
+      CanopyAngularModule,
       ...
     ],
     ...
@@ -51,13 +51,13 @@ To get Canopy up and running in Angular, you'll need to install the relevant pac
    "assets": [
       {
         "glob": "**/*",
-        "input": "node_modules/canopy-stencil-web/dist/canopy-stencil-web/webfonts",
+        "input": "node_modules/@canopy-web/core/dist/@canopy-web/core/webfonts",
         "output": "/webfonts/"
       },
       ...
     ],
     "styles": [
-      "node_modules/canopy-stencil-web/dist/canopy-stencil-web/canopy-stencil-web.css",
+      "node_modules/@canopy-web/core/dist/@canopy-web/core/@canopy-web/core.css",
       ...
     ],
     ...

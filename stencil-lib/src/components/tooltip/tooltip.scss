@@ -1,3 +1,7 @@
+:host {
+  @apply inline-flex;
+}
+
 .tooltip {
   --tooltip-bg: var(--cpy-tooltip-bg, var(--cpy-bg-dark));
   --tooltip-text: var(--cpy-tooltip-text, var(--cpy-bg-white));
@@ -5,7 +9,7 @@
   @apply select-none inline-flex items-center justify-center relative;
 
   .text {
-    @apply rounded opacity-0 absolute text-center text-sm invisible w-max max-w-xs z-50;
+    @apply rounded opacity-0 absolute text-center text-xs invisible w-max max-w-xs z-50;
     background-color: var(--tooltip-bg);
     color: var(--tooltip-text);
     transition: opacity 0.3s ease-in-out 0.15s;
@@ -15,9 +19,13 @@
     }
   }
 
-  &--arrow {
+  &__arrow {
     @apply absolute w-2 h-2 rotate-45;
     background-color: var(--tooltip-bg);
+
+    &--hidden {
+      @apply hidden;
+    }
   }
 
   &:hover {

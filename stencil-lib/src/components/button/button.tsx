@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 import { ButtonAppearance, ButtonSize, ButtonStyle } from './button.type';
 
 @Component({
@@ -22,6 +22,16 @@ export class Button {
 
   @Prop()
   disabled: boolean = false;
+
+  @Event()
+  buttonClicked: EventEmitter<void>;
+
+  handleClick(): void {
+    if (this.disabled) {
+      return;
+    }
+    this.buttonClicked.emit();
+  }
   
   render() {
     const classes = {
@@ -33,8 +43,9 @@ export class Button {
     };
 
     return (
-      <button class={classes} disabled={this.disabled} role="button">
+      <button class={classes} disabled={this.disabled} role="button" onClick={() => this.handleClick()}>
         <slot></slot>
+        <cpy-splash disabled={this.disabled}></cpy-splash>
       </button>
     );
   }

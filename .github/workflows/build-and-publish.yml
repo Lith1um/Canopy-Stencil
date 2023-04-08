@@ -19,11 +19,10 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
       - name: Increment Version
-        # TODO: add way to distinguish version type
         run: |
           cd stencil-lib && npm version patch -m "Bump version to %s [skip ci]"
           cd ../angular && npm version patch -m "Bump version to %s [skip ci]"
-          cd projects/canopy-stencil-angular && npm version patch -m "Bump version to %s [skip ci]"
+          cd projects/canopy-web-angular && npm version patch -m "Bump version to %s [skip ci]"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -38,10 +37,10 @@ jobs:
       - name: Install dependencies and build angular comps 🔧
         run: |
           TAG=$(node -p "require('./stencil-lib/package.json').version")
-          cd angular && npm i -D canopy-stencil-web@$TAG
+          cd angular && npm i -D @canopy-web/core@$TAG
           npm ci && npm run build
       - name: Publish angular package on NPM 📦
-        run: cd angular/dist/canopy-stencil-angular && npm publish
+        run: cd angular/dist/canopy-web-angular && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 

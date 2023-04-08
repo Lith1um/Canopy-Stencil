@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, Listen, Prop, State } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Listen, Prop, State, Watch } from '@stencil/core';
 import { NavMenuItem } from '../nav-menu.interface';
 
 @Component({
@@ -8,7 +8,7 @@ import { NavMenuItem } from '../nav-menu.interface';
 })
 export class NavMenuItemComp {
 
-  @Prop()
+  @Prop({mutable: true})
   item: NavMenuItem;
 
   @State()
@@ -17,10 +17,21 @@ export class NavMenuItemComp {
   @Event({bubbles: false})
   itemActive: EventEmitter<void>;
 
+  @Watch('item')
+  handleItemChange(item: NavMenuItem): void {
+    if (item.type !== 'collapsible') {
+      return;
+    }
+    if (item.collapsed === undefined || item.collapsed) {
+      return;
+    }
+    this.collapsed = this.item.collapsed = false;
+  }
+
   @Listen('itemActive')
   childItemActive(): void {
     if (this.item.type === 'collapsible') {
-      this.collapsed = false;
+      this.collapsed = this.item.collapsed = false;
     }
   }
 
@@ -29,8 +40,10 @@ export class NavMenuItemComp {
   componentWillRender() {
     const currentPath = window.location.pathname;
 
+    this.handleItemChange(this.item);
+
     this.active = this.item.active
-      || this.item.looseMatch ? currentPath.includes(this.item.url) : currentPath === this.item.url;
+      || (this.item.looseMatch ? currentPath.includes(this.item.url) : currentPath === this.item.url);
 
     if (this.active) {
       this.itemActive.emit();
@@ -54,15 +67,20 @@ export class NavMenuItemComp {
     if (this.item.openInNewTab) {
       itemAttrs.target = '_blank';
     }
-    if (this.item.url !== undefined) {
+    if (this.item.url !== undefined && this.item.function === undefined) {
       itemAttrs.href = this.item.url;
     }
     if (this.item.function) {
-      itemAttrs.onClick = this.item.function;
+      itemAttrs.onClick = () => this.item.function(this.item);
     }
 
     if (this.item.type === 'collapsible') {
-      itemAttrs.onClick = () => this.collapsed = !this.collapsed;
+      itemAttrs.onClick = () => {
+        this.collapsed = this.item.collapsed = !this.collapsed;
+        if (this.item.function) {
+          this.item.function(this.item);
+        }
+      }
     }
 
     return (
@@ -76,6 +94,8 @@ export class NavMenuItemComp {
           </div>
 
           {this.item.type === 'collapsible' && <cpy-icon class={collapseIconClasses}>chevron_right</cpy-icon>}
+
+          {this.item.type !== 'group' && <cpy-splash></cpy-splash>}
         </a>
 
         {this.item.type === 'group' && this.item.children?.map(item =>
@@ -83,8 +103,10 @@ export class NavMenuItemComp {
 
         {this.item.type === 'collapsible' && 
           <cpy-expand-collapse class="nav-menu-item__collapse" expanded={!this.collapsed}>
-            {this.item.children?.map(item =>
-              <cpy-nav-menu-item item={item}></cpy-nav-menu-item>)}
+            <div>
+              {this.item.children?.map(item =>
+                <cpy-nav-menu-item item={item}></cpy-nav-menu-item>)}
+            </div>
           </cpy-expand-collapse>}
           
         {this.item.separator && <div class="nav-menu-item__separator"></div>}

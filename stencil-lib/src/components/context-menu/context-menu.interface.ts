@@ -4,9 +4,9 @@ export interface ContextMenuItem {
   separator?: boolean;
   title: string;
   description?: string;
-  url: string;
+  url?: string;
   openInNewTab?: boolean;
-  function?: any;
+  function?: () => any;
   children?: ContextMenuItem[];
 
 }

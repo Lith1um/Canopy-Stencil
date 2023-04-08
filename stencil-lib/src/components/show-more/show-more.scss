@@ -1,0 +1,9 @@
+.show-more {
+  @apply block;
+
+  &__text {
+    @apply overflow-hidden whitespace-pre-wrap break-words;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+}

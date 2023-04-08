@@ -3,7 +3,8 @@
 }
 
 .avatar {
-  @apply w-10 h-10 overflow-hidden flex justify-center items-center text-white uppercase;
+  --avatar-bg: var(--cpy-avatar-bg, var(--cpy-bg-medium));
+  @apply w-10 h-10 overflow-hidden flex justify-center items-center uppercase;
 
   img {
     @apply object-cover;
@@ -11,10 +12,6 @@
 
   &--rounded {
     @apply rounded-full;
-
-    img {
-      @apply rounded-full;
-    }
   }
 
   &--square {
@@ -22,8 +19,8 @@
   }
 
   &--border {
-    @apply p-0.5 border-2;
-    border-color: var(--cpy-bg-basic-border);
+    @apply border-2;
+    border-color: var(--avatar-bg);
   }
 
   &--small {
@@ -39,7 +36,7 @@
   }
 
   &--initials {
-    background-color: var(--cpy-bg-basic);
+    background-color: var(--avatar-bg);
   }
   
 }

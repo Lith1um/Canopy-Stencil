@@ -1,62 +1,156 @@
-import { pageInits } from './pageInits.js';
-
 const drawer = document.querySelector('cpy-drawer-container');
 const navMenuElement = document.querySelector('cpy-nav-menu');
+const noResultsElem = document.getElementById('no-results');
+const searchElem = document.getElementById('search-input');
+const searchInputClear = document.getElementById('search-input-clear');
 
-const closeMenuOnMobileNav = () => {
+const setActive = (item) => {
+  return item.type === 'basic'
+    ? { ...item, active: window.location.pathname === item.url }
+    : { ...item, children: item.children.map(setActive) };
+};
+
+const reduceMenuItem = (currList, item, searchStr) => {
+  if (item.type === 'basic') {
+    return item.title.toLowerCase().includes(searchStr.toLowerCase())
+      ? [...currList, item]
+      : currList;
+  }
+
+  const childItems = item.children.reduce((currList, child) => reduceMenuItem(currList, child, searchStr), []);
+
+  if (childItems.length > 0) {
+    return item.type === 'collapsible'
+      ? [...currList, {...item, children: childItems, collapsed: false}]
+      : [...currList, {...item, children: childItems}];
+  }
+  return currList;
+};
+
+const handleSearchChange = (searchStr) => {
+  const matchingResults = getMenuItems().reduce((currList, item) => reduceMenuItem(currList, item, searchStr), []);
+  navMenuElement.items = [...matchingResults];
+
+  if (matchingResults.length === 0) {
+    noResultsElem.classList.remove('hidden');
+  } else {
+    noResultsElem.classList.add('hidden');
+  }
+};
+
+searchElem.addEventListener('valueChange', (e) => handleSearchChange(e.detail));
+searchInputClear.addEventListener('click', () => {
+  searchElem.value = '';
+  navMenuElement.items = getMenuItems().map(setActive);
+});
+
+const onRouteChange = () => {
+  searchElem.value = '';
   if (!window.matchMedia('(min-width: 640px)').matches) {
     drawer.opened = false;
   }
 }
 
 const menuItems = navMenuElement.items = [
-  { title: 'Home', type: 'basic', url: '/', icon: 'home', function: closeMenuOnMobileNav },
+  { title: 'Home', type: 'basic', url: '/', icon: 'home' },
   { title: 'Getting Started', type: 'group', description: 'Installation guides', children: [
-    { title: 'Web Components', type: 'basic', url: '/getting-started/webComps', icon: 'html', function: closeMenuOnMobileNav },
-    { title: 'Angular', type: 'basic', url: '/getting-started/angularComps', icon: 'developer_board', function: closeMenuOnMobileNav },
+    { title: 'Web Components', type: 'basic', url: '/getting-started/webComps', icon: 'html' },
+    { title: 'Angular', type: 'basic', url: '/getting-started/angularComps', icon: 'developer_board' },
   ] },
-  { title: 'Learn more', type: 'group', description: 'Dive into the docs', separator: true, children: [
-    { title: 'Colours & Dark Mode', type: 'basic', url: '/learn-more/colours', icon: 'palette', function: closeMenuOnMobileNav },
-    { title: 'Form Validation', type: 'basic', url: '/learn-more/formValidation', icon: 'checklist', function: closeMenuOnMobileNav },
+  { title: 'Learn more', type: 'group', description: 'Dive into the docs', children: [
+    { title: 'Colors & Dark Mode', type: 'basic', url: '/learn-more/colors', icon: 'palette' },
+    { title: 'Form Validation', type: 'basic', url: '/learn-more/formValidation', icon: 'checklist' },
   ] },
   {
     title: 'User Interface', type: 'group', description: 'Building blocks of websites', children: [
     { title: 'Layout', icon: 'dashboard', type: 'collapsible', description: 'Common UI layouts', children: [
-      { title: 'Carousel', type: 'basic', url: '/comps/carousel', function: closeMenuOnMobileNav },
-      { title: 'Drawer', type: 'basic', url: '/comps/drawer', function: closeMenuOnMobileNav },
-      { title: 'Navigation Menu', type: 'basic', url: '/comps/navMenu', function: closeMenuOnMobileNav },
-      { title: 'Page Content', type: 'basic', url: '/comps/pageContent', function: closeMenuOnMobileNav }
+      { title: 'Carousel', type: 'basic', url: '/comps/carousel' },
+      { title: 'Comment List', type: 'basic', url: '/comps/commentList' },
+      { title: 'Drawer Container', type: 'basic', url: '/comps/drawer' },
+      { title: 'Navigation Menu', type: 'basic', url: '/comps/navMenu' },
+      { title: 'Overlay', type: 'basic', url: '/comps/overlay' },
+      { title: 'Page Container', type: 'basic', url: '/comps/pageContainer' },
+      { title: 'Page Content', type: 'basic', url: '/comps/pageContent' },
+      { title: 'Table', type: 'basic', url: '/comps/table' },
+      { title: 'Tabs', type: 'basic', url: '/comps/tabs' },
+      { title: 'Toolbar', type: 'basic', url: '/comps/toolbar' },
     ] },
     { title: 'Interactions', icon: 'touch_app', type: 'collapsible', description: 'Floating UI components', children: [
-      { title: 'Context Menu Trigger', type: 'basic', url: '/comps/contextMenuTrigger', function: closeMenuOnMobileNav },
-      { title: 'Dialog', type: 'basic', url: '/comps/dialog', function: closeMenuOnMobileNav },
-      { title: 'Popup', type: 'basic', url: '/comps/popup', function: closeMenuOnMobileNav },
-      { title: 'Toast', type: 'basic', url: '/comps/toast', function: closeMenuOnMobileNav },
-      { title: 'Tooltip', type: 'basic', url: '/comps/tooltip', function: closeMenuOnMobileNav },
-      { title: 'Expand/Collapse', type: 'basic', url: '/comps/expandCollapse', function: closeMenuOnMobileNav },
-      { title: 'Accordion', type: 'basic', url: '/comps/accordion', function: closeMenuOnMobileNav },
+      { title: 'Accordion', type: 'basic', url: '/comps/accordion' },
+      { title: 'Context Menu Trigger', type: 'basic', url: '/comps/contextMenuTrigger' },
+      { title: 'Dialog', type: 'basic', url: '/comps/dialog' },
+      { title: 'Expand/Collapse', type: 'basic', url: '/comps/expandCollapse' },
+      { title: 'Popup', type: 'basic', url: '/comps/popup' },
+      { title: 'Splash', type: 'basic', url: '/comps/splash' },
+      { title: 'Toast', type: 'basic', url: '/comps/toast' },
+      { title: 'Tooltip', type: 'basic', url: '/comps/tooltip' },
     ] },
     { title: 'Forms', icon: 'format_list_numbered', type: 'collapsible', description: 'Complete form elements', children: [
-      { title: 'Basic Inputs', type: 'basic', url: '/comps/input', function: closeMenuOnMobileNav },
-      { title: 'Date Picker', type: 'basic', url: '/comps/datePicker', function: closeMenuOnMobileNav },
-      { title: 'Toggle', type: 'basic', url: '/comps/toggle', function: closeMenuOnMobileNav }
+      { title: 'Basic Inputs', type: 'basic', url: '/comps/input' },
+      { title: 'Date Picker', type: 'basic', url: '/comps/datePicker' },
+      { title: 'Checkbox', type: 'basic', url: '/comps/inputCheckbox' },
+      { title: 'Select', type: 'basic', url: '/comps/inputSelect' },
+      { title: 'Textarea', type: 'basic', url: '/comps/inputTextarea' },
+      { title: 'Toggle', type: 'basic', url: '/comps/toggle' }
     ] },
     { title: 'Generic', icon: 'inventory_2', type: 'collapsible', description: 'Simple UI components', children: [
-      { title: 'Alert', type: 'basic', url: '/comps/alert', function: closeMenuOnMobileNav },
-      { title: 'Avatar', type: 'basic', url: '/comps/avatar', function: closeMenuOnMobileNav },
-      { title: 'Badge', type: 'basic', url: '/comps/badge', function: closeMenuOnMobileNav },
-      { title: 'Button', type: 'basic', url: '/comps/button', function: closeMenuOnMobileNav },
-      { title: 'Card', type: 'basic', url: '/comps/card', function: closeMenuOnMobileNav },
-      { title: 'Code Block', type: 'basic', url: '/comps/codeBlock', function: closeMenuOnMobileNav },
-      { title: 'Code Snippet', type: 'basic', url: '/comps/codeSnippet', function: closeMenuOnMobileNav },
-      { title: 'Context Menu', type: 'basic', url: '/comps/contextMenu', function: closeMenuOnMobileNav },
-      { title: 'Icon', type: 'basic', url: '/comps/icon', function: closeMenuOnMobileNav },
-      { title: 'Link', type: 'basic', url: '/comps/link', function: closeMenuOnMobileNav },
-      { title: 'Spinner', type: 'basic', url: '/comps/spinner', function: closeMenuOnMobileNav },
-      { title: 'Table', type: 'basic', url: '/comps/table', function: closeMenuOnMobileNav },
+      { title: 'Alert', type: 'basic', url: '/comps/alert' },
+      { title: 'Avatar', type: 'basic', url: '/comps/avatar' },
+      { title: 'Badge', type: 'basic', url: '/comps/badge' },
+      { title: 'Button', type: 'basic', url: '/comps/button' },
+      { title: 'Card', type: 'basic', url: '/comps/card' },
+      { title: 'Code Block', type: 'basic', url: '/comps/codeBlock' },
+      { title: 'Code Snippet', type: 'basic', url: '/comps/codeSnippet' },
+      { title: 'Comment', type: 'basic', url: '/comps/comment' },
+      { title: 'Context Menu', type: 'basic', url: '/comps/contextMenu' },
+      { title: 'Icon', type: 'basic', url: '/comps/icon' },
+      { title: 'Link', type: 'basic', url: '/comps/link' },
+      { title: 'Progress Bar', type: 'basic', url: '/comps/progressBar' },
+      { title: 'Show More', type: 'basic', url: '/comps/showMore' },
+      { title: 'Spinner', type: 'basic', url: '/comps/spinner' },
+      { title: 'Stack', type: 'basic', url: '/comps/stack' },
     ] },
   ] },
 ];
+
+const devRoutes = {
+  title: 'Developer Test',
+  type: 'group',
+  description: 'Pages for testing when running locally',
+  children: [
+    { title: 'Template Component Page', type: 'basic', url: '/comps/template', icon: 'aspect_ratio' },
+  ]
+};
+
+const getMenuItems = () => [...menuItems, ...location.hostname === 'localhost' ? [devRoutes] : []];
+
+const selectTab = () => {
+  const tabsElem = document.getElementById('url-tabs');
+
+  if (!tabsElem) {
+    return;
+  }
+
+  const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+  tabsElem.activeIndex = params.tab ?? 0;
+};
+
+const setTabListener = () => {
+  const tabsElem = document.getElementById('url-tabs');
+  
+  if (!tabsElem) {
+    return;
+  }
+
+  tabsElem.addEventListener('tabChanged', (e) => {
+    const url = new URL(window.location);
+    url.searchParams.set('tab', e.detail);
+    url.hash = '';
+    window.history.pushState({}, "", url);
+  });
+};
 
 function loadPage(page) {
   var xhr = typeof XMLHttpRequest != 'undefined'
@@ -69,11 +163,19 @@ function loadPage(page) {
 
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      document.getElementById("router-outlet").innerHTML = xhr.responseText;
-      // run any related methods
-      if (pageInits[`${page.split('/').pop()}`]) {
-        pageInits[`${page.split('/').pop()}`]();
+      const routerOutlet = document.getElementById("router-outlet");
+      routerOutlet.innerHTML = xhr.responseText;
+      routerOutlet.parentElement.scrollTop = 0;
+
+      // inject any scripts from the template
+      const pageElements = document.createRange().createContextualFragment(xhr.responseText);
+      const scriptElement = pageElements.querySelector('script');
+      if (scriptElement) {
+        routerOutlet.append(scriptElement);
       }
+      onRouteChange();
+      selectTab();
+      setTabListener();
     }
   }
 
@@ -85,18 +187,17 @@ let currentPath;
 // this triggers my internal application logic
 const handleRoute = () => {
   const path = window.location.pathname.substring(1);
+
   if (path === currentPath) {
+    selectTab();
     return;
   }
   loadPage(path);
-  const setActive = (item) => {
-    return item.type === 'basic'
-      ? { ...item, active: window.location.pathname === item.url }
-      : { ...item, children: item.children.map(setActive) };
-  };
-  navMenuElement.items = menuItems.map(setActive);
+
+  navMenuElement.items = getMenuItems().map(setActive);
   currentPath = path;
 }
+
 // add event handler for when using the browser UI to navigate back and forth
 window.onpopstate = () => handleRoute();
 // trigger the current route once on init

@@ -35,6 +35,7 @@
 graph TD;
   cpy-drawer --> cpy-button
   cpy-drawer --> cpy-icon
+  cpy-button --> cpy-splash
   cpy-drawer-container --> cpy-drawer
   style cpy-drawer fill:#f9f,stroke:#333,stroke-width:4px
 ```

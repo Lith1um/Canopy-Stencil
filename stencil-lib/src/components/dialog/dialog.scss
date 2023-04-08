@@ -1,12 +1,12 @@
 .dialog {
   &:not(.hidden) {
     @apply fixed inset-0 flex items-center justify-center;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--cpy-bg-overlay);
   }
 
   &__container {
     @apply flex flex-col shadow-md rounded-md w-[550px] max-h-[95vh] max-w-[95vw] overflow-hidden;
-    background-color: var(--cpy-bg-white);
+    background-color: var(--cpy-dialog-bg, var(--cpy-bg-white));
 
     &--small {
       @apply w-[350px];
@@ -21,7 +21,7 @@
     }
 
     &-title {
-      @apply p-2 pl-6 flex items-baseline w-full gap-2 border-b text-lg;
+      @apply p-2 pl-6 flex items-center w-full gap-2 border-b text-lg;
       border-color: var(--cpy-bg-basic-border);
 
       span {
@@ -29,16 +29,12 @@
       }
     }
 
-    &-close {
-      color: var(--cpy-dm-text-override);
-    }
-
     &-content {
       @apply py-4 px-6 flex-1 overflow-x-auto;
     }
 
     &-buttons {
-      @apply py-4 px-6 border-t flex w-full gap-2 justify-end;
+      @apply py-3 px-6 border-t flex w-full gap-2 justify-end;
       border-color: var(--cpy-bg-basic-border);
     }
   }
@@ -68,7 +64,7 @@
   @apply transition ease-in-out duration-300;
 }
 .dialog-container-enter-start {
-  @apply transform translate-y-full scale-90;
+  @apply transform -translate-y-full scale-110;
 }
 .dialog-container-enter-end {
   @apply transform translate-y-0 scale-100;
@@ -78,10 +74,10 @@
   @apply transition ease-in-out duration-300;
 }
 .dialog-container-leave-start {
-  @apply transform scale-100;
+  @apply transform translate-y-0 scale-100;
 }
 .dialog-container-leave-end {
-  @apply transform scale-90;
+  @apply transform translate-y-full scale-90;
 }
 
 @media(min-width: 640px) {

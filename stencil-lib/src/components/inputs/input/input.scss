@@ -1,101 +1,19 @@
-.input {
-  &:focus-within {
-    .input__label--required::after {
-      color: var(--cpy-text-primary);
-    }
+:host {
+  display: block;
+}
 
-    .input__container {
-      border-color: var(--cpy-bg-primary);
-    }
-  }
+input {
+  @apply w-full bg-transparent;
+}
 
-  &--disabled {
-    @apply cursor-default;
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
-    .input__label {
-      color: var(--cpy-text-disabled) !important;
-    }
-
-    .input__container {
-      color: var(--cpy-text-disabled) !important;
-      background-color: var(--cpy-bg-disabled) !important;
-    }
-  }
-
-  &--invalid {
-    .input__label--required::after {
-      color: var(--cpy-text-error);
-    }
-
-    .input__container {
-      border-color: var(--cpy-bg-error);
-    }
-  }
-
-  &__label {
-    @apply text-sm mb-1;
-
-    &.input__label--required::after {
-      content: "*";
-    }
-  }
-
-  &__container {
-    @apply border rounded-md p-2 flex gap-1.5;
-    background-color: var(--cpy-bg-white);
-    border-color: var(--cpy-bg-basic-border);
-
-    input {
-      @apply flex-1 bg-transparent leading-6;
-    }
-
-    ::slotted(cpy-icon) {
-      @apply icon-size-5 #{!important};
-    }
-  }
-
-  &__errors {
-    @apply text-xs mt-1 truncate;
-    color: var(--cpy-text-error);
-  }
-
-  &--small {
-    .input__label {
-      @apply text-xs;
-    }
-
-    .input__container {
-      @apply text-sm p-1.5 gap-1;
-
-      input {
-        @apply leading-5;
-      }
-
-      ::slotted(cpy-icon) {
-        @apply icon-size-4 #{!important};
-      }
-    }
-  }
-
-  &--large {
-    .input__label {
-      @apply text-base;
-    }
-
-    .input__container {
-      @apply text-lg p-2.5 gap-2;
-
-      input {
-        @apply leading-7;
-      }
-
-      ::slotted(cpy-icon) {
-        @apply icon-size-6 #{!important};
-      }
-    }
-
-    .input__errors {
-      @apply text-sm;
-    }
-  }
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

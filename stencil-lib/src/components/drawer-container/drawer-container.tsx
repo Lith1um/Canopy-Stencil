@@ -1,10 +1,12 @@
-import { Component, Element, Event, EventEmitter, h, Listen, Prop, Watch } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, h, Listen, Method, Prop, Watch } from '@stencil/core';
 
 @Component({
   tag: 'cpy-drawer-container',
   styleUrl: 'drawer-container.scss',
   shadow: true,
 })
+// TODO: bug here where the splash doesn't disappear
+// when closing menu on mobile after screen resized
 export class DrawerContainer {
 
   @Element() element: HTMLElement;
@@ -24,15 +26,22 @@ export class DrawerContainer {
     this.contentElem.style.marginLeft = `${drawerWidth}px`;
   }
 
-  @Event() toggleDrawer: EventEmitter<void>;
+  @Event({bubbles: false})
+  toggleDrawer: EventEmitter<boolean>;
+
+  @Method()
+  async toggle(): Promise<void> {
+    this.opened = !this.opened;
+  }
 
   @Listen('toggleOpened')
   toggleOpenedHandler(): void {
     this.opened = !this.opened;
-    this.toggleDrawer.emit();
+    this.toggleDrawer.emit(this.opened);
   }
 
   contentElem: HTMLElement;
+  overlayElem: HTMLCpyOverlayElement;
   isMobile: boolean;
   firstRender: boolean = true;
 
@@ -54,7 +63,15 @@ export class DrawerContainer {
     // handle initial render case
     if (this.firstRender) {
       this.contentElem.style.transitionDuration = '0s';
-      this.mediaChange(window.matchMedia('(min-width: 640px)'));
+      const matchMobileMedia = window.matchMedia('(min-width: 640px)');
+      this.mediaChange(matchMobileMedia);
+
+      matchMobileMedia.addEventListener('change', (media) => {
+        if (!this.opened) {
+          return;
+        }
+        this.overlayElem.toggle(!media.matches);
+      })
       // Hacky fix to prevent main content sliding in if drawer is open on load
       setTimeout(() => this.contentElem.style.transitionDuration = null, 300);
     }
@@ -76,6 +93,12 @@ export class DrawerContainer {
           ref={(el) => this.contentElem = el as HTMLElement}>
           <slot></slot>
         </div>
+        <cpy-overlay
+          zIndex='25'
+          ref={(el) => this.overlayElem = el as HTMLCpyOverlayElement}
+          show={this.opened && this.isMobile}
+          onBackdropClick={() => this.toggleOpenedHandler()}
+        ></cpy-overlay>
       </div>
     );
   }

@@ -14,7 +14,7 @@
 | `icon`        | `icon`        |             | `string`                                                                                        | `undefined` |
 | `position`    | `position`    |             | `"bottom-end" \| "bottom-middle" \| "bottom-start" \| "top-end" \| "top-middle" \| "top-start"` | `'top-end'` |
 | `toastTitle`  | `toast-title` |             | `string`                                                                                        | `undefined` |
-| `type`        | `type`        |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"`                         | `'primary'` |
+| `type`        | `type`        |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"`                         | `undefined` |
 | `zIndex`      | `z-index`     |             | `string`                                                                                        | `'50'`      |
 
 
@@ -61,6 +61,7 @@ graph TD;
   cpy-toast --> cpy-alert
   cpy-alert --> cpy-icon
   cpy-alert --> cpy-button
+  cpy-button --> cpy-splash
   style cpy-toast fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

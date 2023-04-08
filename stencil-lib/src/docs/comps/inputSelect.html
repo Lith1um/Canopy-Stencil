@@ -1,0 +1,160 @@
+<cpy-page-container>
+  <h1>Select Inputs</h1>
+
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Select input">
+        <p>
+          Canopy select inputs display a form input for selecting a value from a set of options, similar to the native <cpy-code-snippet code="<select>"></cpy-code-snippet> element. They are referenced using
+          the <cpy-code-snippet code="<cpy-input-select>"></cpy-code-snippet> custom HTML element. This component utilises the slot element, allowing you to render <cpy-code-snippet code="<cpy-input-select-option>"></cpy-code-snippet> components easily within it.
+        </p>
+
+        <cpy-code-example header="Select input" id="overview-code">
+<cpy-input-select label="Select" required value="5">
+  <cpy-input-select-option label="Option 1" value="1"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 2" value="2"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 3" value="3"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 4" value="4"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 5" value="5"></cpy-input-select-option>
+</cpy-input-select>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. Below is a list of variables you can use to configure this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
+
+        <h4 id="host">Host styles</h4>
+        <p>
+          Canopy components are designed to have their host element styled directly so that it can be overridden for specific implementation purposes.This is generally used to adjust <cpy-code-snippet code="display"></cpy-code-snippet>, <cpy-code-snippet code="position"></cpy-code-snippet>, <cpy-code-snippet code="background-color"></cpy-code-snippet>, <cpy-code-snippet code="padding"></cpy-code-snippet>, <cpy-code-snippet code="margin"></cpy-code-snippet>, <cpy-code-snippet code="width"></cpy-code-snippet>, <cpy-code-snippet code="height"></cpy-code-snippet> etc.
+        </p>
+        <p>
+          There are likely other properties that you can alter on the host element for each individual component, open your dev tools and inspect each component to see what you can override on the host!
+        </p>
+
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          TODO: ...
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Select input">
+        <h4 id="api" title="API">API Reference for Canopy Select Input</h4>
+        <cpy-code-snippet code="<cpy-input-select>"></cpy-code-snippet>
+
+        <div class="section">
+        </div>
+
+        <h4 id="types">Types</h4>
+        <cpy-code-block id="comp-interfaces"></cpy-code-block>
+
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <p style="margin-bottom: 0.5rem;">Select input: <cpy-code-snippet code="<cpy-input-select>"></cpy-code-snippet></p>
+        <cpy-table id="comp-props"></cpy-table>
+
+        <p style="margin-bottom: 0.5rem;">Select input Option: <cpy-code-snippet code="<cpy-input-select-option>"></cpy-code-snippet></p>
+        <cpy-table id="comp-props-option"></cpy-table>
+
+        <h4 id="events">Events</h4>
+        <p>React to changes in the component</p>
+        <p style="margin-bottom: 0.5rem;">Select input: <cpy-code-snippet code="<cpy-input-select>"></cpy-code-snippet></p>
+        <cpy-table id="comp-events"></cpy-table>
+        
+        <p style="margin-bottom: 0.5rem;">Select input Option: <cpy-code-snippet code="<cpy-input-select-option>"></cpy-code-snippet></p>
+        <cpy-table id="comp-events-option"></cpy-table>
+
+        <h4 id="methods">Methods</h4>
+        <p>Exposed methods on the component (All methods are async!)</p>
+        <cpy-table id="comp-methods"></cpy-table>
+
+        <h4 id="slots">Slots</h4>
+        <p>Inject custom content into the component</p>
+        <cpy-table id="comp-slots"></cpy-table>
+
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic Select">
+<cpy-input-select label="Basic select">
+  <cpy-input-select-option label="Option 1" value="1"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 2" value="2"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 3" value="3"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 4" value="4"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 5" value="5"></cpy-input-select-option>
+</cpy-input-select>
+      </cpy-code-example>
+      <cpy-code-example header="Required select">
+<cpy-input-select label="Required select" required>
+  <cpy-input-select-option label="Option 1" value="1"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 2" value="2"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 3" value="3"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 4" value="4"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 5" value="5"></cpy-input-select-option>
+</cpy-input-select>
+      </cpy-code-example>
+      <cpy-code-example header="Small select">
+<cpy-input-select label="Small select" size="small">
+  <cpy-input-select-option label="Option 1" value="1"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 2" value="2"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 3" value="3"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 4" value="4"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 5" value="5"></cpy-input-select-option>
+</cpy-input-select>
+      </cpy-code-example>
+      <cpy-code-example header="Large select">
+<cpy-input-select label="Large select" size="large">
+  <cpy-input-select-option label="Option 1" value="1"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 2" value="2"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 3" value="3"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 4" value="4"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 5" value="5"></cpy-input-select-option>
+</cpy-input-select>
+      </cpy-code-example>
+      <cpy-code-example header="Select with prefix">
+<cpy-input-select label="Select">
+  <cpy-icon slot="prefix">rocket_launch</cpy-icon>
+  <cpy-input-select-option label="Option 1" value="1"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 2" value="2"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 3" value="3"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 4" value="4"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 5" value="5"></cpy-input-select-option>
+</cpy-input-select>
+      </cpy-code-example>
+      <cpy-code-example header="Disabled select">
+<cpy-input-select label="Disabled select" disabled>
+  <cpy-input-select-option label="Option 1" value="1"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 2" value="2"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 3" value="3"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 4" value="4"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 5" value="5"></cpy-input-select-option>
+</cpy-input-select>
+      </cpy-code-example>
+      <cpy-code-example header="Custom select">
+<cpy-input-select label="Select" size="large" style="
+  --cpy-text-primary: violet;
+  --cpy-bg-white: var(--cpy-bg-light);
+">
+  <cpy-input-select-option label="Option 1" value="1"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 2" value="2"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 3" value="3"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 4" value="4"></cpy-input-select-option>
+  <cpy-input-select-option label="Option 5" value="5"></cpy-input-select-option>
+</cpy-input-select>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
+</cpy-page-container>
+
+<script src="/docs/comps/inputSelect.js">
+</script>

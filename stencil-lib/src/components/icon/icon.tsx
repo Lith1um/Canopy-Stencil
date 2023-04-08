@@ -3,7 +3,7 @@ import { Component, h } from '@stencil/core';
 @Component({
   tag: 'cpy-icon',
   styleUrl: 'icon.scss',
-  shadow: false,
+  shadow: true,
 })
 export class Icon {
 

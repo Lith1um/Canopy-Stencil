@@ -36,6 +36,7 @@ Type: `Promise<void>`
 - [cpy-popup](../../popup)
 - [cpy-icon](../../icon)
 - [cpy-context-menu](..)
+- [cpy-splash](../../splash)
 
 ### Graph
 ```mermaid
@@ -43,6 +44,7 @@ graph TD;
   cpy-context-menu-item --> cpy-popup
   cpy-context-menu-item --> cpy-icon
   cpy-context-menu-item --> cpy-context-menu
+  cpy-context-menu-item --> cpy-splash
   cpy-context-menu --> cpy-context-menu-item
   style cpy-context-menu-item fill:#f9f,stroke:#333,stroke-width:4px
 ```

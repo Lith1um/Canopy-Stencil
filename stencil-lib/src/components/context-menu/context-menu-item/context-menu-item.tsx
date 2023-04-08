@@ -30,7 +30,7 @@ export class ContextMenuItemComp {
     if (this.item.openInNewTab) {
       itemAttrs.target = '_blank';
     }
-    if (this.item.url !== undefined) {
+    if (this.item.url !== undefined && this.item.function === undefined) {
       itemAttrs.href = this.item.url;
     }
     if (this.item.function) {
@@ -69,6 +69,8 @@ export class ContextMenuItemComp {
                 <div class="context-menu-item__title">{this.item.title}</div>
                 {this.item.description && <div class="context-menu-item__description">{this.item.description}</div>}
               </div>
+
+              <cpy-splash></cpy-splash>
             </a>
               
             {this.item.separator && <div class="context-menu-item__separator"></div>}

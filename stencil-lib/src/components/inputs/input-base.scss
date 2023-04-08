@@ -1,0 +1,141 @@
+.input-base {
+  &:focus-within:not(.input-base--disabled) {
+    .input-base__label--required::after {
+      color: var(--cpy-text-primary);
+    }
+
+    .input-base__container {
+      border-color: var(--cpy-text-primary);
+
+      ::slotted(cpy-icon) {
+        color: var(--cpy-text-primary);
+      }
+    }
+  }
+
+  &--disabled {
+    @apply cursor-default;
+
+    .input-base__label {
+      color: var(--cpy-text-disabled) !important;
+    }
+
+    .input-base__container {
+      color: var(--cpy-text-disabled) !important;
+      background-color: var(--cpy-bg-disabled) !important;
+    }
+  }
+
+  &--invalid {
+    .input-base__label--required::after {
+      color: var(--cpy-text-error);
+    }
+
+    .input-base__container {
+      border-color: var(--cpy-bg-error);
+    }
+  }
+
+  &--no-container {
+    .input-base__container {
+      @apply border-0 p-0 bg-transparent #{'!important'};
+    }
+  }
+
+  &__label {
+    @apply text-sm mb-1;
+
+    &.input-base__label--required::after {
+      @apply ml-0.5;
+      content: "*";
+    }
+  }
+
+  &__container {
+    @apply border rounded-md p-2 flex items-center gap-1.5;
+    background-color: var(--cpy-bg-white);
+    border-color: var(--cpy-bg-basic-border);
+
+    .input-base__input {
+      @apply flex-1 flex min-w-0 bg-transparent leading-6 min-h-[1.5rem];
+    }
+
+    ::slotted(cpy-icon) {
+      @apply icon-size-5 #{!important};
+    }
+  }
+
+  &__dropdown {
+    @apply h-full max-h-80 overflow-y-auto py-1;
+  }
+
+  &__errors {
+    @apply text-xs mt-1 truncate;
+    color: var(--cpy-text-error);
+  }
+
+  &--small {
+    .input-base__label {
+      @apply text-xs;
+    }
+
+    .input-base__container {
+      @apply text-sm p-1.5 gap-1;
+
+      .input-base__input {
+        @apply leading-5 min-h-[1.25rem];
+      }
+
+      ::slotted(cpy-icon) {
+        @apply icon-size-4 #{!important};
+      }
+    }
+  }
+
+  &--large {
+    .input-base__label {
+      @apply text-base;
+    }
+
+    .input-base__container {
+      @apply text-lg p-2.5 gap-2;
+
+      .input-base__input {
+        @apply leading-7 min-h-[1.75rem];
+      }
+
+      ::slotted(cpy-icon) {
+        @apply icon-size-6 #{!important};
+      }
+    }
+
+    + .input-base__errors {
+      @apply text-sm;
+    }
+  }
+}
+
+
+@media(min-width: 640px) {
+  .input-base__dropdown {
+    &::-webkit-scrollbar {
+      @apply w-2 h-2;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      @apply bg-transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--cpy-bg-basic);
+      @apply rounded;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: var(--cpy-bg-basic);
+    }
+  }
+}

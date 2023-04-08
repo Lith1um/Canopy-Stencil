@@ -1,217 +1,288 @@
-<cpy-page-content>
-  <h3 style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-    Buttons
-  </h3>
-  
-  <p style="margin-top: 1rem; margin-bottom: 2rem;">
-    Canopy buttons are wrappers around native <cpy-code-snippet>&lt;button&gt;</cpy-code-snippet> elements. They are referenced using the <cpy-code-snippet>&lt;cpy-button&gt;</cpy-code-snippet> custom HTML element. This component utilises the slot element, allowing you to render your own HTML in the button.
-  </p>
-  
-  <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-  
-  <p>Fill (default)</p>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-    <cpy-button icon>
-      <cpy-icon>settings</cpy-icon>
-    </cpy-button>
-    <cpy-button>
-      Primary
-    </cpy-button>
-    <cpy-button type="secondary">
-      Secondary
-    </cpy-button>
-    <cpy-button type="basic">
-      Basic
-    </cpy-button>
-    <cpy-button type="success">
-      <cpy-icon>check_circle</cpy-icon>Success
-    </cpy-button>
-    <cpy-button type="warn">
-      <cpy-icon>warning</cpy-icon>Warning
-    </cpy-button>
-    <cpy-button type="error">
-      <cpy-icon>cancel</cpy-icon>Error
-    </cpy-button>
-  </div>
-  
-  <p>Outline</p>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-    <cpy-button appearance="outline" icon>
-      <cpy-icon>account_circle</cpy-icon>
-    </cpy-button>
-    <cpy-button appearance="outline">
-      Primary
-    </cpy-button>
-    <cpy-button appearance="outline" type="secondary">
-      Secondary
-    </cpy-button>
-    <cpy-button appearance="outline" type="basic">
-      Basic
-    </cpy-button>
-    <cpy-button appearance="outline" type="success">
-      <cpy-icon>check_circle</cpy-icon>Success
-    </cpy-button>
-    <cpy-button appearance="outline" type="warn">
-      <cpy-icon>warning</cpy-icon>Warning
-    </cpy-button>
-    <cpy-button appearance="outline" type="error">
-      <cpy-icon>cancel</cpy-icon>Error
-    </cpy-button>
-  </div>
-  
-  <p>Borderless</p>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-    <cpy-button appearance="borderless" icon>
-      <cpy-icon>build</cpy-icon>
-    </cpy-button>
-    <cpy-button appearance="borderless">
-      Primary
-    </cpy-button>
-    <cpy-button appearance="borderless" type="secondary">
-      Secondary
-    </cpy-button>
-    <cpy-button appearance="borderless" type="basic">
-      Basic
-    </cpy-button>
-    <cpy-button appearance="borderless" type="success">
-      <cpy-icon>check_circle</cpy-icon>Success
-    </cpy-button>
-    <cpy-button appearance="borderless" type="warn">
-      <cpy-icon>warning</cpy-icon>Warning
-    </cpy-button>
-    <cpy-button appearance="borderless" type="error">
-      <cpy-icon>cancel</cpy-icon>Error
-    </cpy-button>
-  </div>
-  
-  <p>Small</p>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-    <cpy-button size="small" icon>
-      <cpy-icon>settings</cpy-icon>
-    </cpy-button>
-    <cpy-button size="small">
-      Primary
-    </cpy-button>
-    <cpy-button size="small" type="secondary">
-      Secondary
-    </cpy-button>
-    <cpy-button size="small" type="basic">
-      Basic
-    </cpy-button>
-    <cpy-button size="small" type="success">
-      <cpy-icon>check_circle</cpy-icon>Success
-    </cpy-button>
-    <cpy-button size="small" type="warn" appearance="outline">
-      <cpy-icon>warning</cpy-icon>Warning
-    </cpy-button>
-    <cpy-button size="small" type="error" appearance="borderless">
-      <cpy-icon>cancel</cpy-icon>Error
-    </cpy-button>
-  </div>
-  
-  <p>Large</p>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-    <cpy-button size="large" icon>
-      <cpy-icon>account_circle</cpy-icon>
-    </cpy-button>
-    <cpy-button size="large">
-      Primary
-    </cpy-button>
-    <cpy-button size="large" type="secondary">
-      Secondary
-    </cpy-button>
-    <cpy-button size="large" type="basic">
-      Basic
-    </cpy-button>
-    <cpy-button size="large" type="success">
-      <cpy-icon>check_circle</cpy-icon>Success
-    </cpy-button>
-    <cpy-button size="large" type="warn" appearance="outline">
-      <cpy-icon>warning</cpy-icon>Warning
-    </cpy-button>
-    <cpy-button size="large" type="error" appearance="borderless">
-      <cpy-icon>cancel</cpy-icon>Error
-    </cpy-button>
-  </div>
-  
-  <p>Disabled</p>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-    <cpy-button disabled="true" icon>
-      <cpy-icon>build</cpy-icon>
-    </cpy-button>
-    <cpy-button disabled="true">
-      Primary
-    </cpy-button>
-    <cpy-button disabled="true" type="secondary" appearance="outline">
-      Secondary
-    </cpy-button>
-    <cpy-button disabled="true" type="basic" appearance="borderless">
-      Basic
-    </cpy-button>
-    <cpy-button disabled="true" type="success" size="small">
-      <cpy-icon>check_circle</cpy-icon>Success
-    </cpy-button>
-    <cpy-button disabled="true" type="warn">
-      <cpy-icon>warning</cpy-icon>Warning
-    </cpy-button>
-    <cpy-button disabled="true" type="error" size="large">
-      <cpy-icon>cancel</cpy-icon>Error
-    </cpy-button>
-  </div>
-  
-  <p>Icon</p>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-    <cpy-button icon>
-      <cpy-icon>settings</cpy-icon>
-    </cpy-button>
-    <cpy-button icon type="secondary">
-      <cpy-icon>account_circle</cpy-icon>
-    </cpy-button>
-    <cpy-button icon type="basic">
-      <cpy-icon>build</cpy-icon>
-    </cpy-button>
-    <cpy-button icon type="success">
-      <cpy-icon>check_circle</cpy-icon>
-    </cpy-button>
-    <cpy-button icon type="warn">
-      <cpy-icon>warning</cpy-icon>
-    </cpy-button>
-    <cpy-button icon type="error">
-      <cpy-icon>cancel</cpy-icon>
-    </cpy-button>
-  </div>
-  
-  <p>Icon Outline</p>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 0.5rem;">
-    <cpy-button icon appearance="outline">
-      <cpy-icon>settings</cpy-icon>
-    </cpy-button>
-    <cpy-button icon appearance="outline" type="secondary">
-      <cpy-icon>account_circle</cpy-icon>
-    </cpy-button>
-    <cpy-button icon appearance="outline" type="basic">
-      <cpy-icon>build</cpy-icon>
-    </cpy-button>
-    <cpy-button icon appearance="outline" type="success">
-      <cpy-icon>check_circle</cpy-icon>
-    </cpy-button>
-    <cpy-button icon appearance="outline" type="warn">
-      <cpy-icon>warning</cpy-icon>
-    </cpy-button>
-    <cpy-button icon appearance="outline" type="error">
-      <cpy-icon>cancel</cpy-icon>
-    </cpy-button>
-  </div>
-  
-  <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
-  
-  <div style="margin-top: 1rem; margin-bottom: 2rem;">
-    <cpy-code-block id="button-html-example" language="html"></cpy-code-block>
-  </div>
-  
-  <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-  <cpy-table id="button-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  
-  <h3 id="slots" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Slots</h3>
-  <cpy-table id="button-slots" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-</cpy-page-content>
+<cpy-page-container>
+  <h1>Buttons</h1>
+
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Button">
+        <p>
+          Canopy buttons are wrappers around native <cpy-code-snippet code="<button>"></cpy-code-snippet> elements. They are
+          referenced using the <cpy-code-snippet code="<cpy-button>"></cpy-code-snippet> custom HTML element. This component
+          utilises the slot element, allowing you to render your own HTML in the button.
+        </p>
+
+        <cpy-code-example header="Button" id="overview-code">
+<cpy-button>
+  Button
+</cpy-button>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. Below is a list of variables you can use to configure this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
+
+        <h4 id="host">Host styles</h4>
+        <p>
+          Canopy components are designed to have their host element styled directly so that it can be overridden for specific implementation purposes.This is generally used to adjust <cpy-code-snippet code="display"></cpy-code-snippet>, <cpy-code-snippet code="position"></cpy-code-snippet>, <cpy-code-snippet code="background-color"></cpy-code-snippet>, <cpy-code-snippet code="padding"></cpy-code-snippet>, <cpy-code-snippet code="margin"></cpy-code-snippet>, <cpy-code-snippet code="width"></cpy-code-snippet>, <cpy-code-snippet code="height"></cpy-code-snippet> etc.
+        </p>
+        <p>
+          There are likely other properties that you can alter on the host element for each individual component, open your dev tools and inspect each component to see what you can override on the host!
+        </p>
+
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          TODO: ...
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Button">
+        <h4 id="api" title="API">API Reference for Canopy Button</h4>
+        <cpy-code-snippet code="<cpy-button>"></cpy-code-snippet>
+
+        <div class="section">
+        </div>
+
+        <h4 id="types">Types</h4>
+        <cpy-code-block id="comp-interfaces"></cpy-code-block>
+
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
+
+        <h4 id="events">Events</h4>
+        <p>React to changes in the component</p>
+        <cpy-table id="comp-events"></cpy-table>
+
+        <h4 id="slots">Slots</h4>
+        <p>Inject custom content into the component</p>
+        <cpy-table id="comp-slots"></cpy-table>
+
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic Buttons">
+<cpy-button icon>
+  <cpy-icon>settings</cpy-icon>
+</cpy-button>
+<cpy-button>
+  Primary
+</cpy-button>
+<cpy-button type="secondary">
+  Secondary
+</cpy-button>
+<cpy-button type="basic">
+  Basic
+</cpy-button>
+<cpy-button type="success">
+  <cpy-icon>check_circle</cpy-icon>Success
+</cpy-button>
+<cpy-button type="warn">
+  <cpy-icon>warning</cpy-icon>Warning
+</cpy-button>
+<cpy-button type="error">
+  <cpy-icon>cancel</cpy-icon>Error
+</cpy-button>
+      </cpy-code-example>
+      <cpy-code-example header="Outlined Buttons">
+<cpy-button appearance="outline" icon>
+  <cpy-icon>account_circle</cpy-icon>
+</cpy-button>
+<cpy-button appearance="outline">
+  Primary
+</cpy-button>
+<cpy-button appearance="outline" type="secondary">
+  Secondary
+</cpy-button>
+<cpy-button appearance="outline" type="basic">
+  Basic
+</cpy-button>
+<cpy-button appearance="outline" type="success">
+  <cpy-icon>check_circle</cpy-icon>Success
+</cpy-button>
+<cpy-button appearance="outline" type="warn">
+  <cpy-icon>warning</cpy-icon>Warning
+</cpy-button>
+<cpy-button appearance="outline" type="error">
+  <cpy-icon>cancel</cpy-icon>Error
+</cpy-button>
+      </cpy-code-example>
+      <cpy-code-example header="Borderless Buttons">
+<cpy-button appearance="borderless" icon>
+  <cpy-icon>build</cpy-icon>
+</cpy-button>
+<cpy-button appearance="borderless">
+  Primary
+</cpy-button>
+<cpy-button appearance="borderless" type="secondary">
+  Secondary
+</cpy-button>
+<cpy-button appearance="borderless" type="basic">
+  Basic
+</cpy-button>
+<cpy-button appearance="borderless" type="success">
+  <cpy-icon>check_circle</cpy-icon>Success
+</cpy-button>
+<cpy-button appearance="borderless" type="warn">
+  <cpy-icon>warning</cpy-icon>Warning
+</cpy-button>
+<cpy-button appearance="borderless" type="error">
+  <cpy-icon>cancel</cpy-icon>Error
+</cpy-button>
+      </cpy-code-example>
+      <cpy-code-example header="Small buttons">
+<cpy-button size="small" icon>
+  <cpy-icon>settings</cpy-icon>
+</cpy-button>
+<cpy-button size="small">
+  Primary
+</cpy-button>
+<cpy-button size="small" type="secondary">
+  Secondary
+</cpy-button>
+<cpy-button size="small" type="basic">
+  Basic
+</cpy-button>
+<cpy-button size="small" type="success">
+  <cpy-icon>check_circle</cpy-icon>Success
+</cpy-button>
+<cpy-button size="small" type="warn" appearance="outline">
+  <cpy-icon>warning</cpy-icon>Warning
+</cpy-button>
+<cpy-button size="small" type="error" appearance="borderless">
+  <cpy-icon>cancel</cpy-icon>Error
+</cpy-button>
+      </cpy-code-example>
+      <cpy-code-example header="Large buttons">
+<cpy-button size="large" icon>
+  <cpy-icon>account_circle</cpy-icon>
+</cpy-button>
+<cpy-button size="large">
+  Primary
+</cpy-button>
+<cpy-button size="large" type="secondary">
+  Secondary
+</cpy-button>
+<cpy-button size="large" type="basic">
+  Basic
+</cpy-button>
+<cpy-button size="large" type="success">
+  <cpy-icon>check_circle</cpy-icon>Success
+</cpy-button>
+<cpy-button size="large" type="warn" appearance="outline">
+  <cpy-icon>warning</cpy-icon>Warning
+</cpy-button>
+<cpy-button size="large" type="error" appearance="borderless">
+  <cpy-icon>cancel</cpy-icon>Error
+</cpy-button>
+      </cpy-code-example>
+      <cpy-code-example header="Disabled buttons">
+<cpy-button disabled icon>
+  <cpy-icon>build</cpy-icon>
+</cpy-button>
+<cpy-button disabled>
+  Primary
+</cpy-button>
+<cpy-button disabled type="secondary" appearance="outline">
+  Secondary
+</cpy-button>
+<cpy-button disabled type="basic" appearance="borderless">
+  Basic
+</cpy-button>
+<cpy-button disabled type="success" size="small">
+  <cpy-icon>check_circle</cpy-icon>Success
+</cpy-button>
+<cpy-button disabled type="warn">
+  <cpy-icon>warning</cpy-icon>Warning
+</cpy-button>
+<cpy-button disabled type="error" size="large">
+  <cpy-icon>cancel</cpy-icon>Error
+</cpy-button>
+      </cpy-code-example>
+      <cpy-code-example header="Icon buttons">
+<cpy-button icon>
+  <cpy-icon>settings</cpy-icon>
+</cpy-button>
+<cpy-button icon type="secondary">
+  <cpy-icon>account_circle</cpy-icon>
+</cpy-button>
+<cpy-button icon type="basic">
+  <cpy-icon>build</cpy-icon>
+</cpy-button>
+<cpy-button icon type="success">
+  <cpy-icon>check_circle</cpy-icon>
+</cpy-button>
+<cpy-button icon type="warn">
+  <cpy-icon>warning</cpy-icon>
+</cpy-button>
+<cpy-button icon type="error">
+  <cpy-icon>cancel</cpy-icon>
+</cpy-button>
+      </cpy-code-example>
+      <cpy-code-example header="Outlined icon buttons">
+<cpy-button icon appearance="outline">
+  <cpy-icon>settings</cpy-icon>
+</cpy-button>
+<cpy-button icon appearance="outline" type="secondary">
+  <cpy-icon>account_circle</cpy-icon>
+</cpy-button>
+<cpy-button icon appearance="outline" type="basic">
+  <cpy-icon>build</cpy-icon>
+</cpy-button>
+<cpy-button icon appearance="outline" type="success">
+  <cpy-icon>check_circle</cpy-icon>
+</cpy-button>
+<cpy-button icon appearance="outline" type="warn">
+  <cpy-icon>warning</cpy-icon>
+</cpy-button>
+<cpy-button icon appearance="outline" type="error">
+  <cpy-icon>cancel</cpy-icon>
+</cpy-button>
+      </cpy-code-example>
+      <cpy-code-example header="Custom buttons">
+<div style="
+--cpy-button-text: coral;
+--cpy-button-bg: blue;
+--cpy-button-bg-hover: green;
+">
+  <cpy-button icon>
+    <cpy-icon>build</cpy-icon>
+  </cpy-button>
+  <cpy-button icon appearance="outline" type="secondary">
+    <cpy-icon>account_circle</cpy-icon>
+  </cpy-button>
+  <cpy-button>
+    Primary
+  </cpy-button>
+  <cpy-button type="secondary" appearance="outline">
+    Secondary
+  </cpy-button>
+  <cpy-button disabled type="basic" appearance="borderless">
+    Basic
+  </cpy-button>
+  <cpy-button type="success" size="small">
+    <cpy-icon>check_circle</cpy-icon>Success
+  </cpy-button>
+  <cpy-button type="warn">
+    <cpy-icon>warning</cpy-icon>Warning
+  </cpy-button>
+  <cpy-button type="error" size="large">
+    <cpy-icon>cancel</cpy-icon>Error
+  </cpy-button>
+</div>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
+</cpy-page-container>
+
+<script src="/docs/comps/button.js">
+</script>

@@ -1,6 +1,5 @@
 import { Component, Event, EventEmitter, h, Method, Prop, State } from '@stencil/core';
-import { AlertType } from '../alert/alert.type';
-import { ToastPosition } from './toast.type';
+import { ToastPosition, ToastType } from './toast.type';
 
 @Component({
   tag: 'cpy-toast',
@@ -11,7 +10,7 @@ export class Toast {
 
   @Prop() position: ToastPosition = 'top-end';
   
-  @Prop() type: AlertType = 'primary';
+  @Prop() type: ToastType;
 
   @Prop() toastTitle: string;
 
