@@ -1,3 +1,31 @@
 .input-select {
   @apply w-full truncate;
+
+  &__dropdown {
+    @apply h-full max-h-80 overflow-y-auto py-1;
+  }
+}
+
+@media(min-width: 640px) {
+  .input-select__dropdown {
+    &::-webkit-scrollbar {
+      @apply w-2 h-2;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      @apply bg-transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--cpy-bg-basic);
+      @apply rounded;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: var(--cpy-bg-basic);
+    }
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, Event, EventEmitter, h, Method, Prop } from '@stencil/core';
 import { InputSize } from './types/input-size.type';
+import { PopupPosition } from '../popup/popup.type';
 
 @Component({
   tag: 'cpy-input-base',
@@ -32,6 +33,12 @@ export class InputBase {
   @Prop()
   popup: boolean = false;
 
+  @Prop()
+  stretchPopup: boolean = true;
+
+  @Prop()
+  popupPosition: PopupPosition = 'bottom-end';
+
   @Event()
   popupClosed: EventEmitter<void>;
 
@@ -45,14 +52,18 @@ export class InputBase {
     }
   }
 
+  @Method()
+  async openPopup(): Promise<void> {
+    if (this.popup) {
+      this.popupElem.show();
+    }
+  }
+
   popupElem: HTMLCpyPopupElement;
 
   handleLabelClick(): void {
     if (this.disabled) {
       return;
-    }
-    if (this.popup) {
-      this.popupElem.show();
     }
     this.labelClicked.emit();
   }
@@ -80,7 +91,8 @@ export class InputBase {
         {this.popup
           ? <cpy-popup
               style={{display: 'block'}}
-              stretch={true}
+              stretch={this.stretchPopup}
+              position={this.popupPosition}
               disabled={this.disabled}
               ref={(el) => this.popupElem = el as HTMLCpyPopupElement}
               onClosed={() => this.popupClosed.emit()}>
@@ -94,9 +106,7 @@ export class InputBase {
                 <slot name='suffix'/>
               </div>
 
-              <div slot='content' class='input-base__dropdown'>
-                <slot name='popup-content'/>
-              </div>
+              <slot slot='content' name='popup-content'/>
             </cpy-popup>
           : <div class='input-base__container'>
               <slot name='prefix'/>

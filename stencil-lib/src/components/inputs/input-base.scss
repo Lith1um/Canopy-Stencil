@@ -65,10 +65,6 @@
     }
   }
 
-  &__dropdown {
-    @apply h-full max-h-80 overflow-y-auto py-1;
-  }
-
   &__errors {
     @apply text-xs mt-1 truncate;
     color: var(--cpy-text-error);
@@ -111,31 +107,6 @@
 
     + .input-base__errors {
       @apply text-sm;
-    }
-  }
-}
-
-
-@media(min-width: 640px) {
-  .input-base__dropdown {
-    &::-webkit-scrollbar {
-      @apply w-2 h-2;
-    }
-
-    /* Track */
-    &::-webkit-scrollbar-track {
-      @apply bg-transparent;
-    }
-
-    /* Handle */
-    &::-webkit-scrollbar-thumb {
-      background-color: var(--cpy-bg-basic);
-      @apply rounded;
-    }
-
-    /* Handle on hover */
-    &::-webkit-scrollbar-thumb:hover {
-      background-color: var(--cpy-bg-basic);
     }
   }
 }

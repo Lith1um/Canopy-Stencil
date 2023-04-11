@@ -53,14 +53,14 @@ export class Popup {
 
   @Method()
   async togglePopup(): Promise<void> {
-    this.wrapperElem.classList.toggle('popup--show');
+    console.log('togglePopup', this.wrapperElem.classList.contains('popup--show'));
 
     if (this.wrapperElem.classList.contains('popup--show')) {
-      this.addClickOutsideListener();
-      this.opened.emit();
-    } else {
-      this.removeClickOutsideListener();
+      await this.hidePopup();
       this.closed.emit();
+    } else {
+      await this.showPopup();
+      this.opened.emit();
     }
   }
 
@@ -87,6 +87,7 @@ export class Popup {
     if (!e.composedPath().includes(this.wrapperElem)) {
       this.wrapperElem.classList.remove('popup--show');
       this.removeClickOutsideListener();
+      console.log('checkClickOutside');
       this.closed.emit();
     }
   }

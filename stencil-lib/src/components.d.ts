@@ -20,9 +20,9 @@ import { InputType } from "./components/inputs/input/input.type";
 import { InputSize } from "./components/inputs/types/input-size.type";
 import { ValidatorEntry } from "./components/inputs/validation/types/validator-entry.type";
 import { Validator } from "./components/inputs/validation/types/validator.type";
+import { PopupActiveOn, PopupPosition } from "./components/popup/popup.type";
 import { LinkType } from "./components/link/types/link.type";
 import { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
-import { PopupActiveOn, PopupPosition } from "./components/popup/popup.type";
 import { ProgressBarAppearance, ProgressBarSize } from "./components/progress-bar/progress-bar.type";
 import { ShowMoreAppearance } from "./components/show-more/show-more.type";
 import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
@@ -46,9 +46,9 @@ export { InputType } from "./components/inputs/input/input.type";
 export { InputSize } from "./components/inputs/types/input-size.type";
 export { ValidatorEntry } from "./components/inputs/validation/types/validator-entry.type";
 export { Validator } from "./components/inputs/validation/types/validator.type";
+export { PopupActiveOn, PopupPosition } from "./components/popup/popup.type";
 export { LinkType } from "./components/link/types/link.type";
 export { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
-export { PopupActiveOn, PopupPosition } from "./components/popup/popup.type";
 export { ProgressBarAppearance, ProgressBarSize } from "./components/progress-bar/progress-bar.type";
 export { ShowMoreAppearance } from "./components/show-more/show-more.type";
 export { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
@@ -155,12 +155,6 @@ export namespace Components {
     interface CpyContextMenuTrigger {
         "items": ContextMenuItem[];
     }
-    interface CpyDatePicker {
-        "date": string;
-        "format": string;
-        "label": string;
-        "size": 'small' | 'default' | 'large';
-    }
     interface CpyDialog {
         "close": () => Promise<void>;
         "dialogTitle": string;
@@ -203,9 +197,12 @@ export namespace Components {
         "interacted": boolean;
         "label": string;
         "noContainer": boolean;
+        "openPopup": () => Promise<void>;
         "popup": boolean;
+        "popupPosition": PopupPosition;
         "required": boolean;
         "size": InputSize;
+        "stretchPopup": boolean;
     }
     interface CpyInputCheckbox {
         "disabled": boolean;
@@ -216,6 +213,17 @@ export namespace Components {
         "size": InputSize;
         "validators": Array<string | ValidatorEntry | Validator<boolean>>;
         "value": boolean;
+    }
+    interface CpyInputDatepicker {
+        "disabled": boolean;
+        "format": string;
+        "isValid": () => Promise<boolean>;
+        "label": string;
+        "markAsTouched": () => Promise<void>;
+        "required": boolean;
+        "size": InputSize;
+        "validators": Array<string | ValidatorEntry | Validator<string>>;
+        "value": string;
     }
     interface CpyInputSelect {
         "disabled": boolean;
@@ -287,10 +295,13 @@ export namespace Components {
         "activeOn": PopupActiveOn;
         "disabled": boolean;
         "hide": () => Promise<void>;
+        "hidePopup": () => Promise<void>;
         "position": PopupPosition;
         "recalculatePosition": () => Promise<void>;
         "show": () => Promise<void>;
+        "showPopup": () => Promise<void>;
         "stretch": boolean;
+        "togglePopup": () => Promise<void>;
     }
     interface CpyProgressBar {
         "border": boolean;
@@ -364,13 +375,13 @@ export interface CpyButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyButtonElement;
 }
+export interface CpyCalendarCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyCalendarElement;
+}
 export interface CpyContentsListItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyContentsListItemElement;
-}
-export interface CpyDatePickerCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLCpyDatePickerElement;
 }
 export interface CpyDialogCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -399,6 +410,10 @@ export interface CpyInputBaseCustomEvent<T> extends CustomEvent<T> {
 export interface CpyInputCheckboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyInputCheckboxElement;
+}
+export interface CpyInputDatepickerCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyInputDatepickerElement;
 }
 export interface CpyInputSelectCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -549,12 +564,6 @@ declare global {
         prototype: HTMLCpyContextMenuTriggerElement;
         new (): HTMLCpyContextMenuTriggerElement;
     };
-    interface HTMLCpyDatePickerElement extends Components.CpyDatePicker, HTMLStencilElement {
-    }
-    var HTMLCpyDatePickerElement: {
-        prototype: HTMLCpyDatePickerElement;
-        new (): HTMLCpyDatePickerElement;
-    };
     interface HTMLCpyDialogElement extends Components.CpyDialog, HTMLStencilElement {
     }
     var HTMLCpyDialogElement: {
@@ -602,6 +611,12 @@ declare global {
     var HTMLCpyInputCheckboxElement: {
         prototype: HTMLCpyInputCheckboxElement;
         new (): HTMLCpyInputCheckboxElement;
+    };
+    interface HTMLCpyInputDatepickerElement extends Components.CpyInputDatepicker, HTMLStencilElement {
+    }
+    var HTMLCpyInputDatepickerElement: {
+        prototype: HTMLCpyInputDatepickerElement;
+        new (): HTMLCpyInputDatepickerElement;
     };
     interface HTMLCpyInputSelectElement extends Components.CpyInputSelect, HTMLStencilElement {
     }
@@ -760,7 +775,6 @@ declare global {
         "cpy-context-menu": HTMLCpyContextMenuElement;
         "cpy-context-menu-item": HTMLCpyContextMenuItemElement;
         "cpy-context-menu-trigger": HTMLCpyContextMenuTriggerElement;
-        "cpy-date-picker": HTMLCpyDatePickerElement;
         "cpy-dialog": HTMLCpyDialogElement;
         "cpy-drawer": HTMLCpyDrawerElement;
         "cpy-drawer-container": HTMLCpyDrawerContainerElement;
@@ -769,6 +783,7 @@ declare global {
         "cpy-input": HTMLCpyInputElement;
         "cpy-input-base": HTMLCpyInputBaseElement;
         "cpy-input-checkbox": HTMLCpyInputCheckboxElement;
+        "cpy-input-datepicker": HTMLCpyInputDatepickerElement;
         "cpy-input-select": HTMLCpyInputSelectElement;
         "cpy-input-select-option": HTMLCpyInputSelectOptionElement;
         "cpy-input-textarea": HTMLCpyInputTextareaElement;
@@ -892,13 +907,6 @@ declare namespace LocalJSX {
     interface CpyContextMenuTrigger {
         "items"?: ContextMenuItem[];
     }
-    interface CpyDatePicker {
-        "date"?: string;
-        "format"?: string;
-        "label"?: string;
-        "onDateChange"?: (event: CpyDatePickerCustomEvent<string>) => void;
-        "size"?: 'small' | 'default' | 'large';
-    }
     interface CpyDialog {
         "dialogTitle"?: string;
         "onClosed"?: (event: CpyDialogCustomEvent<void>) => void;
@@ -940,8 +948,10 @@ declare namespace LocalJSX {
         "onLabelClicked"?: (event: CpyInputBaseCustomEvent<void>) => void;
         "onPopupClosed"?: (event: CpyInputBaseCustomEvent<void>) => void;
         "popup"?: boolean;
+        "popupPosition"?: PopupPosition;
         "required"?: boolean;
         "size"?: InputSize;
+        "stretchPopup"?: boolean;
     }
     interface CpyInputCheckbox {
         "disabled"?: boolean;
@@ -951,6 +961,16 @@ declare namespace LocalJSX {
         "size"?: InputSize;
         "validators"?: Array<string | ValidatorEntry | Validator<boolean>>;
         "value"?: boolean;
+    }
+    interface CpyInputDatepicker {
+        "disabled"?: boolean;
+        "format"?: string;
+        "label"?: string;
+        "onValueChange"?: (event: CpyInputDatepickerCustomEvent<string>) => void;
+        "required"?: boolean;
+        "size"?: InputSize;
+        "validators"?: Array<string | ValidatorEntry | Validator<string>>;
+        "value"?: string;
     }
     interface CpyInputSelect {
         "disabled"?: boolean;
@@ -1102,7 +1122,6 @@ declare namespace LocalJSX {
         "cpy-context-menu": CpyContextMenu;
         "cpy-context-menu-item": CpyContextMenuItem;
         "cpy-context-menu-trigger": CpyContextMenuTrigger;
-        "cpy-date-picker": CpyDatePicker;
         "cpy-dialog": CpyDialog;
         "cpy-drawer": CpyDrawer;
         "cpy-drawer-container": CpyDrawerContainer;
@@ -1111,6 +1130,7 @@ declare namespace LocalJSX {
         "cpy-input": CpyInput;
         "cpy-input-base": CpyInputBase;
         "cpy-input-checkbox": CpyInputCheckbox;
+        "cpy-input-datepicker": CpyInputDatepicker;
         "cpy-input-select": CpyInputSelect;
         "cpy-input-select-option": CpyInputSelectOption;
         "cpy-input-textarea": CpyInputTextarea;
@@ -1158,7 +1178,6 @@ declare module "@stencil/core" {
             "cpy-context-menu": LocalJSX.CpyContextMenu & JSXBase.HTMLAttributes<HTMLCpyContextMenuElement>;
             "cpy-context-menu-item": LocalJSX.CpyContextMenuItem & JSXBase.HTMLAttributes<HTMLCpyContextMenuItemElement>;
             "cpy-context-menu-trigger": LocalJSX.CpyContextMenuTrigger & JSXBase.HTMLAttributes<HTMLCpyContextMenuTriggerElement>;
-            "cpy-date-picker": LocalJSX.CpyDatePicker & JSXBase.HTMLAttributes<HTMLCpyDatePickerElement>;
             "cpy-dialog": LocalJSX.CpyDialog & JSXBase.HTMLAttributes<HTMLCpyDialogElement>;
             "cpy-drawer": LocalJSX.CpyDrawer & JSXBase.HTMLAttributes<HTMLCpyDrawerElement>;
             "cpy-drawer-container": LocalJSX.CpyDrawerContainer & JSXBase.HTMLAttributes<HTMLCpyDrawerContainerElement>;
@@ -1167,6 +1186,7 @@ declare module "@stencil/core" {
             "cpy-input": LocalJSX.CpyInput & JSXBase.HTMLAttributes<HTMLCpyInputElement>;
             "cpy-input-base": LocalJSX.CpyInputBase & JSXBase.HTMLAttributes<HTMLCpyInputBaseElement>;
             "cpy-input-checkbox": LocalJSX.CpyInputCheckbox & JSXBase.HTMLAttributes<HTMLCpyInputCheckboxElement>;
+            "cpy-input-datepicker": LocalJSX.CpyInputDatepicker & JSXBase.HTMLAttributes<HTMLCpyInputDatepickerElement>;
             "cpy-input-select": LocalJSX.CpyInputSelect & JSXBase.HTMLAttributes<HTMLCpyInputSelectElement>;
             "cpy-input-select-option": LocalJSX.CpyInputSelectOption & JSXBase.HTMLAttributes<HTMLCpyInputSelectOptionElement>;
             "cpy-input-textarea": LocalJSX.CpyInputTextarea & JSXBase.HTMLAttributes<HTMLCpyInputTextareaElement>;

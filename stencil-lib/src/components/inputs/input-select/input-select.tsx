@@ -165,7 +165,9 @@ export class InputSelect implements BaseInput<string | number> {
 
         <cpy-icon slot="suffix">expand_more</cpy-icon>
 
-        <slot slot='popup-content' onSlotchange={() => this.handleOptionsChange()}/>
+        <div class="input-select__dropdown" slot='popup-content'>
+          <slot onSlotchange={() => this.handleOptionsChange()}/>
+        </div>
       </cpy-input-base>
     );
   }

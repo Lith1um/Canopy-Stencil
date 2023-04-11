@@ -1,10 +1,13 @@
 import { Component, Event, EventEmitter, h, Prop, State, Watch } from '@stencil/core';
 import dayjs from 'dayjs';
-import locale from 'dayjs/locale/en-gb';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
 import weekdayPlugin from 'dayjs/plugin/weekday';
 import objectPlugin from 'dayjs/plugin/toObject';
 import isTodayPlugin from 'dayjs/plugin/isToday';
 import utc from 'dayjs/plugin/utc';
+import { getUserLocale } from '../../utils/user-locale';
+import * as DateTime from '../../utils/date-time';
 
 @Component({
   tag: 'cpy-calendar',
@@ -18,6 +21,10 @@ export class Calendar {
 
   @Watch('date')
   onDateChanged(newVal: string): void {
+    if (!DateTime.isValid(newVal)) {
+      return;
+    }
+    
     this.currentMonth = newVal
       ? dayjs.utc(newVal)
       : dayjs.utc();
@@ -59,15 +66,19 @@ export class Calendar {
     this.daysOfMonth = allDates;
   };
 
-  handleDateChange(date: any): void {
+  handleDateChange(e: Event, date: any): void {
+    e.stopPropagation();
     this.dateChange.emit(date.isoDate);
   }
 
-  componentWillLoad(): void {
+  async componentWillLoad(): Promise<void> {
     dayjs.extend(weekdayPlugin);
     dayjs.extend(objectPlugin);
     dayjs.extend(isTodayPlugin);
+    dayjs.extend(localizedFormat);
+    dayjs.extend(customParseFormat);
     dayjs.extend(utc);
+    const locale = await getUserLocale();
     dayjs.locale(locale);
 
     this.onDateChanged(this.date);
@@ -133,7 +144,7 @@ export class Calendar {
             icon
             type='basic'
             disabled={!date.isCurrentMonth}
-            onClick={() => this.handleDateChange(date)}>
+            onClick={(e) => this.handleDateChange(e, date)}>
             <span class='calendar__day-text'>{date.day}</span>
           </cpy-button>
         </div>

@@ -87,7 +87,7 @@ const menuItems = navMenuElement.items = [
     ] },
     { title: 'Forms', icon: 'format_list_numbered', type: 'collapsible', description: 'Complete form elements', children: [
       { title: 'Basic Inputs', type: 'basic', url: '/comps/input' },
-      { title: 'Date Picker', type: 'basic', url: '/comps/datePicker' },
+      { title: 'Date Picker', type: 'basic', url: '/comps/inputDatepicker' },
       { title: 'Checkbox', type: 'basic', url: '/comps/inputCheckbox' },
       { title: 'Select', type: 'basic', url: '/comps/inputSelect' },
       { title: 'Textarea', type: 'basic', url: '/comps/inputTextarea' },

@@ -1,5 +1,6 @@
 import { ValidatorEntry } from "./types/validator-entry.type";
 import { Validator } from "./types/validator.type";
+import { DateValidator } from "./validators/date.validator";
 import { EmailValidator } from "./validators/email.validator";
 import { getLengthValidator } from "./validators/length.validator";
 import { getNumberLengthValidator } from "./validators/number-length.validator";
@@ -8,6 +9,7 @@ import { RequiredValidator } from "./validators/required.validator";
 
 export enum ValidatorsName {
   Required = 'required',
+  Date = 'date',
   Email = 'email',
   Length = 'length',
   Number = 'number',
@@ -48,6 +50,8 @@ export function validatorFactory(name: string, options: { [key: string]: any }):
   switch (name) {
     case ValidatorsName.Required:
       return RequiredValidator;
+    case ValidatorsName.Date:
+      return DateValidator;
     case ValidatorsName.Email:
       return EmailValidator;
     case ValidatorsName.Number:
