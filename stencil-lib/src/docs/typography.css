@@ -138,7 +138,7 @@ cpy-tab-content {
 
 .footer {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
   width: 100%;
   padding: 1.5rem 0;
