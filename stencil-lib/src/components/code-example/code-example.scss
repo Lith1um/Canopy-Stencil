@@ -3,7 +3,8 @@
 }
 
 .code-example {
-  @apply block bg-transparent border;
+  @apply block border;
+  background-color: var(--cpy-bg-light);
   border-color: var(--cpy-bg-basic-border);
 
   &--hidden {

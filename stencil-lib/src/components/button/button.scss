@@ -3,11 +3,13 @@
 }
 
 .button {
-  @apply text-base whitespace-nowrap leading-9 h-9 relative rounded px-3.5 inline-flex items-center justify-center gap-1.5 min-w-[64px] outline-0 select-none appearance-none overflow-visible align-middle bg-transparent;
+  @apply no-underline text-base whitespace-nowrap leading-9 h-9 relative px-3.5 inline-flex items-center justify-center gap-1.5 min-w-[64px] outline-0 select-none appearance-none overflow-visible align-middle bg-transparent;
+  --border-radius: var(--cpy-button-border-radius, 0.25rem);
   --text-color: var(--cpy-button-text, white);
   --bg-color: var(--cpy-button-bg, var(--cpy-bg-primary));
   color: var(--text-color);
   background-color: var(--bg-color);
+  border-radius: var(--border-radius);
   transition: background-color 300ms;
 
   ::slotted(cpy-icon) {
@@ -29,7 +31,7 @@
   }
 
   &-size--large {
-    @apply leading-[3rem] h-12 font-medium;
+    @apply leading-[3rem] h-12 text-lg px-5 font-medium;
 
     ::slotted(cpy-icon) {
       @apply icon-size-7 #{!important};

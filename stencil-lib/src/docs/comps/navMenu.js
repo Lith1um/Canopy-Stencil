@@ -38,7 +38,7 @@
 </script>`;
   
   document.getElementById('comp-styles').tableData = [
-    { cssVariable: '', description: '', defaultValue: '' },
+    { cssVariable: '--cpy-nav-item-border-radius', description: 'Border radius for each menu item', defaultValue: '0' },
   ];
 
   document.getElementById('comp-interfaces').code = `type NavMenuItemType = 'basic' | 'group' | 'collapsible';

@@ -3,6 +3,7 @@
     { cssVariable: '--cpy-button-text', description: 'Button text color', defaultValue: 'white (for fill style, type color otherwise)' },
     { cssVariable: '--cpy-button-bg', description: 'Button background color', defaultValue: '--cpy-bg-primary' },
     { cssVariable: '--cpy-button-bg-hover', description: 'Button background color on hover', defaultValue: '--cpy-bg-hover' },
+    { cssVariable: '--cpy-button-border-radius', description: 'Button border radius', defaultValue: '0.25rem' },
   ];
 
   document.getElementById('comp-interfaces').code = `type ButtonAppearance =

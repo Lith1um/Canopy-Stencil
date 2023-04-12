@@ -1,5 +1,4 @@
-<cpy-page-container>
-  <h1>Progress Bars</h1>
+<h1>Progress Bars</h1>
 
   <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
     <!-- Overview -->
@@ -100,52 +99,6 @@
       </cpy-code-example>
     </cpy-tab-content>
   </cpy-tabs>
-</cpy-page-container>
-
-<cpy-page-container>
-  <cpy-page-content>
-    <h3
-      style="font-weight: 600; font-size: 1.5rem; line-height: 2; border-bottom: 1px solid var(--cpy-bg-basic-border)">
-      Progress Bars
-    </h3>
-
-    <p style="margin-top: 1rem; margin-bottom: 2rem;">
-      Canopy progress bars show a horizontal progress bar for indicating progress and activity. They are referenced
-      using the <cpy-code-snippet code="<cpy-progress-bar>"></cpy-code-snippet> custom HTML element.
-    </p>
-
-    <h3 id="examples" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Examples</h3>
-    <div style="display: flex; flex-direction: column; width: 100%; margin-top: 1rem; margin-bottom: 2rem; gap: 1rem;">
-      <p style="margin-top: 1rem;">Small</p>
-      <cpy-progress-bar value="25" size="small"></cpy-progress-bar>
-      <cpy-progress-bar border value="50" size="small"></cpy-progress-bar>
-      <cpy-progress-bar indeterminate size="small"></cpy-progress-bar>
-      <p style="margin-top: 1rem;">Default</p>
-      <cpy-progress-bar value="15"></cpy-progress-bar>
-      <cpy-progress-bar border value="65"></cpy-progress-bar>
-      <cpy-progress-bar indeterminate></cpy-progress-bar>
-      <p style="margin-top: 1rem;">Large</p>
-      <cpy-progress-bar value="75" size="large"></cpy-progress-bar>
-      <cpy-progress-bar border value="40" size="large"></cpy-progress-bar>
-      <cpy-progress-bar indeterminate size="large"></cpy-progress-bar>
-      <p style="margin-top: 1rem;">Alternate Types</p>
-      <cpy-progress-bar value="15" type="secondary"></cpy-progress-bar>
-      <cpy-progress-bar value="30" type="basic"></cpy-progress-bar>
-      <cpy-progress-bar value="45" type="success"></cpy-progress-bar>
-      <cpy-progress-bar value="60" type="warn"></cpy-progress-bar>
-      <cpy-progress-bar value="75" type="error"></cpy-progress-bar>
-    </div>
-
-    <h3 id="usage" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Usage</h3>
-
-    <div style="margin-top: 1rem; margin-bottom: 2rem;">
-      <cpy-code-block id="progress-bar-html-example" language="html"></cpy-code-block>
-    </div>
-
-    <h3 id="props" style="font-weight: 600; font-size: 1.2rem; line-height: 2;">Properties</h3>
-    <cpy-table id="progress-bar-props" style="margin-top: 1rem; margin-bottom: 2rem;"></cpy-table>
-  </cpy-page-content>
-</cpy-page-container>
 
 <script src="/docs/comps/progressBar.js">
 </script>

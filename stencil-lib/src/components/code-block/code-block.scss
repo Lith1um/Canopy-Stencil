@@ -6,8 +6,6 @@
   border-radius: var(--border-radius);
   color: var(--cpy-text-light);
   background-color: var(--cpy-bg-white);
-  // color: #abb2bf;
-  // background-color: #1E293B;
 
   &:hover {
     .code-block__copy {
@@ -18,7 +16,7 @@
   &__copy {
     background-color: var(--cpy-bg-white);
     transition: background-color, opacity 300ms;
-    @apply opacity-0 absolute top-2 right-2 flex items-center justify-center cursor-pointer h-8 w-8 rounded-md border;
+    @apply opacity-0 z-10 absolute top-2 right-2 flex items-center justify-center cursor-pointer h-8 w-8 rounded-md border;
     border: 1px solid var(--cpy-bg-basic-border);
 
     .copied {

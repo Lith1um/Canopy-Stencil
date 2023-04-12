@@ -12,6 +12,8 @@ export class Link {
 
   @Prop() newTab: boolean;
 
+  @Prop() underline: boolean = true;
+
   @Prop() func: () => void;
 
   @Prop() type: LinkType = 'primary';
@@ -26,6 +28,7 @@ export class Link {
   render() {
     const classes = {
       'link': true,
+      'link--underline': this.underline,
       [`link--${this.type}`]: !!this.type
     };
 

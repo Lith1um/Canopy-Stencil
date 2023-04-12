@@ -2,6 +2,7 @@
   document.getElementById('comp-styles').tableData = [
     { cssVariable: '--cpy-text-primary', description: 'Active color for input (focus ring etc.)', defaultValue: '--cpy-text-primary' },
     { cssVariable: '--cpy-bg-white', description: 'Input background color', defaultValue: '--cpy-bg-white' },
+    { cssVariable: '--cpy-input-border-radius', description: 'Border radius of the input container', defaultValue: '0.375rem' },
   ];
 
   document.getElementById('comp-interfaces').code = `type InputType = 'text' | 'number' | 'email' | 'password';

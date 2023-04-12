@@ -1,27 +1,28 @@
 .drawer {
-  @apply absolute block w-4/5 top-0 bottom-0 z-30 outline-0 overflow-y-auto invisible transition-all duration-300;
+  --bg-color: var(--cpy-drawer-bg, var(--cpy-bg-white));
+  --border-width: var(--cpy-drawer-border-width, 1px);
+  @apply absolute h-full block z-30 outline-0 overflow-y-auto invisible transition-all duration-300;
   border-color: var(--cpy-bg-basic-border);
   transform: translate3d(-100%, 0, 0);
-  background-color: var(--cpy-bg-white);
+  background-color: var(--bg-color);
 
   &--open {
     @apply transform-none visible;
   }
-  
-  &__close {
-    @apply absolute top-0 right-0 z-10;
+
+  &--mode-over {
+    @apply max-w-[80%] top-0 bottom-0;
+  }
+
+  &--mode-side {
+    @apply w-auto z-20;
+    border-right-width: var(--border-width);
+    scrollbar-gutter: stable;
   }
 }
 
 @media(min-width: 640px) {
   .drawer {
-    @apply w-auto border-r z-20;
-    scrollbar-gutter: stable;
-
-    &__close {
-      @apply hidden;
-    }
-
     /* width */
     &::-webkit-scrollbar {
       @apply w-2 h-2;

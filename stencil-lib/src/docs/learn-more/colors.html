@@ -1,47 +1,45 @@
-<cpy-page-container>
-  <cpy-page-content>
-    <h3 class="border-b">
-      Color palettes & Dark Mode
-    </h3>
+<h1 class="border-b">
+  Colors & Dark Mode
+</h1>
+<cpy-page-content>
 
-    <h4 id="colors">Colors</h4>
-    <p>
-      Colors play an essential role in the design and user experience of a web application. They can evoke emotions,
-      convey information, and enhance the overall look and feel of the interface. Choosing the right color palette is
-      crucial for creating a visually appealing and effective design that meets the needs of your users.
-    </p>
-    <p>
-      Through the use of the :root selector in css, you can override any color at a root level within Canopy (current colors are based on <cpy-link href="https://tailwindcss.com/docs/customizing-colors"
-        new-tab>tailwind</cpy-link>).
-      Below is the simplest example of overriding colors (replacing primary color on light and dark mode):
-    </p>
-    <cpy-code-block id="colors-override-simple" language="scss"></cpy-code-block>
-    <p>Colors and other styles can also be overridden at a component level, by setting the relevant css variables on the component tag:</p>
-    <cpy-code-example header="Component with style overridden" show-code>
+  <h4 id="colors">Colors</h4>
+  <p>
+    Colors play an essential role in the design and user experience of a web application. They can evoke emotions,
+    convey information, and enhance the overall look and feel of the interface. Choosing the right color palette is
+    crucial for creating a visually appealing and effective design that meets the needs of your users.
+  </p>
+  <p>
+    Through the use of the :root selector in css, you can override any color at a root level within Canopy (current colors are based on <cpy-link href="https://tailwindcss.com/docs/customizing-colors"
+      new-tab>tailwind</cpy-link>).
+    Below is the simplest example of overriding colors (replacing primary color on light and dark mode):
+  </p>
+  <cpy-code-block id="colors-override-simple" language="scss"></cpy-code-block>
+  <p>Colors and other styles can also be overridden at a component level, by setting the relevant css variables on the component tag:</p>
+  <cpy-code-example header="Component with style overridden" show-code>
 <cpy-link style="--cpy-link-color: violet;">
   link<cpy-icon>launch</cpy-icon>
 </cpy-link>
-    </cpy-code-example>
-    <p>A full list of the configurable colors is below (along with
-      their defaulted values):</p>
-    <cpy-code-block id="colors-palette-css" language="scss"></cpy-code-block>
+  </cpy-code-example>
+  <p>A full list of the configurable colors is below (along with
+    their defaulted values):</p>
+  <cpy-code-block id="colors-palette-css" language="scss"></cpy-code-block>
 
-    <h4 id="dark-mode">Dark Mode</h4>
-    <p>
-      By default, Canopy looks for a dark class on the HTML tag to determine if the color palette should switch to
-      dark mode, however this is easily configurable for your needs. Similarly to the main color palette, you can
-      override any dark mode colors:
-    </p>
-    <cpy-code-block id="colors-pallette-dark-css" language="scss"></cpy-code-block>
-    <p>
-      If you want to use a different method to checking for a dark class on the HTML tag, you can include your own css
-      to set the color variables. For example, if you want to use dark mode when the user has requested it in their
-      browser settings, replace the html wrapper for your variables with:
-    </p>
-    <cpy-code-block id="colors-pallette-dark-alt" language="scss"></cpy-code-block>
-    </div>
-  </cpy-page-content>
-</cpy-page-container>
+  <h4 id="dark-mode">Dark Mode</h4>
+  <p>
+    By default, Canopy looks for a dark class on the HTML tag to determine if the color palette should switch to
+    dark mode, however this is easily configurable for your needs. Similarly to the main color palette, you can
+    override any dark mode colors:
+  </p>
+  <cpy-code-block id="colors-pallette-dark-css" language="scss"></cpy-code-block>
+  <p>
+    If you want to use a different method to checking for a dark class on the HTML tag, you can include your own css
+    to set the color variables. For example, if you want to use dark mode when the user has requested it in their
+    browser settings, replace the html wrapper for your variables with:
+  </p>
+  <cpy-code-block id="colors-pallette-dark-alt" language="scss"></cpy-code-block>
+  </div>
+</cpy-page-content>
 
 <script src="/docs/learn-more/colors.js">
 </script>

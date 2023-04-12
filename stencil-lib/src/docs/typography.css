@@ -42,6 +42,22 @@ ul {
   padding-left: 3rem;
 }
 
+.main-title {
+  margin-top: 6rem;
+  max-width: 100%;
+  font-size: 2.5rem;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.gradient-text {
+  font-style: normal;
+  background: linear-gradient(-45deg, var(--cpy-bg-secondary), var(--cpy-bg-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .border-b {
   border-bottom: 1px solid var(--cpy-bg-basic-border);
 }
@@ -122,7 +138,7 @@ cpy-tab-content {
 
 .footer {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
   width: 100%;
   padding: 1.5rem 0;
@@ -130,6 +146,51 @@ cpy-tab-content {
 }
 
 @media(min-width: 640px) {
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5;
+  }
+  
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 2.4rem;
+  }
+  
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+  
+  h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.6rem;
+  }
+  
+  h4 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 1.4rem;
+  }
+  
+  h5 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .main-title {
+    margin-top: 10rem;
+    max-width: 50rem;
+    font-size: 5rem;
+    line-height: 1;
+  }
+
+  .sub-title-text {
+    font-size: 1.25rem;
+  }
+
   .footer {
     padding: 2rem 0;
   }

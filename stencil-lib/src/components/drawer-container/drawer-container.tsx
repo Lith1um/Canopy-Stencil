@@ -1,4 +1,5 @@
 import { Component, Element, Event, EventEmitter, h, Listen, Method, Prop, Watch } from '@stencil/core';
+import { DrawerMode } from './drawer.type';
 
 @Component({
   tag: 'cpy-drawer-container',
@@ -14,9 +15,17 @@ export class DrawerContainer {
   @Prop({ mutable: true })
   opened: boolean = false;
 
+  @Prop()
+  mode: DrawerMode = 'side';
+
   @Watch('opened')
   recalculateContentOffset(newVal: boolean) {
-    if (this.isMobile || !this.contentElem) {
+    if (!this.contentElem) {
+      return;
+    }
+
+    if (this.mode === 'over') {
+      this.contentElem.style.marginLeft = '0';
       return;
     }
 
@@ -42,36 +51,12 @@ export class DrawerContainer {
 
   contentElem: HTMLElement;
   overlayElem: HTMLCpyOverlayElement;
-  isMobile: boolean;
   firstRender: boolean = true;
-
-  mediaChange = (e: MediaQueryListEvent | MediaQueryList) => {
-    // desktop mode
-    this.isMobile = !e.matches;
-    if (this.isMobile) {
-      this.contentElem.style.marginLeft = '0px';
-    } else {
-      this.recalculateContentOffset(this.opened);
-    }
-  };
-
-  componentWillLoad(): void {
-    window.matchMedia('(min-width: 640px)').onchange = this.mediaChange;
-  }
 
   componentDidRender(): void {
     // handle initial render case
     if (this.firstRender) {
       this.contentElem.style.transitionDuration = '0s';
-      const matchMobileMedia = window.matchMedia('(min-width: 640px)');
-      this.mediaChange(matchMobileMedia);
-
-      matchMobileMedia.addEventListener('change', (media) => {
-        if (!this.opened) {
-          return;
-        }
-        this.overlayElem.toggle(!media.matches);
-      })
       // Hacky fix to prevent main content sliding in if drawer is open on load
       setTimeout(() => this.contentElem.style.transitionDuration = null, 300);
     }
@@ -85,7 +70,7 @@ export class DrawerContainer {
 
     return (
       <div class={classes}>
-        <cpy-drawer opened={this.opened}>
+        <cpy-drawer opened={this.opened} mode={this.mode}>
           <slot name="drawer"></slot>
         </cpy-drawer>
         <div
@@ -96,7 +81,7 @@ export class DrawerContainer {
         <cpy-overlay
           zIndex='25'
           ref={(el) => this.overlayElem = el as HTMLCpyOverlayElement}
-          show={this.opened && this.isMobile}
+          show={this.mode === 'over' && this.opened}
           onBackdropClick={() => this.toggleOpenedHandler()}
         ></cpy-overlay>
       </div>
