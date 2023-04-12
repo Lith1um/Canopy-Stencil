@@ -2,6 +2,7 @@
   document.getElementById('comp-styles').tableData = [
     { cssVariable: '--cpy-text-primary', description: 'Active color for textarea (focus ring etc.)', defaultValue: '--cpy-text-primary' },
     { cssVariable: '--cpy-bg-white', description: 'Textarea background color', defaultValue: '--cpy-bg-white' },
+    { cssVariable: '--cpy-input-border-radius', description: 'Border radius of the input container', defaultValue: '0.375rem' },
   ];
 
   document.getElementById('comp-interfaces').code = `type InputSize = 'small' | 'default' | 'large';
