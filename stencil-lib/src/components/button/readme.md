@@ -31,7 +31,6 @@
  - [cpy-carousel](../carousel)
  - [cpy-code-example](../code-example)
  - [cpy-dialog](../dialog)
- - [cpy-drawer](../drawer-container/drawer)
  - [cpy-tabs](../tabs)
 
 ### Depends on
@@ -46,7 +45,6 @@ graph TD;
   cpy-carousel --> cpy-button
   cpy-code-example --> cpy-button
   cpy-dialog --> cpy-button
-  cpy-drawer --> cpy-button
   cpy-tabs --> cpy-button
   style cpy-button fill:#f9f,stroke:#333,stroke-width:4px
 ```

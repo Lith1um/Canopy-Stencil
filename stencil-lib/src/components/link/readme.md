@@ -7,12 +7,13 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                                                                    | Default     |
-| -------- | --------- | ----------- | ----------------------------------------------------------------------- | ----------- |
-| `func`   | --        |             | `() => void`                                                            | `undefined` |
-| `href`   | `href`    |             | `string`                                                                | `undefined` |
-| `newTab` | `new-tab` |             | `boolean`                                                               | `undefined` |
-| `type`   | `type`    |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"` | `'primary'` |
+| Property    | Attribute   | Description | Type                                                                    | Default     |
+| ----------- | ----------- | ----------- | ----------------------------------------------------------------------- | ----------- |
+| `func`      | --          |             | `() => void`                                                            | `undefined` |
+| `href`      | `href`      |             | `string`                                                                | `undefined` |
+| `newTab`    | `new-tab`   |             | `boolean`                                                               | `undefined` |
+| `type`      | `type`      |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"` | `'primary'` |
+| `underline` | `underline` |             | `boolean`                                                               | `true`      |
 
 
 ## Dependencies

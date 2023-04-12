@@ -16,7 +16,6 @@
  - [cpy-code-example](../code-example)
  - [cpy-context-menu-item](../context-menu/context-menu-item)
  - [cpy-dialog](../dialog)
- - [cpy-drawer](../drawer-container/drawer)
  - [cpy-input-select](../inputs/input-select)
  - [cpy-nav-menu-item](../nav-menu/nav-menu-item)
  - [cpy-tabs](../tabs)
@@ -31,7 +30,6 @@ graph TD;
   cpy-code-example --> cpy-icon
   cpy-context-menu-item --> cpy-icon
   cpy-dialog --> cpy-icon
-  cpy-drawer --> cpy-icon
   cpy-input-select --> cpy-icon
   cpy-nav-menu-item --> cpy-icon
   cpy-tabs --> cpy-icon

@@ -427,14 +427,14 @@ export declare interface CpyDialog extends Components.CpyDialog {
 
 
 @ProxyCmp({
-  inputs: ['opened']
+  inputs: ['mode', 'opened']
 })
 @Component({
   selector: 'cpy-drawer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['opened'],
+  inputs: ['mode', 'opened'],
 })
 export class CpyDrawer {
   protected el: HTMLElement;
@@ -453,7 +453,7 @@ export declare interface CpyDrawer extends Components.CpyDrawer {
 
 
 @ProxyCmp({
-  inputs: ['opened'],
+  inputs: ['mode', 'opened'],
   methods: ['toggle']
 })
 @Component({
@@ -461,7 +461,7 @@ export declare interface CpyDrawer extends Components.CpyDrawer {
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['opened'],
+  inputs: ['mode', 'opened'],
 })
 export class CpyDrawerContainer {
   protected el: HTMLElement;
@@ -718,14 +718,14 @@ export declare interface CpyInputToggle extends Components.CpyInputToggle {
 
 
 @ProxyCmp({
-  inputs: ['func', 'href', 'newTab', 'type']
+  inputs: ['func', 'href', 'newTab', 'type', 'underline']
 })
 @Component({
   selector: 'cpy-link',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['func', 'href', 'newTab', 'type'],
+  inputs: ['func', 'href', 'newTab', 'type', 'underline'],
 })
 export class CpyLink {
   protected el: HTMLElement;
