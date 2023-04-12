@@ -22,13 +22,17 @@
   document.getElementById('drawer-toggle').onclick = () => drawerElem.opened = !drawerElem.opened;
   const drawerExample = document.getElementById('example-drawer');
   document.getElementById('example-drawer-toggle').onclick = () => drawerExample.toggle();
+
+  document.getElementById('comp-interfaces').code = `type DrawerMode = 'over' | 'side';`;
   
   document.getElementById('comp-styles').tableData = [
-    { cssVariable: '', description: '', defaultValue: '' },
+    { cssVariable: '--cpy-drawer-bg', description: 'Background color for the drawer', defaultValue: '--cpy-bg-white' },
+    { cssVariable: '--cpy-drawer-border-width', description: 'Border width for the drawer', defaultValue: '1px' },
   ];
 
   document.getElementById('comp-props').tableData = [
-    { name: 'opened', description: 'Whether the drawer in open', type: "boolean", default: "false", required: true }
+    { name: 'opened', description: 'Whether the drawer in open', type: "boolean", default: "false", required: false },
+    { name: 'mode', description: 'Drawer mode', type: "DrawerMode", default: "'side'", required: false }
   ];
   document.getElementById('comp-events').tableData = [
     { name: 'toggleOpened', description: 'Triggered when the drawer has internally changed its opened state', emitsType: "boolean" }

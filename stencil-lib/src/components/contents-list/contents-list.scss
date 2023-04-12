@@ -1,5 +1,7 @@
 .contents {
-  @apply block sticky top-4 max-w-[10rem];
+  --top: var(--cpy-contents-list-top, 6rem);
+  @apply block sticky max-w-[10rem];
+  top: var(--top);
 
   &__title {
     @apply ml-2 truncate;

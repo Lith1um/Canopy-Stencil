@@ -1,5 +1,7 @@
 .nav-menu-item {
+  --rounded-border: var(--cpy-nav-item-border-radius, 0);
   @apply flex gap-3 mb-1 py-2 px-5 cursor-pointer items-center select-none min-h-[2.5rem] bg-transparent;
+  border-radius: var(--rounded-border);
 
   &:hover, &--active {
     background-color: var(--cpy-bg-hover);

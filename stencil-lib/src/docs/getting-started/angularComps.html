@@ -1,32 +1,30 @@
-<cpy-page-container>
-  <cpy-page-content>
-    <h3 class="border-b">
-      Canopy Angular Components Installation
-    </h3>
+<h1 class="border-b">
+  Canopy Angular Installation
+</h1>
+<cpy-page-content>
 
-    <p>
-      To get Canopy up and running in Angular, you'll need to install the relevant packages and configure your app to
-      use web components.
-    </p>
+  <p>
+    To get Canopy up and running in Angular, you'll need to install the relevant packages and configure your app to
+    use web components.
+  </p>
 
-    <h4 id="npm-install">Install NPM packages</h4>
-    <cpy-code-block language="shell" code="npm install @canopy-web/core @canopy-web/angular"></cpy-code-block>
+  <h4 id="npm-install">Install NPM packages</h4>
+  <cpy-code-block language="shell" code="npm install @canopy-web/core @canopy-web/angular"></cpy-code-block>
 
-    <h4 id="app-module">Configure your app module</h4>
-    <p>Import the angular module and custom elements loader for canopy,
-      calling the loader and follow up by adding the Canopy module to your imports.</p>
-    <cpy-code-block id="angular-comp-install-module"></cpy-code-block>
+  <h4 id="app-module">Configure your app module</h4>
+  <p>Import the angular module and custom elements loader for canopy,
+    calling the loader and follow up by adding the Canopy module to your imports.</p>
+  <cpy-code-block id="angular-comp-install-module"></cpy-code-block>
 
-    <h4 id="build">Including assets and styles</h4>
-    <p>Modify you angular.json file to load assets and css from Canopy,
-      adding the following into the build options for your project</p>
-    <cpy-code-block id="angular-comp-install-assets" language="json"></cpy-code-block>
+  <h4 id="build">Including assets and styles</h4>
+  <p>Modify you angular.json file to load assets and css from Canopy,
+    adding the following into the build options for your project</p>
+  <cpy-code-block id="angular-comp-install-assets" language="json"></cpy-code-block>
 
-    <p>
-      And that's it! You should now be able to use Canopy within your angular application.
-    </p>
-  </cpy-page-content>
-</cpy-page-container>
+  <p>
+    And that's it! You should now be able to use Canopy within your angular application.
+  </p>
+</cpy-page-content>
 
 <script src="/docs/getting-started/angularComps.js">
 </script>

@@ -1,4 +1,5 @@
 import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
+import { DrawerMode } from '../drawer.type';
 
 @Component({
   tag: 'cpy-drawer',
@@ -10,19 +11,20 @@ export class Drawer {
   @Prop()
   opened: boolean = false;
 
+  @Prop()
+  mode: DrawerMode = 'side';
+
   @Event({bubbles: false}) toggleOpened: EventEmitter<void>;
 
   render() {
     const classes = {
       'drawer': true,
       [`drawer--open`]: this.opened,
+      [`drawer--mode-${this.mode}`]: !!this.mode
     };
 
     return (
       <div class={classes}>
-        <cpy-button class="drawer__close" icon type="basic" onClick={() => this.toggleOpened.emit()}>
-          <cpy-icon>close</cpy-icon>
-        </cpy-button>
         <slot></slot>
       </div>
     );

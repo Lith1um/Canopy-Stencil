@@ -32,7 +32,7 @@ https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clik
 
  code[class*="language-"],
 pre[class*="language-"] {
-  color: var(--cpy-text-light);
+  color: var(--cpy-text-base);
   background-color: var(--cpy-bg-white);
 	font-family: "Fira Code", "Fira Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
 	direction: ltr;

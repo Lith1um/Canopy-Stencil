@@ -1,6 +1,13 @@
 .page-container {
+  --link-offset: var(--cpy-page-content-link-offset, 6rem);
+
   cpy-contents-list {
     @apply hidden;
+  }
+
+  ::slotted(h4[id]) {
+    margin-top: calc(var(--link-offset) * -1) !important;
+    padding-top: var(--link-offset) !important;
   }
 }
 

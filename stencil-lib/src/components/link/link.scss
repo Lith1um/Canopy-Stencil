@@ -3,13 +3,17 @@
 }
 
 .link {
+  --link-align: var(--cpy-link-align, baseline);
   --text-color: var(--cpy-link-color, var(--cpy-text-primary));
-  @apply flex items-baseline gap-1;
+  @apply flex gap-1;
+  align-items: var(--link-align);
   color: var(--text-color);
 
-  &:hover,
-  &:hover ::slotted(*) {
+  &--underline:hover {
     @apply underline cursor-pointer;
+    ::slotted(*) {
+      @apply cursor-pointer;
+    }
   }
 
   &--primary {

@@ -2,8 +2,7 @@
   @apply relative z-10 block overflow-hidden inset-0 h-full;
 
   &__content {
-    @apply relative z-20 block h-full overflow-auto transition-all duration-300 min-w-[300px];
-    background-color: var(--cpy-bg-light);
+    @apply relative z-20 block h-full overflow-auto transition-all duration-300;
   }
 
   &__overlay {

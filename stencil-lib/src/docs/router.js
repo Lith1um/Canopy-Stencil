@@ -1,8 +1,12 @@
 const drawer = document.querySelector('cpy-drawer-container');
-const navMenuElement = document.querySelector('cpy-nav-menu');
-const noResultsElem = document.getElementById('no-results');
-const searchElem = document.getElementById('search-input');
-const searchInputClear = document.getElementById('search-input-clear');
+const mobileNavMenu = document.getElementById('mobile-nav');
+const desktopNavMenu = document.getElementById('desktop-nav');
+
+window.matchMedia('(min-width: 992px)').onchange = (e) => {
+  if (e.matches) {
+    drawer.opened = false;
+  }
+};
 
 const setActive = (item) => {
   return item.type === 'basic'
@@ -27,31 +31,13 @@ const reduceMenuItem = (currList, item, searchStr) => {
   return currList;
 };
 
-const handleSearchChange = (searchStr) => {
-  const matchingResults = getMenuItems().reduce((currList, item) => reduceMenuItem(currList, item, searchStr), []);
-  navMenuElement.items = [...matchingResults];
-
-  if (matchingResults.length === 0) {
-    noResultsElem.classList.remove('hidden');
-  } else {
-    noResultsElem.classList.add('hidden');
-  }
-};
-
-searchElem.addEventListener('valueChange', (e) => handleSearchChange(e.detail));
-searchInputClear.addEventListener('click', () => {
-  searchElem.value = '';
-  navMenuElement.items = getMenuItems().map(setActive);
-});
-
 const onRouteChange = () => {
-  searchElem.value = '';
-  if (!window.matchMedia('(min-width: 640px)').matches) {
+  if (drawer.opened) {
     drawer.opened = false;
   }
 }
 
-const menuItems = navMenuElement.items = [
+const menuItems = mobileNavMenu.items = desktopNavMenu.items = [
   { title: 'Home', type: 'basic', url: '/', icon: 'home' },
   { title: 'Getting Started', type: 'group', description: 'Installation guides', children: [
     { title: 'Web Components', type: 'basic', url: '/getting-started/webComps', icon: 'html' },
@@ -164,7 +150,9 @@ function loadPage(page) {
     if (xhr.readyState == 4 && xhr.status == 200) {
       const routerOutlet = document.getElementById("router-outlet");
       routerOutlet.innerHTML = xhr.responseText;
-      routerOutlet.parentElement.scrollTop = 0;
+      document.getElementById('content').scrollTop = 0;
+
+      desktopNavMenu.style.display = page === 'home' ? 'none' : 'block';
 
       // inject any scripts from the template
       const pageElements = document.createRange().createContextualFragment(xhr.responseText);
@@ -193,7 +181,7 @@ const handleRoute = () => {
   }
   loadPage(path);
 
-  navMenuElement.items = getMenuItems().map(setActive);
+  mobileNavMenu.items = desktopNavMenu.items = getMenuItems().map(setActive);
   currentPath = path;
 }
 

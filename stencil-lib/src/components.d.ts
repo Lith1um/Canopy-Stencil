@@ -16,6 +16,7 @@ import { CommentSize, CommentType } from "./components/comment/types/comment-siz
 import { ContentsListItem } from "./components/contents-list/contents-list.interface";
 import { ContextMenuItem } from "./components/context-menu/context-menu.interface";
 import { DialogSize } from "./components/dialog/dialog.type";
+import { DrawerMode } from "./components/drawer-container/drawer.type";
 import { InputType } from "./components/inputs/input/input.type";
 import { InputSize } from "./components/inputs/types/input-size.type";
 import { ValidatorEntry } from "./components/inputs/validation/types/validator-entry.type";
@@ -42,6 +43,7 @@ export { CommentSize, CommentType } from "./components/comment/types/comment-siz
 export { ContentsListItem } from "./components/contents-list/contents-list.interface";
 export { ContextMenuItem } from "./components/context-menu/context-menu.interface";
 export { DialogSize } from "./components/dialog/dialog.type";
+export { DrawerMode } from "./components/drawer-container/drawer.type";
 export { InputType } from "./components/inputs/input/input.type";
 export { InputSize } from "./components/inputs/types/input-size.type";
 export { ValidatorEntry } from "./components/inputs/validation/types/validator-entry.type";
@@ -160,9 +162,11 @@ export namespace Components {
         "zIndex": string;
     }
     interface CpyDrawer {
+        "mode": DrawerMode;
         "opened": boolean;
     }
     interface CpyDrawerContainer {
+        "mode": DrawerMode;
         "opened": boolean;
         "toggle": () => Promise<void>;
     }
@@ -253,6 +257,7 @@ export namespace Components {
         "href": string;
         "newTab": boolean;
         "type": LinkType;
+        "underline": boolean;
     }
     interface CpyNavMenu {
         "items": NavMenuItem[];
@@ -868,10 +873,12 @@ declare namespace LocalJSX {
         "zIndex"?: string;
     }
     interface CpyDrawer {
+        "mode"?: DrawerMode;
         "onToggleOpened"?: (event: CpyDrawerCustomEvent<void>) => void;
         "opened"?: boolean;
     }
     interface CpyDrawerContainer {
+        "mode"?: DrawerMode;
         "onToggleDrawer"?: (event: CpyDrawerContainerCustomEvent<boolean>) => void;
         "opened"?: boolean;
     }
@@ -957,6 +964,7 @@ declare namespace LocalJSX {
         "href"?: string;
         "newTab"?: boolean;
         "type"?: LinkType;
+        "underline"?: boolean;
     }
     interface CpyNavMenu {
         "items"?: NavMenuItem[];
