@@ -116,6 +116,7 @@ export class InputCheckbox implements BaseInput<boolean> {
               onInput={(e) => this.handleChange(e)}
               onBlur={() => this.handleBlur()}/>
             <span class="checkbox__checkmark"></span>
+            <cpy-splash disabled={this.disabled} centered unbounded></cpy-splash>
           </div>
           {this.label && <div class="checkbox__label">
             {this.label}

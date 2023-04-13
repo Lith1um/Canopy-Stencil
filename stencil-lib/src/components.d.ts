@@ -307,7 +307,9 @@ export namespace Components {
         "type": SpinnerAppearance;
     }
     interface CpySplash {
+        "centered": boolean;
         "disabled": boolean;
+        "unbounded": boolean;
     }
     interface CpyStack {
         "direction": StackDirection;
@@ -1013,7 +1015,9 @@ declare namespace LocalJSX {
         "type"?: SpinnerAppearance;
     }
     interface CpySplash {
+        "centered"?: boolean;
         "disabled"?: boolean;
+        "unbounded"?: boolean;
     }
     interface CpyStack {
         "direction"?: StackDirection;
