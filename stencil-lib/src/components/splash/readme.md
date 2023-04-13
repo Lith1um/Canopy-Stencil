@@ -7,9 +7,11 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type      | Default |
-| ---------- | ---------- | ----------- | --------- | ------- |
-| `disabled` | `disabled` |             | `boolean` | `false` |
+| Property    | Attribute   | Description | Type      | Default |
+| ----------- | ----------- | ----------- | --------- | ------- |
+| `centered`  | `centered`  |             | `boolean` | `false` |
+| `disabled`  | `disabled`  |             | `boolean` | `false` |
+| `unbounded` | `unbounded` |             | `boolean` | `false` |
 
 
 ## Dependencies
@@ -19,6 +21,7 @@
  - [cpy-accordion](../accordion)
  - [cpy-button](../button)
  - [cpy-context-menu-item](../context-menu/context-menu-item)
+ - [cpy-input-checkbox](../inputs/input-checkbox)
  - [cpy-input-select-option](../inputs/input-select/input-select-option)
  - [cpy-nav-menu-item](../nav-menu/nav-menu-item)
  - [cpy-tab-header](../tabs/tab-header)
@@ -29,6 +32,7 @@ graph TD;
   cpy-accordion --> cpy-splash
   cpy-button --> cpy-splash
   cpy-context-menu-item --> cpy-splash
+  cpy-input-checkbox --> cpy-splash
   cpy-input-select-option --> cpy-splash
   cpy-nav-menu-item --> cpy-splash
   cpy-tab-header --> cpy-splash

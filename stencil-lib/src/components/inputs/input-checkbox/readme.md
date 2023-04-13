@@ -52,11 +52,13 @@ Type: `Promise<void>`
 ### Depends on
 
 - [cpy-input-base](..)
+- [cpy-splash](../../splash)
 
 ### Graph
 ```mermaid
 graph TD;
   cpy-input-checkbox --> cpy-input-base
+  cpy-input-checkbox --> cpy-splash
   cpy-input-base --> cpy-popup
   style cpy-input-checkbox fill:#f9f,stroke:#333,stroke-width:4px
 ```

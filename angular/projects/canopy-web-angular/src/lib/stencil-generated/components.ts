@@ -955,14 +955,14 @@ export declare interface CpySpinner extends Components.CpySpinner {}
 
 
 @ProxyCmp({
-  inputs: ['disabled']
+  inputs: ['centered', 'disabled', 'unbounded']
 })
 @Component({
   selector: 'cpy-splash',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled'],
+  inputs: ['centered', 'disabled', 'unbounded'],
 })
 export class CpySplash {
   protected el: HTMLElement;
