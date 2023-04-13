@@ -18,11 +18,9 @@
 	- pagination
 	- grids
 	- marketing style components (...shudders)
-	- more drawer options/configurations
 
 - Keyboard events
 - Accessibility
 - Change component dom structure such that styles like margin/padding can be overridden
 - Add all prop types to type section of comp docs
-- Improve customising of splash comp
 - Add input base docs

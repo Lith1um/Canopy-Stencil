@@ -9,7 +9,9 @@
   ];
 
   document.getElementById('comp-props').tableData = [
-    { name: 'disabled', description: 'Whether or not the splash is disabled', type: 'boolean', default: 'false', required: false }
+    { name: 'disabled', description: 'Whether or not the splash is disabled', type: 'boolean', default: 'false', required: false },
+    { name: 'unbounded', description: 'Whether or not the splash will go outside the parent', type: 'boolean', default: 'false', required: false },
+    { name: 'centered', description: 'Whether or not the splash begins in the center of the parent', type: 'boolean', default: 'false', required: false }
   ];
 
   const splashElem = document.getElementById('disabled-splash');
