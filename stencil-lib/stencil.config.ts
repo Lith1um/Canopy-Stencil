@@ -5,12 +5,12 @@ import { sass } from '@stencil/sass';
 import tailwindConf from './tailwind.config';
 import angularValueAccessorBindings from './angular-value-accessor-bindings';
 
-const twConfigurationFn = (filename: string, config: TailwindConfig): TailwindConfig => {
-  return {
-    ...config,
-    ...tailwindConf
-  };
-};
+// const twConfigurationFn = (filename: string, config: TailwindConfig): TailwindConfig => {
+//   return {
+//     ...config,
+//     ...tailwindConf
+//   };
+// };
 
 export const config: Config = {
   namespace: 'core',
@@ -18,14 +18,14 @@ export const config: Config = {
   globalStyle: 'src/styles/global.css',
   plugins: [
     sass(),
-    tailwind({
-      tailwindConf: twConfigurationFn,
-      tailwindCssPath: 'src/styles/tailwind.css'
-    }),
-    tailwindHMR({
-      tailwindConf: twConfigurationFn,
-      tailwindCssPath: 'src/styles/tailwind.css'
-    }),
+    // tailwind({
+    //   tailwindConf: twConfigurationFn,
+    //   tailwindCssPath: 'src/styles/tailwind.css'
+    // }),
+    // tailwindHMR({
+    //   tailwindConf: twConfigurationFn,
+    //   tailwindCssPath: 'src/styles/tailwind.css'
+    // }),
   ],
   outputTargets: [
     angularOutputTarget({
