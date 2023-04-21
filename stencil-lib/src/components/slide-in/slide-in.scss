@@ -1,0 +1,16 @@
+:host(.slide-in) {
+  @apply inline-block opacity-0 transition duration-500;
+}
+
+:host(.slide-in--left) {
+  transform: translateX(-100%);
+}
+
+:host(.slide-in--right) {
+  transform: translateX(100%);
+}
+
+:host(.slide-in--open) {
+  transform: translateX(0);
+  opacity: 1;
+}
