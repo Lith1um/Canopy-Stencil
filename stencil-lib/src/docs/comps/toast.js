@@ -14,7 +14,7 @@
 <script>
   const toast = document.querySelector('cpy-toast');
   document.querySelector('cpy-button').onclick = () => {
-    overviewToast.open();
+    toast.open();
   };
 </script>`;
 
@@ -45,7 +45,7 @@ type ToastType =
 
   document.getElementById('comp-props').tableData = [
     { name: 'position', description: 'Position of the toast message', type: "ToastPosition", default: "'top-end'", required: false },
-    { name: 'z-index', description: 'Z-index of the toast', type: "string", default: "50", required: false },
+    { name: 'z-index', description: 'Z-index of the toast', type: "string", default: "'999'", required: false },
     { name: 'dismissible', description: 'Whether the toast can be dismissed', type: "boolean", default: "", required: false },
     { name: 'duration', description: 'Duration to keep toast open. A value of 0 will keep it open until the close method is called', type: "number", default: "4000", required: false },
     { name: 'type', description: 'Color scheme of the toast', type: "ToastType", default: "'primary'", required: false },
@@ -74,7 +74,7 @@ type ToastType =
 <script>
   const toast = document.querySelector('cpy-toast');
   document.querySelector('cpy-button').onclick = () => {
-    overviewToast.open();
+    toast.open();
   };
 </script>`;
 
@@ -97,7 +97,7 @@ type ToastType =
 <script>
   const toast = document.querySelector('cpy-toast');
   document.querySelector('cpy-button').onclick = () => {
-    overviewToast.open();
+    toast.open();
   };
 </script>`;
 
@@ -121,7 +121,7 @@ type ToastType =
 <script>
   const toast = document.querySelector('cpy-toast');
   document.querySelector('cpy-button').onclick = () => {
-    overviewToast.open();
+    toast.open();
   };
 </script>`;
 

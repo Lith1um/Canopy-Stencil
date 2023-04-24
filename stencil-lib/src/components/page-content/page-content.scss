@@ -2,7 +2,7 @@
   --link-offset: var(--cpy-page-content-link-offset, 6rem);
 
   cpy-contents-list {
-    @apply hidden;
+    display: none;
   }
 
   ::slotted(h4[id]) {
@@ -13,14 +13,16 @@
 
 @media(min-width: 640px) {
   .page-container {
-    @apply flex gap-8;
+    display: flex;
+    gap: 2rem;
 
     cpy-contents-list {
-      @apply block;
+      display: block;
     }
 
     &__main {
-      @apply flex-1 min-w-0;
+      flex: 1 1 0%;
+      min-width: 0px;
     }
   }
 }

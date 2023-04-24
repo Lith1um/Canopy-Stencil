@@ -11,7 +11,7 @@
 | ------------------ | -------------------- | ----------- | --------- | ------- |
 | `hasBackdropClick` | `has-backdrop-click` |             | `boolean` | `true`  |
 | `show`             | `show`               |             | `boolean` | `false` |
-| `zIndex`           | `z-index`            |             | `string`  | `'50'`  |
+| `zIndex`           | `z-index`            |             | `string`  | `'999'` |
 
 
 ## Events

@@ -1,7 +1,9 @@
 .expand-collapse {
-  @apply h-auto overflow-auto;
+  height: auto;
+  overflow: auto;
 }
 
 .hide {
-  @apply max-h-0 overflow-hidden;
+  max-height: 0px;
+  overflow: hidden;
 }

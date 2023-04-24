@@ -12,7 +12,7 @@ export class Overlay {
 
   @Prop() hasBackdropClick: boolean = true;
 
-  @Prop() zIndex = '50';
+  @Prop() zIndex = '999';
 
   @Watch('show')
   onShowChange(show: boolean): void {

@@ -1,4 +1,10 @@
 .context-menu {
-  @apply min-w-[8rem] max-w-[20rem] inline-flex flex-col py-2 rounded-[0.25rem];
+  min-width: 8rem/* 128px */;
+  max-width: 20rem/* 320px */;
+  display: inline-flex;
+  flex-direction: column;
+  padding-top: 0.5rem/* 8px */;
+  padding-bottom: 0.5rem/* 8px */;
+  border-radius: 0.25rem/* 4px */;
   background-color: var(--cpy-bg-white);
 }

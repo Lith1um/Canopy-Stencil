@@ -1,25 +1,45 @@
+@import '../../../styles/mixins/icon-size.scss';
+
 .context-menu-item {
-  @apply flex gap-4 py-2.5 px-4 cursor-pointer items-center select-none min-h-[3rem];
+  display: flex;
+  gap: 1rem;
+  padding-top: 0.625rem/* 10px */;
+  padding-bottom: 0.625rem/* 10px */;
+  padding-left: 1rem/* 16px */;
+  padding-right: 1rem/* 16px */;
+  cursor: pointer;
+  align-items: center;
+  user-select: none;
+  min-height: 3rem/* 48px */;
 
   &:hover, &--active {
     background-color: var(--cpy-bg-hover);
   }
 
   > cpy-icon {
-    @apply icon-size-6;
+    @include icon-size(6);
   }
 
   &__title {
-    @apply text-sm truncate font-medium;
+    font-size: 0.875rem/* 14px */;
+    line-height: 1.25rem/* 20px */;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 500;
   }
 
   &__description {
-    @apply text-xs;
+    font-size: 0.75rem/* 12px */;
+    line-height: 1rem/* 16px */;
     color: var(--cpy-text-light);
   }
 
   &__separator {
-    @apply border-b w-full my-1;
+    border-bottom-width: 1px;
+    width: 100%;
+    margin-top: 0.25rem/* 4px */;
+    margin-bottom: 0.25rem/* 4px */;
     border-color: var(--cpy-bg-basic-border);
   }
 }

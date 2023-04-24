@@ -1,7 +1,18 @@
 :host(.toolbar) {
   --toolbar-color: var(--cpy-toolbar-color, white);
   --toolbar-bg-color: var(--cpy-toolbar-bg, var(--cpy-bg-primary));
-  @apply flex px-4 w-full h-16 items-center gap-4 shadow-md relative z-30 text-2xl font-medium;
+  display: flex;
+  padding-left: 1rem/* 16px */;
+  padding-right: 1rem/* 16px */;
+  width: 100%;
+  height: 4rem/* 64px */;
+  align-items: center;
+  gap: 1rem/* 16px */;
+  position: relative;
+  z-index: 30;
+  font-size: 1.5rem/* 24px */;
+  line-height: 2rem/* 32px */;
+  font-weight: 500;
   color: var(--toolbar-color);
   background-color: var(--toolbar-bg-color);
 
@@ -11,11 +22,20 @@
 }
 
 :host(.toolbar--small) {
-  @apply h-12 px-2 gap-2 text-xl;
+  height: 3rem/* 48px */;
+  padding-left: 0.5rem/* 8px */;
+  padding-right: 0.5rem/* 8px */;
+  gap: 0.5rem/* 8px */;
+  font-size: 1.25rem/* 20px */;
+  line-height: 1.75rem/* 28px */;
 }
 
 :host(.toolbar--large) {
-  @apply h-20 px-6 gap-6 text-[1.75rem];
+  height: 5rem/* 48px */;
+  padding-left: 1.5rem/* 8px */;
+  padding-right: 1.5rem/* 8px */;
+  gap: 1.5rem/* 8px */;
+  font-size: 1.75rem/* 20px */;
 }
 
 :host(.toolbar--primary) {

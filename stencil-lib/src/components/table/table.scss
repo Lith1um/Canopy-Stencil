@@ -1,42 +1,59 @@
 :host {
   --table-bg: var(--cpy-table-bg, var(--cpy-bg-white));
-  @apply relative block rounded-xl overflow-auto border;
+  position: relative;
+  display: block;
+  border-radius: 0.75rem/* 12px */;
+  overflow: auto;
+  border-width: 1px;
   background-color: var(--table-bg);
   border-color: var(--cpy-bg-basic-border);
 }
 
 .table-container {
-  @apply shadow-sm pb-8 pt-6 overflow-auto;
+  padding-bottom: 2rem/* 32px */;
+  padding-top: 1.5rem/* 24px */;
+  overflow: auto;
 }
 
 .table {
-  @apply table-auto border-collapse w-full;
+  table-layout: auto;
+  border-collapse: collapse;
+  width: 100%;
 
   th, td {
-    @apply border-b px-4 py-3 text-left;
+    border-bottom-width: 1px;
+    padding-left: 1rem/* 16px */;
+    padding-right: 1rem/* 16px */;
+    padding-top: 0.75rem/* 12px */;
+    padding-bottom: 0.75rem/* 12px */;
+    text-align: left;
     border-color: var(--cpy-bg-basic-border);
   }
 
   th {
-    @apply capitalize font-medium pt-0;
+    text-transform: capitalize;
+    font-weight: 500;
+    padding-top: 0px;
   }
 }
 
 @media(min-width: 640px) {
   .table-container {
+    /* width */
     &::-webkit-scrollbar {
-      @apply w-2 h-2;
+      width: 0.5rem;
+      height: 0.5rem;
     }
 
     /* Track */
     &::-webkit-scrollbar-track {
-      @apply bg-transparent;
+      background-color: var(--cpy-bg-medium);
     }
 
     /* Handle */
     &::-webkit-scrollbar-thumb {
       background-color: var(--cpy-bg-basic);
-      @apply rounded;
+      border-radius: 0.25rem/* 4px */;
     }
 
     /* Handle on hover */

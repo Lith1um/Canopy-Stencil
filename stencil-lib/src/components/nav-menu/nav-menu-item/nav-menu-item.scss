@@ -1,6 +1,19 @@
+@import '../../../styles/mixins/icon-size.scss';
+
 .nav-menu-item {
   --rounded-border: var(--cpy-nav-item-border-radius, 0);
-  @apply flex gap-3 mb-1 py-2 px-5 cursor-pointer items-center select-none min-h-[2.5rem] bg-transparent;
+  display: flex;
+  gap: 0.75rem/* 12px */;
+  margin-bottom: 0.25rem/* 4px */;
+  padding-top: 0.5rem/* 8px */;
+  padding-bottom: 0.5rem/* 8px */;
+  padding-left: 1.25rem/* 20px */;
+  padding-right: 1.25rem/* 20px */;
+  cursor: pointer;
+  align-items: center;
+  user-select: none;
+  min-height: 2.5rem/* 40px */;
+  background-color: transparent;
   border-radius: var(--rounded-border);
 
   &:hover, &--active {
@@ -8,51 +21,63 @@
   }
 
   &--group {
-    @apply cursor-default;
+    cursor: default;
     background-color: transparent !important;
 
     .nav-menu-item__title {
-      @apply uppercase;
+      text-transform: uppercase;
       color: var(--cpy-text-primary);
     }
   }
 
   &__content {
-    @apply flex-1 min-w-0;
+    flex: 1 1 0%;
+    min-width: 0px;
   }
 
   &__collapse-icon {
-    @apply transition-all;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
 
     &--open {
-      @apply rotate-90;
+      transform: rotate(90deg);
     }
   }
 
   &__collapse {
-    @apply block;
+    display: block;
 
     > div {
-      @apply border-b mb-1;
+      border-bottom-width: 1px;
+      margin-bottom: 0.25rem/* 4px */;
       border-color: var(--cpy-bg-basic-border);
     }
   }
 
   > cpy-icon {
-    @apply icon-size-6;
+    @include icon-size(6);
   }
 
   &__title {
-    @apply text-sm truncate font-medium;
+    font-size: 0.875rem/* 14px */;
+    line-height: 1.25rem/* 20px */;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 500;
   }
 
   &__description {
-    @apply text-xs;
+    font-size: 0.75rem/* 12px */;
+    line-height: 1rem/* 16px */;
     color: var(--cpy-text-light);
   }
 
   &__separator {
-    @apply border-b w-full mb-1;
+    border-bottom-width: 1px;
+    width: 100%;
+    margin-bottom: 0.25rem/* 4px */;
     border-color: var(--cpy-bg-basic-border);
   }
 }

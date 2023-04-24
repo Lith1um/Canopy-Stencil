@@ -1,26 +1,36 @@
 .overlay {
   &:not(.hidden) {
-    @apply flex absolute inset-0 w-full h-full items-center justify-center;
+    display: flex;
+    position: absolute;
+    inset: 0px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
     background-color: var(--cpy-bg-overlay);
   }
 }
 
 .overlay-enter {
-  @apply transition ease-in-out duration-300;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
 }
 .overlay-enter-start {
-  @apply opacity-0;
+  opacity: 0;
 }
 .overlay-enter-end {
-  @apply opacity-100;
+  opacity: 1;
 }
 
 .overlay-leave {
-  @apply transition ease-in-out duration-300;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
 }
 .overlay-leave-start {
-  @apply opacity-100;
+  opacity: 1;
 }
 .overlay-leave-end {
-  @apply opacity-0;
+  opacity: 0;
 }

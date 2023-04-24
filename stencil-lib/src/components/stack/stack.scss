@@ -1,15 +1,16 @@
 :host {
-  @apply inline-flex;
+  display: inline-flex;
 }
 
 .stack {
-  @apply inline-flex gap-1;
+  display: inline-flex;
+  gap: 0.25rem/* 4px */;
 
   &--left {
-    @apply flex-row;
+    flex-direction: row;
   }
 
   &--right {
-    @apply flex-row-reverse;
+    flex-direction: row-reverse;
   }
 }
