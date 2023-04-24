@@ -1,0 +1,13 @@
+@mixin icon-size($size) {
+  width: calc($size * 0.25rem) !important;
+  height: calc($size * 0.25rem) !important;
+  min-width: calc($size * 0.25rem) !important;
+  min-height: calc($size * 0.25rem) !important;
+  font-size: calc($size * 0.25rem) !important;
+  line-height: calc($size * 0.25rem) !important;
+
+  svg {
+    width: calc($size * 0.25rem) !important;
+    height: calc($size * 0.25rem) !important;
+  }
+}

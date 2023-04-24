@@ -1,27 +1,43 @@
 .contents {
   --top: var(--cpy-contents-list-top, 6rem);
-  @apply block sticky max-w-[10rem];
+  display: block;
+  position: sticky;
+  max-width: 10rem/* 160px */;
   top: var(--top);
 
   &__title {
-    @apply ml-2 truncate;
+    margin-left: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     color: var(--cpy-text-light);
   }
 
   &__list {
-    @apply border-l leading-tight p-0 m-0 relative;
+    border-left-width: 1px;
+    line-height: 1.25;
+    padding: 0;
+    margin: 0;
+    position: relative;
     border-color: var(--cpy-bg-basic-border);
   }
 
   &__list-active {
     --active-bar-bg: var(--cpy-contents-color, var(--cpy-text-primary));
-    @apply w-0.5 absolute left-0 h-0 top-0 transition-all duration-300;
+    width: 0.125rem;
+    position: absolute;
+    left: 0;
+    height: 0;
+    top: 0;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
     background-color: var(--active-bar-bg);
   }
 }
 
 @media(min-width: 1024px) {
   .contents {
-    @apply max-w-[16rem];
+    max-width: 16rem/* 256px */;
   }
 }

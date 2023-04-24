@@ -3,5 +3,7 @@
 }
 
 textarea {
-  @apply w-full bg-transparent resize-none;
+  width: 100%;
+  background-color: transparent;
+  resize: none;
 }

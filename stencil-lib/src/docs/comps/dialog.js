@@ -29,7 +29,7 @@
   document.getElementById('comp-props').tableData = [
     { name: 'dialog-title', description: 'Title to display in the dialog', type: "string", default: "", required: true },
     { name: 'size', description: 'Dialog size', type: "DialogSize", default: "'default'", required: false },
-    { name: 'z-index', description: 'Z-index of the dialog', type: "string", default: "50", required: false },
+    { name: 'z-index', description: 'Z-index of the dialog', type: "string", default: "'999'", required: false },
   ];
   document.getElementById('comp-events').tableData = [
     { name: 'closed', description: 'Triggered when the dialog is closed', emitsType: "boolean" }

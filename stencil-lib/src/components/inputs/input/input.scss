@@ -3,7 +3,8 @@
 }
 
 input {
-  @apply w-full bg-transparent;
+  width: 100%;
+  background-color: transparent;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -15,5 +16,6 @@ input::-webkit-inner-spin-button {
 
 /* Firefox */
 input[type=number] {
+  appearance: textfield;
   -moz-appearance: textfield;
 }

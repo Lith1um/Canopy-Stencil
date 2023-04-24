@@ -1,5 +1,13 @@
 .contents-list-item {
-  @apply cursor-pointer pl-3 mt-1 block truncate text-sm;
+  cursor: pointer;
+  padding-left: 0.75rem;
+  margin-top: 0.25rem;
+  display: block;
+  font-size: 0.875rem/* 14px */;
+  line-height: 1.25rem/* 20px */;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
   &:hover, &--active {
     --active-bar-bg: var(--cpy-contents-color, var(--cpy-text-primary));

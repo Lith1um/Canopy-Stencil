@@ -1,37 +1,48 @@
 :host {
-  @apply block;
+  display: block;
 }
 
 .progress-bar {
   --bg-color: var(--cpy-progress-bar-bg, var(--cpy-bg-primary));
   --border-radius: var(--cpy-progress-bar-border-radius, 0.25rem);
-  @apply relative h-4 w-full overflow-hidden;
+  position: relative;
+  height: 1rem/* 16px */;
+  width: 100%;
+  overflow: hidden;
   border-radius: var(--border-radius);
   background-color: var(--cpy-bg-white);
   border-color: var(--bg-color);
 
   &--border {
-    @apply border;
+    border-width: 1px;
   }
 
   &--indeterminate {
     .progress-bar__progress {
       animation: indeterminate-progress-bar 1.5s infinite;
-      @apply absolute bottom-0 top-0 h-auto w-2/5 #{'!important'};
+      position: absolute;
+      bottom: 0px;
+      top: 0px;
+      height: auto;
+      width: 40%;
     }
   }
 
   &__progress {
-    @apply h-full max-w-full transition-all duration-300;
+    height: 100%;
+    max-width: 100%;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
     background-color: var(--bg-color);
   }
 
   &-size--small {
-    @apply h-2;
+    height: 0.5rem/* 8px */;
   }
 
   &-size--large {
-    @apply h-6;
+    height: 1.5rem/* 24px */;
   }
   
   &-type--primary {
@@ -61,9 +72,9 @@
 
 @keyframes indeterminate-progress-bar {
   from {
-      left: -50%;
+    left: -50%;
   }
   to {
-      left: 100%;
+    left: 100%;
   }
 }

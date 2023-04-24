@@ -13,7 +13,7 @@ export class Dialog {
 
   @Prop() dialogTitle: string;
 
-  @Prop() zIndex = '50';
+  @Prop() zIndex = '999';
 
   @Prop() size: DialogSize = 'default'
 

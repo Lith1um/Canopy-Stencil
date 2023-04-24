@@ -17,7 +17,7 @@
 	- breadcrumbs
 	- pagination
 	- grids
-	- marketing style components (...shudders)
+	- marketing style components
 
 - Keyboard events
 - Accessibility

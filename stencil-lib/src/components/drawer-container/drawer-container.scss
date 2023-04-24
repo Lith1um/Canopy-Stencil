@@ -1,22 +1,46 @@
 .drawer-container {
-  @apply relative z-10 block overflow-hidden inset-0 h-full;
+  position: relative;
+  z-index: 10;
+  display: block;
+  overflow: hidden;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  height: 100%;
 
   &__content {
-    @apply relative z-20 block h-full overflow-auto transition-all duration-300;
+    position: relative;
+    z-index: 20;
+    display: block;
+    height: 100%;
+    overflow: auto;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
   }
 
   &__overlay {
-    @apply absolute inset-0 z-[25] opacity-0 transition-opacity duration-1000;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 25;
+    opacity: 0;
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
     background-color: var(--cpy-bg-overlay);
 
     &--show {
-      @apply opacity-100;
+      opacity: 1;
     }
   }
 }
 
 @media(min-width: 640px) {
   .drawer-container__overlay {
-    @apply hidden;
+    display: none;
   }
 }

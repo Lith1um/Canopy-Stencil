@@ -11,7 +11,7 @@
 | ------------- | -------------- | ----------- | -------------------------------------------------- | ----------- |
 | `dialogTitle` | `dialog-title` |             | `string`                                           | `undefined` |
 | `size`        | `size`         |             | `"default" \| "full-screen" \| "large" \| "small"` | `'default'` |
-| `zIndex`      | `z-index`      |             | `string`                                           | `'50'`      |
+| `zIndex`      | `z-index`      |             | `string`                                           | `'999'`     |
 
 
 ## Events

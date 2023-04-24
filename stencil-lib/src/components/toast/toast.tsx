@@ -14,7 +14,7 @@ export class Toast {
 
   @Prop() toastTitle: string;
 
-  @Prop() zIndex = '50';
+  @Prop() zIndex = '999';
 
   @Prop() duration = 4000;
 

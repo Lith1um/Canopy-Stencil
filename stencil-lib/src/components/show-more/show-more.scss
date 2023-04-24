@@ -1,8 +1,10 @@
 .show-more {
-  @apply block;
+  display: block;
 
   &__text {
-    @apply overflow-hidden whitespace-pre-wrap break-words;
+    overflow: hidden;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
     display: -webkit-box;
     -webkit-box-orient: vertical;
   }

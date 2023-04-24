@@ -22,6 +22,10 @@ defineCustomElements();
 ],
 "styles": [
   "node_modules/@canopy-web/core/dist/core/core.css",
+  // Optional: inter var font packaged with canopy
+  "node_modules/@canopy-web/core/dist/core/inter-var.css",
+  // Optional: default color scheme provided by canopy
+  "node_modules/@canopy-web/core/dist/core/colors.css",
   ...
 ],
 ...`;

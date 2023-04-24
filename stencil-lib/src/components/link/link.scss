@@ -1,18 +1,20 @@
 :host {
-  @apply inline-flex;
+  display: inline-flex;
 }
 
 .link {
   --link-align: var(--cpy-link-align, baseline);
   --text-color: var(--cpy-link-color, var(--cpy-text-primary));
-  @apply flex gap-1;
+  display: flex;
+  gap: 0.25rem;
   align-items: var(--link-align);
   color: var(--text-color);
 
   &--underline:hover {
-    @apply underline cursor-pointer;
+    text-decoration-line: underline;
+    cursor: pointer;
     ::slotted(*) {
-      @apply cursor-pointer;
+      cursor: pointer;
     }
   }
 

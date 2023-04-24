@@ -1,9 +1,21 @@
 :host {
-  @apply inline-flex;
+  display: inline-flex;
 }
 
 .tab-header {
-  @apply leading-10 truncate px-6 min-w-[10rem] max-w-[16rem] cursor-pointer border-b-2 text-center border-transparent transition-colors duration-300;
+  line-height: 2.5rem/* 40px */;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 1.5rem/* 24px */;
+  padding-right: 1.5rem/* 24px */;
+  min-width: 10rem/* 160px */;
+  max-width: 16rem/* 256px */;
+  cursor: pointer;
+  text-align: center;
+  transition-property: background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
 
   &:hover {
     background-color: var(--cpy-bg-hover);
@@ -12,6 +24,9 @@
 
 @media (max-width: 640px) {
   .tab-header {
-    @apply px-4 min-w-[4rem] max-w-[12rem];
+    padding-left: 1rem/* 16px */;
+    padding-right: 1rem/* 16px */;
+    min-width: 4rem/* 64px */;
+    max-width: 12rem/* 192px */;
   }
 }

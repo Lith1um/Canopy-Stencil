@@ -1,10 +1,14 @@
 :host {
-  @apply block;
+  display: block;
 }
 
 .comment {
   --cpy-link-color: var(--cpy-comment-color, var(--cpy-text-primary));
-  @apply flex w-full gap-4 items-start mb-4;
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem/* 16px */;
 
   &--primary {
     --cpy-link-color: var(--cpy-comment-color, var(--cpy-text-primary));
@@ -19,68 +23,87 @@
   }
 
   &--small {
-    @apply mb-2 gap-2;
+    margin-bottom: 0.5rem/* 8px */;
+    gap: 0.5rem/* 8px */;
 
     .comment__author {
-      @apply text-lg leading-none;
+      font-size: 1.125rem/* 18px */;
+      line-height: 1;
     }
 
     .comment__timestamp {
-      @apply text-xs leading-none mb-1;
+      font-size: 0.75rem/* 12px */;
+      line-height: 1;
+      margin-bottom: 0.25rem/* 4px */;
     }
 
     .comment__text {
-      @apply text-sm;
+      font-size: 0.875rem/* 14px */;
+      line-height: 1.25rem/* 20px */;
     }
   }
 
   &--large {
-    @apply mb-6 gap-6;
+    margin-bottom: 1.5rem/* 24px */;
+    gap: 1.5rem/* 24px */;
 
     .comment__author {
-      @apply text-2xl leading-none;
+      font-size: 1.5rem/* 24px */;
+      line-height: 1;
     }
 
     .comment__timestamp {
-      @apply text-base leading-none mb-3;
+      font-size: 1rem/* 16px */;
+      line-height: 1;
+      margin-bottom: 0.75rem/* 12px */;
     }
 
     .comment__text {
-      @apply text-lg;
+      font-size: 1.125rem/* 18px */;
+      line-height: 1.75rem/* 28px */;
     }
   }
 
   &--right {
-    @apply flex-row-reverse;
+    flex-direction: row-reverse;
 
     .comment__bubble {
-      @apply flex-none flex-shrink;
+      flex: none;
+      flex-shrink: 1;
     }
 
     .comment__author, .comment__timestamp {
-      @apply text-right;
+      text-align: right;
     }
 
     .comment__spacer {
-      @apply flex-1;
+      flex: 1 1 0%;
     }
   }
 
   &__bubble {
-    @apply flex-1 min-w-0;
+    flex: 1 1 0%;
+    min-width: 0px;
   }
 
   &__author {
-    @apply text-xl leading-none mb-1;
+    font-size: 1.25rem/* 20px */;
+    line-height: 1;
+    margin-bottom: 0.25rem/* 4px */;
     color: var(--cpy-link-color);
   }
 
   &__timestamp {
-    @apply text-sm mb-2 leading-none;
+    font-size: 0.875rem/* 14px */;
+    line-height: 1;
+    margin-bottom: 0.5rem/* 8px */;
     color: var(--cpy-text-light);
   }
 
   &__text {
-    @apply text-base whitespace-pre-wrap break-words;
+    font-size: 1rem/* 16px */;
+    line-height: 1.5rem/* 24px */;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
   }
 }

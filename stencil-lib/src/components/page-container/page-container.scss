@@ -1,11 +1,37 @@
 :host {
-  @apply block my-8 md:my-16;
+  display: block;
+  margin-top: 2rem/* 32px */;
+  margin-bottom: 2rem/* 32px */;
 }
 
 .page-container {
-  @apply w-full;
+  width: 100%;
 
   &__content {
-    @apply max-w-7xl mx-auto px-4 md:px-8 lg:px-16;
+    max-width: 80rem/* 1280px */;
+    padding-left: 1rem/* 16px */;
+    padding-right: 1rem/* 16px */;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  :host {
+    margin-top: 4rem/* 64px */;
+    margin-bottom: 4rem/* 64px */;
+  }
+
+  .page-container__content {
+    padding-left: 2rem/* 32px */;
+    padding-right: 2rem/* 32px */;
+
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-container__content {
+    padding-left: 4rem/* 64px */;
+    padding-right: 4rem/* 64px */;
   }
 }

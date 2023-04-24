@@ -1,38 +1,54 @@
 :host {
-  @apply inline-flex;
+  display: inline-flex;
 }
 
 .avatar {
   --avatar-bg: var(--cpy-avatar-bg, var(--cpy-bg-medium));
-  @apply w-10 h-10 overflow-hidden flex justify-center items-center uppercase;
+  width: 2.5rem;
+  height: 2.5rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
 
   img {
-    @apply object-cover;
+    object-fit: cover;
+    width: 100%;
   }
 
   &--rounded {
-    @apply rounded-full;
+    border-radius: 9999px;
   }
 
   &--square {
-    @apply rounded-sm;
+    border-radius: 0.125rem;
   }
 
   &--border {
-    @apply border-2;
+    border-width: 2px;
     border-color: var(--avatar-bg);
   }
 
   &--small {
-    @apply w-8 h-8 text-sm;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 
   &--large {
-    @apply w-14 h-14 text-lg;
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 
   &--x-large {
-    @apply w-20 h-20 text-3xl;
+    width: 5rem;
+    height: 5rem;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   &--initials {

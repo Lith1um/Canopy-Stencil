@@ -15,7 +15,7 @@
 | `position`    | `position`    |             | `"bottom-end" \| "bottom-middle" \| "bottom-start" \| "top-end" \| "top-middle" \| "top-start"` | `'top-end'` |
 | `toastTitle`  | `toast-title` |             | `string`                                                                                        | `undefined` |
 | `type`        | `type`        |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"`                         | `undefined` |
-| `zIndex`      | `z-index`     |             | `string`                                                                                        | `'50'`      |
+| `zIndex`      | `z-index`     |             | `string`                                                                                        | `'999'`     |
 
 
 ## Events
