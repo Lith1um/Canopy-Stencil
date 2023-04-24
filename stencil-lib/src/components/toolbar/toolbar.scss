@@ -1,5 +1,3 @@
-@import '../../styles/mixins/box-shadow.scss';
-
 :host(.toolbar) {
   --toolbar-color: var(--cpy-toolbar-color, white);
   --toolbar-bg-color: var(--cpy-toolbar-bg, var(--cpy-bg-primary));
@@ -17,7 +15,6 @@
   font-weight: 500;
   color: var(--toolbar-color);
   background-color: var(--toolbar-bg-color);
-  @include box-shadow();
 
   ::slotted(cpy-button[icon]) {
     --cpy-button-text: var(--toolbar-color);

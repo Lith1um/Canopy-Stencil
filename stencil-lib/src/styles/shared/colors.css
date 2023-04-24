@@ -58,7 +58,7 @@ html.dark {
   --cpy-dm-text-override: rgb(255, 255, 255);
 
   --cpy-bg-hover: rgba(255, 255, 255, 0.05);
-  --cpy-bg-shadow: rgba(0, 0, 0, 0.1);
+  --cpy-bg-shadow: rgba(255, 255, 255, 0.05);
   --cpy-bg-splash: rgba(255, 255, 255, 0.3);
   --cpy-bg-overlay: rgba(0, 0, 0, 0.5);
 
