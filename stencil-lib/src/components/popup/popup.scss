@@ -1,3 +1,5 @@
+@import '../../styles/mixins/box-shadow.scss';
+
 :host {
   display: inline-flex;
 }
@@ -21,6 +23,7 @@
     background-color: var(--cpy-bg-white);
     color: var(--cpy-text-base);
     transition: opacity 0.2s ease-in-out;
+    @include box-shadow();
 
     &--stretch-x {
       width: 100%;

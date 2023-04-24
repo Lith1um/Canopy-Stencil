@@ -1,3 +1,5 @@
+@import '../../styles/mixins/box-shadow.scss';
+
 :host {
   --table-bg: var(--cpy-table-bg, var(--cpy-bg-white));
   position: relative;
@@ -13,6 +15,7 @@
   padding-bottom: 2rem/* 32px */;
   padding-top: 1.5rem/* 24px */;
   overflow: auto;
+  @include box-shadow();
 }
 
 .table {

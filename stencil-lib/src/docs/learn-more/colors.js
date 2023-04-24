@@ -17,8 +17,9 @@ html.dark {
   --cpy-dm-text-override: currentColor;
 
   --cpy-bg-hover: rgba(0, 0, 0, 0.05);
-  --cpy-bg-overlay: rgba(0, 0, 0, 0.5);
+  --cpy-bg-shadow: rgba(0, 0, 0, 0.1);
   --cpy-bg-splash: rgba(0, 0, 0, 0.3);
+  --cpy-bg-overlay: rgba(0, 0, 0, 0.5);
 
   /* based on tailwind colors */
   --cpy-bg-light: rgb(250, 250, 250); /* zinc-50 */
@@ -70,8 +71,9 @@ html.dark {
   --cpy-dm-text-override: rgb(255, 255, 255);
 
   --cpy-bg-hover: rgba(255, 255, 255, 0.05);
-  --cpy-bg-overlay: rgba(0, 0, 0, 0.5);
+  --cpy-bg-shadow: rgba(0, 0, 0, 0.1);
   --cpy-bg-splash: rgba(255, 255, 255, 0.3);
+  --cpy-bg-overlay: rgba(0, 0, 0, 0.5);
 
   /* based on tailwind colors */
   --cpy-bg-light: rgb(15, 23, 42); /* slate-900 */

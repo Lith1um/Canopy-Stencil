@@ -1,3 +1,5 @@
+@import '../../styles/mixins/box-shadow.scss';
+
 .dialog {
   &:not(.hidden) {
     position: fixed;
@@ -17,6 +19,7 @@
     max-width: 95vw;
     overflow: hidden;
     background-color: var(--cpy-dialog-bg, var(--cpy-bg-white));
+    @include box-shadow();
 
     &--small {
       width: 350px;
