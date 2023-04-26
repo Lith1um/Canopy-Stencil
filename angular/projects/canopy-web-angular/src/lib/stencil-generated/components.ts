@@ -933,6 +933,28 @@ export declare interface CpyShowMore extends Components.CpyShowMore {}
 
 
 @ProxyCmp({
+  inputs: ['delay', 'position', 'reset']
+})
+@Component({
+  selector: 'cpy-slide-in',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['delay', 'position', 'reset'],
+})
+export class CpySlideIn {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface CpySlideIn extends Components.CpySlideIn {}
+
+
+@ProxyCmp({
   inputs: ['size', 'type']
 })
 @Component({
