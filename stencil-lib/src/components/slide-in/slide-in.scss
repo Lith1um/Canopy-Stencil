@@ -1,5 +1,9 @@
 :host(.slide-in) {
-  @apply inline-block opacity-0 transition duration-500;
+  display: inline-block;
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
 }
 
 :host(.slide-in--left) {

@@ -20,6 +20,26 @@ export const onVisible = (
   return intersection;
 }
 
+export const onInvisible = (
+  element: HTMLElement,
+  callback: (entry: IntersectionObserverEntry, observer: IntersectionObserver) => void,
+  disconnect: boolean = true
+): IntersectionObserver => {
+  const intersection = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.intersectionRatio === 0) {
+        callback(entry, observer);
+        if (disconnect) {
+          observer.disconnect();
+        }
+      }
+    });
+  });
+
+  intersection.observe(element);
+  return intersection;
+}
+
 export const onResize = (
   element: HTMLElement,
   callback: (entry: ResizeObserverEntry, observer: ResizeObserver) => void,

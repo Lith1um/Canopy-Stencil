@@ -26,7 +26,7 @@ import { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
 import { PopupActiveOn, PopupPosition } from "./components/popup/popup.type";
 import { ProgressBarAppearance, ProgressBarSize } from "./components/progress-bar/progress-bar.type";
 import { ShowMoreAppearance } from "./components/show-more/show-more.type";
-import { SlideInDirection } from "./components/slide-in/slide-in.type";
+import { SlideInPosition } from "./components/slide-in/slide-in.type";
 import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
 import { StackDirection } from "./components/stack/stack.type";
 import { TableData } from "./components/table/types/table-data.type";
@@ -54,7 +54,7 @@ export { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
 export { PopupActiveOn, PopupPosition } from "./components/popup/popup.type";
 export { ProgressBarAppearance, ProgressBarSize } from "./components/progress-bar/progress-bar.type";
 export { ShowMoreAppearance } from "./components/show-more/show-more.type";
-export { SlideInDirection } from "./components/slide-in/slide-in.type";
+export { SlideInPosition } from "./components/slide-in/slide-in.type";
 export { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
 export { StackDirection } from "./components/stack/stack.type";
 export { TableData } from "./components/table/types/table-data.type";
@@ -305,7 +305,9 @@ export namespace Components {
         "type": ShowMoreAppearance;
     }
     interface CpySlideIn {
-        "direction": SlideInDirection;
+        "delay": number;
+        "position": SlideInPosition;
+        "reset": boolean;
     }
     interface CpySpinner {
         "size": SpinnerSize;
@@ -1023,7 +1025,9 @@ declare namespace LocalJSX {
         "type"?: ShowMoreAppearance;
     }
     interface CpySlideIn {
-        "direction"?: SlideInDirection;
+        "delay"?: number;
+        "position"?: SlideInPosition;
+        "reset"?: boolean;
     }
     interface CpySpinner {
         "size"?: SpinnerSize;

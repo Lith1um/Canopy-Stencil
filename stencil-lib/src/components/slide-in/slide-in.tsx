@@ -1,6 +1,6 @@
 import { Component, Element, h, Host, Prop } from '@stencil/core';
-import { SlideInDirection } from './slide-in.type';
-import { onVisible } from '../../utils/elements';
+import { SlideInPosition } from './slide-in.type';
+import { onInvisible, onVisible } from '../../utils/elements';
 
 @Component({
   tag: 'cpy-slide-in',
@@ -13,20 +13,36 @@ export class SlideIn {
   host: HTMLElement;
 
   @Prop()
-  direction: SlideInDirection = 'left';
+  position: SlideInPosition = 'left';
+  
+  @Prop()
+  delay: number = 100;
+  
+  @Prop()
+  reset: boolean = false;
+
+  visibleObserver: IntersectionObserver;
+  invisibleObserver: IntersectionObserver;
 
   componentDidLoad(): void {
-    onVisible(this.host, () => this.handleSlideIn());
+    this.visibleObserver = onVisible(this.host, () => setTimeout(() => this.handleSlideIn(), this.delay), !this.reset);
+    if (this.reset) {
+      this.invisibleObserver = onInvisible(this.host, () => setTimeout(() => this.handleSlideOut(), this.delay), false);
+    }
   }
 
   handleSlideIn(): void {
     this.host.classList.add('slide-in--open');
   }
+
+  handleSlideOut(): void {
+    this.host.classList.remove('slide-in--open');
+  }
   
   render() {
     const classes = {
       'slide-in': true,
-      [`slide-in--${this.direction}`]: !!this.direction,
+      [`slide-in--${this.position}`]: !!this.position,
     };
 
     return (
@@ -34,5 +50,10 @@ export class SlideIn {
         <slot/>
       </Host>
     );
+  }
+
+  disconnectedCallback(): void {
+    this.visibleObserver.disconnect();
+    this.invisibleObserver.disconnect();
   }
 }

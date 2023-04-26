@@ -1,3 +1,3 @@
-export type SlideInDirection =
+export type SlideInPosition =
   | 'left'
   | 'right';
