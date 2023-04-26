@@ -1,6 +1,12 @@
 code {
   --bg-color: var(--cpy-code-snippet-bg, var(--cpy-bg-medium));
-  @apply inline mx-1 outline-2 outline px-0.5;
+  display: inline;
+  margin-left: 0.25rem/* 4px */;
+  margin-right: 0.25rem/* 4px */;
+  outline-width: 2px;
+  outline-style: solid;
+  padding-left: 0.125rem/* 2px */;
+  padding-right: 0.125rem/* 2px */;
   outline-color: var(--bg-color);
   background-color: var(--bg-color);
 }

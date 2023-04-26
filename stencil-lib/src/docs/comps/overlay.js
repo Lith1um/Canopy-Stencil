@@ -7,7 +7,7 @@
   document.getElementById('comp-props').tableData = [
     { name: 'show', description: 'Whether or not to show the overlay', type: 'boolean', default: 'false', required: false },
     { name: 'has-backdrop-click', description: 'Whether or not to close the overlay when the background is clicked', type: 'boolean', default: 'true', required: false },
-    { name: 'z-index', description: 'Z-index of the overlay', type: 'string', default: "'50'", required: false },
+    { name: 'z-index', description: 'Z-index of the overlay', type: 'string', default: "'999'", required: false },
   ];
   document.getElementById('comp-events').tableData = [
     { name: 'closed', description: 'Triggers when the overlay is closed', emitsType: '' },

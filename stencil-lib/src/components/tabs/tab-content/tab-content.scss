@@ -1,7 +1,8 @@
 .tab-content {
-  @apply hidden max-w-full;
+  display: none;
+  max-width: 100%;
 }
 
 .tab-content--selected {
-  @apply block;
+  display: block;
 }

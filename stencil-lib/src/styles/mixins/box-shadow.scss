@@ -1,0 +1,4 @@
+@mixin box-shadow($size: 1) {
+  box-shadow: 0 calc($size * 0.25rem) calc($size * 0.375rem) calc($size * -1px) var(--cpy-bg-shadow),
+    0 calc($size * 0.125rem) calc($size * 0.25rem) calc($size * -0.125rem) var(--cpy-bg-shadow);
+}

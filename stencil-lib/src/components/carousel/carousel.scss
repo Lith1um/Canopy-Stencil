@@ -1,24 +1,36 @@
 :host {
-  @apply block;
+  display: block;
 }
 
 .carousel {
-  @apply w-full;
+  width: 100%;
 
   &__header {
-    @apply w-full flex items-center gap-4 mb-2;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem/* 16px */;
+    margin-bottom: 0.5rem/* 8px */;
   }
 
   &__title {
-    @apply flex-1 text-lg font-medium truncate;
+    flex: 1 1 0%;
+    font-size: 1.125rem/* 18px */;
+    line-height: 1.75rem/* 28px */;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   &__buttons {
-    @apply flex;
+    display: flex;
   }
 
   &__content {
-    @apply overflow-x-auto max-w-full scroll-smooth;
+    overflow-x: auto;
+    max-width: 100%;
+    scroll-behavior: smooth;
 
     &::-webkit-scrollbar{
       display: none;
@@ -26,6 +38,8 @@
   }
 
   &__scroll-content {
-    @apply flex gap-4 min-w-min;
+    display: flex;
+    gap: 1rem/* 16px */;
+    min-width: min-content;
   }
 }

@@ -1,11 +1,19 @@
+@import '../../styles/mixins/box-shadow.scss';
+
 :host {
-  @apply block relative;
+  display: block;
+  position: relative;
 }
 
 .context-menu {
-  @apply hidden absolute top-0 left-0 z-50 shadow-md;
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 50;
+  @include box-shadow();
 
   &--show {
-    @apply block;
+    display: block;
   }
 }

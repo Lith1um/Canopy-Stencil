@@ -1,22 +1,35 @@
 @import url(../../styles/prism.css);
+@import '../../styles/mixins/icon-size.scss';
 
 .code-block {
   --border-radius: var(--cpy-code-block-border-radius, 0.375rem);
-  @apply overflow-hidden relative;
+  overflow: hidden;
+  position: relative;
   border-radius: var(--border-radius);
   color: var(--cpy-text-light);
   background-color: var(--cpy-bg-white);
 
   &:hover {
     .code-block__copy {
-      @apply opacity-100;
+      opacity: 1;
     }
   }
 
   &__copy {
     background-color: var(--cpy-bg-white);
     transition: background-color, opacity 300ms;
-    @apply opacity-0 z-10 absolute top-2 right-2 flex items-center justify-center cursor-pointer h-8 w-8 rounded-md border;
+    opacity: 0;
+    z-index: 10;
+    position: absolute;
+    top: 0.5rem/* 8px */;
+    right: 0.5rem/* 8px */;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 2rem/* 32px */;
+    width: 2rem/* 32px */;
+    border-radius: 0.375rem/* 6px */;
     border: 1px solid var(--cpy-bg-basic-border);
 
     .copied {
@@ -24,26 +37,28 @@
     }
 
     cpy-icon {
-      @apply icon-size-5;
+      @include icon-size(5);
     }
   }
 }
 
 @media(min-width: 640px) {
   pre {
+    /* width */
     &::-webkit-scrollbar {
-      @apply w-2 h-2;
+      width: 0.5rem;
+      height: 0.5rem;
     }
 
     /* Track */
     &::-webkit-scrollbar-track {
-      @apply bg-transparent;
+      background-color: var(--cpy-bg-medium);
     }
 
     /* Handle */
     &::-webkit-scrollbar-thumb {
       background-color: var(--cpy-bg-basic);
-      @apply rounded;
+      border-radius: 0.25rem/* 4px */;
     }
 
     /* Handle on hover */

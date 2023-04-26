@@ -1,9 +1,30 @@
+@import '../../styles/mixins/icon-size.scss';
+
 :host {
-  @apply inline-block;
+  display: inline-block;
 }
 
 .button {
-  @apply no-underline text-base whitespace-nowrap leading-9 h-9 relative px-3.5 inline-flex items-center justify-center gap-1.5 min-w-[64px] outline-0 select-none appearance-none overflow-visible align-middle bg-transparent;
+  text-decoration-line: none;
+  font-size: 1rem/* 16px */;
+  line-height: 1.5rem/* 24px */;
+  white-space: nowrap;
+  line-height: 2.25rem/* 36px */;
+  height: 2.25rem/* 36px */;
+  position: relative;
+  padding-left: 0.875rem/* 14px */;
+  padding-right: 0.875rem/* 14px */;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem/* 6px */;
+  min-width: 4rem;
+  outline-width: 0px;
+  user-select: none;
+  appearance: none;
+  overflow: visible;
+  vertical-align: middle;
+  background-color: transparent;
   --border-radius: var(--cpy-button-border-radius, 0.25rem);
   --text-color: var(--cpy-button-text, white);
   --bg-color: var(--cpy-button-bg, var(--cpy-bg-primary));
@@ -13,45 +34,65 @@
   transition: background-color 300ms;
 
   ::slotted(cpy-icon) {
-    @apply icon-size-6 #{!important};
+    @include icon-size(6);
   }
 
   &:disabled {
-    @apply cursor-default;
+    cursor: default;
     --text-color: var(--cpy-text-disabled) !important;
     --bg-color: var(--cpy-bg-disabled) !important;
   }
 
   &-size--small {
-    @apply leading-7 h-7 text-sm px-2 font-light;
+    line-height: 1.75rem/* 28px */;
+    height: 1.75rem/* 28px */;
+    font-size: 0.875rem/* 14px */;
+    padding-left: 0.5rem/* 8px */;
+    padding-right: 0.5rem/* 8px */;
+    font-weight: 300;
 
     ::slotted(cpy-icon) {
-      @apply icon-size-5 #{!important};
+      @include icon-size(5);
     }
   }
 
   &-size--large {
-    @apply leading-[3rem] h-12 text-lg px-5 font-medium;
+    line-height: 3rem/* 48px */;
+    height: 3rem/* 48px */;
+    font-size: 1.125rem/* 18px */;
+    padding-left: 1.25rem/* 20px */;
+    padding-right: 1.25rem/* 20px */;
+    font-weight: 500;
 
     ::slotted(cpy-icon) {
-      @apply icon-size-7 #{!important};
+      @include icon-size(7);
     }
   }
 
   &--icon {
-    @apply rounded-full px-3 min-w-0 w-12 h-12;
+    border-radius: 9999px;
+    padding-left: 0.75rem/* 12px */;
+    padding-right: 0.75rem/* 12px */;
+    min-width: 0px;
+    width: 3rem/* 48px */;
+    height: 3rem/* 48px */;
 
     &.button-size--small {
-      @apply p-2 w-10 h-10;
+      padding: 0.5rem/* 8px */;
+      width: 2.5rem/* 40px */;
+      height: 2.5rem/* 40px */;
     }
   
     &.button-size--large {
-      @apply p-4 w-14 h-14 text-lg;
+      padding: 1rem/* 16px */;
+      width: 3.5rem/* 56px */;
+      height: 3.5rem/* 56px */;
+      font-size: 1.125rem/* 18px */;
     }
   }
 
   &-appearance--outline {
-    @apply border-2;
+    border-width: 2px;
     border-color: var(--text-color);
   }
 

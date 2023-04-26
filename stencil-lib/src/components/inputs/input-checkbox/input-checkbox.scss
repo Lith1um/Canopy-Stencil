@@ -3,7 +3,9 @@
 }
 
 .checkbox {
-  @apply flex items-center gap-4;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 
   &:hover:not(.checkbox--disabled) {
     .checkbox__checkmark {
@@ -25,14 +27,14 @@
 
   &--required {
     .checkbox__label::after {
-      @apply ml-0.5;
+      margin-left: 0.125rem/* 2px */;
       content: "*";
     }
   }
 
   &--disabled {
     .checkbox__label, .checkbox__checkmark {
-      @apply cursor-default;
+      cursor: default;
     }
 
     .checkbox__container {
@@ -41,47 +43,59 @@
   }
 
   &--large {
-    @apply gap-5;
+    gap: 1.25rem/* 20px */;
 
     .checkbox__container {
-      @apply rounded-md w-7 h-7;
+      border-radius: 0.375rem/* 6px */;
+      height: 1.75rem/* 28px */;
+      width: 1.75rem/* 28px */;
     }
 
     .checkbox__checkmark {
-      @apply rounded-md;
+      border-radius: 0.375rem/* 6px */;
 
       &::after {
-        @apply border-l-4 border-b-4;
+        border-left-width: 4px;
+        border-bottom-width: 4px;
       }
     }
   }
 
   &--small {
-    @apply gap-3;
+    gap: 0.75rem/* 12px */;
 
     .checkbox__container {
-      @apply rounded-sm w-4 h-4;
+      border-radius: 0.125rem/* 2px */;
+      height: 1rem/* 16px */;
+      width: 1rem/* 16px */;
     }
 
     .checkbox__checkmark {
-      @apply rounded-sm;
+      border-radius: 0.125rem/* 2px */;
       
       &::after {
-        @apply border-l-2 border-b-2;
+        border-left-width: 2px;
+        border-bottom-width: 2px;
       }
     }
   }
 
   &__label {
-    @apply cursor-pointer;
+    cursor: pointer;
   }
 
   &__container {
-    @apply relative inline-block w-5 h-5 rounded;
+    position: relative;
+    display: inline-block;
+    width: 1.25rem/* 20px */;
+    height: 1.25rem/* 20px */;
+    border-radius: 0.25rem/* 4px */;
     background-color: var(--cpy-bg-white);
 
     input {
-      @apply opacity-0 w-0 h-0;
+      opacity: 0;
+      width: 0px;
+      height: 0px;
     }
 
     input:checked + .checkbox__checkmark {
@@ -89,17 +103,38 @@
       border-color: var(--cpy-bg-primary);
 
       &::after {
-        @apply opacity-100;
+        opacity: 1;
       }
     }
   }
 
   &__checkmark {
-    @apply absolute cursor-pointer inset-0 transition duration-300 rounded border;
+    position: absolute;
+    cursor: pointer;
+    inset: 0px;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    border-radius: 0.25rem/* 4px */;
+    border-width: 1px;
     border-color: var(--cpy-bg-basic-border);
     
     &::after {
-      @apply transition duration-300 origin-center absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2 w-4/5 h-2/5 -rotate-45 border-l-[3px] border-b-[3px] opacity-0;
+      transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 300ms;
+      transform-origin: center;
+      position: absolute;
+      left: 50%;
+      top: 40%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      width: 80%;
+      height: 40%;
+      border-left-style: solid;
+      border-bottom-style: solid;
+      border-left-width: 3px;
+      border-bottom-width: 3px;
+      opacity: 0;
       border-color: var(--cpy-checkbox-tick-color, white);
       content: "";
     }

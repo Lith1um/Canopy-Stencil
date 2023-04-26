@@ -8,12 +8,31 @@
   <title>Canopy - UI Web Components</title>
 
   <link rel="stylesheet" href="/build/core.css" />
+  <link rel="stylesheet" href="/build/inter-var.css" />
+  <link rel="stylesheet" href="/build/colors.css" />
   <link rel="stylesheet" href="/docs/typography.css" />
   <script type="module" src="/build/core.esm.js"></script>
   <script nomodule src="/build/core.js"></script>
   <style>
+    body {
+      margin: 0;
+    }
     html {
       --bg-box-color: rgba(5, 150, 105, 0.3);
+
+      font-family: 'Inter var', sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--cpy-text-base);
+      background-color: var(--cpy-bg-light);
+
+      -webkit-text-size-adjust: 100%;
+      font-feature-settings: normal;
+      -webkit-font-smoothing: auto;
+      font-feature-settings: "salt";
+      -moz-tab-size: 4;
+      -o-tab-size: 4;
+      tab-size: 4;
     }
 
     html.dark {
@@ -157,7 +176,7 @@
       </div>
       <cpy-nav-menu id="mobile-nav"></cpy-nav-menu>
       <div style="margin: 3rem 0 1rem; text-align: center; font-size: 0.875rem; color: var(--cpy-text-light);">
-        <p style="text-align: center; margin-bottom: 0;">v0.3.7 - <cpy-link href="https://github.com/Lith1um/Canopy-Stencil" new-tab>Github<cpy-icon>terminal</cpy-icon></cpy-link></p>
+        <p style="text-align: center; margin-bottom: 0;">v0.4.1 - <cpy-link href="https://github.com/Lith1um/Canopy-Stencil" new-tab>Github<cpy-icon>terminal</cpy-icon></cpy-link></p>
         <p style="text-align: center; margin-bottom: 0.5rem; font-size: 0.75rem;">Alex Rayner ©2023</p>
       </div>
     </div>
@@ -171,7 +190,7 @@
           <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="40">
         </cpy-link>
         <div style="flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-          Canopy <span style="font-size: 0.875rem; vertical-align: text-top;">v0.3.7</span>
+          Canopy <span style="font-size: 0.875rem; vertical-align: text-top;">v0.4.1</span>
         </div>
         <!-- <cpy-input size="small" placeholder="Search..." style="--cpy-input-border-radius: 21px;">
           <cpy-icon slot="prefix">search</cpy-icon>
@@ -211,7 +230,7 @@
           <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="60" style="opacity: 0.75;">
         
           <div style="flex: 1; font-size: 1.25rem;">
-            Canopy <span style="font-size: 0.75rem;">v0.3.7</span>
+            Canopy <span style="font-size: 0.75rem;">v0.4.1</span>
             <div style="font-size: 0.75rem;">
               Built with <cpy-link href="https://stenciljs.com/" new-tab>Stencil</cpy-link>.
             </div>

@@ -1,6 +1,6 @@
 {
   "name": "@canopy-web/core",
-  "version": "0.3.7",
+  "version": "0.4.1",
   "description": "Canopy Web Components",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -34,8 +34,6 @@
     "jest-cli": "^27.4.5",
     "npm-run-all": "^4.1.5",
     "puppeteer": "^19.6.3",
-    "stencil-tailwind-plugin": "^1.7.0",
-    "tailwindcss": "^3.2.4",
     "typescript": "^4.9.4"
   },
   "license": "MIT",

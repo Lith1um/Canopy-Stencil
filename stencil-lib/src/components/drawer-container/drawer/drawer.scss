@@ -1,21 +1,34 @@
 .drawer {
   --bg-color: var(--cpy-drawer-bg, var(--cpy-bg-white));
   --border-width: var(--cpy-drawer-border-width, 1px);
-  @apply absolute h-full block z-30 outline-0 overflow-y-auto invisible transition-all duration-300;
+  position: absolute;
+  height: 100%;
+  display: block;
+  z-index: 30;
+  outline-width: 0px;
+  overflow-y: auto;
+  visibility: hidden;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
   border-color: var(--cpy-bg-basic-border);
   transform: translate3d(-100%, 0, 0);
   background-color: var(--bg-color);
 
   &--open {
-    @apply transform-none visible;
+    transform: none;
+    visibility: visible;
   }
 
   &--mode-over {
-    @apply max-w-[80%] top-0 bottom-0;
+    max-width: 80%;
+    top: 0px;
+    bottom: 0px;
   }
 
   &--mode-side {
-    @apply w-auto z-20;
+    width: auto;
+    z-index: 20;
     border-right-width: var(--border-width);
     scrollbar-gutter: stable;
   }
@@ -25,7 +38,8 @@
   .drawer {
     /* width */
     &::-webkit-scrollbar {
-      @apply w-2 h-2;
+      width: 0.5rem;
+      height: 0.5rem;
     }
 
     /* Track */
@@ -36,7 +50,7 @@
     /* Handle */
     &::-webkit-scrollbar-thumb {
       background-color: var(--cpy-bg-basic);
-      @apply rounded;
+      border-radius: 0.25rem/* 4px */;
     }
 
     /* Handle on hover */

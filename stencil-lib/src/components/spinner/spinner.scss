@@ -7,15 +7,20 @@
   --border-width: var(--cpy-spinner-border-width, 0.25rem);
   border-color: var(--border-color);
   border-width: var(--border-width);
-  @apply rounded-full h-8 w-8 border-r-transparent;
+  border-radius: 9999px;
+  height: 2rem/* 32px */;
+  width: 2rem/* 32px */;
+  border-right-color: transparent;
   animation: spin 1s linear infinite;
 
   &-size--small {
-    @apply h-4 w-4;
+    height: 1rem/* 16px */;
+    width: 1rem/* 16px */;
   }
 
   &-size--large {
-    @apply h-16 w-16;
+    height: 4rem/* 64px */;
+    width: 4rem/* 64px */;
   }
   
   &-type--primary {
@@ -46,9 +51,9 @@
 
 @keyframes spin {
   from {
-    transform:rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    transform:rotate(360deg);
+    transform: rotate(360deg);
   }
 }

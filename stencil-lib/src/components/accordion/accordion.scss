@@ -1,8 +1,20 @@
+@import '../../styles/mixins/icon-size.scss';
+
 .accordion {
   --accordion-bg: var(--cpy-accordion-header-bg, transparent);
   --accordion-hover-bg: var(--cpy-accordion-header-hover-bg, var(--cpy-bg-hover));
   --accordion-text-color: var(--cpy-accordion-header-text-color, inherit);
-  @apply flex gap-4 w-full px-2 py-2 justify-between cursor-pointer select-none items-center;
+  display: flex;
+  gap: 1rem/* 16px */;
+  width: 100%;
+  padding-left: 0.5rem/* 8px */;
+  padding-right: 0.5rem/* 8px */;
+  padding-top: 0.5rem/* 8px */;
+  padding-bottom: 0.5rem/* 8px */;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  align-items: center;
   background-color: var(--accordion-bg);
   color: var(--accordion-text-color);
 
@@ -11,33 +23,42 @@
   }
 
   &__container {
-    @apply border-b;
+    border-bottom-width: 1px;
     border-color: var(--cpy-bg-basic-border);
   }
 
   cpy-icon {
-    @apply transition icon-size-7;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    @include icon-size(7);
   }
 
   &--small {
-    @apply text-sm py-1;
+    font-size: 0.875rem/* 14px */;
+    line-height: 1.25rem/* 20px */;
+    padding-top: 0.25rem/* 4px */;
+    padding-bottom: 0.25rem/* 4px */;
 
     cpy-icon {
-      @apply icon-size-6;
+      @include icon-size(6);
     }
   }
 
   &--large {
-    @apply text-lg py-4;
+    font-size: 1.125rem/* 18px */;
+    line-height: 1.75rem/* 28px */;
+    padding-top: 1rem/* 16px */;
+    padding-bottom: 1rem/* 16px */;
     
     cpy-icon {
-      @apply icon-size-8;
+      @include icon-size(8);
     }
   }
 
   &--open {
     cpy-icon {
-      @apply -rotate-180;
+      transform: rotate(-180deg);
     }
   }
 }

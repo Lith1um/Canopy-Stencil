@@ -3,25 +3,37 @@
 }
 
 .code-example {
-  @apply block border;
+  display: block;
+  border-width: 1px;
   background-color: var(--cpy-bg-light);
   border-color: var(--cpy-bg-basic-border);
 
   &--hidden {
-    @apply hidden #{'!important'};
+    display: none !important;
   }
 
   cpy-code-block {
-    @apply -mx-6 block mb-8;
+    margin-left: -1.5rem/* -24px */;
+    margin-right: -1.5rem/* -24px */;
+    display: block;
+    margin-bottom: 2rem;
     --cpy-code-block-border-radius: 0;
   }
 
   &__title {
-    @apply flex gap-1 w-full items-center mb-4 -mt-2;
+    display: flex;
+    gap: 0.25rem;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: -0.5rem;
     color: var(--cpy-text-light);
 
     & > *:first-child {
-      @apply flex-1 truncate
+      flex: 1 1 0%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 }

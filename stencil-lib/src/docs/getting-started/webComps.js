@@ -5,7 +5,15 @@
 </script>
 <link
   rel="stylesheet"
-  href="node_modules/@canopy-web/core/dist/core/core.css"/>`;
+  href="node_modules/@canopy-web/core/dist/core/core.css"/>
+<!-- Optional: inter var font packaged with canopy -->
+<link
+  rel="stylesheet"
+  href="node_modules/@canopy-web/core/dist/core/inter-var.css"/>
+<!-- Optional: default color scheme provided by canopy -->
+<link
+  rel="stylesheet"
+  href="node_modules/@canopy-web/core/dist/core/colors.css"/>`;
 
   document.getElementById('web-comp-install-unpkg-html').code = `<script
   type="module"
@@ -13,5 +21,13 @@
 </script>
 <link
   rel="stylesheet"
-  href="https://unpkg.com/@canopy-web/core@latest/dist/core/core.css"/>`;
+  href="https://unpkg.com/@canopy-web/core@latest/dist/core/core.css"/>
+<!-- Optional: inter var font packaged with canopy -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@canopy-web/core@latest/dist/core/inter-var.css"/>
+<!-- Optional: default color scheme provided by canopy -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@canopy-web/core@latest/dist/core/colors.css"/>`;
 })();
