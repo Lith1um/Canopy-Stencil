@@ -53,7 +53,7 @@ export class SlideIn {
   }
 
   disconnectedCallback(): void {
-    this.visibleObserver.disconnect();
-    this.invisibleObserver.disconnect();
+    this.visibleObserver?.disconnect();
+    this.invisibleObserver?.disconnect();
   }
 }
