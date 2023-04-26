@@ -26,6 +26,7 @@ import { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
 import { PopupActiveOn, PopupPosition } from "./components/popup/popup.type";
 import { ProgressBarAppearance, ProgressBarSize } from "./components/progress-bar/progress-bar.type";
 import { ShowMoreAppearance } from "./components/show-more/show-more.type";
+import { SlideInPosition } from "./components/slide-in/slide-in.type";
 import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
 import { StackDirection } from "./components/stack/stack.type";
 import { TableData } from "./components/table/types/table-data.type";
@@ -53,6 +54,7 @@ export { NavMenuItem } from "./components/nav-menu/nav-menu.interface";
 export { PopupActiveOn, PopupPosition } from "./components/popup/popup.type";
 export { ProgressBarAppearance, ProgressBarSize } from "./components/progress-bar/progress-bar.type";
 export { ShowMoreAppearance } from "./components/show-more/show-more.type";
+export { SlideInPosition } from "./components/slide-in/slide-in.type";
 export { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
 export { StackDirection } from "./components/stack/stack.type";
 export { TableData } from "./components/table/types/table-data.type";
@@ -301,6 +303,11 @@ export namespace Components {
         "showMoreText": string;
         "text": string;
         "type": ShowMoreAppearance;
+    }
+    interface CpySlideIn {
+        "delay": number;
+        "position": SlideInPosition;
+        "reset": boolean;
     }
     interface CpySpinner {
         "size": SpinnerSize;
@@ -663,6 +670,12 @@ declare global {
         prototype: HTMLCpyShowMoreElement;
         new (): HTMLCpyShowMoreElement;
     };
+    interface HTMLCpySlideInElement extends Components.CpySlideIn, HTMLStencilElement {
+    }
+    var HTMLCpySlideInElement: {
+        prototype: HTMLCpySlideInElement;
+        new (): HTMLCpySlideInElement;
+    };
     interface HTMLCpySpinnerElement extends Components.CpySpinner, HTMLStencilElement {
     }
     var HTMLCpySpinnerElement: {
@@ -762,6 +775,7 @@ declare global {
         "cpy-popup": HTMLCpyPopupElement;
         "cpy-progress-bar": HTMLCpyProgressBarElement;
         "cpy-show-more": HTMLCpyShowMoreElement;
+        "cpy-slide-in": HTMLCpySlideInElement;
         "cpy-spinner": HTMLCpySpinnerElement;
         "cpy-splash": HTMLCpySplashElement;
         "cpy-stack": HTMLCpyStackElement;
@@ -1010,6 +1024,11 @@ declare namespace LocalJSX {
         "text"?: string;
         "type"?: ShowMoreAppearance;
     }
+    interface CpySlideIn {
+        "delay"?: number;
+        "position"?: SlideInPosition;
+        "reset"?: boolean;
+    }
     interface CpySpinner {
         "size"?: SpinnerSize;
         "type"?: SpinnerAppearance;
@@ -1096,6 +1115,7 @@ declare namespace LocalJSX {
         "cpy-popup": CpyPopup;
         "cpy-progress-bar": CpyProgressBar;
         "cpy-show-more": CpyShowMore;
+        "cpy-slide-in": CpySlideIn;
         "cpy-spinner": CpySpinner;
         "cpy-splash": CpySplash;
         "cpy-stack": CpyStack;
@@ -1150,6 +1170,7 @@ declare module "@stencil/core" {
             "cpy-popup": LocalJSX.CpyPopup & JSXBase.HTMLAttributes<HTMLCpyPopupElement>;
             "cpy-progress-bar": LocalJSX.CpyProgressBar & JSXBase.HTMLAttributes<HTMLCpyProgressBarElement>;
             "cpy-show-more": LocalJSX.CpyShowMore & JSXBase.HTMLAttributes<HTMLCpyShowMoreElement>;
+            "cpy-slide-in": LocalJSX.CpySlideIn & JSXBase.HTMLAttributes<HTMLCpySlideInElement>;
             "cpy-spinner": LocalJSX.CpySpinner & JSXBase.HTMLAttributes<HTMLCpySpinnerElement>;
             "cpy-splash": LocalJSX.CpySplash & JSXBase.HTMLAttributes<HTMLCpySplashElement>;
             "cpy-stack": LocalJSX.CpyStack & JSXBase.HTMLAttributes<HTMLCpyStackElement>;

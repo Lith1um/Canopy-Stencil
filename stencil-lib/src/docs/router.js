@@ -57,6 +57,7 @@ const menuItems = mobileNavMenu.items = desktopNavMenu.items = [
       { title: 'Overlay', type: 'basic', url: '/comps/overlay' },
       { title: 'Page Container', type: 'basic', url: '/comps/pageContainer' },
       { title: 'Page Content', type: 'basic', url: '/comps/pageContent' },
+      { title: 'Slide In', type: 'basic', url: '/comps/slideIn' },
       { title: 'Table', type: 'basic', url: '/comps/table' },
       { title: 'Tabs', type: 'basic', url: '/comps/tabs' },
       { title: 'Toolbar', type: 'basic', url: '/comps/toolbar' },

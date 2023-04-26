@@ -1,0 +1,111 @@
+<h1>Slide Ins</h1>
+
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Slide In">
+        <p>
+          Canopy slide ins provide an animated entry to elements when scrolled into view. They are referenced using the <cpy-code-snippet code="<cpy-carousel>"></cpy-code-snippet> custom HTML element.
+      The component utilizes the slot element, allowing you to render your own items in the slide in.
+        </p>
+
+        <cpy-code-example header="Slide In" id="overview-code">
+<cpy-slide-in reset>
+  <cpy-card>
+    <div style="display: flex; gap: 1rem; align-items: center; padding: 12px;">
+      <cpy-avatar size="x-large" src="https://react.semantic-Ui.com/images/avatar/large/matthew.png"></cpy-avatar>
+      <div style="flex: 1;">
+        <p style="margin: 0; font-weight: 500; font-size: 1.125rem;">Alex Rayner</p>
+        <p style="margin: 0; font-size: 0.75rem;">Front End Developer</p>
+      </div>
+    </div>
+  </cpy-card>
+</cpy-slide-in>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. There are currently no styling variables for this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
+
+        <h4 id="host">Host styles</h4>
+        <p>
+          Canopy components are designed to have their host element styled directly so that it can be overridden for specific implementation purposes.This is generally used to adjust <cpy-code-snippet code="display"></cpy-code-snippet>, <cpy-code-snippet code="position"></cpy-code-snippet>, <cpy-code-snippet code="background-color"></cpy-code-snippet>, <cpy-code-snippet code="padding"></cpy-code-snippet>, <cpy-code-snippet code="margin"></cpy-code-snippet>, <cpy-code-snippet code="width"></cpy-code-snippet>, <cpy-code-snippet code="height"></cpy-code-snippet> etc.
+        </p>
+        <p>
+          There are likely other properties that you can alter on the host element for each individual component, open your dev tools and inspect each component to see what you can override on the host!
+        </p>
+
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          Slide Ins serve a wide variety of scenarios and may contain many different types of content. Due to this flexible nature, the appropriate accessibility treatment depends on how you use <cpy-code-snippet code="<cpy-slide-in>"></cpy-code-snippet>.
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Slide In">
+        <h4 id="api" title="API">API Reference for Canopy Slide In</h4>
+        <cpy-code-snippet code="<cpy-slide-in>"></cpy-code-snippet>
+
+        <div class="section">
+        </div>
+
+        <h4 id="types">Types</h4>
+        <cpy-code-block id="comp-interfaces"></cpy-code-block>
+
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
+
+        <h4 id="slots">Slots</h4>
+        <p>Inject custom content into the component</p>
+        <cpy-table id="comp-slots"></cpy-table>
+
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic Slide in" id="example-code-basic">
+<cpy-slide-in position="right" style="display: block;">
+  <img src="https://raw.githubusercontent.com/Lith1um/Canopy-Stencil/main/logo.png" alt="Logo" width="250" style="margin: 2rem auto;">
+</cpy-slide-in>
+<cpy-slide-in>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et dui vel nisl posuere tempus. Vivamus elit mi, rutrum volutpat urna ullamcorper, fringilla feugiat risus. Etiam consectetur augue at rhoncus suscipit. Sed volutpat tellus sed nunc interdum semper. Cras ut sapien vel velit finibus sagittis nec eget massa. Quisque feugiat, quam et gravida tempor, quam felis egestas turpis, id aliquam quam elit ac sem. Nullam imperdiet orci elit, a rutrum nulla sollicitudin non. Duis aliquet elit dui, elementum elementum enim dictum sit amet. Aliquam finibus orci non libero tristique, non varius eros ullamcorper. Donec congue aliquam enim finibus tincidunt. Nullam a tempus mauris. Praesent a aliquet orci, vel ultricies orci. Duis pretium neque at congue sagittis.</p>
+</cpy-slide-in>
+<cpy-slide-in position="right">
+  <p>Phasellus mattis, dui in imperdiet vulputate, lorem nulla vulputate augue, ut aliquet nisi erat sit amet erat. Ut tempor, libero ac tincidunt aliquet, nulla neque lacinia turpis, quis egestas orci massa non enim. Donec eleifend aliquet posuere. Duis sed aliquet leo. Sed pellentesque vitae nulla a dictum. Aliquam non ultrices turpis. Donec suscipit faucibus urna, sit amet placerat velit condimentum at. Pellentesque ac semper purus.</p>
+</cpy-slide-in>
+      </cpy-code-example>
+      <cpy-code-example header="Resetting slide in" id="example-code-reset">
+<cpy-slide-in reset>
+  <p>Sed eu urna id est tincidunt placerat eget ac sem. Curabitur a cursus mauris. Aenean dictum tellus vitae orci finibus, quis viverra neque porttitor. Curabitur maximus est lectus, sit amet vulputate diam auctor sed. In at leo vestibulum, volutpat metus nec, lacinia orci. Nunc faucibus justo ultrices sagittis mattis. Nullam ornare purus quis tellus vestibulum vestibulum. Donec ac velit metus. Suspendisse auctor facilisis sapien, ut commodo ante porta sit amet. Maecenas eget posuere felis, non feugiat lectus.</p>
+</cpy-slide-in>
+<cpy-slide-in reset position="right">
+  <p>Integer ex ipsum, maximus at tincidunt non, varius eget dolor. Phasellus sed turpis et velit congue tempus ac eget felis. Duis ultricies, quam id convallis interdum, nisi turpis pharetra tellus, quis rutrum elit sapien vitae urna. Proin porttitor risus et arcu blandit, vel laoreet tellus elementum. Pellentesque eu pharetra sem. Suspendisse a malesuada tellus, et scelerisque tellus. Suspendisse quis ipsum euismod, condimentum enim et, semper magna. Aenean nulla neque, eleifend a erat non, tincidunt lobortis nunc. Pellentesque vitae metus enim. Vestibulum bibendum eget ipsum non consequat. Pellentesque quis pellentesque lacus, ut pharetra velit. Vivamus nec sagittis ligula.  </p>
+</cpy-slide-in>
+<cpy-slide-in reset>
+  <p>Etiam porta, purus quis aliquet consequat, mauris risus ornare ipsum, nec consequat est turpis vel elit. Vivamus ac consectetur nisi. In hac habitasse platea dictumst. Curabitur tempus magna a tortor egestas lacinia quis eget ante. Vivamus sollicitudin condimentum nisi, a semper ligula dapibus id. Donec eu massa nisl. Curabitur faucibus urna tristique nisi suscipit, at blandit nisi consequat. Fusce ac hendrerit lectus. Donec tempus sollicitudin quam, vel porta purus luctus id. Pellentesque sed dapibus metus, eget scelerisque dui. Etiam dapibus dolor nisl, eget rhoncus lorem blandit in.</p>
+</cpy-slide-in>
+      </cpy-code-example>
+      <cpy-code-example header="Resetting slide in within flex layout" id="example-code-flex">
+<div style="display: flex; gap: 2rem; width: 100%;">
+  <cpy-slide-in reset style="flex: 1;">
+    <img src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" style="height: 25rem; object-fit:cover; border-radius: 0.5rem;"/>
+  </cpy-slide-in>
+  <cpy-slide-in reset position="right" style="flex: 1;">
+    <p>Phasellus mattis, dui in imperdiet vulputate, lorem nulla vulputate augue, ut aliquet nisi erat sit amet erat. Ut tempor, libero ac tincidunt aliquet, nulla neque lacinia turpis, quis egestas orci massa non enim. Donec eleifend aliquet posuere. Duis sed aliquet leo. Sed pellentesque vitae nulla a dictum. Aliquam non ultrices turpis. Donec suscipit faucibus urna, sit amet placerat velit condimentum at. Pellentesque ac semper purus.</p>
+    <p>Phasellus mattis, dui in imperdiet vulputate, lorem nulla vulputate augue, ut aliquet nisi erat sit amet erat. Ut tempor, libero ac tincidunt aliquet, nulla neque lacinia turpis, quis egestas orci massa non enim. Donec eleifend aliquet posuere. Duis sed aliquet leo. Sed pellentesque vitae nulla a dictum. Aliquam non ultrices turpis. Donec suscipit faucibus urna, sit amet placerat velit condimentum at. Pellentesque ac semper purus.</p>
+  </cpy-slide-in>
+</div>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
+<script src="/docs/comps/slideIn.js">
+</script>
