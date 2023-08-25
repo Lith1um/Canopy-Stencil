@@ -10,6 +10,7 @@
 | Property      | Attribute     | Description | Type                                                | Default     |
 | ------------- | ------------- | ----------- | --------------------------------------------------- | ----------- |
 | `disabled`    | `disabled`    |             | `boolean`                                           | `undefined` |
+| `inputValue`  | `input-value` |             | `string`                                            | `undefined` |
 | `label`       | `label`       |             | `string`                                            | `undefined` |
 | `maxRows`     | `max-rows`    |             | `number`                                            | `undefined` |
 | `minRows`     | `min-rows`    |             | `number`                                            | `1`         |
@@ -17,7 +18,6 @@
 | `required`    | `required`    |             | `boolean`                                           | `undefined` |
 | `size`        | `size`        |             | `"default" \| "large" \| "small"`                   | `'default'` |
 | `validators`  | --            |             | `(string \| ValidatorEntry \| Validator<string>)[]` | `undefined` |
-| `value`       | `value`       |             | `string`                                            | `undefined` |
 
 
 ## Events

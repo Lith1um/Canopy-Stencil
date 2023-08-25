@@ -14,7 +14,7 @@ type Validators = Array<string | ValidatorEntry | Validator<string | number>>;`;
     { name: 'max-rows', description: 'Max number of rows to display', type: "number", default: "", required: false },
     { name: 'disabled', description: 'Whether the textarea is disabled', type: "boolean", default: "", required: false },
     { name: 'validators', description: 'list of validators for the textarea', type: "Validators", default: "", required: false },
-    { name: 'value', description: 'Textarea value', type: "string", default: "", required: false },
+    { name: 'inputValue', description: 'Textarea value', type: "string", default: "", required: false },
     { name: 'size', description: 'Textarea size', type: "InputSize", default: "'default'", required: false },
     { name: 'label', description: 'Label for textarea', type: "string", default: "", required: false },
     { name: 'required', description: 'Whether the textarea is required or not', type: "boolean", default: "false", required: false },
