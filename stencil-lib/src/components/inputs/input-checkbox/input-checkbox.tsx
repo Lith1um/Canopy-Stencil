@@ -31,7 +31,7 @@ export class InputCheckbox implements BaseInput<boolean> {
   validators: Array<string | ValidatorEntry | Validator<boolean>>;
 
   @Event()
-  valueChange: EventEmitter<boolean>;
+  inputChange: EventEmitter<boolean>;
 
   @State()
   interacted: boolean = false;
@@ -79,7 +79,7 @@ export class InputCheckbox implements BaseInput<boolean> {
     }
     const target = e.target as HTMLInputElement;
     this.value = target.checked;
-    this.valueChange.emit(this.value);
+    this.inputChange.emit(this.value);
   }
 
   handleBlur(): void {

@@ -38,7 +38,7 @@ export class Input implements BaseInput<string | number> {
   validators: Array<string | ValidatorEntry | Validator<string | number>>;
   
   @Event()
-  valueChange: EventEmitter<string | number>;
+  inputChange: EventEmitter<string | number>;
 
   @State()
   interacted: boolean = false;
@@ -72,7 +72,7 @@ export class Input implements BaseInput<string | number> {
       : target.value;
 
     this.value = value;
-    this.valueChange.emit(value);
+    this.inputChange.emit(value);
   }
 
   handleBlur(): void {

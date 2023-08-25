@@ -23,7 +23,7 @@
 
 | Event         | Description | Type                            |
 | ------------- | ----------- | ------------------------------- |
-| `valueChange` |             | `CustomEvent<number \| string>` |
+| `inputChange` |             | `CustomEvent<number \| string>` |
 
 
 ## Methods

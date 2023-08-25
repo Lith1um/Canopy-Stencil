@@ -7,9 +7,7 @@ import { ValueAccessor } from './value-accessor';
   /* tslint:disable-next-line:directive-selector */
   selector: 'cpy-input, cpy-input-select, cpy-input-textarea',
   host: {
-    '(valueChange)': 'handleChangeEvent($event.target.value)',
-    '(valueChange)': 'handleChangeEvent($event.target.value)',
-    '(valueChange)': 'handleChangeEvent($event.target.value)'
+    '(inputChange)': 'handleChangeEvent($event.target.value)'
   },
   providers: [
     {

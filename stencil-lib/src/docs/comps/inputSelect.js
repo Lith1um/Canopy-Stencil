@@ -23,7 +23,7 @@ type Validators = Array<string | ValidatorEntry | Validator<string | number>>;`;
     { name: 'active', description: 'UI state for option (used internally by select)', type: "boolean", default: "false", required: false },
   ];
   document.getElementById('comp-events').tableData = [
-    { name: 'valueChange', description: 'Triggered when the text select value is changed', emitsType: "string | number" },
+    { name: 'inputChange', description: 'Triggered when the text select value is changed', emitsType: "string | number" },
   ];
   document.getElementById('comp-events-option').tableData = [
     { name: 'optionSelected', description: 'Triggered when the option is selected (used internally by select)', emitsType: "string | number" },

@@ -252,13 +252,13 @@
     const darkModeCheckbox = document.getElementById('darkModeCheckbox');
     const paletteElement = document.getElementById('palette-picker');
     paletteElement.value = currentPalette;
-    paletteElement.addEventListener('valueChange', (e) => {
+    paletteElement.addEventListener('inputChange', (e) => {
       document.querySelector("html").classList.toggle(currentPalette);
       document.querySelector("html").classList.add(e.detail);
       currentPalette = paletteElement.value;
     });
     const onMenuClick = () => drawerElement.opened = !drawerElement.opened;
-    darkModeCheckbox.addEventListener('valueChange', () => {
+    darkModeCheckbox.addEventListener('inputChange', () => {
       document.querySelector("html").classList.toggle("dark");
     });
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {

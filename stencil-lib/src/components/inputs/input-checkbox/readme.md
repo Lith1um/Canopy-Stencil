@@ -21,7 +21,7 @@
 
 | Event         | Description | Type                   |
 | ------------- | ----------- | ---------------------- |
-| `valueChange` |             | `CustomEvent<boolean>` |
+| `inputChange` |             | `CustomEvent<boolean>` |
 
 
 ## Methods

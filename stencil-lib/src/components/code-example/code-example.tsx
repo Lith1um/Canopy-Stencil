@@ -32,11 +32,12 @@ export class CodeExample {
           </cpy-tooltip>
         </div>
 
-        <cpy-code-block
-          class={this.showCode ? '' : 'code-example--hidden'}
-          language={this.language}
-          code={this.code || this.host.innerHTML.trim().replace(/( |")hydrated"/g, '$1"').replace(/ class=""/g, '')}>
-        </cpy-code-block>
+        <cpy-expand-collapse expanded={this.showCode}>
+          <cpy-code-block
+            language={this.language}
+            code={this.code || this.host.innerHTML.trim().replace(/( |")hydrated"/g, '$1"').replace(/ class=""/g, '')}>
+          </cpy-code-block>
+        </cpy-expand-collapse>
       
         <slot/>
       </cpy-card>
