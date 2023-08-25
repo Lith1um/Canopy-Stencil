@@ -10,7 +10,7 @@
 type Validators = Array<string | ValidatorEntry | Validator<boolean>>;`;
 
   document.getElementById('comp-props').tableData = [
-    { name: 'value', description: 'Whether the checkbox is checked', type: "boolean", default: "", required: false },
+    { name: 'inputValue', description: 'Whether the checkbox is checked', type: "boolean", default: "", required: false },
     { name: 'size', description: 'Checkbox size', type: "InputSize", default: "'default'", required: false },
     { name: 'label', description: 'Label for the checkbox', type: "string", default: "", required: false },
     { name: 'disabled', description: 'Whether the checkbox is disabled', type: "boolean", default: "", required: false },

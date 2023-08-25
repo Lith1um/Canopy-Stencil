@@ -7,14 +7,14 @@
 
 ## Properties
 
-| Property     | Attribute  | Description | Type                                                 | Default     |
-| ------------ | ---------- | ----------- | ---------------------------------------------------- | ----------- |
-| `disabled`   | `disabled` |             | `boolean`                                            | `false`     |
-| `label`      | `label`    |             | `string`                                             | `undefined` |
-| `required`   | `required` |             | `boolean`                                            | `false`     |
-| `size`       | `size`     |             | `"default" \| "large" \| "small"`                    | `'default'` |
-| `validators` | --         |             | `(string \| ValidatorEntry \| Validator<boolean>)[]` | `undefined` |
-| `value`      | `value`    |             | `boolean`                                            | `false`     |
+| Property     | Attribute     | Description | Type                                                 | Default     |
+| ------------ | ------------- | ----------- | ---------------------------------------------------- | ----------- |
+| `disabled`   | `disabled`    |             | `boolean`                                            | `false`     |
+| `inputValue` | `input-value` |             | `boolean`                                            | `false`     |
+| `label`      | `label`       |             | `string`                                             | `undefined` |
+| `required`   | `required`    |             | `boolean`                                            | `false`     |
+| `size`       | `size`        |             | `"default" \| "large" \| "small"`                    | `'default'` |
+| `validators` | --            |             | `(string \| ValidatorEntry \| Validator<boolean>)[]` | `undefined` |
 
 
 ## Events

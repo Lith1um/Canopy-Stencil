@@ -5,7 +5,7 @@ import { Validator } from '../validation/types/validator.type';
 
 // TODO: add example method implementations
 export interface BaseInput<T> {
-  value: T;
+  inputValue: T;
   label: string;
   placeholder?: string;
   required: boolean;

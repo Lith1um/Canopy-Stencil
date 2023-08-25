@@ -17,7 +17,7 @@
   const splashElem = document.getElementById('disabled-splash');
   document.getElementById('splash-toggle').addEventListener('inputChange', (e) => splashElem.disabled = e.detail);
 
-  document.getElementById('example-code').code = `<cpy-input-toggle label="Splash disabled" value></cpy-input-toggle>
+  document.getElementById('example-code').code = `<cpy-input-toggle label="Splash disabled" inputValue></cpy-input-toggle>
 <div style="height: 10rem; width: 10rem; background-color: var(--cpy-bg-white);">
   <cpy-splash disabled>
   </cpy-splash>

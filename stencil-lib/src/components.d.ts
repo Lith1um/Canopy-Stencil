@@ -183,6 +183,7 @@ export namespace Components {
     }
     interface CpyInput {
         "disabled": boolean;
+        "inputValue": string | number;
         "isValid": () => Promise<boolean>;
         "label": string;
         "markAsTouched": () => Promise<void>;
@@ -191,7 +192,6 @@ export namespace Components {
         "size": InputSize;
         "type": InputType;
         "validators": Array<string | ValidatorEntry | Validator<string | number>>;
-        "value": string | number;
     }
     interface CpyInputBase {
         "closePopup": () => Promise<void>;
@@ -206,23 +206,23 @@ export namespace Components {
     }
     interface CpyInputCheckbox {
         "disabled": boolean;
+        "inputValue": boolean;
         "isValid": () => Promise<boolean>;
         "label": string;
         "markAsTouched": () => Promise<void>;
         "required": boolean;
         "size": InputSize;
         "validators": Array<string | ValidatorEntry | Validator<boolean>>;
-        "value": boolean;
     }
     interface CpyInputSelect {
         "disabled": boolean;
+        "inputValue": string | number;
         "isValid": () => Promise<boolean>;
         "label": string;
         "markAsTouched": () => Promise<void>;
         "required": boolean;
         "size": InputSize;
         "validators": Array<string | ValidatorEntry | Validator<string | number>>;
-        "value": string | number;
     }
     interface CpyInputSelectOption {
         "active": boolean;
@@ -232,6 +232,7 @@ export namespace Components {
     }
     interface CpyInputTextarea {
         "disabled": boolean;
+        "inputValue": string;
         "isValid": () => Promise<boolean>;
         "label": string;
         "markAsTouched": () => Promise<void>;
@@ -241,10 +242,10 @@ export namespace Components {
         "required": boolean;
         "size": InputSize;
         "validators": Array<string | ValidatorEntry | Validator<string>>;
-        "value": string;
     }
     interface CpyInputToggle {
         "disabled": boolean;
+        "inputValue": boolean;
         "isValid": () => Promise<boolean>;
         "label": string;
         "markAsTouched": () => Promise<void>;
@@ -252,7 +253,6 @@ export namespace Components {
         "size": InputSize;
         "switchAfter": boolean;
         "validators": Array<string | ValidatorEntry | Validator<boolean>>;
-        "value": boolean;
     }
     interface CpyLink {
         "func": () => void;
@@ -907,6 +907,7 @@ declare namespace LocalJSX {
     }
     interface CpyInput {
         "disabled"?: boolean;
+        "inputValue"?: string | number;
         "label"?: string;
         "onInputChange"?: (event: CpyInputCustomEvent<string | number>) => void;
         "placeholder"?: string;
@@ -914,7 +915,6 @@ declare namespace LocalJSX {
         "size"?: InputSize;
         "type"?: InputType;
         "validators"?: Array<string | ValidatorEntry | Validator<string | number>>;
-        "value"?: string | number;
     }
     interface CpyInputBase {
         "disabled"?: boolean;
@@ -930,21 +930,21 @@ declare namespace LocalJSX {
     }
     interface CpyInputCheckbox {
         "disabled"?: boolean;
+        "inputValue"?: boolean;
         "label"?: string;
         "onInputChange"?: (event: CpyInputCheckboxCustomEvent<boolean>) => void;
         "required"?: boolean;
         "size"?: InputSize;
         "validators"?: Array<string | ValidatorEntry | Validator<boolean>>;
-        "value"?: boolean;
     }
     interface CpyInputSelect {
         "disabled"?: boolean;
+        "inputValue"?: string | number;
         "label"?: string;
         "onInputChange"?: (event: CpyInputSelectCustomEvent<string | number>) => void;
         "required"?: boolean;
         "size"?: InputSize;
         "validators"?: Array<string | ValidatorEntry | Validator<string | number>>;
-        "value"?: string | number;
     }
     interface CpyInputSelectOption {
         "active"?: boolean;
@@ -955,6 +955,7 @@ declare namespace LocalJSX {
     }
     interface CpyInputTextarea {
         "disabled"?: boolean;
+        "inputValue"?: string;
         "label"?: string;
         "maxRows"?: number;
         "minRows"?: number;
@@ -963,17 +964,16 @@ declare namespace LocalJSX {
         "required"?: boolean;
         "size"?: InputSize;
         "validators"?: Array<string | ValidatorEntry | Validator<string>>;
-        "value"?: string;
     }
     interface CpyInputToggle {
         "disabled"?: boolean;
+        "inputValue"?: boolean;
         "label"?: string;
         "onInputChange"?: (event: CpyInputToggleCustomEvent<boolean>) => void;
         "required"?: boolean;
         "size"?: InputSize;
         "switchAfter"?: boolean;
         "validators"?: Array<string | ValidatorEntry | Validator<boolean>>;
-        "value"?: boolean;
     }
     interface CpyLink {
         "func"?: () => void;

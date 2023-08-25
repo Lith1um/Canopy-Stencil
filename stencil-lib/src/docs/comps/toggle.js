@@ -9,7 +9,7 @@
 type Validators = Array<string | ValidatorEntry | Validator<boolean>>;`;
 
   document.getElementById('comp-props').tableData = [
-    { name: 'value', description: 'Whether the toggle is checked', type: "boolean", default: "", required: false },
+    { name: 'inputValue', description: 'Whether the toggle is checked', type: "boolean", default: "", required: false },
     { name: 'size', description: 'Toggle size', type: "InputSize", default: "'default'", required: false },
     { name: 'label', description: 'Label for the toggle', type: "string", default: "", required: false },
     { name: 'switch-after', description: 'Positions the switch after the label', type: "boolean", default: "false", required: false },

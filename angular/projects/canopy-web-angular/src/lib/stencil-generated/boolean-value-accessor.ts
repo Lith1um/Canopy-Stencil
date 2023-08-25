@@ -7,7 +7,7 @@ import { ValueAccessor } from './value-accessor';
   /* tslint:disable-next-line:directive-selector */
   selector: 'cpy-input-toggle, cpy-input-checkbox',
   host: {
-    '(inputChange)': 'handleChangeEvent($event.target.value)'
+    '(inputChange)': 'handleChangeEvent($event.target.inputValue)'
   },
   providers: [
     {

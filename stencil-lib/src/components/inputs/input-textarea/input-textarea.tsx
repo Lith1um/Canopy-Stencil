@@ -14,7 +14,7 @@ import { onResize } from '../../../utils/elements';
 export class InputTextarea implements BaseInput<string> {
 
   @Prop({mutable: true})
-  value: string;
+  inputValue: string;
 
   @Prop()
   label: string;
@@ -46,7 +46,7 @@ export class InputTextarea implements BaseInput<string> {
   @State()
   interacted: boolean = false;
 
-  @Watch('value')
+  @Watch('inputValue')
   handleAutoSize(): void {
     // get the line height of the textarea from the computed styles
     const lineHeight = parseFloat(getComputedStyle(this.textareaElem).lineHeight.split('px')[0]);
@@ -73,7 +73,7 @@ export class InputTextarea implements BaseInput<string> {
     if (this.disabled) {
       return true;
     }
-    return this._validator.validate(this.value);
+    return this._validator.validate(this.inputValue);
   }
 
   @Method()
@@ -88,7 +88,7 @@ export class InputTextarea implements BaseInput<string> {
   handleChange(e: Event) {
     const target = e.target as HTMLTextAreaElement;
 
-    this.value = target.value;
+    this.inputValue = target.value;
     this.inputChange.emit(target.value);
   }
 
@@ -122,7 +122,7 @@ export class InputTextarea implements BaseInput<string> {
   }
 
   render() {
-    const error = !this._validator.validate(this.value)
+    const error = !this._validator.validate(this.inputValue)
       ? this._validator.errorMessage
       : '';
 
@@ -143,7 +143,7 @@ export class InputTextarea implements BaseInput<string> {
           required={this.required}
           placeholder={this.placeholder}
           disabled={this.disabled}
-          value={this.value}
+          value={this.inputValue}
           onInput={(e) => this.handleChange(e)}
           onBlur={() => this.handleBlur()}/>
 

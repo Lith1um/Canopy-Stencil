@@ -19,7 +19,7 @@ export class InputSelect implements BaseInput<string | number> {
   label: string;
 
   @Prop({mutable: true})
-  value: string | number;
+  inputValue: string | number;
 
   @Prop()
   required: boolean = false;
@@ -42,7 +42,7 @@ export class InputSelect implements BaseInput<string | number> {
   @State()
   selectedLabel: string;
 
-  @Watch('value')
+  @Watch('inputValue')
   handleValueChange(val: string | number): void {
     if (!this.optionElems) {
       return;
@@ -90,7 +90,7 @@ export class InputSelect implements BaseInput<string | number> {
     if (this.disabled) {
       return true;
     }
-    return this._validator.validate(this.value);
+    return this._validator.validate(this.inputValue);
   }
 
   @Method()
@@ -115,8 +115,8 @@ export class InputSelect implements BaseInput<string | number> {
     if (this.disabled) {
       return;
     }
-    this.value = e.detail;
-    this.inputChange.emit(this.value);
+    this.inputValue = e.detail;
+    this.inputChange.emit(this.inputValue);
   }
 
   handleBlur(): void {
@@ -130,7 +130,7 @@ export class InputSelect implements BaseInput<string | number> {
   handleOptionsChange(): void {
     this.optionElems = Array.from(this.host.querySelectorAll('cpy-input-select-option'));
     this.assignOptionSize();
-    this.handleValueChange(this.value);
+    this.handleValueChange(this.inputValue);
   }
 
   focusSelect(): void {
@@ -138,7 +138,7 @@ export class InputSelect implements BaseInput<string | number> {
   }
 
   render() {
-    const error = !this._validator.validate(this.value)
+    const error = !this._validator.validate(this.inputValue)
       ? this._validator.errorMessage
       : '';
 

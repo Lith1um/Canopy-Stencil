@@ -7,14 +7,14 @@
 
 ## Properties
 
-| Property     | Attribute  | Description | Type                                                          | Default     |
-| ------------ | ---------- | ----------- | ------------------------------------------------------------- | ----------- |
-| `disabled`   | `disabled` |             | `boolean`                                                     | `false`     |
-| `label`      | `label`    |             | `string`                                                      | `undefined` |
-| `required`   | `required` |             | `boolean`                                                     | `false`     |
-| `size`       | `size`     |             | `"default" \| "large" \| "small"`                             | `'default'` |
-| `validators` | --         |             | `(string \| ValidatorEntry \| Validator<string \| number>)[]` | `undefined` |
-| `value`      | `value`    |             | `number \| string`                                            | `undefined` |
+| Property     | Attribute     | Description | Type                                                          | Default     |
+| ------------ | ------------- | ----------- | ------------------------------------------------------------- | ----------- |
+| `disabled`   | `disabled`    |             | `boolean`                                                     | `false`     |
+| `inputValue` | `input-value` |             | `number \| string`                                            | `undefined` |
+| `label`      | `label`       |             | `string`                                                      | `undefined` |
+| `required`   | `required`    |             | `boolean`                                                     | `false`     |
+| `size`       | `size`        |             | `"default" \| "large" \| "small"`                             | `'default'` |
+| `validators` | --            |             | `(string \| ValidatorEntry \| Validator<string \| number>)[]` | `undefined` |
 
 
 ## Events
