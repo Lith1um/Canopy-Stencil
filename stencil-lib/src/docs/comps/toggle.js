@@ -18,7 +18,7 @@ type Validators = Array<string | ValidatorEntry | Validator<boolean>>;`;
     { name: 'required', description: 'Whether the toggle is required or not', type: "boolean", default: "false", required: false },
   ];
   document.getElementById('comp-events').tableData = [
-    { name: 'valueChange', description: 'Triggered when the toggle value is changed', emitsType: "boolean" },
+    { name: 'inputChange', description: 'Triggered when the toggle value is changed', emitsType: "boolean" },
   ];
   document.getElementById('comp-methods').tableData = [
     { name: 'isValid()', description: 'Returns validation result for the toggle', returnType: "Promise<boolean>" },

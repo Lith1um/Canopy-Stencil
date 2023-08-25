@@ -908,7 +908,7 @@ declare namespace LocalJSX {
     interface CpyInput {
         "disabled"?: boolean;
         "label"?: string;
-        "onValueChange"?: (event: CpyInputCustomEvent<string | number>) => void;
+        "onInputChange"?: (event: CpyInputCustomEvent<string | number>) => void;
         "placeholder"?: string;
         "required"?: boolean;
         "size"?: InputSize;
@@ -931,7 +931,7 @@ declare namespace LocalJSX {
     interface CpyInputCheckbox {
         "disabled"?: boolean;
         "label"?: string;
-        "onValueChange"?: (event: CpyInputCheckboxCustomEvent<boolean>) => void;
+        "onInputChange"?: (event: CpyInputCheckboxCustomEvent<boolean>) => void;
         "required"?: boolean;
         "size"?: InputSize;
         "validators"?: Array<string | ValidatorEntry | Validator<boolean>>;
@@ -940,7 +940,7 @@ declare namespace LocalJSX {
     interface CpyInputSelect {
         "disabled"?: boolean;
         "label"?: string;
-        "onValueChange"?: (event: CpyInputSelectCustomEvent<string | number>) => void;
+        "onInputChange"?: (event: CpyInputSelectCustomEvent<string | number>) => void;
         "required"?: boolean;
         "size"?: InputSize;
         "validators"?: Array<string | ValidatorEntry | Validator<string | number>>;
@@ -958,7 +958,7 @@ declare namespace LocalJSX {
         "label"?: string;
         "maxRows"?: number;
         "minRows"?: number;
-        "onValueChange"?: (event: CpyInputTextareaCustomEvent<string>) => void;
+        "onInputChange"?: (event: CpyInputTextareaCustomEvent<string>) => void;
         "placeholder"?: string;
         "required"?: boolean;
         "size"?: InputSize;
@@ -968,7 +968,7 @@ declare namespace LocalJSX {
     interface CpyInputToggle {
         "disabled"?: boolean;
         "label"?: string;
-        "onValueChange"?: (event: CpyInputToggleCustomEvent<boolean>) => void;
+        "onInputChange"?: (event: CpyInputToggleCustomEvent<boolean>) => void;
         "required"?: boolean;
         "size"?: InputSize;
         "switchAfter"?: boolean;

@@ -12,7 +12,7 @@ export interface BaseInput<T> {
   disabled: boolean;
   size: InputSize;
   validators: Array<string | ValidatorEntry | Validator<T>>;
-  valueChange: EventEmitter<T>;
+  inputChange: EventEmitter<T>;
   interacted: boolean;
   _validator: Validator<T>;
   

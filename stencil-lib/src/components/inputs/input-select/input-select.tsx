@@ -34,7 +34,7 @@ export class InputSelect implements BaseInput<string | number> {
   validators: Array<string | ValidatorEntry | Validator<string | number>>;
 
   @Event()
-  valueChange: EventEmitter<string | number>;
+  inputChange: EventEmitter<string | number>;
 
   @State()
   interacted: boolean = false;
@@ -116,7 +116,7 @@ export class InputSelect implements BaseInput<string | number> {
       return;
     }
     this.value = e.detail;
-    this.valueChange.emit(this.value);
+    this.inputChange.emit(this.value);
   }
 
   handleBlur(): void {

@@ -41,7 +41,7 @@ export class InputTextarea implements BaseInput<string> {
   validators: Array<string | ValidatorEntry | Validator<string>>;
   
   @Event()
-  valueChange: EventEmitter<string>;
+  inputChange: EventEmitter<string>;
 
   @State()
   interacted: boolean = false;
@@ -89,7 +89,7 @@ export class InputTextarea implements BaseInput<string> {
     const target = e.target as HTMLTextAreaElement;
 
     this.value = target.value;
-    this.valueChange.emit(target.value);
+    this.inputChange.emit(target.value);
   }
 
   handleBlur(): void {
