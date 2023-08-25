@@ -24,7 +24,7 @@
 
 | Event         | Description | Type                  |
 | ------------- | ----------- | --------------------- |
-| `valueChange` |             | `CustomEvent<string>` |
+| `inputChange` |             | `CustomEvent<string>` |
 
 
 ## Methods

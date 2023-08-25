@@ -23,6 +23,7 @@
 - [cpy-tooltip](../tooltip)
 - [cpy-button](../button)
 - [cpy-icon](../icon)
+- [cpy-expand-collapse](../expand-collapse)
 - [cpy-code-block](../code-block)
 
 ### Graph
@@ -32,6 +33,7 @@ graph TD;
   cpy-code-example --> cpy-tooltip
   cpy-code-example --> cpy-button
   cpy-code-example --> cpy-icon
+  cpy-code-example --> cpy-expand-collapse
   cpy-code-example --> cpy-code-block
   cpy-button --> cpy-splash
   cpy-code-block --> cpy-icon

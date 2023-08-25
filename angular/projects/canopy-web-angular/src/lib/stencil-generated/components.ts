@@ -543,14 +543,14 @@ export class CpyInput {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['valueChange']);
+    proxyOutputs(this, this.el, ['inputChange']);
   }
 }
 
 
 export declare interface CpyInput extends Components.CpyInput {
 
-  valueChange: EventEmitter<CustomEvent<string | number>>;
+  inputChange: EventEmitter<CustomEvent<string | number>>;
 }
 
 
@@ -599,14 +599,14 @@ export class CpyInputCheckbox {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['valueChange']);
+    proxyOutputs(this, this.el, ['inputChange']);
   }
 }
 
 
 export declare interface CpyInputCheckbox extends Components.CpyInputCheckbox {
 
-  valueChange: EventEmitter<CustomEvent<boolean>>;
+  inputChange: EventEmitter<CustomEvent<boolean>>;
 }
 
 
@@ -626,14 +626,14 @@ export class CpyInputSelect {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['valueChange']);
+    proxyOutputs(this, this.el, ['inputChange']);
   }
 }
 
 
 export declare interface CpyInputSelect extends Components.CpyInputSelect {
 
-  valueChange: EventEmitter<CustomEvent<string | number>>;
+  inputChange: EventEmitter<CustomEvent<string | number>>;
 }
 
 
@@ -679,14 +679,14 @@ export class CpyInputTextarea {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['valueChange']);
+    proxyOutputs(this, this.el, ['inputChange']);
   }
 }
 
 
 export declare interface CpyInputTextarea extends Components.CpyInputTextarea {
 
-  valueChange: EventEmitter<CustomEvent<string>>;
+  inputChange: EventEmitter<CustomEvent<string>>;
 }
 
 
@@ -706,14 +706,14 @@ export class CpyInputToggle {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['valueChange']);
+    proxyOutputs(this, this.el, ['inputChange']);
   }
 }
 
 
 export declare interface CpyInputToggle extends Components.CpyInputToggle {
 
-  valueChange: EventEmitter<CustomEvent<boolean>>;
+  inputChange: EventEmitter<CustomEvent<boolean>>;
 }
 
 
