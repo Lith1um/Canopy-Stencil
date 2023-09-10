@@ -1,6 +1,7 @@
-import { Validator } from "../types/validator.type";
+import { ValidatorError } from '../types/validator-error.type';
+import { Validator } from '../types/validator.type';
 
-export function getLengthValidator(min: number, max: number): Validator<string> {
+export function getLengthValidator(min: number, max: number, errorMsg?: ValidatorError): Validator<string> {
   return {
     validate: (val: string) => {
       val = val ?? '';
@@ -16,8 +17,8 @@ export function getLengthValidator(min: number, max: number): Validator<string> 
       }
       return true;
     },
-    errorMessage: min && max ? `You must enter between ${min} and ${max} characters`
+    errorMessage: errorMsg ?? (() => min && max ? `You must enter between ${min} and ${max} characters`
       : min ? `You must enter at least ${min} characters`
-      : max ? `You must enter less than ${max} characters` : ''
+      : max ? `You must enter less than ${max} characters` : '')
   }
 }

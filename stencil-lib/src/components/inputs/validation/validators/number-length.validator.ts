@@ -1,6 +1,7 @@
-import { Validator } from "../types/validator.type";
+import { ValidatorError } from '../types/validator-error.type';
+import { Validator } from '../types/validator.type';
 
-export function getNumberLengthValidator(min: number, max: number): Validator<number> {
+export function getNumberLengthValidator(min: number, max: number, errorMsg?: ValidatorError): Validator<number> {
   return {
     validate: (val: number) => {
       if (val === undefined) {
@@ -18,8 +19,8 @@ export function getNumberLengthValidator(min: number, max: number): Validator<nu
       }
       return true;
     },
-    errorMessage: min && max ? `You must enter a number between ${min} and ${max}`
+    errorMessage: errorMsg ?? (() => min && max ? `You must enter a number between ${min} and ${max}`
       : min ? `You must enter a number greater than ${min}`
-      : max ? `You must enter a number less than ${max}` : ''
+      : max ? `You must enter a number less than ${max}` : '')
   }
 }
