@@ -1,16 +1,19 @@
 (function () {
   document.getElementById('getting-started-types').code = `// Validators input type
-validators: Array<string | ValidatorEntry | Validator<any>>;
+type validators = Array<string | ValidatorEntry | Validator<any>>;
 
-export interface ValidatorEntry {
+interface ValidatorEntry {
   name: string;
   options?: { [key: string]: any; };
+  errorMessage?: ValidatorError;
 }
 
 interface Validator<T> {
   validate: (val: T) => boolean;
-  errorMessage?: string;
-}`;
+  errorMessage: ValidatorError;
+}
+
+type ValidatorError = (value: unknown) => string`;
 
   document.getElementById('built-in-validation').code = `<cpy-input label="Form Input"></cpy-input>
 
@@ -21,8 +24,20 @@ interface Validator<T> {
     'number',
     {name: 'length', options: {min: 4, max: 10}},
     {name: 'numberLength', options: {min: 0, max: 100}},
+    {name: 'email', errorMessage: (val) => \`\${val} is not a valid email!\`}
   ];
 </script>`;
+
+  document.getElementById('custom-errors-code').code = `<cpy-input label="Text Input with custom error message">
+</cpy-input>
+
+<script>
+  document.querySelector('cpy-input').validators = [
+    { name: 'required', errorMessage: (val) => \`Don't leave me hanging!\` }
+  ];
+</script>`;
+  document.getElementById('example-error').validators = [{ name: 'required', errorMessage: (val) => `Don't leave me hanging!` }];
+  document.getElementById('example-error').markAsTouched();
 
   document.getElementById('custom-validators-typescript').code = `// Custom validator to check if a number is even
 const IsEvenValidator: Validator<string> = {
@@ -42,7 +57,7 @@ const IsEvenValidator: Validator<string> = {
     }
     return numVal % 2 === 0;
   },
-  errorMessage: 'You must enter an even number'
+  errorMessage: (val) => \`You must enter an even number, \${val} is not even!\`
 }
 
 document.querySelector('cpy-input').validators = [IsEvenValidator];`;

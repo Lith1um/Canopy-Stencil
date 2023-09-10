@@ -33,6 +33,6 @@ type Validators = Array<string | ValidatorEntry | Validator<string | number>>;`;
     { slotName: "suffix", purpose: 'Suffix content for the input (intended for use with <cpy-icon>)' }
   ];
 
-  document.getElementById('example-text').validators = [{ name: 'length', options: { min: 4, max: 10 } }];
+  document.getElementById('example-text').validators = [{ name: 'length', options: { min: 4, max: 10 }, errorMessage: (val) => `"${val}" is no bueno` }];
   document.getElementById('example-number').validators = [{ name: 'numberLength', options: { min: 1, max: 100 } }];
 })();

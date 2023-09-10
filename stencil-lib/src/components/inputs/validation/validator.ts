@@ -1,10 +1,11 @@
-import { ValidatorEntry } from "./types/validator-entry.type";
-import { Validator } from "./types/validator.type";
-import { EmailValidator } from "./validators/email.validator";
-import { getLengthValidator } from "./validators/length.validator";
-import { getNumberLengthValidator } from "./validators/number-length.validator";
-import { NumberValidator } from "./validators/number.validator";
-import { RequiredValidator } from "./validators/required.validator";
+import { ValidatorEntry } from './types/validator-entry.type';
+import { ValidatorError } from './types/validator-error.type';
+import { Validator } from './types/validator.type';
+import { getEmailValidator } from './validators/email.validator';
+import { getLengthValidator } from './validators/length.validator';
+import { getNumberLengthValidator } from './validators/number-length.validator';
+import { getNumberValidator } from './validators/number.validator';
+import { getRequiredValidator } from './validators/required.validator';
 
 export enum ValidatorsName {
   Required = 'required',
@@ -27,6 +28,7 @@ export function combineValidator<T>(validator1: Validator<T>, validator2: Valida
       }
       return result1 && result2;
     },
+    errorMessage: () => ''
   };
   return combined;
 }
@@ -37,30 +39,31 @@ export function getValidator<T>(validators: Array<string | ValidatorEntry | Vali
       return validatorFactory(validator, undefined);
     } else if (validator && (validator as any).name) {
       validator = validator as ValidatorEntry;
-      return validatorFactory(validator.name, validator.options);
+      return validatorFactory(validator.name, validator.options, validator.errorMessage);
     } else {
       return validator as Validator<T>;
     }
   }).reduce(combineValidator, defaultValidator);
 }
 
-export function validatorFactory(name: string, options: { [key: string]: any }): Validator<any> {
+export function validatorFactory(name: string, options: { [key: string]: any }, errorMsg?: ValidatorError): Validator<any> {
   switch (name) {
     case ValidatorsName.Required:
-      return RequiredValidator;
+      return getRequiredValidator(errorMsg);
     case ValidatorsName.Email:
-      return EmailValidator;
+      return getEmailValidator(errorMsg);
     case ValidatorsName.Number:
-      return NumberValidator;
+      return getNumberValidator(errorMsg);
     case ValidatorsName.Length:
-      return getLengthValidator(options.min, options.max);
+      return getLengthValidator(options.min, options.max, errorMsg);
     case ValidatorsName.NumberLength:
-      return getNumberLengthValidator(options.min, options.max);
+      return getNumberLengthValidator(options.min, options.max, errorMsg);
     default:
       return defaultValidator;
   }
 }
 
 export const defaultValidator: Validator<any> = {
-  validate: () => true
+  validate: () => true,
+  errorMessage: () => ''
 }

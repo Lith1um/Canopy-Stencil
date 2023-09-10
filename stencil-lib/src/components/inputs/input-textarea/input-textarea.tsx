@@ -123,7 +123,7 @@ export class InputTextarea implements BaseInput<string> {
 
   render() {
     const error = !this._validator.validate(this.value)
-      ? this._validator.errorMessage
+      ? this._validator.errorMessage(this.value)
       : '';
 
     return (

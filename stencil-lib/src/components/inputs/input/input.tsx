@@ -102,7 +102,7 @@ export class Input implements BaseInput<string | number> {
 
   render() {
     const error = !this._validator.validate(this.value)
-      ? this._validator.errorMessage
+      ? this._validator.errorMessage(this.value)
       : '';
 
     return (
