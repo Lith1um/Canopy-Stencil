@@ -8,13 +8,13 @@
   background-color: var(--cpy-bg-light);
   border-color: var(--cpy-bg-basic-border);
 
-  &--hidden {
-    display: none !important;
+  cpy-expand-collapse {
+    display: block;
+    margin-left: -1.5rem/* -24px */;
+    margin-right: -1.5rem/* -24px */;
   }
 
   cpy-code-block {
-    margin-left: -1.5rem/* -24px */;
-    margin-right: -1.5rem/* -24px */;
     display: block;
     margin-bottom: 2rem;
     --cpy-code-block-border-radius: 0;

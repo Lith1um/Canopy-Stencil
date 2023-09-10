@@ -2,25 +2,13 @@ import { ValueAccessorConfig } from '@stencil/angular-output-target';
 
 const angularValueAccessorBindings: ValueAccessorConfig[] = [
   {
-    elementSelectors: ['cpy-input-toggle'],
+    elementSelectors: ['cpy-input-toggle', 'cpy-input-checkbox'],
     event: 'valueChange',
     targetAttr: 'value',
     type: 'boolean',
   },
   {
-    elementSelectors: ['cpy-input'],
-    event: 'valueChange',
-    targetAttr: 'value',
-    type: 'text',
-  },
-  {
-    elementSelectors: ['cpy-input-select'],
-    event: 'valueChange',
-    targetAttr: 'value',
-    type: 'text',
-  },
-  {
-    elementSelectors: ['cpy-input-textarea'],
+    elementSelectors: ['cpy-input', 'cpy-input-select', 'cpy-input-textarea'],
     event: 'valueChange',
     targetAttr: 'value',
     type: 'text',
