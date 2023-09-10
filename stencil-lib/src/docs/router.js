@@ -46,6 +46,9 @@ const menuItems = mobileNavMenu.items = desktopNavMenu.items = [
   { title: 'Learn more', type: 'group', description: 'Dive into the docs', children: [
     { title: 'Colors & Dark Mode', type: 'basic', url: '/learn-more/colors', icon: 'palette' },
     { title: 'Form Validation', type: 'basic', url: '/learn-more/formValidation', icon: 'checklist' },
+    { title: 'Angular Guides', type: 'collapsible', icon: 'api', children: [
+      { title: 'Forms', type: 'basic', url: '/learn-more/angularForms' },
+    ] }
   ] },
   {
     title: 'User Interface', type: 'group', description: 'Building blocks of websites', children: [
