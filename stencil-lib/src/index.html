@@ -251,18 +251,18 @@
     const drawerElement = document.querySelector('cpy-drawer-container');
     const darkModeCheckbox = document.getElementById('darkModeCheckbox');
     const paletteElement = document.getElementById('palette-picker');
-    paletteElement.inputValue = currentPalette;
-    paletteElement.addEventListener('inputChange', (e) => {
+    paletteElement.value = currentPalette;
+    paletteElement.addEventListener('valueChange', (e) => {
       document.querySelector("html").classList.toggle(currentPalette);
       document.querySelector("html").classList.add(e.detail);
-      currentPalette = paletteElement.inputValue;
+      currentPalette = paletteElement.value;
     });
     const onMenuClick = () => drawerElement.opened = !drawerElement.opened;
-    darkModeCheckbox.addEventListener('inputChange', () => {
+    darkModeCheckbox.addEventListener('valueChange', () => {
       document.querySelector("html").classList.toggle("dark");
     });
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      darkModeCheckbox.inputValue = true;
+      darkModeCheckbox.value = true;
       document.querySelector("html").classList.add("dark");
     }
   </script>

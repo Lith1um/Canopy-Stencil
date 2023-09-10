@@ -5,14 +5,14 @@ import { Validator } from '../validation/types/validator.type';
 
 // TODO: add example method implementations
 export interface BaseInput<T> {
-  inputValue: T;
+  value: T;
   label: string;
   placeholder?: string;
   required: boolean;
   disabled: boolean;
   size: InputSize;
   validators: Array<string | ValidatorEntry | Validator<T>>;
-  inputChange: EventEmitter<T>;
+  valueChange: EventEmitter<T>;
   interacted: boolean;
   _validator: Validator<T>;
   

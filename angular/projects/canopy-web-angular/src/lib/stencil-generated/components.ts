@@ -528,7 +528,7 @@ export declare interface CpyIcon extends Components.CpyIcon {}
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'inputValue', 'label', 'placeholder', 'required', 'size', 'type', 'validators'],
+  inputs: ['disabled', 'label', 'placeholder', 'required', 'size', 'type', 'validators', 'value'],
   methods: ['isValid', 'markAsTouched']
 })
 @Component({
@@ -536,21 +536,21 @@ export declare interface CpyIcon extends Components.CpyIcon {}
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'inputValue', 'label', 'placeholder', 'required', 'size', 'type', 'validators'],
+  inputs: ['disabled', 'label', 'placeholder', 'required', 'size', 'type', 'validators', 'value'],
 })
 export class CpyInput {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['inputChange']);
+    proxyOutputs(this, this.el, ['valueChange']);
   }
 }
 
 
 export declare interface CpyInput extends Components.CpyInput {
 
-  inputChange: EventEmitter<CustomEvent<string | number>>;
+  valueChange: EventEmitter<CustomEvent<string | number>>;
 }
 
 
@@ -584,7 +584,7 @@ export declare interface CpyInputBase extends Components.CpyInputBase {
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'inputValue', 'label', 'required', 'size', 'validators'],
+  inputs: ['disabled', 'label', 'required', 'size', 'validators', 'value'],
   methods: ['isValid', 'markAsTouched']
 })
 @Component({
@@ -592,26 +592,26 @@ export declare interface CpyInputBase extends Components.CpyInputBase {
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'inputValue', 'label', 'required', 'size', 'validators'],
+  inputs: ['disabled', 'label', 'required', 'size', 'validators', 'value'],
 })
 export class CpyInputCheckbox {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['inputChange']);
+    proxyOutputs(this, this.el, ['valueChange']);
   }
 }
 
 
 export declare interface CpyInputCheckbox extends Components.CpyInputCheckbox {
 
-  inputChange: EventEmitter<CustomEvent<boolean>>;
+  valueChange: EventEmitter<CustomEvent<boolean>>;
 }
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'inputValue', 'label', 'required', 'size', 'validators'],
+  inputs: ['disabled', 'label', 'required', 'size', 'validators', 'value'],
   methods: ['isValid', 'markAsTouched']
 })
 @Component({
@@ -619,21 +619,21 @@ export declare interface CpyInputCheckbox extends Components.CpyInputCheckbox {
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'inputValue', 'label', 'required', 'size', 'validators'],
+  inputs: ['disabled', 'label', 'required', 'size', 'validators', 'value'],
 })
 export class CpyInputSelect {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['inputChange']);
+    proxyOutputs(this, this.el, ['valueChange']);
   }
 }
 
 
 export declare interface CpyInputSelect extends Components.CpyInputSelect {
 
-  inputChange: EventEmitter<CustomEvent<string | number>>;
+  valueChange: EventEmitter<CustomEvent<string | number>>;
 }
 
 
@@ -664,7 +664,7 @@ export declare interface CpyInputSelectOption extends Components.CpyInputSelectO
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'inputValue', 'label', 'maxRows', 'minRows', 'placeholder', 'required', 'size', 'validators'],
+  inputs: ['disabled', 'label', 'maxRows', 'minRows', 'placeholder', 'required', 'size', 'validators', 'value'],
   methods: ['isValid', 'markAsTouched']
 })
 @Component({
@@ -672,26 +672,26 @@ export declare interface CpyInputSelectOption extends Components.CpyInputSelectO
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'inputValue', 'label', 'maxRows', 'minRows', 'placeholder', 'required', 'size', 'validators'],
+  inputs: ['disabled', 'label', 'maxRows', 'minRows', 'placeholder', 'required', 'size', 'validators', 'value'],
 })
 export class CpyInputTextarea {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['inputChange']);
+    proxyOutputs(this, this.el, ['valueChange']);
   }
 }
 
 
 export declare interface CpyInputTextarea extends Components.CpyInputTextarea {
 
-  inputChange: EventEmitter<CustomEvent<string>>;
+  valueChange: EventEmitter<CustomEvent<string>>;
 }
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'inputValue', 'label', 'required', 'size', 'switchAfter', 'validators'],
+  inputs: ['disabled', 'label', 'required', 'size', 'switchAfter', 'validators', 'value'],
   methods: ['isValid', 'markAsTouched']
 })
 @Component({
@@ -699,21 +699,21 @@ export declare interface CpyInputTextarea extends Components.CpyInputTextarea {
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'inputValue', 'label', 'required', 'size', 'switchAfter', 'validators'],
+  inputs: ['disabled', 'label', 'required', 'size', 'switchAfter', 'validators', 'value'],
 })
 export class CpyInputToggle {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['inputChange']);
+    proxyOutputs(this, this.el, ['valueChange']);
   }
 }
 
 
 export declare interface CpyInputToggle extends Components.CpyInputToggle {
 
-  inputChange: EventEmitter<CustomEvent<boolean>>;
+  valueChange: EventEmitter<CustomEvent<boolean>>;
 }
 
 

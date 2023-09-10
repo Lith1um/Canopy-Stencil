@@ -16,7 +16,7 @@ export class InputCheckbox implements BaseInput<boolean> {
   label: string;
 
   @Prop({mutable: true})
-  inputValue: boolean = false;
+  value: boolean = false;
 
   @Prop()
   required: boolean = false;
@@ -31,7 +31,7 @@ export class InputCheckbox implements BaseInput<boolean> {
   validators: Array<string | ValidatorEntry | Validator<boolean>>;
 
   @Event()
-  inputChange: EventEmitter<boolean>;
+  valueChange: EventEmitter<boolean>;
 
   @State()
   interacted: boolean = false;
@@ -52,7 +52,7 @@ export class InputCheckbox implements BaseInput<boolean> {
     if (this.disabled) {
       return true;
     }
-    return this._validator.validate(this.inputValue);
+    return this._validator.validate(this.value);
   }
 
   @Method()
@@ -78,8 +78,8 @@ export class InputCheckbox implements BaseInput<boolean> {
       return;
     }
     const target = e.target as HTMLInputElement;
-    this.inputValue = target.checked;
-    this.inputChange.emit(this.inputValue);
+    this.value = target.checked;
+    this.valueChange.emit(this.value);
   }
 
   handleBlur(): void {
@@ -87,7 +87,7 @@ export class InputCheckbox implements BaseInput<boolean> {
   }
 
   render() {
-    const error = !this._validator.validate(this.inputValue)
+    const error = !this._validator.validate(this.value)
       ? this._validator.errorMessage
       : '';
 
@@ -112,7 +112,7 @@ export class InputCheckbox implements BaseInput<boolean> {
             <input
               type="checkbox"
               disabled={this.disabled}
-              checked={this.inputValue}
+              checked={this.value}
               onInput={(e) => this.handleChange(e)}
               onBlur={() => this.handleBlur()}/>
             <span class="checkbox__checkmark"></span>

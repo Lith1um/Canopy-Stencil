@@ -15,14 +15,14 @@ type Validators = Array<string | ValidatorEntry | Validator<string | number>>;`;
     { name: 'type', description: 'Input type', type: "InputType", default: "'text'", required: false },
     { name: 'disabled', description: 'Whether the input is disabled', type: "boolean", default: "", required: false },
     { name: 'validators', description: 'list of validators for the input', type: "Validators", default: "", required: false },
-    { name: 'inputValue', description: 'Input value', type: "string", default: "", required: false },
+    { name: 'value', description: 'Input value', type: "string", default: "", required: false },
     { name: 'size', description: 'Input size', type: "InputSize", default: "'default'", required: false },
     { name: 'label', description: 'Label for input', type: "string", default: "", required: false },
     { name: 'required', description: 'Whether the input is required or not', type: "boolean", default: "false", required: false },
     { name: 'placeholder', description: 'Input placeholder', type: "string", default: "", required: false }
   ];
   document.getElementById('comp-events').tableData = [
-    { name: 'inputChange', description: 'Triggered when the text input value is changed', emitsType: "string | number" },
+    { name: 'valueChange', description: 'Triggered when the text input value is changed', emitsType: "string | number" },
   ];
   document.getElementById('comp-methods').tableData = [
     { name: 'isValid()', description: 'Returns validation result for the input', returnType: "Promise<boolean>" },

@@ -10,19 +10,19 @@
 | Property      | Attribute      | Description | Type                                                 | Default     |
 | ------------- | -------------- | ----------- | ---------------------------------------------------- | ----------- |
 | `disabled`    | `disabled`     |             | `boolean`                                            | `false`     |
-| `inputValue`  | `input-value`  |             | `boolean`                                            | `false`     |
 | `label`       | `label`        |             | `string`                                             | `undefined` |
 | `required`    | `required`     |             | `boolean`                                            | `false`     |
 | `size`        | `size`         |             | `"default" \| "large" \| "small"`                    | `'default'` |
 | `switchAfter` | `switch-after` |             | `boolean`                                            | `false`     |
 | `validators`  | --             |             | `(string \| ValidatorEntry \| Validator<boolean>)[]` | `undefined` |
+| `value`       | `value`        |             | `boolean`                                            | `false`     |
 
 
 ## Events
 
 | Event         | Description | Type                   |
 | ------------- | ----------- | ---------------------- |
-| `inputChange` |             | `CustomEvent<boolean>` |
+| `valueChange` |             | `CustomEvent<boolean>` |
 
 
 ## Methods

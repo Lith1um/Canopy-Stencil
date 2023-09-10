@@ -10,7 +10,7 @@
 type Validators = Array<string | ValidatorEntry | Validator<boolean>>;`;
 
   document.getElementById('comp-props').tableData = [
-    { name: 'inputValue', description: 'Whether the checkbox is checked', type: "boolean", default: "", required: false },
+    { name: 'value', description: 'Whether the checkbox is checked', type: "boolean", default: "", required: false },
     { name: 'size', description: 'Checkbox size', type: "InputSize", default: "'default'", required: false },
     { name: 'label', description: 'Label for the checkbox', type: "string", default: "", required: false },
     { name: 'disabled', description: 'Whether the checkbox is disabled', type: "boolean", default: "", required: false },
@@ -18,7 +18,7 @@ type Validators = Array<string | ValidatorEntry | Validator<boolean>>;`;
     { name: 'required', description: 'Whether the checkbox is required or not', type: "boolean", default: "false", required: false },
   ];
   document.getElementById('comp-events').tableData = [
-    { name: 'inputChange', description: 'Triggered when the checkbox value is changed', emitsType: "boolean" },
+    { name: 'valueChange', description: 'Triggered when the checkbox value is changed', emitsType: "boolean" },
   ];
   document.getElementById('comp-methods').tableData = [
     { name: 'isValid()', description: 'Returns validation result for the checkbox', returnType: "Promise<boolean>" },

@@ -17,7 +17,7 @@ export class Input implements BaseInput<string | number> {
   type: InputType = 'text';
 
   @Prop({mutable: true})
-  inputValue: string | number;
+  value: string | number;
 
   @Prop()
   label: string;
@@ -38,7 +38,7 @@ export class Input implements BaseInput<string | number> {
   validators: Array<string | ValidatorEntry | Validator<string | number>>;
   
   @Event()
-  inputChange: EventEmitter<string | number>;
+  valueChange: EventEmitter<string | number>;
 
   @State()
   interacted: boolean = false;
@@ -52,7 +52,7 @@ export class Input implements BaseInput<string | number> {
     if (this.disabled) {
       return true;
     }
-    return this._validator.validate(this.inputValue);
+    return this._validator.validate(this.value);
   }
 
   @Method()
@@ -71,8 +71,8 @@ export class Input implements BaseInput<string | number> {
       ? target.value.length > 0 ? parseFloat(target.value) : undefined
       : target.value;
 
-    this.inputValue = value;
-    this.inputChange.emit(value);
+    this.value = value;
+    this.valueChange.emit(value);
   }
 
   handleBlur(): void {
@@ -101,7 +101,7 @@ export class Input implements BaseInput<string | number> {
   }
 
   render() {
-    const error = !this._validator.validate(this.inputValue)
+    const error = !this._validator.validate(this.value)
       ? this._validator.errorMessage
       : '';
 
@@ -122,7 +122,7 @@ export class Input implements BaseInput<string | number> {
           required={this.required}
           placeholder={this.placeholder}
           disabled={this.disabled}
-          value={this.inputValue}
+          value={this.value}
           onInput={(e) => this.handleChange(e)}
           onBlur={() => this.handleBlur()}/>
 
