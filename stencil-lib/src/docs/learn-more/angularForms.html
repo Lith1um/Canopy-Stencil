@@ -1,0 +1,56 @@
+<h1 class="border-b">
+  Angular Forms
+</h1>
+<cpy-page-content>
+
+  <p>
+    Canopy provides the necessary implementations to work with angular forms in a way developers will find familiar. Both <cpy-link href="https://angular.io/guide/forms" new-tab>template forms</cpy-link> and <cpy-link href="https://angular.io/guide/reactive-forms" new-tab>reactive forms</cpy-link> are supported, but if you'd prefer to bind to the built in inputs and outputs on the form component manually then that is equally possible. Let's dive into some examples.
+  </p>
+
+  <h4 id="getting-started">Basic Usage</h4>
+  <p>
+    Using the form components natively as defined by the web component itself, you can easily set up a working input that easily keeps track of the current value in a form:
+  </p>
+  <cpy-code-example id="basic-usage-code" language="html" header="Basic Usage Example">
+    <cpy-input id="basic-usage-example" label="Basic usage"></cpy-input>
+    <br/>
+    Tracked value of form: <span id="basic-usage-value"></span>
+  </cpy-code-example>
+
+  <h4 id="template-forms">Template Forms</h4>
+  <p>
+    Angular's template forms allow for 2-way data binding for the value of a form element. Canopy form components support template forms using a generated directive included in the angular build of the library.
+  </p>
+  <p>
+    To get started, ensure you have the forms module imported where you will be using the component
+  </p>
+  <cpy-code-block id="template-form-module" language="typescript"></cpy-code-block>
+  <p>
+    Then simply use the form component with angular's form functions to get the component working with 2-way data binding
+  </p>
+  <cpy-code-example id="template-form-code" language="typescript" header="Template Form Example">
+    <cpy-input id="template-form-example" label="Template Form" value="I am a text input!"></cpy-input>
+    <br/>
+    Tracked value of form: <span id="template-form-value">I am a text input!</span>
+  </cpy-code-example>
+
+  <h4 id="template-forms">Reactive Forms</h4>
+  <p>
+    Angular's reactive forms provide a model-driven approach to handling form inputs whose values change over time. Canopy form components support reactive forms using a generated directive included in the angular build of the library.
+  </p>
+  <p>
+    To get started, ensure you have the forms and reactive forms modules imported where you will be using the component
+  </p>
+  <cpy-code-block id="reactive-form-module" language="typescript"></cpy-code-block>
+  <p>
+    Then simply use the form component with angular's form functions to get the component working with 2-way data binding
+  </p>
+  <cpy-code-example id="reactive-form-code" language="typescript" header="Reactive Form Example">
+    <cpy-input id="reactive-form-example" label="Reactive Form" value="I am a text input!"></cpy-input>
+    <br/>
+    Tracked value of form: <span id="reactive-form-value">I am a text input!</span>
+  </cpy-code-example>
+</cpy-page-content>
+
+<script src="/docs/learn-more/angularForms.js">
+</script>
