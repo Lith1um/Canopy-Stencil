@@ -53,8 +53,8 @@ export class ShowMore {
         <cpy-link
           style={{display: 'none'}}
           type={this.type}
-          func={() => this.toggle()}
-          ref={(el) => this.showMoreButtonElem = el as HTMLElement}>
+          ref={(el) => this.showMoreButtonElem = el as HTMLElement}
+          onLinkClicked={() => this.toggle()}>
           {this.expanded ? this.showLessText : this.showMoreText}
         </cpy-link>
       </div>

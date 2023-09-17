@@ -255,7 +255,6 @@ export namespace Components {
         "value": boolean;
     }
     interface CpyLink {
-        "func": () => void;
         "href": string;
         "newTab": boolean;
         "type": LinkType;
@@ -416,6 +415,10 @@ export interface CpyInputTextareaCustomEvent<T> extends CustomEvent<T> {
 export interface CpyInputToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyInputToggleElement;
+}
+export interface CpyLinkCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyLinkElement;
 }
 export interface CpyNavMenuItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -976,9 +979,9 @@ declare namespace LocalJSX {
         "value"?: boolean;
     }
     interface CpyLink {
-        "func"?: () => void;
         "href"?: string;
         "newTab"?: boolean;
+        "onLinkClicked"?: (event: CpyLinkCustomEvent<void>) => void;
         "type"?: LinkType;
         "underline"?: boolean;
     }

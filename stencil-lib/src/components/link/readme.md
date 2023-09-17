@@ -9,11 +9,17 @@
 
 | Property    | Attribute   | Description | Type                                                                    | Default     |
 | ----------- | ----------- | ----------- | ----------------------------------------------------------------------- | ----------- |
-| `func`      | --          |             | `() => void`                                                            | `undefined` |
 | `href`      | `href`      |             | `string`                                                                | `undefined` |
 | `newTab`    | `new-tab`   |             | `boolean`                                                               | `undefined` |
 | `type`      | `type`      |             | `"basic" \| "error" \| "primary" \| "secondary" \| "success" \| "warn"` | `'primary'` |
 | `underline` | `underline` |             | `boolean`                                                               | `true`      |
+
+
+## Events
+
+| Event         | Description | Type                |
+| ------------- | ----------- | ------------------- |
+| `linkClicked` |             | `CustomEvent<void>` |
 
 
 ## Dependencies
