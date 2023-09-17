@@ -35,7 +35,7 @@
     { name: 'mode', description: 'Drawer mode', type: "DrawerMode", default: "'side'", required: false }
   ];
   document.getElementById('comp-events').tableData = [
-    { name: 'toggleOpened', description: 'Triggered when the drawer has internally changed its opened state', emitsType: "boolean" }
+    { name: 'toggleDrawer', description: 'Triggered when the drawer has internally changed its opened state', emitsType: "boolean" }
   ];
   document.getElementById('comp-methods').tableData = [
     { name: 'toggle()', description: 'Toggles the drawer', returnType: 'void' },

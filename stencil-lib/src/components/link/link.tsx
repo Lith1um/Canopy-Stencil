@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 import { LinkType } from './types/link.type';
 
 @Component({
@@ -14,16 +14,9 @@ export class Link {
 
   @Prop() underline: boolean = true;
 
-  @Prop() func: () => void;
-
   @Prop() type: LinkType = 'primary';
 
-  handleClick(e: Event): void {
-    if (this.func) {
-      e.preventDefault();
-      this.func();
-    }
-  }
+  @Event() linkClicked: EventEmitter<void>;
 
   render() {
     const classes = {
@@ -33,7 +26,7 @@ export class Link {
     };
 
     return (
-      <a class={classes} href={this.href} target={this.newTab ? '_blank' : ''} onClick={(e) => this.handleClick(e)}>
+      <a class={classes} href={this.href} target={this.newTab ? '_blank' : ''} onClick={() => this.linkClicked.emit()}>
         <slot></slot>
       </a>
     );

@@ -718,25 +718,29 @@ export declare interface CpyInputToggle extends Components.CpyInputToggle {
 
 
 @ProxyCmp({
-  inputs: ['func', 'href', 'newTab', 'type', 'underline']
+  inputs: ['href', 'newTab', 'type', 'underline']
 })
 @Component({
   selector: 'cpy-link',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['func', 'href', 'newTab', 'type', 'underline'],
+  inputs: ['href', 'newTab', 'type', 'underline'],
 })
 export class CpyLink {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['linkClicked']);
   }
 }
 
 
-export declare interface CpyLink extends Components.CpyLink {}
+export declare interface CpyLink extends Components.CpyLink {
+
+  linkClicked: EventEmitter<CustomEvent<void>>;
+}
 
 
 @ProxyCmp({

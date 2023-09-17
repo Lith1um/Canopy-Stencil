@@ -42,9 +42,6 @@ export class MyModule {}`;
 export class FormComponent {
   formVal = 'I am a text input!';
 }`;
-  document.getElementById('template-form-example').addEventListener('valueChange', (val) => {
-    document.getElementById('template-form-value').innerText = val.detail;
-  });
 
   document.getElementById('reactive-form-module').code = `import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -78,7 +75,4 @@ import { FormControl } from '@angular/forms';
 export class FormComponent {
   formControl = new FormControl('I am a text input!');
 }`;
-  document.getElementById('reactive-form-example').addEventListener('valueChange', (val) => {
-    document.getElementById('reactive-form-value').innerText = val.detail;
-  });
 })();
