@@ -30,6 +30,7 @@ import { SlideInPosition } from "./components/slide-in/slide-in.type";
 import { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
 import { StackDirection } from "./components/stack/stack.type";
 import { TableData } from "./components/table/types/table-data.type";
+import { TabsPosition } from "./components/tabs/tab-position.type";
 import { ToastPosition, ToastType } from "./components/toast/toast.type";
 import { ToolbarSize, ToolbarType } from "./components/toolbar/toolbar.type";
 import { TooltipPosition } from "./components/tooltip/tooltip.type";
@@ -58,6 +59,7 @@ export { SlideInPosition } from "./components/slide-in/slide-in.type";
 export { SpinnerAppearance, SpinnerSize } from "./components/spinner/spinner.type";
 export { StackDirection } from "./components/stack/stack.type";
 export { TableData } from "./components/table/types/table-data.type";
+export { TabsPosition } from "./components/tabs/tab-position.type";
 export { ToastPosition, ToastType } from "./components/toast/toast.type";
 export { ToolbarSize, ToolbarType } from "./components/toolbar/toolbar.type";
 export { TooltipPosition } from "./components/tooltip/tooltip.type";
@@ -334,6 +336,7 @@ export namespace Components {
     }
     interface CpyTabs {
         "activeIndex": number;
+        "position": TabsPosition;
     }
     interface CpyToast {
         "close": () => Promise<void>;
@@ -1058,6 +1061,7 @@ declare namespace LocalJSX {
     interface CpyTabs {
         "activeIndex"?: number;
         "onTabChanged"?: (event: CpyTabsCustomEvent<number>) => void;
+        "position"?: TabsPosition;
     }
     interface CpyToast {
         "dismissible"?: boolean;

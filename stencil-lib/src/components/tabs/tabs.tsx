@@ -1,6 +1,7 @@
 import { Component, Element, Event, EventEmitter, h, Listen, Prop, State, Watch } from '@stencil/core';
 import { debounce } from '../../utils/events';
 import { onResize } from '../../utils/elements';
+import { TabsPosition } from './tab-position.type';
 
 interface TabGroup {
   header: HTMLCpyTabHeaderElement;
@@ -16,6 +17,9 @@ export class Tabs {
 
   @Prop({mutable: true})
   activeIndex: number = 0;
+
+  @Prop()
+  position: TabsPosition = 'start';
 
   @Element()
   host: HTMLElement;
@@ -121,12 +125,17 @@ export class Tabs {
   }
 
   render() {
+    const headerClasses = {
+      'tabs-header__container': true,
+      [`tabs-header__container--${this.position}`]: !!this.position,
+    };
+
     return [
       <div class="tabs-header">
         <cpy-button icon size="small" type="basic" disabled={this.leftButtonDisabled} onClick={() => this.handleScrollClick(true)}>
           <cpy-icon>chevron_left</cpy-icon>
         </cpy-button>
-        <div class="tabs-header__container" ref={(el) => this.headerGroupElem = el as HTMLElement}>
+        <div class={headerClasses} ref={(el) => this.headerGroupElem = el as HTMLElement}>
           <slot name="header"/>
           <div class='tabs-header__active-bar' ref={(el) => this.activeBarElem = el as HTMLElement}></div>
         </div>

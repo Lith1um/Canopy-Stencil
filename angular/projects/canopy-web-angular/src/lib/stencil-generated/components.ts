@@ -1095,14 +1095,14 @@ export declare interface CpyTable extends Components.CpyTable {}
 
 
 @ProxyCmp({
-  inputs: ['activeIndex']
+  inputs: ['activeIndex', 'position']
 })
 @Component({
   selector: 'cpy-tabs',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['activeIndex'],
+  inputs: ['activeIndex', 'position'],
 })
 export class CpyTabs {
   protected el: HTMLElement;

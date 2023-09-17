@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property      | Attribute      | Description | Type     | Default |
-| ------------- | -------------- | ----------- | -------- | ------- |
-| `activeIndex` | `active-index` |             | `number` | `0`     |
+| Property      | Attribute      | Description | Type                           | Default   |
+| ------------- | -------------- | ----------- | ------------------------------ | --------- |
+| `activeIndex` | `active-index` |             | `number`                       | `0`       |
+| `position`    | `position`     |             | `"center" \| "end" \| "start"` | `'start'` |
 
 
 ## Events
