@@ -29,8 +29,11 @@
     { cssVariable: '--cpy-tab-active-bg', description: 'Color to apply to active tab bar', defaultValue: '--cpy-bg-primary' },
   ];
 
+  document.getElementById('comp-interfaces').code = `type TabsPosition = 'start' | 'center' | 'end';`;
+
   document.getElementById('comp-props').tableData = [
-    { name: 'active-index', description: 'Current active tab', type: "number", default: "0", required: false }
+    { name: 'active-index', description: 'Current active tab', type: "number", default: "0", required: false },
+    { name: 'position', description: 'Position of the tab headers', type: "TabsPosition", default: "'start'", required: false }
   ];
   document.getElementById('comp-props-header').tableData = [
     { name: 'tab-title', description: 'Tab title', type: "string", default: "", required: true }

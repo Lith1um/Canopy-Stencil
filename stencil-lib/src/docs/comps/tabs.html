@@ -84,6 +84,9 @@
         <div class="section">
         </div>
 
+        <h4 id="types">Types</h4>
+        <cpy-code-block id="comp-interfaces"></cpy-code-block>
+
         <h4 id="props">Properties</h4>
         <p>Inputs to pass to your component</p>
         <p style="margin-bottom: 0.5rem;">Tabs: <cpy-code-snippet code="<cpy-tabs>"></cpy-code-snippet></p>
@@ -113,6 +116,84 @@
     <cpy-tab-content slot="content">
       <cpy-code-example header="Basic Tabs">
 <cpy-tabs>
+  <cpy-tab-header slot="header" tab-title="Tab 1"></cpy-tab-header>
+  <cpy-tab-header slot="header" tab-title="Tab 2"></cpy-tab-header>
+  <cpy-tab-header slot="header" tab-title="Tab 3"></cpy-tab-header>
+
+  <cpy-tab-content slot="content">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida faucibus metus vitae vestibulum. Ut
+    quam risus, tempus in elit ac, convallis posuere arcu. Duis mi nulla, maximus vel nisi eu, malesuada interdum
+    felis. Praesent pharetra eros nec dignissim facilisis. Suspendisse lobortis tortor risus, quis egestas elit
+    dignissim in. Vivamus mollis metus vel lorem egestas lacinia. Sed sit amet hendrerit ligula. Sed porta massa
+    eros, vel efficitur mauris faucibus sed. Nulla facilisi. Nulla sit amet rutrum massa. Phasellus eu magna vitae
+    leo dignissim venenatis nec tempus turpis. Pellentesque lacinia turpis ac tristique aliquam. Nullam volutpat,
+    velit sit amet suscipit aliquam, ligula purus volutpat turpis, convallis malesuada turpis arcu sit amet purus.
+    Morbi in elit vel orci gravida porta.
+  </cpy-tab-content>
+  <cpy-tab-content slot="content">
+    <p style="margin-bottom: 2rem;">Pellentesque et blandit urna, id congue dolor. Donec magna erat, eleifend ut
+      consectetur nec, varius id turpis. Cras malesuada quam at mauris sagittis finibus. In hac habitasse platea
+      dictumst. Nullam nec diam eget nisi maximus tristique sit amet eu velit. Integer in ante magna. Ut imperdiet
+      consequat sem sed commodo. In condimentum dui neque, quis pharetra massa feugiat ac. Maecenas condimentum
+      placerat orci, eget euismod orci.</p>
+    <p>Vestibulum ornare ornare libero eu sagittis. Proin sit amet interdum ante. Aliquam semper in libero a
+      lacinia. Vivamus lobortis sapien ac quam imperdiet commodo ac tincidunt massa. Etiam fringilla auctor gravida.
+      Praesent ipsum ipsum, faucibus id ex eget, vulputate eleifend odio. Duis eget dolor in massa dignissim
+      pharetra rutrum non tortor. Proin consectetur vulputate volutpat. Morbi urna arcu, egestas ut egestas et,
+      rutrum non mauris.</p>
+  </cpy-tab-content>
+  <cpy-tab-content slot="content">
+    Nunc gravida urna eu elit tempor, a faucibus odio consectetur. Vivamus blandit massa risus, non tristique lorem
+    malesuada vel. Nullam in vulputate tortor, vitae volutpat metus. Fusce erat sem, finibus in nunc at, scelerisque
+    tristique nunc. In in dictum ligula. Integer vitae tortor felis. Pellentesque nec lacus vitae massa eleifend
+    ullamcorper. Suspendisse potenti. Proin dapibus urna nibh, sed euismod ligula tempor vitae. Nulla a ligula
+    vehicula, bibendum magna quis, euismod leo. Phasellus blandit diam eu posuere ultricies. Maecenas orci magna,
+    aliquam at mollis quis, posuere quis neque. Aliquam at tincidunt arcu. Quisque porttitor ligula id sapien
+    luctus, cursus faucibus lacus ultricies.
+  </cpy-tab-content>
+</cpy-tabs>
+      </cpy-code-example>
+      <cpy-code-example header="Center Aligned Tabs">
+<cpy-tabs position="center">
+  <cpy-tab-header slot="header" tab-title="Tab 1"></cpy-tab-header>
+  <cpy-tab-header slot="header" tab-title="Tab 2"></cpy-tab-header>
+  <cpy-tab-header slot="header" tab-title="Tab 3"></cpy-tab-header>
+
+  <cpy-tab-content slot="content">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida faucibus metus vitae vestibulum. Ut
+    quam risus, tempus in elit ac, convallis posuere arcu. Duis mi nulla, maximus vel nisi eu, malesuada interdum
+    felis. Praesent pharetra eros nec dignissim facilisis. Suspendisse lobortis tortor risus, quis egestas elit
+    dignissim in. Vivamus mollis metus vel lorem egestas lacinia. Sed sit amet hendrerit ligula. Sed porta massa
+    eros, vel efficitur mauris faucibus sed. Nulla facilisi. Nulla sit amet rutrum massa. Phasellus eu magna vitae
+    leo dignissim venenatis nec tempus turpis. Pellentesque lacinia turpis ac tristique aliquam. Nullam volutpat,
+    velit sit amet suscipit aliquam, ligula purus volutpat turpis, convallis malesuada turpis arcu sit amet purus.
+    Morbi in elit vel orci gravida porta.
+  </cpy-tab-content>
+  <cpy-tab-content slot="content">
+    <p style="margin-bottom: 2rem;">Pellentesque et blandit urna, id congue dolor. Donec magna erat, eleifend ut
+      consectetur nec, varius id turpis. Cras malesuada quam at mauris sagittis finibus. In hac habitasse platea
+      dictumst. Nullam nec diam eget nisi maximus tristique sit amet eu velit. Integer in ante magna. Ut imperdiet
+      consequat sem sed commodo. In condimentum dui neque, quis pharetra massa feugiat ac. Maecenas condimentum
+      placerat orci, eget euismod orci.</p>
+    <p>Vestibulum ornare ornare libero eu sagittis. Proin sit amet interdum ante. Aliquam semper in libero a
+      lacinia. Vivamus lobortis sapien ac quam imperdiet commodo ac tincidunt massa. Etiam fringilla auctor gravida.
+      Praesent ipsum ipsum, faucibus id ex eget, vulputate eleifend odio. Duis eget dolor in massa dignissim
+      pharetra rutrum non tortor. Proin consectetur vulputate volutpat. Morbi urna arcu, egestas ut egestas et,
+      rutrum non mauris.</p>
+  </cpy-tab-content>
+  <cpy-tab-content slot="content">
+    Nunc gravida urna eu elit tempor, a faucibus odio consectetur. Vivamus blandit massa risus, non tristique lorem
+    malesuada vel. Nullam in vulputate tortor, vitae volutpat metus. Fusce erat sem, finibus in nunc at, scelerisque
+    tristique nunc. In in dictum ligula. Integer vitae tortor felis. Pellentesque nec lacus vitae massa eleifend
+    ullamcorper. Suspendisse potenti. Proin dapibus urna nibh, sed euismod ligula tempor vitae. Nulla a ligula
+    vehicula, bibendum magna quis, euismod leo. Phasellus blandit diam eu posuere ultricies. Maecenas orci magna,
+    aliquam at mollis quis, posuere quis neque. Aliquam at tincidunt arcu. Quisque porttitor ligula id sapien
+    luctus, cursus faucibus lacus ultricies.
+  </cpy-tab-content>
+</cpy-tabs>
+      </cpy-code-example>
+      <cpy-code-example header="End Aligned Tabs">
+<cpy-tabs position="end">
   <cpy-tab-header slot="header" tab-title="Tab 1"></cpy-tab-header>
   <cpy-tab-header slot="header" tab-title="Tab 2"></cpy-tab-header>
   <cpy-tab-header slot="header" tab-title="Tab 3"></cpy-tab-header>

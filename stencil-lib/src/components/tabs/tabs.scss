@@ -18,6 +18,18 @@
     &::-webkit-scrollbar{
       display: none;
     }
+
+    &--start {
+      justify-content: start;
+    }
+
+    &--center {
+      justify-content: center;
+    }
+
+    &--end {
+      justify-content: end;
+    }
   }
 
   &__active-bar {
