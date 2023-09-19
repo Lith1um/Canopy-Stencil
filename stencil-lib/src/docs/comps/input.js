@@ -27,6 +27,7 @@ type Validators = Array<string | ValidatorEntry | Validator<string | number>>;`;
   document.getElementById('comp-methods').tableData = [
     { name: 'isValid()', description: 'Returns validation result for the input', returnType: "Promise<boolean>" },
     { name: 'markAsTouched()', description: 'Marks the input as interacted with, running validation on it and updating the UI if invalid', returnType: "" },
+    { name: 'markAsUntouched()', description: 'Resets the interaction state of the input, removing any errors from the UI', returnType: "" },
   ];
   document.getElementById('comp-slots').tableData = [
     { slotName: "prefix", purpose: 'Prefix content for the input (intended for use with <cpy-icon>)' },

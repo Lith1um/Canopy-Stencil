@@ -23,5 +23,6 @@ type Validators = Array<string | ValidatorEntry | Validator<boolean>>;`;
   document.getElementById('comp-methods').tableData = [
     { name: 'isValid()', description: 'Returns validation result for the checkbox', returnType: "Promise<boolean>" },
     { name: 'markAsTouched()', description: 'Marks the checkbox as interacted with, running validation on it and updating the UI if invalid', returnType: "" },
+    { name: 'markAsUntouched()', description: 'Resets the interaction state of the input, removing any errors from the UI', returnType: "" },
   ];
 })();

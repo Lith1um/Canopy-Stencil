@@ -76,6 +76,7 @@ const menuItems = mobileNavMenu.items = desktopNavMenu.items = [
       { title: 'Tooltip', type: 'basic', url: '/comps/tooltip' },
     ] },
     { title: 'Forms', icon: 'format_list_numbered', type: 'collapsible', description: 'Complete form elements', children: [
+      { title: 'Form Groups', type: 'basic', url: '/comps/formGroup' },
       { title: 'Basic Inputs', type: 'basic', url: '/comps/input' },
       { title: 'Checkbox', type: 'basic', url: '/comps/inputCheckbox' },
       { title: 'Select', type: 'basic', url: '/comps/inputSelect' },

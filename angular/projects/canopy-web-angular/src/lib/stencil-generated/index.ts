@@ -23,6 +23,7 @@ export const DIRECTIVES = [
   d.CpyDrawer,
   d.CpyDrawerContainer,
   d.CpyExpandCollapse,
+  d.CpyFormGroup,
   d.CpyIcon,
   d.CpyInput,
   d.CpyInputBase,

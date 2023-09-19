@@ -22,6 +22,7 @@ export interface BaseInput<T> {
 
   isValid: () => Promise<boolean>;
   markAsTouched: () => Promise<void>;
+  markAsUntouched: () => Promise<void>;
   handleChange: (e: Event) => void;
   handleBlur: () => void;
 }
