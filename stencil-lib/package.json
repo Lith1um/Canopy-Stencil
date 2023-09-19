@@ -1,6 +1,6 @@
 {
   "name": "@canopy-web/core",
-  "version": "0.4.11",
+  "version": "0.4.12",
   "description": "Canopy Web Components",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
