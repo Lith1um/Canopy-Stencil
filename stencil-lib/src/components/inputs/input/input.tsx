@@ -64,6 +64,15 @@ export class Input implements BaseInput<string | number> {
     this.interacted = true;
   }
 
+  @Method()
+  async markAsUntouched(): Promise<void> {
+    // ignore marking as untouched if disabled
+    if (this.disabled) {
+      return;
+    }
+    this.interacted = false;
+  }
+
   handleChange(e: Event) {
     const target = e.target as HTMLInputElement
 

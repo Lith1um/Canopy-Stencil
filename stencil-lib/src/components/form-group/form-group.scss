@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+:host(.form-group--small) {
+  gap: 1rem;
+}
+
+:host(.form-group--large) {
+  gap: 2rem;
+}

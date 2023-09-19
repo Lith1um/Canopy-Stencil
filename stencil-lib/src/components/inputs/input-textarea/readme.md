@@ -49,6 +49,16 @@ Type: `Promise<void>`
 
 
 
+### `markAsUntouched() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
 
 ## Dependencies
 

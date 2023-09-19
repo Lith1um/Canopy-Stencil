@@ -17,8 +17,8 @@ import { ContentsListItem } from "./components/contents-list/contents-list.inter
 import { ContextMenuItem } from "./components/context-menu/context-menu.interface";
 import { DialogSize } from "./components/dialog/dialog.type";
 import { DrawerMode } from "./components/drawer-container/drawer.type";
-import { InputType } from "./components/inputs/input/input.type";
 import { InputSize } from "./components/inputs/types/input-size.type";
+import { InputType } from "./components/inputs/input/input.type";
 import { ValidatorEntry } from "./components/inputs/validation/types/validator-entry.type";
 import { Validator } from "./components/inputs/validation/types/validator.type";
 import { LinkType } from "./components/link/types/link.type";
@@ -46,8 +46,8 @@ export { ContentsListItem } from "./components/contents-list/contents-list.inter
 export { ContextMenuItem } from "./components/context-menu/context-menu.interface";
 export { DialogSize } from "./components/dialog/dialog.type";
 export { DrawerMode } from "./components/drawer-container/drawer.type";
-export { InputType } from "./components/inputs/input/input.type";
 export { InputSize } from "./components/inputs/types/input-size.type";
+export { InputType } from "./components/inputs/input/input.type";
 export { ValidatorEntry } from "./components/inputs/validation/types/validator-entry.type";
 export { Validator } from "./components/inputs/validation/types/validator.type";
 export { LinkType } from "./components/link/types/link.type";
@@ -181,6 +181,13 @@ export namespace Components {
         "expanded": boolean;
         "toggle": () => Promise<void>;
     }
+    interface CpyFormGroup {
+        "disabled": boolean;
+        "isValid": () => Promise<boolean>;
+        "markAsTouched": () => Promise<void>;
+        "markAsUntouched": () => Promise<void>;
+        "size": InputSize;
+    }
     interface CpyIcon {
     }
     interface CpyInput {
@@ -188,6 +195,7 @@ export namespace Components {
         "isValid": () => Promise<boolean>;
         "label": string;
         "markAsTouched": () => Promise<void>;
+        "markAsUntouched": () => Promise<void>;
         "placeholder": string;
         "required": boolean;
         "size": InputSize;
@@ -211,6 +219,7 @@ export namespace Components {
         "isValid": () => Promise<boolean>;
         "label": string;
         "markAsTouched": () => Promise<void>;
+        "markAsUntouched": () => Promise<void>;
         "required": boolean;
         "size": InputSize;
         "validators": Array<string | ValidatorEntry | Validator<boolean>>;
@@ -221,6 +230,7 @@ export namespace Components {
         "isValid": () => Promise<boolean>;
         "label": string;
         "markAsTouched": () => Promise<void>;
+        "markAsUntouched": () => Promise<void>;
         "required": boolean;
         "size": InputSize;
         "validators": Array<string | ValidatorEntry | Validator<string | number>>;
@@ -237,6 +247,7 @@ export namespace Components {
         "isValid": () => Promise<boolean>;
         "label": string;
         "markAsTouched": () => Promise<void>;
+        "markAsUntouched": () => Promise<void>;
         "maxRows": number;
         "minRows": number;
         "placeholder": string;
@@ -250,6 +261,7 @@ export namespace Components {
         "isValid": () => Promise<boolean>;
         "label": string;
         "markAsTouched": () => Promise<void>;
+        "markAsUntouched": () => Promise<void>;
         "required": boolean;
         "size": InputSize;
         "switchAfter": boolean;
@@ -574,6 +586,12 @@ declare global {
         prototype: HTMLCpyExpandCollapseElement;
         new (): HTMLCpyExpandCollapseElement;
     };
+    interface HTMLCpyFormGroupElement extends Components.CpyFormGroup, HTMLStencilElement {
+    }
+    var HTMLCpyFormGroupElement: {
+        prototype: HTMLCpyFormGroupElement;
+        new (): HTMLCpyFormGroupElement;
+    };
     interface HTMLCpyIconElement extends Components.CpyIcon, HTMLStencilElement {
     }
     var HTMLCpyIconElement: {
@@ -764,6 +782,7 @@ declare global {
         "cpy-drawer": HTMLCpyDrawerElement;
         "cpy-drawer-container": HTMLCpyDrawerContainerElement;
         "cpy-expand-collapse": HTMLCpyExpandCollapseElement;
+        "cpy-form-group": HTMLCpyFormGroupElement;
         "cpy-icon": HTMLCpyIconElement;
         "cpy-input": HTMLCpyInputElement;
         "cpy-input-base": HTMLCpyInputBaseElement;
@@ -908,6 +927,10 @@ declare namespace LocalJSX {
         "duration"?: number;
         "expanded"?: boolean;
         "onToggleExpanded"?: (event: CpyExpandCollapseCustomEvent<boolean>) => void;
+    }
+    interface CpyFormGroup {
+        "disabled"?: boolean;
+        "size"?: InputSize;
     }
     interface CpyIcon {
     }
@@ -1105,6 +1128,7 @@ declare namespace LocalJSX {
         "cpy-drawer": CpyDrawer;
         "cpy-drawer-container": CpyDrawerContainer;
         "cpy-expand-collapse": CpyExpandCollapse;
+        "cpy-form-group": CpyFormGroup;
         "cpy-icon": CpyIcon;
         "cpy-input": CpyInput;
         "cpy-input-base": CpyInputBase;
@@ -1160,6 +1184,7 @@ declare module "@stencil/core" {
             "cpy-drawer": LocalJSX.CpyDrawer & JSXBase.HTMLAttributes<HTMLCpyDrawerElement>;
             "cpy-drawer-container": LocalJSX.CpyDrawerContainer & JSXBase.HTMLAttributes<HTMLCpyDrawerContainerElement>;
             "cpy-expand-collapse": LocalJSX.CpyExpandCollapse & JSXBase.HTMLAttributes<HTMLCpyExpandCollapseElement>;
+            "cpy-form-group": LocalJSX.CpyFormGroup & JSXBase.HTMLAttributes<HTMLCpyFormGroupElement>;
             "cpy-icon": LocalJSX.CpyIcon & JSXBase.HTMLAttributes<HTMLCpyIconElement>;
             "cpy-input": LocalJSX.CpyInput & JSXBase.HTMLAttributes<HTMLCpyInputElement>;
             "cpy-input-base": LocalJSX.CpyInputBase & JSXBase.HTMLAttributes<HTMLCpyInputBaseElement>;

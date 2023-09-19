@@ -507,6 +507,29 @@ export declare interface CpyExpandCollapse extends Components.CpyExpandCollapse 
 
 
 @ProxyCmp({
+  inputs: ['disabled', 'size'],
+  methods: ['markAsTouched', 'markAsUntouched', 'isValid']
+})
+@Component({
+  selector: 'cpy-form-group',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['disabled', 'size'],
+})
+export class CpyFormGroup {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface CpyFormGroup extends Components.CpyFormGroup {}
+
+
+@ProxyCmp({
 })
 @Component({
   selector: 'cpy-icon',
@@ -529,7 +552,7 @@ export declare interface CpyIcon extends Components.CpyIcon {}
 
 @ProxyCmp({
   inputs: ['disabled', 'label', 'placeholder', 'required', 'size', 'type', 'validators', 'value'],
-  methods: ['isValid', 'markAsTouched']
+  methods: ['isValid', 'markAsTouched', 'markAsUntouched']
 })
 @Component({
   selector: 'cpy-input',
@@ -585,7 +608,7 @@ export declare interface CpyInputBase extends Components.CpyInputBase {
 
 @ProxyCmp({
   inputs: ['disabled', 'label', 'required', 'size', 'validators', 'value'],
-  methods: ['isValid', 'markAsTouched']
+  methods: ['isValid', 'markAsTouched', 'markAsUntouched']
 })
 @Component({
   selector: 'cpy-input-checkbox',
@@ -612,7 +635,7 @@ export declare interface CpyInputCheckbox extends Components.CpyInputCheckbox {
 
 @ProxyCmp({
   inputs: ['disabled', 'label', 'required', 'size', 'validators', 'value'],
-  methods: ['isValid', 'markAsTouched']
+  methods: ['isValid', 'markAsTouched', 'markAsUntouched']
 })
 @Component({
   selector: 'cpy-input-select',
@@ -665,7 +688,7 @@ export declare interface CpyInputSelectOption extends Components.CpyInputSelectO
 
 @ProxyCmp({
   inputs: ['disabled', 'label', 'maxRows', 'minRows', 'placeholder', 'required', 'size', 'validators', 'value'],
-  methods: ['isValid', 'markAsTouched']
+  methods: ['isValid', 'markAsTouched', 'markAsUntouched']
 })
 @Component({
   selector: 'cpy-input-textarea',
@@ -692,7 +715,7 @@ export declare interface CpyInputTextarea extends Components.CpyInputTextarea {
 
 @ProxyCmp({
   inputs: ['disabled', 'label', 'required', 'size', 'switchAfter', 'validators', 'value'],
-  methods: ['isValid', 'markAsTouched']
+  methods: ['isValid', 'markAsTouched', 'markAsUntouched']
 })
 @Component({
   selector: 'cpy-input-toggle',

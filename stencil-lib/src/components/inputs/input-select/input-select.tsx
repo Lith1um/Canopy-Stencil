@@ -101,6 +101,15 @@ export class InputSelect implements BaseInput<string | number> {
     }
     this.interacted = true;
   }
+  
+  @Method()
+  async markAsUntouched(): Promise<void> {
+    // ignore marking as untouched if disabled
+    if (this.disabled) {
+      return;
+    }
+    this.interacted = false;
+  }
 
   getValidators(): Array<string | ValidatorEntry | Validator<string | number>> {
     const validators = this.validators ?? [];

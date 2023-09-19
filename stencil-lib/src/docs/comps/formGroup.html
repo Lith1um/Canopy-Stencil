@@ -1,0 +1,119 @@
+<h1>Form Groups</h1>
+
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Form Group">
+        <p>
+          Canopy form groups provide a basic wrapper around canopy form inputs. They extend the base methods of inputs, allowing you to run validation and trigger/reset errors on the whole form with ease. They are referenced using
+          the <cpy-code-snippet code="<cpy-form-group>"></cpy-code-snippet> custom HTML element.
+        </p>
+
+        <p>
+          Additionally, a basic flex layout is used to display the inputs and can be easily overridden using the host styles. Inputs to the form group also allow you to change the size and disabled state of all canopy inputs within the form group.
+        </p>
+
+        <cpy-code-example header="Form Group" id="overview-code">
+<cpy-card style="display: block;">
+  <cpy-form-group id="overview-form-group">
+    <cpy-input label="Text Input" required></cpy-input>
+    <cpy-input-checkbox label="Checkbox Input" required></cpy-input-checkbox>
+    <cpy-input-select label="Select Input" required>
+      <cpy-input-select-option label="Option 1" value="1"></cpy-input-select-option>
+      <cpy-input-select-option label="Option 2" value="2"></cpy-input-select-option>
+      <cpy-input-select-option label="Option 3" value="3"></cpy-input-select-option>
+      <cpy-input-select-option label="Option 4" value="4"></cpy-input-select-option>
+      <cpy-input-select-option label="Option 5" value="5"></cpy-input-select-option>
+    </cpy-input-select>
+    <cpy-input-textarea label="Textarea Input" required></cpy-input-textarea>
+    <cpy-input-toggle label="Toggle Input" required></cpy-input-toggle>
+    
+    <cpy-button id="form-touched-button">Mark as touched</cpy-button>
+    <cpy-button id="form-untouched-button">Mark as untouched</cpy-button>
+    <cpy-button id="form-valid-button">Form valid?</cpy-button>
+  </cpy-form-group>
+</cpy-card>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. There are currently no styling variables for this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
+
+        <h4 id="host">Host styles</h4>
+        <p>
+          Canopy components are designed to have their host element styled directly so that it can be overridden for specific implementation purposes.This is generally used to adjust <cpy-code-snippet code="display"></cpy-code-snippet>, <cpy-code-snippet code="position"></cpy-code-snippet>, <cpy-code-snippet code="background-color"></cpy-code-snippet>, <cpy-code-snippet code="padding"></cpy-code-snippet>, <cpy-code-snippet code="margin"></cpy-code-snippet>, <cpy-code-snippet code="width"></cpy-code-snippet>, <cpy-code-snippet code="height"></cpy-code-snippet> etc.
+        </p>
+        <p>
+          There are likely other properties that you can alter on the host element for each individual component, open your dev tools and inspect each component to see what you can override on the host!
+        </p>
+
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          Title serve a wide variety of scenarios and may contain many different types of content. Due to this flexible nature, the appropriate accessibility treatment depends on how you use <cpy-code-snippet code="<cpy-form-group>"></cpy-code-snippet>.
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="Form Group">
+        <h4 id="api" title="API">API Reference for Canopy Form Group</h4>
+        <cpy-code-snippet code="<cpy-form-group>"></cpy-code-snippet>
+
+        <div class="section">
+        </div>
+
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
+
+        <h4 id="methods">Methods</h4>
+        <p>Exposed methods on the component (All methods are async!)</p>
+        <cpy-table id="comp-methods"></cpy-table>
+
+        <h4 id="slots">Slots</h4>
+        <p>Inject custom content into the component</p>
+        <cpy-table id="comp-slots"></cpy-table>
+
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic Form Group">
+<cpy-form-group>
+  <cpy-input label="Text Input" required></cpy-input>
+  <cpy-input-textarea label="Textarea Input" required></cpy-input-textarea>
+  <cpy-input-toggle label="Toggle Input" required></cpy-input-toggle>
+</cpy-form-group>
+      </cpy-code-example>
+      <cpy-code-example header="Small Form Group">
+<cpy-form-group size="small">
+  <cpy-input label="Text Input" required></cpy-input>
+  <cpy-input-textarea label="Textarea Input" required></cpy-input-textarea>
+  <cpy-input-toggle label="Toggle Input" required></cpy-input-toggle>
+</cpy-form-group>
+      </cpy-code-example>
+      <cpy-code-example header="Large Form Group">
+<cpy-form-group size="large">
+  <cpy-input label="Text Input" required></cpy-input>
+  <cpy-input-textarea label="Textarea Input" required></cpy-input-textarea>
+  <cpy-input-toggle label="Toggle Input" required></cpy-input-toggle>
+</cpy-form-group>
+      </cpy-code-example>
+      <cpy-code-example header="Disabled Form Group">
+<cpy-form-group disabled>
+  <cpy-input label="Text Input" required></cpy-input>
+  <cpy-input-textarea label="Textarea Input" required></cpy-input-textarea>
+  <cpy-input-toggle label="Toggle Input" required></cpy-input-toggle>
+</cpy-form-group>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
+<script src="/docs/comps/formGroup.js">
+</script>
