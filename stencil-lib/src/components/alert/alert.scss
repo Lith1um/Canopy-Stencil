@@ -1,5 +1,4 @@
 @import '../../styles/mixins/icon-size.scss';
-@import '../../styles/mixins/box-shadow.scss';
 
 :host {
   display: block;
@@ -70,7 +69,6 @@
     position: relative;
     overflow: hidden;
     border-radius: 0.375rem/* 6px */;
-    @include box-shadow();
     background-color: var(--cpy-bg-white) !important;
 
     .alert-border {
