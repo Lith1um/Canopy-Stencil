@@ -5,6 +5,7 @@ import { getEmailValidator } from './validators/email.validator';
 import { getLengthValidator } from './validators/length.validator';
 import { getNumberLengthValidator } from './validators/number-length.validator';
 import { getNumberValidator } from './validators/number.validator';
+import { getPasswordValidator } from './validators/password.validator';
 import { getRequiredValidator } from './validators/required.validator';
 
 export enum ValidatorsName {
@@ -13,6 +14,7 @@ export enum ValidatorsName {
   Length = 'length',
   Number = 'number',
   NumberLength = 'numberLength',
+  Password = 'password',
 }
 
 export function combineValidator<T>(validator1: Validator<T>, validator2: Validator<T>): Validator<T> {
@@ -46,7 +48,7 @@ export function getValidator<T>(validators: Array<string | ValidatorEntry | Vali
   }).reduce(combineValidator, defaultValidator);
 }
 
-export function validatorFactory(name: string, options: { [key: string]: any }, errorMsg?: ValidatorError): Validator<any> {
+export function validatorFactory(name: string, options: { [key: string]: any } = {}, errorMsg?: ValidatorError): Validator<any> {
   switch (name) {
     case ValidatorsName.Required:
       return getRequiredValidator(errorMsg);
@@ -58,6 +60,17 @@ export function validatorFactory(name: string, options: { [key: string]: any }, 
       return getLengthValidator(options.min, options.max, errorMsg);
     case ValidatorsName.NumberLength:
       return getNumberLengthValidator(options.min, options.max, errorMsg);
+    case ValidatorsName.Password:
+      return getPasswordValidator(
+        options.min,
+        options.max,
+        options.upperCaseMin,
+        options.lowerCaseMin,
+        options.digitsMin,
+        options.specialCharsMin,
+        options.repeatCharsMax,
+        errorMsg
+      );
     default:
       return defaultValidator;
   }
