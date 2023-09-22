@@ -29,7 +29,7 @@ type ValidatorError = (value: unknown) => string`;
       name: 'password',
       options: {
         min: 8,
-        max: 20,
+        max: 50,
         upperCaseMin: 1,
         lowerCaseMin: 1,
         digitsMin: 1,

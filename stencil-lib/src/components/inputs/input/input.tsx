@@ -97,7 +97,13 @@ export class Input implements BaseInput<string | number> {
   }
 
   getValidators(): Array<string | ValidatorEntry | Validator<string>> {
-    const validators = [this.type, ...(this.validators ?? [])];
+    let validators = this.validators ?? [];
+
+    // don't add the password validator by default
+    // (usually password validation is only required for account creation, not login)
+    if (this.type !== 'password') {
+      validators = [this.type, ...(this.validators ?? [])];
+    }
     
     if (this.required) {
       validators.unshift('required');
