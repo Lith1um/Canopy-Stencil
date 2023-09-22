@@ -34,7 +34,31 @@ type Validators = Array<string | ValidatorEntry | Validator<string | number>>;`;
     { slotName: "suffix", purpose: 'Suffix content for the input (intended for use with <cpy-icon>)' }
   ];
 
+  document.getElementById('example-text-code').code = `<cpy-input label="Min and Max Length Text Input" value="Test value">
+</cpy-input>
+
+<script>
+  document.querySelector('cpy-input').validators = [
+    { name: 'length', options: { min: 4, max: 10 }, errorMessage: (val) => \`"\${val}" is no bueno\` }
+  ];
+</script>`;
   document.getElementById('example-text').validators = [{ name: 'length', options: { min: 4, max: 10 }, errorMessage: (val) => `"${val}" is no bueno` }];
+
+  document.getElementById('example-number-code').code = `<cpy-input type="number" label="Min and Max Number Input">
+</cpy-input>
+
+<script>
+  document.querySelector('cpy-input').validators = [
+    { name: 'numberLength', options: { min: 1, max: 100 } }
+  ];
+</script>`;
   document.getElementById('example-number').validators = [{ name: 'numberLength', options: { min: 1, max: 100 } }];
+
+  document.getElementById('example-password-code').code = `<cpy-input type="password" label="Password Input" required>
+</cpy-input>
+
+<script>
+  document.querySelector('cpy-input').validators = ['password'];
+</script>`;
   document.getElementById('example-password').validators = ['password'];
 })();

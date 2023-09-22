@@ -3,7 +3,7 @@ import { Validator } from '../types/validator.type';
 
 export function getPasswordValidator(
   min: number = 8,
-  max: number = 20,
+  max: number = 50,
   upperCaseMin: number = 1,
   lowerCaseMin: number = 1,
   digitsMin: number = 1,
@@ -48,8 +48,13 @@ function validatePassword(
   specialCharsMin: number,
   repeatCharsMax: number
 ): string | undefined {
-  if (!val?.length || !(new RegExp(`^([A-Za-z0-9! @#$%^&*()\\-_=+{};:,<.>]{${min},${max}})$`).test(val))) {
-    return `Password must have at least ${min} characters and no more than ${max} characters`;
+  // char validation
+  if (!(new RegExp(`^[A-Za-z0-9! @#$%^&*()\\-_=+{};:,<.>]*$`).test(val))) {
+    return `Password contains invalid characters. Valid characters include letters, numbers and any of the following characters: !@#$%^&*()-_=+{};:,<.>`;
+  }
+  // repeat chars validation
+  if (new RegExp(`(.)\\1{${repeatCharsMax},}`).test(val)) {
+    return `Password cannot have more than ${repeatCharsMax} repeating character${repeatCharsMax > 1 ? 's' : ''}`;
   }
   // uppercase validation
   if (!(new RegExp(`(.*[A-Z]){${upperCaseMin},}`, 'g').test(val))) {
@@ -67,9 +72,12 @@ function validatePassword(
   if (!(new RegExp(`(.*[!@#$%^&*()\\-_=+{};:,<.>]){${specialCharsMin},}`).test(val))) {
     return `Password must contain at least ${specialCharsMin} special character${specialCharsMin > 1 ? 's' : ''}`;
   }
-  // repeat chars validation
-  if (new RegExp(`(.)\\1{${repeatCharsMax},}`).test(val)) {
-    return `Password cannot have more than ${repeatCharsMax} repeating character${repeatCharsMax > 1 ? 's' : ''}`;
+  // length validation
+  if (val?.length < min) {
+    return `Password must have at least ${min} character${min > 1 ? 's' : ''}`;
+  }
+  if (val?.length > max) {
+    return `Password must have no more than ${max} character${max > 1 ? 's' : ''}`;
   }
   return;
 }
