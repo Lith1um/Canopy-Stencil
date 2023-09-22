@@ -36,4 +36,5 @@ type Validators = Array<string | ValidatorEntry | Validator<string | number>>;`;
 
   document.getElementById('example-text').validators = [{ name: 'length', options: { min: 4, max: 10 }, errorMessage: (val) => `"${val}" is no bueno` }];
   document.getElementById('example-number').validators = [{ name: 'numberLength', options: { min: 1, max: 100 } }];
+  document.getElementById('example-password').validators = ['password'];
 })();

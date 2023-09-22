@@ -22,8 +22,21 @@ type ValidatorError = (value: unknown) => string`;
     'required',
     'email',
     'number',
+    'password'
     {name: 'length', options: {min: 4, max: 10}},
     {name: 'numberLength', options: {min: 0, max: 100}},
+    {
+      name: 'password',
+      options: {
+        min: 8,
+        max: 20,
+        upperCaseMin: 1,
+        lowerCaseMin: 1,
+        digitsMin: 1,
+        specialCharsMin: 1,
+        repeatCharsMax: 2,
+      }
+    },
     {name: 'email', errorMessage: (val) => \`\${val} is not a valid email!\`}
   ];
 </script>`;
