@@ -1,5 +1,7 @@
 ## TODOs
 - Components
+  - toast width full on mobile
+  - toggle, checkbox, file and select are broken with ng form
 	- Ghost Components?
 	- horizontal nav bar
 	- inputs

@@ -7,7 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AccordionSize } from "./components/accordion/accordion.type";
 import { AlertAppearance, AlertType } from "./components/alert/alert.type";
-import { AvatarSize, AvatarType } from "./components/avatar/avatar.type";
+import { AvatarLoadingStrategy, AvatarSize, AvatarType } from "./components/avatar/avatar.type";
 import { BadgeAppearance, BadgeSize, BadgeType } from "./components/badge/badge.type";
 import { ButtonAppearance, ButtonSize, ButtonStyle } from "./components/button/button.type";
 import { CodeLanguage } from "./components/code-block/types/code-language.type";
@@ -36,7 +36,7 @@ import { ToolbarSize, ToolbarType } from "./components/toolbar/toolbar.type";
 import { TooltipPosition } from "./components/tooltip/tooltip.type";
 export { AccordionSize } from "./components/accordion/accordion.type";
 export { AlertAppearance, AlertType } from "./components/alert/alert.type";
-export { AvatarSize, AvatarType } from "./components/avatar/avatar.type";
+export { AvatarLoadingStrategy, AvatarSize, AvatarType } from "./components/avatar/avatar.type";
 export { BadgeAppearance, BadgeSize, BadgeType } from "./components/badge/badge.type";
 export { ButtonAppearance, ButtonSize, ButtonStyle } from "./components/button/button.type";
 export { CodeLanguage } from "./components/code-block/types/code-language.type";
@@ -82,6 +82,7 @@ export namespace Components {
     interface CpyAvatar {
         "border": boolean;
         "initials": string;
+        "loading": AvatarLoadingStrategy;
         "size": AvatarSize;
         "src": string;
         "type": AvatarType;
@@ -224,6 +225,20 @@ export namespace Components {
         "size": InputSize;
         "validators": Array<string | ValidatorEntry | Validator<boolean>>;
         "value": boolean;
+    }
+    interface CpyInputFile {
+        "accept": string;
+        "disabled": boolean;
+        "isValid": () => Promise<boolean>;
+        "label": string;
+        "markAsTouched": () => Promise<void>;
+        "markAsUntouched": () => Promise<void>;
+        "multiple": boolean;
+        "placeholder": string;
+        "required": boolean;
+        "size": InputSize;
+        "validators": Array<string | ValidatorEntry | Validator<File[]>>;
+        "value": File[];
     }
     interface CpyInputSelect {
         "disabled": boolean;
@@ -414,6 +429,10 @@ export interface CpyInputBaseCustomEvent<T> extends CustomEvent<T> {
 export interface CpyInputCheckboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyInputCheckboxElement;
+}
+export interface CpyInputFileCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyInputFileElement;
 }
 export interface CpyInputSelectCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -616,6 +635,12 @@ declare global {
         prototype: HTMLCpyInputCheckboxElement;
         new (): HTMLCpyInputCheckboxElement;
     };
+    interface HTMLCpyInputFileElement extends Components.CpyInputFile, HTMLStencilElement {
+    }
+    var HTMLCpyInputFileElement: {
+        prototype: HTMLCpyInputFileElement;
+        new (): HTMLCpyInputFileElement;
+    };
     interface HTMLCpyInputSelectElement extends Components.CpyInputSelect, HTMLStencilElement {
     }
     var HTMLCpyInputSelectElement: {
@@ -787,6 +812,7 @@ declare global {
         "cpy-input": HTMLCpyInputElement;
         "cpy-input-base": HTMLCpyInputBaseElement;
         "cpy-input-checkbox": HTMLCpyInputCheckboxElement;
+        "cpy-input-file": HTMLCpyInputFileElement;
         "cpy-input-select": HTMLCpyInputSelectElement;
         "cpy-input-select-option": HTMLCpyInputSelectOptionElement;
         "cpy-input-textarea": HTMLCpyInputTextareaElement;
@@ -831,6 +857,7 @@ declare namespace LocalJSX {
     interface CpyAvatar {
         "border"?: boolean;
         "initials"?: string;
+        "loading"?: AvatarLoadingStrategy;
         "size"?: AvatarSize;
         "src"?: string;
         "type"?: AvatarType;
@@ -965,6 +992,18 @@ declare namespace LocalJSX {
         "size"?: InputSize;
         "validators"?: Array<string | ValidatorEntry | Validator<boolean>>;
         "value"?: boolean;
+    }
+    interface CpyInputFile {
+        "accept"?: string;
+        "disabled"?: boolean;
+        "label"?: string;
+        "multiple"?: boolean;
+        "onValueChange"?: (event: CpyInputFileCustomEvent<File[]>) => void;
+        "placeholder"?: string;
+        "required"?: boolean;
+        "size"?: InputSize;
+        "validators"?: Array<string | ValidatorEntry | Validator<File[]>>;
+        "value"?: File[];
     }
     interface CpyInputSelect {
         "disabled"?: boolean;
@@ -1133,6 +1172,7 @@ declare namespace LocalJSX {
         "cpy-input": CpyInput;
         "cpy-input-base": CpyInputBase;
         "cpy-input-checkbox": CpyInputCheckbox;
+        "cpy-input-file": CpyInputFile;
         "cpy-input-select": CpyInputSelect;
         "cpy-input-select-option": CpyInputSelectOption;
         "cpy-input-textarea": CpyInputTextarea;
@@ -1189,6 +1229,7 @@ declare module "@stencil/core" {
             "cpy-input": LocalJSX.CpyInput & JSXBase.HTMLAttributes<HTMLCpyInputElement>;
             "cpy-input-base": LocalJSX.CpyInputBase & JSXBase.HTMLAttributes<HTMLCpyInputBaseElement>;
             "cpy-input-checkbox": LocalJSX.CpyInputCheckbox & JSXBase.HTMLAttributes<HTMLCpyInputCheckboxElement>;
+            "cpy-input-file": LocalJSX.CpyInputFile & JSXBase.HTMLAttributes<HTMLCpyInputFileElement>;
             "cpy-input-select": LocalJSX.CpyInputSelect & JSXBase.HTMLAttributes<HTMLCpyInputSelectElement>;
             "cpy-input-select-option": LocalJSX.CpyInputSelectOption & JSXBase.HTMLAttributes<HTMLCpyInputSelectOptionElement>;
             "cpy-input-textarea": LocalJSX.CpyInputTextarea & JSXBase.HTMLAttributes<HTMLCpyInputTextareaElement>;

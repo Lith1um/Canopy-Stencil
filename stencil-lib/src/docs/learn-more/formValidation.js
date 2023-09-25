@@ -16,6 +16,7 @@ interface Validator<T> {
 type ValidatorError = (value: unknown) => string`;
 
   document.getElementById('built-in-validation').code = `<cpy-input label="Form Input"></cpy-input>
+<cpy-input-file label="File Input"></cpy-input-file>
 
 <script>
   document.querySelector('cpy-input').validators = [
@@ -39,6 +40,10 @@ type ValidatorError = (value: unknown) => string`;
     },
     {name: 'email', errorMessage: (val) => \`\${val} is not a valid email!\`}
   ];
+
+  document.querySelector('cpy-input-file').validators = [
+    {name: 'fileSize', options: {min: 1000, max: 1000000}}
+  }
 </script>`;
 
   document.getElementById('custom-errors-code').code = `<cpy-input label="Text Input with custom error message">
