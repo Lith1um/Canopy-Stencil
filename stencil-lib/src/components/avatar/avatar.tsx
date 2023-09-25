@@ -1,5 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
-import { AvatarSize, AvatarType } from './avatar.type';
+import { AvatarLoadingStrategy, AvatarSize, AvatarType } from './avatar.type';
 
 @Component({
   tag: 'cpy-avatar',
@@ -18,6 +18,8 @@ export class Avatar {
 
   @Prop() size: AvatarSize = 'default';
 
+  @Prop() loading: AvatarLoadingStrategy = 'auto';
+
   render() {
     const classes = {
       'avatar': true,
@@ -30,7 +32,7 @@ export class Avatar {
     return (
       <div class={classes}>
         {this.src
-          ? <img src={this.src} alt="avatar"/>
+          ? <img src={this.src} alt="avatar" loading={this.loading}/>
           : <span>{this.initials}</span>}
       </div>
     );

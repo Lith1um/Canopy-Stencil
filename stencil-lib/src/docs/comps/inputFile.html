@@ -1,0 +1,120 @@
+<h1>File Inputs</h1>
+
+  <cpy-tabs id="url-tabs" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+    <!-- Overview -->
+    <cpy-tab-header slot="header" tab-title="Overview"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="File">
+        <p>
+          Canopy file input allow you to select files for upload through a form element. They are referenced using
+          the <cpy-code-snippet code="<cpy-input-file>"></cpy-code-snippet> custom HTML element.
+        </p>
+
+        <p>
+          The Canopy file input accept property allows you to restrict what files you allow users to upload and mimics the HTML file input element. Learn more about <cpy-link new-tab href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file">restricting file types</cpy-link> with file inputs.
+        </p>
+
+        <p>
+          Canopy form inputs use a custom validation factory to provide built-in validator functions for your inputs. They can
+          also be extended upon to create your own validators.
+        </p>
+    
+        <p>
+          Learn more about <cpy-link href="/learn-more/formValidation">form validation</cpy-link> in Canopy.
+        </p>
+
+        <cpy-code-example header="File">
+<cpy-input-file label="Basic file input"></cpy-input-file>
+        </cpy-code-example>
+        
+        <h4 id="examples">Custom Styles</h4>
+        <p>
+          Through the use of CSS variables, you can customise Canopy components to achieve the look and feel you want. Below is a list of variables you can use to configure this component. You can learn more about Canopy colors and root configuration <cpy-link href="/learn-more/colors">here</cpy-link>.
+        </p>
+        <cpy-table id="comp-styles"></cpy-table>
+
+        <h4 id="host">Host styles</h4>
+        <p>
+          Canopy components are designed to have their host element styled directly so that it can be overridden for specific implementation purposes.This is generally used to adjust <cpy-code-snippet code="display"></cpy-code-snippet>, <cpy-code-snippet code="position"></cpy-code-snippet>, <cpy-code-snippet code="background-color"></cpy-code-snippet>, <cpy-code-snippet code="padding"></cpy-code-snippet>, <cpy-code-snippet code="margin"></cpy-code-snippet>, <cpy-code-snippet code="width"></cpy-code-snippet>, <cpy-code-snippet code="height"></cpy-code-snippet> etc.
+        </p>
+        <p>
+          There are likely other properties that you can alter on the host element for each individual component, open your dev tools and inspect each component to see what you can override on the host!
+        </p>
+
+        <h4 id="accessibility">Accessibility</h4>
+        <p>
+          TODO: ...
+        </p>
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- API -->
+    <cpy-tab-header slot="header" tab-title="API"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-page-content contents-title="File">
+        <h4 id="api" title="API">API Reference for Canopy File Input</h4>
+        <cpy-code-snippet code="<cpy-input-file>"></cpy-code-snippet>
+
+        <div class="section">
+        </div>
+
+        <h4 id="types">Types</h4>
+        <cpy-code-block id="comp-interfaces"></cpy-code-block>
+
+        <h4 id="props">Properties</h4>
+        <p>Inputs to pass to your component</p>
+        <cpy-table id="comp-props"></cpy-table>
+
+        <h4 id="events">Events</h4>
+        <p>React to changes in the component</p>
+        <cpy-table id="comp-events"></cpy-table>
+
+        <h4 id="methods">Methods</h4>
+        <p>Exposed methods on the component (All methods are async!)</p>
+        <cpy-table id="comp-methods"></cpy-table>
+
+      </cpy-page-content>
+    </cpy-tab-content>
+
+    <!-- Examples -->
+    <cpy-tab-header slot="header" tab-title="Examples"></cpy-tab-header>
+    <cpy-tab-content slot="content">
+      <cpy-code-example header="Basic file input">
+<cpy-input-file label="Basic file input"></cpy-input-file>
+      </cpy-code-example>
+      <cpy-code-example header="Multiple file input">
+<cpy-input-file label="Multiple file input" multiple></cpy-input-file>
+      </cpy-code-example>
+      <cpy-code-example header="File input which only accepts PNG's">
+<cpy-input-file label="Give me a PNG" accept=".png"></cpy-input-file>
+      </cpy-code-example>
+      <cpy-code-example header="File input which accepts any image">
+<cpy-input-file label="Give me an image" accept="image/*"></cpy-input-file>
+      </cpy-code-example>
+      <cpy-code-example header="Required file input">
+<cpy-input-file label="Required file input" required></cpy-input-file>
+      </cpy-code-example>
+      <cpy-code-example header="Small file input">
+<cpy-input-file label="Small file input" size="small"></cpy-input-file>
+      </cpy-code-example>
+      <cpy-code-example header="Large file input">
+<cpy-input-file label="Large file input" size="large" value="true"></cpy-input-file>
+      </cpy-code-example>
+      <cpy-code-example header="Disabled file input">
+<cpy-input-file label="Disabled file input" disabled></cpy-input-file>
+      </cpy-code-example>
+      <cpy-code-example id="max-file-code" header="File input with file size validation">
+<cpy-input-file id="max-file-example" label="File size input"></cpy-input-file>
+      </cpy-code-example>
+      <cpy-code-example header="Custom file input">
+<cpy-input-file label="Custom file input" required style="
+  --cpy-text-primary: violet;
+  --cpy-bg-white: transparent;
+  --cpy-input-border-radius: 50px;
+">
+</cpy-input-file>
+      </cpy-code-example>
+    </cpy-tab-content>
+  </cpy-tabs>
+<script src="/docs/comps/inputFile.js">
+</script>

@@ -61,14 +61,14 @@ export declare interface CpyAlert extends Components.CpyAlert {
 
 
 @ProxyCmp({
-  inputs: ['border', 'initials', 'size', 'src', 'type']
+  inputs: ['border', 'initials', 'loading', 'size', 'src', 'type']
 })
 @Component({
   selector: 'cpy-avatar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['border', 'initials', 'size', 'src', 'type'],
+  inputs: ['border', 'initials', 'loading', 'size', 'src', 'type'],
 })
 export class CpyAvatar {
   protected el: HTMLElement;
@@ -630,6 +630,33 @@ export class CpyInputCheckbox {
 export declare interface CpyInputCheckbox extends Components.CpyInputCheckbox {
 
   valueChange: EventEmitter<CustomEvent<boolean>>;
+}
+
+
+@ProxyCmp({
+  inputs: ['accept', 'disabled', 'label', 'multiple', 'placeholder', 'required', 'size', 'validators', 'value'],
+  methods: ['isValid', 'markAsTouched', 'markAsUntouched']
+})
+@Component({
+  selector: 'cpy-input-file',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['accept', 'disabled', 'label', 'multiple', 'placeholder', 'required', 'size', 'validators', 'value'],
+})
+export class CpyInputFile {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['valueChange']);
+  }
+}
+
+
+export declare interface CpyInputFile extends Components.CpyInputFile {
+
+  valueChange: EventEmitter<CustomEvent<File[]>>;
 }
 
 

@@ -2,6 +2,7 @@ import { ValidatorEntry } from './types/validator-entry.type';
 import { ValidatorError } from './types/validator-error.type';
 import { Validator } from './types/validator.type';
 import { getEmailValidator } from './validators/email.validator';
+import { getFileSizeValidator } from './validators/file-size.validator';
 import { getLengthValidator } from './validators/length.validator';
 import { getNumberLengthValidator } from './validators/number-length.validator';
 import { getNumberValidator } from './validators/number.validator';
@@ -15,6 +16,7 @@ export enum ValidatorsName {
   Number = 'number',
   NumberLength = 'numberLength',
   Password = 'password',
+  FileSize = 'fileSize'
 }
 
 export function combineValidator<T>(validator1: Validator<T>, validator2: Validator<T>): Validator<T> {
@@ -58,6 +60,8 @@ export function validatorFactory(name: string, options: { [key: string]: any } =
       return getNumberValidator(errorMsg);
     case ValidatorsName.Length:
       return getLengthValidator(options.min, options.max, errorMsg);
+    case ValidatorsName.FileSize:
+      return getFileSizeValidator(options.min, options.max, errorMsg);
     case ValidatorsName.NumberLength:
       return getNumberLengthValidator(options.min, options.max, errorMsg);
     case ValidatorsName.Password:

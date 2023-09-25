@@ -11,6 +11,7 @@
 | ---------- | ---------- | ----------- | ---------------------------------------------- | ----------- |
 | `border`   | `border`   |             | `boolean`                                      | `false`     |
 | `initials` | `initials` |             | `string`                                       | `undefined` |
+| `loading`  | `loading`  |             | `"auto" \| "eager" \| "lazy"`                  | `'auto'`    |
 | `size`     | `size`     |             | `"default" \| "large" \| "small" \| "x-large"` | `'default'` |
 | `src`      | `src`      |             | `string`                                       | `undefined` |
 | `type`     | `type`     |             | `"rounded" \| "square"`                        | `'rounded'` |
