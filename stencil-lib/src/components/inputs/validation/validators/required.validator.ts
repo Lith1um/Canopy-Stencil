@@ -18,7 +18,6 @@ export function getRequiredValidator(errorMsg?: ValidatorError): Validator<strin
         return val.trim().length > 0;
       }
       // else is file array
-      console.log(val.length > 0);
       return val.length > 0;
     },
     errorMessage: errorMsg ?? (() => 'This field is required')
