@@ -4,8 +4,6 @@ import { Validator } from '../types/validator.type';
 export function getFileSizeValidator(min: number, max: number, errorMsg?: ValidatorError): Validator<File[]> {
   return {
     validate: (files: File[]) => {
-      console.log('getFileSizeValidator', files);
-
       if (!files) {
         return true;
       }

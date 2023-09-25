@@ -92,7 +92,6 @@ export class InputFile implements BaseInput<File[]> {
     this.value = value;
     this.valueChange.emit(value);
     
-    console.log('handleChange', value);
     this.interacted = true;
   }
 
@@ -118,7 +117,6 @@ export class InputFile implements BaseInput<File[]> {
   }
 
   focusInput(): void {
-    console.log('focusInput', `${this.inputElem?.value}`, this.value);
     this.inputElem?.click();
     this.inputElem?.focus();
   }
