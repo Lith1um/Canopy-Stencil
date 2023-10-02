@@ -79,6 +79,7 @@ const menuItems = mobileNavMenu.items = desktopNavMenu.items = [
       { title: 'Form Groups', type: 'basic', url: '/comps/formGroup' },
       { title: 'Basic Inputs', type: 'basic', url: '/comps/input' },
       { title: 'Checkbox', type: 'basic', url: '/comps/inputCheckbox' },
+      { title: 'Color Picker', type: 'basic', url: '/comps/inputColor' },
       { title: 'File', type: 'basic', url: '/comps/inputFile' },
       { title: 'Select', type: 'basic', url: '/comps/inputSelect' },
       { title: 'Textarea', type: 'basic', url: '/comps/inputTextarea' },

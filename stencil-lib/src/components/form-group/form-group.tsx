@@ -47,7 +47,7 @@ export class FormGroup {
   )[];
 
   handleInputChange(): void {
-    this.inputs = Array.from(this.host.querySelectorAll('cpy-input, cpy-input-checkbox, cpy-input-file, cpy-input-select, cpy-input-textarea, cpy-input-toggle'));
+    this.inputs = Array.from(this.host.querySelectorAll('cpy-input, cpy-input-checkbox, cpy-input-file, cpy-input-select, cpy-input-textarea, cpy-input-toggle, cpy-input-color'));
     this.setSize();
     this.setDisabled();
   }

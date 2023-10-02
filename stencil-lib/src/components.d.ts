@@ -226,6 +226,20 @@ export namespace Components {
         "validators": Array<string | ValidatorEntry | Validator<boolean>>;
         "value": boolean;
     }
+    interface CpyInputColor {
+        "accept": string;
+        "disabled": boolean;
+        "isValid": () => Promise<boolean>;
+        "label": string;
+        "markAsTouched": () => Promise<void>;
+        "markAsUntouched": () => Promise<void>;
+        "multiple": boolean;
+        "placeholder": string;
+        "required": boolean;
+        "size": InputSize;
+        "validators": Array<string | ValidatorEntry | Validator<string>>;
+        "value": string;
+    }
     interface CpyInputFile {
         "accept": string;
         "disabled": boolean;
@@ -429,6 +443,10 @@ export interface CpyInputBaseCustomEvent<T> extends CustomEvent<T> {
 export interface CpyInputCheckboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCpyInputCheckboxElement;
+}
+export interface CpyInputColorCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCpyInputColorElement;
 }
 export interface CpyInputFileCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -635,6 +653,12 @@ declare global {
         prototype: HTMLCpyInputCheckboxElement;
         new (): HTMLCpyInputCheckboxElement;
     };
+    interface HTMLCpyInputColorElement extends Components.CpyInputColor, HTMLStencilElement {
+    }
+    var HTMLCpyInputColorElement: {
+        prototype: HTMLCpyInputColorElement;
+        new (): HTMLCpyInputColorElement;
+    };
     interface HTMLCpyInputFileElement extends Components.CpyInputFile, HTMLStencilElement {
     }
     var HTMLCpyInputFileElement: {
@@ -812,6 +836,7 @@ declare global {
         "cpy-input": HTMLCpyInputElement;
         "cpy-input-base": HTMLCpyInputBaseElement;
         "cpy-input-checkbox": HTMLCpyInputCheckboxElement;
+        "cpy-input-color": HTMLCpyInputColorElement;
         "cpy-input-file": HTMLCpyInputFileElement;
         "cpy-input-select": HTMLCpyInputSelectElement;
         "cpy-input-select-option": HTMLCpyInputSelectOptionElement;
@@ -993,6 +1018,18 @@ declare namespace LocalJSX {
         "validators"?: Array<string | ValidatorEntry | Validator<boolean>>;
         "value"?: boolean;
     }
+    interface CpyInputColor {
+        "accept"?: string;
+        "disabled"?: boolean;
+        "label"?: string;
+        "multiple"?: boolean;
+        "onValueChange"?: (event: CpyInputColorCustomEvent<string>) => void;
+        "placeholder"?: string;
+        "required"?: boolean;
+        "size"?: InputSize;
+        "validators"?: Array<string | ValidatorEntry | Validator<string>>;
+        "value"?: string;
+    }
     interface CpyInputFile {
         "accept"?: string;
         "disabled"?: boolean;
@@ -1172,6 +1209,7 @@ declare namespace LocalJSX {
         "cpy-input": CpyInput;
         "cpy-input-base": CpyInputBase;
         "cpy-input-checkbox": CpyInputCheckbox;
+        "cpy-input-color": CpyInputColor;
         "cpy-input-file": CpyInputFile;
         "cpy-input-select": CpyInputSelect;
         "cpy-input-select-option": CpyInputSelectOption;
@@ -1229,6 +1267,7 @@ declare module "@stencil/core" {
             "cpy-input": LocalJSX.CpyInput & JSXBase.HTMLAttributes<HTMLCpyInputElement>;
             "cpy-input-base": LocalJSX.CpyInputBase & JSXBase.HTMLAttributes<HTMLCpyInputBaseElement>;
             "cpy-input-checkbox": LocalJSX.CpyInputCheckbox & JSXBase.HTMLAttributes<HTMLCpyInputCheckboxElement>;
+            "cpy-input-color": LocalJSX.CpyInputColor & JSXBase.HTMLAttributes<HTMLCpyInputColorElement>;
             "cpy-input-file": LocalJSX.CpyInputFile & JSXBase.HTMLAttributes<HTMLCpyInputFileElement>;
             "cpy-input-select": LocalJSX.CpyInputSelect & JSXBase.HTMLAttributes<HTMLCpyInputSelectElement>;
             "cpy-input-select-option": LocalJSX.CpyInputSelectOption & JSXBase.HTMLAttributes<HTMLCpyInputSelectOptionElement>;

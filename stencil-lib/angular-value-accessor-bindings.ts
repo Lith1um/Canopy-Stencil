@@ -8,7 +8,7 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
     type: 'boolean',
   },
   {
-    elementSelectors: ['cpy-input', 'cpy-input-select', 'cpy-input-textarea'],
+    elementSelectors: ['cpy-input', 'cpy-input-select', 'cpy-input-textarea', 'cpy-input-color'],
     event: 'valueChange',
     targetAttr: 'value',
     type: 'text',
