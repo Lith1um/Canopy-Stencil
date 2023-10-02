@@ -46,6 +46,7 @@ Type: `Promise<void>`
 
  - [cpy-input](input)
  - [cpy-input-checkbox](input-checkbox)
+ - [cpy-input-color](input-color)
  - [cpy-input-file](input-file)
  - [cpy-input-select](input-select)
  - [cpy-input-textarea](input-textarea)
@@ -61,6 +62,7 @@ graph TD;
   cpy-input-base --> cpy-popup
   cpy-input --> cpy-input-base
   cpy-input-checkbox --> cpy-input-base
+  cpy-input-color --> cpy-input-base
   cpy-input-file --> cpy-input-base
   cpy-input-select --> cpy-input-base
   cpy-input-textarea --> cpy-input-base
