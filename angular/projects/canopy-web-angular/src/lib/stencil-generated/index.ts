@@ -28,6 +28,7 @@ export const DIRECTIVES = [
   d.CpyInput,
   d.CpyInputBase,
   d.CpyInputCheckbox,
+  d.CpyInputColor,
   d.CpyInputFile,
   d.CpyInputSelect,
   d.CpyInputSelectOption,

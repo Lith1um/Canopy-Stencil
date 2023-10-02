@@ -1,0 +1,31 @@
+:host {
+  display: block;
+}
+
+input {
+  --height: 1.5rem;
+  height: var(--height);
+  width: 0;
+  opacity: 0;
+  background-color: transparent;
+
+  &.input--small {
+    --height: 1.25rem;
+  }
+  
+  &.input--large {
+    --height: 1.75rem;
+  }
+
+  &:disabled + .color {
+    cursor: default;
+  }
+
+  & + .color {
+    cursor: pointer;
+    border-radius: var(--cpy-input-border-radius);
+    position: relative;
+    height: var(--height);
+    width: 100%;
+  }
+}

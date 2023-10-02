@@ -638,6 +638,33 @@ export declare interface CpyInputCheckbox extends Components.CpyInputCheckbox {
   methods: ['isValid', 'markAsTouched', 'markAsUntouched']
 })
 @Component({
+  selector: 'cpy-input-color',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['accept', 'disabled', 'label', 'multiple', 'placeholder', 'required', 'size', 'validators', 'value'],
+})
+export class CpyInputColor {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['valueChange']);
+  }
+}
+
+
+export declare interface CpyInputColor extends Components.CpyInputColor {
+
+  valueChange: EventEmitter<CustomEvent<string>>;
+}
+
+
+@ProxyCmp({
+  inputs: ['accept', 'disabled', 'label', 'multiple', 'placeholder', 'required', 'size', 'validators', 'value'],
+  methods: ['isValid', 'markAsTouched', 'markAsUntouched']
+})
+@Component({
   selector: 'cpy-input-file',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
