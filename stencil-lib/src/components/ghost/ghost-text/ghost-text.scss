@@ -1,0 +1,18 @@
+@import '../../../styles/mixins/ghost-animation.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.ghost-text {
+  @include ghost-animation();
+  width: 100%;
+  height: 1rem;
+
+  &:last-child:not(.ghost-text:first-child) {
+    width: 75%;
+  }
+}

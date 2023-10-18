@@ -189,6 +189,13 @@ export namespace Components {
         "markAsUntouched": () => Promise<void>;
         "size": InputSize;
     }
+    interface CpyGhost {
+        "loaded": boolean;
+    }
+    interface CpyGhostText {
+        "borderRadius": string;
+        "lines": number;
+    }
     interface CpyIcon {
     }
     interface CpyInput {
@@ -629,6 +636,18 @@ declare global {
         prototype: HTMLCpyFormGroupElement;
         new (): HTMLCpyFormGroupElement;
     };
+    interface HTMLCpyGhostElement extends Components.CpyGhost, HTMLStencilElement {
+    }
+    var HTMLCpyGhostElement: {
+        prototype: HTMLCpyGhostElement;
+        new (): HTMLCpyGhostElement;
+    };
+    interface HTMLCpyGhostTextElement extends Components.CpyGhostText, HTMLStencilElement {
+    }
+    var HTMLCpyGhostTextElement: {
+        prototype: HTMLCpyGhostTextElement;
+        new (): HTMLCpyGhostTextElement;
+    };
     interface HTMLCpyIconElement extends Components.CpyIcon, HTMLStencilElement {
     }
     var HTMLCpyIconElement: {
@@ -832,6 +851,8 @@ declare global {
         "cpy-drawer-container": HTMLCpyDrawerContainerElement;
         "cpy-expand-collapse": HTMLCpyExpandCollapseElement;
         "cpy-form-group": HTMLCpyFormGroupElement;
+        "cpy-ghost": HTMLCpyGhostElement;
+        "cpy-ghost-text": HTMLCpyGhostTextElement;
         "cpy-icon": HTMLCpyIconElement;
         "cpy-input": HTMLCpyInputElement;
         "cpy-input-base": HTMLCpyInputBaseElement;
@@ -983,6 +1004,13 @@ declare namespace LocalJSX {
     interface CpyFormGroup {
         "disabled"?: boolean;
         "size"?: InputSize;
+    }
+    interface CpyGhost {
+        "loaded"?: boolean;
+    }
+    interface CpyGhostText {
+        "borderRadius"?: string;
+        "lines"?: number;
     }
     interface CpyIcon {
     }
@@ -1205,6 +1233,8 @@ declare namespace LocalJSX {
         "cpy-drawer-container": CpyDrawerContainer;
         "cpy-expand-collapse": CpyExpandCollapse;
         "cpy-form-group": CpyFormGroup;
+        "cpy-ghost": CpyGhost;
+        "cpy-ghost-text": CpyGhostText;
         "cpy-icon": CpyIcon;
         "cpy-input": CpyInput;
         "cpy-input-base": CpyInputBase;
@@ -1263,6 +1293,8 @@ declare module "@stencil/core" {
             "cpy-drawer-container": LocalJSX.CpyDrawerContainer & JSXBase.HTMLAttributes<HTMLCpyDrawerContainerElement>;
             "cpy-expand-collapse": LocalJSX.CpyExpandCollapse & JSXBase.HTMLAttributes<HTMLCpyExpandCollapseElement>;
             "cpy-form-group": LocalJSX.CpyFormGroup & JSXBase.HTMLAttributes<HTMLCpyFormGroupElement>;
+            "cpy-ghost": LocalJSX.CpyGhost & JSXBase.HTMLAttributes<HTMLCpyGhostElement>;
+            "cpy-ghost-text": LocalJSX.CpyGhostText & JSXBase.HTMLAttributes<HTMLCpyGhostTextElement>;
             "cpy-icon": LocalJSX.CpyIcon & JSXBase.HTMLAttributes<HTMLCpyIconElement>;
             "cpy-input": LocalJSX.CpyInput & JSXBase.HTMLAttributes<HTMLCpyInputElement>;
             "cpy-input-base": LocalJSX.CpyInputBase & JSXBase.HTMLAttributes<HTMLCpyInputBaseElement>;

@@ -2,24 +2,24 @@
 - Components
   - toast width full on mobile
   - toggle, checkbox, file and select are broken with ng form
-	- Ghost Components?
-	- horizontal nav bar
-	- inputs
-		- radio
-		- datepicker
-		- time
-		- color
-		- slider
-	- form group?
-	- carousel: change arrow location
-	- image slideshow (with fullscreen support)
-	- comments
-		- can reply prop
-		- support showing replies
-	- breadcrumbs
-	- pagination
-	- grids
-	- marketing style components
+  - Ghost Components?
+  - horizontal nav bar
+  - inputs
+    - radio
+    - datepicker
+    - time
+    - color
+    - slider
+  - form group?
+  - carousel: change arrow location
+  - image slideshow (with fullscreen support)
+  - comments
+    - can reply prop
+    - support showing replies
+  - breadcrumbs
+  - pagination
+  - grids
+  - marketing style components
 
 - Keyboard events
 - Accessibility
