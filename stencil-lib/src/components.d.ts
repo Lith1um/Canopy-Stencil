@@ -497,13 +497,35 @@ export interface CpyToastCustomEvent<T> extends CustomEvent<T> {
     target: HTMLCpyToastElement;
 }
 declare global {
+    interface HTMLCpyAccordionElementEventMap {
+        "accordionOpened": void;
+    }
     interface HTMLCpyAccordionElement extends Components.CpyAccordion, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyAccordionElementEventMap>(type: K, listener: (this: HTMLCpyAccordionElement, ev: CpyAccordionCustomEvent<HTMLCpyAccordionElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyAccordionElementEventMap>(type: K, listener: (this: HTMLCpyAccordionElement, ev: CpyAccordionCustomEvent<HTMLCpyAccordionElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyAccordionElement: {
         prototype: HTMLCpyAccordionElement;
         new (): HTMLCpyAccordionElement;
     };
+    interface HTMLCpyAlertElementEventMap {
+        "closed": void;
+    }
     interface HTMLCpyAlertElement extends Components.CpyAlert, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyAlertElementEventMap>(type: K, listener: (this: HTMLCpyAlertElement, ev: CpyAlertCustomEvent<HTMLCpyAlertElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyAlertElementEventMap>(type: K, listener: (this: HTMLCpyAlertElement, ev: CpyAlertCustomEvent<HTMLCpyAlertElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyAlertElement: {
         prototype: HTMLCpyAlertElement;
@@ -521,7 +543,18 @@ declare global {
         prototype: HTMLCpyBadgeElement;
         new (): HTMLCpyBadgeElement;
     };
+    interface HTMLCpyButtonElementEventMap {
+        "buttonClicked": void;
+    }
     interface HTMLCpyButtonElement extends Components.CpyButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyButtonElementEventMap>(type: K, listener: (this: HTMLCpyButtonElement, ev: CpyButtonCustomEvent<HTMLCpyButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyButtonElementEventMap>(type: K, listener: (this: HTMLCpyButtonElement, ev: CpyButtonCustomEvent<HTMLCpyButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyButtonElement: {
         prototype: HTMLCpyButtonElement;
@@ -575,7 +608,18 @@ declare global {
         prototype: HTMLCpyContentsListElement;
         new (): HTMLCpyContentsListElement;
     };
+    interface HTMLCpyContentsListItemElementEventMap {
+        "clicked": void;
+    }
     interface HTMLCpyContentsListItemElement extends Components.CpyContentsListItem, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyContentsListItemElementEventMap>(type: K, listener: (this: HTMLCpyContentsListItemElement, ev: CpyContentsListItemCustomEvent<HTMLCpyContentsListItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyContentsListItemElementEventMap>(type: K, listener: (this: HTMLCpyContentsListItemElement, ev: CpyContentsListItemCustomEvent<HTMLCpyContentsListItemElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyContentsListItemElement: {
         prototype: HTMLCpyContentsListItemElement;
@@ -599,25 +643,69 @@ declare global {
         prototype: HTMLCpyContextMenuTriggerElement;
         new (): HTMLCpyContextMenuTriggerElement;
     };
+    interface HTMLCpyDialogElementEventMap {
+        "closed": void;
+    }
     interface HTMLCpyDialogElement extends Components.CpyDialog, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyDialogElementEventMap>(type: K, listener: (this: HTMLCpyDialogElement, ev: CpyDialogCustomEvent<HTMLCpyDialogElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyDialogElementEventMap>(type: K, listener: (this: HTMLCpyDialogElement, ev: CpyDialogCustomEvent<HTMLCpyDialogElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyDialogElement: {
         prototype: HTMLCpyDialogElement;
         new (): HTMLCpyDialogElement;
     };
+    interface HTMLCpyDrawerElementEventMap {
+        "toggleOpened": void;
+    }
     interface HTMLCpyDrawerElement extends Components.CpyDrawer, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyDrawerElementEventMap>(type: K, listener: (this: HTMLCpyDrawerElement, ev: CpyDrawerCustomEvent<HTMLCpyDrawerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyDrawerElementEventMap>(type: K, listener: (this: HTMLCpyDrawerElement, ev: CpyDrawerCustomEvent<HTMLCpyDrawerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyDrawerElement: {
         prototype: HTMLCpyDrawerElement;
         new (): HTMLCpyDrawerElement;
     };
+    interface HTMLCpyDrawerContainerElementEventMap {
+        "toggleDrawer": boolean;
+    }
     interface HTMLCpyDrawerContainerElement extends Components.CpyDrawerContainer, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyDrawerContainerElementEventMap>(type: K, listener: (this: HTMLCpyDrawerContainerElement, ev: CpyDrawerContainerCustomEvent<HTMLCpyDrawerContainerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyDrawerContainerElementEventMap>(type: K, listener: (this: HTMLCpyDrawerContainerElement, ev: CpyDrawerContainerCustomEvent<HTMLCpyDrawerContainerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyDrawerContainerElement: {
         prototype: HTMLCpyDrawerContainerElement;
         new (): HTMLCpyDrawerContainerElement;
     };
+    interface HTMLCpyExpandCollapseElementEventMap {
+        "toggleExpanded": boolean;
+    }
     interface HTMLCpyExpandCollapseElement extends Components.CpyExpandCollapse, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyExpandCollapseElementEventMap>(type: K, listener: (this: HTMLCpyExpandCollapseElement, ev: CpyExpandCollapseCustomEvent<HTMLCpyExpandCollapseElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyExpandCollapseElementEventMap>(type: K, listener: (this: HTMLCpyExpandCollapseElement, ev: CpyExpandCollapseCustomEvent<HTMLCpyExpandCollapseElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyExpandCollapseElement: {
         prototype: HTMLCpyExpandCollapseElement;
@@ -635,61 +723,172 @@ declare global {
         prototype: HTMLCpyIconElement;
         new (): HTMLCpyIconElement;
     };
+    interface HTMLCpyInputElementEventMap {
+        "valueChange": string | number;
+    }
     interface HTMLCpyInputElement extends Components.CpyInput, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyInputElementEventMap>(type: K, listener: (this: HTMLCpyInputElement, ev: CpyInputCustomEvent<HTMLCpyInputElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyInputElementEventMap>(type: K, listener: (this: HTMLCpyInputElement, ev: CpyInputCustomEvent<HTMLCpyInputElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyInputElement: {
         prototype: HTMLCpyInputElement;
         new (): HTMLCpyInputElement;
     };
+    interface HTMLCpyInputBaseElementEventMap {
+        "popupClosed": void;
+        "labelClicked": void;
+    }
     interface HTMLCpyInputBaseElement extends Components.CpyInputBase, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyInputBaseElementEventMap>(type: K, listener: (this: HTMLCpyInputBaseElement, ev: CpyInputBaseCustomEvent<HTMLCpyInputBaseElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyInputBaseElementEventMap>(type: K, listener: (this: HTMLCpyInputBaseElement, ev: CpyInputBaseCustomEvent<HTMLCpyInputBaseElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyInputBaseElement: {
         prototype: HTMLCpyInputBaseElement;
         new (): HTMLCpyInputBaseElement;
     };
+    interface HTMLCpyInputCheckboxElementEventMap {
+        "valueChange": boolean;
+    }
     interface HTMLCpyInputCheckboxElement extends Components.CpyInputCheckbox, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyInputCheckboxElementEventMap>(type: K, listener: (this: HTMLCpyInputCheckboxElement, ev: CpyInputCheckboxCustomEvent<HTMLCpyInputCheckboxElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyInputCheckboxElementEventMap>(type: K, listener: (this: HTMLCpyInputCheckboxElement, ev: CpyInputCheckboxCustomEvent<HTMLCpyInputCheckboxElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyInputCheckboxElement: {
         prototype: HTMLCpyInputCheckboxElement;
         new (): HTMLCpyInputCheckboxElement;
     };
+    interface HTMLCpyInputColorElementEventMap {
+        "valueChange": string;
+    }
     interface HTMLCpyInputColorElement extends Components.CpyInputColor, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyInputColorElementEventMap>(type: K, listener: (this: HTMLCpyInputColorElement, ev: CpyInputColorCustomEvent<HTMLCpyInputColorElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyInputColorElementEventMap>(type: K, listener: (this: HTMLCpyInputColorElement, ev: CpyInputColorCustomEvent<HTMLCpyInputColorElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyInputColorElement: {
         prototype: HTMLCpyInputColorElement;
         new (): HTMLCpyInputColorElement;
     };
+    interface HTMLCpyInputFileElementEventMap {
+        "valueChange": File[];
+    }
     interface HTMLCpyInputFileElement extends Components.CpyInputFile, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyInputFileElementEventMap>(type: K, listener: (this: HTMLCpyInputFileElement, ev: CpyInputFileCustomEvent<HTMLCpyInputFileElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyInputFileElementEventMap>(type: K, listener: (this: HTMLCpyInputFileElement, ev: CpyInputFileCustomEvent<HTMLCpyInputFileElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyInputFileElement: {
         prototype: HTMLCpyInputFileElement;
         new (): HTMLCpyInputFileElement;
     };
+    interface HTMLCpyInputSelectElementEventMap {
+        "valueChange": string | number;
+    }
     interface HTMLCpyInputSelectElement extends Components.CpyInputSelect, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyInputSelectElementEventMap>(type: K, listener: (this: HTMLCpyInputSelectElement, ev: CpyInputSelectCustomEvent<HTMLCpyInputSelectElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyInputSelectElementEventMap>(type: K, listener: (this: HTMLCpyInputSelectElement, ev: CpyInputSelectCustomEvent<HTMLCpyInputSelectElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyInputSelectElement: {
         prototype: HTMLCpyInputSelectElement;
         new (): HTMLCpyInputSelectElement;
     };
+    interface HTMLCpyInputSelectOptionElementEventMap {
+        "optionSelected": string | number;
+    }
     interface HTMLCpyInputSelectOptionElement extends Components.CpyInputSelectOption, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyInputSelectOptionElementEventMap>(type: K, listener: (this: HTMLCpyInputSelectOptionElement, ev: CpyInputSelectOptionCustomEvent<HTMLCpyInputSelectOptionElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyInputSelectOptionElementEventMap>(type: K, listener: (this: HTMLCpyInputSelectOptionElement, ev: CpyInputSelectOptionCustomEvent<HTMLCpyInputSelectOptionElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyInputSelectOptionElement: {
         prototype: HTMLCpyInputSelectOptionElement;
         new (): HTMLCpyInputSelectOptionElement;
     };
+    interface HTMLCpyInputTextareaElementEventMap {
+        "valueChange": string;
+    }
     interface HTMLCpyInputTextareaElement extends Components.CpyInputTextarea, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyInputTextareaElementEventMap>(type: K, listener: (this: HTMLCpyInputTextareaElement, ev: CpyInputTextareaCustomEvent<HTMLCpyInputTextareaElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyInputTextareaElementEventMap>(type: K, listener: (this: HTMLCpyInputTextareaElement, ev: CpyInputTextareaCustomEvent<HTMLCpyInputTextareaElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyInputTextareaElement: {
         prototype: HTMLCpyInputTextareaElement;
         new (): HTMLCpyInputTextareaElement;
     };
+    interface HTMLCpyInputToggleElementEventMap {
+        "valueChange": boolean;
+    }
     interface HTMLCpyInputToggleElement extends Components.CpyInputToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyInputToggleElementEventMap>(type: K, listener: (this: HTMLCpyInputToggleElement, ev: CpyInputToggleCustomEvent<HTMLCpyInputToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyInputToggleElementEventMap>(type: K, listener: (this: HTMLCpyInputToggleElement, ev: CpyInputToggleCustomEvent<HTMLCpyInputToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyInputToggleElement: {
         prototype: HTMLCpyInputToggleElement;
         new (): HTMLCpyInputToggleElement;
     };
+    interface HTMLCpyLinkElementEventMap {
+        "linkClicked": void;
+    }
     interface HTMLCpyLinkElement extends Components.CpyLink, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyLinkElementEventMap>(type: K, listener: (this: HTMLCpyLinkElement, ev: CpyLinkCustomEvent<HTMLCpyLinkElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyLinkElementEventMap>(type: K, listener: (this: HTMLCpyLinkElement, ev: CpyLinkCustomEvent<HTMLCpyLinkElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyLinkElement: {
         prototype: HTMLCpyLinkElement;
@@ -701,13 +900,36 @@ declare global {
         prototype: HTMLCpyNavMenuElement;
         new (): HTMLCpyNavMenuElement;
     };
+    interface HTMLCpyNavMenuItemElementEventMap {
+        "itemActive": void;
+    }
     interface HTMLCpyNavMenuItemElement extends Components.CpyNavMenuItem, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyNavMenuItemElementEventMap>(type: K, listener: (this: HTMLCpyNavMenuItemElement, ev: CpyNavMenuItemCustomEvent<HTMLCpyNavMenuItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyNavMenuItemElementEventMap>(type: K, listener: (this: HTMLCpyNavMenuItemElement, ev: CpyNavMenuItemCustomEvent<HTMLCpyNavMenuItemElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyNavMenuItemElement: {
         prototype: HTMLCpyNavMenuItemElement;
         new (): HTMLCpyNavMenuItemElement;
     };
+    interface HTMLCpyOverlayElementEventMap {
+        "closed": void;
+        "backdropClick": void;
+    }
     interface HTMLCpyOverlayElement extends Components.CpyOverlay, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyOverlayElementEventMap>(type: K, listener: (this: HTMLCpyOverlayElement, ev: CpyOverlayCustomEvent<HTMLCpyOverlayElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyOverlayElementEventMap>(type: K, listener: (this: HTMLCpyOverlayElement, ev: CpyOverlayCustomEvent<HTMLCpyOverlayElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyOverlayElement: {
         prototype: HTMLCpyOverlayElement;
@@ -725,7 +947,19 @@ declare global {
         prototype: HTMLCpyPageContentElement;
         new (): HTMLCpyPageContentElement;
     };
+    interface HTMLCpyPopupElementEventMap {
+        "opened": void;
+        "closed": void;
+    }
     interface HTMLCpyPopupElement extends Components.CpyPopup, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyPopupElementEventMap>(type: K, listener: (this: HTMLCpyPopupElement, ev: CpyPopupCustomEvent<HTMLCpyPopupElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyPopupElementEventMap>(type: K, listener: (this: HTMLCpyPopupElement, ev: CpyPopupCustomEvent<HTMLCpyPopupElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyPopupElement: {
         prototype: HTMLCpyPopupElement;
@@ -773,7 +1007,18 @@ declare global {
         prototype: HTMLCpyTabContentElement;
         new (): HTMLCpyTabContentElement;
     };
+    interface HTMLCpyTabHeaderElementEventMap {
+        "selected": string;
+    }
     interface HTMLCpyTabHeaderElement extends Components.CpyTabHeader, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyTabHeaderElementEventMap>(type: K, listener: (this: HTMLCpyTabHeaderElement, ev: CpyTabHeaderCustomEvent<HTMLCpyTabHeaderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyTabHeaderElementEventMap>(type: K, listener: (this: HTMLCpyTabHeaderElement, ev: CpyTabHeaderCustomEvent<HTMLCpyTabHeaderElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyTabHeaderElement: {
         prototype: HTMLCpyTabHeaderElement;
@@ -785,13 +1030,36 @@ declare global {
         prototype: HTMLCpyTableElement;
         new (): HTMLCpyTableElement;
     };
+    interface HTMLCpyTabsElementEventMap {
+        "tabChanged": number;
+    }
     interface HTMLCpyTabsElement extends Components.CpyTabs, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyTabsElementEventMap>(type: K, listener: (this: HTMLCpyTabsElement, ev: CpyTabsCustomEvent<HTMLCpyTabsElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyTabsElementEventMap>(type: K, listener: (this: HTMLCpyTabsElement, ev: CpyTabsCustomEvent<HTMLCpyTabsElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyTabsElement: {
         prototype: HTMLCpyTabsElement;
         new (): HTMLCpyTabsElement;
     };
+    interface HTMLCpyToastElementEventMap {
+        "closed": void;
+        "opened": void;
+    }
     interface HTMLCpyToastElement extends Components.CpyToast, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCpyToastElementEventMap>(type: K, listener: (this: HTMLCpyToastElement, ev: CpyToastCustomEvent<HTMLCpyToastElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCpyToastElementEventMap>(type: K, listener: (this: HTMLCpyToastElement, ev: CpyToastCustomEvent<HTMLCpyToastElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCpyToastElement: {
         prototype: HTMLCpyToastElement;

@@ -48,6 +48,12 @@ Type: `Promise<void>`
 
 
 
+#### Parameters
+
+| Name   | Type      | Description |
+| ------ | --------- | ----------- |
+| `show` | `boolean` |             |
+
 #### Returns
 
 Type: `Promise<void>`
